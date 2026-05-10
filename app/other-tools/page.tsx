@@ -24,8 +24,8 @@ const tools = [
     emoji: "📚",
     title: "Study Buddy",
     desc: "A smart study companion app — flashcard decks, spaced repetition, progress tracking. Coming soon — built to help international students study smarter, not harder.",
-    url: "https://drivewithbui.com", // placeholder until live
-    badge: "Coming Soon",
+    url: "https://study-buddy-two-orpin.vercel.app",
+    badge: "Live",
     color: "bg-sage/10 border-sage/30",
     accent: "text-sage",
     highlight: "Launching 2026 — get notified when it goes live",
