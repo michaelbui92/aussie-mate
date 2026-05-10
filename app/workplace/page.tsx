@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Quokka from "@/components/Quokka";
 
 interface Section {
   id: string;
@@ -234,9 +233,6 @@ export default function WorkplacePage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex justify-center mb-5">
-            <Quokka scene="desk" />
-          </div>
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
             Workplace 💼
           </h1>

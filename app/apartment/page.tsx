@@ -1,5 +1,4 @@
 "use client";
-import Quokka from "@/components/Quokka";
 
 const sections = [
   {
@@ -95,9 +94,6 @@ export default function ApartmentPage() {
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex justify-center mb-5">
-            <Quokka scene="house" />
-          </div>
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">Apartment Guide 🏠</h1>
           <p className="text-eucalypt/60 dark:text-dark-muted/60">Renting in NSW — your rights, your money, your home</p>
         </div>

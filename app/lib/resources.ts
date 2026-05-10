@@ -3,7 +3,7 @@ export interface Resource {
   description: string;
   korean: string;
   url: string;
-  category: "government" | "korean-community" | "education" | "healthcare" | "emergency";
+  category: "government" | "education" | "healthcare" | "emergency";
 }
 
 export const resources: Resource[] = [
@@ -56,71 +56,6 @@ export const resources: Resource[] = [
     korean: "선거인 등록 및 선거 정보",
     url: "https://www.aec.gov.au",
     category: "government",
-  },
-
-  // === KOREAN COMMUNITY ===
-  {
-    name: "Korean Society of Sydney (KSS)",
-    description: "Community events, cultural programs, and support for Koreans in Sydney",
-    korean: "시드니 한인회 — 커뮤니티 행사, 문화 프로그램, 지원",
-    url: "https://www.koreansociety.org.au",
-    category: "korean-community",
-  },
-  {
-    name: "Sydney Korean Church",
-    description: "One of the largest Korean churches in Sydney with community services",
-    korean: "시드니 한인 교회 — 다양한 커뮤니티 서비스 제공",
-    url: "https://www.sydneykorean.org.au",
-    category: "korean-community",
-  },
-  {
-    name: "Korean Australian Community Services",
-    description: "Support services, aged care, and cultural programs",
-    korean: "호주 한인 커뮤니티 서비스 — 지원 서비스, 노인 복지",
-    url: "https://www.kacs.org.au",
-    category: "korean-community",
-  },
-  {
-    name: "Korean Cultural Centre Australia",
-    description: "Korean language classes, cultural events, exhibitions in Sydney CBD",
-    korean: "주호주 한국문화원 — 한국어 수업, 문화 행사, 전시회",
-    url: "https://www.koreanculture.org.au",
-    category: "korean-community",
-  },
-  {
-    name: "Korean Student Association of NSW",
-    description: "Student groups and networks for Korean international students",
-    korean: "NSW 한인 학생회 — 유학생 네트워크 및 지원",
-    url: "https://www.facebook.com/KSANSW",
-    category: "korean-community",
-  },
-  {
-    name: "한인회 (Korean Association of NSW)",
-    description: "Official Korean association providing legal and community support",
-    korean: "NSW 한인회 — 법률 및 커뮤니티 지원 제공",
-    url: "https://www.koreans.org.au",
-    category: "korean-community",
-  },
-  {
-    name: "Strathfield Korean Community",
-    description: "Strathfield has one of the largest Korean populations in Sydney",
-    korean: "스트라스필드 한인 커뮤니티 — 시드니 최대 한인 밀집 지역",
-    url: "https://strathfield.nsw.gov.au/community",
-    category: "korean-community",
-  },
-  {
-    name: "Korean Grocery Finder",
-    description: "Find Korean supermarkets and marts across Sydney",
-    korean: "시드니 한인 마트 찾기",
-    url: "https://www.koreangrocery.com.au",
-    category: "korean-community",
-  },
-  {
-    name: "Korean Welfare Association",
-    description: "Welfare support and advice for Korean migrants and families",
-    korean: "한인 복지 협회 — 이민자 및 가족 복지 지원",
-    url: "https://www.koreanwelfare.org.au",
-    category: "korean-community",
   },
 
   // === EDUCATION ===
