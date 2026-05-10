@@ -1,22 +1,19 @@
 "use client";
 import { useState, useMemo } from "react";
-import { resources, type Resource } from "@/lib/resources";
-import Quokka from "@/components/Quokka";
+import { resources } from "@/lib/resources";
 
-type ResourceCategory = Resource["category"];
+type ActiveCategory = "government" | "education" | "healthcare" | "emergency";
 
-const categories: { value: ResourceCategory | "all"; label: string; emoji: string }[] = [
+const categories: { value: ActiveCategory | "all"; label: string; emoji: string }[] = [
   { value: "all", label: "All", emoji: "🌏" },
   { value: "government", label: "Government", emoji: "🏛️" },
-  { value: "korean-community", label: "Korean Community", emoji: "🇰🇷" },
   { value: "education", label: "Education", emoji: "🎓" },
   { value: "healthcare", label: "Healthcare", emoji: "🏥" },
   { value: "emergency", label: "Emergency", emoji: "🚨" },
 ];
 
-const categoryColors: Record<ResourceCategory, { bg: string; border: string; text: string }> = {
+const categoryColors: Record<ActiveCategory, { bg: string; border: string; text: string }> = {
   government: { bg: "bg-coast/10", border: "border-coast/30", text: "text-coast" },
-  "korean-community": { bg: "bg-rose-400/10", border: "border-rose-400/30", text: "text-rose-500" },
   education: { bg: "bg-purple-500/10", border: "border-purple-500/30", text: "text-purple-600 dark:text-purple-400" },
   healthcare: { bg: "bg-sage/10", border: "border-sage/30", text: "text-sage" },
   emergency: { bg: "bg-sunset/10", border: "border-sunset/30", text: "text-sunset" },
@@ -31,11 +28,12 @@ function ExternalLinkIcon() {
 }
 
 export default function ResourcesPage() {
-  const [activeCategory, setActiveCategory] = useState<ResourceCategory | "all">("all");
+  const [activeCategory, setActiveCategory] = useState<ActiveCategory | "all">("all");
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
     return resources.filter((r) => {
+      if (r.category === "korean-community") return false;
       const matchesCategory = activeCategory === "all" || r.category === activeCategory;
       const q = search.toLowerCase();
       const matchesSearch =
@@ -48,9 +46,12 @@ export default function ResourcesPage() {
   }, [activeCategory, search]);
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: resources.length };
+    const c: Record<string, number> = { all: 0 };
     for (const r of resources) {
-      c[r.category] = (c[r.category] || 0) + 1;
+      if (r.category !== "korean-community") {
+        c.all = (c.all || 0) + 1;
+        c[r.category] = (c[r.category] || 0) + 1;
+      }
     }
     return c;
   }, []);
@@ -58,11 +59,8 @@ export default function ResourcesPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="flex justify-center mb-5">
-            <Quokka scene="backpack" />
-          </div>
+      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
+        <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
             Resources 🔗
           </h1>
@@ -72,9 +70,9 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
+      <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
         {/* Category tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        <div className="flex gap-2 overflow-x-auto pb-1">
           {categories.map((cat) => (
             <button
               key={cat.value}
@@ -133,9 +131,9 @@ export default function ResourcesPage() {
             </button>
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {filtered.map((resource, i) => {
-              const colors = categoryColors[resource.category];
+              const colors = categoryColors[resource.category as ActiveCategory];
               return (
                 <a
                   key={resource.name}
@@ -143,7 +141,7 @@ export default function ResourcesPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-4 hover:shadow-md hover:border-sunset/30 transition-all animate-fade-up group"
-                  style={{ animationDelay: `${i * 0.04}s` }}
+                  style={{ animationDelay: `${i * 0.03}s` }}
                 >
                   <div className="flex items-start gap-3">
                     {/* Category badge */}

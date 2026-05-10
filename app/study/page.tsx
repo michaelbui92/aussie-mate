@@ -233,7 +233,7 @@ export default function StudyPage() {
     <div className="min-h-screen">
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-5">
             <Quokka scene="glasses" />
           </div>
@@ -247,7 +247,7 @@ export default function StudyPage() {
       </section>
 
       {/* Content */}
-      <div className="max-w-2xl mx-auto px-4 py-10 space-y-4">
+      <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
         {sections.map((section, si) => {
           const isOpen = openSection === section.id;
           return (
