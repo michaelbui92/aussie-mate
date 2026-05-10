@@ -1,0 +1,134 @@
+"use client";
+import Quokka from "@/components/Quokka";
+
+const sections = [
+  {
+    id: "application",
+    emoji: "📋",
+    title: "Rental Application",
+    desc: "Everything you need to apply for a rental property in NSW",
+    color: "border-l-sunset",
+    items: [
+      { label: "Required documents", en: "100 points of ID — passport, visa, bank statements, payslips, rental reference", ko: "신분증 100포인트 — 여권, 비자, 은행 거래내역, 급여명세서, 이전 임대인 추천서" },
+      { label: "Cover letter", en: "Short introduction: who you are, why you want this property, your income, how long you plan to stay", ko: "간단한 소개서: 본인 소개, 부동산을 원하는 이유, 수입, 거주 예정 기간" },
+      { label: "Rental history", en: "Previous landlord's contact details — agents will call to verify you've kept the place well and paid on time", ko: "이전 임대인의 연락처 — 부동산 중개인이 집 상태 및 임대료 납부 이력 확인을 위해 연락함" },
+      { label: "Proof of income", en: "Recent payslips (3-6), recent tax return, or Centrelink letter showing consistent income", ko: "최근 급여명세서(3~6개월), 최근 소득세 신고서, 또는 Cenrelink 확인서" },
+      { label: "Bond", en: "Usually 4 weeks rent — you pay it upfront and get it back at the end if the property is clean and undamaged", ko: "보통 임대료 4주분 — 입주 시 선불로 납부하고, 퇴거 시 청소 및 손상 없으면 돌려받음" },
+    ],
+  },
+  {
+    id: "rights",
+    emoji: "⚖️",
+    title: "Tenant Rights in NSW",
+    desc: "You have legal rights — know them",
+    color: "border-l-sage",
+    items: [
+      { label: "Rent increases", en: "Landlord can only increase rent once every 12 months. Must give 60 days written notice.", ko: "임대인은 12개월에 한 번만 임대료를 올릴 수 있음. 60일 전 서면 고지 필수." },
+      { label: "Repairs", en: "Landlord must fix anything that affects health, safety, or basic living — within 14 days for non-urgent, immediately for urgent", ko: "임대인은 건강, 안전, 기본 생활에 영향을 미치는 문제를 수리해야 함 — 긴급하지 않은 것은 14일, 긴급한 것은 즉시" },
+      { label: "Entry notice", en: " landlord must give 24 hours written notice before entering your home (except in emergencies)", ko: "임대인은 긴급 상황을 제외하고는 입주 전 24시간 서면 고지를 해야 함" },
+      { label: "Eviction", en: "Landlord must give 90 days notice if ending a periodic lease without cause. 30 days if you're behind on rent.", ko: "임대인이 정당한 사유 없이 월세租房를 종료하려면 90일 전에 고지해야 함. 임대료 연체 시 30일." },
+      { label: "No cause termination", en: "Even without a reason, landlord must give 90 days (periodic) or 30 days (fixed-term) notice to move out", ko: "이유 없이도 임대인은 퇴거 통보 시 월세租房는 90일, 정해진 기간租房는 30일 전에 고지해야 함" },
+    ],
+  },
+  {
+    id: "re-phrases",
+    emoji: "🏢",
+    title: "Common Real Estate Phrases",
+    desc: "What agents actually mean",
+    color: "border-l-coast",
+    items: [
+      { label: '"Quiet location"', en: "It's on a main road — expect traffic noise", ko: "주 도로에 위치 — 교통 소음이 예상됨" },
+      { label: '"Convenient to transport"', en: "Near a train station or bus stop, but it might not be walking distance", ko: "기차역이나 버스 정류장 가까이 — 도보 거리 아닐 수 있음" },
+      { label: '"Charming"', en: "Old, outdated, or small — but has character", ko: "오래되거나 낡았지만 분위기가 있음" },
+      { label: '"Perfect for families"', en: "Might not have a yard, but there are nearby parks", ko: "마당 없을 수 있지만 근처 공원 있음" },
+      { label: '"Must be sold"', en: "Price is too high — not a good deal", ko: "가격이 너무 높음 — 좋은 거래가 아님" },
+      { label: '"Inspections are strict"', en: "Competition is high — your application needs to be strong", ko: "경쟁이 심함 — 지원서을 잘 준비해야 함" },
+      { label: '"First to inspect buys"', en: "Uncommon — verify this claim before making decisions", ko: "일반적이지 않음 — 결론 내리기 전에 확인 필요" },
+    ],
+  },
+  {
+    id: "red-flags",
+    emoji: "🚩",
+    title: "Red Flags to Watch",
+    desc: "Walk away if you see these",
+    color: "border-l-rose-400",
+    items: [
+      { label: "No formal lease", en: "Always get a written Residential Tenancy Agreement — verbal agreements are not enforceable", ko: "반드시 서면 임대차계약서를 받아야 함 — 구두 합의는 법적 구속력이 없음" },
+      { label: "Landlord won't do repairs", en: "Persistent damage that's ignored is a sign the landlord won't look after the property", ko: "수리되지 않는 지속적인 손상은 임대인이 부동산을 관리하지 않음을 의미함" },
+      { label: "Pressure to pay cash", en: "Never pay bond or rent in cash without a receipt. All payments should be traceable.", ko: "영수증 없이 현금으로 보증금이나 임대료를 지불하지 마세요. 모든 결제내역은 추적 가능해야 함." },
+      { label: "Rent too cheap", en: "If it's significantly below market rate, something is wrong — or it's a scam", ko: "시세보다 현저히 낮으면 무언가 문제 있다는 신호 — 또는 사기일 수 있음" },
+      { label: "Won't meet in person", en: "Legitimate landlords will meet you or have an agent. Be wary of online-only transactions.", ko: "합법적인 임대인은 직접 만나거나 중개인을 둠. 온라인 거래만 고집하는 경우 주의." },
+    ],
+  },
+  {
+    id: "costs",
+    emoji: "💰",
+    title: "Bills & Move-in Costs",
+    desc: "What to budget for",
+    color: "border-l-yellow-400",
+    items: [
+      { label: "Bond (보증금)", en: "Usually 4 weeks rent — paid upfront before moving in", ko: "보통 임대료의 4주분 — 입주 전에 선불로 지불" },
+      { label: "First week rent", en: "Paid in advance, from the day you move in", ko: "선불로 지불, 입주日开始일로부터" },
+      { label: "Utility connections", en: "Electricity, gas, internet — you set these up yourself. Some providers charge connection fees.", ko: "전기, 가스, 인터넷 — 직접 신청해야 함. 일부 공급업체는 연결 비용을 부과함." },
+      { label: "Moving costs", en: "Hire a van or movers. Sydney moves typically cost $150-$500 depending on distance.", ko: "밴租用하거나이사팀을 이용. 시드니에서는 거리대에 따라 $150~$500 정도 소요됨." },
+      { label: "Contents insurance", en: "$20-$50/month for a basic policy. Highly recommended — landlord's insurance doesn't cover your belongings.", ko: "기본 보험은 월 $20~$50. 필수 — 임대인의 보험은 내 소유물을 보장하지 않음." },
+    ],
+  },
+  {
+    id: "cover-letter",
+    emoji: "✍️",
+    title: "Cover Letter Tips",
+    desc: "How to write an application that stands out",
+    color: "border-l-purple-500",
+    items: [
+      { label: "Keep it short", en: "3-5 sentences. Agents read hundreds of these.", ko: "3~5문장. 중개인은 수백 통의 지원서를 읽음." },
+      { label: "Mention your income", en: "Be upfront: weekly/fortnightly income, employment type, how long you've been with your employer", ko: "솔직하게 기재: 주/격주 수입, 고용 형태, 현 고용주 근무 기간" },
+      { label: "Explain your situation", en: "Are you a student? Working holiday? Permanent resident? Say it. It helps landlords understand you.", ko: "학생이신가요? 워킹홀리디? 영주권자? 명시하면 임대인이 이해하는 데 도움됨." },
+      { label: "Add local references", en: "If you have a previous Australian landlord or employer in NSW, mention it. It shows stability.", ko: "이전 호주 임대인이나 NSW 고용주가 있으면 언급. 안정성을 보여줌." },
+      { label: "Apply fast", en: "In competitive areas, properties are rented within hours of listing. Have your documents ready before you inspect.", ko: "경쟁이 심한 지역에서는 등기 후 몇 시간 내에 임대됨. 등기 전에 서류 준비 완료." },
+    ],
+  },
+];
+
+export default function ApartmentPage() {
+  return (
+    <div className="min-h-screen">
+      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="flex justify-center mb-5">
+            <Quokka scene="house" />
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">Apartment Guide 🏠</h1>
+          <p className="text-eucalypt/60 dark:text-dark-muted/60">Renting in NSW — your rights, your money, your home</p>
+        </div>
+      </section>
+
+      <div className="max-w-2xl mx-auto px-4 py-10 space-y-8">
+        {sections.map((section, si) => (
+          <section
+            key={section.id}
+            className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden animate-fade-up"
+            style={{ animationDelay: `${si * 0.1}s` }}
+          >
+            <div className={`px-4 md:px-5 py-4 border-b border-sand dark:border-dark-border border-l-4 ${section.color}`}>
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="text-xl shrink-0">{section.emoji}</span>
+                <h2 className="font-bold text-base md:text-lg text-eucalypt dark:text-white leading-snug">{section.title}</h2>
+              </div>
+              <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 pl-7">{section.desc}</p>
+            </div>
+            <div className="divide-y divide-sand dark:divide-dark-border">
+              {section.items.map((item, ii) => (
+                <div key={ii} className="px-4 md:px-5 py-4">
+                  <p className="font-semibold text-sm text-sunset mb-1.5 leading-snug">{item.label}</p>
+                  <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.en}</p>
+                  <p className="text-sm text-sage font-medium mt-1 leading-relaxed">{item.ko}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  );
+}
