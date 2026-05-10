@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Quokka from "./Quokka";
 
 const categories = [
   {
@@ -79,11 +78,6 @@ export default function HomePage() {
           <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-10 max-w-md mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
             Your friendly guide to Aussie English, renting, working, studying, and everything in between.
           </p>
-
-          {/* Quokka */}
-          <div className="mb-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Quokka scene="default" />
-          </div>
 
           {/* Search */}
           <div className="animate-fade-up" style={{ animationDelay: "0.4s" }}>
