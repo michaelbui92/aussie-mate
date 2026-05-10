@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/study", label: "Study" },
   { href: "/tourist", label: "Tourist" },
   { href: "/resources", label: "Resources" },
+  { href: "/other-tools", label: "Other Tools" },
 ];
 
 export default function Nav() {

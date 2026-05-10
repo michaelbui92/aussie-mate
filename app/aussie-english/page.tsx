@@ -24,15 +24,27 @@ function playAudio(text: string) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.rate = 0.85;
   utterance.pitch = 1.05;
-  // Prefer an Australian/UK voice if available, fall back to default
+
+  // On iOS/ Android voices load async — retry with a short wait if empty
+  const trySpeak = () => {
+    const voices = window.speechSynthesis.getVoices();
+    const preferred = voices.find(
+      (v) =>
+        v.lang.startsWith("en") &&
+        (v.lang.toLowerCase().includes("au") || v.lang.toLowerCase().includes("gb"))
+    );
+    if (preferred) utterance.voice = preferred;
+    window.speechSynthesis.speak(utterance);
+  };
+
   const voices = window.speechSynthesis.getVoices();
-  const preferred = voices.find(
-    (v) =>
-      v.lang.startsWith("en") &&
-      (v.lang.toLowerCase().includes("au") || v.lang.toLowerCase().includes("gb"))
-  );
-  if (preferred) utterance.voice = preferred;
-  window.speechSynthesis.speak(utterance);
+  if (voices.length > 0) {
+    trySpeak();
+  } else {
+    window.speechSynthesis.addEventListener("voiceschanged", trySpeak, { once: true });
+    // Fallback: speak anyway if voices take too long
+    setTimeout(() => window.speechSynthesis.speak(utterance), 1500);
+  }
 }
 
 export default function AussieEnglishPage() {
