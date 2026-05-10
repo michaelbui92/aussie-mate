@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans } from "@/lib/fonts";
+import PageTransition from "@/components/PageTransition";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 export const metadata: Metadata = {
   title: "AussieMate — Your Australian Survival Guide",
@@ -19,7 +21,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${geistSans.className} bg-cream dark:bg-darkbg text-eucalypt dark:text-dark-muted transition-colors duration-300`}>
         <ThemeProvider>
           <Nav />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen">
+            <PageTransition>{children}</PageTransition>
+          <ScrollAnimations />
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

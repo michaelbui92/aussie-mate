@@ -175,10 +175,10 @@ export default function AussieEnglishPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2 reveal">
             Aussie English 🗣️
           </h1>
-          <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60">
+          <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60 reveal reveal-delay-1">
             {phrases.length} Aussie phrases, decoded in English and Korean
           </p>
         </div>
@@ -262,11 +262,7 @@ export default function AussieEnglishPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filtered.map((p, i) => (
-              <div
-                key={i}
-                className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-5 hover:shadow-md transition-all animate-fade-up"
-                style={{ animationDelay: `${i * 0.025}s` }}
-              >
+              <div className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-5 hover:shadow-md transition-all reveal" style={{ animationDelay: `${(i % 4) * 0.07}s` }}>
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <h3 className="font-bold text-lg text-sunset leading-snug">{p.phrase}</h3>
                   <div className="shrink-0 flex items-center gap-1.5">
