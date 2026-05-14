@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { LangProvider } from "@/components/LangBlocks";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans } from "@/lib/fonts";
@@ -20,12 +21,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} bg-cream dark:bg-darkbg text-eucalypt dark:text-dark-muted transition-colors duration-300`}>
         <ThemeProvider>
-          <Nav />
-          <main className="min-h-screen">
-            <PageTransition>{children}</PageTransition>
-          <ScrollAnimations />
-          </main>
-          <Footer />
+          <LangProvider>
+            <Nav />
+            <main className="min-h-screen">
+              <PageTransition>{children}</PageTransition>
+            <ScrollAnimations />
+            </main>
+            <Footer />
+          </LangProvider>
         </ThemeProvider>
       </body>
     </html>

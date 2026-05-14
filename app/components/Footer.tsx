@@ -11,7 +11,7 @@ export default function Footer() {
         <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 mb-3">
           Made with 🦘 for everyone new to Australia
         </p>
-        <div className="flex items-center justify-center gap-4 text-xs text-eucalypt/40 dark:text-dark-muted/40">
+        <div className="flex items-center justify-center gap-4 text-xs text-eucalypt/40 dark:text-dark-muted/40 flex-wrap">
           <Link href="/" className="hover:text-sunset transition-colors">Home</Link>
           <Link href="/aussie-english" className="hover:text-sunset transition-colors">Aussie English</Link>
           <Link href="/apartment" className="hover:text-sunset transition-colors">Apartment Guide</Link>
@@ -19,6 +19,8 @@ export default function Footer() {
           <Link href="/study" className="hover:text-sunset transition-colors">Study</Link>
           <Link href="/tourist" className="hover:text-sunset transition-colors">Tourist</Link>
           <Link href="/resources" className="hover:text-sunset transition-colors">Resources</Link>
+          <Link href="/healthcare" className="hover:text-sunset transition-colors">Healthcare</Link>
+          <Link href="/banking" className="hover:text-sunset transition-colors">Banking</Link>
         </div>
         <p className="text-xs text-eucalypt/30 dark:text-dark-muted/30 mt-3">© 2026 AussieMate</p>
       </div>

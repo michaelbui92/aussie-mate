@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useLang } from "@/components/LangBlocks";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -17,6 +18,7 @@ const navLinks = [
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { lang, setLang } = useLang();
 
   return (
     <nav className="sticky top-0 z-50 bg-cream/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-sand dark:border-dark-border">
@@ -50,6 +52,13 @@ export default function Nav() {
         </div>
 
         <div className="ml-auto flex items-center gap-2">
+          <button
+            onClick={() => setLang(lang === "en" ? "ko" : "en")}
+            className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-sage/20 text-sage hover:bg-sage/30 transition-colors shrink-0"
+            aria-label="Toggle language"
+          >
+            {lang === "en" ? "EN" : "🇰🇷"}
+          </button>
           {/* Hamburger (mobile only) */}
           <button
             className="md:hidden shrink-0 p-2 rounded-lg bg-sand dark:bg-dark-surface hover:bg-sunset/20 transition-all btn-press"
