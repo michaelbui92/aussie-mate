@@ -24,12 +24,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <LangProvider>
             <SearchProvider>
-              <Nav />
-              <main className="min-h-screen">
-                <PageTransition>{children}</PageTransition>
-                <SearchModal />
-              </main>
-              <Footer />
+              <div className="flex flex-col min-h-screen">
+                <Nav />
+                <main className="flex-1">
+                  <PageTransition>{children}</PageTransition>
+                  <SearchModal />
+                </main>
+                <Footer />
+              </div>
             </SearchProvider>
           </LangProvider>
         </ThemeProvider>

@@ -71,7 +71,7 @@ export default function HomePage() {
   const { openSearch } = useSearch();
 
   return (
-    <div className="flex flex-col">
+    <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
         <div className="max-w-2xl mx-auto text-center relative">
@@ -108,7 +108,7 @@ export default function HomePage() {
       </section>
 
       {/* Category grid */}
-      <section className="max-w-4xl mx-auto px-4 pb-8 flex-1">
+      <section className="max-w-4xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((cat, i) => (
             <motion.div
