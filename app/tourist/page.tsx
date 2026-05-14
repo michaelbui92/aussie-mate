@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { En, Ko } from "@/components/LangBlocks";
 
 interface Section {
   id: string;
@@ -270,8 +271,8 @@ export default function TouristPage() {
               >
                 <span className="text-xl shrink-0">{section.emoji}</span>
                 <div className="flex-1 min-w-0">
-                  <h2 className="font-bold text-base text-eucalypt dark:text-white">{section.title}</h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">{section.desc}</p>
+                  <h2 className="font-bold text-base text-eucalypt dark:text-white"><En>{section.title}</En><Ko>{section.title}</Ko></h2>
+                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50"><En>{section.desc}</En><Ko>{section.desc}</Ko></p>
                 </div>
                 <svg
                   className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -293,11 +294,8 @@ export default function TouristPage() {
                   {section.content.map((item, ii) => (
                     <div key={ii} className="px-5 py-4">
                       <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p>
-                      <div className="bg-sand/70 dark:bg-dark-surface/70 rounded-xl px-4 py-2.5 border-l-2 border-sage">
-                        <p className="text-xs font-medium text-sage mb-0.5">🇰🇷 한국어</p>
-                        <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.ko}</p>
-                      </div>
+                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
+                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.ko}</p></Ko>
                     </div>
                   ))}
                 </div>

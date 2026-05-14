@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo, useCallback } from "react";
 import { phrases, type Phrase } from "@/lib/phrases";
+import { En, Ko } from "@/components/LangBlocks";
 
 const categories: { value: Phrase["category"] | "all"; label: string }[] = [
   { value: "all", label: "All" },
@@ -188,10 +189,12 @@ export default function AussieEnglishPage() {
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2 reveal">
-            Aussie English 🗣️
+            <En>Aussie English 🗣️</En>
+            <Ko>호주 영어 🗣️</Ko>
           </h1>
           <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60 reveal reveal-delay-1">
-            {phrases.length} Aussie phrases, decoded in English and Korean
+            <En>{phrases.length} Aussie phrases, decoded in English and Korean</En>
+            <Ko>{phrases.length}개의 호주 표현, 영어와 한국어로 해석</Ko>
           </p>
         </div>
       </section>
