@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { En, Ko } from "@/components/LangBlocks";
 
 const categories = [
@@ -69,7 +70,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-16 pb-24 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-14 px-4">
         {/* Background decoration — floating elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
@@ -82,11 +83,9 @@ export default function HomePage() {
             <span className="text-eucalypt/50 text-sm">We've got you</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-eucalypt dark:text-white mb-4">
-            <En>Welcome to<br />
-            <span className="text-sunset">Australia 🦘</span></En>
-            <Ko>호주에 오신 것을<br />
-            <span className="text-sunset">환영합니다 🦘</span></Ko>
+          <h1 className="text-4xl md:text-5xl font-bold text-eucalypt dark:text-white mb-4">
+            <En>Welcome to <span className="text-sunset">Australia 🦘</span></En>
+            <Ko>호주에 오신 것을 <span className="text-sunset">환영합니다 🦘</span></Ko>
           </h1>
 
           <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-10 max-w-md mx-auto">
@@ -113,21 +112,27 @@ export default function HomePage() {
       </section>
 
       {/* Category grid */}
-      <section className="max-w-4xl mx-auto px-4 pb-20 -mt-6">
+      <section className="max-w-4xl mx-auto px-4 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
           {categories.map((cat, i) => (
-            <Link
+            <motion.div
               key={cat.href}
-              href={cat.href}
-              className={`group card-hover ${cat.color} border rounded-2xl p-5 flex flex-col gap-2`}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.06, duration: 0.3, ease: "easeOut" }}
             >
-              <div className="text-3xl">{cat.emoji}</div>
-              <h3 className={`font-bold text-base ${cat.accent}`}><En>{cat.title}</En><Ko>{cat.koTitle}</Ko></h3>
-              <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 leading-snug"><En>{cat.desc}</En><Ko>{cat.koDesc}</Ko></p>
-              <div className="mt-auto pt-1">
-                <span className={`text-xs font-semibold ${cat.accent} group-hover:underline link-slide`}><En>Explore →</En><Ko>탐험하기 →</Ko></span>
-              </div>
-            </Link>
+              <Link
+                href={cat.href}
+                className={`group card-hover ${cat.color} border rounded-2xl p-5 flex flex-col gap-2 h-full`}
+              >
+                <div className="text-3xl">{cat.emoji}</div>
+                <h3 className={`font-bold text-base ${cat.accent}`}><En>{cat.title}</En><Ko>{cat.koTitle}</Ko></h3>
+                <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 leading-snug"><En>{cat.desc}</En><Ko>{cat.koDesc}</Ko></p>
+                <div className="mt-auto pt-1">
+                  <span className={`text-xs font-semibold ${cat.accent} group-hover:underline link-slide`}><En>Explore →</En><Ko>탐험하기 →</Ko></span>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </section>

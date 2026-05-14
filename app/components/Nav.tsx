@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLang } from "@/components/LangBlocks";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -57,7 +58,14 @@ export default function Nav() {
             className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-sage/20 text-sage hover:bg-sage/30 transition-colors shrink-0"
             aria-label="Toggle language"
           >
-            {lang === "en" ? "EN" : "🇰🇷"}
+            <motion.span
+              key={lang}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+            >
+              {lang === "en" ? "EN" : "🇰🇷"}
+            </motion.span>
           </button>
           {/* Hamburger (mobile only) */}
           <button

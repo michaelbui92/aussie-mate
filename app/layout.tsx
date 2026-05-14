@@ -6,7 +6,6 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans } from "@/lib/fonts";
 import PageTransition from "@/components/PageTransition";
-import ScrollAnimations from "@/components/ScrollAnimations";
 
 export const metadata: Metadata = {
   title: "AussieMate — Your Australian Survival Guide",
@@ -25,7 +24,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Nav />
             <main className="min-h-screen">
               <PageTransition>{children}</PageTransition>
-            <ScrollAnimations />
             </main>
             <Footer />
           </LangProvider>
