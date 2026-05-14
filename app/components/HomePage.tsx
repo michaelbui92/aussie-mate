@@ -71,9 +71,9 @@ export default function HomePage() {
   const { openSearch } = useSearch();
 
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-14 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
         <div className="max-w-2xl mx-auto text-center relative">
           <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6">
             <En><span className="text-sunset text-sm font-semibold">New in Australia?</span></En>
@@ -108,7 +108,7 @@ export default function HomePage() {
       </section>
 
       {/* Category grid */}
-      <section className="max-w-4xl mx-auto px-4 pb-20">
+      <section className="max-w-4xl mx-auto px-4 pb-8 flex-1">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((cat, i) => (
             <motion.div
