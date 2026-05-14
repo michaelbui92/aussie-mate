@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { En, Ko } from "@/components/LangBlocks";
+import { openSearch } from "@/components/SearchModal";
 
 const categories = [
   {
@@ -71,11 +72,6 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-14 px-4">
-        {/* Background decoration — floating elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-
-        </div>
-
         <div className="max-w-2xl mx-auto text-center relative">
           <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6">
             <En><span className="text-sunset text-sm font-semibold">New in Australia?</span></En>
@@ -88,32 +84,30 @@ export default function HomePage() {
             <Ko>호주에 오신 것을 <span className="text-sunset">환영합니다 🦘</span></Ko>
           </h1>
 
-          <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-10 max-w-md mx-auto">
+          <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-6 max-w-md mx-auto">
             <En>Your friendly guide to Aussie English, renting, working, studying, and everything in between.</En>
-            <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 가이드입니다.</Ko>
+            <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 ���이드입니다.</Ko>
           </p>
 
           {/* Search bar */}
-          <div className="flex flex-col gap-4 mt-6">
-            <Link
-              href="/aussie-english"
-              className="inline-flex items-center gap-3 bg-white dark:bg-dark-surface border border-sand dark:border-dark-border rounded-2xl px-5 py-3.5 shadow-lg hover:shadow-xl hover:border-sunset/40 transition-all w-full max-w-md card-hover"
-            >
-              <svg className="w-5 h-5 text-sunset shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <span className="text-eucalypt/40 dark:text-dark-muted/40 text-sm flex-1 text-left">
-                Search Aussie slang... e.g. "no worries"
-              </span>
-              <span className="text-xs font-semibold bg-sunset text-white rounded-lg px-3 py-1">Search</span>
-            </Link>
-          </div>
+          <button
+            onClick={openSearch}
+            className="inline-flex items-center gap-3 bg-white dark:bg-dark-surface border border-sand dark:border-dark-border rounded-2xl px-5 py-3.5 shadow-lg hover:shadow-xl hover:border-sunset/40 transition-all w-full max-w-md card-hover cursor-pointer"
+          >
+            <svg className="w-5 h-5 text-sunset shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span className="text-eucalypt/40 dark:text-dark-muted/40 text-sm flex-1 text-left">
+              Search AussieMate... try "visa", "bond", "medicare"
+            </span>
+            <span className="text-xs font-semibold bg-sunset text-white rounded-lg px-3 py-1">Search</span>
+          </button>
         </div>
       </section>
 
       {/* Category grid */}
       <section className="max-w-4xl mx-auto px-4 pb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.href}

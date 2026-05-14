@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { useLang } from "@/components/LangBlocks";
 import { motion } from "framer-motion";
+import { useLang } from "@/components/LangBlocks";
+import { openSearch } from "@/components/SearchModal";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,7 +14,6 @@ const navLinks = [
   { href: "/study", label: "Study" },
   { href: "/tourist", label: "Tourist" },
   { href: "/resources", label: "Resources" },
-  { href: "/other-tools", label: "Other Tools" },
 ];
 
 export default function Nav() {
@@ -54,6 +54,16 @@ export default function Nav() {
 
         <div className="ml-auto flex items-center gap-2">
           <button
+            onClick={openSearch}
+            className="p-2 rounded-lg bg-sand/50 dark:bg-dark-surface hover:bg-sunset/20 text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset transition-all btn-press shrink-0"
+            aria-label="Search"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+
+          <button
             onClick={() => setLang(lang === "en" ? "ko" : "en")}
             className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-sage/20 text-sage hover:bg-sage/30 transition-colors shrink-0"
             aria-label="Toggle language"
@@ -67,6 +77,7 @@ export default function Nav() {
               {lang === "en" ? "EN" : "🇰🇷"}
             </motion.span>
           </button>
+
           {/* Hamburger (mobile only) */}
           <button
             className="md:hidden shrink-0 p-2 rounded-lg bg-sand dark:bg-dark-surface hover:bg-sunset/20 transition-all btn-press"
