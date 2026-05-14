@@ -44,7 +44,7 @@ export default function OtherToolsPage() {
     <div className="min-h-screen">
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6 reveal">
             <span className="text-sm font-semibold text-sunset">Made by Michael Bui</span>
           </div>
@@ -58,7 +58,7 @@ export default function OtherToolsPage() {
       </section>
 
       {/* Tools */}
-      <div className="max-w-2xl mx-auto px-4 py-10 space-y-5">
+      <div className="max-w-4xl mx-auto px-4 py-10 space-y-5">
         {tools.map((tool, i) => (
           <div
             key={tool.id}

@@ -22,7 +22,7 @@ export default function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 bg-cream/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-sand dark:border-dark-border">
-      <div className="max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
+      <div className="max-w-4xl mx-auto px-4 h-16 flex items-center gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0 group">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sunset to-sunset-light flex items-center justify-center text-base transition-transform group-hover:scale-110 btn-press">
@@ -82,7 +82,7 @@ export default function Nav() {
       {/* Mobile dropdown menu */}
       {menuOpen && (
         <div className="md:hidden bg-cream dark:bg-darkbg border-t border-sand dark:border-dark-border animate-scale-in">
-          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
+          <div className="max-w-4xl mx-auto px-4 py-3 flex flex-col gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (

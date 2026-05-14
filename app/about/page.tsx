@@ -10,7 +10,7 @@ export default function AboutPage() {
     <div className="min-h-screen">
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
             <En>About AussieMate</En>
             <Ko>AussieMate 소개</Ko>
@@ -23,7 +23,7 @@ export default function AboutPage() {
       </section>
 
       {/* Content */}
-      <div className="max-w-2xl mx-auto px-4 py-10 space-y-8">
+      <div className="max-w-4xl mx-auto px-4 py-10 space-y-8">
         {/* Origin story */}
         <section className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-6">
           <div className="flex items-start gap-3 mb-4">
