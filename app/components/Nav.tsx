@@ -7,7 +7,7 @@ import { useLang } from "@/components/LangBlocks";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/aussie-english", label: "Aussie English" },
-  { href: "/apartment", label: "Apartment Guide" },
+  { href: "/apartment", label: "Apartment" },
   { href: "/workplace", label: "Workplace" },
   { href: "/study", label: "Study" },
   { href: "/tourist", label: "Tourist" },
@@ -32,7 +32,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1 overflow-x-auto">
+        <div className="hidden md:flex items-center gap-1 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
