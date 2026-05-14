@@ -23,6 +23,38 @@
   }
   body {
     font-family: "Geist", "Geist Mono", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* === KOREAN TYPOGRAPHY === */
+  /* Korean text needs more line-height and slightly larger sizing for readability */
+  :lang(ko) {
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+  }
+  /* Target Korean content in En/Ko blocks */
+  :lang(ko) p,
+  :lang(ko) li,
+  :lang(ko) span {
+    line-height: 1.85;
+  }
+
+  /* Better text rendering for Korean */
+  .ko-text,
+  [data-lang="ko"] {
+    line-height: 1.85 !important;
+    letter-spacing: -0.01em;
+    font-size: 1.0125em; /* Slightly larger for Korean readability */
+  }
+
+  /* Ensure Korean text never runs too narrow on mobile */
+  @media (max-width: 480px) {
+    :lang(ko) p,
+    :lang(ko) li {
+      line-height: 1.9;
+      font-size: 15px;
+    }
   }
 }
 
@@ -46,6 +78,63 @@
   body {
     padding-bottom: env(safe-area-inset-bottom);
   }
+}
+
+/* === MOBILE OPTIMISATION === */
+@media (max-width: 640px) {
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Cards: tighter padding on mobile */
+  .card-hover {
+    padding: 1rem !important;
+  }
+
+  /* Accordion: ensure buttons have adequate tap target */
+  button {
+    min-height: 48px;
+  }
+
+  /* Nav: smaller text, more breathing room */
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  /* Ensure grid cards stack properly */
+  .grid {
+    gap: 0.75rem;
+  }
+
+  /* Modal: reduce padding */
+  .fixed.px-4.pt-\[12vh\] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 8vh;
+  }
+}
+
+/* Touch-friendly tap targets (minimum 44px per Apple HIG) */
+@media (pointer: coarse) {
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Increase spacing between accordion items */
+  .divide-y > * + * {
+    padding-top: 0.5rem;
+  }
+}
+
+/* Prevent text size adjustment on rotation */
+@media (orientation: landscape) and (max-height: 500px) {
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.125rem !important; }
 }
 
 /* === PAGE TRANSITIONS === */

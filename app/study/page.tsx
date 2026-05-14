@@ -20,6 +20,66 @@ interface ContentItem {
 
 const sections: Section[] = [
   {
+    id: "english-tests",
+    emoji: "📝",
+    title: "English Tests: PTE & IELTS",
+    koTitle: "영어 시험: PTE와 IELTS",
+    desc: "Everything you need to know about PTE and IELTS for Australian visas and university entry",
+    koDesc: "호주 비자 및 대학 진학에 필요한 PTE와 IELTS 모든 것",
+    content: [
+      {
+        label: "What is PTE?",
+        en: "PTE Academic (Pearson Test of English Academic) is a computer-based English test accepted by all Australian universities, vocational colleges, and for visa purposes. You get results in 1-2 days — much faster than IELTS.",
+        ko: "PTE Academic(Pearson Test of English Academic)는 컴퓨터로 치르는 영어 시험으로, 모든 호주 대학, 직업 교육 기관, 비자 심사에 인정됩니다. 결과가 1-2일 안에 나오므로 IELTS보다 훨씬 빠릅니다.",
+      },
+      {
+        label: "What is IELTS?",
+        en: "IELTS (International English Language Testing System) is the older, more widely recognised test. Used for student visas, skilled migration, and professional registration. Available in paper-based or computer-delivered format.",
+        ko: "IELTS(International English Language Testing System)는 더 오래되고 널리 인정되는 시험입니다. 학생 비자, 기술 이민, 전문 등록에 사용됩니다. 지필로 또는 컴퓨터로 응시할 수 있습니다.",
+      },
+      {
+        label: "Which should I take?",
+        en: "For Australian student visas: both are accepted and equally weighted by DHA. PTE is faster and cheaper (~$340 AUD vs ~$385 AUD for IELTS). PTE is fully computerised — good if you're confident typing. IELTS may feel more familiar if you prefer paper.",
+        ko: "호주 학생 비자용: 두 시험 모두 DHA에 의해 인정되며 동일한 비중을 갖습니다. PTE가 더 빠르고 저렴합니다(약 $340 AUD vs IELTS 약 $385 AUD). PTE는 전적으로 컴퓨터로 진행되므로 타자 실력이 자신 있으면 좋습니다. IELTS는 지필 시험에 익숙하다면 더 편하게 느낄 수 있습니다.",
+      },
+      {
+        label: "PTE scoring",
+        en: "PTE uses a 0-90 scale. Most universities require 50-60 overall for undergraduate or 58-65 for postgraduate. Score is calculated using AI across all four skills simultaneously — each question can affect multiple scores.",
+        ko: "PTE는 0-90점 척도를 사용합니다. 대부분의 대학은 학부에 50-60점, 대학원에 58-65점이 필요합니다. 채점은 네 가지 기능을 동시에 AI가 평가합니다 — 각 문항이 여러 점수에 영향을 미칠 수 있습니다.",
+      },
+      {
+        label: "IELTS scoring",
+        en: "IELTS uses a 0-9 band scale. Most universities require 6.0-6.5 overall for undergraduate or 6.5-7.0 for postgraduate. Each skill is scored separately (0-9) and then averaged for an overall band score.",
+        ko: "IELTS는 0-9밴드 척도를 사용합니다. 대부분의 대학은 학부에 6.0-6.5, 대학원에 6.5-7.0이 필요합니다. 네 가지 기능은 각각 개별적으로 채점된 후 평균을 내어 전체 밴드 점수를 산출합니다.",
+      },
+      {
+        label: "PTE format",
+        en: "3 hours total, four sections in one sitting: Speaking & Writing (77-93 min), Reading (32-41 min), Listening (45-57 min). Questions are machine-adaptive — harder questions appear if you're doing well.",
+        ko: "총 3시간, 네 섹션이 한 세션으로: 말하기 & 쓰기(77-93분), 읽기(32-41분), 듣기(45-57분). 문항이 시스템에 의해 자동으로 조절됩니다 — 잘하면 더 어려운 문항이 나옵니다.",
+      },
+      {
+        label: "IELTS format",
+        en: "Paper-based: 2h 45min. Computer-delivered: same content, faster results. Four sections: Listening (30 min), Reading (60 min), Writing (60 min), Speaking (11-14 min — face-to-face with examiner).",
+        ko: "지필: 2시간 45분. 컴퓨터로 응시: 같은 내용, 더 빠른 결과. 네 섹션: 듣기(30분), 읽기(60분), 쓰기(60분), 말하기(11-14분 — 시험관과 대면).",
+      },
+      {
+        label: "Why Korean students prefer PTE",
+        en: "Many find PTE easier because: speaking is into a microphone (no examiner judgement), AI doesn't penalise accent, questions are objective and consistent, and you can use templates for writing. Popular resources: E2 Language (YouTube) and MyPTE.",
+        ko: "많은 한국 학생들이 PTE가 더 쉽다고 느끼는 이유: 1) 마이크로 녹음(시험관 판단 없음), 2) AI가 억양을 감점하지 않음, 3) 문항이 객관적이고 일관됨, 4) 쓰기에 템플릿 사용 가능. 대표적인 준비 자료: E2 Language(유튜브), MyPTE.",
+      },
+      {
+        label: "How to prepare",
+        en: "Allow 4-8 weeks of focused preparation. Practice with official test simulators. Focus on your weakest skill first. For PTE: E2 Language YouTube channel (free, excellent). For IELTS: British Council website has free practice tests.",
+        ko: "집중 준비에 4-8주 정도 잡으세요. 공식 시뮬레이터로 연습하세요. 가장 약한 기능부터重点적으로 공부하세요. PTE는 E2 Language(유튜브) — 무료이고 우수합니다. IELTS는 British Council 웹사이트에서 무료 연습 시험을 제공합니다.",
+      },
+      {
+        label: "When to book",
+        en: "Don't wait until the last minute. Most universities accept results up to 2 years old for admissions. DHA typically requires results within 1 year for visa applications. Book 2-3 months before your deadline to allow for a re-sit if needed.",
+        ko: "마감일에 쫓기지 말고 준비됐을 때 치르세요. 대부분의 대학은 입학 심사 시 최대 2년 된 성적도 인정합니다. DHA는 비자 신청 시 보통 1년 이내의 성적을 요구합니다. 비자 마감일 2-3개월 전에 예약하세요. 다시 받아야 할 경우를 대비해서입니다.",
+      },
+    ],
+  },
+  {
     id: "uni-culture",
     emoji: "🏫",
     title: "Aussie Uni Culture",
@@ -63,17 +123,17 @@ const sections: Section[] = [
     koDesc: "이메일 예절, 오피스 아워, 도움 요청법",
     content: [
       {
-        label: "Email Etiquette (이메일 예절)",
+        label: "Email Etiquette",
         en: "Start with 'Dear Dr [Name]' or 'Hi [First Name]' (check what they use). Keep it short and clear. Include your subject code and student ID. Sign off with your full name. Allow 2-3 business days for a reply.",
         ko: "'Dear Dr [성]' 또는 'Hi [이름]'(교수가 사용하는 호칭 확인)으로 시작하세요. 짧고 명확하게 작성하세요. 과목 코드와 학번을 포함하세요. 본인의 전체 이름으로 마무리하세요. 답장까지 2-3영업일이 소요됩니다.",
       },
       {
-        label: "Office Hours (오피스 아워)",
+        label: "Office Hours",
         en: "Most professors have weekly office hours — drop-in times when you can visit their office without an appointment. Use these! Ask about assignments, lecture content, or career advice. They appreciate students who seek help.",
         ko: "대부분의 교수들은 주간 오피스 아워가 있습니다 — 예약 없이 방문할 수 있는 시간입니다. 활용하세요! 과제, 강의 내용, 진로 상담에 대해 물어보세요. 도움을 구하는 학생을 좋아합니다.",
       },
       {
-        label: "How to Ask for an Extension (연기 요청)",
+        label: "How to Ask for an Extension",
         en: "If you need an extension on an assignment, email your lecturer before the deadline. Explain your situation briefly (illness, family emergency, etc.) and suggest how many extra days you need. Medical certificates help. Most lecturers are reasonable if you ask early.",
         ko: "과제 연기가 필요하면 마감일 전에 교수님께 이메일을 보내세요. 상황(질병, 가족 경조사 등)을 간략히 설명하고 필요한 추가 일수를 제안하세요. 진단서가 도움이 됩니다. 미리 요청하면 대부분의 교수들은 합리적으로 대응합니다.",
       },
@@ -103,12 +163,12 @@ const sections: Section[] = [
         ko: "때로는 교수가 그룹을 지정하고, 때로는 직접 선택합니다. 선택할 수 있다면 각자 다른 강점(글쓰기, 연구, 발표)을 가진 사람들을 고르세요.",
       },
       {
-        label: "Group Size (그룹 규모)",
+        label: "Group Size",
         en: "Usually 2-4 people. Some larger subjects might have groups of 5-6. Everyone is expected to contribute equally. The assignment will have one mark for the whole group — so team dynamics matter.",
         ko: "보통 2-4명입니다. 큰 과목은 5-6명일 수도 있습니다. 모두가 동등하게 기여해야 합니다. 과제는 그룹 전체에 하나의 점수가 부여됩니다 — 팀 다이나믹스가 중요합니다.",
       },
       {
-        label: "Dealing with Free-Riders (무임승차자 대처법)",
+        label: "Dealing with Free-Riders",
         en: "If someone isn't contributing, first talk to them directly. Say 'We need your part by Friday to stay on track.' If that doesn't work, talk to your tutor. Most universities have a process for reporting unequal contributions.",
         ko: "기여하지 않는 사람이 있으면 먼저 직접 이야기하세요. '금요일까지 당신 부분이 필요해요, 그래야 계획대로 진행됩니다.' 안 되면 튜터에게 이야기하세요. 대부분의 대학에는 불평등한 기여를 신고하는 절차가 있습니다.",
       },
@@ -133,17 +193,17 @@ const sections: Section[] = [
     koDesc: "표절, AI 사용, 인용 — 규칙이 엄격합니다",
     content: [
       {
-        label: "What is Plagiarism? (표절이란?)",
+        label: "What is Plagiarism?",
         en: "Using someone else's work (words, ideas, data, images) without proper acknowledgment is plagiarism. This includes copying from textbooks, websites, other students' work, or your own previous submissions (self-plagiarism). Penalties can range from a zero grade to expulsion.",
         ko: "타인의 작업(단어, 아이디어, 데이터, 이미지)을 적절한 인용 없이 사용하는 것은 표절입니다. 여기에는 교과서, 웹사이트, 다른 학생의 작업, 또는 이전에 제출한 본인의 작업(자기 표절)까지 포함됩니다. 처벌은 0점부터 퇴학까지 다양합니다.",
       },
       {
-        label: "Using AI Tools (AI 도구 사용)",
+        label: "Using AI Tools",
         en: "Most universities now have policies on using ChatGPT and other AI tools. Generally, you CAN use AI to help brainstorm or check grammar, but you CANNOT submit AI-generated text as your own work. Always check your subject outline for specific rules.",
         ko: "대부분의 대학은 이제 ChatGPT 및 기타 AI 도구 사용에 대한 정책을 가지고 있습니다. 일반적으로, 아이디어 구상이나 문법 확인에 AI를 사용할 수 있지만, AI가 생성한 텍스트를 자신의 작업으로 제출할 수는 없습니다. 과목 개요에서 구체적인 규칙을 확인하세요.",
       },
       {
-        label: "Referencing Properly (올바른 인용)",
+        label: "Referencing Properly",
         en: "Every time you use an idea from somewhere else, you must reference it. Common styles: APA (psychology, business), Harvard (business, law), MLA (humanities), IEEE (engineering). Your subject outline will specify which style to use. Use tools like Zotero or EndNote to manage references.",
         ko: "다른 곳의 아이디어를 사용할 때마다 반드시 출처를 표시해야 합니다. 일반적인 스타일: APA(심리학, 경영), Harvard(경영, 법학), MLA(인문학), IEEE(공학). 과목 개요에 어떤 스타일을 사용할지 명시되어 있습니다. Zotero나 EndNote 같은 도구를 사용하세요.",
       },
@@ -168,7 +228,7 @@ const sections: Section[] = [
     koDesc: "질병이나 상황으로 학업에 영향을 받을 때 대처 방법",
     content: [
       {
-        label: "What is Special Consideration? (특별 고려)",
+        label: "What is Special Consideration?",
         en: "If unexpected circumstances (illness, injury, family bereavement, etc.) affect your ability to study or complete assessments, you can apply for 'Special Consideration'. This is common and not shameful — it's a standard university process.",
         ko: "예상치 못한 상황(질병, 부상, 가족 사망 등)이 학업이나 과제 완료에 영향을 미치는 경우 '특별 고려(Special Consideration)'를 신청할 수 있습니다. 흔한 일이며 부끄러운 게 아닙니다 — 표준 대학 절차입니다.",
       },
@@ -203,7 +263,7 @@ const sections: Section[] = [
     koDesc: "호주 성적 평가 시스템 이해",
     content: [
       {
-        label: "Grade Scale (성적 체계)",
+        label: "Grade Scale",
         en: "Universities use letter grades with corresponding marks. Generally: HD (High Distinction) = 85-100%, DN (Distinction) = 75-84%, CR (Credit) = 65-74%, P (Pass) = 50-64%, F (Fail) = below 50%. Some subjects have different thresholds — check the subject outline.",
         ko: "대학은 점수에 해당하는 알파벳 성적을 사용합니다: HD(High Distinction/최우수) = 85-100%, DN(Distinction/우수) = 75-84%, CR(Credit/양호) = 65-74%, P(Pass/통과) = 50-64%, F(Fail/낙제) = 50% 미만입니다. 과목에 따라 기준이 다를 수 있습니다.",
       },
@@ -213,7 +273,7 @@ const sections: Section[] = [
         ko: "HD = 탁월한 성과(매우 드물며, 보통 상위 5-10%). DN = 평균 이상(이해도가 높음). CR = 우수한 작업(기대치를 잘 충족). P = 만족(최소 요건 충족). F = 최소 요건 미달.",
       },
       {
-        label: "What is GPA? (GPA란?)",
+        label: "What is GPA?",
         en: "GPA (Grade Point Average) is the average of all your grades, usually on a 0-7 scale. HD=7, DN=6, CR=5, P=4, F=0. Your GPA matters for honours programs, postgraduate study, scholarships, and some employers.",
         ko: "GPA(Grade Point Average/학점 평균)는 모든 성적의 평균으로, 보통 0-7점 척도입니다. HD=7, DN=6, CR=5, P=4, F=0입니다. GPA는 명예 학위 과정, 대학원, 장학금, 일부 취업에 중요합니다.",
       },
