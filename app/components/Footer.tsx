@@ -19,8 +19,6 @@ export default function Footer() {
           <Link href="/study" className="hover:text-sunset transition-colors">Study</Link>
           <Link href="/tourist" className="hover:text-sunset transition-colors">Tourist</Link>
           <Link href="/resources" className="hover:text-sunset transition-colors">Resources</Link>
-          <Link href="/healthcare" className="hover:text-sunset transition-colors">Healthcare</Link>
-          <Link href="/banking" className="hover:text-sunset transition-colors">Banking</Link>
         </div>
         <p className="text-xs text-eucalypt/30 dark:text-dark-muted/30 mt-3">© 2026 AussieMate</p>
       </div>

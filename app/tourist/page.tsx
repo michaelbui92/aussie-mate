@@ -6,7 +6,9 @@ interface Section {
   id: string;
   emoji: string;
   title: string;
+  koTitle?: string;
   desc: string;
+  koDesc?: string;
   content: ContentItem[];
 }
 
@@ -21,7 +23,9 @@ const sections: Section[] = [
     id: "getting-around",
     emoji: "🚇",
     title: "Getting Around",
+    koTitle: "시드니 이동",
     desc: "Opal cards, transport modes, and navigating Sydney",
+    koDesc: "오팔 카드, 교통수단, 시드니 길찾기",
     content: [
       {
         label: "Opal Card Basics (오팔 카드 기초)",
@@ -54,7 +58,9 @@ const sections: Section[] = [
     id: "top-sights",
     emoji: "🏛️",
     title: "Top 10 Sydney Must-Sees",
+    koTitle: "시드니 꼭 가볼 10곳",
     desc: "Sydney's iconic attractions you can't miss",
+    koDesc: "시드니의 아이코닉한 관광지",
     content: [
       {
         label: "1. Sydney Opera House (시드니 오페라 하우스)",
@@ -112,7 +118,9 @@ const sections: Section[] = [
     id: "tipping",
     emoji: "💵",
     title: "Tipping Culture",
+    koTitle: "팁 문화",
     desc: "Do you tip? Short answer: usually not — here's how it works",
+    koDesc: "팁을 주나요? 짧은 대답: 보통 아니요 — 어떻게 작동하는지 알아보기",
     content: [
       {
         label: "Tipping is NOT Expected (팁은 필수가 아닙니다)",
@@ -135,7 +143,9 @@ const sections: Section[] = [
     id: "safety",
     emoji: "🦈",
     title: "Safety Tips",
+    koTitle: "안전 팁",
     desc: "Beach safety, sun protection, wildlife, and more",
+    koDesc: "비치 안전, 자외선 차단, 야생동물 등",
     content: [
       {
         label: "Swim Between the Flags (깃발 사이에서 수영)",
@@ -168,7 +178,9 @@ const sections: Section[] = [
     id: "budget-tips",
     emoji: "💰",
     title: "Budget Tips",
+    koTitle: "예산 팁",
     desc: "Save money while exploring Sydney like a local",
+    koDesc: "시드니를 현지인처럼 저렴하게 탐험하는 방법",
     content: [
       {
         label: "Opal Daily & Weekly Caps (오팔 일일/주간 상한)",
@@ -201,7 +213,9 @@ const sections: Section[] = [
     id: "useful-apps",
     emoji: "📱",
     title: "Useful Apps",
+    koTitle: "유용한 앱",
     desc: "Essential apps for getting around and finding things to do",
+    koDesc: "이동 및 찾기 위한 필수 앱",
     content: [
       {
         label: "Google Maps (구글 지도)",
@@ -244,11 +258,13 @@ export default function TouristPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2 reveal">
-            Tourist 🏖️
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
+            <En>Tourist 🏖️</En>
+            <Ko>여행자 🏖️</Ko>
           </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60 reveal reveal-delay-1">
-            Getting around Sydney, must-see sights, and local tips
+          <p className="text-eucalypt/60 dark:text-dark-muted/60">
+            <En>Getting around Sydney, must-see sights, and local tips</En>
+            <Ko>시드니 이동 가이드, 꼭 가볼 곳, 현지 팁</Ko>
           </p>
         </div>
       </section>
@@ -271,8 +287,8 @@ export default function TouristPage() {
               >
                 <span className="text-xl shrink-0">{section.emoji}</span>
                 <div className="flex-1 min-w-0">
-                  <h2 className="font-bold text-base text-eucalypt dark:text-white"><En>{section.title}</En><Ko>{section.title}</Ko></h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50"><En>{section.desc}</En><Ko>{section.desc}</Ko></p>
+                  <h2 className="font-bold text-base text-eucalypt dark:text-white"><En>{section.title}</En><Ko>{section.koTitle || section.title}</Ko></h2>
+                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50"><En>{section.desc}</En><Ko>{section.koDesc || section.desc}</Ko></p>
                 </div>
                 <svg
                   className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}

@@ -1,11 +1,14 @@
 "use client";
 import { useState } from "react";
+import { En, Ko } from "@/components/LangBlocks";
 
 interface Section {
   id: string;
   emoji: string;
   title: string;
+  koTitle?: string;
   desc: string;
+  koDesc?: string;
   content: ResourceItem[];
 }
 
@@ -22,7 +25,9 @@ const sections: Section[] = [
     id: "government",
     emoji: "🏛️",
     title: "Government Services",
+    koTitle: "정부 서비스",
     desc: "Essential services for healthcare, tax, employment, and more",
+    koDesc: "의료, 세금, 취업 등을 위한 필수 서비스",
     content: [
       {
         label: "Medicare (메디케어)",
@@ -79,7 +84,9 @@ const sections: Section[] = [
     id: "education",
     emoji: "📚",
     title: "Education",
+    koTitle: "교육",
     desc: "Universities, TAFE, and study resources in NSW",
+    koDesc: "NSW의 대학, TAFE, 학습 자료",
     content: [
       {
         label: "Study NSW (NSW 유학 공식 정보)",
@@ -136,7 +143,9 @@ const sections: Section[] = [
     id: "healthcare",
     emoji: "🏥",
     title: "Healthcare",
+    koTitle: "의료",
     desc: "Medical services, mental health support, and urgent care",
+    koDesc: "의료 서비스, 정신 건강 지원, 응급 진료",
     content: [
       {
         label: "Medicare in Korean (한국어 메디케어 정보)",
@@ -155,7 +164,7 @@ const sections: Section[] = [
       {
         label: "Hospital ER vs Urgent Care (응급실 vs 응급 진료)",
         en: "For genuine emergencies (chest pain, severe bleeding, difficulty breathing, unconsciousness) — go to a public hospital Emergency Department. It's free at public hospitals regardless of visa status. For non-life-threatening after-hours issues (minor infections, sprains, cuts), visit an Urgent Care Centre — cheaper and faster than ER with no appointment needed.",
-        ko: "진정한 응급 상황(흉통, 심한 출혈, 호흡 곤란, 의식 불명) — 공립 병원 응급실로 가세요. 비자 상태에 관계없이 공립 병원 응급실은 무료입니다. 생명에 위협이 되지 않는 야간 문제(가벼운 감염, 염좌, 상처)는 Urgent Care Centre를 방문하세요 — 응급실보다 저렴하고 빠르며 예약이 필요 없습니다.",
+        ko: "진정한 응급 상황(흉통, 심한 출혈, 호흡 곤란, 의식 불명) — 공립 병원 응급실로 가세요. 비자 상태에 관계없이 공립 병원 응급실은 무료입니다. 생명에 위협이 되지 않는 야간 문제(가벼운 감염, 염좌, 상처)는 Urgent Care Centre를 방문하세요 — 응급실보다 저렴하고 빠르며预约이 필요 없습니다.",
         url: "https://www.health.nsw.gov.au/urgentcare",
         urlLabel: "health.nsw.gov.au/urgentcare",
       },
@@ -179,7 +188,9 @@ const sections: Section[] = [
     id: "emergency",
     emoji: "🚨",
     title: "Emergency Contacts",
+    koTitle: "비상 연락처",
     desc: "Who to call in an emergency — keep these numbers saved",
+    koDesc: "응급 시 연락할 곳 — 이 번호를 저장해두세요",
     content: [
       {
         label: "Emergency — 000 (비상 전화 — 000)",
@@ -225,11 +236,13 @@ export default function ResourcesPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2 reveal">
-            Resources 🎒
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
+            <En>Resources 🎒</En>
+            <Ko>자료 🎒</Ko>
           </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60 reveal reveal-delay-1">
-            Essential Australian services and community resources
+          <p className="text-eucalypt/60 dark:text-dark-muted/60">
+            <En>Essential Australian services and community resources</En>
+            <Ko>호주의 필수 서비스와 지역 사회 자료</Ko>
           </p>
         </div>
       </section>
@@ -252,8 +265,14 @@ export default function ResourcesPage() {
               >
                 <span className="text-xl shrink-0">{section.emoji}</span>
                 <div className="flex-1 min-w-0">
-                  <h2 className="font-bold text-base text-eucalypt dark:text-white">{section.title}</h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">{section.desc}</p>
+                  <h2 className="font-bold text-base text-eucalypt dark:text-white">
+                    <En>{section.title}</En>
+                    <Ko>{section.koTitle || section.title}</Ko>
+                  </h2>
+                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">
+                    <En>{section.desc}</En>
+                    <Ko>{section.koDesc || section.desc}</Ko>
+                  </p>
                 </div>
                 <svg
                   className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -275,11 +294,8 @@ export default function ResourcesPage() {
                   {section.content.map((item, ii) => (
                     <div key={ii} className="px-5 py-4">
                       <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p>
-                      <div className="bg-sand/70 dark:bg-dark-surface/70 rounded-xl px-4 py-2.5 border-l-2 border-sage mb-3">
-                        <p className="text-xs font-medium text-sage mb-0.5">🇰🇷 한국어</p>
-                        <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.ko}</p>
-                      </div>
+                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
+                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.ko}</p></Ko>
                       <div>
                         <a
                           href={item.url}
@@ -301,7 +317,8 @@ export default function ResourcesPage() {
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
-            Made with 🦘 for everyone new to Australia
+            <En>Made with 🦘 for everyone new to Australia</En>
+            <Ko>호주에 처음 오시는 모든 분들을 위한 친근한 가이드입니다 🦘</Ko>
           </p>
         </div>
       </div>

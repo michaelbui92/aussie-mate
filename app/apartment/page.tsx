@@ -1,17 +1,20 @@
 "use client";
+import { En, Ko } from "@/components/LangBlocks";
 
 const sections = [
   {
     id: "application",
     emoji: "📋",
     title: "Rental Application",
+    koTitle: "임대 지원",
     desc: "Everything you need to apply for a rental property in NSW",
+    koDesc: "NSW 임대 부동산에 지원할 때 필요한 모든 것",
     color: "border-l-sunset",
     items: [
       { label: "Required documents", en: "100 points of ID — passport, visa, bank statements, payslips, rental reference", ko: "신분증 100포인트 — 여권, 비자, 은행 거래내역, 급여명세서, 이전 임대인 추천서" },
       { label: "Cover letter", en: "Short introduction: who you are, why you want this property, your income, how long you plan to stay", ko: "간단한 소개서: 본인 소개, 부동산을 원하는 이유, 수입, 거주 예정 기간" },
       { label: "Rental history", en: "Previous landlord's contact details — agents will call to verify you've kept the place well and paid on time", ko: "이전 임대인의 연락처 — 부동산 중개인이 집 상태 및 임대료 납부 이력 확인을 위해 연락함" },
-      { label: "Proof of income", en: "Recent payslips (3-6), recent tax return, or Centrelink letter showing consistent income", ko: "최근 급여명세서(3~6개월), 최근 소득세 신고서, 또는 Cenrelink 확인서" },
+      { label: "Proof of income", en: "Recent payslips (3-6), recent tax return, or Centrelink letter showing consistent income", ko: "최근 급여명세서(3~6개월), 최근 소득세 신고서, 또는 Centrelink 확인서" },
       { label: "Bond", en: "Usually 4 weeks rent — you pay it upfront and get it back at the end if the property is clean and undamaged", ko: "보통 임대료 4주분 — 입주 시 선불로 납부하고, 퇴거 시 청소 및 손상 없으면 돌려받음" },
     ],
   },
@@ -19,12 +22,14 @@ const sections = [
     id: "rights",
     emoji: "⚖️",
     title: "Tenant Rights in NSW",
+    koTitle: "NSW 임차인 권리",
     desc: "You have legal rights — know them",
+    koDesc: "법적 권리가 있습니다 — 알고 있으세요",
     color: "border-l-sage",
     items: [
       { label: "Rent increases", en: "Landlord can only increase rent once every 12 months. Must give 60 days written notice.", ko: "임대인은 12개월에 한 번만 임대료를 올릴 수 있음. 60일 전 서면 고지 필수." },
       { label: "Repairs", en: "Landlord must fix anything that affects health, safety, or basic living — within 14 days for non-urgent, immediately for urgent", ko: "임대인은 건강, 안전, 기본 생활에 영향을 미치는 문제를 수리해야 함 — 긴급하지 않은 것은 14일, 긴급한 것은 즉시" },
-      { label: "Entry notice", en: " landlord must give 24 hours written notice before entering your home (except in emergencies)", ko: "임대인은 긴급 상황을 제외하고는 입주 전 24시간 서면 고지를 해야 함" },
+      { label: "Entry notice", en: "Landlord must give 24 hours written notice before entering your home (except in emergencies)", ko: "임대인은 긴급 상황을 제외하고는 입주 전 24시간 서면 고지를 해야 함" },
       { label: "Eviction", en: "Landlord must give 90 days notice if ending a periodic lease without cause. 30 days if you're behind on rent.", ko: "임대인이 정당한 사유 없이 월세租房를 종료하려면 90일 전에 고지해야 함. 임대료 연체 시 30일." },
       { label: "No cause termination", en: "Even without a reason, landlord must give 90 days (periodic) or 30 days (fixed-term) notice to move out", ko: "이유 없이도 임대인은 퇴거 통보 시 월세租房는 90일, 정해진 기간租房는 30일 전에 고지해야 함" },
     ],
@@ -33,7 +38,9 @@ const sections = [
     id: "re-phrases",
     emoji: "🏢",
     title: "Common Real Estate Phrases",
-    desc: "What agents actually mean",
+    koTitle: "부동산常用 표현",
+    desc: "부동산 중개인이 실제로 의미하는 것",
+    koDesc: "What agents actually mean",
     color: "border-l-coast",
     items: [
       { label: '"Quiet location"', en: "It's on a main road — expect traffic noise", ko: "주 도로에 위치 — 교통 소음이 예상됨" },
@@ -49,7 +56,9 @@ const sections = [
     id: "red-flags",
     emoji: "🚩",
     title: "Red Flags to Watch",
+    koTitle: "주의해야 할 위험 신호",
     desc: "Walk away if you see these",
+    koDesc: "이런 것이 보이면 걸어 다니세요",
     color: "border-l-rose-400",
     items: [
       { label: "No formal lease", en: "Always get a written Residential Tenancy Agreement — verbal agreements are not enforceable", ko: "반드시 서면 임대차계약서를 받아야 함 — 구두 합의는 법적 구속력이 없음" },
@@ -63,7 +72,9 @@ const sections = [
     id: "costs",
     emoji: "💰",
     title: "Bills & Move-in Costs",
+    koTitle: "공과금 및 입주 비용",
     desc: "What to budget for",
+    koDesc: "예산에 포함해야 할 것들",
     color: "border-l-yellow-400",
     items: [
       { label: "Bond (보증금)", en: "Usually 4 weeks rent — paid upfront before moving in", ko: "보통 임대료의 4주분 — 입주 전에 선불로 지불" },
@@ -77,7 +88,9 @@ const sections = [
     id: "cover-letter",
     emoji: "✍️",
     title: "Cover Letter Tips",
+    koTitle: "지원서 작성 팁",
     desc: "How to write an application that stands out",
+    koDesc: "주목받는 지원서를 작성하는 방법",
     color: "border-l-purple-500",
     items: [
       { label: "Keep it short", en: "3-5 sentences. Agents read hundreds of these.", ko: "3~5문장. 중개인은 수백 통의 지원서를 읽음." },
@@ -94,8 +107,14 @@ export default function ApartmentPage() {
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2"> revealApartment Guide 🏠</h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60"> reveal reveal-delay-1Renting in NSW — your rights, your money, your home</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
+            <En>Apartment Guide 🏠</En>
+            <Ko>임대 가이드 🏠</Ko>
+          </h1>
+          <p className="text-eucalypt/60 dark:text-dark-muted/60">
+            <En>Renting in NSW — your rights, your money, your home</En>
+            <Ko>NSW 임대 —您的权利、您的钱、您的家</Ko>
+          </p>
         </div>
       </section>
 
@@ -109,16 +128,22 @@ export default function ApartmentPage() {
             <div className={`px-4 md:px-5 py-4 border-b border-sand dark:border-dark-border border-l-4 ${section.color}`}>
               <div className="flex items-center gap-2 mb-0.5">
                 <span className="text-xl shrink-0">{section.emoji}</span>
-                <h2 className="font-bold text-base md:text-lg text-eucalypt dark:text-white leading-snug">{section.title}</h2>
+                <h2 className="font-bold text-base md:text-lg text-eucalypt dark:text-white leading-snug">
+                  <En>{section.title}</En>
+                  <Ko>{section.koTitle || section.title}</Ko>
+                </h2>
               </div>
-              <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 pl-7">{section.desc}</p>
+              <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 pl-7">
+                <En>{section.desc}</En>
+                <Ko>{section.koDesc || section.desc}</Ko>
+              </p>
             </div>
             <div className="divide-y divide-sand dark:divide-dark-border">
               {section.items.map((item, ii) => (
                 <div key={ii} className="px-4 md:px-5 py-4">
                   <p className="font-semibold text-sm text-sunset mb-1.5 leading-snug">{item.label}</p>
-                  <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.en}</p>
-                  <p className="text-sm text-sage font-medium mt-1 leading-relaxed">{item.ko}</p>
+                  <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-1">{item.en}</p></En>
+                  <Ko><p className="text-sm text-sage font-medium leading-relaxed">{item.ko}</p></Ko>
                 </div>
               ))}
             </div>

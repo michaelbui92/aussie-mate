@@ -1,11 +1,14 @@
 "use client";
 import { useState } from "react";
+import { En, Ko } from "@/components/LangBlocks";
 
 interface Section {
   id: string;
   emoji: string;
   title: string;
+  koTitle?: string;
   desc: string;
+  koDesc?: string;
   content: ContentItem[];
 }
 
@@ -20,7 +23,9 @@ const sections: Section[] = [
     id: "uni-culture",
     emoji: "🏫",
     title: "Aussie Uni Culture",
+    koTitle: "호주 대학 문화",
     desc: "What university life is really like in Australia",
+    koDesc: "호주 대학생활의 실제 모습",
     content: [
       {
         label: "Large Lectures",
@@ -53,7 +58,9 @@ const sections: Section[] = [
     id: "talking-professors",
     emoji: "👨‍🏫",
     title: "Talking to Professors",
+    koTitle: "교수님과 대화하기",
     desc: "Email etiquette, office hours, and asking for help",
+    koDesc: "이메일 예절, 오피스 아워, 도움 요청법",
     content: [
       {
         label: "Email Etiquette (이메일 예절)",
@@ -63,12 +70,12 @@ const sections: Section[] = [
       {
         label: "Office Hours (오피스 아워)",
         en: "Most professors have weekly office hours — drop-in times when you can visit their office without an appointment. Use these! Ask about assignments, lecture content, or career advice. They appreciate students who seek help.",
-        ko: "대부분의 교수는 주간 오피스 아워가 있습니다 — 예약 없이 방문할 수 있는 시간입니다. 활용하세요! 과제, 강의 내용, 진로 상담에 대해 물어보세요. 도움을 구하는 학생을 좋아합니다.",
+        ko: "대부분의 교수들은 주간 오피스 아워가 있습니다 — 예약 없이 방문할 수 있는 시간입니다. 활용하세요! 과제, 강의 내용, 진로 상담에 대해 물어보세요. 도움을 구하는 학생을 좋아합니다.",
       },
       {
         label: "How to Ask for an Extension (연기 요청)",
         en: "If you need an extension on an assignment, email your lecturer before the deadline. Explain your situation briefly (illness, family emergency, etc.) and suggest how many extra days you need. Medical certificates help. Most lecturers are reasonable if you ask early.",
-        ko: "과제 연기가 필요하면 마감일 전에 교수님께 이메일을 보내세요. 상황(질병, 가족 경조사 등)을 간략히 설명하고 필요한 추가 일수를 제안하세요. 진단서가 도움이 됩니다. 미리 요청하면 대부분의 교수는 합리적으로 대응합니다.",
+        ko: "과제 연기가 필요하면 마감일 전에 교수님께 이메일을 보내세요. 상황(질병, 가족 경조사 등)을 간략히 설명하고 필요한 추가 일수를 제안하세요. 진단서가 도움이 됩니다. 미리 요청하면 대부분의 교수들은 합리적으로 대응합니다.",
       },
       {
         label: "Debate is Encouraged",
@@ -86,7 +93,9 @@ const sections: Section[] = [
     id: "group-work",
     emoji: "👥",
     title: "Group Work",
+    koTitle: "그룹 작업",
     desc: "How group assignments work and how to survive them",
+    koDesc: "그룹 과제가 어떻게 운영되는지, 생존하는 방법",
     content: [
       {
         label: "How Groups Are Formed",
@@ -96,7 +105,7 @@ const sections: Section[] = [
       {
         label: "Group Size (그룹 규모)",
         en: "Usually 2-4 people. Some larger subjects might have groups of 5-6. Everyone is expected to contribute equally. The assignment will have one mark for the whole group — so team dynamics matter.",
-        ko: "보통 2-4명입니다. 큰 과목은 5-6명일 수도 있습니다. 모두가 동등하게 기여해야 합니다. 과제는 그룹 전체에 하나의 점수가 부여됩니다 — �워크 다이나믹스가 중요합니다.",
+        ko: "보통 2-4명입니다. 큰 과목은 5-6명일 수도 있습니다. 모두가 동등하게 기여해야 합니다. 과제는 그룹 전체에 하나의 점수가 부여됩니다 — 팀 다이나믹스가 중요합니다.",
       },
       {
         label: "Dealing with Free-Riders (무임승차자 대처법)",
@@ -119,7 +128,9 @@ const sections: Section[] = [
     id: "academic-integrity",
     emoji: "📚",
     title: "Academic Integrity",
+    koTitle: "학술 무결성",
     desc: "Plagiarism, AI use, and referencing — the rules are strict",
+    koDesc: "표절, AI 사용, 인용 — 규칙이 엄격합니다",
     content: [
       {
         label: "What is Plagiarism? (표절이란?)",
@@ -152,7 +163,9 @@ const sections: Section[] = [
     id: "special-consideration",
     emoji: "📋",
     title: "Special Consideration",
+    koTitle: "특별 고려",
     desc: "What to do if illness or circumstances affect your studies",
+    koDesc: "질병이나 상황으로 학업에 영향을 받을 때 대처 방법",
     content: [
       {
         label: "What is Special Consideration? (특별 고려)",
@@ -185,7 +198,9 @@ const sections: Section[] = [
     id: "grades",
     emoji: "🎯",
     title: "Grades Explained",
+    koTitle: "성적 체계 이해",
     desc: "Understanding the Australian grading system",
+    koDesc: "호주 성적 평가 시스템 이해",
     content: [
       {
         label: "Grade Scale (성적 체계)",
@@ -233,11 +248,13 @@ export default function StudyPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2"> reveal
-            Study 🎓
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
+            <En>Study 🎓</En>
+            <Ko>학습 🎓</Ko>
           </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60"> reveal reveal-delay-1
-            University life, academic culture, and grades in Australia
+          <p className="text-eucalypt/60 dark:text-dark-muted/60">
+            <En>University life, academic culture, and grades in Australia</En>
+            <Ko>호주의 대학 생활, 학문 문화, 성적 체계</Ko>
           </p>
         </div>
       </section>
@@ -260,8 +277,14 @@ export default function StudyPage() {
               >
                 <span className="text-xl shrink-0">{section.emoji}</span>
                 <div className="flex-1 min-w-0 pr-2">
-                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">{section.title}</h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">{section.desc}</p>
+                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
+                    <En>{section.title}</En>
+                    <Ko>{section.koTitle || section.title}</Ko>
+                  </h2>
+                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">
+                    <En>{section.desc}</En>
+                    <Ko>{section.koDesc || section.desc}</Ko>
+                  </p>
                 </div>
                 <svg
                   className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -284,11 +307,8 @@ export default function StudyPage() {
                   {section.content.map((item, ii) => (
                     <div key={ii} className="px-5 py-4">
                       <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p>
-                      <div className="bg-sand/70 dark:bg-dark-surface/70 rounded-xl px-4 py-2.5 border-l-2 border-sage">
-                        <p className="text-xs font-medium text-sage mb-0.5">🇰🇷 한국어</p>
-                        <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.ko}</p>
-                      </div>
+                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
+                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.ko}</p></Ko>
                     </div>
                   ))}
                 </div>
@@ -300,9 +320,12 @@ export default function StudyPage() {
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
-            Need academic support? Visit your university's{' '}
-            <span className="text-sunset font-semibold">Student Wellbeing</span> or{' '}
-            <span className="text-sunset font-semibold">Academic Skills</span> office — free help is always available.
+            <En>Need academic support? Visit your university's{' '}
+              <span className="text-sunset font-semibold">Student Wellbeing</span> or{' '}
+              <span className="text-sunset font-semibold">Academic Skills</span> office — free help is always available.</En>
+            <Ko>학업적 지원이 필요하세요? 대학의{' '}
+              <span className="text-sunset font-semibold">학생 복지</span> 또는{' '}
+              <span className="text-sunset font-semibold">학업 기술</span> 부서를 방문하세요 — 무료 도움이 항상 제공됩니다.</Ko>
           </p>
         </div>
       </div>

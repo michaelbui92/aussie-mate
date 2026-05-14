@@ -1,11 +1,14 @@
 "use client";
 import { useState } from "react";
+import { En, Ko } from "@/components/LangBlocks";
 
 interface Section {
   id: string;
   emoji: string;
   title: string;
+  koTitle?: string;
   desc: string;
+  koDesc?: string;
   content: ContentItem[];
 }
 
@@ -20,7 +23,9 @@ const sections: Section[] = [
     id: "workplace-culture",
     emoji: "🤝",
     title: "Workplace Culture",
+    koTitle: "직장 문화",
     desc: "What makes Aussie workplaces different",
+    koDesc: "호주 직장이 다른 점",
     content: [
       {
         label: "Direct Communication",
@@ -53,131 +58,129 @@ const sections: Section[] = [
     id: "speaking-up",
     emoji: "🗣️",
     title: "Speaking Up",
+    koTitle: "의견 표출",
     desc: "How to raise concerns and give feedback at work",
+    koDesc: "직장에서 문제를 제기하고 피드백을 주는 방법",
     content: [
       {
         label: "Direct Feedback is Normal",
         en: "Aussies will tell you directly if there's an issue. This is not personal — it's professional. Don't take it as an attack. And equally, you are expected to speak up if something isn't right.",
-        ko: "호주인들은 문제가 있으면 직접 말합니다. 개인적인 게 아니라 업무적인 겁니다. 공격으로 받아들이지 마세요. 그리고 마찬가지로, 문제가 있으면 당신도 의견을 말해야 합니다.",
+        ko: "호주인들은 문제가 있으면 바로 말해줍니다. 개인적인 게 아니라 전문적인 것입니다. 공격으로 받아들이지 마세요. 반대로, 무언가 잘못되었으면 당신도 의문을 제기해야 합니다.",
       },
       {
-        label: "How to Raise Concerns",
-        en: "Use 'I feel/I think' statements. Say: 'I think there might be an issue with this deadline' or 'I feel I need more support on this task'. Be calm, factual, and solution-oriented. Managers respect this.",
-        ko: "'저는 ~라고 생각합니다' 표현을 사용하세요. '이 마감일에 문제가 있는 것 같습니다' 또는 '이 작업에 지원이 더 필요하다고 느낍니다'라고 말하세요. 침착하고 사실 중심으로, 해결책을 함께 제시하세요. 매니저들은 이를 존중합니다.",
+        label: "How to Raise Issues",
+        en: "Start with facts, not emotions. 'I've noticed X happens and it causes Y problem' is better than 'X always ruins everything'. Be specific, be calm, suggest a solution if you have one.",
+        ko: "감정보다 사실부터 말하세요. 'X가 일어나고 Y문제를 야기한다는 것을 확인했습니다'가 'X가 항상 모든 걸 망칩니다'보다 좋습니다. 구체적으로, 침착하게, 해결책이 있다면 제안하세요.",
       },
       {
-        label: "Performance Reviews",
-        en: "Most workplaces have regular check-ins (weekly/monthly one-on-ones). Use these to discuss workload, career goals, and any concerns. It's not just for your boss to talk — it's for you too.",
-        ko: "대부분의 직장에는 정기적인 면담(주간/월간 원온원)이 있습니다. 업무량, 경력 목표, 우려사항을 논의하세요. 상사만 말하는 자리가 아닙니다 — 당신의 의견도 중요합니다.",
+        label: "Know Your Rights",
+        en: "In Australia, it's illegal to fire someone for raising a workplace issue (this is called 'adverse action'). If you feel you've been treated unfairly after raising a concern, you have legal protections.",
+        ko: "호주에서는 직장 문제를 제기한 사람을 해고하는 것은 불법입니다('부당한 행위'라고 합니다). 문제 제기 후 불공정하게 대우받았다고 느끼면 법적 보호를 받을 수 있습니다.",
       },
       {
-        label: "Handling Conflict",
-        en: "If there's conflict with a coworker, try to resolve it directly and calmly first. If that doesn't work, speak to your manager or HR. Harassment and bullying are taken very seriously in Australia.",
-        ko: "동료와 갈등이 있다면 먼저 직접적이고 침착하게 해결해 보세요. 안 되면 매니저나 HR(인사부)에 이야기하세요. 호주에서는 괴롭힘과 왕따를 매우 심각하게 다룹니다.",
+        label: "Constructive vs Destructive",
+        en: "Feedback is valued — but destructively criticising colleagues or managers is not. If you have a serious issue with someone, handle it privately and respectfully, not in front of others.",
+        ko: "피드백은 높이評価됩니다 — 하지만 동료나 상사를 건설적으로 비판하지 않는 것은 문제가 있습니다. 누군가와 심각한 문제가 있으면 공개적으로 아닌 조용하고 존중하게 처리하세요.",
       },
     ],
   },
   {
     id: "casual-permanent",
-    emoji: "📄",
+    emoji: "📋",
     title: "Casual vs Permanent",
-    desc: "The different employment types and what they mean",
+    koTitle: "캐주얼 대 정규직",
+    desc: "Understanding your employment type",
+    koDesc: "고용 형태 이해하기",
     content: [
       {
-        label: "Casual Employee (캐주얼/임시직)",
-        en: "No fixed hours. You get paid a higher hourly rate (casual loading — usually 25% extra) instead of sick leave or annual leave. Either you or the employer can end the arrangement with little notice. Common in hospitality, retail, and labour.",
-        ko: "고정 시간이 없습니다. 병가나 연차 대신 더 높은 시급(캐주얼 로딩 — 보통 25% 추가)을 받습니다. 본인이나 고용주 모두 짧은 통보로 계약을 끝낼 수 있습니다. 주로 접객업, 소매업, 노무직에서 흔합니다.",
+        label: "What is a Casual?",
+        en: "A casual employee has no guaranteed hours and can be offered work when available. They receive a 25% 'casual loading' extra pay on top of the base rate to compensate for lack of sick leave and holiday pay.",
+        ko: "캐주얼 직원은 보장된 근무 시간이 없으며 가능한 경우 근무를 제공받을 수 있습니다. 연간 휴가와 병가 지급이 없음을 보상하기 위해 기본급에 25%의 '캐주얼 로딩' 추가 급여를 받습니다.",
       },
       {
-        label: "Permanent Full-Time (정규직 풀타임)",
-        en: "Fixed hours (usually 38 hours/week). You get paid annual leave (4 weeks/year), sick leave (10 days/year), and public holidays off. Job is ongoing unless you resign or are made redundant.",
-        ko: "고정 시간(보통 주 38시간)입니다. 연차(연 4주), 병가(연 10일), 공휴일 휴무 혜택이 있습니다. 사직하거나 정리해고되지 않는 한 고용이 계속됩니다.",
+        label: "What is a Permanent Employee?",
+        en: "Permanent employees (also called 'full-time') have guaranteed minimum hours and receive sick leave, annual leave (holiday pay), and other benefits. Most Australians are permanent employees.",
+        ko: "정규 직원('전일제'라고도 함)은 보장된 최소 근무 시간을 가지고 있으며 병가, 연차 휴가(휴식 근무), 기타 혜택을 받습니다. 대부분의 호주인은 정규 직원입니다.",
       },
       {
-        label: "Permanent Part-Time (정규직 파트타임)",
-        en: "Same benefits as full-time but fewer hours. You get annual leave and sick leave calculated proportionally. Often used by students, parents, or people with other commitments.",
-        ko: "풀타임과 혜택은 같지만 시간이 적습니다. 연차와 병가도 비례해서 계산됩니다. 주로 학생, 학부모, 또는 다른 약속이 있는 사람들이 사용합니다.",
+        label: "Converting from Casual to Permanent",
+        en: "After 6-12 months of regular shifts, a casual employee can request to become permanent. Employers don't have to say yes, but many do if you've been reliable. It's worth asking — permanent means security and benefits.",
+        ko: "6-12개월 동안 정기적으로 근무한 후 캐주얼 직원은 정규직 전환을 요청할 수 있습니다. 고용주가 반드시 승인해야 하는 것은 아니지만, 당신이 신뢰할 수 있었다면 많은 경우 승낙합니다. 요청할 가치가 있습니다 — 정규직은 안정성과 혜택을 의미합니다.",
       },
       {
-        label: "Fixed-Term Contract (계약직)",
-        en: "Employment for a set period (e.g. 6 months, 1 year). You get the same benefits as permanent employees during the contract. When the contract ends, so does the employment — no notice required.",
-        ko: "정해진 기간(예: 6개월, 1년) 동안 고용됩니다. 계약 기간 동안 정규직과 동일한 혜택을 받습니다. 계약이 끝나면 고용도 종료됩니다 — 별도 통보가 필요 없습니다.",
-      },
-      {
-        label: "Probation Period (수습 기간)",
-        en: "Most permanent jobs have a 3-6 month probation period. During this time, either side can end the job with just 1 week notice. Use this time to see if the role is right for you too.",
-        ko: "대부분의 정규직에는 3-6개월의 수습 기간이 있습니다. 이 기간 동안 양측 모두 1주의 통보 기간만으로 고용을 종료할 수 있습니다. 이 기간을 통해 역할이 자신에게 맞는지 확인하세요.",
+        label: "Part-Time",
+        en: "Part-time employees work set hours (less than 38 per week) and receive prorated sick and annual leave. A part-time employee can increase their hours by agreement with their employer.",
+        ko: "파트타임 직원은 정해진 근무 시간(주 38시간 미만)으로 근무하며 비례 계산된 병가와 연차를 받습니다. 파트타임 직원은 고용주와 합의하여 근무 시간을 늘릴 수 있습니다.",
       },
     ],
   },
   {
     id: "award-super",
     emoji: "💰",
-    title: "Award Rates & Super",
-    desc: "Your pay, entitlements, and retirement savings",
+    title: "Award & Super",
+    koTitle: "급여와 퇴직금",
+    desc: "Minimum pay standards and superannuation",
+    koDesc: "최저 임금 기준과 퇴직연금",
     content: [
       {
-        label: "What is an Award? (어워드/최저임금 기준)",
-        en: "An 'Award' is a legal document that sets minimum pay rates and conditions for a specific industry. For example, the Hospitality Award covers restaurants and cafes. Your pay must meet or exceed your Award rate.",
-        ko: "'어워드'는 특정 업종의 최저 임금과 근무 조건을 정한 법적 문서입니다. 예를 들어, Hospitality Award는 레스토랑과 카페를 규율합니다. 당신의 임금은 해당 어워드 기준을 충족하거나 초과해야 합니다.",
+        label: "What is an Award?",
+        en: "An Award is a legal document that sets minimum pay and conditions for specific industries or jobs. If you're in a job covered by an Award, you must be paid at least the Award rate — not less.",
+        ko: "Award는 특정 업종이나 직종에 대한 최저 임금과 근무 조건을 정한 법적 문서입니다. Award 적용 대상 직종에 있다면 최소한 Award 임금률을 받아야 합니다.",
       },
       {
         label: "Minimum Wage",
-        en: "As of 2025-26, the national minimum wage is approximately $24.10 per hour. Award rates may be higher depending on your industry and role. Check the Fair Work Ombudsman website to confirm.",
-        ko: "2025-26년 기준, 호주 국가 최저임금은 시간당 약 $24.10입니다. 업종과 직무에 따라 어워드 요율이 더 높을 수 있습니다. Fair Work Ombudsman 웹사이트에서 확인하세요.",
+        en: "Australia has a national minimum wage. As of 2024, it's approximately $23 per hour for adult employees. This applies if no Award covers your job.",
+        ko: "호주에는 전국 최저 임금이 있습니다. 2024년 기준 성인 직원 기준 시간당 약 $23입니다. Award 적용 대상이 아닌 경우 이 임금이 적용됩니다.",
       },
       {
-        label: "Penalty Rates (가산 수당)",
-        en: "Working evenings, weekends, or public holidays usually means higher pay. For example, casual hospitality workers on Saturday night might earn 175% of their base rate. Time-and-a-half or double-time are common terms.",
-        ko: "저녁, 주말, 공휴일 근무는 일반적으로 더 높은 임금을 받습니다. 예를 들어, 토요일 밤 캐주얼 접객업 직원은 기본 시급의 175%를 받을 수 있습니다. 'Time-and-a-half'(1.5배)나 'Double-time'(2배)이 일반적인 용어입니다.",
+        label: "Superannuation",
+        en: "Superannuation (super) is money your employer must pay into your super fund — currently 11.5% of your wages. It goes into your nominated super fund and is accessible when you retire.",
+        ko: "퇴직연금(super)은 고용주가 당신의 퇴직연금 계좌에 납부해야 하는 금액으로, 현재 임금의 11.5%입니다. 지정한 퇴직연금 계좌에 납부되며退休時に利用可能집니다.",
       },
       {
-        label: "Superannuation (슈퍼/퇴직연금)",
-        en: "Super is money your employer pays into a retirement fund for you. As of 2025, employers must pay 11.5% of your ordinary earnings into your super account. This is on top of your salary — it's not deducted from your pay. You can access it when you retire (currently age 60-67 depending on your birth year).",
-        ko: "슈퍼는 고용주가 당신의 퇴직 기금에 납입하는 돈입니다. 2025년 기준, 고용주는 당신의 일반 소득의 11.5%를 슈퍼 계좌에 납입해야 합니다. 이건 급여 외에 추가로 지급되는 것이며, 급여에서 공제되지 않습니다. 은퇴 시(현재 출생연도에 따라 60-67세) 사용할 수 있습니다.",
-      },
-      {
-        label: "Choosing a Super Fund",
-        en: "You can choose your own super fund. If you don't choose one, your employer will use their default fund (often called a 'MySuper' product). Compare fees and insurance options. Popular funds include AustralianSuper, Hostplus, and REST.",
-        ko: "슈퍼 펀드를 직접 선택할 수 있습니다. 선택하지 않으면 고용주가 기본 펀드(보통 'MySuper' 상품)를 사용합니다. 수수료와 보험 옵션을 비교하세요. 인기 펀드는 AustralianSuper, Hostplus, REST 등이 있습니다.",
-      },
-      {
-        label: "Payslip (급여명세서)",
-        en: "Your employer must give you a payslip within 1 day of payday. It shows your pay, hours worked, tax withheld, and super contributions. Keep all payslips — you'll need them for tax returns.",
-        ko: "고용주는 급여일로부터 1일 이내에 급여명세서를 제공해야 합니다. 급여, 근무 시간, 원천징수 세금, 슈퍼 기여금이 표시됩니다. 모든 급여명세서를 보관하세요 — 세금 신고에 필요합니다.",
+        label: "Payslips",
+        en: "You must receive a payslip within 1 day of being paid. It must show: your hours, pay rate, any overtime, deductions, and super contributions. You can check your pay against the Award or minimum wage online.",
+        ko: "급여를 받은 후 1일 이내에 급여 명세서를 받아야 합니다. 근무 시간, 임금률, 야근 수당, 공제, 퇴직연금 기여금을 표시해야 합니다. Award 또는 최저 임금에 맞게 급여를 확인할 수 있습니다.",
       },
     ],
   },
   {
     id: "casual-rights",
     emoji: "🛡️",
-    title: "Your Rights as a Casual",
-    desc: "What casual workers are entitled to",
+    title: "Casual Rights",
+    koTitle: "캐주얼 노동자 권리",
+    desc: "Your rights as a casual worker in Australia",
+    koDesc: "호주 캐주얼 노동자의 권리",
     content: [
       {
-        label: "Can Refuse Extra Hours",
-        en: "As a casual, you can say no to extra shifts without punishment. You don't have a guaranteed minimum hours, but you also can't be forced to work when you're not available.",
-        ko: "캐주얼 직원은 추가 근무를 거부해도 불이익이 없습니다. 보장된 최소 시간은 없지만, 가능하지 않은 시간에 강제로 일할 의무도 없습니다.",
+        label: "You're Allowed to Say No",
+        en: "As a casual, you can refuse a shift. You don't have to give a reason. However, if you consistently refuse available shifts, the employer may reduce the shifts they offer you.",
+        ko: "캐주얼로서 근무를 거절할 수 있습니다. 이유를 제공할 필요가 없습니다. 그러나 계속 이용 가능한 근무를 거절하면 고용주가 제공하는 근무 시간을 줄일 수 있습니다.",
       },
       {
-        label: "Must Get Breaks",
-        en: "If you work more than 5 hours, you're entitled to a 30-minute unpaid break. Some awards require a break after 4 hours. You also get a 10-minute paid rest break for every 4 hours worked in some industries.",
-        ko: "5시간 이상 근무 시 30분의 무급 휴게 시간이 보장됩니다. 일부 어워드는 4시간 후 휴식을 요구합니다. 일부 업종에서는 4시간 근무마다 10분 유급 휴식이 있습니다.",
+        label: "Casual Conversion",
+        en: "After 6 months (12 months for small businesses), your employer must offer you permanent part-time or full-time work if you've worked regular hours. You can also request conversion yourself at any time.",
+        ko: "6개월 후(소기업은 12개월) 정규 근무를 해왔다면 고용주가 정규 파트타임 또는 전일제 근무를 제안해야 합니다. 언제든지 본인이 직접 전환을 요청할 수도 있습니다.",
       },
       {
-        label: "Right to Refuse Unsafe Work",
-        en: "You have the right to refuse any task you reasonably believe is unsafe — without punishment. If equipment is broken, training is insufficient, or conditions are dangerous, speak up immediately.",
-        ko: "합리적으로 안전하지 않다고 판단되는 작업은 처벌 없이 거부할 권리가 있습니다. 장비가 고장났거나, 교육이 부족하거나, 조건이 위험하다면 즉시 말하세요.",
+        label: "Protection from Unfair Dismissal",
+        en: "Casual employees who have been working regular hours for 6+ months are protected from unfair dismissal. If fired without proper reason, you can make a claim to the Fair Work Commission.",
+        ko: "정규 근무를 6개월 이상 해온 캐주얼 직원은 부당한 해고로부터 보호받습니다. 정당한 이유 없이 해고되면 공정노동위원회에 청구할 수 있습니다.",
       },
       {
-        label: "Casual Conversion (정규직 전환권)",
-        en: "After 12 months of regular, predictable work, you may have the right to request conversion to permanent part-time or full-time. Your employer must consider it and can only refuse on reasonable grounds.",
-        ko: "12개월 동안 규칙적이고 예측 가능한 근무를 한 경우, 정규직(파트타임 또는 풀타임) 전환을 요청할 권리가 있을 수 있습니다. 고용주는 이를 검토해야 하며, 합리적인 사유가 있을 때만 거절할 수 있습니다.",
+        label: "Paid Leave Entitlements",
+        en: "Casuals do NOT get paid sick leave or annual leave. That's why the 25% casual loading exists — it compensates for this. However, casual employees can still access unpaid carer's leave and compassionate leave.",
+        ko: "캐주얼 직원은 유급 병가나 연차 휴가를 받지 않습니다. 그래서 25% 캐주얼 로딩이 존재합니다 — 이를 보상하기 위함입니다. 그러나 캐주얼 직원도 무급 간병인 휴가와 조기 휴가를利用할 수 있습니다.",
       },
       {
-        label: "Unfair Dismissal",
-        en: "Casual employees who have worked for more than 6 months (or 12 months for small businesses) are protected from unfair dismissal. You cannot be fired for discriminatory reasons or for exercising your workplace rights.",
-        ko: "6개월 이상(소기업은 12개월) 근무한 캐주얼 직원은 부당 해고로부터 보호받습니다. 차별적 이유나 직장 권리 행사를 이유로 해고될 수 없습니다.",
+        label: "WorkSafe Rights",
+        en: "You have the right to a safe workplace. If you feel unsafe or are asked to do something dangerous, you can refuse the work and report the employer. No employer can punish you for raising safety concerns.",
+        ko: "안전한 근무 환경에 대한 권리가 있습니다. 안전하지 않다고 느끼거나 위험한 것을 하도록 요청받으면 작업을 거부하고 고용주를 신고할 수 있습니다. 안전 문제를 제기한 직원을 처벌할 수 없습니다.",
+      },
+      {
+        label: "Unfair Contracts",
+        en: "If your employment contract has unreasonable terms, the Fair Work Commission can review and vary it. Don't feel locked into a bad contract — get advice if something seems wrong.",
+        ko: "고용 계약에不合理한 조항이 있으면 공정노동위원회가 검토하고 변경할 수 있습니다. 불공평한 계약에 묶이지 마세요 — 무언가 잘못된 것 같으면 조언을 구하세요.",
       },
     ],
   },
@@ -185,7 +188,9 @@ const sections: Section[] = [
     id: "first-week",
     emoji: "🌟",
     title: "First Week Tips",
+    koTitle: "첫째 주 팁",
     desc: "How to make a great first impression",
+    koDesc: "좋은 첫 인상을 만드는 방법",
     content: [
       {
         label: "Arrive on Time (정시 도착)",
@@ -233,11 +238,13 @@ export default function WorkplacePage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2"> reveal
-            Workplace 💼
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
+            <En>Workplace 💼</En>
+            <Ko>직장 💼</Ko>
           </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60"> reveal reveal-delay-1
-            Aussie work culture, your rights, pay, and first-week tips
+          <p className="text-eucalypt/60 dark:text-dark-muted/60">
+            <En>Aussie work culture, your rights, pay, and first-week tips</En>
+            <Ko>호주 직장 문화, 노동자 권리, 급여, 첫째 주 팁</Ko>
           </p>
         </div>
       </section>
@@ -260,8 +267,14 @@ export default function WorkplacePage() {
               >
                 <span className="text-xl shrink-0">{section.emoji}</span>
                 <div className="flex-1 min-w-0 pr-2">
-                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">{section.title}</h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">{section.desc}</p>
+                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
+                    <En>{section.title}</En>
+                    <Ko>{section.koTitle || section.title}</Ko>
+                  </h2>
+                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">
+                    <En>{section.desc}</En>
+                    <Ko>{section.koDesc || section.desc}</Ko>
+                  </p>
                 </div>
                 <svg
                   className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -284,11 +297,8 @@ export default function WorkplacePage() {
                   {section.content.map((item, ii) => (
                     <div key={ii} className="px-5 py-4">
                       <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p>
-                      <div className="bg-sand/70 dark:bg-dark-surface/70 rounded-xl px-4 py-2.5 border-l-2 border-sage">
-                        <p className="text-xs font-medium text-sage mb-0.5">🇰🇷 한국어</p>
-                        <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.ko}</p>
-                      </div>
+                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
+                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.ko}</p></Ko>
                     </div>
                   ))}
                 </div>
@@ -300,11 +310,16 @@ export default function WorkplacePage() {
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
-            Need help with workplace issues? Contact{' '}
-            <a href="https://www.fairwork.gov.au" target="_blank" rel="noopener" className="text-sunset font-semibold hover:underline">
-              Fair Work Ombudsman
-            </a>{' '}
-            — free, confidential advice for all workers in Australia.
+            <En>Need help with workplace issues? Contact{' '}
+              <a href="https://www.fairwork.gov.au" target="_blank" rel="noopener" className="text-sunset font-semibold hover:underline">
+                Fair Work Ombudsman
+              </a>{' '}
+              — free, confidential advice for all workers in Australia.</En>
+            <Ko>직장 문제가 있나요?{' '}
+              <a href="https://www.fairwork.gov.au" target="_blank" rel="noopener" className="text-sunset font-semibold hover:underline">
+                Fair Work Ombudsman
+              </a>{' '}
+              에 연락하세요 — 호주 모든 노동자를 위한 무료 비밀 조언.</Ko>
           </p>
         </div>
       </div>
