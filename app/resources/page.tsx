@@ -247,6 +247,55 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* Emergency banner — always visible, not buried in accordions */}
+      <div className="max-w-2xl mx-auto px-4 pt-8">
+        <div className="bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/30 rounded-2xl p-4">
+          <div className="flex items-start gap-3">
+            <span className="text-rose-500 text-lg shrink-0 mt-0.5">🚨</span>
+            <div className="flex-1 min-w-0">
+              <h2 className="font-bold text-sm text-rose-700 dark:text-rose-400 mb-2">
+                <En>Emergency — save these numbers</En>
+                <Ko>응급 — 이 번호를 저장하세요</Ko>
+              </h2>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
+                  <p className="font-bold text-rose-600 dark:text-rose-500 text-base">000</p>
+                  <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
+                    <En>Police, Fire, Ambulance</En>
+                    <Ko>경찰, 소방, 구급</Ko>
+                  </p>
+                </div>
+                <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
+                  <p className="font-bold text-rose-600 dark:text-rose-500 text-base">13 11 26</p>
+                  <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
+                    <En>Poisons Info</En>
+                    <Ko>독극물 정보</Ko>
+                  </p>
+                </div>
+                <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
+                  <p className="font-bold text-rose-600 dark:text-rose-500 text-base">13 11 14</p>
+                  <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
+                    <En>Lifeline 24/7</En>
+                    <Ko>라이프라인 24시간</Ko>
+                  </p>
+                </div>
+                <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
+                  <p className="font-bold text-rose-600 dark:text-rose-500 text-base">1300 224 636</p>
+                  <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
+                    <En>Beyond Blue</En>
+                    <Ko>비욘드 블루</Ko>
+                  </p>
+                </div>
+              </div>
+              <p className="text-xs text-rose-600/70 dark:text-rose-400/60 mt-2">
+                <En>For non-emergencies: <span className="font-semibold">SES 132 500</span> (storms, floods) · <span className="font-semibold">Crime Stoppers 1800 333 000</span></En>
+                <Ko>비응급: <span className="font-semibold">SES 132 500</span> (폭풍, 홍수) · <span className="font-semibold">Crime Stoppers 1800 333 000</span></Ko>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Content */}
       <div className="max-w-2xl mx-auto px-4 py-10 space-y-4">
         {sections.map((section, si) => {
