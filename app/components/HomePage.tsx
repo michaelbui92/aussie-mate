@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { En, Ko } from "@/components/LangBlocks";
-import { openSearch } from "@/components/SearchModal";
+import { useSearch } from "@/components/SearchModal";
 
 const categories = [
   {
@@ -68,6 +68,8 @@ const categories = [
 ];
 
 export default function HomePage() {
+  const { openSearch } = useSearch();
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -86,7 +88,7 @@ export default function HomePage() {
 
           <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-6 max-w-md mx-auto">
             <En>Your friendly guide to Aussie English, renting, working, studying, and everything in between.</En>
-            <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 ���이드입니다.</Ko>
+            <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 가이드입니다.</Ko>
           </p>
 
           {/* Search bar */}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useLang } from "@/components/LangBlocks";
-import { openSearch } from "@/components/SearchModal";
+import { useSearch } from "@/components/SearchModal";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,6 +20,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const { lang, setLang } = useLang();
+  const { openSearch } = useSearch();
 
   return (
     <nav className="sticky top-0 z-50 bg-cream/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-sand dark:border-dark-border">

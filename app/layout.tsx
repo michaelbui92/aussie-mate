@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LangProvider } from "@/components/LangBlocks";
+import { SearchProvider } from "@/components/SearchModal";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans } from "@/lib/fonts";
@@ -22,12 +23,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${geistSans.className} bg-cream dark:bg-darkbg text-eucalypt dark:text-dark-muted transition-colors duration-300`}>
         <ThemeProvider>
           <LangProvider>
-            <Nav />
-            <main className="min-h-screen">
-              <PageTransition>{children}</PageTransition>
-            <SearchModal />
-            </main>
-            <Footer />
+            <SearchProvider>
+              <Nav />
+              <main className="min-h-screen">
+                <PageTransition>{children}</PageTransition>
+                <SearchModal />
+              </main>
+              <Footer />
+            </SearchProvider>
           </LangProvider>
         </ThemeProvider>
       </body>
