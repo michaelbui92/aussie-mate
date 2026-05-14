@@ -3,6 +3,21 @@ import { En, Ko } from "@/components/LangBlocks";
 
 const sections = [
   {
+    id: "search",
+    emoji: "🔍",
+    title: "Finding a Place",
+    koTitle: "부동산 찾기",
+    desc: "Where to search and what to know",
+    koDesc: "검색 방법과 알아야 할 것",
+    color: "border-l-sunset",
+    items: [
+      { label: "Flatmates.com.au", en: "The most popular option in Australia for rooms and housemates. Filter by location, budget, move-in date, and lifestyle preferences (smoking, pets, gender). Flatmates.com.au also handles the lease and bond through their platform — making it cleaner than private arrangements. Both renters and rooms are listed, so you can search for a place or list yourself as looking.", ko: "호주에서 가장 인기 있는 방 및 룸메이트 검색 플랫폼입니다. 위치, 예산, 입주일, 라이프스타일 선호도(흡연, 반려동물, 성별)로 필터링할 수 있습니다. Flatmates.com.au는 플랫폼을 통해 임대차 계약과 보증금도 처리，所以在私��安排中更干净.租房者和房源都可以发布，所以可以搜房或登记为求租者.", url: "https://flatmates.com.au" },
+      { label: "Domain", en: "Mainstream real estate site with the largest selection of rental listings. Has a Korean language option in some areas. Best for people who want their own apartment rather than a room in a shared house.", ko: "가장 큰 임대 목록을 갖춘主流 부동산 사이트입니다. 일부 지역에서 한국어 옵션이 있습니다. 셰어하우스의 방이 아닌 자신만의 아파트를 원하는 분에게最適입니다.", url: "https://domain.com.au" },
+      { label: "Realestate.com.au", en: "Another major real estate portal. Similar to Domain in scope. Both sites list real estate agents' rentals, not private landlords.", ko: "또 다른 주요 부동산 포털입니다. 범위는 Domain과 유사합니다. 두 사이트 모두 부동산 중개인의 임대 목록만 있습니다.", url: "https://realestate.com.au" },
+      { label: "Facebook Marketplace", en: "Can have private listings and cheaper options, but also more scams. Always verify the property exists before paying anything. Do not transfer money to someone you haven't met.", ko: "개인 listings와 더 저렴한选项이 있을 수 있지만, 사기도更多입니다. 돈을 지불하기 전에 부동산이 실제로存在하는지 확인하세요. 만난 적 없는 사람에게 송금하지 마세요.", url: "https://facebook.com/marketplace" },
+    ],
+  },
+  {
     id: "application",
     emoji: "📋",
     title: "Rental Application",
