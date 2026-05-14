@@ -72,33 +72,30 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-16 pb-24 px-4">
         {/* Background decoration — floating elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <span className="absolute top-8 left-8 text-7xl opacity-10 animate-drift">🦘</span>
-          <span className="absolute top-20 right-16 text-5xl opacity-8 animate-drift-slow">🌿</span>
-          <span className="absolute bottom-12 left-1/4 text-6xl opacity-6 animate-drift">☀️</span>
-          <span className="absolute bottom-8 right-12 text-4xl opacity-5 animate-drift-slow">🌊</span>
+
         </div>
 
         <div className="max-w-2xl mx-auto text-center relative">
-          <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6 reveal">
+          <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6">
             <En><span className="text-sunset text-sm font-semibold">New in Australia?</span></En>
             <Ko><span className="text-sunset text-sm font-semibold">호주에 처음 오신 분들에게</span></Ko>
             <span className="text-eucalypt/50 text-sm">We've got you</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-eucalypt dark:text-white mb-4 reveal reveal-delay-1">
+          <h1 className="text-5xl md:text-6xl font-bold text-eucalypt dark:text-white mb-4">
             <En>Welcome to<br />
             <span className="text-sunset">Australia 🦘</span></En>
             <Ko>호주에 오신 것을<br />
             <span className="text-sunset">환영합니다 🦘</span></Ko>
           </h1>
 
-          <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-10 max-w-md mx-auto reveal reveal-delay-2">
+          <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-10 max-w-md mx-auto">
             <En>Your friendly guide to Aussie English, renting, working, studying, and everything in between.</En>
             <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 가이드입니다.</Ko>
           </p>
 
           {/* Search bar */}
-          <div className="reveal reveal-delay-3">
+          <div className="flex flex-col gap-4 mt-6">
             <Link
               href="/aussie-english"
               className="inline-flex items-center gap-3 bg-white dark:bg-dark-surface border border-sand dark:border-dark-border rounded-2xl px-5 py-3.5 shadow-lg hover:shadow-xl hover:border-sunset/40 transition-all w-full max-w-md card-hover"
@@ -122,7 +119,7 @@ export default function HomePage() {
             <Link
               key={cat.href}
               href={cat.href}
-              className={`group card-hover reveal reveal-delay-${(i % 3) + 1} ${cat.color} border rounded-2xl p-5 flex flex-col gap-2`}
+              className={`group card-hover ${cat.color} border rounded-2xl p-5 flex flex-col gap-2`}
             >
               <div className="text-3xl">{cat.emoji}</div>
               <h3 className={`font-bold text-base ${cat.accent}`}><En>{cat.title}</En><Ko>{cat.koTitle}</Ko></h3>
@@ -136,7 +133,7 @@ export default function HomePage() {
       </section>
 
       {/* Bottom tagline */}
-      <section className="reveal bg-sage/10 dark:bg-sage/5 border-t border-sage/20 py-10 text-center">
+      <section className="bg-sage/10 dark:bg-sage/5 border-t border-sage/20 py-10 text-center">
         <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 max-w-sm mx-auto px-4">
           <En>Made with 🦘 for everyone new to Australia — no matter where you're from.</En>
           <Ko>호주에 처음 오시는 모든 분들을 위한 친근한 가이드입니다 🦘</Ko>

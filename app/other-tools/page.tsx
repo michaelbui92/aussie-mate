@@ -45,13 +45,13 @@ export default function OtherToolsPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6 reveal">
+          <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6">
             <span className="text-sm font-semibold text-sunset">Made by Michael Bui</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-3 reveal reveal-delay-1">
+          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-3">
             Other Tools 🛠️
           </h1>
-          <p className="text-base text-eucalypt/60 dark:text-dark-muted/60 reveal reveal-delay-2">
+          <p className="text-base text-eucalypt/60 dark:text-dark-muted/60">
             Other things I've built to help people navigate life in Australia
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function OtherToolsPage() {
         {tools.map((tool, i) => (
           <div
             key={tool.id}
-            className={`reveal reveal-delay-${i + 1} ${tool.color} border rounded-2xl p-6 card-hover`}
+            className={`${tool.color} border rounded-2xl p-6 card-hover`}
           >
             <div className="flex items-start gap-4 mb-4">
               <div className="text-4xl">{tool.emoji}</div>
