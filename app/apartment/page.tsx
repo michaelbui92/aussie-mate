@@ -30,8 +30,8 @@ const sections = [
       { label: "Rent increases", en: "Landlord can only increase rent once every 12 months. Must give 60 days written notice.", ko: "임대인은 12개월에 한 번만 임대료를 올릴 수 있음. 60일 전 서면 고지 필수." },
       { label: "Repairs", en: "Landlord must fix anything that affects health, safety, or basic living — within 14 days for non-urgent, immediately for urgent", ko: "임대인은 건강, 안전, 기본 생활에 영향을 미치는 문제를 수리해야 함 — 긴급하지 않은 것은 14일, 긴급한 것은 즉시" },
       { label: "Entry notice", en: "Landlord must give 24 hours written notice before entering your home (except in emergencies)", ko: "임대인은 긴급 상황을 제외하고는 입주 전 24시간 서면 고지를 해야 함" },
-      { label: "Eviction", en: "Landlord must give 90 days notice if ending a periodic lease without cause. 30 days if you're behind on rent.", ko: "임대인이 정당한 사유 없이 월세租房를 종료하려면 90일 전에 고지해야 함. 임대료 연체 시 30일." },
-      { label: "No cause termination", en: "Even without a reason, landlord must give 90 days (periodic) or 30 days (fixed-term) notice to move out", ko: "이유 없이도 임대인은 퇴거 통보 시 월세租房는 90일, 정해진 기간租房는 30일 전에 고지해야 함" },
+      { label: "Eviction", en: "Landlord must give 90 days notice if ending a periodic lease without cause. 30 days if you're behind on rent.", ko: "임대인이 정당한 사유 없이 월세를 종료하려면 90일 전에 고지해야 함. 임대료 연체 시 30일." },
+      { label: "No cause termination", en: "Even without a reason, landlord must give 90 days (periodic) or 30 days (fixed-term) notice to move out", ko: "이유 없이도 임대인은 퇴거 통보 시 월세는 90일, 정해진 기간은 30일 전에 고지해야 함" },
     ],
   },
   {
