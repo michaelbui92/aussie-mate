@@ -338,19 +338,17 @@ export function SearchModal() {
     }
   }, [results, activeIndex, router, closeSearch]);
 
-  // Global keyboard shortcut
+  // Global keyboard shortcut — Ctrl+K only
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
         openSearch();
-      } else if (open) {
-        closeSearch();
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [open, openSearch, closeSearch]);
+  }, [openSearch]);
 
   const flatResults = results;
   const allResults = Object.entries(grouped);
@@ -360,7 +358,6 @@ export function SearchModal() {
       {open && (
         <div
           className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh] px-4"
-          onClick={(e) => { if (e.target === e.currentTarget) closeSearch(); }}
         >
           {/* Backdrop */}
           <motion.div
@@ -369,7 +366,8 @@ export function SearchModal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="absolute inset-0 bg-eucalypt/30 dark:bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-eucalypt/30 dark:bg-black/50 backdrop-blur-sm cursor-pointer"
+            onClick={closeSearch}
           />
 
           {/* Modal */}
