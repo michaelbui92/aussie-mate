@@ -122,8 +122,7 @@ export default function ApartmentPage() {
         {sections.map((section, si) => (
           <section
             key={section.id}
-            className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden animate-fade-up"
-            style={{ animationDelay: `${si * 0.1}s` }}
+            className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
           >
             <div className={`px-4 md:px-5 py-4 border-b border-sand dark:border-dark-border border-l-4 ${section.color}`}>
               <div className="flex items-center gap-2 mb-0.5">

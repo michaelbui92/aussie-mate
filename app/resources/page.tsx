@@ -303,7 +303,7 @@ export default function ResourcesPage() {
           return (
             <div
               key={section.id}
-              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden animate-fade-up"
+              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
               style={{ animationDelay: `${si * 0.08}s` }}
             >
               {/* Accordion Header */}
