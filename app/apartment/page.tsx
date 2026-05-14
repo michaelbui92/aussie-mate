@@ -113,7 +113,7 @@ export default function ApartmentPage() {
           </h1>
           <p className="text-eucalypt/60 dark:text-dark-muted/60">
             <En>Renting in NSW — your rights, your money, your home</En>
-            <Ko>NSW 임대 —您的权利、您的钱、您的家</Ko>
+            <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집</Ko>
           </p>
         </div>
       </section>
