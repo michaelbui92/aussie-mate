@@ -49,7 +49,7 @@ export default function AboutPage() {
             <Ko>
               <p>애널리는 한국에서 호주로 학생 비자로 왔습니다. 도착했을 때 모든 것이 압도적이었어요 — 언어, 시스템, 현지인들이 당연하게 여기는不成문 규칙.</p>
               <p>호주 일상 생활을 실제로 도움되는 한국어 자료가 없었어요. 정부 웹사이트는 차갑고 공식적이었어요. 영어 커뮤니티는 이미 호주 시스템에 대한 이해를 전제로 했고요.</p>
-              <p>그래서Practical한 것들을 메모하기 시작했어요. 아무도 미리 안告诉주는 것들. 그리고 언젠가 이런 게 다른 사람들에게도 필요할 거야 싶었어요.</p>
+              <p>그래서 실용적인 것들을 메모하기 시작했어요. 아무도 미리 알려주지 않는 것들. 그리고 언젠가 이런 게 다른 사람들에게도 필요할 거야 싶었어요.</p>
               <p>그게 AussieMate입니다.</p>
             </Ko>
           </div>
@@ -76,8 +76,8 @@ export default function AboutPage() {
               <p><strong>AussieMate is NOT:</strong> An official source. Not affiliated with any university, government, or organisation. Always check official websites for legal and up-to-date information.</p>
             </En>
             <Ko>
-              <p><strong>AussieMate는:</strong> 호주 일상 생활에 대한 무료 bilingual 가이드입니다 —来到这里 처음인 사람들을 위해 Practical하게, 정직하게, 평범한 언어로썼어요.</p>
-              <p><strong>AussieMate가 아닌 것:</strong> 공식 출처가 아닙니다. 어떤 대학, 정부, 조직과도 관련이 없습니다. 법률 및最新 정보는 항상 공식 웹사이트를 확인하세요.</p>
+              <p><strong>AussieMate는:</strong> 호주 일상 생활에 대한 무료 가이드입니다 — 호주에 처음 온 사람들을 위해 실용적으로, 정직하게, 평범한 언어로 썼어요.</p>
+              <p><strong>AussieMate가 아닌 것:</strong> 공식 출처가 아닙니다. 어떤 대학, ���부, 조직과도 관련이 없습니다. 법률 및 최신 정보는 항상 공식 웹사이트를 확인하세요.</p>
             </Ko>
           </div>
         </section>
@@ -103,8 +103,8 @@ export default function AboutPage() {
               <p>But really, anyone new to Australia who's tired of dry official sites.</p>
             </En>
             <Ko>
-              <p>우선 한국의 유학생과 워킹홀리디 메이커 — 호주에 arriving해서 자신의 언어로 된Practical한 정보가 필요한 사람들.</p>
-              <p>하지만 실제로는 공식 웹사이트들은 질려버린 호주에 처음 오신 누구나対象입니다.</p>
+              <p>우선 한국의 유학생과 워킹홀리디 메이커 — 호주에 도착해서 자신의 언어로 된 실용적인 정보가 필요한 사람들.</p>
+              <p>하지만 실제로는 공식 웹사이트들에 질려버린 호주에 처음 오신 누구를 대상으로 합니다.</p>
             </Ko>
           </div>
         </section>
