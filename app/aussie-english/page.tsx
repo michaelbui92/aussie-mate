@@ -19,35 +19,6 @@ interface ReviewCard {
   example: string;
 }
 
-function playAudio(text: string) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.85;
-  utterance.pitch = 1.05;
-
-  // On iOS/ Android voices load async — retry with a short wait if empty
-  const trySpeak = () => {
-    const voices = window.speechSynthesis.getVoices();
-    const preferred = voices.find(
-      (v) =>
-        v.lang.startsWith("en") &&
-        (v.lang.toLowerCase().includes("au") || v.lang.toLowerCase().includes("gb"))
-    );
-    if (preferred) utterance.voice = preferred;
-    window.speechSynthesis.speak(utterance);
-  };
-
-  const voices = window.speechSynthesis.getVoices();
-  if (voices.length > 0) {
-    trySpeak();
-  } else {
-    window.speechSynthesis.addEventListener("voiceschanged", trySpeak, { once: true });
-    // Fallback: speak anyway if voices take too long
-    setTimeout(() => window.speechSynthesis.speak(utterance), 1500);
-  }
-}
-
 export default function AussieEnglishPage() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<Phrase["category"] | "all">("all");
@@ -142,17 +113,6 @@ export default function AussieEnglishPage() {
                 </p>
               </>
             )}
-          </button>
-
-          {/* Audio button */}
-          <button
-            onClick={() => playAudio(card.phrase)}
-            className="flex items-center gap-2 px-5 py-2.5 bg-sunset text-white rounded-full text-sm font-semibold hover:bg-sunset-light transition-all shadow-sm"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072M17.95 6.05a8 8 0 010 11.9M6.93 6.93l10.94 10.94" />
-            </svg>
-            Listen
           </button>
 
           {/* Navigation */}
@@ -281,15 +241,6 @@ export default function AussieEnglishPage() {
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <h3 className="font-bold text-lg text-sunset leading-snug">{p.phrase}</h3>
                   <div className="shrink-0 flex items-center gap-1.5">
-                    <button
-                      onClick={() => playAudio(p.phrase)}
-                      className="p-1.5 rounded-lg bg-sand/70 dark:bg-dark-surface hover:bg-sunset/20 text-eucalypt/50 hover:text-sunset transition-all"
-                      aria-label={`Listen to ${p.phrase}`}
-                    >
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072M17.95 6.05a8 8 0 010 11.9M6.93 6.93l10.94 10.94" />
-                      </svg>
-                    </button>
                     <span className="text-xs font-semibold bg-sand dark:bg-dark-surface text-eucalypt/50 dark:text-dark-muted/50 px-2 py-0.5 rounded-full">
                       {categories.find((c) => c.value === p.category)?.label}
                     </span>
