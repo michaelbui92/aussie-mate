@@ -133,13 +133,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bottom tagline */}
-      <section className="bg-sage/10 dark:bg-sage/5 border-t border-sage/20 py-10 text-center">
-        <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 max-w-sm mx-auto px-4">
-          <En>Your friendly guide to settling in Australia — no matter where you're from.</En>
-          <Ko>호주에 처음 오시는 모든 분들을 위한 친근한 가이드입니다 🦘</Ko>
-        </p>
-      </section>
+
     </div>
   );
 }
