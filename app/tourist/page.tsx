@@ -257,7 +257,7 @@ export default function TouristPage() {
     <div className="min-h-screen">
       {/* Header */}
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
             <En>Tourist 🏖️</En>
             <Ko>여행자 🏖️</Ko>
@@ -270,7 +270,7 @@ export default function TouristPage() {
       </section>
 
       {/* Content */}
-      <div className="max-w-2xl mx-auto px-4 py-10 space-y-4">
+      <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
         {sections.map((section, si) => {
           const isOpen = openSection === section.id;
           return (
