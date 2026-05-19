@@ -80,7 +80,7 @@ const sections: Section[] = [
       {
         label: "Constructive vs Destructive",
         en: "Feedback is valued — but destructively criticising colleagues or managers is not. If you have a serious issue with someone, handle it privately and respectfully, not in front of others.",
-        ko: "피드백은 높이評価됩니다 — 하지만 동료나 상사를 건설적으로 비판하지 않는 것은 문제가 있습니다. 누군가와 심각한 문제가 있으면 공개적으로 아닌 조용하고 존중하게 처리하세요.",
+        ko: "피드백은 높이평가됩니다 — 하지만 동료나 상사를 건설적으로 비판하지 않는 것은 문제가 있습니다. 누군가와 심각한 문제가 있으면 공개적으로 아닌 조용하고 존중하게 처리하세요.",
       },
     ],
   },
@@ -135,7 +135,7 @@ const sections: Section[] = [
       {
         label: "Superannuation",
         en: "Superannuation (super) is money your employer must pay into your super fund — currently 11.5% of your wages. It goes into your nominated super fund and is accessible when you retire.",
-        ko: "퇴직연금(super)은 고용주가 당신의 퇴직연금 계좌에 납부해야 하는 금액으로, 현재 임금의 11.5%입니다. 지정한 퇴직연금 계좌에 납부되며退休時に利用可能집니다.",
+        ko: "퇴직연금(super)은 고용주가 당신의 퇴직연금 계좌에 납부해야 하는 금액으로, 현재 임금의 11.5%입니다. 지정한 퇴직연금 계좌에 납부되며퇴직 시に이용가능집니다.",
       },
       {
         label: "Payslips",
@@ -170,7 +170,7 @@ const sections: Section[] = [
       {
         label: "Paid Leave Entitlements",
         en: "Casuals do NOT get paid sick leave or annual leave. That's why the 25% casual loading exists — it compensates for this. However, casual employees can still access unpaid carer's leave and compassionate leave.",
-        ko: "캐주얼 직원은 유급 병가나 연차 휴가를 받지 않습니다. 그래서 25% 캐주얼 로딩이 존재합니다 — 이를 보상하기 위함입니다. 그러나 캐주얼 직원도 무급 간병인 휴가와 조기 휴가를利用할 수 있습니다.",
+        ko: "캐주얼 직원은 유급 병가나 연차 휴가를 받지 않습니다. 그래서 25% 캐주얼 로딩이 존재합니다 — 이를 보상하기 위함입니다. 그러나 캐주얼 직원도 무급 간병인 휴가와 조기 휴가를이용할 수 있습니다.",
       },
       {
         label: "WorkSafe Rights",
@@ -180,7 +180,7 @@ const sections: Section[] = [
       {
         label: "Unfair Contracts",
         en: "If your employment contract has unreasonable terms, the Fair Work Commission can review and vary it. Don't feel locked into a bad contract — get advice if something seems wrong.",
-        ko: "고용 계약에不合理한 조항이 있으면 공정노동위원회가 검토하고 변경할 수 있습니다. 불공평한 계약에 묶이지 마세요 — 무언가 잘못된 것 같으면 조언을 구하세요.",
+        ko: "고용 계약에불합리한 조항이 있으면 공정노동위원회가 검토하고 변경할 수 있습니다. 불공평한 계약에 묶이지 마세요 — 무언가 잘못된 것 같으면 조언을 구하세요.",
       },
     ],
   },

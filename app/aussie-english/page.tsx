@@ -3,12 +3,14 @@ import { useState, useMemo, useCallback } from "react";
 import { phrases, type Phrase } from "@/lib/phrases";
 import { En, Ko } from "@/components/LangBlocks";
 
-const categories: { value: Phrase["category"] | "all"; label: string }[] = [
+const categories: { value: Phrase["category"] | "all"; label: string; enLabel?: string; koLabel?: string }[] = [
   { value: "all", label: "All" },
-  { value: "daily-life", label: "Daily Life" },
-  { value: "work", label: "Work" },
-  { value: "social", label: "Social" },
-  { value: "media", label: "Media" },
+  { value: "daily-life", label: "Daily Life", enLabel: "Daily Life", koLabel: "일상" },
+  { value: "work", label: "Work", enLabel: "Work", koLabel: "직장" },
+  { value: "food", label: "Food", enLabel: "Food & Drinks", koLabel: "음식" },
+  { value: "sports", label: "Sports", enLabel: "Sports", koLabel: "스포츠" },
+  { value: "social", label: "Social", enLabel: "Social", koLabel: "사교" },
+  { value: "media", label: "Media", enLabel: "Media", koLabel: "미디어" },
 ];
 
 // Simple flashcard review state

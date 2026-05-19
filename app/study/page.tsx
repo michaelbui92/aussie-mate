@@ -70,7 +70,7 @@ const sections: Section[] = [
       {
         label: "How to prepare",
         en: "Allow 4-8 weeks of focused preparation. Practice with official test simulators. Focus on your weakest skill first. For PTE: E2 Language YouTube channel (free, excellent). For IELTS: British Council website has free practice tests.",
-        ko: "집중 준비에 4-8주 정도 잡으세요. 공식 시뮬레이터로 연습하세요. 가장 약한 기능부터重点적으로 공부하세요. PTE는 E2 Language(유튜브) — 무료이고 우수합니다. IELTS는 British Council 웹사이트에서 무료 연습 시험을 제공합니다.",
+        ko: "집중 준비에 4-8주 정도 잡으세요. 공식 시뮬레이터로 연습하세요. 가장 약한 기능부터중점적으로 공부하세요. PTE는 E2 Language(유튜브) — 무료이고 우수합니다. IELTS는 British Council 웹사이트에서 무료 연습 시험을 제공합니다.",
       },
       {
         label: "When to book",

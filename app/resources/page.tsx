@@ -164,7 +164,7 @@ const sections: Section[] = [
       {
         label: "Hospital ER vs Urgent Care (응급실 vs 응급 진료)",
         en: "For genuine emergencies (chest pain, severe bleeding, difficulty breathing, unconsciousness) — go to a public hospital Emergency Department. It's free at public hospitals regardless of visa status. For non-life-threatening after-hours issues (minor infections, sprains, cuts), visit an Urgent Care Centre — cheaper and faster than ER with no appointment needed.",
-        ko: "진정한 응급 상황(흉통, 심한 출혈, 호흡 곤란, 의식 불명) — 공립 병원 응급실로 가세요. 비자 상태에 관계없이 공립 병원 응급실은 무료입니다. 생명에 위협이 되지 않는 야간 문제(가벼운 감염, 염좌, 상처)는 Urgent Care Centre를 방문하세요 — 응급실보다 저렴하고 빠르며预约이 필요 없습니다.",
+        ko: "진정한 응급 상황(흉통, 심한 출혈, 호흡 곤란, 의식 불명) — 공립 병원 응급실로 가세요. 비자 상태에 관계없이 공립 병원 응급실은 무료입니다. 생명에 위협이 되지 않는 야간 문제(가벼운 감염, 염좌, 상처)는 Urgent Care Centre를 방문하세요 — 응급실보다 저렴하고 빠르며예약이 필요 없습니다.",
         url: "https://www.health.nsw.gov.au/urgentcare",
         urlLabel: "health.nsw.gov.au/urgentcare",
       },

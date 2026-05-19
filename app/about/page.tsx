@@ -47,7 +47,7 @@ export default function AboutPage() {
               <p>That's AussieMate.</p>
             </En>
             <Ko>
-              <p>애널리는 한국에서 호주로 학생 비자로 왔습니다. 도착했을 때 모든 것이 압도적이었어요 — 언어, 시스템, 현지인들이 당연하게 여기는不成문 규칙.</p>
+              <p>애널리는 한국에서 호주로 학생 비자로 왔습니다. 도착했을 때 모든 것이 압도적이었어요 — 언어, 시스템, 현지인들이 당연하게 여기는불성문 규칙.</p>
               <p>호주 일상 생활을 실제로 도움되는 한국어 자료가 없었어요. 정부 웹사이트는 차갑고 공식적이었어요. 영어 커뮤니티는 이미 호주 시스템에 대한 이해를 전제로 했고요.</p>
               <p>그래서 실용적인 것들을 메모하기 시작했어요. 아무도 미리 알려주지 않는 것들. 그리고 언젠가 이런 게 다른 사람들에게도 필요할 거야 싶었어요.</p>
               <p>그게 AussieMate입니다.</p>
@@ -113,7 +113,7 @@ export default function AboutPage() {
         <section className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 leading-relaxed">
             <En>Information on AussieMate is provided in good faith and reflects common experiences of living in Australia. It is not a substitute for professional advice. When in doubt, check the official source.</En>
-            <Ko>호주에서의 일상 생활에 대한 일반적인 경험을 바탕으로誠實하게 정보를 제공하고 있습니다. 전문적인 조언을 대체하지 않습니다. 의심될 때는 공식 출처를 확인하세요.</Ko>
+            <Ko>호주에서의 일상 생활에 대한 일반적인 경험을 바탕으로정직하게 정보를 제공하고 있습니다. 전문적인 조언을 대체하지 않습니다. 의심될 때는 공식 출처를 확인하세요.</Ko>
           </p>
         </section>
 
