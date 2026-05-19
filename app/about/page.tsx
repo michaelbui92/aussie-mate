@@ -16,45 +16,14 @@ export default function AboutPage() {
             <Ko>AussieMate 소개</Ko>
           </h1>
           <p className="text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Why I built this</En>
-            <Ko>왜 이 сай트를 만들었는지</Ko>
+            <En>What we do and who it's for</En>
+            <Ko>우리 서비스와 누구를 위한 것인지</Ko>
           </p>
         </div>
       </section>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-8">
-        {/* Origin story */}
-        <section className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-6">
-          <div className="flex items-start gap-3 mb-4">
-            <span className="text-2xl">💡</span>
-            <div>
-              <h2 className="font-bold text-base text-eucalypt dark:text-white mb-1">
-                <En>The beginning</En>
-                <Ko>시작</Ko>
-              </h2>
-              <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">
-                <En>How AussieMate came to exist</En>
-                <Ko>AussieMate가 생긴 이유</Ko>
-              </p>
-            </div>
-          </div>
-          <div className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed space-y-4">
-            <En>
-              <p>My partner came to Australia on a student visa from Korea. When she arrived, everything was overwhelming — the language, the systems, the unspoken rules that locals take for granted.</p>
-              <p>There was nothing good in Korean that actually helped her navigate daily life here. Government websites were cold and official. English forums assumed you already understood how Australia worked.</p>
-              <p>So I started writing things down. Practical stuff. The things no one tells you until you're already stressed. And eventually I thought — maybe other people need this too.</p>
-              <p>That's AussieMate.</p>
-            </En>
-            <Ko>
-              <p>애널리는 한국에서 호주로 학생 비자로 왔습니다. 도착했을 때 모든 것이 압도적이었어요 — 언어, 시스템, 현지인들이 당연하게 여기는불성문 규칙.</p>
-              <p>호주 일상 생활을 실제로 도움되는 한국어 자료가 없었어요. 정부 웹사이트는 차갑고 공식적이었어요. 영어 커뮤니티는 이미 호주 시스템에 대한 이해를 전제로 했고요.</p>
-              <p>그래서 실용적인 것들을 메모하기 시작했어요. 아무도 미리 알려주지 않는 것들. 그리고 언젠가 이런 게 다른 사람들에게도 필요할 거야 싶었어요.</p>
-              <p>그게 AussieMate입니다.</p>
-            </Ko>
-          </div>
-        </section>
-
         {/* What it is */}
         <section className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-6">
           <div className="flex items-start gap-3 mb-4">
@@ -77,7 +46,7 @@ export default function AboutPage() {
             </En>
             <Ko>
               <p><strong>AussieMate는:</strong> 호주 일상 생활에 대한 무료 가이드입니다 — 호주에 처음 온 사람들을 위해 실용적으로, 정직하게, 평범한 언어로 썼어요.</p>
-              <p><strong>AussieMate가 아닌 것:</strong> 공식 출처가 아닙니다. 어떤 대학, ���부, 조직과도 관련이 없습니다. 법률 및 최신 정보는 항상 공식 웹사이트를 확인하세요.</p>
+              <p><strong>AussieMate가 아닌 것:</strong> 공식 출처가 아닙니다. 어떤 대학, 정부, 조직과도 관련이 없습니다. 법률 및 최신 정보는 항상 공식 웹사이트를 확인하세요.</p>
             </Ko>
           </div>
         </section>
@@ -103,7 +72,7 @@ export default function AboutPage() {
               <p>But really, anyone new to Australia who's tired of dry official sites.</p>
             </En>
             <Ko>
-              <p>우선 한국의 유학생과 워킹홀리디 메이커 — 호주에 도착해서 자신의 언어로 된 실용적인 정보가 필요한 사람들.</p>
+              <p>우선 한국의 유학생과 워킹홀리데이 메이커 — 호주에 도착해서 자신의 언어로 된 실용적인 정보가 필요한 사람들.</p>
               <p>하지만 실제로는 공식 웹사이트들에 질려버린 호주에 처음 오신 누구를 대상으로 합니다.</p>
             </Ko>
           </div>
@@ -113,7 +82,7 @@ export default function AboutPage() {
         <section className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 leading-relaxed">
             <En>Information on AussieMate is provided in good faith and reflects common experiences of living in Australia. It is not a substitute for professional advice. When in doubt, check the official source.</En>
-            <Ko>호주에서의 일상 생활에 대한 일반적인 경험을 바탕으로정직하게 정보를 제공하고 있습니다. 전문적인 조언을 대체하지 않습니다. 의심될 때는 공식 출처를 확인하세요.</Ko>
+            <Ko>호주에서의 일상 생활에 대한 일반적인 경험을 바탕으로 정직하게 정보를 제공하고 있습니다. 전문적인 조언을 대체하지 않습니다. 의심될 때는 공식 출처를 확인하세요.</Ko>
           </p>
         </section>
 
@@ -143,7 +112,7 @@ export default function AboutPage() {
               <div>
                 <p className="font-semibold text-sm text-sunset group-hover:underline">Drive with Bui</p>
                 <p className="text-xs text-eucalypt/60 dark:text-dark-muted/60">
-                  <En>Patient driving lessons in Sydney. bilingual support.</En>
+                  <En>Patient driving lessons in Sydney. Bilingual support.</En>
                   <Ko>시드니에서 인내심 있는 운전 레슨. 한국어 지원.</Ko>
                 </p>
               </div>
@@ -158,8 +127,8 @@ export default function AboutPage() {
               <div>
                 <p className="font-semibold text-sm text-sage group-hover:underline">Study Buddy</p>
                 <p className="text-xs text-eucalypt/60 dark:text-dark-muted/60">
-                  <En>AI flashcard app for international students. Coming soon.</En>
-                  <Ko>유학생을 위한 AI 플래시카드 앱. 곧 출시.</Ko>
+                  <En>AI flashcard app for international students.</En>
+                  <Ko>유학생을 위한 AI 플래시카드 앱.</Ko>
                 </p>
               </div>
             </a>
