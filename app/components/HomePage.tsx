@@ -110,20 +110,20 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-8 pb-8 px-4">
         <div className="max-w-2xl mx-auto text-center relative">
-          <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6">
-            <En><span className="text-sunset text-sm font-semibold">New in Australia?</span></En>
-            <Ko><span className="text-sunset text-sm font-semibold">호주에 처음 오신 분들에게</span></Ko>
-            <span className="text-eucalypt/50 text-sm">We've got you</span>
+          <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-3 py-1.5 mb-5">
+            <En><span className="text-sunset text-xs font-semibold">New in Australia?</span></En>
+            <Ko><span className="text-sunset text-xs font-semibold">호주에 처음 오신 분들에게</span></Ko>
+            <span className="text-eucalypt/50 text-xs">We've got you</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-eucalypt dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-eucalypt dark:text-white mb-3 leading-tight">
             <En>Welcome to <span className="text-sunset">Australia 🦘</span></En>
             <Ko>호주에 오신 것을 <span className="text-sunset">환영합니다 🦘</span></Ko>
           </h1>
 
-          <p className="text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-6 max-w-md mx-auto">
+          <p className="text-base md:text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-5 max-w-md mx-auto">
             <En>Your friendly guide to Aussie English, renting, working, studying, and everything in between.</En>
             <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 가이드입니다.</Ko>
           </p>
@@ -132,7 +132,7 @@ export default function HomePage() {
 
       {/* Category grid */}
       <section className="max-w-4xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.href}

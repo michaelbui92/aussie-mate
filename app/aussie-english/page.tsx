@@ -240,8 +240,8 @@ export default function AussieEnglishPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filtered.map((p, i) => (
               <div className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-5 hover:shadow-md transition-all" style={{ animationDelay: `${(i % 4) * 0.07}s` }}>
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h3 className="font-bold text-lg text-sunset leading-snug">{p.phrase}</h3>
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="font-bold text-base sm:text-lg text-sunset leading-snug">{p.phrase}</h3>
                   <div className="shrink-0 flex items-center gap-1.5">
                     <span className="text-xs font-semibold bg-sand dark:bg-dark-surface text-eucalypt/50 dark:text-dark-muted/50 px-2 py-0.5 rounded-full">
                       {categories.find((c) => c.value === p.category)?.label}
@@ -252,7 +252,7 @@ export default function AussieEnglishPage() {
                   <span className="font-semibold">🇦🇺 {p.meaning}</span>
                 </p>
                 <p className="text-sm text-sage font-medium mb-3 leading-relaxed">🇰🇷 {p.korean}</p>
-                <div className="bg-sand dark:bg-dark-surface rounded-xl px-4 py-2.5 text-sm text-eucalypt/60 dark:text-dark-muted/60 italic">
+                <div className="bg-sand dark:bg-dark-surface rounded-xl px-3 sm:px-4 py-2 text-sm phrase-example text-eucalypt/60 dark:text-dark-muted/60 italic">
                   "{p.example}"
                 </div>
               </div>

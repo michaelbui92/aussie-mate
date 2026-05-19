@@ -87,33 +87,73 @@
     overflow-x: hidden;
   }
 
+  /* Hero: tighter on mobile */
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+    line-height: 1.15 !important;
+  }
+  h2 {
+    font-size: clamp(1.0625rem, 3.5vw, 1.25rem) !important;
+  }
+
   /* Cards: tighter padding on mobile */
-  .card-hover {
-    padding: 1rem !important;
+  .card-hover,
+  .bg-white.dark\\:bg-dark-card {
+    padding: 0.875rem !important;
   }
 
-  /* Accordion: ensure buttons have adequate tap target */
-  button {
-    min-height: 48px;
-  }
-
-  /* Nav: smaller text, more breathing room */
-  .nav-link {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8125rem;
-  }
-
-  /* Ensure grid cards stack properly */
+  /* Category grid: tighter gap on mobile */
   .grid {
-    gap: 0.75rem;
+    gap: 0.625rem !important;
   }
 
-  /* Modal: reduce padding */
-  .fixed.px-4.pt-\[12vh\] {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 8vh;
+  /* Accordion: larger tap target, bigger text */
+  button {
+    min-height: 52px !important;
+    padding-top: 0.875rem !important;
+    padding-bottom: 0.875rem !important;
   }
+  .accordion-content p,
+  .accordion-content li {
+    font-size: 0.9375rem !important;
+    line-height: 1.7 !important;
+  }
+  /* Korean text in accordions needs more line-height */
+  :lang(ko) .accordion-content p,
+  :lang(ko) .accordion-content li {
+    font-size: 0.9375rem !important;
+    line-height: 1.85 !important;
+  }
+
+  /* Aussie English phrase cards */
+  .phrase-example {
+    font-size: 0.8125rem !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Accordion content body text: upgrade from text-sm (14px) to 15px on mobile */
+  .divide-y > div > div p.text-sm,
+  .divide-y > div > p.text-sm {
+    font-size: 0.9375rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Emergency grid: smaller gap on mobile */
+  .emergency-grid {
+    gap: 0.5rem !important;
+  }
+
+  /* Footer links: more breathing room */
+  footer .flex.gap-x-6 a {
+    padding: 0.25rem 0 !important;
+  }
+}
+
+/* Landscape phone: compress further */
+@media (orientation: landscape) and (max-height: 520px) {
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1rem !important; }
+  section { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
 }
 
 /* Touch-friendly tap targets (minimum 44px per Apple HIG) */
