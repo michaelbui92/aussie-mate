@@ -107,7 +107,7 @@ export default function AussieEnglishPage() {
               <>
                 <p className="text-xl font-bold text-sunset mb-2">{card.phrase}</p>
                 <p className="text-base text-eucalypt dark:text-white font-semibold mb-1">
-                  🇬🇧 {card.meaning}
+                  🇦🇺 {card.meaning}
                 </p>
                 <p className="text-base text-sage font-medium mb-3">🇰🇷 {card.korean}</p>
                 <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 italic">
@@ -249,7 +249,7 @@ export default function AussieEnglishPage() {
                   </div>
                 </div>
                 <p className="text-sm text-eucalypt/80 dark:text-dark-muted/80 mb-2 leading-relaxed">
-                  <span className="font-semibold">🇬🇧 {p.meaning}</span>
+                  <span className="font-semibold">🇦🇺 {p.meaning}</span>
                 </p>
                 <p className="text-sm text-sage font-medium mb-3 leading-relaxed">🇰🇷 {p.korean}</p>
                 <div className="bg-sand dark:bg-dark-surface rounded-xl px-4 py-2.5 text-sm text-eucalypt/60 dark:text-dark-muted/60 italic">
