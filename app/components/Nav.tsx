@@ -9,10 +9,11 @@ import { useSearch } from "@/components/SearchModal";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/aussie-english", label: "Aussie English" },
+  { href: "/finance", label: "Finance" },
   { href: "/apartment", label: "Apartment" },
   { href: "/workplace", label: "Workplace" },
   { href: "/study", label: "Study" },
-  { href: "/tourist", label: "Tourist" },
+  { href: "/transport", label: "Transport" },
   { href: "/resources", label: "Resources" },
 ];
 
