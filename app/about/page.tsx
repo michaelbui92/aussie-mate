@@ -39,7 +39,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed space-y-3">
+              <div className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed space-y-3">
             <En>
               <p><strong>AussieMate is:</strong> A free bilingual guide to Australian daily life — written for people who are new here. Practical, honest, and in plain language.</p>
               <p><strong>AussieMate is NOT:</strong> An official source. Not affiliated with any university, government, or organisation. Always check official websites for legal and up-to-date information.</p>
@@ -112,8 +112,8 @@ export default function AboutPage() {
               <div>
                 <p className="font-semibold text-sm text-sunset group-hover:underline">Drive with Bui</p>
                 <p className="text-xs text-eucalypt/60 dark:text-dark-muted/60">
-                  <En>Patient driving lessons in Sydney. Bilingual support.</En>
-                  <Ko>시드니에서 인내심 있는 운전 레슨. 한국어 지원.</Ko>
+                  <En>Professional driving lessons in Sydney for new and international drivers. Book online.</En>
+                  <Ko>시드니에서 신입 및 국제 운전자를 위한 전문 운전 레슨. 온라인 예약 가능.</Ko>
                 </p>
               </div>
             </a>
@@ -125,10 +125,10 @@ export default function AboutPage() {
             >
               <span className="text-xl">📚</span>
               <div>
-                <p className="font-semibold text-sm text-sage group-hover:underline">Study Buddy</p>
+                <p className="font-semibold text-sm text-sage group-hover:underline">Study Buddy (Boba)</p>
                 <p className="text-xs text-eucalypt/60 dark:text-dark-muted/60">
-                  <En>AI flashcard app for international students.</En>
-                  <Ko>유학생을 위한 AI 플래시카드 앱.</Ko>
+                  <En>AI-powered flashcard app with multiple choice questions. Study any topic, anywhere.</En>
+                  <Ko>AI 플래시카드 앱 — 객관식 문제로 원하는topic을 학습.</Ko>
                 </p>
               </div>
             </a>
