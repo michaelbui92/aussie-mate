@@ -1,10 +1,15 @@
 "use client";
+import React from "react";
 import { useState } from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 interface Section {
   id: string;
-  emoji: string;
+  iconKey: string;
   title: string;
   koTitle?: string;
   desc: string;
@@ -21,7 +26,7 @@ interface ContentItem {
 const sections: Section[] = [
   {
     id: "workplace-culture",
-    emoji: "🤝",
+    iconKey: "Handshake",
     title: "Workplace Culture",
     koTitle: "직장 문화",
     desc: "What makes Aussie workplaces different",
@@ -56,7 +61,7 @@ const sections: Section[] = [
   },
   {
     id: "speaking-up",
-    emoji: "🗣️",
+    iconKey: "PersonSpeaking",
     title: "Speaking Up",
     koTitle: "의견 표출",
     desc: "How to raise concerns and give feedback at work",
@@ -86,7 +91,7 @@ const sections: Section[] = [
   },
   {
     id: "casual-permanent",
-    emoji: "📋",
+    iconKey: "Clipboard",
     title: "Casual vs Permanent",
     koTitle: "캐주얼 대 정규직",
     desc: "Understanding your employment type",
@@ -116,7 +121,7 @@ const sections: Section[] = [
   },
   {
     id: "award-super",
-    emoji: "💰",
+    iconKey: "Coin",
     title: "Award & Super",
     koTitle: "급여와 퇴직금",
     desc: "Minimum pay standards and superannuation",
@@ -146,7 +151,7 @@ const sections: Section[] = [
   },
   {
     id: "casual-rights",
-    emoji: "🛡️",
+    iconKey: "ShieldCheck",
     title: "Casual Rights",
     koTitle: "캐주얼 노동자 권리",
     desc: "Your rights as a casual worker in Australia",
@@ -186,7 +191,7 @@ const sections: Section[] = [
   },
   {
     id: "first-week",
-    emoji: "🌟",
+    iconKey: "Star",
     title: "First Week Tips",
     koTitle: "첫째 주 팁",
     desc: "How to make a great first impression",
@@ -265,7 +270,7 @@ export default function WorkplacePage() {
                 className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
                 aria-expanded={isOpen}
               >
-                <span className="text-xl shrink-0">{section.emoji}</span>
+                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
                 <div className="flex-1 min-w-0 pr-2">
                   <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
                     <En>{section.title}</En>

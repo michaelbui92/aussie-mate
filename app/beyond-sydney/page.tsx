@@ -1,10 +1,15 @@
 "use client";
+import React from "react";
 import { useState } from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 interface Destination {
   id: string;
-  emoji: string;
+  iconKey: string;
   name: string;
   state: string;
   distance: string;
@@ -22,7 +27,7 @@ interface Destination {
 const destinations: Destination[] = [
   {
     id: "newcastle",
-    emoji: "🏙️",
+    iconKey: "CityScape",
     name: "Newcastle",
     state: "NSW",
     distance: "2 hours north",
@@ -38,7 +43,7 @@ const destinations: Destination[] = [
   },
   {
     id: "wollongong",
-    emoji: "🌊",
+    iconKey: "Waves",
     name: "Wollongong",
     state: "NSW",
     distance: "1.5 hours south",
@@ -54,7 +59,7 @@ const destinations: Destination[] = [
   },
   {
     id: "byron-bay",
-    emoji: "🌅",
+    iconKey: "Sunrise",
     name: "Byron Bay",
     state: "NSW",
     distance: "3 hours north",
@@ -70,7 +75,7 @@ const destinations: Destination[] = [
   },
   {
     id: "hunter-valley",
-    emoji: "🍷",
+    iconKey: "Wine",
     name: "Hunter Valley",
     state: "NSW",
     distance: "2.5 hours north",
@@ -86,7 +91,7 @@ const destinations: Destination[] = [
   },
   {
     id: "blue-mountains",
-    emoji: "⛰️",
+    iconKey: "Mountain",
     name: "Blue Mountains",
     state: "NSW",
     distance: "1.5 hours west",
@@ -102,7 +107,7 @@ const destinations: Destination[] = [
   },
   {
     id: "jervis-bay",
-    emoji: "🐬",
+    iconKey: "Dolphin",
     name: "Jervis Bay",
     state: "NSW",
     distance: "3 hours south",
@@ -118,7 +123,7 @@ const destinations: Destination[] = [
   },
   {
     id: "port-stephens",
-    emoji: "🐨",
+    iconKey: "Koala",
     name: "Port Stephens",
     state: "NSW",
     distance: "2.5 hours north",
@@ -134,7 +139,7 @@ const destinations: Destination[] = [
   },
   {
     id: "gold-coast",
-    emoji: "🏄",
+    iconKey: "SurfBoard",
     name: "Gold Coast",
     state: "Queensland",
     distance: "4 hours south of Brisbane (1.5h flight or 9h drive from Sydney)",
@@ -150,7 +155,7 @@ const destinations: Destination[] = [
   },
   {
     id: "melbourne",
-    emoji: "🎭",
+    iconKey: "TheaterMasks",
     name: "Melbourne",
     state: "Victoria",
     distance: "1 hour flight (or 9 hours drive)",
@@ -166,7 +171,7 @@ const destinations: Destination[] = [
   },
   {
     id: "canberra",
-    emoji: "🏛️",
+    iconKey: "Building2",
     name: "Canberra",
     state: "ACT",
     distance: "3 hours south (330km)",
@@ -269,7 +274,7 @@ export default function BeyondSydneyPage() {
                 onClick={() => toggleDestination(dest.id)}
                 className="w-full text-left px-5 py-4 flex items-center gap-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
               >
-                <span className="text-3xl shrink-0">{dest.emoji}</span>
+                <span className="text-sunset shrink-0">{React.createElement(getIcon(dest.iconKey), { className: "w-7 h-7" })}</span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-0.5">
                     <h2 className="font-bold text-base text-eucalypt dark:text-white">{dest.name}</h2>

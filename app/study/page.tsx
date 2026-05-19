@@ -1,10 +1,15 @@
 "use client";
+import React from "react";
 import { useState } from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 interface Section {
   id: string;
-  emoji: string;
+  iconKey: string;
   title: string;
   koTitle?: string;
   desc: string;
@@ -21,7 +26,7 @@ interface ContentItem {
 const sections: Section[] = [
   {
     id: "english-tests",
-    emoji: "📝",
+    iconKey: "Edit",
     title: "English Tests: PTE & IELTS",
     koTitle: "영어 시험: PTE와 IELTS",
     desc: "Everything you need to know about PTE and IELTS for Australian visas and university entry",
@@ -81,7 +86,7 @@ const sections: Section[] = [
   },
   {
     id: "uni-culture",
-    emoji: "🏫",
+    iconKey: "Graduation",
     title: "Aussie Uni Culture",
     koTitle: "호주 대학 문화",
     desc: "What university life is really like in Australia",
@@ -116,7 +121,7 @@ const sections: Section[] = [
   },
   {
     id: "talking-professors",
-    emoji: "👨‍🏫",
+    iconKey: "PersonBoard",
     title: "Talking to Professors",
     koTitle: "교수님과 대화하기",
     desc: "Email etiquette, office hours, and asking for help",
@@ -151,7 +156,7 @@ const sections: Section[] = [
   },
   {
     id: "group-work",
-    emoji: "👥",
+    iconKey: "PersonGroup",
     title: "Group Work",
     koTitle: "그룹 작업",
     desc: "How group assignments work and how to survive them",
@@ -186,7 +191,7 @@ const sections: Section[] = [
   },
   {
     id: "academic-integrity",
-    emoji: "📚",
+    iconKey: "Book",
     title: "Academic Integrity",
     koTitle: "학술 무결성",
     desc: "Plagiarism, AI use, and referencing — the rules are strict",
@@ -221,7 +226,7 @@ const sections: Section[] = [
   },
   {
     id: "special-consideration",
-    emoji: "📋",
+    iconKey: "Clipboard",
     title: "Special Consideration",
     koTitle: "특별 고려",
     desc: "What to do if illness or circumstances affect your studies",
@@ -256,7 +261,7 @@ const sections: Section[] = [
   },
   {
     id: "grades",
-    emoji: "🎯",
+    iconKey: "Target",
     title: "Grades Explained",
     koTitle: "성적 체계 이해",
     desc: "Understanding the Australian grading system",
@@ -335,7 +340,7 @@ export default function StudyPage() {
                 className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
                 aria-expanded={isOpen}
               >
-                <span className="text-xl shrink-0">{section.emoji}</span>
+                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
                 <div className="flex-1 min-w-0 pr-2">
                   <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
                     <En>{section.title}</En>

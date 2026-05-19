@@ -1,9 +1,14 @@
+import React from "react";
 import Link from "next/link";
+import { Icons } from "@/components/Icons";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 const tools = [
   {
     id: "drive-with-bui",
-    emoji: "🚗",
+    iconKey: "Car",
     title: "Drive with Bui",
     desc: "Sydney's friendliest driving school. Learn to pass your driving test with patient, experienced instruction covering all test routes and requirements.",
     url: "https://drivewithbui.com",
@@ -21,7 +26,7 @@ const tools = [
   },
   {
     id: "study-buddy",
-    emoji: "📚",
+    iconKey: "Book",
     title: "Study Buddy",
     desc: "A smart study companion app — flashcard decks, spaced repetition, progress tracking. Coming soon — built to help international students study smarter, not harder.",
     url: "https://study-buddy-two-orpin.vercel.app",
@@ -65,7 +70,7 @@ export default function OtherToolsPage() {
             className={`${tool.color} border rounded-2xl p-6 card-hover`}
           >
             <div className="flex items-start gap-4 mb-4">
-              <div className="text-4xl">{tool.emoji}</div>
+              <div className="text-sunset">{React.createElement(getIcon(tool.iconKey), { className: "w-10 h-10" })}</div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1 flex-wrap">
                   <h2 className={`font-bold text-xl ${tool.accent}`}>{tool.title}</h2>

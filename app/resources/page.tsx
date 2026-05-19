@@ -1,10 +1,15 @@
 "use client";
+import React from "react";
 import { useState } from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 interface Section {
   id: string;
-  emoji: string;
+  iconKey: string;
   title: string;
   koTitle?: string;
   desc: string;
@@ -23,7 +28,7 @@ interface ResourceItem {
 const sections: Section[] = [
   {
     id: "government",
-    emoji: "🏛️",
+    iconKey: "Building2",
     title: "Government Services",
     koTitle: "정부 서비스",
     desc: "Essential services for healthcare, tax, employment, and more",
@@ -82,7 +87,7 @@ const sections: Section[] = [
   },
   {
     id: "education",
-    emoji: "📚",
+    iconKey: "Book",
     title: "Education",
     koTitle: "교육",
     desc: "Universities, TAFE, and study resources in NSW",
@@ -141,7 +146,7 @@ const sections: Section[] = [
   },
   {
     id: "healthcare",
-    emoji: "🏥",
+    iconKey: "Ambulance",
     title: "Healthcare",
     koTitle: "의료",
     desc: "Medical services, mental health support, and urgent care",
@@ -186,7 +191,7 @@ const sections: Section[] = [
   },
   {
     id: "emergency",
-    emoji: "🚨",
+    iconKey: "AlertTriangle",
     title: "Emergency Contacts",
     koTitle: "비상 연락처",
     desc: "Who to call in an emergency — keep these numbers saved",
@@ -312,7 +317,7 @@ export default function ResourcesPage() {
                 className="w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
                 aria-expanded={isOpen}
               >
-                <span className="text-xl shrink-0">{section.emoji}</span>
+                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
                 <div className="flex-1 min-w-0">
                   <h2 className="font-bold text-base text-eucalypt dark:text-white">
                     <En>{section.title}</En>

@@ -1,10 +1,15 @@
 "use client";
+import React from "react";
 import { useState } from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 interface Section {
   id: string;
-  emoji: string;
+  iconKey: string;
   title: string;
   koTitle: string;
   desc: string;
@@ -21,7 +26,7 @@ interface ContentItem {
 const sections: Section[] = [
   {
     id: "getting-around",
-    emoji: "🚉",
+    iconKey: "PassengerTrain",
     title: "Getting Around",
     koTitle: "시드니 이동",
     desc: "Opal cards, transport modes, and navigating Sydney",
@@ -36,7 +41,7 @@ const sections: Section[] = [
   },
   {
     id: "top-sights",
-    emoji: "🏛️",
+    iconKey: "Building2",
     title: "Top 10 Sydney Must-Sees",
     koTitle: "시드니 궝 가볼 10곳",
     desc: "Sydney's iconic attractions you cannot miss",
@@ -56,7 +61,7 @@ const sections: Section[] = [
   },
   {
     id: "day-trips",
-    emoji: "🚗",
+    iconKey: "Car",
     title: "Day Trips from Sydney",
     koTitle: "시드니 당일 여행",
     desc: "Places you can see in a single day with public transport or a short drive",
@@ -72,7 +77,7 @@ const sections: Section[] = [
   },
   {
     id: "weekend-trips",
-    emoji: "🛴️",
+    iconKey: "Scooter",
     title: "Weekend Trips",
     koTitle: "주말 여행",
     desc: "Destinations worth the overnight stay — from cheap to memorable",
@@ -88,7 +93,7 @@ const sections: Section[] = [
   },
   {
     id: "safety-beach",
-    emoji: "🏖️",
+    iconKey: "Beach",
     title: "Beach Safety",
     koTitle: "비치 안전",
     desc: "What to watch out for at Sydney's beaches",
@@ -103,7 +108,7 @@ const sections: Section[] = [
   },
   {
     id: "safety-bushland",
-    emoji: "🌿",
+    iconKey: "Tree",
     title: "Bushland and National Parks",
     koTitle: "숲과 국립공원",
     desc: "How to stay safe in Australian wilderness",
@@ -118,7 +123,7 @@ const sections: Section[] = [
   },
   {
     id: "tipping",
-    emoji: "💵",
+    iconKey: "DollarSign",
     title: "Tipping Culture",
     koTitle: "팝 문화",
     desc: "Do you tip? Short answer: usually not — here is how it works",
@@ -131,7 +136,7 @@ const sections: Section[] = [
   },
   {
     id: "budget-tips",
-    emoji: "💰",
+    iconKey: "Coin",
     title: "Budget Tips for Sydney",
     koTitle: "시드니 예산 팁",
     desc: "How to enjoy Sydney without breaking the bank",
@@ -146,7 +151,7 @@ const sections: Section[] = [
   },
   {
     id: "useful-apps",
-    emoji: "📱",
+    iconKey: "Smartphone",
     title: "Useful Apps",
     koTitle: "유용한 앱",
     desc: "Essential apps for getting around and finding things to do",
@@ -190,7 +195,7 @@ export default function TouristPage() {
               className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left hover:bg-amber-50"
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl">{section.emoji}</span>
+                <span className="text-sunset">{React.createElement(getIcon(section.iconKey), { className: "w-7 h-7" })}</span>
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900">
                     <En>{section.title}</En>

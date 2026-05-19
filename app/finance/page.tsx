@@ -1,10 +1,15 @@
 "use client";
+import React from "react";
 import { useState } from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 interface Section {
   id: string;
-  emoji: string;
+  iconKey: string;
   title: string;
   koTitle?: string;
   desc: string;
@@ -21,7 +26,7 @@ interface ContentItem {
 const sections: Section[] = [
   {
     id: "banking",
-    emoji: "🏦",
+    iconKey: "Building",
     title: "Australian Banking",
     koTitle: "호주 은행 시스템",
     desc: "Opening accounts, understanding fees, and moving money",
@@ -61,7 +66,7 @@ const sections: Section[] = [
   },
   {
     id: "tax-file-number",
-    emoji: "🧾",
+    iconKey: "ReceiptAlt",
     title: "Tax File Number (TFN)",
     koTitle: "납세识别号 (TFN)",
     desc: "What a TFN is and why you need one",
@@ -91,7 +96,7 @@ const sections: Section[] = [
   },
   {
     id: "superannuation",
-    emoji: "💼",
+    iconKey: "Briefcase2",
     title: "Superannuation",
     koTitle: "퇴직연금 (Super)",
     desc: "Australia's retirement savings system explained simply",
@@ -126,7 +131,7 @@ const sections: Section[] = [
   },
   {
     id: "tax-return",
-    emoji: "📋",
+    iconKey: "Clipboard",
     title: "Tax Return",
     koTitle: "탈세 신고",
     desc: "Lodging your tax return — when, how, and why you might get money back",
@@ -156,7 +161,7 @@ const sections: Section[] = [
   },
   {
     id: "centrelink",
-    emoji: "🏛️",
+    iconKey: "Building2",
     title: "Centrelink",
     koTitle: "센터링크",
     desc: "Government payments and what international students can access",
@@ -186,7 +191,7 @@ const sections: Section[] = [
   },
   {
     id: "cost-of-living",
-    emoji: "💸",
+    iconKey: "DollarSign",
     title: "Cost of Living Tips",
     koTitle: "생활비 절약 팁",
     desc: "Stretch your budget in Australia",
@@ -259,7 +264,7 @@ export default function FinancePage() {
                 className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
                 aria-expanded={isOpen}
               >
-                <span className="text-xl shrink-0">{section.emoji}</span>
+                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
                 <div className="flex-1 min-w-0 pr-2">
                   <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
                     <En>{section.title}</En>

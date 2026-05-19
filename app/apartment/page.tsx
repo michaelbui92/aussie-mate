@@ -1,10 +1,15 @@
 "use client";
+import React from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 const sections = [
   {
     id: "search",
-    emoji: "🔍",
+    iconKey: "Search",
     title: "Finding a Place",
     koTitle: "부동산 찾기",
     desc: "Where to search and what to know",
@@ -19,7 +24,7 @@ const sections = [
   },
   {
     id: "application",
-    emoji: "📋",
+    iconKey: "Clipboard",
     title: "Rental Application",
     koTitle: "임대 지원",
     desc: "Everything you need to apply for a rental property in NSW",
@@ -35,7 +40,7 @@ const sections = [
   },
   {
     id: "rights",
-    emoji: "⚖️",
+    iconKey: "Scale",
     title: "Tenant Rights in NSW",
     koTitle: "NSW 임차인 권리",
     desc: "You have legal rights — know them",
@@ -51,7 +56,7 @@ const sections = [
   },
   {
     id: "re-phrases",
-    emoji: "🏢",
+    iconKey: "BuildingSkyscraper",
     title: "Common Real Estate Phrases",
     koTitle: "부동산 표현",
     desc: "What agents actually mean",
@@ -69,7 +74,7 @@ const sections = [
   },
   {
     id: "red-flags",
-    emoji: "🚩",
+    iconKey: "Flag",
     title: "Red Flags to Watch",
     koTitle: "주의해야 할 위험 신호",
     desc: "Walk away if you see these",
@@ -85,7 +90,7 @@ const sections = [
   },
   {
     id: "costs",
-    emoji: "💰",
+    iconKey: "Coin",
     title: "Bills & Move-in Costs",
     koTitle: "공과금 및 입주 비용",
     desc: "What to budget for",
@@ -101,7 +106,7 @@ const sections = [
   },
   {
     id: "cover-letter",
-    emoji: "✍️",
+    iconKey: "Edit",
     title: "Cover Letter Tips",
     koTitle: "지원서 작성 팁",
     desc: "How to write an application that stands out",
@@ -141,7 +146,7 @@ export default function ApartmentPage() {
           >
             <div className={`px-4 md:px-5 py-4 border-b border-sand dark:border-dark-border border-l-4 ${section.color}`}>
               <div className="flex items-center gap-2 mb-0.5">
-                <span className="text-xl shrink-0">{section.emoji}</span>
+                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
                 <h2 className="font-bold text-base md:text-lg text-eucalypt dark:text-white leading-snug">
                   <En>{section.title}</En>
                   <Ko>{section.koTitle || section.title}</Ko>

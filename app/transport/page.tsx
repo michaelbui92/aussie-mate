@@ -1,11 +1,16 @@
 "use client";
+import React from "react";
 import Link from "next/link";
 import { useState } from "react";
+import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+
+const getIcon = (key: string) =>
+  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
 
 interface Section {
   id: string;
-  emoji: string;
+  iconKey: string;
   title: string;
   koTitle?: string;
   desc: string;
@@ -22,7 +27,7 @@ interface ContentItem {
 const sections: Section[] = [
   {
     id: "opal-card",
-    emoji: "🚌",
+    iconKey: "Bus",
     title: "Opal Card",
     koTitle: "오팔 카드",
     desc: "Sydney's public transport card — how to get one and use it",
@@ -62,7 +67,7 @@ const sections: Section[] = [
   },
   {
     id: "sydney-trains",
-    emoji: "🚇",
+    iconKey: "Train",
     title: "Sydney Trains",
     koTitle: "시드니 기차",
     desc: "How the train system works",
@@ -92,7 +97,7 @@ const sections: Section[] = [
   },
   {
     id: "buses",
-    emoji: "🚌",
+    iconKey: "Bus",
     title: "Buses",
     koTitle: "버스",
     desc: "Sydney's extensive bus network",
@@ -122,7 +127,7 @@ const sections: Section[] = [
   },
   {
     id: "ferries",
-    emoji: "⛴️",
+    iconKey: "Plane",
     title: "Ferries",
     koTitle: "페리",
     desc: "Sydney's iconic harbour ferries",
@@ -147,7 +152,7 @@ const sections: Section[] = [
   },
   {
     id: "driving",
-    emoji: "🚗",
+    iconKey: "Car",
     title: "Driving in Australia",
     koTitle: "호주에서 운전하기",
     desc: "Getting your licence and driving on Aussie roads",
@@ -177,7 +182,7 @@ const sections: Section[] = [
   },
   {
     id: "uber-taxis",
-    emoji: "🚕",
+    iconKey: "Car",
     title: "Rideshare & Taxis",
     koTitle: "rideshare와 택시",
     desc: "Uber, taxis, and other ride options",
@@ -245,7 +250,7 @@ export default function TransportPage() {
                 className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
                 aria-expanded={isOpen}
               >
-                <span className="text-xl shrink-0">{section.emoji}</span>
+                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
                 <div className="flex-1 min-w-0 pr-2">
                   <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
                     <En>{section.title}</En>
