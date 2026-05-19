@@ -2,97 +2,107 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { En, Ko } from "@/components/LangBlocks";
+import { Icons } from "./Icons";
 
 const categories = [
   {
     href: "/aussie-english",
-    emoji: "💬",
+    icon: "Globe",
     title: "Aussie English",
     desc: "Decode Australian slang and phrases",
     koTitle: "호주 영어",
     koDesc: "호주 속어를 쉽게 설명합니다",
     color: "bg-sunset/10 border-sunset/30",
     accent: "text-sunset",
+    iconBg: "bg-sunset/20",
   },
   {
     href: "/finance",
-    emoji: "💰",
+    icon: "Wallet",
     title: "Finance",
     desc: "Banking, tax, superannuation, and budgeting",
     koTitle: "금융",
     koDesc: "은행, 세금, 퇴직연금, 예산 관리",
     color: "bg-green-500/10 border-green-500/30",
     accent: "text-green-600 dark:text-green-400",
+    iconBg: "bg-green-500/20",
   },
   {
     href: "/apartment",
-    emoji: "🏠",
+    icon: "Home",
     title: "Apartment Guide",
     desc: "Renting in NSW, explained simply",
     koTitle: "부동산 가이드",
     koDesc: "NSW 임대 절차를 쉽게 설명합니다",
     color: "bg-sage/10 border-sage/30",
     accent: "text-sage",
+    iconBg: "bg-sage/20",
   },
   {
     href: "/workplace",
-    emoji: "💼",
+    icon: "Briefcase",
     title: "Workplace",
     desc: "Australian work culture and your rights",
     koTitle: "직장",
     koDesc: "호주 직장 문화와 노동자 권리",
     color: "bg-coast/10 border-coast/30",
     accent: "text-coast",
+    iconBg: "bg-coast/20",
   },
   {
     href: "/study",
-    emoji: "🎓",
+    icon: "GraduationCap",
     title: "Study",
     desc: "University and academic life in Australia",
     koTitle: "학습",
     koDesc: "호주 대학과 학업 생활",
     color: "bg-purple-500/10 border-purple-500/30",
     accent: "text-purple-600 dark:text-purple-400",
+    iconBg: "bg-purple-500/20",
   },
   {
     href: "/transport",
-    emoji: "🚗",
+    icon: "Car",
     title: "Transport",
     desc: "Opal, trains, buses, ferries, and driving",
     koTitle: "교통",
     koDesc: "오팔 카드, 기차, 버스, 페리, 운전",
     color: "bg-orange-500/10 border-orange-500/30",
     accent: "text-orange-600 dark:text-orange-400",
+    iconBg: "bg-orange-500/20",
   },
   {
     href: "/tourist",
-    emoji: "🏖️",
+    icon: "MapPin",
     title: "Tourist",
     desc: "Sydney and NSW for short-term visitors",
     koTitle: "여행자",
     koDesc: "시드니와 NSW短期 방문자를 위한 정보",
     color: "bg-yellow-400/10 border-yellow-400/30",
     accent: "text-yellow-600 dark:text-yellow-400",
+    iconBg: "bg-yellow-400/20",
   },
   {
     href: "/beyond-sydney",
-    emoji: "🗺️",
+    icon: "Navigation",
     title: "Beyond Sydney",
     desc: "Weekend trips and road trips from Sydney",
     koTitle: "시드니 밖으로",
     koDesc: "시드니에서의 주말 여행과 드라이브",
     color: "bg-rose-400/10 border-rose-400/30",
     accent: "text-rose-500 dark:text-rose-400",
+    iconBg: "bg-rose-400/20",
   },
   {
     href: "/resources",
-    emoji: "🔗",
+    icon: "Link",
     title: "Resources",
     desc: "Government services and community links",
     koTitle: "자료",
     koDesc: "정부 서비스와 지역 사회 연결",
     color: "bg-blue-400/10 border-blue-400/30",
     accent: "text-blue-500 dark:text-blue-400",
+    iconBg: "bg-blue-400/20",
   },
 ];
 
@@ -134,11 +144,13 @@ export default function HomePage() {
                 href={cat.href}
                 className={`group card-hover ${cat.color} border rounded-2xl p-5 flex flex-col gap-2 h-full`}
               >
-                <div className="text-3xl">{cat.emoji}</div>
+                <div className={`w-12 h-12 ${cat.iconBg} rounded-xl flex items-center justify-center mb-1`}>
+                  {(() => { const IconComp = (Icons as unknown as Record<string, React.ComponentType<{className?: string}>>)[cat.icon]; return IconComp ? <IconComp className={`w-6 h-6 ${cat.accent}`} /> : null; })()}
+                </div>
                 <h3 className={`font-bold text-base ${cat.accent}`}><En>{cat.title}</En><Ko>{cat.koTitle}</Ko></h3>
                 <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 leading-snug"><En>{cat.desc}</En><Ko>{cat.koDesc}</Ko></p>
                 <div className="mt-auto pt-1">
-                  <span className={`text-xs font-semibold ${cat.accent} group-hover:underline link-slide`}><En>Explore →</En><Ko>탐험하기 →</Ko></span>
+                  <span className={`inline-flex items-center gap-1 text-xs font-semibold ${cat.accent} group-hover:gap-2 transition-all`}><En>Explore</En><Ko>탐험</Ko><Icons.ArrowRight className="w-3 h-3" /></span>
                 </div>
               </Link>
             </motion.div>

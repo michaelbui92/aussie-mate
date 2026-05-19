@@ -268,3 +268,70 @@
 .stagger-children > *:nth-child(4) { animation-delay: 0.18s; }
 .stagger-children > *:nth-child(5) { animation-delay: 0.24s; }
 .stagger-children > *:nth-child(6) { animation-delay: 0.30s; }
+/* === GRADIENT CTA BUTTONS === */
+
+.btn-gradient {
+  @apply inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl transition-all duration-300;
+  background: linear-gradient(135deg, #E8722A 0%, #FF9A5C 100%);
+  @apply text-white shadow-md hover:shadow-xl hover:scale-105;
+}
+.btn-gradient:active {
+  @apply scale-95;
+}
+
+.btn-gradient-sm {
+  @apply inline-flex items-center justify-center gap-1.5 font-semibold px-4 py-2 rounded-lg transition-all duration-300 text-sm;
+  background: linear-gradient(135deg, #E8722A 0%, #FF9A5C 100%);
+  @apply text-white shadow-md hover:shadow-lg hover:scale-105;
+}
+.btn-gradient-sm:active {
+  @apply scale-95;
+}
+
+.btn-gradient-outline {
+  @apply inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl transition-all duration-300 border-2;
+  border-color: #E8722A;
+  @apply text-sunset bg-transparent hover:bg-gradient-to-br hover:from-sunset hover:to-sunset-light hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105;
+}
+.btn-gradient-outline:active {
+  @apply scale-95;
+}
+
+.btn-gradient-secondary {
+  @apply inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl transition-all duration-300;
+  background: linear-gradient(135deg, #6BA5B5 0%, #8FC4D4 100%);
+  @apply text-white shadow-md hover:shadow-xl hover:scale-105;
+}
+.btn-gradient-secondary:active {
+  @apply scale-95;
+}
+
+.btn-gradient-green {
+  @apply inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl transition-all duration-300;
+  background: linear-gradient(135deg, #5B8A5B 0%, #7DAD7D 100%);
+  @apply text-white shadow-md hover:shadow-xl hover:scale-105;
+}
+.btn-gradient-green:active {
+  @apply scale-95;
+}
+
+/* Hover lift for icon cards */
+.icon-card {
+  @apply bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Step number circle (numbered flow indicators) */
+.step-circle {
+  @apply w-10 h-10 rounded-full bg-gradient-to-br from-sunset to-sunset-light flex items-center justify-center text-white font-bold text-sm shadow-md shrink-0;
+}
+
+/* Comparison blocks */
+.pro-con-item {
+  @apply flex items-start gap-3 py-2 px-3 rounded-xl;
+}
+.pro-con-item.pro {
+  @apply bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300;
+}
+.pro-con-item.con {
+  @apply bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300;
+}
