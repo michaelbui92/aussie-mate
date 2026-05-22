@@ -64,7 +64,7 @@ const destinations: Destination[] = [
     state: "NSW",
     distance: "3 hours north",
     desc: "Famous for its lighthouse, laid-back surf culture, and alternative lifestyle. One of Australia's most iconic beach towns — worth the drive.",
-    koDesc: "등대, 편안한 서핑 문화, 대안적인 라이프스타일로 유명합니다. 호주에서 가장 상징적인 해변 도시 중 하나 — drives할価値가 있습니다.",
+    koDesc: "등대, 편안한 서핑 문화, 대안적인 라이프스타일로 유명합니다. 호주에서 가장 상징적인 해변 도시 중 하나 — 드라이브할 가치가 있습니다.",
     highlights: ["Cape Byron Lighthouse", "Main Beach", "Belongil Cafes", "Farmers markets (Thursday)", "Nightlife"],
     koHighlights: ["Cape Byron 등대", "Main Beach", "Belongil 카페", "팜마켓(목요일)", "나이트라이프"],
     transport: "Drive: 3 hours via M1 and Pacific Highway. Greyhound buses run daily from Sydney. Fly to Ballina airport (1 hour).",

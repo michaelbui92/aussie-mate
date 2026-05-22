@@ -18,7 +18,7 @@ const searchIndex: SearchResult[] = [
     page: "Aussie English",
     pageKo: "호주 영어",
     href: "/aussie-english",
-    matches: { en: "visa, visa situation, visa status, work rights, student visa, working holiday, 40 hours, 20 hours, tax file number", ko: "비자, 비자 상황, 취업 권리, 학생 비자, 워킹홀리디,务工时限" },
+    matches: { en: "visa, visa situation, visa status, work rights, student visa, working holiday, 40 hours, 20 hours, tax file number", ko: "비자, 비자 상황, 취업 권리, 학생 비자, 워킹홀리디, 취업 시간 제한" },
   },
   {
     page: "Aussie English",
@@ -84,7 +84,7 @@ const searchIndex: SearchResult[] = [
     href: "/workplace",
     section: "Employment Rights",
     sectionKo: "취업 권리",
-    matches: { en: "visa, work rights, student visa, working holiday, 40 hours, work limit, 20 hours restriction", ko: "비자, 취업 권리, 학생 비자, 워킹홀리디,务工时限" },
+    matches: { en: "visa, work rights, student visa, working holiday, 40 hours, work limit, 20 hours restriction", ko: "비자, 취업 권리, 학생 비자, 워킹홀리디, 취업 시간 제한" },
   },
   {
     page: "Workplace",

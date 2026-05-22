@@ -55,7 +55,7 @@ const sections: Section[] = [
       {
         label: "ATM Fees",
         en: "Using your own bank's ATM is free. Using another bank's ATM costs $2-3 per withdrawal. In Australia, many places (shops, bars, restaurants) let you pay by card without a minimum — just tap and go. Cash is rarely needed.",
-        ko: "자행 ATM은 무료입니다. 타행 ATM은 회당 $2-3의 수수료가 부과됩니다. 호주에서는 많은 곳(상점, 바, 식당)에서 최소 금액 없이 카드를 사용할 수 있습니다 — 탭하면 끝.現金은 거의 필요하지 않습니다.",
+        ko: "자행 ATM은 무료입니다. 타행 ATM은 회당 $2-3의 수수료가 부과됩니다. 호주에서는 많은 곳(상점, 바, 식당)에서 최소 금액 없이 카드를 사용할 수 있습니다 — 탭하면 끝. 현금은 거의 필요하지 않습니다.",
       },
       {
         label: "International Transfers",

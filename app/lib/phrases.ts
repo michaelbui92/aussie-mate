@@ -652,13 +652,6 @@ export const phrases: Phrase[] = [
     category: "food",
   },
   {
-    phrase: "Bikkie",
-    meaning: "Biscuit / Cookie",
-    korean: "비스킷 / 쿠키",
-    example: "Tim Tams are my favourite bikkie!",
-    category: "food",
-  },
-  {
     phrase: "Sanger",
     meaning: "Sandwich",
     korean: "샌드위치",
@@ -673,17 +666,10 @@ export const phrases: Phrase[] = [
     category: "food",
   },
   {
-    phrase: "Parma",
-    meaning: "Chicken Parma — a pub classic with chicken, tomato sauce, and cheese",
+    phrase: "Parma / Chicken Parmi",
+    meaning: "Chicken parmigiana — crumbed chicken with tomato sauce and cheese",
     korean: "치킨 파르마 (펍의 대표 메뉴)",
     example: "Nothing beats a parma and a beer at the local.",
-    category: "food",
-  },
-  {
-    phrase: "Parma/chicken parmi",
-    meaning: "Chicken parmigiana — crumbed chicken with tomato sauce and cheese",
-    korean: "치킨 파르미지아나",
-    example: "Heading to the pub for a parma and a few drinks.",
     category: "food",
   },
   {
@@ -833,13 +819,6 @@ export const phrases: Phrase[] = [
     meaning: "A lot / Lots of (casual sports talk)",
     korean: "많이 / 상당히",
     example: "There's heaps of good players in this team.",
-    category: "sports",
-  },
-  {
-    phrase: "Bottle-o / Bot",
-    meaning: "A player who gives up easily or lacks courage (not related to actual bottle shops)",
-    korean: "겁쟁이 / 쉽게 포기하는 선수",
-    example: "Don't be a bot — get out there and have a crack!",
     category: "sports",
   },
   {

@@ -13,6 +13,31 @@ const categories: { value: Phrase["category"] | "all"; label: string; enLabel?: 
   { value: "media", label: "Media", enLabel: "Media", koLabel: "미디어" },
 ];
 
+const REVIEW_COUNT = 20;
+
+const top20Phrases = new Set([
+  "G'day",
+  "No worries",
+  "Arvo",
+  "Brekkie",
+  "Barbie",
+  "Bottle-o",
+  "Dunny",
+  "Esky",
+  "Flat out",
+  "Goon",
+  "Maccas",
+  "Ripper",
+  "Servo",
+  "Sanger",
+  "Smoko",
+  "Stubby holder",
+  "Ta",
+  "Thongs",
+  "Cuppa",
+  "Bludge",
+]);
+
 // Simple flashcard review state
 interface ReviewCard {
   phrase: string;
@@ -43,7 +68,7 @@ export default function AussieEnglishPage() {
   }, [search, activeCategory]);
 
   const startReview = useCallback(() => {
-    const shuffled = [...filtered].sort(() => Math.random() - 0.5).slice(0, 20);
+    const shuffled = [...filtered].sort(() => Math.random() - 0.5).slice(0, REVIEW_COUNT);
     setReviewCards(shuffled);
     setReviewIndex(0);
     setReviewFlipped(false);
@@ -243,6 +268,11 @@ export default function AussieEnglishPage() {
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <h3 className="font-bold text-base sm:text-lg text-sunset leading-snug">{p.phrase}</h3>
                   <div className="shrink-0 flex items-center gap-1.5">
+                    {top20Phrases.has(p.phrase) && (
+                      <span className="text-xs font-bold bg-sunset text-white px-2 py-0.5 rounded-full">
+                        ⭐ Top 20
+                      </span>
+                    )}
                     <span className="text-xs font-semibold bg-sand dark:bg-dark-surface text-eucalypt/50 dark:text-dark-muted/50 px-2 py-0.5 rounded-full">
                       {categories.find((c) => c.value === p.category)?.label}
                     </span>

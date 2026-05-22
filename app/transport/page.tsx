@@ -91,7 +91,7 @@ const sections: Section[] = [
       {
         label: "Airport Link",
         en: "The Airport line (T8) costs extra — about $20-25 for a single trip from the airport. Don't take the train if you're on a budget — the 400 bus from the airport terminals costs about $3 and takes a bit longer. If your accommodation is near Central or Redfern, it's often walkable.",
-        ko: "공항 노선(T8)은追加料金が必要です — 공항에서 약 $20-25입니다. 예산이 빠듯하면 기차를 타지 마세요 — 400 버스는 약 $3이고 조금 더 걸립니다. 중앙역이나 레드퍼른 근처에 있으면 도보로 가능할 때가 많습니다.",
+        ko: "공항 노선(T8)은 추가 요금이 필요합니다 — 공항에서 약 $20-25입니다. 예산이 빠듯하면 기차를 타지 마세요 — 400 버스는 약 $3이고 조금 더 걸립니다. 중앙역이나 레드퍼른 근처에 있으면 도보로 가능할 때가 많습니다.",
       },
     ],
   },
