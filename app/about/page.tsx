@@ -152,12 +152,12 @@ export default function AboutPage() {
           </div>
           <En>
             <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70">
-              Corrections and suggestions are always welcome. The best way to reach me is on Telegram.
+              Corrections and suggestions are always welcome — thank you for helping improve this resource.
             </p>
           </En>
           <Ko>
             <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70">
-              수정 제안과 의견은 언제든 환영합니다. 가장 빠른 연락 방법은 Telegram입니다.
+              수정 제안과 의견은 언제든 환영합니다 — 이 자료를 더 좋게 만드는 데 도움을 주셔서 감사합니다.
             </p>
           </Ko>
         </section>

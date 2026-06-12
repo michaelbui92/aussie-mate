@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { useLang } from "@/components/LangBlocks";
+import { useLang, En, Ko } from "@/components/LangBlocks";
 import { useSearch } from "@/components/SearchModal";
 
 const navLinks = [
@@ -56,12 +56,14 @@ export default function Nav() {
         <div className="ml-auto flex items-center gap-2">
           <button
             onClick={openSearch}
-            className="p-2 rounded-lg bg-sand/50 dark:bg-dark-surface hover:bg-sunset/20 text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset transition-all btn-press shrink-0"
+            className="shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-sand/50 dark:bg-dark-surface hover:bg-sunset/20 text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset transition-all btn-press"
             aria-label="Search"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
+            <En><span className="text-xs font-semibold">Search</span></En>
+            <Ko><span className="text-xs font-semibold">검색</span></Ko>
           </button>
 
           <button

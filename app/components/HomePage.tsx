@@ -5,15 +5,16 @@ import { Icons } from "./Icons";
 
 const categories = [
   {
-    href: "/aussie-english",
-    icon: "Globe",
-    title: "Aussie English",
-    desc: "Decode Australian slang and phrases",
-    koTitle: "호주 영어",
-    koDesc: "호주 속어를 쉽게 설명합니다",
-    color: "bg-sunset/10 border-sunset/30",
-    accent: "text-sunset",
-    iconBg: "bg-sunset/20",
+    href: "/apartment",
+    icon: "Home",
+    title: "Apartment Guide",
+    desc: "Renting in NSW, explained simply",
+    koTitle: "부동산 가이드",
+    koDesc: "NSW 임대 절차를 쉽게 설명합니다",
+    color: "bg-sage/10 border-sage/30",
+    accent: "text-sage",
+    iconBg: "bg-sage/20",
+    startHere: true,
   },
   {
     href: "/finance",
@@ -25,17 +26,18 @@ const categories = [
     color: "bg-sage-light/10 border-sage-light/30",
     accent: "text-sage-light",
     iconBg: "bg-sage-light/20",
+    startHere: true,
   },
   {
-    href: "/apartment",
-    icon: "Home",
-    title: "Apartment Guide",
-    desc: "Renting in NSW, explained simply",
-    koTitle: "부동산 가이드",
-    koDesc: "NSW 임대 절차를 쉽게 설명합니다",
-    color: "bg-sage/10 border-sage/30",
-    accent: "text-sage",
-    iconBg: "bg-sage/20",
+    href: "/aussie-english",
+    icon: "Globe",
+    title: "Aussie English",
+    desc: "Decode Australian slang and phrases",
+    koTitle: "호주 영어",
+    koDesc: "호주 속어를 쉽게 설명합니다",
+    color: "bg-sunset/10 border-sunset/30",
+    accent: "text-sunset",
+    iconBg: "bg-sunset/20",
   },
   {
     href: "/workplace",
@@ -147,8 +149,14 @@ export default function HomePage() {
             >
               <Link
                 href={cat.href}
-                className={`group card-hover ${cat.color} border rounded-2xl p-5 flex flex-col gap-2 h-full`}
+                className={`group card-hover ${cat.color} border rounded-2xl p-5 flex flex-col gap-2 h-full relative`}
               >
+                {cat.startHere && (
+                  <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-sunset text-white px-2 py-0.5 rounded-full">
+                    <En>Start here</En>
+                    <Ko>시작하기</Ko>
+                  </span>
+                )}
                 <div className={`w-12 h-12 ${cat.iconBg} rounded-xl flex items-center justify-center mb-1`}>
                   {(() => { const IconComp = (Icons as unknown as Record<string, React.ComponentType<{className?: string}>>)[cat.icon]; return IconComp ? <IconComp className={`w-6 h-6 ${cat.accent}`} /> : null; })()}
                 </div>

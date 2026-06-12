@@ -9,6 +9,8 @@ import { geistSans } from "@/lib/fonts";
 import PageTransition from "@/components/PageTransition";
 import { SearchModal } from "@/components/SearchModal";
 import ScrollAnimations from "@/components/ScrollAnimations";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "AussieMate — Your Australian Survival Guide",
@@ -46,12 +48,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div id="content-root" className="flex flex-col min-h-screen">
                 <Nav />
                 <main className="flex-1">
+                  <Breadcrumbs />
                   <PageTransition>{children}</PageTransition>
                   <SearchModal />
                 </main>
                 <Footer />
               </div>
               <ScrollAnimations />
+              <BackToTop />
             </SearchProvider>
           </LangProvider>
         </ThemeProvider>
