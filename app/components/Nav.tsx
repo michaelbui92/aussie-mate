@@ -12,22 +12,15 @@ const navLinks = [
   { href: "/finance", label: "Finance" },
   { href: "/apartment", label: "Apartment" },
   { href: "/workplace", label: "Workplace" },
-  { href: "/study", label: "Study" },
+  { href: "/weather", label: "Weather" },
+  { href: "/faq", label: "FAQ" },
   { href: "/transport", label: "Transport" },
   { href: "/resources", label: "Resources" },
 ];
 
 const testLinks = [
-  { href: "/test-homepage-1", label: "T1: Editorial" },
-  { href: "/test-homepage-2", label: "T2: Premium Dark" },
-  { href: "/test-homepage-3", label: "T3: Neo-Brutalist" },
-  { href: "/test-homepage-4", label: "T4: Bento Grid" },
-  { href: "/test-homepage-5", label: "T5: Minimal" },
-  { href: "/test-homepage-6", label: "T6: Sky Brutalist" },
-  { href: "/test-homepage-7", label: "T7: Teal Coast" },
-  { href: "/test-homepage-8", label: "T8: Indigo Strip" },
-  { href: "/test-homepage-9", label: "T9: Sage Block" },
-  { href: "/test-homepage-10", label: "T10: Dark Shore" },
+  { href: "/test-homepage-1", label: "T1: Bondi" },
+  { href: "/test-homepage-2", label: "T2: Coastal" },
 ];
 
 export default function Nav() {

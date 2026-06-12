@@ -9,128 +9,129 @@ import { SearchModal } from "@/components/SearchModal";
 
 type StageKey = "visiting" | "arrived" | "home";
 
-const stages: { key: StageKey; title: string; koTitle: string; accentBorder: string; hoverShadow: string; numColor: string }[] = [
-  { key: "visiting", title: "I'm visiting", koTitle: "여행 중이에요", accentBorder: "border-l-amber-500", hoverShadow: "hover:shadow-amber-100", numColor: "text-amber-600" },
-  { key: "arrived", title: "I just arrived", koTitle: "방금 도착했어요", accentBorder: "border-l-emerald-500", hoverShadow: "hover:shadow-emerald-100", numColor: "text-emerald-600" },
-  { key: "home", title: "This is home", koTitle: "여기가 내 집이에요", accentBorder: "border-l-sky-500", hoverShadow: "hover:shadow-sky-100", numColor: "text-sky-600" },
+const stages: { key: StageKey; title: string; koTitle: string; numBg: string; numColor: string }[] = [
+  { key: "visiting", title: "I'm visiting", koTitle: "여행 중이에요", numBg: "bg-amber-400", numColor: "text-amber-900" },
+  { key: "arrived", title: "I just got here", koTitle: "방금 도착했어요", numBg: "bg-emerald-400", numColor: "text-emerald-900" },
+  { key: "home", title: "I call this home", koTitle: "여기가 내 집이에요", numBg: "bg-sky-400", numColor: "text-sky-900" },
 ];
 
-const categories = [
-  { href: "/apartment", title: "Apartment Guide", desc: "Renting in NSW, explained simply", koTitle: "부동산 가이드", koDesc: "NSW 임대 절차를 쉽게" },
-  { href: "/finance", title: "Finance", desc: "Banking, tax, super, budgeting", koTitle: "금융", koDesc: "은행, 세금, 퇴직연금, 예산" },
-  { href: "/aussie-english", title: "Aussie English", desc: "Decode Australian slang and phrases", koTitle: "호주 영어", koDesc: "호주 속어와 표현" },
-  { href: "/sport", title: "Sport", desc: "NRL, AFL, cricket, and Aussie sports culture", koTitle: "스포츠", koDesc: "호주 스포츠 문화" },
-  { href: "/workplace", title: "Workplace", desc: "Australian work culture and your rights", koTitle: "직장", koDesc: "직장 문화와 권리" },
-  { href: "/study", title: "Study", desc: "University and academic life in Australia", koTitle: "학습", koDesc: "대학과 학업 생활" },
-  { href: "/transport", title: "Transport", desc: "Opal, trains, buses, ferries, and driving", koTitle: "교통", koDesc: "오팔, 기차, 버스, 페리" },
-  { href: "/tourist", title: "Tourist", desc: "Sydney and NSW for short-term visitors", koTitle: "여행자", koDesc: "시드니 & NSW 방문자" },
-  { href: "/beyond-sydney", title: "Beyond Sydney", desc: "Weekend trips and road trips from Sydney", koTitle: "시드니 밖으로", koDesc: "주말 여행 & 드라이브" },
-  { href: "/resources", title: "Resources", desc: "Government services and community links", koTitle: "자료", koDesc: "정부 서비스 & 커뮤니티" },
+const topics = [
+  { href: "/apartment", title: "Apartment", titleKo: "부동산", tagline: "Lease, bond, flatmates", taglineKo: "임대, 보증금, 쉐어하우스", color: "bg-amber-50", accent: "text-amber-600", border: "border-l-amber-400" },
+  { href: "/finance", title: "Finance", titleKo: "금융", tagline: "Bank, TFN, super — first week", taglineKo: "은행, 세금, 퇴직연금", color: "bg-emerald-50", accent: "text-emerald-600", border: "border-l-emerald-400" },
+  { href: "/aussie-english", title: "Aussie English", titleKo: "호주 영어", tagline: "Arvo, ta, no worries — decoded", taglineKo: "호주 속어 해독", color: "bg-sky-50", accent: "text-sky-600", border: "border-l-sky-400" },
+  { href: "/sport", title: "Sport", titleKo: "스포츠", tagline: "NRL, AFL, cricket obsession", taglineKo: "호주 스포츠의 모든 것", color: "bg-orange-50", accent: "text-orange-600", border: "border-l-orange-400" },
+  { href: "/workplace", title: "Workplace", titleKo: "직장", tagline: "Award wages, your rights", taglineKo: "노동자 권리와 직장 문화", color: "bg-teal-50", accent: "text-teal-600", border: "border-l-teal-400" },
+  { href: "/study", title: "Study", titleKo: "학습", tagline: "Uni, VET, English courses", taglineKo: "대학과 학업", color: "bg-indigo-50", accent: "text-indigo-600", border: "border-l-indigo-400" },
+  { href: "/transport", title: "Transport", titleKo: "교통", tagline: "Opal, trains, ferries, rideshare", taglineKo: "오팔, 기차, 버스, 페리", color: "bg-cyan-50", accent: "text-cyan-600", border: "border-l-cyan-400" },
+  { href: "/tourist", title: "Tourist", titleKo: "여행자", tagline: "Sydney, coast, Blue Mountains", taglineKo: "시드니와 NSW 필수 명소", color: "bg-amber-50", accent: "text-amber-600", border: "border-l-amber-400" },
+  { href: "/beyond-sydney", title: "Beyond Sydney", titleKo: "시드니 밖으로", tagline: "Weekend drives and road trips", taglineKo: "주말 드라이브와 여행", color: "bg-emerald-50", accent: "text-emerald-600", border: "border-l-emerald-400" },
+  { href: "/resources", title: "Resources", titleKo: "자료", tagline: "Medicare, Centrelink, community", taglineKo: "Medicare, TFN, 커뮤니티", color: "bg-stone-50", accent: "text-stone-600", border: "border-l-stone-400" },
 ];
 
-const topicAccents = [
-  "border-l-amber-500 hover:shadow-amber-100",
-  "border-l-emerald-500 hover:shadow-emerald-100",
-  "border-l-sky-500 hover:shadow-sky-100",
-  "border-l-rose-400 hover:shadow-rose-100",
-  "border-l-violet-400 hover:shadow-violet-100",
-  "border-l-teal-500 hover:shadow-teal-100",
-  "border-l-orange-400 hover:shadow-orange-100",
-  "border-l-amber-500 hover:shadow-amber-100",
-  "border-l-cyan-500 hover:shadow-cyan-100",
-  "border-l-fuchsia-400 hover:shadow-fuchsia-100",
-];
-
-export default function TestHomepage1() {
+export default function TestHomepage6() {
   const [active, setActive] = useState<StageKey>("visiting");
+  const activeStage = stages.find((s) => s.key === active)!;
+  const activeIdx = stages.findIndex((s) => s.key === active);
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-amber-50 via-white to-white">
-        <div className="max-w-5xl mx-auto px-4 py-12 md:py-20 text-center">
-          <div className="inline-block bg-amber-100 rounded-full px-4 py-1.5 mb-5">
-            <En><span className="text-amber-700 text-sm font-semibold">New in Australia?</span></En>
-            <Ko><span className="text-amber-700 text-sm font-semibold">호주에 처음 오셨나요?</span></Ko>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-gray-900 mb-4 leading-tight">
-            <span className="text-amber-600">G&apos;day</span> and welcome 🦘
-          </h1>
-          <p className="text-lg text-gray-600 max-w-lg mx-auto">
-            <En>Your friendly bilingual guide to Aussie life — from landing to living like a local.</En>
-            <Ko>착륙부터 현지인처럼 사는 법까지 — 호주 생활의 친근한 바이링구얼 가이드.</Ko>
-          </p>
-        </div>
-      </section>
-
-      {/* Stages */}
-      <section className="max-w-5xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          {stages.map((s, i) => {
-            const isActive = active === s.key;
-            return (
-              <button
-                key={s.key}
-                onClick={() => setActive(s.key)}
-                className={`text-left p-6 rounded-xl border-l-4 transition-all duration-200 bg-white ${
-                  isActive
-                    ? `${s.accentBorder} shadow-lg ${s.hoverShadow} -translate-y-1`
-                    : `border-gray-200 shadow-sm opacity-70 hover:opacity-100 hover:shadow-md ${s.accentBorder} border-l-4`
-                }`}
-              >
-                <div className={`text-xs font-bold ${s.numColor} mb-2`}>{String(i + 1).padStart(2, "0")}</div>
-                <h2 className="text-xl font-serif font-bold text-gray-900 mb-1">
-                  <En>{s.title}</En>
-                  <Ko>{s.koTitle}</Ko>
-                </h2>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Active stage content */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100">
-          {active === "visiting" && <VisitingContent />}
-          {active === "arrived" && <ArrivedContent />}
-          {active === "home" && <HomeContent />}
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="max-w-5xl mx-auto px-4 py-8">
-        <h2 className="text-2xl font-serif font-bold text-gray-900 mb-6 text-center">
-          <En>Browse all guides</En>
-          <Ko>모든 가이드 둘러보기</Ko>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {categories.map((cat, i) => (
-            <Link
-              key={cat.href}
-              href={cat.href}
-              className={`group block bg-white rounded-xl border-l-4 p-5 shadow-sm border-gray-100 ${topicAccents[i]} hover:shadow-xl hover:-translate-y-1 transition-all duration-200`}
-            >
-              <h3 className="text-lg font-serif font-bold text-gray-900 group-hover:text-gray-600 transition-colors">
-                <En>{cat.title}</En>
-                <Ko>{cat.koTitle}</Ko>
-              </h3>
-              <p className="text-sm text-gray-500 mt-1">
-                <En>{cat.desc}</En>
-                <Ko>{cat.koDesc}</Ko>
+      <div className="bg-stone-900 min-h-screen">
+        {/* Full-bleed hero with Bondi surf image */}
+        <div className="relative min-h-[520px] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1800&q=85"
+            alt="Bondi Beach, Sydney"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          {/* Hard gradient overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/70 to-stone-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-transparent to-transparent" />
+          
+          {/* Content over image */}
+          <div className="relative max-w-5xl mx-auto px-4 pt-10 pb-12">
+            <div className="mb-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-amber-400 mb-4">
+                <En>AussieMate · Bilingual · AU/KO</En>
+                <Ko>호주 메이트 · 바이링구얼 · 호주 한인</Ko>
               </p>
-            </Link>
-          ))}
+              <h1 className="text-5xl md:text-7xl font-black text-white leading-none mb-3 drop-shadow-lg">
+                <En>G&apos;day.<br/>Welcome<br/>home 🦘</En>
+                <Ko>호주에<br/>오신 것을<br/>환영합니다</Ko>
+              </h1>
+              <p className="text-stone-300 text-sm font-medium max-w-sm">
+                <En>Your bilingual guide to Aussie life — landing, working, living.</En>
+                <Ko>호주 생활의 바이링구얼 동반자.</Ko>
+              </p>
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* Trust strip */}
-      <section className="mt-12 bg-gray-50 border-t border-gray-200 py-8">
-        <div className="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-          <span>📚 <strong className="text-gray-900">10</strong> guides</span>
-          <span>💬 <strong className="text-gray-900">209</strong> phrases</span>
-          <span>🇰🇷 For Koreans in Australia</span>
+        {/* Stage selector */}
+        <div className="bg-amber-500 border-b-4 border-black">
+          <div className="max-w-5xl mx-auto px-4 pb-6">
+            <div className="grid grid-cols-3 gap-3">
+              {stages.map((s, i) => {
+                const isActive = active === s.key;
+                return (
+                  <button
+                    key={s.key}
+                    onClick={() => setActive(s.key)}
+                    className={`flex items-center gap-3 p-4 border-4 border-black font-black text-sm transition-all ${
+                      isActive
+                        ? `${s.numBg} shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -translate-y-1`
+                        : "bg-amber-600 text-amber-200 hover:bg-amber-500 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                    }`}
+                  >
+                    <div className={`${s.numBg} ${s.numColor} font-mono text-xs font-black w-6 h-6 rounded-full flex items-center justify-center shrink-0`}>
+                      {i + 1}
+                    </div>
+                    <span className={isActive ? "text-inherit" : ""}>
+                      <En>{s.title}</En>
+                      <Ko>{s.koTitle}</Ko>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
-      </section>
 
+        {/* Content */}
+        <div className="max-w-5xl mx-auto px-4 py-8">
+          <div className={`bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 md:p-8 mb-8 border-t-8 ${["border-t-amber-400","border-t-emerald-400","border-t-sky-400"][activeIdx]}`}>
+            {active === "visiting" && <VisitingContent />}
+            {active === "arrived" && <ArrivedContent />}
+            {active === "home" && <HomeContent />}
+          </div>
+        </div>
+
+        {/* Topic grid */}
+        <div className="max-w-5xl mx-auto px-4 pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {topics.map((t) => (
+              <Link
+                key={t.href}
+                href={t.href}
+                className={`group block ${t.color} border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all`}
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className={`font-black text-lg ${t.accent}`}>
+                    <En>{t.title}</En>
+                    <Ko>{t.titleKo}</Ko>
+                  </h3>
+                  <svg className="w-4 h-4 text-black/30 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+                <p className={`text-sm font-medium ${t.accent} opacity-70`}>
+                  <En>{t.tagline}</En>
+                  <Ko>{t.taglineKo}</Ko>
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
       <SearchModal />
     </>
   );
