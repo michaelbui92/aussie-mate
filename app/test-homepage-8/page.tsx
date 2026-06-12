@@ -9,23 +9,23 @@ import { SearchModal } from "@/components/SearchModal";
 
 type StageKey = "visiting" | "arrived" | "home";
 
-const stages: { key: StageKey; title: string; koTitle: string; color: string; border: string }[] = [
-  { key: "visiting", title: "I'm visiting", koTitle: "여행 중이에요", color: "text-amber-600", border: "border-t-amber-400" },
-  { key: "arrived", title: "I just got here", koTitle: "방금 도착했어요", color: "text-emerald-600", border: "border-t-emerald-400" },
-  { key: "home", title: "I call this home", koTitle: "여기가 내 집이에요", color: "text-teal-600", border: "border-t-teal-400" },
+const stages: { key: StageKey; title: string; koTitle: string; bg: string; border: string }[] = [
+  { key: "visiting", title: "I'm visiting", koTitle: "여행 중이에요", bg: "bg-sky-100", border: "border-t-sky-500" },
+  { key: "arrived", title: "I just got here", koTitle: "방금 도착했어요", bg: "bg-teal-100", border: "border-t-teal-500" },
+  { key: "home", title: "I call this home", koTitle: "여기가 내 집이에요", bg: "bg-indigo-100", border: "border-t-indigo-500" },
 ];
 
-const categories = [
-  { href: "/apartment", title: "Apartment", titleKo: "부동산", color: "bg-amber-50 border-amber-200 text-amber-700", icon: "🏠" },
-  { href: "/finance", title: "Finance", titleKo: "금융", color: "bg-amber-50 border-amber-200 text-amber-700", icon: "💰" },
-  { href: "/aussie-english", title: "Aussie English", titleKo: "호주 영어", color: "bg-emerald-50 border-emerald-200 text-emerald-700", icon: "💬" },
-  { href: "/sport", title: "Sport", titleKo: "스포츠", color: "bg-emerald-50 border-emerald-200 text-emerald-700", icon: "🏉" },
-  { href: "/workplace", title: "Workplace", titleKo: "직장", color: "bg-teal-50 border-teal-200 text-teal-700", icon: "💼" },
-  { href: "/study", title: "Study", titleKo: "학습", color: "bg-teal-50 border-teal-200 text-teal-700", icon: "🎓" },
-  { href: "/transport", title: "Transport", titleKo: "교통", color: "bg-orange-50 border-orange-200 text-orange-700", icon: "🚆" },
-  { href: "/tourist", title: "Tourist", titleKo: "여행자", color: "bg-orange-50 border-orange-200 text-orange-700", icon: "✈️" },
-  { href: "/beyond-sydney", title: "Beyond Sydney", titleKo: "시드니 밖으로", color: "bg-orange-50 border-orange-200 text-orange-700", icon: "🛣️" },
-  { href: "/resources", title: "Resources", titleKo: "자료", color: "bg-stone-50 border-stone-200 text-stone-700", icon: "🔗" },
+const cats = [
+  { href: "/apartment", title: "Apartment", titleKo: "부동산", bg: "bg-sky-400", text: "text-white" },
+  { href: "/finance", title: "Finance", titleKo: "금융", bg: "bg-teal-500", text: "text-white" },
+  { href: "/aussie-english", title: "Aussie English", titleKo: "호주 영어", bg: "bg-indigo-400", text: "text-white" },
+  { href: "/sport", title: "Sport", titleKo: "스포츠", bg: "bg-emerald-500", text: "text-white" },
+  { href: "/workplace", title: "Workplace", titleKo: "직장", bg: "bg-sky-500", text: "text-white" },
+  { href: "/study", title: "Study", titleKo: "학습", bg: "bg-teal-600", text: "text-white" },
+  { href: "/transport", title: "Transport", titleKo: "교통", bg: "bg-amber-500", text: "text-white" },
+  { href: "/tourist", title: "Tourist", titleKo: "여행자", bg: "bg-cyan-500", text: "text-white" },
+  { href: "/beyond-sydney", title: "Beyond Sydney", titleKo: "시드니 밖으로", bg: "bg-violet-500", text: "text-white" },
+  { href: "/resources", title: "Resources", titleKo: "자료", bg: "bg-slate-500", text: "text-white" },
 ];
 
 export default function TestHomepage8() {
@@ -34,76 +34,65 @@ export default function TestHomepage8() {
   return (
     <>
       <div className="bg-white min-h-screen">
-        {/* Magazine header */}
-        <div className="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 text-white">
-          <div className="max-w-5xl mx-auto px-4 py-14 md:py-20">
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-stone-400 mb-3">Volume 01 · Korea · Australia</p>
-                <h1 className="text-5xl md:text-7xl font-black leading-none tracking-tight">
-                  <En>Aussie<br/><span className="text-amber-400">Mate</span></En>
-                  <Ko>호주<br/><span className="text-amber-400">메이트</span></Ko>
-                </h1>
-              </div>
-              <div className="hidden md:block text-right">
-                <p className="text-xs text-stone-500 mb-1">호주 한인들을 위한</p>
-                <p className="text-xs text-stone-500">바이링구얼 생활 가이드</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-4 text-sm text-stone-400">
-              <span className="bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full font-semibold">10 Guides</span>
-              <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full font-semibold">209 Phrases</span>
-              <span className="bg-teal-500/20 text-teal-400 px-3 py-1 rounded-full font-semibold">Bilingual EN/KO</span>
-            </div>
+        {/* Hero strip */}
+        <div className="bg-indigo-500 border-b-4 border-black">
+          <div className="max-w-5xl mx-auto px-4 py-12">
+            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-2">
+              <En>AussieMate<br/><span className="text-sky-200">Your Aussie Guide</span></En>
+              <Ko>호주 메이트<br/><span className="text-sky-200">호주 생활 가이드</span></Ko>
+            </h1>
+            <p className="text-indigo-200 text-sm font-semibold">
+              <En>10 guides · 209 phrases · For Koreans in Australia</En>
+              <Ko>10개 가이드 · 209개 표현 · 호주 한인 대상</Ko>
+            </p>
           </div>
         </div>
 
-        {/* Stages — horizontal magazine cards */}
+        {/* 3 stage columns */}
         <div className="max-w-5xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {stages.map((s, i) => {
               const isActive = active === s.key;
               return (
-                <button
-                  key={s.key}
-                  onClick={() => setActive(s.key)}
-                  className={`text-left p-5 border-t-4 transition-all duration-200 ${
-                    isActive
-                      ? `${s.border} bg-white shadow-lg -mt-1`
-                      : `${s.border} bg-stone-50 hover:bg-white border-stone-200 opacity-60 hover:opacity-100`
-                  }`}
-                >
-                  <div className="text-[10px] font-mono font-black tracking-widest text-stone-300 mb-3">0{i + 1}</div>
-                  <h2 className={`text-lg font-black tracking-tight ${isActive ? s.color : "text-stone-700"}`}>
+                <div key={s.key} className="flex flex-col gap-2">
+                  <button
+                    onClick={() => setActive(s.key)}
+                    className={`w-full text-left p-4 border-4 border-black font-black transition-all ${
+                      isActive
+                        ? `${s.bg} ${s.border} border-t-[6px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-0.5`
+                        : "bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5"
+                    }`}
+                  >
+                    <span className="font-mono text-xs block mb-1 opacity-50">{String(i + 1).padStart(2, "0")}</span>
                     <En>{s.title}</En>
                     <Ko>{s.koTitle}</Ko>
-                  </h2>
-                </button>
+                  </button>
+                </div>
               );
             })}
           </div>
 
-          <div className="border border-stone-100 rounded-2xl p-6 md:p-8">
+          {/* Content — fills full width */}
+          <div className="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 md:p-8">
             {active === "visiting" && <VisitingContent />}
             {active === "arrived" && <ArrivedContent />}
             {active === "home" && <HomeContent />}
           </div>
         </div>
 
-        {/* Category cards with icons */}
+        {/* Topic grid */}
         <div className="max-w-5xl mx-auto px-4 pb-12">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-            {categories.map((cat) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {cats.map((cat) => (
               <Link
                 key={cat.href}
                 href={cat.href}
-                className={`group flex flex-col items-center text-center p-4 rounded-2xl border transition-all duration-200 hover:shadow-lg hover:-translate-y-1 ${cat.color}`}
+                className={`${cat.bg} border-4 border-black p-5 flex flex-col justify-end hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all`}
               >
-                <span className="text-2xl mb-2">{cat.icon}</span>
-                <span className="font-bold text-sm leading-tight">
+                <div className="font-black text-white text-sm">
                   <En>{cat.title}</En>
                   <Ko>{cat.titleKo}</Ko>
-                </span>
+                </div>
               </Link>
             ))}
           </div>
