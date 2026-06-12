@@ -35,53 +35,62 @@ export default function TestHomepage10() {
   return (
     <>
       <div className="bg-stone-50 min-h-screen">
-        {/* Dark top band */}
-        <div className="bg-stone-900 border-b-3 border-black">
-          <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-            <p className="text-[9px] font-black uppercase tracking-[0.5em] text-stone-500">
-              <En>AussieMate · Bilingual · AU/KO · 호주 한인</En>
-              <Ko>호주 메이트 · バイリンガル · 호주 한인 가이드</Ko>
+        {/* Full-bleed hero — Bondi ocean pool */}
+        <div className="relative min-h-[520px] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=1800&q=85"
+            alt="Bondi Icebergs, Sydney"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/70 to-stone-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-transparent to-transparent" />
+          
+          <div className="relative max-w-5xl mx-auto px-4 pt-10 pb-12">
+            <p className="text-amber-400 text-[10px] font-black uppercase tracking-[0.4em] mb-4">
+              <En>Bilingual Guide · 호주 한인 동반자</En>
+              <Ko>バイリンガル ガイド · 호주 한인 가이드</Ko>
             </p>
-            <p className="text-[9px] font-bold text-stone-600">10 guides · 209 phrases</p>
+            <h1 className="text-6xl md:text-8xl font-black text-white leading-none mb-4 drop-shadow-lg">
+              <En>G&apos;day,<br/><span className="text-amber-400">mate.</span></En>
+              <Ko>호주에<br/><span className="text-amber-400">오신 것을</span><br/>환영합니다</Ko>
+            </h1>
+            <p className="text-stone-300 font-medium text-sm">
+              <En>Everything you need to live like a local — bilingual, no fluff.</En>
+              <Ko>현지인처럼 호주 생활하기 — 바이링구얼 가이드.</Ko>
+            </p>
           </div>
         </div>
 
-        {/* Big bold hero — dark stone with amber text */}
+        {/* Dark top band */}
         <div className="bg-stone-900 border-b-4 border-black">
-          <div className="max-w-5xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8 items-end">
-            <div className="flex-1">
-              <p className="text-amber-400 text-[10px] font-black uppercase tracking-[0.4em] mb-4">
-                <En>Bilingual Guide · 호주 한인 동반자</En>
-                <Ko>バイリンガル ガイド · 호주 한인 가이드</Ko>
-              </p>
-              <h1 className="text-6xl md:text-8xl font-black text-white leading-none mb-4">
-                <En>G&apos;day,<br/><span className="text-amber-400">mate.</span></En>
-                <Ko>호주에<br/><span className="text-amber-400">오신 것을</span><br/>환영합니다</Ko>
-              </h1>
-              <p className="text-stone-400 font-medium text-sm">
-                <En>Everything you need to live like a local — bilingual, no fluff.</En>
-                <Ko>현지인처럼 호주 생활하기 — 바이링구얼 가이드.</Ko>
-              </p>
-            </div>
-            <div className="flex-none w-full md:w-auto">
-              <div className="grid grid-cols-1 gap-2">
-                {stages.map((s, i) => (
-                  <button
-                    key={s.key}
-                    onClick={() => setActive(s.key)}
-                    className={`w-full text-left px-5 py-4 border-4 border-black font-black text-sm transition-all flex items-center gap-3 ${
-                      active === s.key
-                        ? `${s.color} text-stone-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-0.5`
-                        : "bg-stone-800 text-stone-300 hover:bg-stone-700 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                    }`}
-                  >
-                    <span className="font-mono text-xs opacity-50">{String(i + 1).padStart(2, "0")}</span>
-                    <En>{s.title}</En>
-                    <Ko>{s.koTitle}</Ko>
-                    <span className="ml-auto opacity-30">→</span>
-                  </button>
-                ))}
-              </div>
+          <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <p className="text-[9px] font-black uppercase tracking-[0.5em] text-stone-500">
+              <En>AussieMate · AU/KO · 10 guides · 209 phrases</En>
+              <Ko>호주 메이트 · 10개 가이드 · 209개 표현</Ko>
+            </p>
+          </div>
+        </div>
+
+        {/* Stage selector */}
+        <div className="bg-stone-900 border-b-4 border-black">
+          <div className="max-w-5xl mx-auto px-4 py-6">
+            <div className="grid grid-cols-1 gap-2">
+              {stages.map((s, i) => (
+                <button
+                  key={s.key}
+                  onClick={() => setActive(s.key)}
+                  className={`w-full text-left px-5 py-4 border-4 border-black font-black text-sm transition-all flex items-center gap-3 ${
+                    active === s.key
+                      ? `${s.color} text-stone-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-0.5`
+                      : "bg-stone-800 text-stone-300 hover:bg-stone-700 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  }`}
+                >
+                  <span className="font-mono text-xs opacity-50">{String(i + 1).padStart(2, "0")}</span>
+                  <En>{s.title}</En>
+                  <Ko>{s.koTitle}</Ko>
+                  <span className="ml-auto opacity-30">→</span>
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -95,7 +104,7 @@ export default function TestHomepage10() {
           </div>
         </div>
 
-        {/* Topic grid — numbered list style */}
+        {/* Topic grid */}
         <div className="max-w-5xl mx-auto px-4 pb-12">
           <div className="mb-4 pb-3 border-b-3 border-black flex items-center justify-between">
             <h2 className="text-sm font-black uppercase tracking-widest text-stone-500">

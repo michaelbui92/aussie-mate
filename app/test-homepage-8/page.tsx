@@ -9,10 +9,10 @@ import { SearchModal } from "@/components/SearchModal";
 
 type StageKey = "visiting" | "arrived" | "home";
 
-const stages: { key: StageKey; title: string; koTitle: string; bg: string; accent: string; border: string }[] = [
-  { key: "visiting", title: "I'm visiting", koTitle: "여행 중이에요", bg: "bg-amber-100", accent: "text-amber-700", border: "border-t-amber-400" },
-  { key: "arrived", title: "I just got here", koTitle: "방금 도착했어요", bg: "bg-emerald-100", accent: "text-emerald-700", border: "border-t-emerald-400" },
-  { key: "home", title: "I call this home", koTitle: "여기가 내 집이에요", bg: "bg-teal-100", accent: "text-teal-700", border: "border-t-teal-400" },
+const stages: { key: StageKey; title: string; koTitle: string; bg: string; accent: string }[] = [
+  { key: "visiting", title: "I'm visiting", koTitle: "여행 중이에요", bg: "bg-amber-100", accent: "text-amber-700" },
+  { key: "arrived", title: "I just got here", koTitle: "방금 도착했어요", bg: "bg-emerald-100", accent: "text-emerald-700" },
+  { key: "home", title: "I call this home", koTitle: "여기가 내 집이에요", bg: "bg-teal-100", accent: "text-teal-700" },
 ];
 
 const topics = [
@@ -30,26 +30,35 @@ const topics = [
 
 export default function TestHomepage8() {
   const [active, setActive] = useState<StageKey>("visiting");
+  const activeIdx = stages.findIndex((s) => s.key === active);
 
   return (
     <>
       <div className="bg-white min-h-screen">
-        {/* Bold dark header */}
-        <div className="bg-stone-900 border-b-4 border-black">
-          <div className="max-w-5xl mx-auto px-4 py-12">
+        {/* Full-bleed hero — Rainforest waterfall */}
+        <div className="relative min-h-[500px] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1800&q=85"
+            alt="Australian Rainforest"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-transparent to-transparent" />
+          
+          <div className="relative max-w-5xl mx-auto px-4 pt-10 pb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-end">
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-500 mb-4">
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-400 mb-4">
                   <En>AussieMate · Bilingual · For Koreans in Australia</En>
                   <Ko>호주 메이트 · 바이링구얼 · 호주 한인 가이드</Ko>
                 </p>
-                <h1 className="text-5xl md:text-7xl font-black text-stone-900 leading-none">
-                  <En>G&apos;day,<br/><span className="text-amber-400">Australia</span></En>
-                  <Ko>호주에<br/><span className="text-amber-400">오신 것을</span></Ko>
+                <h1 className="text-5xl md:text-7xl font-black text-white leading-none drop-shadow-lg">
+                  <En>G&apos;day,<br/><span className="text-emerald-400">Australia</span></En>
+                  <Ko>호주에<br/><span className="text-emerald-400">오신 것을</span></Ko>
                 </h1>
               </div>
               <div>
-                <p className="text-stone-400 font-medium text-sm leading-relaxed mb-4">
+                <p className="text-stone-300 font-medium text-sm leading-relaxed mb-4">
                   <En>Your bilingual guide to Aussie life — landing, working, studying, living like a local.</En>
                   <Ko>호주 생활의 바이링구얼 가이드. 착륙에서 현지인처럼.</Ko>
                 </p>

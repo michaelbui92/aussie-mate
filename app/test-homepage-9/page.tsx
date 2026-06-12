@@ -37,31 +37,28 @@ export default function TestHomepage9() {
   return (
     <>
       <div className="bg-stone-200 min-h-screen">
-        {/* Top badge */}
-        <div className="bg-emerald-600 border-b-4 border-black">
-          <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-200">
-              <En>AussieMate · Bilingual · AU/KO</En>
-              <Ko>호주 메이트 · 바이링구얼 · 호주 한인</Ko>
-            </p>
-            <div className="flex gap-1">
-              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
-              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
-              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Hero */}
-        <div className="bg-emerald-600 border-b-4 border-black">
-          <div className="max-w-5xl mx-auto px-4 py-12">
+        {/* Full-bleed hero — Sydney night skyline */}
+        <div className="relative min-h-[480px] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1800&q=85"
+            alt="Sydney at night"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/70 to-stone-900/40" />
+          <div className="absolute inset-0 bg-gradient-to-l from-stone-900/80 via-transparent to-transparent" />
+          
+          <div className="relative max-w-5xl mx-auto px-4 pt-10 pb-12">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-end">
               <div className="md:col-span-3">
-                <h1 className="text-5xl md:text-6xl font-black text-white leading-none mb-3">
+                <p className="text-emerald-400 text-[10px] font-black uppercase tracking-[0.4em] mb-4">
+                  <En>AussieMate · Bilingual · AU/KO</En>
+                  <Ko>호주 메이트 · 바이링구얼 · 호주 한인</Ko>
+                </p>
+                <h1 className="text-5xl md:text-6xl font-black text-white leading-none mb-3 drop-shadow-lg">
                   <En>G&apos;day,<br/>Aussie<br/>Mate 🦘</En>
                   <Ko>호주에<br/>오신 것을<br/>환영합니다</Ko>
                 </h1>
-                <p className="text-emerald-200 font-medium text-sm max-w-xs">
+                <p className="text-stone-300 font-medium text-sm max-w-xs">
                   <En>Bilingual guide for Koreans in Australia — everything you need, nothing you don&apos;t.</En>
                   <Ko>호주 한인을 위한 바이링구얼 동반자.</Ko>
                 </p>
@@ -74,7 +71,7 @@ export default function TestHomepage9() {
                     className={`p-3 text-left border-3 border-black transition-all ${
                       active === s.key
                         ? `${palette[i]} text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-1`
-                        : "bg-emerald-700 text-emerald-300 hover:bg-emerald-600"
+                        : "bg-stone-900/80 text-stone-300 hover:bg-stone-800"
                     }`}
                   >
                     <div className="font-mono text-[9px] font-black opacity-50 mb-0.5">{s.num}</div>
@@ -98,7 +95,7 @@ export default function TestHomepage9() {
           </div>
         </div>
 
-        {/* Topic grid — 2 rows of 5 */}
+        {/* Topic grid */}
         <div className="max-w-5xl mx-auto px-4 pb-12">
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {topics.map((t, i) => (
@@ -108,11 +105,11 @@ export default function TestHomepage9() {
                 className={`${t.color} ${t.text} border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col justify-between hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all`}
               >
                 <div className="flex items-start justify-between mb-2">
-                  <div className={`font-black text-sm`}>
+                  <div className="font-black text-sm">
                     <En>{t.title}</En>
                     <Ko>{t.titleKo}</Ko>
                   </div>
-                  <div className={`w-3 h-3 ${palette[i]} border border-black shrink-0`}></div>
+                  <div className={`w-3 h-3 ${palette[i]} border border-black shrink-0`} />
                 </div>
                 <div className="text-[10px] font-semibold text-stone-500 leading-tight">
                   <En>{t.tagline}</En>
