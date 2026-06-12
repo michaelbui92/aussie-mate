@@ -4,39 +4,35 @@ import Checklist, { type ChecklistItem } from "../Checklist";
 
 const TOPICS = [
   {
-    icon: "💼",
     en: "Finding a job",
     ko: "취업하기",
     desc: { en: "Where to look, how resumes work here, and interview culture.", ko: "구인 사이트, 이력서 작성법, 면접 문화." },
     href: "/workplace",
-    color: "bg-coast/10 border-coast/30",
+    borderColor: "border-t-coast",
     accent: "text-coast",
   },
   {
-    icon: "🗣️",
     en: "Aussie English",
     ko: "호주 영어 배우기",
     desc: { en: "Decode the accent, slang, and what 'no worries' really means.", ko: "발음, 속어, 'no worries'의 진짜 의미." },
     href: "/aussie-english",
-    color: "bg-sunset/10 border-sunset/30",
+    borderColor: "border-t-sunset",
     accent: "text-sunset",
   },
   {
-    icon: "🚆",
     en: "Getting around",
     ko: "시드니 교통",
     desc: { en: "Opal cards, trains, buses, ferries, and rideshare basics.", ko: "오팔 카드, 기차, 버스, 페리, 라이드셰어." },
     href: "/transport",
-    color: "bg-sunset-light/10 border-sunset-light/30",
+    borderColor: "border-t-sunset-light",
     accent: "text-sunset-light",
   },
   {
-    icon: "🏖️",
     en: "See the sights",
     ko: "시드니 명소",
     desc: { en: "Harbour, beaches, and the must-dos for your first month.", ko: "하버, 해변, 첫 달에 꼭 가봐야 할 곳." },
     href: "/tourist",
-    color: "bg-wattle/10 border-wattle/30",
+    borderColor: "border-t-wattle",
     accent: "text-wattle",
   },
 ];
@@ -72,10 +68,10 @@ const CHECKLIST: ChecklistItem[] = [
 ];
 
 const ADMIN_LINKS = [
-  { href: "/apartment", en: "Apartment Guide", ko: "부동산 가이드", icon: "🏠" },
-  { href: "/finance", en: "Finance & banking", ko: "금융 & 은행", icon: "🏦" },
-  { href: "/transport", en: "Transport", ko: "교통", icon: "🚆" },
-  { href: "/workplace", en: "Workplace & tax", ko: "직장 & 세금", icon: "💼" },
+  { href: "/apartment", en: "Apartment Guide", ko: "부동산 가이드" },
+  { href: "/finance", en: "Finance & banking", ko: "금융 & 은행" },
+  { href: "/transport", en: "Transport", ko: "교통" },
+  { href: "/workplace", en: "Workplace & tax", ko: "직장 & 세금" },
 ];
 
 export default function ArrivedContent() {
@@ -92,21 +88,16 @@ export default function ArrivedContent() {
             <Link
               key={t.en}
               href={t.href}
-              className={`group ${t.color} border rounded-2xl p-4 hover:scale-[1.02] transition-transform`}
+              className={`group block border border-eucalypt/10 dark:border-dark-border border-t-2 ${t.borderColor} bg-white dark:bg-dark-card rounded-md p-5 hover:border-eucalypt/40 dark:hover:border-dark-muted/40 transition-colors`}
             >
-              <div className="text-2xl mb-2" aria-hidden>{t.icon}</div>
-              <div className={`font-bold text-sm ${t.accent}`}>
+              <h4 className={`text-base font-semibold tracking-tight ${t.accent}`}>
                 <En>{t.en}</En>
                 <Ko>{t.ko}</Ko>
-              </div>
-              <div className="text-xs text-eucalypt/60 dark:text-dark-muted/60 mt-1 leading-snug">
+              </h4>
+              <p className="text-sm text-eucalypt/65 dark:text-dark-muted/65 mt-2 leading-relaxed">
                 <En>{t.desc.en}</En>
                 <Ko>{t.desc.ko}</Ko>
-              </div>
-              <div className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-2 group-hover:underline">
-                <En>Explore →</En>
-                <Ko>자세히 보기 →</Ko>
-              </div>
+              </p>
             </Link>
           ))}
         </div>
@@ -127,15 +118,14 @@ export default function ArrivedContent() {
           <En>Quick links</En>
           <Ko>바로가기</Ko>
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-eucalypt/10 dark:bg-dark-border border border-eucalypt/10 dark:border-dark-border rounded-md overflow-hidden">
           {ADMIN_LINKS.map((l) => (
             <Link
-              key={l.href}
+              key={l.href + l.en}
               href={l.href}
-              className="rounded-xl border border-eucalypt/10 dark:border-dark-border bg-white dark:bg-dark-card p-3 text-center hover:scale-[1.02] transition-transform"
+              className="bg-white dark:bg-dark-card px-3 py-3 hover:bg-cream/40 dark:hover:bg-dark-surface transition-colors"
             >
-              <div className="text-xl mb-1" aria-hidden>{l.icon}</div>
-              <div className="text-xs font-semibold text-eucalypt dark:text-white">
+              <div className="text-sm font-medium text-eucalypt dark:text-white">
                 <En>{l.en}</En>
                 <Ko>{l.ko}</Ko>
               </div>

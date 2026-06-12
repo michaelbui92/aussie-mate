@@ -2,12 +2,12 @@ import Link from "next/link";
 import { En, Ko } from "../LangBlocks";
 
 const QUICK_FACTS = [
-  { icon: "💳", en: "Get an Opal card for trains, buses, ferries", ko: "기차·버스·페리는 오팔 카드로" },
-  { icon: "🔌", en: "Plug type I — bring an adapter", ko: "콘센트는 I 타입 — 어댑터 필요" },
-  { icon: "🕐", en: "Sydney is GMT+10/+11 (AEST/AEDT)", ko: "시드니는 GMT+10/+11 (AEST/AEDT)" },
-  { icon: "💰", en: "Tap-and-go cards accepted everywhere", ko: "대부분의 곳에서 탭 결제 가능" },
-  { icon: "🚰", en: "Tap water is safe to drink", ko: "수돗물 마셔도 안전합니다" },
-  { icon: "☀️", en: "UV is extreme — slip, slop, slap", ko: "자외선 강함 — 모자, 선크림 필수" },
+  { en: "Get an Opal card for trains, buses, ferries", ko: "기차·버스·페리는 오팔 카드로" },
+  { en: "Plug type I — bring an adapter", ko: "콘센트는 I 타입 — 어댑터 필요" },
+  { en: "Sydney is GMT+10/+11 (AEST/AEDT)", ko: "시드니는 GMT+10/+11 (AEST/AEDT)" },
+  { en: "Tap-and-go cards accepted everywhere", ko: "대부분의 곳에서 탭 결제 가능" },
+  { en: "Tap water is safe to drink", ko: "수돗물 마셔도 안전합니다" },
+  { en: "UV is extreme — slip, slop, slap", ko: "자외선 강함 — 모자, 선크림 필수" },
 ];
 
 const MONTHLY = [
@@ -27,21 +27,18 @@ const MONTHLY = [
 
 const PERSONAS = [
   {
-    icon: "👫",
     titleEn: "For couples",
     titleKo: "커플이라면",
     textEn: "Sunset cruises, Hunter Valley day trip, Blue Mountains weekend. Book restaurants in advance on weekends.",
     textKo: "선셋 크루즈, Hunter Valley 당일치기, 블루마운틴 주말여행. 주말 레스토랑은 미리 예약.",
   },
   {
-    icon: "🎒",
     titleEn: "For solo travellers",
     titleKo: "혼자라면",
     textEn: "Free walking tours, hostels in Bondi/Newtown, Meetup groups. Trains are safe and well-signed at night.",
     textKo: "프리 워킹투어, 본디/뉴타운 호스텔, Meetup 모임. 밤에도 기차 안전하고 안내 잘 되어있음.",
   },
   {
-    icon: "🛂",
     titleEn: "For working holiday makers",
     titleKo: "워홀이라면",
     textEn: "Apply for TFN early (no tax = no refund). Open a bank account in week 1. Check your super when you leave.",
@@ -50,9 +47,9 @@ const PERSONAS = [
 ];
 
 const LINKS = [
-  { href: "/tourist", en: "Sydney & NSW tourist guide", ko: "시드니 & NSW 여행 가이드", color: "bg-wattle/10 border-wattle/30", accent: "text-wattle" },
-  { href: "/beyond-sydney", en: "Weekend trips & road trips", ko: "주말 여행 & 드라이브 코스", color: "bg-coast/10 border-coast/30", accent: "text-coast" },
-  { href: "/transport", en: "Opal, trains, ferries", ko: "오팔, 기차, 페리", color: "bg-sunset-light/10 border-sunset-light/30", accent: "text-sunset-light" },
+  { href: "/tourist", en: "Sydney & NSW tourist guide", ko: "시드니 & NSW 여행 가이드", borderColor: "border-t-wattle", accent: "text-wattle" },
+  { href: "/beyond-sydney", en: "Weekend trips & road trips", ko: "주말 여행 & 드라이브 코스", borderColor: "border-t-coast", accent: "text-coast" },
+  { href: "/transport", en: "Opal, trains, ferries", ko: "오팔, 기차, 페리", borderColor: "border-t-sunset-light", accent: "text-sunset-light" },
 ];
 
 export default function VisitingContent() {
@@ -64,17 +61,14 @@ export default function VisitingContent() {
           <En>Quick facts</En>
           <Ko>알아두면 좋은 것</Ko>
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <ul className="divide-y divide-eucalypt/10 dark:divide-dark-border border-y border-eucalypt/10 dark:border-dark-border">
           {QUICK_FACTS.map((q) => (
-            <div key={q.en} className="flex items-start gap-2.5 bg-white dark:bg-dark-card rounded-xl border border-eucalypt/10 dark:border-dark-border p-3">
-              <span aria-hidden className="text-xl shrink-0 leading-none mt-0.5">{q.icon}</span>
-              <div className="text-sm text-eucalypt dark:text-white leading-snug">
-                <En>{q.en}</En>
-                <Ko>{q.ko}</Ko>
-              </div>
-            </div>
+            <li key={q.en} className="py-3 text-sm text-eucalypt dark:text-white">
+              <En>{q.en}</En>
+              <Ko>{q.ko}</Ko>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* Monthly guide */}
@@ -83,11 +77,11 @@ export default function VisitingContent() {
           <En>What to do, by month</En>
           <Ko>월별 추천</Ko>
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-px bg-eucalypt/10 dark:bg-dark-border border border-eucalypt/10 dark:border-dark-border rounded-md overflow-hidden">
           {MONTHLY.map((mo) => (
-            <div key={mo.m} className="rounded-xl border border-eucalypt/10 dark:border-dark-border bg-white dark:bg-dark-card p-2.5">
-              <div className="text-xs font-bold text-sunset uppercase tracking-wider mb-1">{mo.m}</div>
-              <div className="text-xs text-eucalypt/80 dark:text-dark-muted/80 leading-snug">
+            <div key={mo.m} className="bg-white dark:bg-dark-card p-3">
+              <div className="text-2xl font-bold text-sunset tracking-tight mb-1">{mo.m}</div>
+              <div className="text-xs text-eucalypt/70 dark:text-dark-muted/70 leading-snug">
                 <En>{mo.en}</En>
                 <Ko>{mo.ko}</Ko>
               </div>
@@ -104,16 +98,15 @@ export default function VisitingContent() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {PERSONAS.map((p) => (
-            <div key={p.titleEn} className="rounded-2xl border border-eucalypt/10 dark:border-dark-border bg-white dark:bg-dark-card p-4">
-              <div className="text-2xl mb-2" aria-hidden>{p.icon}</div>
-              <div className="font-bold text-sm text-eucalypt dark:text-white mb-1">
+            <div key={p.titleEn} className="border border-eucalypt/10 dark:border-dark-border border-t-2 border-t-sunset bg-white dark:bg-dark-card rounded-md p-5">
+              <h4 className="text-base font-semibold tracking-tight text-eucalypt dark:text-white mb-2">
                 <En>{p.titleEn}</En>
                 <Ko>{p.titleKo}</Ko>
-              </div>
-              <div className="text-xs text-eucalypt/70 dark:text-dark-muted/70 leading-snug">
+              </h4>
+              <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">
                 <En>{p.textEn}</En>
                 <Ko>{p.textKo}</Ko>
-              </div>
+              </p>
             </div>
           ))}
         </div>
@@ -130,13 +123,12 @@ export default function VisitingContent() {
             <Link
               key={l.href}
               href={l.href}
-              className={`group ${l.color} border rounded-2xl p-4 hover:scale-[1.02] transition-transform`}
+              className={`group block border border-eucalypt/10 dark:border-dark-border border-t-2 ${l.borderColor} bg-white dark:bg-dark-card rounded-md p-5 hover:border-eucalypt/40 dark:hover:border-dark-muted/40 transition-colors`}
             >
-              <div className={`font-bold text-sm ${l.accent}`}>
+              <h4 className={`text-base font-semibold tracking-tight ${l.accent}`}>
                 <En>{l.en}</En>
                 <Ko>{l.ko}</Ko>
-              </div>
-              <div className="text-xs text-eucalypt/60 dark:text-dark-muted/60 mt-1 group-hover:underline">→</div>
+              </h4>
             </Link>
           ))}
         </div>
