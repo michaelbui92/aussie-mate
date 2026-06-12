@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { useLang } from "@/components/LangBlocks";
 import { useSearch } from "@/components/SearchModal";
 
@@ -70,14 +69,9 @@ export default function Nav() {
             className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-sage/20 text-sage hover:bg-sage/30 transition-colors shrink-0"
             aria-label="Toggle language"
           >
-            <motion.span
-              key={lang}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
-            >
+            <span key={lang} className="lang-flip">
               {lang === "en" ? "EN" : "🇰🇷"}
-            </motion.span>
+            </span>
           </button>
 
           {/* Hamburger (mobile only) */}

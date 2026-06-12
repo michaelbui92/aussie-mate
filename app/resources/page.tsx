@@ -1,31 +1,19 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
-
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
-
-interface Section {
-  id: string;
-  iconKey: string;
-  title: string;
-  koTitle?: string;
-  desc: string;
-  koDesc?: string;
-  content: ResourceItem[];
-}
+import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
+import { AlertTriangle, Ambulance, Book, Building2 } from "@/components/Icons";
 
 interface ResourceItem {
   label: string;
   en: string;
   ko: string;
-  url: string;
+  url?: string;
   urlLabel?: string;
 }
 
-const sections: Section[] = [
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+type _ResourceShape = ResourceItem;  // preserved for reference; AccordionItem has label/en/ko only.
+
+const sections: AccordionSection[] = [
   {
     id: "government",
     iconKey: "Building2",
@@ -33,7 +21,7 @@ const sections: Section[] = [
     koTitle: "정부 서비스",
     desc: "Essential services for healthcare, tax, employment, and more",
     koDesc: "의료, 세금, 취업 등을 위한 필수 서비스",
-    content: [
+    items: [
       {
         label: "Medicare (메디케어)",
         en: "Australia's public healthcare system. Temporary residents from countries with Reciprocal Healthcare Agreements (UK, NZ, Italy, Belgium, etc.) may be eligible for limited Medicare cover. Even if you're not eligible, everyone in Australia has access to free emergency treatment at public hospital emergency departments.",
@@ -92,7 +80,7 @@ const sections: Section[] = [
     koTitle: "교육",
     desc: "Universities, TAFE, and study resources in NSW",
     koDesc: "NSW의 대학, TAFE, 학습 자료",
-    content: [
+    items: [
       {
         label: "Study NSW (NSW 유학 공식 정보)",
         en: "The official NSW Government website for international students. Information on studying in NSW, student life, accommodation, visa conditions, work rights, and support services. Also runs the International Student Connect program for events and networking.",
@@ -151,7 +139,7 @@ const sections: Section[] = [
     koTitle: "의료",
     desc: "Medical services, mental health support, and urgent care",
     koDesc: "의료 서비스, 정신 건강 지원, 응급 진료",
-    content: [
+    items: [
       {
         label: "Medicare in Korean (한국어 메디케어 정보)",
         en: "Services Australia provides Medicare information translated into Korean. Covers eligibility, how to enrol, what's covered, and how to use Medicare. Check the website or call the multilingual phone service (131 202) and ask for a Korean interpreter.",
@@ -196,7 +184,7 @@ const sections: Section[] = [
     koTitle: "비상 연락처",
     desc: "Who to call in an emergency — keep these numbers saved",
     koDesc: "응급 시 연락할 곳 — 이 번호를 저장해두세요",
-    content: [
+    items: [
       {
         label: "Emergency — 000 (비상 전화 — 000)",
         en: "For police, fire, or ambulance in genuine emergencies ONLY. A genuine emergency means: immediate danger to life or property, a serious crime in progress, a fire, or a medical emergency (chest pain, difficulty breathing, severe bleeding, unconsciousness). Call 000 and tell the operator which service you need. An interpreter service is available — just say 'Korean' or your language. Do NOT call 000 for information, directions, or non-emergencies.",
@@ -229,13 +217,9 @@ const sections: Section[] = [
   },
 ];
 
+const iconKeys = ["AlertTriangle", "Ambulance", "Book", "Building2"];
+
 export default function ResourcesPage() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const toggleSection = (id: string) => {
-    setOpenSection(prev => (prev === id ? null : id));
-  };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -303,70 +287,7 @@ export default function ResourcesPage() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
-        {sections.map((section, si) => {
-          const isOpen = openSection === section.id;
-          return (
-            <div
-              key={section.id}
-              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
-              style={{ animationDelay: `${si * 0.08}s` }}
-            >
-              {/* Accordion Header */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
-                aria-expanded={isOpen}
-              >
-                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
-                <div className="flex-1 min-w-0">
-                  <h2 className="font-bold text-base text-eucalypt dark:text-white">
-                    <En>{section.title}</En>
-                    <Ko>{section.koTitle || section.title}</Ko>
-                  </h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">
-                    <En>{section.desc}</En>
-                    <Ko>{section.koDesc || section.desc}</Ko>
-                  </p>
-                </div>
-                <svg
-                  className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Accordion Body */}
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="divide-y divide-sand dark:divide-dark-border border-t border-sand dark:border-dark-border">
-                  {section.content.map((item, ii) => (
-                    <div key={ii} className="px-5 py-4">
-                      <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
-                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.ko}</p></Ko>
-                      <div>
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium text-coast hover:text-sunset transition-colors underline underline-offset-2"
-                        >
-                          🔗 {item.urlLabel || item.url}
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
 
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">

@@ -1,10 +1,14 @@
-"use client";
-import React from "react";
-import { Icons } from "@/components/Icons";
+// Server component — bilingual apartment rental guide for NSW.
+// All interactivity is via <En>/<Ko> (client islands from LangBlocks).
+
+import {
+  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit,
+} from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
 
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
+const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit,
+};
 
 const sections = [
   {
@@ -83,7 +87,7 @@ const sections = [
     items: [
       { label: "No formal lease", en: "Always get a written Residential Tenancy Agreement — verbal agreements are not enforceable", ko: "반드시 서면 임대차계약서를 받아야 함 — 구두 합의는 법적 구속력이 없음" },
       { label: "Landlord won't do repairs", en: "Persistent damage that's ignored is a sign the landlord won't look after the property", ko: "수리되지 않는 지속적인 손상은 임대인이 부동산을 관리하지 않음을 의미함" },
-      { label: "Pressure to pay cash", en: "Never pay bond or rent in cash without a receipt. All payments should be traceable.", ko: "영수증 없이 현금으로 보증금이나 임대료를 지불하지 마세요. 모든 결제내역은 추적 가능해야 함." },
+      { label: "Pressure to pay cash", en: "Never pay bond or rent in cash without a receipt. All payments should be traceable.", ko: "영수증 없이 현금으로 보증금이나 임대료를 지불하지 마세요. 모든 결제내역은 추적 가능해야 합니다." },
       { label: "Rent too cheap", en: "If it's significantly below market rate, something is wrong — or it's a scam", ko: "시세보다 현저히 낮으면 무언가 문제 있다는 신호 — 또는 사기일 수 있음" },
       { label: "Won't meet in person", en: "Legitimate landlords will meet you or have an agent. Be wary of online-only transactions.", ko: "합법적인 임대인은 직접 만나거나 중개인을 둠. 온라인 거래만 고집하는 경우 주의." },
     ],
@@ -139,35 +143,40 @@ export default function ApartmentPage() {
       </section>
 
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-8">
-        {sections.map((section, si) => (
-          <section
-            key={section.id}
-            className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
-          >
-            <div className={`px-4 md:px-5 py-4 border-b border-sand dark:border-dark-border border-l-4 ${section.color}`}>
-              <div className="flex items-center gap-2 mb-0.5">
-                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
-                <h2 className="font-bold text-base md:text-lg text-eucalypt dark:text-white leading-snug">
-                  <En>{section.title}</En>
-                  <Ko>{section.koTitle || section.title}</Ko>
-                </h2>
-              </div>
-              <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 pl-7">
-                <En>{section.desc}</En>
-                <Ko>{section.koDesc || section.desc}</Ko>
-              </p>
-            </div>
-            <div className="divide-y divide-sand dark:divide-dark-border">
-              {section.items.map((item, ii) => (
-                <div key={ii} className="px-4 md:px-5 py-4">
-                  <p className="font-semibold text-sm text-sunset mb-1.5 leading-snug">{item.label}</p>
-                  <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-1">{item.en}</p></En>
-                  <Ko><p className="text-sm text-sage font-medium leading-relaxed">{item.ko}</p></Ko>
+        {sections.map((section, si) => {
+          const Icon = ICONS[section.iconKey];
+          return (
+            <section
+              key={section.id}
+              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
+            >
+              <div className={`px-4 md:px-5 py-4 border-b border-sand dark:border-dark-border border-l-4 ${section.color}`}>
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-sunset shrink-0">
+                    {Icon ? <Icon className="w-5 h-5" /> : null}
+                  </span>
+                  <h2 className="font-bold text-base md:text-lg text-eucalypt dark:text-white leading-snug">
+                    <En>{section.title}</En>
+                    <Ko>{section.koTitle || section.title}</Ko>
+                  </h2>
                 </div>
-              ))}
-            </div>
-          </section>
-        ))}
+                <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 pl-7">
+                  <En>{section.desc}</En>
+                  <Ko>{section.koDesc || section.desc}</Ko>
+                </p>
+              </div>
+              <div className="divide-y divide-sand dark:divide-dark-border">
+                {section.items.map((item, ii) => (
+                  <div key={ii} className="px-4 md:px-5 py-4">
+                    <p className="font-semibold text-sm text-sunset mb-1.5 leading-snug">{item.label}</p>
+                    <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-1">{item.en}</p></En>
+                    <Ko><p className="text-sm text-sage font-medium leading-relaxed">{item.ko}</p></Ko>
+                  </div>
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { En, Ko } from "@/components/LangBlocks";
 import { Icons } from "./Icons";
 
@@ -141,11 +140,10 @@ export default function HomePage() {
       <section className="max-w-4xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {categories.map((cat, i) => (
-            <motion.div
+            <div
               key={cat.href}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.06, duration: 0.3, ease: "easeOut" }}
+              className="card-in"
+              style={{ animationDelay: `${i * 0.06}s` }}
             >
               <Link
                 href={cat.href}
@@ -160,7 +158,7 @@ export default function HomePage() {
                   <span className={`inline-flex items-center gap-1 text-xs font-semibold ${cat.accent} group-hover:gap-2 transition-all`}><En>Explore</En><Ko>둘러보기</Ko><Icons.ArrowRight className="w-3 h-3" /></span>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>

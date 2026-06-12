@@ -1,29 +1,8 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
+import { Book, Clipboard, Edit, Graduation, PersonBoard, PersonGroup, Target } from "@/components/Icons";
 
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
-
-interface Section {
-  id: string;
-  iconKey: string;
-  title: string;
-  koTitle?: string;
-  desc: string;
-  koDesc?: string;
-  content: ContentItem[];
-}
-
-interface ContentItem {
-  label: string;
-  en: string;
-  ko: string;
-}
-
-const sections: Section[] = [
+const sections: AccordionSection[] = [
   {
     id: "english-tests",
     iconKey: "Edit",
@@ -31,7 +10,7 @@ const sections: Section[] = [
     koTitle: "영어 시험: PTE와 IELTS",
     desc: "Everything you need to know about PTE and IELTS for Australian visas and university entry",
     koDesc: "호주 비자 및 대학 진학에 필요한 PTE와 IELTS 모든 것",
-    content: [
+    items: [
       {
         label: "What is PTE?",
         en: "PTE Academic (Pearson Test of English Academic) is a computer-based English test accepted by all Australian universities, vocational colleges, and for visa purposes. You get results in 1-2 days — much faster than IELTS.",
@@ -91,7 +70,7 @@ const sections: Section[] = [
     koTitle: "호주 대학 문화",
     desc: "What university life is really like in Australia",
     koDesc: "호주 대학생활의 실제 모습",
-    content: [
+    items: [
       {
         label: "Large Lectures",
         en: "First-year lectures can have 200-500 students. Don't be intimidated — just sit near the front, take notes, and ask questions. Lectures are recorded online at most universities, so you can rewatch them later.",
@@ -126,7 +105,7 @@ const sections: Section[] = [
     koTitle: "교수님과 대화하기",
     desc: "Email etiquette, office hours, and asking for help",
     koDesc: "이메일 예절, 오피스 아워, 도움 요청법",
-    content: [
+    items: [
       {
         label: "Email Etiquette",
         en: "Start with 'Dear Dr [Name]' or 'Hi [First Name]' (check what they use). Keep it short and clear. Include your subject code and student ID. Sign off with your full name. Allow 2-3 business days for a reply.",
@@ -161,7 +140,7 @@ const sections: Section[] = [
     koTitle: "그룹 작업",
     desc: "How group assignments work and how to survive them",
     koDesc: "그룹 과제가 어떻게 운영되는지, 생존하는 방법",
-    content: [
+    items: [
       {
         label: "How Groups Are Formed",
         en: "Sometimes the lecturer assigns groups, sometimes you choose your own. If you can choose, try to pick people with different strengths (one good at writing, one at research, one at presenting).",
@@ -196,7 +175,7 @@ const sections: Section[] = [
     koTitle: "학술 무결성",
     desc: "Plagiarism, AI use, and referencing — the rules are strict",
     koDesc: "표절, AI 사용, 인용 — 규칙이 엄격합니다",
-    content: [
+    items: [
       {
         label: "What is Plagiarism?",
         en: "Using someone else's work (words, ideas, data, images) without proper acknowledgment is plagiarism. This includes copying from textbooks, websites, other students' work, or your own previous submissions (self-plagiarism). Penalties can range from a zero grade to expulsion.",
@@ -231,7 +210,7 @@ const sections: Section[] = [
     koTitle: "특별 고려",
     desc: "What to do if illness or circumstances affect your studies",
     koDesc: "질병이나 상황으로 학업에 영향을 받을 때 대처 방법",
-    content: [
+    items: [
       {
         label: "What is Special Consideration?",
         en: "If unexpected circumstances (illness, injury, family bereavement, etc.) affect your ability to study or complete assessments, you can apply for 'Special Consideration'. This is common and not shameful — it's a standard university process.",
@@ -266,7 +245,7 @@ const sections: Section[] = [
     koTitle: "성적 체계 이해",
     desc: "Understanding the Australian grading system",
     koDesc: "호주 성적 평가 시스템 이해",
-    content: [
+    items: [
       {
         label: "Grade Scale",
         en: "Universities use letter grades with corresponding marks. Generally: HD (High Distinction) = 85-100%, DN (Distinction) = 75-84%, CR (Credit) = 65-74%, P (Pass) = 50-64%, F (Fail) = below 50%. Some subjects have different thresholds — check the subject outline.",
@@ -301,13 +280,9 @@ const sections: Section[] = [
   },
 ];
 
+const iconKeys = ["Book", "Clipboard", "Edit", "Graduation", "PersonBoard", "PersonGroup", "Target"];
+
 export default function StudyPage() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const toggleSection = (id: string) => {
-    setOpenSection(prev => (prev === id ? null : id));
-  };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -326,61 +301,7 @@ export default function StudyPage() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
-        {sections.map((section, si) => {
-          const isOpen = openSection === section.id;
-          return (
-            <div
-              key={section.id}
-              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
-              style={{ animationDelay: `${si * 0.08}s` }}
-            >
-              {/* Accordion Header */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
-                aria-expanded={isOpen}
-              >
-                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
-                <div className="flex-1 min-w-0 pr-2">
-                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
-                    <En>{section.title}</En>
-                    <Ko>{section.koTitle || section.title}</Ko>
-                  </h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">
-                    <En>{section.desc}</En>
-                    <Ko>{section.koDesc || section.desc}</Ko>
-                  </p>
-                </div>
-                <svg
-                  className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Accordion Body */}
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="divide-y divide-sand dark:divide-dark-border border-t border-sand dark:border-dark-border">
-                  {section.content.map((item, ii) => (
-                    <div key={ii} className="px-5 py-4">
-                      <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
-                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.ko}</p></Ko>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
 
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">

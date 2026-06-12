@@ -1,29 +1,8 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
+import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } from "@/components/Icons";
 
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
-
-interface Section {
-  id: string;
-  iconKey: string;
-  title: string;
-  koTitle?: string;
-  desc: string;
-  koDesc?: string;
-  content: ContentItem[];
-}
-
-interface ContentItem {
-  label: string;
-  en: string;
-  ko: string;
-}
-
-const sections: Section[] = [
+const sections: AccordionSection[] = [
   {
     id: "banking",
     iconKey: "Building",
@@ -31,7 +10,7 @@ const sections: Section[] = [
     koTitle: "호주 은행 시스템",
     desc: "Opening accounts, understanding fees, and moving money",
     koDesc: "계좌 개설, 수수료 이해, 송금",
-    content: [
+    items: [
       {
         label: "Major Banks",
         en: "The four big banks are: Commonwealth Bank (CBA), Westpac, ANZ, and NAB. All have international student packages with low or no monthly fees. Most have Korean-speaking staff or 24/7 phone banking in multiple languages.",
@@ -71,7 +50,7 @@ const sections: Section[] = [
     koTitle: "납세识别号 (TFN)",
     desc: "What a TFN is and why you need one",
     koDesc: "TFN이란 무엇이며 왜 필요한지",
-    content: [
+    items: [
       {
         label: "What is a TFN?",
         en: "A Tax File Number (TFN) is your personal tax identification number in Australia. It's free to get and completely separate from your visa. You need a TFN to work legally, open a bank account with full features, and lodge a tax return.",
@@ -101,7 +80,7 @@ const sections: Section[] = [
     koTitle: "퇴직연금 (Super)",
     desc: "Australia's retirement savings system explained simply",
     koDesc: "호주 퇴직연금 제도를 쉽게 설명",
-    content: [
+    items: [
       {
         label: "What is Super?",
         en: "Superannuation (super) is a mandatory savings system — every employer must pay 11.5% of your salary into a super fund. This money is invested and grows over time. You can't access it until you retire (around age 60).",
@@ -136,7 +115,7 @@ const sections: Section[] = [
     koTitle: "탈세 신고",
     desc: "Lodging your tax return — when, how, and why you might get money back",
     koDesc: "탈세 신고 시기, 방법, 환급 가능성",
-    content: [
+    items: [
       {
         label: "Do You Need to Lodge?",
         en: "If you earned money in Australia, you may need to lodge a tax return — even if you earned below the tax-free threshold ($18,200 per year). The ATO will tell you if you need to. Not lodging when you should can result in fines.",
@@ -166,7 +145,7 @@ const sections: Section[] = [
     koTitle: "센터링크",
     desc: "Government payments and what international students can access",
     koDesc: "정부 지급금과 국제 학생이 받을 수 있는 것",
-    content: [
+    items: [
       {
         label: "What is Centrelink?",
         en: "Centrelink is part of Services Australia — it administers government payments. Payments include JobSeeker (unemployment), Youth Allowance, Austudy (students), Family Tax Benefit, and more.",
@@ -196,7 +175,7 @@ const sections: Section[] = [
     koTitle: "생활비 절약 팁",
     desc: "Stretch your budget in Australia",
     koDesc: "호주에서 예산을 관리하는 방법",
-    content: [
+    items: [
       {
         label: "Weekly Budget Estimate",
         en: "As a student in Sydney, expect to spend $300-500 per week on basics (rent, food, transport, phone). Rent alone is $180-300 depending on location and sharing. This varies a lot — regional areas are much cheaper than Sydney.",
@@ -226,13 +205,9 @@ const sections: Section[] = [
   },
 ];
 
+const iconKeys = ["Briefcase2", "Building", "Building2", "Clipboard", "DollarSign", "ReceiptAlt"];
+
 export default function FinancePage() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const toggleSection = (id: string) => {
-    setOpenSection(openSection === id ? null : id);
-  };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -251,60 +226,7 @@ export default function FinancePage() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
-        {sections.map((section, si) => {
-          const isOpen = openSection === section.id;
-          return (
-            <div
-              key={section.id}
-              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
-            >
-              {/* Accordion Header */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
-                aria-expanded={isOpen}
-              >
-                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
-                <div className="flex-1 min-w-0 pr-2">
-                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
-                    <En>{section.title}</En>
-                    <Ko>{section.koTitle || section.title}</Ko>
-                  </h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">
-                    <En>{section.desc}</En>
-                    <Ko>{section.koDesc || section.desc}</Ko>
-                  </p>
-                </div>
-                <svg
-                  className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Accordion Body */}
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="divide-y divide-sand dark:divide-dark-border border-t border-sand dark:border-dark-border">
-                  {section.content.map((item, ii) => (
-                    <div key={ii} className="px-5 py-4">
-                      <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
-                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.ko}</p></Ko>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
 
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">

@@ -1,29 +1,8 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
+import { Beach, Building2, Car, Coin, DollarSign, PassengerTrain, Scooter, Smartphone, Tree } from "@/components/Icons";
 
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
-
-interface Section {
-  id: string;
-  iconKey: string;
-  title: string;
-  koTitle: string;
-  desc: string;
-  koDesc: string;
-  content: ContentItem[];
-}
-
-interface ContentItem {
-  label: string;
-  en: string;
-  ko: string;
-}
-
-const sections: Section[] = [
+const sections: AccordionSection[] = [
   {
     id: "getting-around",
     iconKey: "PassengerTrain",
@@ -31,7 +10,7 @@ const sections: Section[] = [
     koTitle: "시드니 이동",
     desc: "Opal cards, transport modes, and navigating Sydney",
     koDesc: "오팔 카드, 교통수단, 시드니 길찾기",
-    content: [
+    items: [
       { label: "Opal Card Basics", en: "The Opal card is a reusable smart card for all Sydney public transport — trains, buses, ferries, and light rail. Tap on at the start of your trip and tap off at the end. You can top up at 7-Eleven stores, newsagents, convenience stores, or online via the Opal app or website.", ko: "오팔 카드는 시드니의 모든 대중교통(기차, 버스, 페리, 경전첨)에서 사용할 수 있는 충전식 스마트 카드입니다. 여행 시작 시 태그온, 종료 시 태그오프하세요. 7-Eleven, 뉴스에이전시, 편의점, 또는 오팔 앱/웹사이트에서 충전할 수 있습니다." },
       { label: "Trains, Buses & Ferries", en: "Sydney Trains runs the suburban rail network connecting the CBD to most suburbs. Sydney Buses covers the whole city. Sydney Ferries is one of the most scenic ways to travel — the ferry from Circular Quay to Manly is a must-do. All use the same Opal card system.", ko: "Sydney Trains은 CBD와 대부분의 교외 지역을 연결하는 철도 네트워크를 운영합니다. Sydney Buses는 도시 전체를 커버합니다. Sydney Ferries는 가장 경치 좋은 이동 수단 중 하나입니다 — Circular Quay에서 Manly까지의 페리는 꼭 타보세요. 모두 동일한 오팔 카드 시스템을 사용합니다." },
       { label: "Peak vs Off-Peak", en: "Peak fares apply on weekdays from 6:30-10:00am and 3:30-7:00pm. Off-peak fares are about 30% cheaper. Weekends and public holidays are charged at off-peak rates all day. If you can travel outside peak hours, you will save significantly.", ko: "평일 오전 6:30-10:00, 오후 3:30-7:00에는 피크 요금이 적용됩니다. 오프피크 요금은 약 30% 저렴합니다. 주말과 공휘일은 하루 종일 오프피크 요금이 적용됩니다. 피크 시간을 피해 이동할 수 있다면 상당히 절약할 수 있습니다." },
@@ -46,7 +25,7 @@ const sections: Section[] = [
     koTitle: "시드니 궝 가볼 10곳",
     desc: "Sydney's iconic attractions you cannot miss",
     koDesc: "시드니의 아이코닉한 관광지",
-    content: [
+    items: [
       { label: "1. Sydney Opera House", en: "Australia's most famous landmark. Take a guided tour inside or book a show — even just walking around the outside with a coffee is a memorable experience. Located at Bennelong Point, Circular Quay. Free to explore the exterior and foyer.", ko: "호주에서 가장 유명한 란드마크입니다. 내부 가이드 투어를 하거나 공연을 예약하세요 — 커피 한잔 들고 외부를 산책하는 것만으로도 잊지 못할 경험입니다. Circular Quay의 Bennelong Point에 위치해 있습니다. 외부와 로비는 무료로 관람할 수 있습니다." },
       { label: "2. Sydney Harbour Bridge", en: "Walk across for free (15 min from The Rocks to Milsons Point) or climb to the top with BridgeClimb if you are feeling adventurous. The views from the top are absolutely spectacular — worth every cent.", ko: "무료로 걸어서 건널 수 있고(The Rocks에서 Milsons Point까지 15분), 모험심이 있다면 BridgeClimb으로 정상까지 올라갈 수 있습니다. 정상에서의 전망은 정말 장관입니다." },
       { label: "3. Bondi to Coogee Coastal Walk", en: "A stunning 6km coastal walk along Sydney's eastern beaches. Takes about 2 hours one way with plenty of stops for photos. Passes through Tamarama, Bronte, and Clovelly beaches. Free, accessible, and absolutely beautiful on a sunny day.", ko: "시드니 동부 해변을 따라 이어지는 6km의 아름다운 해안 산책로입니다. 편도 약 2시간. Tamarama, Bronte, Clovelly 해변을 지납니다. 무료이고 접근성이 좋으며, 링은 날에는 정말 아름답니다." },
@@ -66,7 +45,7 @@ const sections: Section[] = [
     koTitle: "시드니 당일 여행",
     desc: "Places you can see in a single day with public transport or a short drive",
     koDesc: "대중교통이나 짪은 운전으로 하루 안에 갈 수 있는 장소",
-    content: [
+    items: [
       { label: "Blue Mountains", en: "Take a train from Central to Katoomba (2 hours, about $7 with Opal). See the Three Sisters at Echo Point, ride the Scenic Railway and Skyway cable car, and walk through the Valley of the Waters. Pack warm clothes — it's cold up there even in summer.", ko: "Central에서 Katoomba까지 기차로(2시간, 오팔 약 $7). 에코 포인트에서 Three Sisters를 보고, 스카이 레일과 스카이웨이 케이블카를 타며, 밸리 오브 더 워터스를 산책하세요. 따뜻b한 옷을 챘기세요 — 여름도 산 위는 추습니다." },
       { label: "Royal National Park (Coastal Track)", en: "Take the train to Cronulla, then the ferry to Bundeena. Walk the Royal Coastal Track — 26km one way but you can do a shorter section. The Figure 8 Pools are a famous natural rock pool at the southern end. Car or rideshare needed to get back. Park entry $12 per vehicle.", ko: "기차로 Cronulla까지 간 후 페리로 Bundeena로 갑니다. 로열 코스탈 트랙을 산책하세요 — 편도 26km이지만 짪은 구간도 가능합니다. 피규어 8 풀스는 남쪽 쪽에 있는 유명한 자연 수영장입니다. 차량 입장료는 $12입니다." },
       { label: "Wollongong & Shellharbour", en: "Take a train south from Central (about 1.5 hours). Visit the iconic Sea Cliff Bridge between Coalcliff and Lawrence Hargrave Drive. Visit Nan Tien Temple (largest Buddhist temple in the southern hemisphere) near Shellharbour. Great beaches and a more laid-back feel than Sydney.", ko: "Central에서 남쪽으로 기차를 타면 약 1시간 30분입니다. Coalcliff와 Lawrence Hargrave Drive 사이의 시 클리프 브릿지를 지나보세요. Shellharbour 근처의 난티엔 사원도 방문하세요. 시드니보다 여유로운 분위기와 좋은 해변이 있습니다." },
@@ -82,7 +61,7 @@ const sections: Section[] = [
     koTitle: "주말 여행",
     desc: "Destinations worth the overnight stay — from cheap to memorable",
     koDesc: "하룻밤의 가치가 있는 목적지 — 저렴한 곳부터 기억에 남는 곳까지",
-    content: [
+    items: [
       { label: "Melbourne", en: "Fly (1.5 hours, often $99-$199 on Jetstar or Qantas sale) or take an overnight coach. Australia's cultural capital — street art, coffee, food, live music, and laneway bars. Great Ocean Road is a stunning coastal drive. Great for 2-3 nights.", ko: "비행기로(1시간 30분, Jetstar나 Qantas 세일 시 $99-$199) 또는 야간 버스로. 호주의 문화 수도 — 거리 아트, 커피, 음식, 라이브 음악, 골목길 바. 그레이트 오션 로드는 멋진 해안 드라이브입니다. 2-3박에 좋습니다." },
       { label: "Byron Bay", en: "Fly to Ballina/Byron (1.5 hours) or drive from Brisbane (1 hour). Famous for alternative culture, beautiful beaches, and the easternmost point of mainland Australia. Cape Byron Lighthouse is a must-visit. Great for surf, yoga retreats, and relaxed beach vibes.", ko: "Ballina/Byron으로 비행(1시간 30분) 또는 브리즈번에서 운전(1시간). 대안 문화, 아름다운 해변, 호주 본토 최동단으로 유명합니다. 케이프 바이런 등대는 괭 방문할 만합니다." },
       { label: "Canberra", en: "Drive 3.5 hours south (or fly 1 hour). Australia's capital with world-class museums and galleries — all free. Visit the Australian War Memorial, National Gallery of Australia, Parliament House. Ideal for a culture-filled weekend.", ko: "남쪽으로 3시간 30분 운전(또는 1시간 비행). 세계적 수준의 박물관과 갤러리가 있는 호주 수도입니다 — 모두 무료. 전쟁 기념관, 국립 미술관, 국회의사당을 방문하세요." },
@@ -98,7 +77,7 @@ const sections: Section[] = [
     koTitle: "비치 안전",
     desc: "What to watch out for at Sydney's beaches",
     koDesc: "시드니 해변에서 주의할 점",
-    content: [
+    items: [
       { label: "Always Swim Between the Flags", en: "Red and yellow flags mark the safest swimming zone supervised by lifeguards. NEVER swim outside the flags — even if it looks calm, rips can pull you out quickly. If caught in a rip: stay calm, float and signal for help, do not fight the current.", ko: "빨간색과 노란색 깃발은 인명 구조원이 감독하는 가장 안전한 수영 구역입니다. 절대로 깃발 밖에서 수영하지 마세요 — 이안류에 휘쌍려면: 침착하게, 도움을 요청하고, 해류와 싸우지 마세요." },
       { label: "Read the Beach Safety Signs", en: "Before entering the water, check the safety signs at the beach entrance. They show today's conditions — safe to swim, water quality, and any specific hazards like jellyfish or sharks. If in doubt, ask a lifeguard.", ko: "물에 들어가기 전에 해변 입구의 안전 표지판을 확인하세요. 오늘의 상황, 수질, 해파리나 상어 같은 위험 요소를 알려줍니다." },
       { label: "Jellyfish Season (Nov-Apr)", en: "Bluebottles are common from November to April. Painful but rarely dangerous. Rinse with seawater (not fresh water — it makes it worse), apply heat if available. Do NOT use vinegar on bluebottles in NSW. Lifeguards close the beach if dangerous species appear.", ko: "블루보틀 해파리는 11월-4월에 흡합니다. 고통스러우나 드물게 위험하지는 않습니다. 바닷물로 헹구세요. NSW에서는 식초를 사용하지 마세요." },
@@ -113,7 +92,7 @@ const sections: Section[] = [
     koTitle: "숲과 국립공원",
     desc: "How to stay safe in Australian wilderness",
     koDesc: "호주 황무지에서 안전하게 지내는 방법",
-    content: [
+    items: [
       { label: "Snakes — Give Them Space", en: "Snakes are active in warmer months (Oct-Apr) throughout Sydney's national parks. If you see one: stop, back away slowly, give it space to escape. Do NOT try to pick it up or corner it. Walk loudly on tracks — snakes feel vibration and move away.", ko: "뱀은 따뜻한 달(10월-4월)에 활발합니다. 뱀을 보면: 머추고, 천천히 뒤로 물러나세요. 절대 잡거나 구석으로 몰지 마세요. 시꿁러운 걸음으로 걸으면 뱀이 진동을 느도 자리를 피합니다." },
       { label: "Ticks — A Year-Round Risk", en: "Bush ticks (Ixodes holocyclus) found in bushy areas year-round. Can cause tick paralysis. Wear long sleeves and pants, use DEET repellent. After a walk, check your entire body — behind ears, hairline, armpits, and groin.", ko: "숲 진드기는 연중 발견됩니다. 진드기 마비를 일으킬 수 있습니다. 긴 옷을 입고 DEET 방충제를 사용하세요. 산책 후 귀 뒤, 머리카락, 검드랑이, 사타구니를 확인하세요." },
       { label: "Total Fire Ban Days", en: "On Total Fire Ban days, lighting any fire or BBQ (even gas) in the open is illegal. Check the Fire Danger Rating on the RFS website or Fires Near Me app. Many national parks close on severe or extreme fire days. If caught: ring 000.", ko: "산불 금지일에 야외에서 화기 사용(가스 BBQ도 포함)은 불법입니다. RFS 웹사이트에서 산불 위험 등급을 확인하세요. 심각한 산불일에 많은 국립공원이 폐쇄됩니다." },
@@ -128,7 +107,7 @@ const sections: Section[] = [
     koTitle: "팝 문화",
     desc: "Do you tip? Short answer: usually not — here is how it works",
     koDesc: "팝을 주나요? 짪은 대답: 보통 아니요",
-    content: [
+    items: [
       { label: "Tipping is NOT Expected", en: "Unlike the US or Canada, tipping is not part of Australian culture. Service workers earn Award wages (minimum $24+/hour) and do not rely on tips. You are never expected to tip at cafes, pubs, taxis, or for most services. Even in restaurants, tipping is optional, not expected.", ko: "미국이나 캐나다와 달리, 호주 문화에서 팝은 일반적이지 않습니다. 서비스 직종 근로자는 법정 최저 임금(시간당 $24+)을 받습니다. 카페, 펍, 택시, 레스토랑에서 팝이 예상되지 않습니다." },
       { label: "When You Might Tip", en: "If you receive extraordinary service at a high-end restaurant, a 10% tip is generous and appreciated but never required. Some fancy restaurants include a service charge (10-15%) for large groups — check your bill before adding extra.", ko: "고급 레스토랑에서 탁월한 서비스를 받았다면 10% 팝은 관대하지만 필수는 아닙니다. 일부 레스토랑은 대규모 그룹에 서비스 차지(10-15%)를 포함합니다." },
       { label: "Why No Tipping?", en: "Australia has strong labour laws. Hospitality workers earn Award wages with penalty rates for nights and weekends. They have sick leave, annual leave, and superannuation. Fair wages for good service are built into the price you pay. Tips are a bonus, not a necessity.", ko: "호주는 강력한 노동법을 가지고 있습니다. 좋은 서비스에 대한 공정한 임금은 가격에 포함되어 있습니다. 팝은 보너스일 뿐 필수가 아닙니다." },
@@ -141,7 +120,7 @@ const sections: Section[] = [
     koTitle: "시드니 예산 팁",
     desc: "How to enjoy Sydney without breaking the bank",
     koDesc: "돈을 많이 쓰지 않고 시드니 즐기기",
-    content: [
+    items: [
       { label: "Daily Opal Cap", en: "The Opal system has a daily cap: $15.60 for adults (Mon-Sat), $19.50 for Sun. Once you reach the cap, all further travel that day is free. After 8 paid journeys in a week, the rest are half price. Plan trips strategically to maximise value.", ko: "오팔 일일 상한선: 성인 월-토 $15.60, 일요일 $19.50. 상한선 도달 후 모든 여행 무료. 주당 8회 유료 여행 후 나머지는 반가입니다." },
       { label: "Free Things to Do", en: "Royal Botanic Garden, The Rocks, Art Gallery of NSW, Hyde Park, harbour walks, Bondi-Coogee walk — all free. Most museums have free entry days. Free fireworks at Darling Harbour Saturday nights (summer). Free outdoor concerts and events throughout the year.", ko: "로열 보태닉 가든, 더 록스, 아트 갤러리, 하이드 파크, 항구 산책, 본다이-쿠지 산책 — 모두 무료. 대부분 박물관에 무료 입장일이 있습니다." },
       { label: "Cheapest Meals", en: "Asian food courts (Dixon House in Chinatown, Thai Town at Campbell Street, Korean food court on Pitt Street) serve hearty meals for $10-$15. Thai, Vietnamese, Korean, and Indian restaurants offer the best value. Sushi trains are $3-$5 per plate.", ko: "아시안 푸드코트에서 $10-$15로 든든한 식사 가능. 타이, 베트남, 한국, 인도 레스토랑이 가성비 최고. 스시 트레인은 접시당 $3-$5." },
@@ -156,7 +135,7 @@ const sections: Section[] = [
     koTitle: "유용한 앱",
     desc: "Essential apps for getting around and finding things to do",
     koDesc: "이동 및 찾기 위한 필수 앱",
-    content: [
+    items: [
       { label: "Google Maps", en: "Already installed on most phones. Download offline maps for Sydney before you arrive — this lets you navigate without using mobile data. The transit directions are incredibly accurate with real-time bus, train, and ferry departures, platform numbers, and service alerts.", ko: "대부분의 휴대폰에 이미 설치되어 있습니다. 도착 전에 시드니 오프라인 지도를 다운로드하세요. 대중교통 길찾기는 실시간 정보가 매우 정확합니다." },
       { label: "TripView", en: "The best dedicated transit app for Sydney (and Melbourne). Shows real-time timetables for trains, buses, ferries, and light rail all in one view. Once you set your regular stops, it becomes indispensable. Free version is excellent, paid version removes ads.", ko: "시드니(와 멜버른)를 위한 최고의 대중교통 전용 앱입니다. 기차, 버스, 페리, 경전첨의 실시간 시간표를 한 화면에 보여줍니다. 무료 버전도 훌륭합니다." },
       { label: "Uber / Ola / DiDi / Taxi", en: "Uber works everywhere in Sydney but can surge badly. Ola and DiDi are cheaper alternatives. Taxis can be hailed on the street or at designated ranks. If using Taxis Combined Service (02 8332 8888), they accept card payments. For airport transfers, compare prices — sometimes a taxi is cheaper than surge Uber.", ko: "Uber는 어디서나 작동하지만 서지 가격이 나즐 수 있습니다. Ola와 DiDi가 더 저렴한 대안입니다. 택시는 거리에서 잡거나 지정된 승강장에서 탈 수 있습니다." },
@@ -166,13 +145,9 @@ const sections: Section[] = [
   },
 ];
 
+const iconKeys = ["Beach", "Building2", "Car", "Coin", "DollarSign", "PassengerTrain", "Scooter", "Smartphone", "Tree"];
+
 export default function TouristPage() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const toggleSection = (id: string) => {
-    setOpenSection(openSection === id ? null : id);
-  };
-
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <h1 className="mb-2 text-3xl font-bold">
@@ -185,60 +160,7 @@ export default function TouristPage() {
       </p>
 
       <div className="space-y-6">
-        {sections.map((section) => (
-          <div
-            key={section.id}
-            className="overflow-hidden rounded-xl border border-amber-200 bg-white shadow-sm"
-          >
-            <button
-              onClick={() => toggleSection(section.id)}
-              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left hover:bg-amber-50"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-sunset">{React.createElement(getIcon(section.iconKey), { className: "w-7 h-7" })}</span>
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900">
-                    <En>{section.title}</En>
-                    <Ko>{section.koTitle || section.title}</Ko>
-                  </h2>
-                  <p className="text-sm text-gray-500">
-                    <En>{section.desc}</En>
-                    <Ko>{section.koDesc || section.desc}</Ko>
-                  </p>
-                </div>
-              </div>
-              <svg
-                className={`h-5 w-5 flex-shrink-0 text-gray-400 transition-transform ${
-                  openSection === section.id ? "rotate-180" : ""
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {openSection === section.id && (
-              <div className="border-t border-amber-100 px-6 py-4">
-                {section.content.map((item, idx) => (
-                  <div key={idx} className="mb-4 last:mb-0">
-                    <h3 className="mb-1 text-sm font-medium text-gray-800">
-                      <En>{item.label}</En>
-                      <Ko>{item.label}</Ko>
-                    </h3>
-                    <p className="mb-1 text-sm leading-relaxed text-gray-600">
-                      <En>{item.en}</En>
-                    </p>
-                    <p className="text-sm leading-relaxed text-gray-500">
-                      <Ko>{item.ko}</Ko>
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
       </div>
     </div>
   );

@@ -21,20 +21,14 @@ const koreanRegex = /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/;
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");
 
-  // Auto-detect Korean browser on first visit
+  // Read from documentElement.lang (already set by blocking init script in <head>)
+  // — avoids rendering English first then snapping to Korean (issue #5)
   useEffect(() => {
-    const stored = localStorage.getItem("aussiemate-lang");
-    if (stored === "en" || stored === "ko") {
-      setLang(stored as Lang);
-      return;
-    }
-    // No stored preference — check browser language
-    const browserLang = navigator.language;
-    if (browserLang.startsWith("ko")) {
-      setLang("ko");
-      localStorage.setItem("aussiemate-lang", "ko");
-    } else {
-      setLang("en");
+    const initial: Lang = document.documentElement.lang === "ko" ? "ko" : "en";
+    setLang(initial);
+    // Persist auto-detected value so it sticks on next visit
+    if (!localStorage.getItem("aussiemate-lang")) {
+      localStorage.setItem("aussiemate-lang", initial);
     }
   }, []);
 
@@ -42,11 +36,13 @@ export function LangProvider({ children }: { children: ReactNode }) {
     const next = lang === "en" ? "ko" : "en";
     setLang(next);
     localStorage.setItem("aussiemate-lang", next);
+    document.documentElement.lang = next === "ko" ? "ko" : "en";
   };
 
   const setLangFn = (l: Lang) => {
     setLang(l);
     localStorage.setItem("aussiemate-lang", l);
+    document.documentElement.lang = l === "ko" ? "ko" : "en";
   };
 
   return (

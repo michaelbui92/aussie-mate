@@ -11,10 +11,11 @@ const ThemeContext = createContext<{
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
 
+  // Read from documentElement (already set by blocking init script in <head>)
+  // — avoids the flash that comes from a useEffect-based localStorage read (issue #5)
   useEffect(() => {
-    const saved = localStorage.getItem("am-theme") as Theme | null;
-    if (saved) setTheme(saved);
-    else if (window.matchMedia("(prefers-color-scheme: dark)").matches) setTheme("dark");
+    const initial = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    setTheme(initial);
   }, []);
 
   useEffect(() => {

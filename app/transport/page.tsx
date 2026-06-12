@@ -1,30 +1,9 @@
-"use client";
-import React from "react";
 import Link from "next/link";
-import { useState } from "react";
-import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
+import { Bus, Car, Plane, Train } from "@/components/Icons";
 
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
-
-interface Section {
-  id: string;
-  iconKey: string;
-  title: string;
-  koTitle?: string;
-  desc: string;
-  koDesc?: string;
-  content: ContentItem[];
-}
-
-interface ContentItem {
-  label: string;
-  en: string;
-  ko: string;
-}
-
-const sections: Section[] = [
+const sections: AccordionSection[] = [
   {
     id: "opal-card",
     iconKey: "Bus",
@@ -32,7 +11,7 @@ const sections: Section[] = [
     koTitle: "오팔 카드",
     desc: "Sydney's public transport card — how to get one and use it",
     koDesc: "시드니 대중교통 카드 — 얻는 방법과 사용법",
-    content: [
+    items: [
       {
         label: "What is Opal?",
         en: "Opal is the contactless card you use for buses, trains, ferries, and light rail in Sydney and NSW. You tap on and tap off at every journey. It saves you money — cash fares are almost double Opal prices.",
@@ -72,7 +51,7 @@ const sections: Section[] = [
     koTitle: "시드니 기차",
     desc: "How the train system works",
     koDesc: "기차 시스템이 어떻게 작동하는지",
-    content: [
+    items: [
       {
         label: "Train Network Basics",
         en: "Sydney has a suburban train network (Sydney Trains) with lines covering the city, eastern suburbs, inner west, North Shore, and outer areas. Trains run from about 4am to midnight every day. On Friday and Saturday nights, some lines run 24 hours.",
@@ -102,7 +81,7 @@ const sections: Section[] = [
     koTitle: "버스",
     desc: "Sydney's extensive bus network",
     koDesc: "시드니의 광범위한 버스 네트워크",
-    content: [
+    items: [
       {
         label: "Bus Network",
         en: "Buses cover areas that trains don't reach. They're the most common form of public transport in Sydney. Routes are numbered — most run through major hubs like Bondi Junction, Chatswood, Parramatta, and the City.",
@@ -132,7 +111,7 @@ const sections: Section[] = [
     koTitle: "페리",
     desc: "Sydney's iconic harbour ferries",
     koDesc: "시드니의 상징적인 항구 페리",
-    content: [
+    items: [
       {
         label: "Sydney Ferries",
         en: "Sydney's ferry network is one of the most beautiful commutes in the world. Routes go to Manly, Taronga Zoo, Watson's Bay, Parramatta (via the river), and many more. The harbour is huge — ferries are often faster than buses for cross-harbour trips.",
@@ -157,7 +136,7 @@ const sections: Section[] = [
     koTitle: "호주에서 운전하기",
     desc: "Getting your licence and driving on Aussie roads",
     koDesc: "면허 따기 и 호주 길에서 운전하기",
-    content: [
+    items: [
       {
         label: "International Licence",
         en: "If you have a valid international driving permit (IDP) from your home country, you can drive in NSW for up to 3 months from your arrival date. After 3 months, you must get an Australian licence. Korean licence holders can take a practical test only (no written test) to convert.",
@@ -187,7 +166,7 @@ const sections: Section[] = [
     koTitle: "rideshare와 택시",
     desc: "Uber, taxis, and other ride options",
     koDesc: "Uber, 택시 및 기타 이동 옵션",
-    content: [
+    items: [
       {
         label: "Uber in Sydney",
         en: "Uber is widely available in Sydney and generally cheaper than taxis for most trips. UberX is the standard option; Uber Comfort for newer cars; Uber Premier for premium rides. There's also Uber Eats for food delivery.",
@@ -212,13 +191,9 @@ const sections: Section[] = [
   },
 ];
 
+const iconKeys = ["Bus", "Car", "Plane", "Train"];
+
 export default function TransportPage() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const toggleSection = (id: string) => {
-    setOpenSection(openSection === id ? null : id);
-  };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -237,60 +212,7 @@ export default function TransportPage() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
-        {sections.map((section, si) => {
-          const isOpen = openSection === section.id;
-          return (
-            <div
-              key={section.id}
-              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
-            >
-              {/* Accordion Header */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
-                aria-expanded={isOpen}
-              >
-                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
-                <div className="flex-1 min-w-0 pr-2">
-                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
-                    <En>{section.title}</En>
-                    <Ko>{section.koTitle || section.title}</Ko>
-                  </h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">
-                    <En>{section.desc}</En>
-                    <Ko>{section.koDesc || section.desc}</Ko>
-                  </p>
-                </div>
-                <svg
-                  className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Accordion Body */}
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="divide-y divide-sand dark:divide-dark-border border-t border-sand dark:border-dark-border">
-                  {section.content.map((item, ii) => (
-                    <div key={ii} className="px-5 py-4">
-                      <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
-                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">{item.ko}</p></Ko>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
 
         {/* CTA Box */}
         <div className="bg-coast/10 border border-coast/30 rounded-2xl p-5 text-center">

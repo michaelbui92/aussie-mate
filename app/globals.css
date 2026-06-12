@@ -179,16 +179,48 @@
   h2 { font-size: 1.125rem !important; }
 }
 
-/* === PAGE TRANSITIONS === */
-.page-enter {
-  opacity: 0;
-  transform: translateY(12px);
-}
-.page-enter-active {
-  animation: pageIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+/* === PAGE TRANSITIONS (CSS keyframe, re-runs on remount) === */
+.page-in {
+  animation: pageIn 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes pageIn {
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === MODAL (SearchModal) enter/exit === */
+.modal-in {
+  animation: modalIn 0.18s ease-out both;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.backdrop-in {
+  animation: backdropIn 0.15s ease-out both;
+}
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* === STAGGERED CARD ENTRY (replaces framer-motion stagger on HomePage) === */
+.card-in {
+  animation: cardIn 0.3s ease-out both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === LANG TOGGLE (replaces motion.span key change) === */
+.lang-flip {
+  animation: langFlip 0.15s ease-out both;
+  display: inline-block;
+}
+@keyframes langFlip {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* === SCROLL ANIMATIONS (triggered by .in-view class) === */

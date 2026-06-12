@@ -1,29 +1,8 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { Icons } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
+import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
+import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@/components/Icons";
 
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
-
-interface Section {
-  id: string;
-  iconKey: string;
-  title: string;
-  koTitle?: string;
-  desc: string;
-  koDesc?: string;
-  content: ContentItem[];
-}
-
-interface ContentItem {
-  label: string;
-  en: string;
-  ko: string;
-}
-
-const sections: Section[] = [
+const sections: AccordionSection[] = [
   {
     id: "workplace-culture",
     iconKey: "Handshake",
@@ -31,7 +10,7 @@ const sections: Section[] = [
     koTitle: "직장 문화",
     desc: "What makes Aussie workplaces different",
     koDesc: "호주 직장이 다른 점",
-    content: [
+    items: [
       {
         label: "Direct Communication",
         en: "Australians are direct. If something is wrong, your manager will tell you straight — it's not rude, it's how things get done. There's very little 'saving face' in the way you might find in some Asian workplaces.",
@@ -66,7 +45,7 @@ const sections: Section[] = [
     koTitle: "의견 표출",
     desc: "How to raise concerns and give feedback at work",
     koDesc: "직장에서 문제를 제기하고 피드백을 주는 방법",
-    content: [
+    items: [
       {
         label: "Direct Feedback is Normal",
         en: "Aussies will tell you directly if there's an issue. This is not personal — it's professional. Don't take it as an attack. And equally, you are expected to speak up if something isn't right.",
@@ -96,7 +75,7 @@ const sections: Section[] = [
     koTitle: "캐주얼 대 정규직",
     desc: "Understanding your employment type",
     koDesc: "고용 형태 이해하기",
-    content: [
+    items: [
       {
         label: "What is a Casual?",
         en: "A casual employee has no guaranteed hours and can be offered work when available. They receive a 25% 'casual loading' extra pay on top of the base rate to compensate for lack of sick leave and holiday pay.",
@@ -126,7 +105,7 @@ const sections: Section[] = [
     koTitle: "급여와 퇴직금",
     desc: "Minimum pay standards and superannuation",
     koDesc: "최저 임금 기준과 퇴직연금",
-    content: [
+    items: [
       {
         label: "What is an Award?",
         en: "An Award is a legal document that sets minimum pay and conditions for specific industries or jobs. If you're in a job covered by an Award, you must be paid at least the Award rate — not less.",
@@ -156,7 +135,7 @@ const sections: Section[] = [
     koTitle: "캐주얼 노동자 권리",
     desc: "Your rights as a casual worker in Australia",
     koDesc: "호주 캐주얼 노동자의 권리",
-    content: [
+    items: [
       {
         label: "You're Allowed to Say No",
         en: "As a casual, you can refuse a shift. You don't have to give a reason. However, if you consistently refuse available shifts, the employer may reduce the shifts they offer you.",
@@ -196,7 +175,7 @@ const sections: Section[] = [
     koTitle: "첫째 주 팁",
     desc: "How to make a great first impression",
     koDesc: "좋은 첫 인상을 만드는 방법",
-    content: [
+    items: [
       {
         label: "Arrive on Time (정시 도착)",
         en: "In Australia, 'on time' means 5-10 minutes early. Traffic and public transport can be unpredictable — plan your commute in advance. Tardiness in the first week makes a bad impression.",
@@ -231,13 +210,9 @@ const sections: Section[] = [
   },
 ];
 
+const iconKeys = ["Clipboard", "Coin", "Handshake", "PersonSpeaking", "ShieldCheck", "Star"];
+
 export default function WorkplacePage() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const toggleSection = (id: string) => {
-    setOpenSection(prev => (prev === id ? null : id));
-  };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -256,61 +231,7 @@ export default function WorkplacePage() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
-        {sections.map((section, si) => {
-          const isOpen = openSection === section.id;
-          return (
-            <div
-              key={section.id}
-              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
-              style={{ animationDelay: `${si * 0.08}s` }}
-            >
-              {/* Accordion Header */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
-                aria-expanded={isOpen}
-              >
-                <span className="text-sunset shrink-0">{React.createElement(getIcon(section.iconKey), { className: "w-5 h-5" })}</span>
-                <div className="flex-1 min-w-0 pr-2">
-                  <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
-                    <En>{section.title}</En>
-                    <Ko>{section.koTitle || section.title}</Ko>
-                  </h2>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">
-                    <En>{section.desc}</En>
-                    <Ko>{section.koDesc || section.desc}</Ko>
-                  </p>
-                </div>
-                <svg
-                  className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Accordion Body */}
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="divide-y divide-sand dark:divide-dark-border border-t border-sand dark:border-dark-border">
-                  {section.content.map((item, ii) => (
-                    <div key={ii} className="px-5 py-4">
-                      <p className="font-semibold text-sm text-sunset mb-1.5">{item.label}</p>
-                      <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.en}</p></En>
-                      <Ko><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">{item.ko}</p></Ko>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
 
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
