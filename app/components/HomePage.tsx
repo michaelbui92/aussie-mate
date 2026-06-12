@@ -1,11 +1,17 @@
 "use client";
+import { Suspense } from "react";
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 import { Icons } from "./Icons";
+import PersonaSheet from "./PersonaSheet";
+import VisitingContent from "./personas/VisitingContent";
+import ArrivedContent from "./personas/ArrivedContent";
+import LivingContent from "./personas/LivingContent";
 
 const lanes = [
   {
-    href: "/tourist",
+    paramKey: "visiting",
+    href: "/?sheet=visiting",
     emoji: "✈️",
     title: "I'm visiting",
     koTitle: "여행 중이에요",
@@ -16,7 +22,8 @@ const lanes = [
     iconBg: "bg-wattle/20",
   },
   {
-    href: "/apartment",
+    paramKey: "arrived",
+    href: "/?sheet=arrived",
     emoji: "🏠",
     title: "I just got here",
     koTitle: "방금 도착했어요",
@@ -27,7 +34,8 @@ const lanes = [
     iconBg: "bg-sage/20",
   },
   {
-    href: "/finance",
+    paramKey: "living",
+    href: "/?sheet=living",
     emoji: "💼",
     title: "I live in Australia",
     koTitle: "호주에 살고 있어요",
@@ -243,6 +251,39 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Persona sheets — keyed by ?sheet=visiting|arrived|living */}
+      <Suspense fallback={null}>
+        <PersonaSheet
+          paramKey="visiting"
+          emoji="✈️"
+          bandClass="bg-wattle/15"
+          title={{ en: "I'm visiting Sydney", ko: "시드니에 방문 중이에요" }}
+          subtitle={{ en: "Solo or with someone — here's how to make the most of it.", ko: "혼자든 함께든, 제대로 즐기는 법을 알려드려요." }}
+        >
+          <VisitingContent />
+        </PersonaSheet>
+
+        <PersonaSheet
+          paramKey="arrived"
+          emoji="🏠"
+          bandClass="bg-sage/15"
+          title={{ en: "Welcome — you just got here", ko: "호주에 오신 걸 환영해요" }}
+          subtitle={{ en: "First-week checklist for sorting out the essentials.", ko: "꼭 챙길 첫 주 체크리스트." }}
+        >
+          <ArrivedContent />
+        </PersonaSheet>
+
+        <PersonaSheet
+          paramKey="living"
+          emoji="💼"
+          bandClass="bg-sunset/15"
+          title={{ en: "You're settled — now what?", ko: "정착했어요 — 이제 뭘 할까요?" }}
+          subtitle={{ en: "The ongoing stuff: tax, super, healthcare, citizenship, and the slang you'll keep hearing.", ko: "꾸준히 챙길 것들: 세금, super, 의료, 시민권, 그리고 계속 들을 표현들." }}
+        >
+          <LivingContent />
+        </PersonaSheet>
+      </Suspense>
 
       {/* Trust strip */}
       <section className="border-t border-eucalypt/10 dark:border-dark-border bg-cream/50 dark:bg-dark-surface/30 py-6 px-4">
