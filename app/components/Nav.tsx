@@ -17,6 +17,14 @@ const navLinks = [
   { href: "/resources", label: "Resources" },
 ];
 
+const testLinks = [
+  { href: "/test-homepage-1", label: "T1: Editorial" },
+  { href: "/test-homepage-2", label: "T2: Premium Dark" },
+  { href: "/test-homepage-3", label: "T3: Neo-Brutalist" },
+  { href: "/test-homepage-4", label: "T4: Bento Grid" },
+  { href: "/test-homepage-5", label: "T5: Minimal" },
+];
+
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -52,8 +60,21 @@ export default function Nav() {
               </Link>
             );
           })}
+          <span className="text-eucalypt/20 dark:text-dark-muted/20 mx-1">|</span>
+          {testLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`nav-link px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all btn-press ${
+                pathname === link.href
+                  ? "text-violet-600 dark:text-violet-400 active"
+                  : "text-eucalypt/40 dark:text-dark-muted/40 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-sand dark:hover:bg-dark-surface"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
-
         <div className="ml-auto flex items-center gap-2">
           <button
             onClick={openSearch}
@@ -118,6 +139,21 @@ export default function Nav() {
                 </Link>
               );
             })}
+            <div className="border-t border-eucalypt/10 dark:border-dark-border/50 my-2" />
+            {testLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-all btn-press ${
+                  pathname === link.href
+                    ? "text-violet-600 bg-violet-50"
+                    : "text-eucalypt/40 dark:text-dark-muted/40 hover:text-violet-500"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}
