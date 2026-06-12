@@ -23,9 +23,9 @@ const categories = [
     desc: "Banking, tax, superannuation, and budgeting",
     koTitle: "금융",
     koDesc: "은행, 세금, 퇴직연금, 예산 관리",
-    color: "bg-green-500/10 border-green-500/30",
-    accent: "text-green-600 dark:text-green-400",
-    iconBg: "bg-green-500/20",
+    color: "bg-sage-light/10 border-sage-light/30",
+    accent: "text-sage-light",
+    iconBg: "bg-sage-light/20",
   },
   {
     href: "/apartment",
@@ -56,9 +56,9 @@ const categories = [
     desc: "University and academic life in Australia",
     koTitle: "학습",
     koDesc: "호주 대학과 학업 생활",
-    color: "bg-purple-500/10 border-purple-500/30",
-    accent: "text-purple-600 dark:text-purple-400",
-    iconBg: "bg-purple-500/20",
+    color: "bg-gum/10 border-gum/30",
+    accent: "text-gum",
+    iconBg: "bg-gum/20",
   },
   {
     href: "/transport",
@@ -67,9 +67,9 @@ const categories = [
     desc: "Opal, trains, buses, ferries, and driving",
     koTitle: "교통",
     koDesc: "오팔 카드, 기차, 버스, 페리, 운전",
-    color: "bg-orange-500/10 border-orange-500/30",
-    accent: "text-orange-600 dark:text-orange-400",
-    iconBg: "bg-orange-500/20",
+    color: "bg-sunset-light/10 border-sunset-light/30",
+    accent: "text-sunset-light",
+    iconBg: "bg-sunset-light/20",
   },
   {
     href: "/tourist",
@@ -78,9 +78,9 @@ const categories = [
     desc: "Sydney and NSW for short-term visitors",
     koTitle: "여행자",
     koDesc: "시드니와 NSW短期 방문자를 위한 정보",
-    color: "bg-yellow-400/10 border-yellow-400/30",
-    accent: "text-yellow-600 dark:text-yellow-400",
-    iconBg: "bg-yellow-400/20",
+    color: "bg-wattle/10 border-wattle/30",
+    accent: "text-wattle",
+    iconBg: "bg-wattle/20",
   },
   {
     href: "/beyond-sydney",
@@ -89,9 +89,9 @@ const categories = [
     desc: "Weekend trips and road trips from Sydney",
     koTitle: "시드니 밖으로",
     koDesc: "시드니에서의 주말 여행과 드라이브",
-    color: "bg-rose-400/10 border-rose-400/30",
-    accent: "text-rose-500 dark:text-rose-400",
-    iconBg: "bg-rose-400/20",
+    color: "bg-coast/10 border-coast/30",
+    accent: "text-coast",
+    iconBg: "bg-coast/20",
   },
   {
     href: "/resources",
@@ -100,9 +100,9 @@ const categories = [
     desc: "Government services and community links",
     koTitle: "자료",
     koDesc: "정부 서비스와 지역 사회 연결",
-    color: "bg-blue-400/10 border-blue-400/30",
-    accent: "text-blue-500 dark:text-blue-400",
-    iconBg: "bg-blue-400/20",
+    color: "bg-sage-light/10 border-sage-light/30",
+    accent: "text-sage-light",
+    iconBg: "bg-sage-light/20",
   },
 ];
 
@@ -127,6 +127,13 @@ export default function HomePage() {
             <En>Your friendly guide to Aussie English, renting, working, studying, and everything in between.</En>
             <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 가이드입니다.</Ko>
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link href="/aussie-english" className="btn-gradient">
+              <En>Start with Aussie English</En>
+              <Ko>호주 영어부터 시작하기</Ko>
+              <Icons.ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -150,7 +157,7 @@ export default function HomePage() {
                 <h3 className={`font-bold text-base ${cat.accent}`}><En>{cat.title}</En><Ko>{cat.koTitle}</Ko></h3>
                 <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 leading-snug"><En>{cat.desc}</En><Ko>{cat.koDesc}</Ko></p>
                 <div className="mt-auto pt-1">
-                  <span className={`inline-flex items-center gap-1 text-xs font-semibold ${cat.accent} group-hover:gap-2 transition-all`}><En>Explore</En><Ko>탐험</Ko><Icons.ArrowRight className="w-3 h-3" /></span>
+                  <span className={`inline-flex items-center gap-1 text-xs font-semibold ${cat.accent} group-hover:gap-2 transition-all`}><En>Explore</En><Ko>둘러보기</Ko><Icons.ArrowRight className="w-3 h-3" /></span>
                 </div>
               </Link>
             </motion.div>

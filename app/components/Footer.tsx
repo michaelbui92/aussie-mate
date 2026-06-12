@@ -21,8 +21,6 @@ export default function Footer() {
           <Link href="/about" className="hover:text-sunset transition-colors">About</Link>
           <a href="https://drivewithbui.com" target="_blank" rel="noopener noreferrer" className="hover:text-sunset transition-colors">Drive with Bui</a>
           <a href="https://study-buddy-two-orpin.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-sunset transition-colors">Study Buddy</a>
-          <Link href="/" className="hover:text-sunset transition-colors">Terms</Link>
-          <Link href="/" className="hover:text-sunset transition-colors">Privacy</Link>
         </div>
         <p className="text-xs text-eucalypt/30 dark:text-dark-muted/30 mt-3">© 2026 AussieMate</p>
       </div>
