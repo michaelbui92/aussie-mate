@@ -5,9 +5,9 @@ import { En, Ko } from "@/components/LangBlocks";
 import { Icons } from "./Icons";
 import VisitingContent from "./personas/VisitingContent";
 import ArrivedContent from "./personas/ArrivedContent";
-import LivingContent from "./personas/LivingContent";
+import HomeContent from "./personas/HomeContent";
 
-type StageKey = "visiting" | "arrived" | "living";
+type StageKey = "visiting" | "arrived" | "home";
 
 const stages: {
   key: StageKey;
@@ -48,8 +48,8 @@ const stages: {
     emoji: "🏠",
     title: "I just got here",
     koTitle: "방금 도착했어요",
-    desc: "Find a place to live, open a bank account, get set up.",
-    koDesc: "집 구하기, 은행 계좌, 정착에 필요한 것들.",
+    desc: "Find a job, learn Aussie English, get around, see the city.",
+    koDesc: "취업, 호주 영어, 교통, 시드니 명소 둘러보기.",
     color: "border-t-sage",
     iconBg: "bg-sage/20",
     activeFill: "bg-sage/15",
@@ -58,18 +58,18 @@ const stages: {
     activeText: "text-sage",
   },
   {
-    key: "living",
-    emoji: "💼",
-    title: "I live in Australia",
-    koTitle: "호주에 살고 있어요",
-    desc: "Work, money, tax, super, and the slang you'll hear this week.",
-    koDesc: "일, 돈, 세금, 퇴직연금, 그리고 이번 주에 들을 표현들.",
-    color: "border-t-sunset",
-    iconBg: "bg-sunset/20",
-    activeFill: "bg-sunset/15",
+    key: "home",
+    emoji: "🏡",
+    title: "I call this home",
+    koTitle: "여기가 내 집이에요",
+    desc: "Make friends, explore further, and start feeling like a local.",
+    koDesc: "친구 사귀기, 더 멀리 여행하기, 호주 사람처럼 살기.",
+    color: "border-t-coast",
+    iconBg: "bg-coast/20",
+    activeFill: "bg-coast/15",
     inactiveBorder: "border-eucalypt/10 dark:border-dark-border",
-    activeBorder: "border-sunset",
-    activeText: "text-sunset",
+    activeBorder: "border-coast",
+    activeText: "text-coast",
   },
 ];
 
@@ -276,7 +276,7 @@ export default function HomePage() {
         >
           {activeStage === "visiting" && <VisitingContent />}
           {activeStage === "arrived" && <ArrivedContent />}
-          {activeStage === "living" && <LivingContent />}
+          {activeStage === "home" && <HomeContent />}
         </div>
       </section>
 
