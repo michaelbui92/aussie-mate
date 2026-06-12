@@ -410,3 +410,77 @@
 .pro-con-item.con {
   @apply bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300;
 }
+
+/* === GLASS MORPHISM === */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dark .glass {
+  background: rgba(42, 58, 42, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.dark .glass-card {
+  background: rgba(37, 51, 37, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.glass-nav {
+  background: rgba(253, 248, 243, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(245, 235, 224, 0.6);
+}
+.dark .glass-nav {
+  background: rgba(26, 42, 26, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(58, 74, 58, 0.5);
+}
+
+.glass-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.dark .glass-section {
+  background: linear-gradient(135deg, rgba(42, 58, 42, 0.6) 0%, rgba(26, 42, 26, 0.4) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-btn {
+  background: rgba(232, 114, 42, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(232, 114, 42, 0.25);
+  transition: all 0.25s ease;
+}
+.glass-btn:hover {
+  background: rgba(232, 114, 42, 0.28);
+  border-color: rgba(232, 114, 42, 0.45);
+  box-shadow: 0 4px 16px rgba(232, 114, 42, 0.18);
+}
+
+/* Ambient gradient mesh for hero */
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(232, 114, 42, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(91, 138, 91, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(107, 165, 181, 0.08) 0%, transparent 65%);
+}

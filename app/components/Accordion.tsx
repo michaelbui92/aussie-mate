@@ -67,7 +67,7 @@ export default function Accordion({
         return (
           <div
             key={section.id}
-            className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
+            className={`glass-card rounded-2xl overflow-hidden`}
             style={itemDelayS > 0 ? { animationDelay: `${si * itemDelayS}s` } : undefined}
           >
             <button
@@ -99,7 +99,7 @@ export default function Accordion({
                 isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="divide-y divide-sand dark:divide-dark-border border-t border-sand dark:border-dark-border">
+              <div className="glass-section divide-y divide-sand/50 dark:divide-dark-border/50 border-t border-sand/30 dark:border-dark-border/30">
                 {section.items.map((item, ii) => (
                   <div key={ii} className="px-5 py-4">
                     <p className={`font-semibold text-sm ${accent} mb-1.5`}>{item.label}</p>

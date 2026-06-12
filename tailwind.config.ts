@@ -22,6 +22,10 @@ const config: Config = {
         "dark-muted": "#A8C8A0",
         "dark-border": "#3A4A3A",
         "dark-card": "#253325",
+        glass: "rgba(255, 255, 255, 0.72)",
+        "glass-dark": "rgba(42, 58, 42, 0.72)",
+        "glass-border": "rgba(255, 255, 255, 0.4)",
+        "glass-border-dark": "rgba(255, 255, 255, 0.08)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],

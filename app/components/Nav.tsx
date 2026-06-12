@@ -8,6 +8,7 @@ import { useSearch } from "@/components/SearchModal";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/aussie-english", label: "Aussie English" },
+  { href: "/sport", label: "Sport" },
   { href: "/finance", label: "Finance" },
   { href: "/apartment", label: "Apartment" },
   { href: "/workplace", label: "Workplace" },
@@ -23,7 +24,7 @@ export default function Nav() {
   const { openSearch } = useSearch();
 
   return (
-    <nav className="sticky top-0 z-50 bg-cream/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-sand dark:border-dark-border">
+    <nav className="sticky top-0 z-50 glass-nav border-b border-sand/30 dark:border-dark-border/50">
       <div className="w-full px-4 h-16 flex items-center gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0 group">
@@ -98,7 +99,7 @@ export default function Nav() {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="md:hidden bg-cream dark:bg-darkbg border-t border-sand dark:border-dark-border animate-scale-in">
+        <div className="md:hidden glass-nav border-t border-sand/30 dark:border-dark-border/50 animate-scale-in rounded-b-2xl">
           <div className="w-full px-4 py-3 flex flex-col gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

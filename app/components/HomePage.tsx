@@ -77,6 +77,15 @@ const categories = [
     accent: "text-sunset",
   },
   {
+    href: "/sport",
+    title: "Sport",
+    desc: "NRL, AFL, cricket, and Aussie sports culture",
+    koTitle: "스포츠",
+    koDesc: "NRL, AFL, 크리켓, 호주 스포츠 문화",
+    borderColor: "border-t-wattle",
+    accent: "text-wattle",
+  },
+  {
     href: "/workplace",
     title: "Workplace",
     desc: "Australian work culture and your rights",
@@ -142,7 +151,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-8 pb-8 px-4">
+      <section className="relative overflow-hidden gradient-mesh pt-8 pb-8 px-4">
         <div className="max-w-4xl mx-auto text-center relative">
           <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-3 py-1.5 mb-5">
             <En><span className="text-sunset text-xs font-semibold">New in Australia?</span></En>
@@ -183,7 +192,7 @@ export default function HomePage() {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveStage(s.key)}
-                className={`group text-left border border-eucalypt/10 dark:border-dark-border border-t-2 ${s.borderColor} bg-white dark:bg-dark-card rounded-md p-5 transition-colors ${
+                className={`group text-left border border-eucalypt/10 dark:border-dark-border border-t-2 ${s.borderColor} glass-card rounded-md p-5 transition-colors ${
                   isActive
                     ? "border-eucalypt/40 dark:border-dark-muted/40"
                     : "hover:border-eucalypt/30 dark:hover:border-dark-muted/30"
@@ -213,7 +222,7 @@ export default function HomePage() {
         <div
           key={activeStage}
           role="tabpanel"
-          className={`rounded-2xl border-t-2 ${active.borderColor} bg-white dark:bg-dark-card p-5 sm:p-6 shadow-sm animate-card-in`}
+          className={`rounded-2xl border-t-2 ${active.borderColor} glass-card p-5 sm:p-6 shadow-sm animate-card-in`}
         >
           {activeStage === "visiting" && <VisitingContent />}
           {activeStage === "arrived" && <ArrivedContent />}
@@ -232,7 +241,7 @@ export default function HomePage() {
             <div key={cat.href} className="card-in" style={{ animationDelay: `${i * 0.06}s` }}>
               <Link
                 href={cat.href}
-                className={`group block border border-eucalypt/10 dark:border-dark-border border-t-2 ${cat.borderColor} bg-white dark:bg-dark-card rounded-md p-5 hover:border-eucalypt/40 dark:hover:border-dark-muted/40 transition-colors h-full`}
+                className={`group block border border-eucalypt/10 dark:border-dark-border border-t-2 ${cat.borderColor} glass-card rounded-md p-5 hover:border-eucalypt/40 dark:hover:border-dark-muted/40 transition-colors h-full`}
               >
                 <h3 className={`text-base font-semibold tracking-tight ${cat.accent}`}>
                   <En>{cat.title}</En>
@@ -249,12 +258,12 @@ export default function HomePage() {
       </section>
 
       {/* Trust strip */}
-      <section className="border-t border-eucalypt/10 dark:border-dark-border bg-cream/50 dark:bg-dark-surface/30 py-6 px-4">
+      <section className="border-t border-eucalypt/10 dark:border-dark-border glass-section py-6 px-4">
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm text-eucalypt/70 dark:text-dark-muted/70">
           <div className="flex items-center gap-1.5">
             <span aria-hidden>📚</span>
-            <En><strong className="text-eucalypt dark:text-white font-bold">9</strong> guides</En>
-            <Ko><strong className="text-eucalypt dark:text-white font-bold">9</strong>개의 가이드</Ko>
+            <En><strong className="text-eucalypt dark:text-white font-bold">10</strong> guides</En>
+            <Ko><strong className="text-eucalypt dark:text-white font-bold">10</strong>개의 가이드</Ko>
           </div>
           <span aria-hidden className="hidden sm:inline text-eucalypt/30 dark:text-dark-muted/30">·</span>
           <div className="flex items-center gap-1.5">

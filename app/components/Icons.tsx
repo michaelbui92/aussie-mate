@@ -501,6 +501,13 @@ export const Wine = wrap(
   </>
 );
 
+export const Trophy = wrap(
+  <>
+    <path d="M8 21h8M12 17v4M17 4H7v5a5 5 0 0 0 10 0V4z" />
+    <path d="M17 4a2 2 0 0 1 2 2v1a4 4 0 0 1-4 4M7 4a2 2 0 0 0-2 2v1a4 4 0 0 0 4 4" />
+  </>
+);
+
 export const TheaterMasks = wrap(
   <>
     <circle cx="12" cy="8" r="7" />
