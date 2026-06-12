@@ -1,30 +1,13 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { Icons } from "@/components/Icons";
+// Beyond-sydney page — server component.
+// Destinations data, vibe metadata, and icon keys are all serializable, so
+// the page can render the static layout (header) on the server and hand the
+// interactive list (filter pills + per-destination accordion) to the
+// FilteredAccordion client island.
+
 import { En, Ko } from "@/components/LangBlocks";
+import FilteredAccordion, { type BeyondSydneyDestination } from "@/components/FilteredAccordion";
 
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
-
-interface Destination {
-  id: string;
-  iconKey: string;
-  name: string;
-  state: string;
-  distance: string;
-  desc: string;
-  koDesc: string;
-  highlights: string[];
-  koHighlights: string[];
-  transport: string;
-  koTransport: string;
-  bestTime: string;
-  koBestTime: string;
-  vibe: "beach" | "city" | "nature" | "food" | "mountain";
-}
-
-const destinations: Destination[] = [
+const destinations: BeyondSydneyDestination[] = [
   {
     id: "newcastle",
     iconKey: "CityScape",
@@ -187,6 +170,8 @@ const destinations: Destination[] = [
   },
 ];
 
+// Tailwind classes applied to each card's outer container, keyed by vibe.
+// Note: these are static strings, so Tailwind's JIT can detect them.
 const vibeColors: Record<string, string> = {
   beach: "bg-coast/10 border-coast/30",
   city: "bg-purple-500/10 border-purple-500/30",
@@ -203,18 +188,22 @@ const vibeLabels: Record<string, { en: string; ko: string }> = {
   mountain: { en: "Mountain", ko: "산" },
 };
 
+const vibeOrder = ["all", "beach", "city", "nature", "food", "mountain"];
+
+const iconKeys = [
+  "CityScape",
+  "Waves",
+  "Sunrise",
+  "Wine",
+  "Mountain",
+  "Dolphin",
+  "Koala",
+  "SurfBoard",
+  "TheaterMasks",
+  "Building2",
+];
+
 export default function BeyondSydneyPage() {
-  const [openDestination, setOpenDestination] = useState<string | null>(null);
-  const [filterVibe, setFilterVibe] = useState<string>("all");
-
-  const filtered = filterVibe === "all"
-    ? destinations
-    : destinations.filter(d => d.vibe === filterVibe);
-
-  const toggleDestination = (id: string) => {
-    setOpenDestination(openDestination === id ? null : id);
-  };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -231,144 +220,27 @@ export default function BeyondSydneyPage() {
         </div>
       </section>
 
-      {/* Filter pills */}
-      <div className="max-w-4xl mx-auto px-4 py-4">
-        <div className="flex gap-2 overflow-x-auto pb-2">
-          <button
-            onClick={() => setFilterVibe("all")}
-            className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] ${
-              filterVibe === "all"
-                ? "bg-sunset text-white"
-                : "bg-sand dark:bg-dark-surface text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset"
-            }`}
-          >
-            <En>All</En><Ko>전체</Ko>
-          </button>
-          {Object.entries(vibeLabels).map(([vibe, label]) => (
-            <button
-              key={vibe}
-              onClick={() => setFilterVibe(vibe)}
-              className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] ${
-                filterVibe === vibe
-                  ? "bg-sunset text-white"
-                  : "bg-sand dark:bg-dark-surface text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset"
-              }`}
-            >
-              <En>{label.en}</En><Ko>{label.ko}</Ko>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Destination list */}
-      <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
-        {filtered.map((dest) => {
-          const isOpen = openDestination === dest.id;
-          return (
-            <div
-              key={dest.id}
-              className={`bg-white dark:bg-dark-card border rounded-2xl overflow-hidden ${vibeColors[dest.vibe]}`}
-            >
-              {/* Card header */}
-              <button
-                onClick={() => toggleDestination(dest.id)}
-                className="w-full text-left px-5 py-4 flex items-center gap-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
-              >
-                <span className="text-sunset shrink-0">{React.createElement(getIcon(dest.iconKey), { className: "w-7 h-7" })}</span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <h2 className="font-bold text-base text-eucalypt dark:text-white">{dest.name}</h2>
-                    <span className="text-xs text-eucalypt/50 dark:text-dark-muted/50">{dest.state}</span>
-                    <span className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${
-                      dest.vibe === "beach" ? "bg-coast/20 text-coast" :
-                      dest.vibe === "city" ? "bg-purple-500/20 text-purple-600" :
-                      dest.vibe === "nature" ? "bg-sage/20 text-sage" :
-                      dest.vibe === "food" ? "bg-sunset/20 text-sunset" :
-                      "bg-sand dark:bg-dark-surface text-eucalypt/60"
-                    }`}>
-                      <En>{vibeLabels[dest.vibe].en}</En><Ko>{vibeLabels[dest.vibe].ko}</Ko>
-                    </span>
-                  </div>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">
-                    📍 {dest.distance}
-                  </p>
-                </div>
-                <svg
-                  className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Expanded content */}
-              {isOpen && (
-                <div className="px-5 pb-5 border-t border-sand dark:border-dark-border pt-4">
-                  <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 mb-4 leading-relaxed">
-                    <En>{dest.desc}</En>
-                    <Ko>{dest.koDesc}</Ko>
-                  </p>
-
-                  {/* Highlights */}
-                  <h3 className="font-semibold text-sm text-sunset mb-2">
-                    <En>Highlights</En><Ko>주요 포인트</Ko>
-                  </h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {dest.highlights.map((h, i) => (
-                      <span key={i} className="inline-flex items-center gap-1 text-xs bg-sand dark:bg-dark-surface text-eucalypt/70 dark:text-dark-muted/70 px-3 py-1.5 rounded-full">
-                        {dest.koHighlights[i]} • {h}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Transport */}
-                  <div className="bg-sand/50 dark:bg-dark-surface rounded-xl p-4 mb-3">
-                    <p className="text-xs font-semibold text-eucalypt/50 dark:text-dark-muted/50 mb-1">
-                      <En>🚗 How to get there</En><Ko>🚗 가는 방법</Ko>
-                    </p>
-                    <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70">
-                      <En>{dest.transport}</En><Ko>{dest.koTransport}</Ko>
-                    </p>
-                  </div>
-
-                  {/* Best time */}
-                  <div className="bg-sand/50 dark:bg-dark-surface rounded-xl p-4">
-                    <p className="text-xs font-semibold text-eucalypt/50 dark:text-dark-muted/50 mb-1">
-                      <En>📅 Best time to visit</En><Ko>📅 방문 최적기</Ko>
-                    </p>
-                    <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70">
-                      <En>{dest.bestTime}</En><Ko>{dest.koBestTime}</Ko>
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
-
-        {filtered.length === 0 && (
-          <div className="text-center py-16">
-            <div className="text-5xl mb-3">🔍</div>
-            <p className="text-eucalypt/50 dark:text-dark-muted/50 font-medium">
-              <En>No destinations match that filter</En><Ko>해당 필터에 맞는 목적지가 없습니다</Ko>
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/* Bottom note */}
-      <div className="max-w-4xl mx-auto px-4 pb-10">
-        <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
-          <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Always check road conditions before a long drive. In summer, bushfire season can close roads in NSW — check{' '}
-              <span className="text-sunset font-semibold">Live Traffic NSW</span> before you go.</En>
-            <Ko>장거리 드라이브 전에 반드시 도로 상태를 확인하세요. 여름에는 산불 시즌에 NSW 길이 닫힐 수 있습니다 — 가기 전에{' '}
-              <span className="text-sunset font-semibold">Live Traffic NSW</span>를 확인하세요.</Ko>
-          </p>
-        </div>
-      </div>
+      <FilteredAccordion
+        destinations={destinations}
+        iconKeys={iconKeys}
+        vibeColors={vibeColors}
+        vibeLabels={vibeLabels}
+        vibeOrder={vibeOrder}
+        bottomNote={{
+          en: (
+            <En>
+              Always check road conditions before a long drive. In summer, bushfire season can close roads in NSW — check{" "}
+              <span className="text-sunset font-semibold">Live Traffic NSW</span> before you go.
+            </En>
+          ),
+          ko: (
+            <Ko>
+              장거리 드라이브 전에 반드시 도로 상태를 확인하세요. 여름에는 산불 시즌에 NSW 길이 닫힐 수 있습니다 — 가기 전에{" "}
+              <span className="text-sunset font-semibold">Live Traffic NSW</span>를 확인하세요.
+            </Ko>
+          ),
+        }}
+      />
     </div>
   );
 }

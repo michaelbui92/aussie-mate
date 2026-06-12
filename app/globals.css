@@ -100,7 +100,8 @@
 
   /* Cards: tighter padding on mobile */
   .card-hover,
-  .bg-white.dark\\:bg-dark-card {
+  .bg-white,
+  .dark .bg-white {
     padding: 0.875rem !important;
   }
 

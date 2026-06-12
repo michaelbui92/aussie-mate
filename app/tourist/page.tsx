@@ -160,7 +160,7 @@ export default function TouristPage() {
       </p>
 
       <div className="space-y-6">
-        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
+        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} theme="wattle" />
       </div>
     </div>
   );
