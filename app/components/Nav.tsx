@@ -23,6 +23,11 @@ const testLinks = [
   { href: "/test-homepage-3", label: "T3: Neo-Brutalist" },
   { href: "/test-homepage-4", label: "T4: Bento Grid" },
   { href: "/test-homepage-5", label: "T5: Minimal" },
+  { href: "/test-homepage-6", label: "T6: Earthy Editorial" },
+  { href: "/test-homepage-7", label: "T7: Sky Coast" },
+  { href: "/test-homepage-8", label: "T8: Magazine" },
+  { href: "/test-homepage-9", label: "T9: Bold Dark" },
+  { href: "/test-homepage-10", label: "T10: Warm Sage" },
 ];
 
 export default function Nav() {
