@@ -3,6 +3,42 @@ import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 import { Icons } from "./Icons";
 
+const lanes = [
+  {
+    href: "/tourist",
+    emoji: "✈️",
+    title: "I'm visiting",
+    koTitle: "여행 중이에요",
+    desc: "Short stay? Must-see spots, transport cards, and the basics.",
+    koDesc: "단기 여행이세요? 필수 명소와 교통카드, 기본 정보.",
+    color: "bg-wattle/10 border-wattle/30",
+    accent: "text-wattle",
+    iconBg: "bg-wattle/20",
+  },
+  {
+    href: "/apartment",
+    emoji: "🏠",
+    title: "I just got here",
+    koTitle: "방금 도착했어요",
+    desc: "Find a place to live, open a bank account, get set up.",
+    koDesc: "집 구하기, 은행 계좌, 정착에 필요한 것들.",
+    color: "bg-sage/10 border-sage/30",
+    accent: "text-sage",
+    iconBg: "bg-sage/20",
+  },
+  {
+    href: "/finance",
+    emoji: "💼",
+    title: "I live in Australia",
+    koTitle: "호주에 살고 있어요",
+    desc: "Work, money, tax, super, and the slang you'll hear this week.",
+    koDesc: "일, 돈, 세금, 퇴직연금, 그리고 이번 주에 들을 표현들.",
+    color: "bg-sunset/10 border-sunset/30",
+    accent: "text-sunset",
+    iconBg: "bg-sunset/20",
+  },
+];
+
 const categories = [
   {
     href: "/apartment",
@@ -14,7 +50,6 @@ const categories = [
     color: "bg-sage/10 border-sage/30",
     accent: "text-sage",
     iconBg: "bg-sage/20",
-    startHere: true,
   },
   {
     href: "/finance",
@@ -82,6 +117,7 @@ const categories = [
     color: "bg-wattle/10 border-wattle/30",
     accent: "text-wattle",
     iconBg: "bg-wattle/20",
+    startHere: true,
   },
   {
     href: "/beyond-sydney",
@@ -107,12 +143,15 @@ const categories = [
   },
 ];
 
+const LAST_UPDATED = "12 June 2026";
+const KO_LAST_UPDATED = "2026년 6월 12일";
+
 export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-8 pb-8 px-4">
-        <div className="max-w-2xl mx-auto text-center relative">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-8 pb-10 px-4">
+        <div className="max-w-4xl mx-auto text-center relative">
           <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-3 py-1.5 mb-5">
             <En><span className="text-sunset text-xs font-semibold">New in Australia?</span></En>
             <Ko><span className="text-sunset text-xs font-semibold">호주에 처음 오신 분들에게</span></Ko>
@@ -124,22 +163,56 @@ export default function HomePage() {
             <Ko>호주에 오신 것을 <span className="text-sunset">환영합니다 🦘</span></Ko>
           </h1>
 
-          <p className="text-base md:text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-5 max-w-md mx-auto">
+          <p className="text-base md:text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-6 max-w-md mx-auto">
             <En>Your friendly guide to Aussie English, renting, working, studying, and everything in between.</En>
             <Ko>호주 영어, 임대, 취업, 대학생활 등 모든 것을 안내하는 친근한 가이드입니다.</Ko>
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link href="/aussie-english" className="btn-gradient">
-              <En>Start with Aussie English</En>
-              <Ko>호주 영어부터 시작하기</Ko>
-              <Icons.ArrowRight className="w-4 h-4" />
-            </Link>
+        </div>
+
+        {/* Pick-your-situation lanes */}
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs uppercase tracking-wider text-eucalypt/50 dark:text-dark-muted/50 text-center mb-3 font-semibold">
+            <En>Pick your situation</En>
+            <Ko>상황에 맞게 시작하기</Ko>
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+            {lanes.map((lane, i) => (
+              <Link
+                key={lane.href}
+                href={lane.href}
+                className={`group card-in card-hover ${lane.color} border rounded-2xl p-5 flex flex-col gap-2 text-left`}
+                style={{ animationDelay: `${i * 0.08}s` }}
+              >
+                <div className={`w-12 h-12 ${lane.iconBg} rounded-xl flex items-center justify-center text-2xl mb-1`}>
+                  <span aria-hidden>{lane.emoji}</span>
+                </div>
+                <h2 className={`font-bold text-base ${lane.accent}`}>
+                  <En>{lane.title}</En>
+                  <Ko>{lane.koTitle}</Ko>
+                </h2>
+                <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60 leading-snug">
+                  <En>{lane.desc}</En>
+                  <Ko>{lane.koDesc}</Ko>
+                </p>
+                <div className="mt-auto pt-1">
+                  <span className={`inline-flex items-center gap-1 text-xs font-semibold ${lane.accent} group-hover:gap-2 transition-all`}>
+                    <En>Go</En>
+                    <Ko>시작</Ko>
+                    <Icons.ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Category grid */}
-      <section className="max-w-4xl mx-auto px-4 py-8">
+      <section className="max-w-4xl mx-auto px-4 py-10">
+        <p className="text-xs uppercase tracking-wider text-eucalypt/50 dark:text-dark-muted/50 text-center mb-4 font-semibold">
+          <En>Or browse all topics</En>
+          <Ko>또는 모든 주제 둘러보기</Ko>
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {categories.map((cat, i) => (
             <div
@@ -168,6 +241,35 @@ export default function HomePage() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Trust strip */}
+      <section className="border-t border-eucalypt/10 dark:border-dark-border bg-cream/50 dark:bg-dark-surface/30 py-6 px-4">
+        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm text-eucalypt/70 dark:text-dark-muted/70">
+          <div className="flex items-center gap-1.5">
+            <span aria-hidden>📚</span>
+            <En><strong className="text-eucalypt dark:text-white font-bold">9</strong> guides</En>
+            <Ko><strong className="text-eucalypt dark:text-white font-bold">9</strong>개의 가이드</Ko>
+          </div>
+          <span aria-hidden className="hidden sm:inline text-eucalypt/30 dark:text-dark-muted/30">·</span>
+          <div className="flex items-center gap-1.5">
+            <span aria-hidden>💬</span>
+            <En><strong className="text-eucalypt dark:text-white font-bold">209</strong> Aussie phrases</En>
+            <Ko><strong className="text-eucalypt dark:text-white font-bold">209</strong>개의 호주 표현</Ko>
+          </div>
+          <span aria-hidden className="hidden sm:inline text-eucalypt/30 dark:text-dark-muted/30">·</span>
+          <div className="flex items-center gap-1.5">
+            <span aria-hidden>🔄</span>
+            <En>Last updated: {LAST_UPDATED}</En>
+            <Ko>최종 업데이트: {KO_LAST_UPDATED}</Ko>
+          </div>
+          <span aria-hidden className="hidden sm:inline text-eucalypt/30 dark:text-dark-muted/30">·</span>
+          <div className="flex items-center gap-1.5">
+            <span aria-hidden>🇰🇷</span>
+            <En>Built for Koreans in Australia</En>
+            <Ko>호주 한인 분들을 위해</Ko>
+          </div>
         </div>
       </section>
     </div>
