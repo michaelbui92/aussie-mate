@@ -17,13 +17,13 @@ export const destinations: Destination[] = [
     slug: "blue-mountains",
     name: { en: "Blue Mountains", ko: "블루마운틴" },
     tagline: { en: "A World Heritage site with fabulous views", ko: "유네스코 세계유산, 숨막히는 절경" },
-    heroImg: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=85",
-    cardImg: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    heroImg: "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85",
+    cardImg: "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
     accentColor: "bg-emerald-500",
     region: "New South Wales",
     description: {
       en: "Just 90 minutes from Sydney by train, the Blue Mountains are one of NSW's most spectacular natural wonders. Ancient eucalyptus forests, dramatic sandstone cliffs, and cascading waterfalls make this a must-visit. The Three Sisters at Echo Point are the most famous sight — best viewed at sunrise or sunset when the rock faces glow orange and pink.",
-      ko: "시드니에서 기차로 단 90분, 블루마운틴은 NSW에서 가장 황홀한 자연경관입니다. 고대 유칼립투스 숲, 장엄한 사암 절벽, 준폭포가 어우러진 이 곳은 반드시 방문해야 할 명소입니다. 에코 포인트의 삼姊妹岩이 가장 유명한데, 일출이나 일몰 때 rock이 주황빛과 분홍빛으로 빛나는 모습을 보는 것이 가장 좋습니다."
+      ko: "시드니에서 기차로 단 90분, 블루마운틴은 NSW에서 가장 황홀한 자연경관입니다. 고대 유칼립투스 숲, 장엄한 사암 절벽, 준폭포가 어우러진 이 곳은 반드시 방문해야 할 명소입니다. 에코 포인트의 삼姉妹岩이 가장 유명한데, 일출이나 일몰 때 rock이 주황빛과 분홍빛으로 빛나는 모습을 보는 것이 가장 좋습니다."
     },
     highlights: [
       { en: "Three Sisters & Echo Point", ko: "삼姉妹岩 & 에코 포인트", icon: "mountain" },
@@ -38,8 +38,8 @@ export const destinations: Destination[] = [
     slug: "hunter-valley",
     name: { en: "Hunter Valley", ko: "헌터 밸리" },
     tagline: { en: "World-class wines & gourmet getaways", ko: "세계적 와인과 미식 여행지" },
-    heroImg: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1800&q=85",
-    cardImg: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&q=80",
+    heroImg: "https://images.pexels.com/photos/442116/pexels-photo-442116.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85",
+    cardImg: "https://images.pexels.com/photos/442116/pexels-photo-442116.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
     accentColor: "bg-rose-500",
     region: "New South Wales",
     description: {
@@ -59,8 +59,8 @@ export const destinations: Destination[] = [
     slug: "south-coast",
     name: { en: "South Coast", ko: "사우스 코스트" },
     tagline: { en: "Brilliant beaches & pretty coastal towns", ko: "수려한 해변과 아담한 해안 마을" },
-    heroImg: "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1800&q=85",
-    cardImg: "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=800&q=80",
+    heroImg: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&q=85",
+    cardImg: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     accentColor: "bg-sky-500",
     region: "New South Wales",
     description: {
@@ -80,8 +80,8 @@ export const destinations: Destination[] = [
     slug: "snowy-mountains",
     name: { en: "Snowy Mountains", ko: "스노이 마운틴" },
     tagline: { en: "Snow adventures & Australia's highest peak", ko: "스노보드, 스키와 호주 최고봉" },
-    heroImg: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1800&q=85",
-    cardImg: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+    heroImg: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1800&q=85",
+    cardImg: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&q=80",
     accentColor: "bg-sky-600",
     region: "New South Wales",
     description: {
@@ -122,13 +122,13 @@ export const destinations: Destination[] = [
     slug: "central-coast",
     name: { en: "Central Coast", ko: "센트럴 코스트" },
     tagline: { en: "Eco-certified beaches & outdoor adventures", ko: "생태인증 해변과 아웃도어 어드벤처" },
-    heroImg: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=1800&q=85",
-    cardImg: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=800&q=80",
+    heroImg: "https://images.pexels.com/photos/6256449/pexels-photo-6256449.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85",
+    cardImg: "https://images.pexels.com/photos/6256449/pexels-photo-6256449.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
     accentColor: "bg-teal-500",
     region: "New South Wales",
     description: {
       en: "Less than an hour from Sydney by train, the Central Coast is where city slickers escape for beach days, bushwalks, and pub lunches by the water. Several beaches hold Ecotourism certification — protected, clean, and quietly spectacular. The Brisbane Water National Park has coastal trails with stunning views, and there are over 20 art galleries worth visiting.",
-      ko: "기차로 단 1시간 이하의 거리, 센트럴 코스트는 도시 거주자들이 해변 나들이, 숲 산책, 물가에서의 퍼브 점심을 즐기는 곳입니다. 여러 해변은 생태관광 인증을 가지고 있습니다 — 보호받고, 깨끗하고, 조용히 스펙타클합니다. 브리즈베인 워터 내셔날 파크에는素晴らしい 경관의 해안 트레일이 있고, 방문할 만한 미술관이 20개 이상 있습니다."
+      ko: "기차로 단 1시간 이하의 거리, 센트럴 코스트는 도시 거주자들이 해변 나들이, 숲 산책, 물가에서의 퍼브 점심을 즐기는 곳입니다. 여러 해변은 생태관광 인증을 가지고 있습니다 — 보호받고, 깨끗고, 조용히 스펙타클합니다. 브리즈베인 워터 내셔날 파크에는素晴らしい 경관의 해안 트레일이 있고, 방문할 만한 미술관이 20개 이상 있습니다."
     },
     highlights: [
       { en: "Ecotourism beaches", ko: "생태관광 해변", icon: "beach" },
