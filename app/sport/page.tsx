@@ -19,12 +19,12 @@ const sections: AccordionSection[] = [
       {
         label: "AFL — Australian Rules Football",
         en: "AFL is the nation's most-watched sport. 18 teams from all over Australia compete in a fast, high-scoring game played on an oval ball. The season runs March-September with the Grand Final in September/October. Sydney has two teams: Sydney Swans (based at the SCG in Moore Park) and Greater Western Sydney Giants (GIANTS Stadium at Homebush). The Swans have a huge following — if they make the Grand Final, the city stops. Tickets from ~$30 at Ticketmaster.",
-        ko: "AFL은 호주에서 가장 많은 시청자를 끌어 모으는 스포츠입니다. 18개 팀이 오벌 볼로 진행되는 빠르고 점수 왕복이 많은 경기를 펼칩니다. 시즌은 3월부터 9월까지, 그랜드 파이널은 9월/10월에 열립니다. 시드니에는 두 개의 팀이 있습니다: Sydney Swans (Moore Park의 SCG)和 Greater Western Sydney Giants (Homebush의 GIANTS Stadium). Swans는 팬 기반이 매우 큽니다 — 그랜드 파이널에 진출하면 도시가 멈춥니다. 티켓은 Ticketmaster에서 약 $30부터.",
+        ko: "AFL은 호주에서 가장 많은 시청자를 끌어 모으는 스포츠입니다. 18개 팀이 오벌 볼로 진행되는 빠르고 점수 왕복이 많은 경기를 펼칩니다. 시즌은 3월부터 9월까지, 그랜드 파이널은 9월/10월에 열립니다. 시드니에는 두 개의 팀이 있습니다: Sydney Swans (Moore Park의 SCG)그리고 Greater Western Sydney Giants (Homebush의 GIANTS Stadium). Swans는 팬 기반이 매우 큽니다 — 그랜드 파이널에 진출하면 도시가 멈춥니다. 티켓은 Ticketmaster에서 약 $30부터.",
       },
       {
         label: "Rugby Union",
         en: "Rugby Union is more niche but has a loyal following. The national competition is Super Rugby (12 teams from NZ, Australia, Argentina, South Africa). NSW Waratahs play out of Sydney Football Stadium (Allianz Stadium) at Moore Park. International matches (Wallabies) are played at ANZ Stadium or the SCG. International Rugby (Test) matches against New Zealand (All Blacks) or South Africa (Springboks) are incredible events — the atmosphere rivals anything in the world. Tickets from ~$40.",
-        ko: "럭비 유니온은 더 전문적이지만 충성스러운 팬층이 있습니다. 전국 대회인 Super Rugby에는 NZ, 호주, 아르헨티나, 남아프리카의 12개 팀이 참가합니다. NSW Waratahs는 시드니 풋볼 스타디움(Allianz Stadium)에서 경기합니다. 국제 경기(월러비)는 ANZ 스타디움이나 SCG에서 열립니다. 뉴질랜드(올 블랙스)나 남아프리카(스프링복스)와의 국제 경기는 정말素晴らしい events입니다.",
+        ko: "럭비 유니온은 더 전문적이지만 충성스러운 팬층이 있습니다. 전국 대회인 Super Rugby에는 NZ, 호주, 아르헨티나, 남아프리카의 12개 팀이 참가합니다. NSW Waratahs는 시드니 풋볼 스타디움(Allianz Stadium)에서 경기합니다. 국제 경기(월러비)는 ANZ 스타디움이나 SCG에서 열립니다. 뉴질랜드(올 블랙스)나 남아프리카(스프링복스)와의 국제 경기는 정말훌륭한 events입니다.",
       },
     ],
   },
@@ -49,7 +49,7 @@ const sections: AccordionSection[] = [
       {
         label: "Watching Cricket in Sydney",
         en: "The two main cricket grounds in Sydney: SCG (Sydney Cricket Ground, Moore Park — capacity 48,000) and Manuka Oval (Canberra, 1 hour away — used for Tests when the SCG is booked). For BBL, all matches are in Sydney suburban stadiums. Pack sunscreen, a hat, and food — stadium food is expensive. You can bring your own food and drinks (no glass bottles). Opal card covers trains to the SCG on match days.",
-        ko: "시드니의 두 주요 크리켓 구장: SCG(시드니 크리켓 그라운드, Moore Park — 수용인원 48,000명)와 Manuka Oval(캔버라, 1시간 거리 — SCG가 매진일 때 사용). BBL은 시드니郊外の 경기장에서 열립니다. 선크림, 모자, 음식 준비하세요 — 경기장 음식은 비쌉니다. 직접 음식과 음료(유리병 불가)를 가져올 수 있습니다. 경기일에는 오팔 카드로 SCG까지 기차가 연결됩니다.",
+        ko: "시드니의 두 주요 크리켓 구장: SCG(시드니 크리켓 그라운드, Moore Park — 수용인원 48,000명)와 Manuka Oval(캔버라, 1시간 거리 — SCG가 매진일 때 사용). BBL은 시드니외곽의 경기장에서 열립니다. 선크림, 모자, 음식 준비하세요 — 경기장 음식은 비쌉니다. 직접 음식과 음료(유리병 불가)를 가져올 수 있습니다. 경기일에는 오팔 카드로 SCG까지 기차가 연결됩니다.",
       },
     ],
   },
@@ -74,7 +74,7 @@ const sections: AccordionSection[] = [
       {
         label: "Why Soccer is Growing",
         en: "Soccer is the most popular participatory sport in Australia — more kids play soccer than any other sport. It's also huge among international students and migrants from Europe, South America, Africa, and Asia. Community clubs are everywhere and are a great way to make friends and stay fit. Coaching is usually done by parent volunteers. You can find a club near you at playfootball.com.au.",
-        ko: "축구는 호주에서 가장 인기 있는 참가 스포츠입니다 — 다른 스포츠보다 많은 아이들이 축구를 합니다. 유학생과 유럽, 남미, 아프리카, 아시아 이민자 사이에서도 인기가 높습니다. 지역 클럽이到处都是이며 친구 사귀기와 피트니스에 좋습니다. 코칭은 보통 부모 자원봉사자가 합니다. playfootball.com.au에서 가까운 클럽을 찾을 수 있습니다.",
+        ko: "축구는 호주에서 가장 인기 있는 참가 스포츠입니다 — 다른 스포츠보다 많은 아이들이 축구를 합니다. 유학생과 유럽, 남미, 아프리카, 아시아 이민자 사이에서도 인기가 높습니다. 지역 클럽이많이이며 친구 사귀기와 피트니스에 좋습니다. 코칭은 보통 부모 자원봉사자가 합니다. playfootball.com.au에서 가까운 클럽을 찾을 수 있습니다.",
       },
     ],
   },
@@ -94,17 +94,17 @@ const sections: AccordionSection[] = [
       {
         label: "Tennis",
         en: "The Australian Open in Melbourne (January) is one of the four Grand Slam tournaments and draws huge crowds. It's also the most accessible Grand Slam — grounds passes start around $50, and you can watch multiple matches simultaneously on outer courts. Sydney hosts the Sydney Tennis International (ATP/WTA) in January at the Sydney Olympic Park Tennis Centre. Public tennis courts are available in most parks — book via Inner West Council or your local council website for ~$15-$20/hour.",
-        ko: "호주 오프연고qq Melbourne의 호주 오프연고qq(1월)는 4대 그랜드 슬램 대회 중 하나이며 많은 군중을 끌어 모읍니다. 가장 접근하기 쉬운 그랜드 슬램이기도 합니다 — 그라운드 패스는 약 $50부터, 외부모球场에서 여러 경기를 동시에 볼 수 있습니다. 시드니는 시드니 올림피아크 파크 테니스 센터에서 1월에 시드니 테니스 인터내셔널(ATP/WTA)을 개최합니다. 공공 테니스 코트는 대부분의 공원에서 이용 가능하며, 지역 의회 웹사이트에서 약 $15-$20/시간에 예약할 수 있습니다.",
+        ko: "호주 오프연고qq Melbourne의 호주 오프연고qq(1월)는 4대 그랜드 슬램 대회 중 하나이며 많은 군중을 끌어 모읍니다. 가장 접근하기 쉬운 그랜드 슬램이기도 합니다 — 그라운드 패스는 약 $50부터, 외부코트에서 여러 경기를 동시에 볼 수 있습니다. 시드니는 시드니 올림피아크 파크 테니스 센터에서 1월에 시드니 테니스 인터내셔널(ATP/WTA)을 개최합니다. 공공 테니스 코트는 대부분의 공원에서 이용 가능하며, 지역 의회 웹사이트에서 약 $15-$20/시간에 예약할 수 있습니다.",
       },
       {
         label: "Golf",
         en: "Sydney has dozens of golf courses ranging from cheap council courses to exclusive private clubs. Public courses: Moore Park Golf (~$40 for 18 holes, closest to city), Riverside Oaks (~$55, in the Hawkesbury), Horizon Golf Club (~$50, near CBD). Most clubs welcome visitors — just book a tee time online. The Australian Open rotates between Sydney and other cities. If you're new to golf, your local council often runs beginner clinics for ~$100 for 4-6 sessions.",
-        ko: "시드니에는 싼 의회 코스로부터 고급 사설 클럽까지 다양한 골프장이 있습니다. 공개 코스: Moore Park Golf(약 $40, 18홀, 도심에서 가장 가깝습니다), Riverside Oaks(약 $55, 호크스베리), Horizon Golf Club(약 $50, CBD 근처). 대부분의 클럽이 방문을 환영합니다 — 온라인으로 티 타임을 예약하세요. 호주 오프연고qq는 시드니와 다른 도시를 번갈아 개최됩니다. 골프를 처음 접한다면, 지역 의회에서often 초보자 클리닉을 약 $100에 4-6회セッションで開催します.",
+        ko: "시드니에는 싼 의회 코스로부터 고급 사설 클럽까지 다양한 골프장이 있습니다. 공개 코스: Moore Park Golf(약 $40, 18홀, 도심에서 가장 가깝습니다), Riverside Oaks(약 $55, 호크스베리), Horizon Golf Club(약 $50, CBD 근처). 대부분의 클럽이 방문을 환영합니다 — 온라인으로 티 타임을 예약하세요. 호주 오프연고qq는 시드니와 다른 도시를 번갈아 개최됩니다. 골프를 처음 접한다면, 지역 의회에서often 초보자 클리닉을 약 $100에 4-6회씩 진행합니다.",
       },
       {
         label: "Fitness Culture & Gyms",
         en: "Australians are genuinely fitness-obsessed. Anytime Fitness (24/7, ~$15/week), F45 (functional training, ~$60/week), and Genesis (upmarket) are the main chains. Most suburbs have a local gym. Gym memberships are cheaper than in Korea — most start around $10-$15/week with no lock-in contracts. Many people use their commute time to exercise. Running is huge — the City2Sydney run (10km, August) and Sydney Marathon (September) are popular events.",
-        ko: "호주인들은 진짜 피트니스에 미쳐 있습니다. Anytime Fitness(24/7, 약 $15/주), F45(기능성 트레이닝, 약 $60/주), Genesis(고급)等主要なチェーンがあります。ほとんどの郊奶粉にローカルジムのバリエーションがあります。健身メンバーシップは韓国より安いです — ほとんどの会长は~$10-$15/주로、睡眠不是地用契約はありません。通勤 시간に運動하는人が 많습니다. 러닝이 활발합니다 — City2Sydney 러닝(10km, 8월)과 시드니 마라톤(9월)이 인기 있습니다.",
+        ko: "호주인들은 진짜 피트니스에 미쳐 있습니다. Anytime Fitness(24/7, 약 $15/주), F45(기능성 트레이닝, 약 $60/주), Genesis(고급) 등 주요 체인점이 있습니다. 대부분의 교외에는 로컬 헬스장도 있습니다. 헬스장 멤버십은 한국보다 저렴합니다 — 대부분 회비는 주당 $10-$15 정도이며, 사용하지 않을 때 지불하는 계약은 없습니다. 시간에 운동하는 사람이 많습니다. 러닝이 활발합니다 — City2Sydney 러닝(10km, 8월)과 시드니 마라톤(9월)이 인기 있습니다.",
       },
     ],
   },
@@ -119,7 +119,7 @@ const sections: AccordionSection[] = [
       {
         label: "Free-to-Air TV",
         en: "The ABC (Channel 2/ABC TV) broadcasts some AFL, cricket, and Olympics. Nine Network (Channel 9) shows NRL (Friday night and Sunday arvo games), some cricket, and the Olympics. Network 10 shows some A-League and other sports. Check the TV guide on the ABC or Nine websites. The Nine and 10 apps let you stream some content for free after broadcast.",
-        ko: "ABC(채널 2/ABC TV)는 일부 AFL, 크리켓, 올림픽을 방송합니다. Nine Network(채널 9)는 NRL(금요일 밤, 일요일 오후 경기), 일부 크리켓, 올림픽을 보여줍니다. Network 10은 일부 A-League와 다른 스포츠를播出합니다. ABC 또는 Nine 웹사이트에서 TV 가이드를 확인하세요. Nine과 10 앱은 방송 후 일부 콘텐츠를 무료로 스트리밍할 수 있습니다.",
+        ko: "ABC(채널 2/ABC TV)는 일부 AFL, 크리켓, 올림픽을 방송합니다. Nine Network(채널 9)는 NRL(금요일 밤, 일요일 오후 경기), 일부 크리켓, 올림픽을 보여줍니다. Network 10은 일부 A-League와 다른 스포츠를방송합니다. ABC 또는 Nine 웹사이트에서 TV 가이드를 확인하세요. Nine과 10 앱은 방송 후 일부 콘텐츠를 무료로 스트리밍할 수 있습니다.",
       },
       {
         label: "Kayo Sports (~$25/month)",
@@ -129,7 +129,7 @@ const sections: AccordionSection[] = [
       {
         label: "Optus Sport (~$15/month)",
         en: "Optus Sport is the go-to for soccer fans. It has exclusive rights to the English Premier League (EPL) in Australia — every match, every week. Also shows UEFA Champions League, Bundesliga, and some A-League matches. If you follow European soccer, this is essential. It's much cheaper than Kayo for soccer-only viewing.",
-        ko: "Optus Sport은 축구 팬들에게 필수입니다. 호주에서 프리미어리그(EPL)의 독점 방송권자로, 경기마다 매주 시청할 수 있습니다. UEFA 챔피언스리그, 분데스리가, 일부 A-League 경기도播出합니다. 유럽 축구를 따라한다면 필수입니다. 축구만 시청하기에는 Kayo보다 훨씬 저렴합니다.",
+        ko: "Optus Sport은 축구 팬들에게 필수입니다. 호주에서 프리미어리그(EPL)의 독점 방송권자로, 경기마다 매주 시청할 수 있습니다. UEFA 챔피언스리그, 분데스리가, 일부 A-League 경기도방송합니다. 유럽 축구를 따라한다면 필수입니다. 축구만 시청하기에는 Kayo보다 훨씬 저렴합니다.",
       },
       {
         label: "How to Save Money",
@@ -149,16 +149,16 @@ const sections: AccordionSection[] = [
       {
         label: "Why Sports Betting is So Prevalent",
         en: "Sports betting is advertised constantly during TV broadcasts — every ad break during a footy game seems to have a betting ad. Australia has some of the most liberal gambling laws in the world. The TAB (Totalisator Agency Board) was government-owned but most betting is now done through corporate bookmakers (Sportsbet, Bet365, Ladbrokes, PointsBet). This is a significant social issue in Australia — problem gambling affects ~1% of adults but the harm extends to families and communities.",
-        ko: "스포츠 베팅은 TV 방송 중에 끊임없이 광고됩니다 — 풋볼 경기 중 광고 휴식마다 베팅 광고가 나오는 것 같습니다. 호주는 세계에서 가장 자유로운 도박법 중 하나를 가지고 있습니다. TAB(국영 도박 위원회)이었지만 現在の投注のほとんどは 민간ブックメーカー（Sportsbet、Bet365、Ladbrokes、PointsBet）を介してに行われています。これは 호주에서 중요한 사회적 문제입니다 — 문제 도박은 성인 약 1%에 영향을 미치지만 가족과 공동체까지 해를 끼칩니다.",
+        ko: "스포츠 베팅은 TV 방송 중에 끊임없이 광고됩니다 — 풋볼 경기 중 광고 휴식마다 베팅 광고가 나오는 것 같습니다. 호주는 세계에서 가장 자유로운 도박법 중 하나를 가지고 있습니다. TAB(국영 도박 위원회)이었지만 현재 베팅의 대부분은 민간 북메이커(Sportsbet, Bet365, Ladbrokes, PointsBet)를 통해 이루어집니다.이것은 호주에서 중요한 사회적 문제입니다 — 문제 도박은 성인 약 1%에 영향을 미치지만 가족과 공동체까지 해를 끼칩니다.",
       },
       {
         label: "International Students — AVOID Betting Apps",
         en: "Sports betting is illegal or heavily restricted in many countries including South Korea. Even if legal in Australia, participating in sports betting as an international student can: violate your student visa conditions (check your specific visa subclass), lead to significant financial harm, result in addiction that affects your studies and wellbeing. If gambling is legal in your home country and you were already gambling before arriving, you are still strongly encouraged to avoid it while on a student visa. Australia has one of the highest gambling participation rates in the world — it is not normal and it causes real harm.",
-        ko: "스포츠 베팅은 한국을 포함한 많은 국가에서 불법이거나 엄격히 제한되어 있습니다. 호주에서 합법이더라도 국제 학생이 스포츠 베팅에 참여하면: 학생 비자 조건을 위반할 수 있습니다(비자子类를 확인하세요), 심각한 재정적 피해를 입을 수 있습니다, 학업과 안녕에 영향을 미치는 중독으로 이어질 수 있습니다. 모국에서 도박이 합법이고 도착하기 전에 이미 도박을 했다면, 학생 비자 기간中は特に避ける強く 권장されます. 호주는 세계에서 가장 높은 도박 참여율을 가지고 있습니다 — 이것은 정상적이지 않으며 실제 피해를 끼칩니다.",
+        ko: "스포츠 베팅은 한국을 포함한 많은 국가에서 불법이거나 엄격히 제한되어 있습니다. 호주에서 합법이더라도 국제 학생이 스포츠 베팅에 참여하면: 학생 비자 조건을 위반할 수 있습니다(비자 종류를 확인하세요), 심각한 재정적 피해를 입을 수 있습니다, 학업과 안녕에 영향을 미치는 중독으로 이어질 수 있습니다. 모국에서 도박이 합법이고 도착하기 전에 이미 도박을 했다면, 학생 비자 기간중에는특히 피하는피할 것을 강력히 권장. 호주는 세계에서 가장 높은 도박 참여율을 가지고 있습니다 — 이것은 정상적이지 않으며 실제 피해를 끼칩니다.",
       },
       {
         label: "Getting Help with Gambling",
-        en: "If you or someone you know is struggling with gambling, free and confidential help is available: Gambling Help Online (gamblinghelponline.org.au, 1800 858 858), Lives Free (すべての人に) — these services are available in multiple languages including Korean. You can also speak to a counsellor at your university. Many universities have free confidential counselling services. Speaking up early makes a huge difference.",
+        en: "If you or someone you know is struggling with gambling, free and confidential help is available: Gambling Help Online (gamblinghelponline.org.au, 1800 858 858), Lives Free (모든 사람을 위해) — these services are available in multiple languages including Korean. You can also speak to a counsellor at your university. Many universities have free confidential counselling services. Speaking up early makes a huge difference.",
         ko: "도박으로 고통받고 있거나 알고 있는 사람이 있다면, 무료이자 비밀 보장인 도움말을 받을 수 있습니다: Gambling Help Online(gamblinghelponline.org.au, 1800 858 858). 이러한 서비스는 한국어를 포함한 여러 언어로 제공됩니다. 대학교 상담사에게도 말할 수 있습니다. 많은 대학교에는 무료 비밀 상담 서비스가 있습니다. 일찍 말하는 것이 큰 차이를 만듭니다.",
       },
     ],

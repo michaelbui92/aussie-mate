@@ -142,7 +142,7 @@ export const searchIndex: SearchResult[] = [
     href: "/study",
     section: "Aussie Uni Culture",
     sectionKo: "호주 대학 문화",
-    matches: { en: "university culture, lectures, tutorials, group work, participation mark, self-directed learning, study load, lecture recording", ko: "대학 문화, 강의, 튜토리얼, 그룹 작업, 참여 점수,自学" },
+    matches: { en: "university culture, lectures, tutorials, group work, participation mark, self-directed learning, study load, lecture recording", ko: "대학 문화, 강의, 튜토리얼, 그룹 작업, 참여 점수,학" },
   },
   {
     page: "Study",

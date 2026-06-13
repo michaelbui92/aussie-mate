@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 import { ICONS } from "@/destinations/icons";
@@ -27,7 +27,7 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
     title: "I just got here", 
     koTitle: "방금 도착했어요", 
     subtitle: "First month sorted: bank, TFN, SIM, place to live",
-    koSubtitle: "첫 달 셋업: 은행, TFN, SIM,住处",
+    koSubtitle: "첫 달 셋업: 은행, TFN, SIM,거주지",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
   },
   { 
@@ -80,6 +80,18 @@ export default function HomePage() {
   const [season, setSeason] = useState<SeasonKey>("summer");
   const activeIdx = stages.findIndex((s) => s.key === active);
 
+  // Subtle hero parallax — image moves at 40% of scroll speed
+  useEffect(() => {
+    const onScroll = () => {
+      const hero = document.querySelector(".hero-parallax") as HTMLElement | null;
+      if (hero) {
+        hero.style.transform = `translate3d(0, ${window.scrollY * 0.4}px, 0) scale(1.05)`;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // Editorial palette
   const heroImg = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=2400&q=85"; // Sydney Opera House at dusk
   const featured = destinations[4]; // Sydney Harbour
@@ -92,7 +104,7 @@ export default function HomePage() {
         <img
           src={heroImg}
           alt="Sydney Opera House at dusk"
-          className="absolute inset-0 w-full h-full object-cover scale-105"
+          className="hero-parallax absolute inset-0 w-full h-full object-cover scale-105 will-change-transform"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70" />
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
@@ -141,7 +153,7 @@ export default function HomePage() {
       {/* ============================ PERSONA SELECTOR ============================ */}
       <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
         <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 reveal">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
               <En>Where are you in the journey?</En>
               <Ko>여정의 어디에 있나요?</Ko>
@@ -158,7 +170,7 @@ export default function HomePage() {
                 <button
                   key={s.key}
                   onClick={() => setActive(s.key)}
-                  className={`group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 ${
+                  className={`reveal reveal-delay-${i + 1} group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 ${
                     isActive
                       ? "bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 border-stone-900 dark:border-stone-100 shadow-2xl scale-[1.02]"
                       : "bg-stone-50 dark:bg-darkbg border-stone-200 dark:border-dark-border hover:border-stone-400 dark:hover:border-stone-600"
@@ -199,7 +211,7 @@ export default function HomePage() {
       {/* ============================ FEATURED DESTINATION ============================ */}
       <section className="bg-white dark:bg-dark-surface border-y border-stone-200 dark:border-dark-border">
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex items-end justify-between mb-8 reveal">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
                 <En>Featured this week</En>
@@ -213,7 +225,7 @@ export default function HomePage() {
           </div>
           <Link
             href={`/destinations/${featured.slug}`}
-            className="group block relative overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9]"
+            className="reveal group block relative overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9] shadow-2xl"
           >
             <img
               src={featured.heroImg}
@@ -246,7 +258,7 @@ export default function HomePage() {
       {/* ============================ MORE DESTINATIONS ============================ */}
       <section className="bg-stone-50 dark:bg-darkbg">
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex items-end justify-between mb-8 reveal">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
                 <En>Destinations</En>
@@ -267,11 +279,11 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {remainingDestinations.map((d) => (
+            {remainingDestinations.map((d, i) => (
               <Link
                 key={d.slug}
                 href={`/destinations/${d.slug}`}
-                className="group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 dark:bg-stone-800"
+                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 dark:bg-stone-800 shadow-md hover:shadow-2xl transition-shadow`}
               >
                 <img
                   src={d.cardImg}
@@ -312,7 +324,7 @@ export default function HomePage() {
       {/* ============================ THINGS TO DO ============================ */}
       <section className="bg-stone-900 dark:bg-black text-white">
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-light mb-2">
               <En>What to do</En>
               <Ko>즐길 거리</Ko>
@@ -327,11 +339,11 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {thingsToDo.map((t) => (
+            {thingsToDo.map((t, i) => (
               <Link
                 key={t.title}
                 href={t.href}
-                className="group relative overflow-hidden rounded-2xl p-6 md:p-7 min-h-[200px] flex flex-col justify-between bg-gradient-to-br hover:scale-[1.02] transition-transform duration-300"
+                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl p-6 md:p-7 min-h-[200px] flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300 shadow-lg hover:shadow-2xl`}
                 style={{ background: undefined }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-90 group-hover:opacity-100 transition-opacity`} />
@@ -360,7 +372,7 @@ export default function HomePage() {
       {/* ============================ SEASONS ============================ */}
       <section className="bg-white dark:bg-dark-surface border-y border-stone-200 dark:border-dark-border">
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 reveal">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
               <En>Plan around the year</En>
               <Ko>연중 계획</Ko>
@@ -371,7 +383,7 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-            {seasonOrder.map((key) => {
+            {seasonOrder.map((key, i) => {
               const s = seasons.find((x) => x.key === key)!;
               const a = seasonAccent[key];
               const isActive = season === key;
@@ -379,7 +391,7 @@ export default function HomePage() {
                 <button
                   key={key}
                   onClick={() => setSeason(key)}
-                  className={`group text-left rounded-2xl overflow-hidden transition-all duration-300 ${
+                  className={`reveal reveal-delay-${i + 1} group text-left rounded-2xl overflow-hidden transition-all duration-300 ${
                     isActive ? "shadow-2xl scale-[1.02] ring-2 ring-sunset" : "shadow-md hover:shadow-xl"
                   }`}
                 >
@@ -414,7 +426,7 @@ export default function HomePage() {
       {/* ============================ TOPICS ============================ */}
       <section className="bg-stone-50 dark:bg-darkbg">
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 reveal">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
               <En>All guides</En>
               <Ko>전체 가이드</Ko>
@@ -425,11 +437,11 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {topics.map((t) => (
+            {topics.map((t, i) => (
               <Link
                 key={t.href}
                 href={t.href}
-                className="group flex items-center justify-between bg-white dark:bg-dark-surface hover:bg-sunset hover:text-white p-5 rounded-2xl border border-stone-200 dark:border-dark-border transition-all duration-300 hover:border-sunset hover:shadow-xl"
+                className={`reveal reveal-delay-${(i % 5) + 1} group flex items-center justify-between bg-white dark:bg-dark-surface hover:bg-sunset hover:text-white p-5 rounded-2xl border border-stone-200 dark:border-dark-border transition-all duration-300 hover:border-sunset hover:shadow-xl`}
               >
                 <div>
                   <h3 className="font-serif text-xl text-stone-900 dark:text-stone-100 group-hover:text-white transition-colors">

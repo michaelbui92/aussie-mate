@@ -59,7 +59,7 @@ const faqs = [
     q: { en: "Can I drive with my Korean licence?", ko: "한국 면허로 호주에서 운전할 수 있나요?" },
     a: {
       en: "Yes, for up to 3 months. After that, you need an Australian licence. Bring your Korean licence and an official translation (from an NAATI-accredited translator) — or an International Driving Permit. Note: Australia drives on the LEFT. This is the opposite of Korea. Many drivers find this the hardest adjustment.",
-      ko: "네, 최대 3개월까지 가능합니다. 그 이후에는 호주 면허가 필요합니다. 한국 면허와 공식 번역본(NAATI 인정 번역사) 또는 국제운전면허증을 지참하세요. 참고: 호주는左侧通行입니다. 한국과 정반대입니다. 많은 운전자들이 이것이 가장 힘든 적응이라고 합니다.",
+      ko: "네, 최대 3개월까지 가능합니다. 그 이후에는 호주 면허가 필요합니다. 한국 면허와 공식 번역본(NAATI 인정 번역사) 또는 국제운전면허증을 지참하세요. 참고: 호주는좌측통행입니다. 한국과 정반대입니다. 많은 운전자들이 이것이 가장 힘든 적응이라고 합니다.",
     },
     bg: "bg-orange-50",
     border: "border-l-orange-400",
@@ -77,7 +77,7 @@ const faqs = [
     q: { en: "Is it safe in Australia?", ko: "호주는 안전한가요?" },
     a: {
       en: "Generally yes. Australia is a safe country with low violent crime. Standard precautions apply — don't leave valuables visible in cars, watch your drink, be cautious at night in unfamiliar areas. The main dangers are natural: sun (UV), rips (ocean currents — swim between the flags at beaches), and wildlife (snakes and spiders exist but rarely cause serious harm if you're careful).",
-      ko: "일반적으로 안전합니다. 호주는 폭력 범죄가 낮은 안전한 나라입니다. 기본적인 주의就行了 — 차 안에 귀중품을 놓지 말고, 음료에 주의를, 낯선 지역에서 밤에 조심하세요. 주요 위험은 자연적입니다: 자외선(UV), 이안류(해변에서 빨간 기단 사이에서 수영), 야생동물(뱀과 거미가 존재하지만 조심하면 심각한 해는 드뭅니다).",
+      ko: "일반적으로 안전합니다. 호주는 폭력 범죄가 낮은 안전한 나라입니다. 기본적인 주의하면 됩니다 — 차 안에 귀중품을 놓지 말고, 음료에 주의를, 낯선 지역에서 밤에 조심하세요. 주요 위험은 자연적입니다: 자외선(UV), 이안류(해변에서 빨간 기단 사이에서 수영), 야생동물(뱀과 거미가 존재하지만 조심하면 심각한 해는 드뭅니다).",
     },
     bg: "bg-green-50",
     border: "border-l-green-400",

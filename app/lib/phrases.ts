@@ -775,7 +775,7 @@ export const phrases: Phrase[] = [
   {
     phrase: "Footy",
     meaning: "Football (AFL or Rugby League depending on the state)",
-    korean: "풋볼 (州에 따라 AFL 또는 럭비 리그)",
+    korean: "풋볼 (주에 따라 AFL 또는 럭비 리그)",
     example: "Are you watching the footy tonight? Go the Blues!",
     category: "sports",
   },
@@ -901,7 +901,7 @@ export const phrases: Phrase[] = [
   {
     phrase: "Rookie",
     meaning: "A new or inexperienced player",
-    korean: "신인 /经验 부족한 선수",
+    korean: "신인 /경험 부족한 선수",
     example: "He's a rookie but he's showing a lot of potential.",
     category: "sports",
   },

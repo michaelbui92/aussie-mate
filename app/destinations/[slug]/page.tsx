@@ -62,7 +62,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             <div className="bg-white border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] p-6">
               <h2 className="text-xs font-black uppercase tracking-widest text-stone-500 mb-3">
                 <En>About this place</En>
-                <Ko>이곳について</Ko>
+                <Ko>이곳에 대해</Ko>
               </h2>
               <p className="text-stone-700 leading-relaxed text-sm">
                 <En>{d.description.en}</En>
