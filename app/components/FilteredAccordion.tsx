@@ -3,10 +3,12 @@
 // Owns the vibe filter pills AND the per-destination accordion state, so the
 // page itself can be a server component. The destinations data + icon keys
 // + vibe metadata all pass as serializable props.
+//
+// Editorial styling: clean cards on stone-50 page, soft borders, serif
+// destination names, sunset accent for filter pills and labels.
 
 import { useState, ReactNode, ComponentType } from "react";
 import { Icons } from "./Icons";
-import { Car, MapPin } from "@/components/Icons";
 import { En, Ko } from "./LangBlocks";
 
 export interface BeyondSydneyDestination {
@@ -64,8 +66,8 @@ export default function FilteredAccordion({
   return (
     <>
       {/* Filter pills */}
-      <div className="max-w-4xl mx-auto px-4 py-4">
-        <div className="flex gap-2 overflow-x-auto pb-2">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
+        <div className="flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {vibeOrder.map((vibe) => {
             const isActive = filter === vibe;
             const label: ReactNode = vibe === "all" ? (
@@ -79,8 +81,8 @@ export default function FilteredAccordion({
                 onClick={() => setFilter(vibe)}
                 className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] ${
                   isActive
-                    ? "bg-sunset text-white"
-                    : "bg-sand dark:bg-dark-surface text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset"
+                    ? "bg-sunset text-white shadow-sm"
+                    : "bg-stone-100 dark:bg-dark-surface text-stone-600 dark:text-stone-300 hover:bg-sunset/10 hover:text-sunset"
                 }`}
               >
                 {label}
@@ -91,48 +93,50 @@ export default function FilteredAccordion({
       </div>
 
       {/* Destination list */}
-      <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
-        {filtered.map((dest) => {
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-8 space-y-3">
+        {filtered.map((dest, i) => {
           const isOpen = openId === dest.id;
           const Icon = icons[dest.iconKey];
           const vibePill = (() => {
             switch (dest.vibe) {
-              case "beach":   return "bg-coast/20 text-coast";
-              case "city":    return "bg-purple-500/20 text-purple-600";
-              case "nature":  return "bg-sage/20 text-sage";
-              case "food":    return "bg-sunset/20 text-sunset";
-              default:        return "bg-sand dark:bg-dark-surface text-eucalypt/60";
+              case "beach":   return "bg-coast/15 text-coast";
+              case "city":    return "bg-purple-500/15 text-purple-600 dark:text-purple-400";
+              case "nature":  return "bg-sage/15 text-sage";
+              case "food":    return "bg-sunset/15 text-sunset";
+              default:        return "bg-stone-100 dark:bg-dark-surface text-stone-500";
             }
           })();
           return (
             <div
               key={dest.id}
-              className={`bg-white dark:bg-dark-card border rounded-2xl overflow-hidden ${vibeColors[dest.vibe] || ""}`}
+              className={`reveal reveal-delay-${(i % 5) + 1} bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-2xl overflow-hidden hover:border-sunset/40 transition-all`}
             >
               <button
                 onClick={() => setOpenId(isOpen ? null : dest.id)}
-                className="w-full text-left px-5 py-4 flex items-center gap-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+                className="w-full text-left px-5 md:px-6 py-4 md:py-5 flex items-center gap-4 hover:bg-stone-50 dark:hover:bg-darkbg/50 transition-colors"
                 aria-expanded={isOpen}
               >
-                <span className="text-sunset shrink-0">
-                  {Icon ? <Icon className="w-7 h-7" /> : null}
-                </span>
+                {Icon && (
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-sunset/10 text-sunset flex items-center justify-center">
+                    <Icon className="w-4 h-4" />
+                  </span>
+                )}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-                    <h2 className="font-bold text-base text-eucalypt dark:text-white">{dest.name}</h2>
-                    <span className="text-xs text-eucalypt/50 dark:text-dark-muted/50">{dest.state}</span>
-                    <span className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${vibePill}`}>
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <h2 className="font-serif text-lg text-stone-900 dark:text-stone-100">{dest.name}</h2>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500">{dest.state}</span>
+                    <span className={`shrink-0 text-[10px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-full font-medium ${vibePill}`}>
                       <En>{vibeLabels[dest.vibe]?.en}</En>
                       <Ko>{vibeLabels[dest.vibe]?.ko}</Ko>
                     </span>
                   </div>
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">
-                    <MapPin className="inline w-3 h-3" /> <En>{dest.distance}</En>
+                  <p className="text-xs text-stone-500 dark:text-stone-400">
+                    <En>{dest.distance}</En>
                     <Ko>{dest.distance}</Ko>
                   </p>
                 </div>
                 <svg
-                  className={`w-5 h-5 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -140,44 +144,47 @@ export default function FilteredAccordion({
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-5 border-t border-sand dark:border-dark-border pt-4">
-                  <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 mb-4 leading-relaxed">
+                <div className="px-5 md:px-6 pb-5 border-t border-stone-200/60 dark:border-dark-border pt-5 space-y-4">
+                  <p className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed">
                     <En>{dest.desc}</En>
                     <Ko>{dest.koDesc}</Ko>
                   </p>
 
-                  <h3 className="font-semibold text-sm text-sunset mb-2">
-                    <En>Highlights</En><Ko>주요 포인트</Ko>
-                  </h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {dest.highlights.map((h, i) => (
-                      <span
-                        key={i}
-                        className="inline-flex items-center gap-1 text-xs bg-sand dark:bg-dark-surface text-eucalypt/70 dark:text-dark-muted/70 px-3 py-1.5 rounded-full"
-                      >
-                        <En>{h}</En><Ko>{dest.koHighlights[i]}</Ko>
-                      </span>
-                    ))}
+                  <div>
+                    <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+                      <En>Highlights</En><Ko>주요 포인트</Ko>
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {dest.highlights.map((h, i) => (
+                        <span
+                          key={i}
+                          className="inline-flex items-center text-xs bg-stone-100 dark:bg-darkbg text-stone-700 dark:text-stone-300 px-3 py-1.5 rounded-full"
+                        >
+                          <En>{h}</En><Ko>{dest.koHighlights[i]}</Ko>
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="bg-sand/50 dark:bg-dark-surface rounded-xl p-4 mb-3">
-                    <p className="text-xs font-semibold text-eucalypt/50 dark:text-dark-muted/50 mb-1">
-                      <En><Car className="inline-block w-3 h-3" /> How to get there</En><Ko><Car className="inline-block w-3 h-3" /> 가는 방법</Ko>
-                    </p>
-                    <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70">
-                      <En>{dest.transport}</En>
-                      <Ko>{dest.koTransport}</Ko>
-                    </p>
-                  </div>
-
-                  <div className="bg-sand/50 dark:bg-dark-surface rounded-xl p-4">
-                    <p className="text-xs font-semibold text-eucalypt/50 dark:text-dark-muted/50 mb-1">
-                      <En>📅 Best time to visit</En><Ko>📅 방문 최적기</Ko>
-                    </p>
-                    <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70">
-                      <En>{dest.bestTime}</En>
-                      <Ko>{dest.koBestTime}</Ko>
-                    </p>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="rounded-xl bg-stone-50 dark:bg-darkbg p-4">
+                      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
+                        <En>Getting there</En><Ko>가는 방법</Ko>
+                      </p>
+                      <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+                        <En>{dest.transport}</En>
+                        <Ko>{dest.koTransport}</Ko>
+                      </p>
+                    </div>
+                    <div className="rounded-xl bg-stone-50 dark:bg-darkbg p-4">
+                      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
+                        <En>Best time to visit</En><Ko>방문 최적기</Ko>
+                      </p>
+                      <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+                        <En>{dest.bestTime}</En>
+                        <Ko>{dest.koBestTime}</Ko>
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -188,7 +195,7 @@ export default function FilteredAccordion({
         {filtered.length === 0 && (
           <div className="text-center py-16">
             <div className="text-5xl mb-3">🔍</div>
-            <p className="text-eucalypt/50 dark:text-dark-muted/50 font-medium">
+            <p className="text-stone-500 dark:text-stone-400 font-medium">
               <En>No destinations match that filter</En>
               <Ko>해당 필터에 맞는 목적지가 없습니다</Ko>
             </p>
@@ -197,9 +204,9 @@ export default function FilteredAccordion({
       </div>
 
       {bottomNote && (
-        <div className="max-w-4xl mx-auto px-4 pb-10">
-          <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
-            <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
+          <div className="rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 text-center">
+            <p className="text-sm text-stone-300 leading-relaxed">
               {bottomNote.en}
               {bottomNote.ko}
             </p>

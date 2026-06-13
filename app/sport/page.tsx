@@ -170,14 +170,20 @@ const iconKeys = ["Trophy", "Users", "Flag", "Star"];
 export default function SportPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="mb-2 text-3xl font-bold">
-        <En>Sport in Australia ⚽</En>
-        <Ko>호주 스포츠 ⚽</Ko>
-      </h1>
-      <p className="mb-8 text-lg text-eucalypt/70 dark:text-dark-muted/70">
-        <En>Everything you need to know about following and playing sport in Australia — NRL, AFL, cricket, and more.</En>
-        <Ko>호주에서 스포츠를 즐기고-follow하는 데 필요한 모든 것 — NRL, AFL, 크리켓 등.</Ko>
-      </p>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Sport</En>
+          <Ko>스포츠</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Sport in Australia</En>
+          <Ko>호주 스포츠</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Everything you need to know about following and playing sport in Australia — NRL, AFL, cricket, and more.</En>
+          <Ko>호주에서 스포츠를 즐기고 따라가는 데 필요한 모든 것 — NRL, AFL, 크리켓 등.</Ko>
+        </p>
+      </header>
 
       <div className="space-y-6">
         <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />

@@ -1,20 +1,15 @@
-import React from "react";
 import Link from "next/link";
-import { Icons } from "@/components/Icons";
-
-const getIcon = (key: string) =>
-  (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[key];
+import { En, Ko } from "@/components/LangBlocks";
 
 const tools = [
   {
     id: "drive-with-bui",
-    iconKey: "Car",
+    emoji: "🚗",
     title: "Drive with Bui",
     desc: "Sydney's friendliest driving school. Learn to pass your driving test with patient, experienced instruction covering all test routes and requirements.",
     url: "https://drivewithbui.com",
     badge: "Driving School",
-    color: "bg-sunset/10 border-sunset/30",
-    accent: "text-sunset",
+    accent: "bg-sunset/10 border-sunset/30",
     highlight: "Based in Sydney — book your first lesson today",
     features: [
       "All Sydney test routes covered",
@@ -26,13 +21,12 @@ const tools = [
   },
   {
     id: "study-buddy",
-    iconKey: "Book",
+    emoji: "📚",
     title: "Study Buddy",
     desc: "A smart study companion app — flashcard decks, spaced repetition, progress tracking. Coming soon — built to help international students study smarter, not harder.",
     url: "https://study-buddy-two-orpin.vercel.app",
     badge: "Live",
-    color: "bg-sage/10 border-sage/30",
-    accent: "text-sage",
+    accent: "bg-sage/10 border-sage/30",
     highlight: "Launching 2026 — get notified when it goes live",
     features: [
       "AI-powered flashcard decks",
@@ -47,87 +41,71 @@ const tools = [
 export default function OtherToolsPage() {
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/20 rounded-full px-4 py-1.5 mb-6">
-            <span className="text-sm font-semibold text-sunset">Made by Michael Bui</span>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-3">
-            Other Tools 🛠️
-          </h1>
-          <p className="text-base text-eucalypt/60 dark:text-dark-muted/60">
-            Other things I've built to help people navigate life in Australia
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Side projects</En>
+          <Ko>다른 프로젝트</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Other tools</En>
+          <Ko>다른 도구들</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Other things I&apos;ve built to help people navigate life in Australia.</En>
+          <Ko>호주 생활에 도움이 되는 다른 도구들.</Ko>
+        </p>
+      </header>
 
-      {/* Tools */}
-      <div className="max-w-4xl mx-auto px-4 py-10 space-y-5">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 space-y-5">
         {tools.map((tool, i) => (
-          <div
+          <article
             key={tool.id}
-            className={`${tool.color} border rounded-2xl p-6 card-hover`}
+            className={`reveal reveal-delay-${(i % 5) + 1} ${tool.accent} border rounded-2xl p-6 md:p-7 hover:shadow-md transition-shadow`}
           >
             <div className="flex items-start gap-4 mb-4">
-              <div className="text-sunset">{React.createElement(getIcon(tool.iconKey), { className: "w-10 h-10" })}</div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <h2 className={`font-bold text-xl ${tool.accent}`}>{tool.title}</h2>
-                  <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${tool.accent} border-current/20 bg-white/50 dark:bg-dark-surface/50`}>
+              <div className="text-3xl shrink-0">{tool.emoji}</div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <h2 className="font-serif text-2xl text-stone-900 dark:text-stone-100">{tool.title}</h2>
+                  <span className="text-[10px] font-medium uppercase tracking-[0.2em] px-2.5 py-1 rounded-full border border-current/20 text-stone-600 dark:text-stone-300 bg-white/60 dark:bg-dark-surface/60">
                     {tool.badge}
                   </span>
                 </div>
-                <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-1">
+                <p className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
                   {tool.desc}
                 </p>
-                <p className={`text-xs font-semibold ${tool.accent} italic`}>
+                <p className="text-xs font-medium text-sunset">
                   ✦ {tool.highlight}
                 </p>
               </div>
             </div>
 
-            {/* Feature list */}
             <ul className="space-y-1.5 mb-5">
               {tool.features.map((f, fi) => (
-                <li key={fi} className="flex items-start gap-2 text-sm text-eucalypt/60 dark:text-dark-muted/60">
+                <li key={fi} className="flex items-start gap-2 text-sm text-stone-600 dark:text-stone-400">
                   <span className="text-sage shrink-0 mt-0.5">✓</span>
                   {f}
                 </li>
               ))}
             </ul>
 
-            {/* CTA */}
-            {tool.badge === "Coming Soon" ? (
-              <span className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-xl bg-dark-surface/50 text-dark-muted/50 cursor-not-allowed">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Coming Soon
-              </span>
-            ) : (
-              <a
-                href={tool.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-xl transition-all btn-press shadow-sm bg-sunset text-white hover:bg-sunset-light`}
-              >
-                Visit {tool.title}
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            )}
-          </div>
+            <a
+              href={tool.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full bg-sunset text-white hover:bg-sunset-light transition-colors shadow-sm"
+            >
+              <En>Visit {tool.title}</En>
+              <Ko>{tool.title} 방문</Ko>
+              <span>→</span>
+            </a>
+          </article>
         ))}
 
-        {/* Back home */}
-        <div className="text-center pt-2">
-          <Link
-            href="/"
-            className="text-sm text-eucalypt/40 dark:text-dark-muted/40 hover:text-sunset transition-colors link-slide"
-          >
-            ← Back to AussieMate home
+        <div className="text-center pt-4">
+          <Link href="/" className="text-sm text-sunset hover:underline">
+            <En>← Back to AussieMate home</En>
+            <Ko>← AussieMate 홈으로</Ko>
           </Link>
         </div>
       </div>

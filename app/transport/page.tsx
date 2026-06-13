@@ -197,18 +197,20 @@ export default function TransportPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En><Car className="inline-block w-6 h-6 mr-1" /> Transport</En>
-            <Ko><Car className="inline-block w-6 h-6 mr-1" /> 교통</Ko>
-          </h1>
-          <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Opal cards, trains, buses, ferries, and driving in NSW</En>
-            <Ko>오팔 카드, 기차, 버스, 페리, NSW 운전</Ko>
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Getting around</En>
+          <Ko>교통</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Transport</En>
+          <Ko>교통</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Opal cards, trains, buses, ferries, and driving in NSW.</En>
+          <Ko>오팔 카드, 기차, 버스, 페리, NSW 운전.</Ko>
+        </p>
+      </header>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">

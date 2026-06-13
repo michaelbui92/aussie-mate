@@ -1,24 +1,27 @@
 // Server component — bilingual apartment rental guide for NSW.
 // All interactivity is via <En>/<Ko> (client islands from LangBlocks).
 
-import {
-  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit, Home,
-} from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
 
-const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit, Home,
+type ApartmentItem = { label: string; en: string; ko: string; url?: string };
+type ApartmentSection = {
+  id: string;
+  emoji: string;
+  title: string;
+  koTitle: string;
+  desc: string;
+  koDesc: string;
+  items: ApartmentItem[];
 };
 
-const sections = [
+const sections: ApartmentSection[] = [
   {
     id: "search",
-    iconKey: "Search",
+    emoji: "🔍",
     title: "Finding a Place",
     koTitle: "부동산 찾기",
     desc: "Where to search and what to know",
     koDesc: "검색 방법과 알아야 할 것",
-    color: "border-l-sunset",
     items: [
       { label: "Flatmates.com.au", en: "The most popular option in Australia for rooms and housemates. Filter by location, budget, move-in date, and lifestyle preferences (smoking, pets, gender). Flatmates.com.au also handles the lease and bond through their platform — making it much safer than private arrangements. Both renters and rooms are listed, so you can search for a place or list yourself as looking.", ko: "호주에서 가장 인기 있는 방 및 룸메이트 검색 플랫폼입니다. 위치, 예산, 입주일, 라이프스타일 선호도(흡연, 반려동물, 성별)로 필터링할 수 있습니다. 플랫폼을 통해 임대차 계약과 보증금도 처리하므로 사기 위험이 적습니다.", url: "https://flatmates.com.au" },
       { label: "Domain", en: "Mainstream real estate site with the largest selection of rental listings. Has a Korean language option in some areas. Best for people who want their own apartment rather than a room in a shared house.", ko: "가장 큰 임대 목록을 갖춘 부동산 사이트입니다. 일부 지역에서 한국어 옵션이 있습니다. 셰어하우스의 방이 아닌 자신만의 아파트를 원하는 분에게 적합합니다.", url: "https://domain.com.au" },
@@ -28,12 +31,11 @@ const sections = [
   },
   {
     id: "application",
-    iconKey: "Clipboard",
+    emoji: "📋",
     title: "Rental Application",
     koTitle: "임대 지원",
     desc: "Everything you need to apply for a rental property in NSW",
     koDesc: "NSW 임대 부동산에 지원할 때 필요한 모든 것",
-    color: "border-l-sunset",
     items: [
       { label: "Required documents", en: "100 points of ID — passport, visa, bank statements, payslips, rental reference", ko: "신분증 100포인트 — 여권, 비자, 은행 거래내역, 급여명세서, 이전 임대인 추천서" },
       { label: "Cover letter", en: "Short introduction: who you are, why you want this property, your income, how long you plan to stay", ko: "간단한 소개서: 본인 소개, 부동산을 원하는 이유, 수입, 거주 예정 기간" },
@@ -44,12 +46,11 @@ const sections = [
   },
   {
     id: "rights",
-    iconKey: "Scale",
+    emoji: "⚖️",
     title: "Tenant Rights in NSW",
     koTitle: "NSW 임차인 권리",
     desc: "You have legal rights — know them",
     koDesc: "법적 권리가 있습니다 — 알고 있으세요",
-    color: "border-l-sage",
     items: [
       { label: "Rent increases", en: "Landlord can only increase rent once every 12 months. Must give 60 days written notice.", ko: "임대인은 12개월에 한 번만 임대료를 올릴 수 있음. 60일 전 서면 고지 필수." },
       { label: "Repairs", en: "Landlord must fix anything that affects health, safety, or basic living — within 14 days for non-urgent, immediately for urgent", ko: "임대인은 건강, 안전, 기본 생활에 영향을 미치는 문제를 수리해야 함 — 긴급하지 않은 것은 14일, 긴급한 것은 즉시" },
@@ -60,12 +61,11 @@ const sections = [
   },
   {
     id: "re-phrases",
-    iconKey: "BuildingSkyscraper",
+    emoji: "🏢",
     title: "Common Real Estate Phrases",
     koTitle: "부동산 표현",
     desc: "What agents actually mean",
     koDesc: "부동산 중개인이 실제로 의미하는 것",
-    color: "border-l-coast",
     items: [
       { label: '"Quiet location"', en: "It's on a main road — expect traffic noise", ko: "주 도로에 위치 — 교통 소음이 예상됨" },
       { label: '"Convenient to transport"', en: "Near a train station or bus stop, but it might not be walking distance", ko: "기차역이나 버스 정류장 가까이 — 도보 거리 아닐 수 있음" },
@@ -78,12 +78,11 @@ const sections = [
   },
   {
     id: "red-flags",
-    iconKey: "Flag",
+    emoji: "🚩",
     title: "Red Flags to Watch",
     koTitle: "주의해야 할 위험 신호",
     desc: "Walk away if you see these",
     koDesc: "이런 것이 보이면 걸어 다니세요",
-    color: "border-l-rose-400",
     items: [
       { label: "No formal lease", en: "Always get a written Residential Tenancy Agreement — verbal agreements are not enforceable", ko: "반드시 서면 임대차계약서를 받아야 함 — 구두 합의는 법적 구속력이 없음" },
       { label: "Landlord won't do repairs", en: "Persistent damage that's ignored is a sign the landlord won't look after the property", ko: "수리되지 않는 지속적인 손상은 임대인이 부동산을 관리하지 않음을 의미함" },
@@ -94,12 +93,11 @@ const sections = [
   },
   {
     id: "costs",
-    iconKey: "Coin",
+    emoji: "💰",
     title: "Bills & Move-in Costs",
     koTitle: "공과금 및 입주 비용",
     desc: "What to budget for",
     koDesc: "예산에 포함해야 할 것들",
-    color: "border-l-yellow-400",
     items: [
       { label: "Bond", en: "Usually 4 weeks rent — paid upfront before moving in", ko: "보통 임대료의 4주분 — 입주 전에 선불로 지불" },
       { label: "First week rent", en: "Paid in advance, from the day you move in", ko: "선불로 지불, 입주일부터" },
@@ -110,12 +108,11 @@ const sections = [
   },
   {
     id: "cover-letter",
-    iconKey: "Edit",
+    emoji: "✏️",
     title: "Cover Letter Tips",
     koTitle: "지원서 작성 팁",
     desc: "How to write an application that stands out",
     koDesc: "주목받는 지원서를 작성하는 방법",
-    color: "border-l-purple-500",
     items: [
       { label: "Keep it short", en: "3-5 sentences. Agents read hundreds of these.", ko: "3~5문장. 중개인은 수백 통의 지원서를 읽습니다." },
       { label: "Mention your income", en: "Be upfront: weekly/fortnightly income, employment type, how long you've been with your employer", ko: "솔직하게 기재: 주/격주 수입, 고용 형태, 현 고용주 근무 기간" },
@@ -129,54 +126,60 @@ const sections = [
 export default function ApartmentPage() {
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En><Home className="inline w-4 h-4" /> Apartment Guide </En>
-            <Ko><Home className="inline w-4 h-4" /> 임대 가이드 </Ko>
-          </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Renting in NSW — your rights, your money, your home</En>
-            <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집</Ko>
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Renting in NSW</En>
+          <Ko>NSW 임대</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Apartment guide</En>
+          <Ko>임대 가이드</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Renting in NSW — your rights, your money, your home.</En>
+          <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집.</Ko>
+        </p>
+      </header>
 
-      <div className="max-w-4xl mx-auto px-4 py-10 space-y-8">
-        {sections.map((section, si) => {
-          const Icon = ICONS[section.iconKey];
-          return (
-            <section
-              key={section.id}
-              className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl overflow-hidden"
-            >
-              <div className={`px-4 md:px-5 py-4 border-b border-sand dark:border-dark-border border-l-4 ${section.color}`}>
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-sunset shrink-0">
-                    {Icon ? <Icon className="w-5 h-5" /> : null}
-                  </span>
-                  <h2 className="font-bold text-base md:text-lg text-eucalypt dark:text-white leading-snug">
-                    <En>{section.title}</En>
-                    <Ko>{section.koTitle || section.title}</Ko>
-                  </h2>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 space-y-10">
+        {sections.map((section, si) => (
+          <section
+            key={section.id}
+            className={`reveal reveal-delay-${(si % 5) + 1}`}
+          >
+            <div className="mb-4">
+              <div className="flex items-center gap-3 mb-1.5">
+                <span className="text-2xl shrink-0">{section.emoji}</span>
+                <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
+                  <En>{section.title}</En>
+                  <Ko>{section.koTitle || section.title}</Ko>
+                </h2>
+              </div>
+              <p className="text-sm text-stone-500 dark:text-stone-400 pl-10">
+                <En>{section.desc}</En>
+                <Ko>{section.koDesc || section.desc}</Ko>
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border overflow-hidden divide-y divide-stone-200/60 dark:divide-dark-border/60">
+              {section.items.map((item, ii) => (
+                <div key={ii} className="px-5 md:px-6 py-4">
+                  <p className="font-medium text-sm text-sunset mb-1.5 leading-snug">
+                    {item.label}
+                    {item.url && (
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="ml-2 text-stone-400 hover:text-sunset text-xs font-normal">↗</a>
+                    )}
+                  </p>
+                  <En>
+                    <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{item.en}</p>
+                  </En>
+                  <Ko>
+                    <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{item.ko}</p>
+                  </Ko>
                 </div>
-                <p className="text-sm text-eucalypt/50 dark:text-dark-muted/50 pl-7">
-                  <En>{section.desc}</En>
-                  <Ko>{section.koDesc || section.desc}</Ko>
-                </p>
-              </div>
-              <div className="divide-y divide-sand dark:divide-dark-border">
-                {section.items.map((item, ii) => (
-                  <div key={ii} className="px-4 md:px-5 py-4">
-                    <p className="font-semibold text-sm text-sunset mb-1.5 leading-snug">{item.label}</p>
-                    <En><p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-1">{item.en}</p></En>
-                    <Ko><p className="text-sm text-sage font-medium leading-relaxed">{item.ko}</p></Ko>
-                  </div>
-                ))}
-              </div>
-            </section>
-          );
-        })}
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </div>
   );

@@ -208,18 +208,20 @@ export default function BeyondSydneyPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En><MapPin className="inline-block w-6 h-6 mr-1" /> Beyond Sydney</En>
-            <Ko><MapPin className="inline-block w-6 h-6 mr-1" /> 시드니 밖으로</Ko>
-          </h1>
-          <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Weekend trips, road trips, and day adventures from Sydney — Australia's east coast has a lot more to offer</En>
-            <Ko>시드니에서의 주말 여행, 드라이브 여행, 당일 모험 — 호주 동해안에는 훨씬 더 많은 것이 있습니다</Ko>
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Beyond Sydney</En>
+          <Ko>시드니 밖</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Beyond Sydney</En>
+          <Ko>시드니 밖으로</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Weekend trips, road trips, and day adventures from Sydney — Australia&apos;s east coast has a lot more to offer.</En>
+          <Ko>시드니에서의 주말 여행, 드라이브 여행, 당일 모험 — 호주 동해안에는 훨씬 더 많은 것이 있습니다.</Ko>
+        </p>
+      </header>
 
       <FilteredAccordion
         destinations={destinations}

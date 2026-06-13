@@ -286,18 +286,20 @@ export default function StudyPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En>Study 🎓</En>
-            <Ko>학습 🎓</Ko>
-          </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60">
-            <En>University life, academic culture, and grades in Australia</En>
-            <Ko>호주의 대학 생활, 학문 문화, 성적 체계</Ko>
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Study</En>
+          <Ko>학습</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Study in Australia</En>
+          <Ko>호주에서 공부하기</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>University life, academic culture, and grades in Australia.</En>
+          <Ko>호주의 대학 생활, 학문 문화, 성적 체계.</Ko>
+        </p>
+      </header>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">

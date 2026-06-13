@@ -211,18 +211,20 @@ export default function FinancePage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En>💰 Finance & Banking</En>
-            <Ko>💰 금융과 은행</Ko>
-          </h1>
-          <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Everything about money in Australia — banking, tax, super, and budgeting</En>
-            <Ko>호주에서의 돈에 관한 모든 것 — 은행, 세금, 퇴직연금, 예산 관리</Ko>
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Money</En>
+          <Ko>금융</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Finance &amp; banking</En>
+          <Ko>금융과 은행</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Everything about money in Australia — banking, tax, super, and budgeting.</En>
+          <Ko>호주에서의 돈에 관한 모든 것 — 은행, 세금, 퇴직연금, 예산 관리.</Ko>
+        </p>
+      </header>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">

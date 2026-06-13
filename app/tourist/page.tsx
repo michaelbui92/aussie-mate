@@ -150,14 +150,20 @@ const iconKeys = ["Beach", "Building2", "Car", "Coin", "DollarSign", "PassengerT
 export default function TouristPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="mb-2 text-3xl font-bold">
-        <En>Sydney Tourist Guide</En>
-        <Ko>시드니 관광 가이드</Ko>
-      </h1>
-      <p className="mb-8 text-lg text-gray-600">
-        <En>All the know-how you need for visiting Sydney as a Korean traveller.</En>
-        <Ko>한국 여행자가 시드니를 방문할 때 필요한 모든 정보입니다.</Ko>
-      </p>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Tourist</En>
+          <Ko>관광</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Sydney tourist guide</En>
+          <Ko>시드니 관광 가이드</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>All the know-how you need for visiting Sydney as a Korean traveller.</En>
+          <Ko>한국 여행자가 시드니를 방문할 때 필요한 모든 정보입니다.</Ko>
+        </p>
+      </header>
 
       <div className="space-y-6">
         <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} theme="wattle" />

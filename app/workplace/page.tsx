@@ -216,18 +216,20 @@ export default function WorkplacePage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En>Workplace 💼</En>
-            <Ko>직장 💼</Ko>
-          </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Aussie work culture, your rights, pay, and first-week tips</En>
-            <Ko>호주 직장 문화, 노동자 권리, 급여, 첫째 주 팁</Ko>
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Work</En>
+          <Ko>직장</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Workplace</En>
+          <Ko>직장</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Aussie work culture, your rights, pay, and first-week tips.</En>
+          <Ko>호주 직장 문화, 노동자 권리, 급여, 첫째 주 팁.</Ko>
+        </p>
+      </header>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">

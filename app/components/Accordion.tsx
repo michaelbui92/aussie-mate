@@ -4,9 +4,8 @@
 // the open/close animation. Pages become server components (the page tree
 // is HTML in the first paint, only the accordion hydrate on the client).
 //
-// The icons prop is now a string[] of icon names (tree-shakable named imports
-// from Icons.tsx). The component looks up each icon from the Icons module so
-// the data sent across the server→client boundary stays serializable.
+// Editorial styling: clean white cards on stone-50 page, serif headings,
+// no glass effects, soft borders that warm to sunset on hover.
 
 import { useState, ReactNode, ComponentType } from "react";
 import { ChevronDown, Icons } from "./Icons";
@@ -58,40 +57,43 @@ export default function Accordion({
   for (const k of iconKeys) {
     icons[k] = (Icons as unknown as Record<string, ComponentType<{ className?: string }>>)[k];
   }
-  const accent = theme === "wattle" ? "text-wattle" : "text-sunset";
+  const accentText = theme === "wattle" ? "text-wattle" : "text-sunset";
+  const accentBg = theme === "wattle" ? "bg-wattle/10" : "bg-sunset/10";
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {sections.map((section, si) => {
         const isOpen = openId === section.id;
         const Icon = icons[section.iconKey];
         return (
           <div
             key={section.id}
-            className={`glass-card rounded-2xl overflow-hidden`}
+            className={`reveal reveal-delay-${(si % 5) + 1} rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border overflow-hidden hover:border-sunset/40 transition-all`}
             style={itemDelayS > 0 ? { animationDelay: `${si * itemDelayS}s` } : undefined}
           >
             <button
               onClick={() => setOpenId(isOpen ? null : section.id)}
-              className="w-full text-left px-4 md:px-5 py-4 min-h-[60px] flex items-center gap-3 hover:bg-sand/50 dark:hover:bg-dark-surface/50 transition-colors"
+              className="w-full text-left px-5 md:px-6 py-4 md:py-5 min-h-[64px] flex items-center gap-4 hover:bg-stone-50 dark:hover:bg-darkbg/50 transition-colors"
               aria-expanded={isOpen}
             >
-              <span className={`${accent} shrink-0`}>
-                {Icon ? <Icon className="w-5 h-5" /> : null}
-              </span>
+              {Icon && (
+                <span className={`shrink-0 w-10 h-10 rounded-full ${accentBg} flex items-center justify-center ${accentText}`}>
+                  <Icon className="w-4 h-4" />
+                </span>
+              )}
               <div className="flex-1 min-w-0 pr-2">
-                <h2 className="font-bold text-sm md:text-base text-eucalypt dark:text-white leading-snug">
+                <h2 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 leading-snug">
                   <En>{section.title}</En>
                   <Ko>{section.koTitle || section.title}</Ko>
                 </h2>
                 {section.desc && (
-                  <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50 mt-0.5">
+                  <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">
                     <En>{section.desc}</En>
                     <Ko>{section.koDesc || section.desc}</Ko>
                   </p>
                 )}
               </div>
               <ChevronDown
-                className={`w-5 h-5 ${accent} shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                className={`w-4 h-4 ${accentText} shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
               />
             </button>
             <div
@@ -99,17 +101,17 @@ export default function Accordion({
                 isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="glass-section divide-y divide-sand/50 dark:divide-dark-border/50 border-t border-sand/30 dark:border-dark-border/30">
+              <div className="divide-y divide-stone-200/60 dark:divide-dark-border/60 border-t border-stone-200/60 dark:border-dark-border/60">
                 {section.items.map((item, ii) => (
-                  <div key={ii} className="px-5 py-4">
-                    <p className={`font-semibold text-sm ${accent} mb-1.5`}>{item.label}</p>
+                  <div key={ii} className="px-5 md:px-6 py-4">
+                    <p className={`font-medium text-sm ${accentText} mb-1.5`}>{item.label}</p>
                     <En>
-                      <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed mb-2">
+                      <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
                         {item.en}
                       </p>
                     </En>
                     <Ko>
-                      <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70 leading-relaxed">
+                      <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                         {item.ko}
                       </p>
                     </Ko>

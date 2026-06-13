@@ -225,18 +225,20 @@ export default function ResourcesPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En>Resources 🎒</En>
-            <Ko>자료 🎒</Ko>
-          </h1>
-          <p className="text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Essential Australian services and community resources</En>
-            <Ko>호주의 필수 서비스와 지역 사회 자료</Ko>
-          </p>
-        </div>
-      </section>
+      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <En>Resources</En>
+          <Ko>자료</Ko>
+        </p>
+        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
+          <En>Resources</En>
+          <Ko>자료</Ko>
+        </h1>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
+          <En>Essential Australian services and community resources.</En>
+          <Ko>호주의 필수 서비스와 지역 사회 자료.</Ko>
+        </p>
+      </header>
 
       {/* Emergency banner — always visible, not buried in accordions */}
       <div className="max-w-4xl mx-auto px-4 pt-8">
