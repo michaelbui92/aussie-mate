@@ -20,6 +20,28 @@ const navLinks = [
   { href: "/resources", label: "Resources" },
 ];
 
+// Pill-style action button — matches the rest of the editorial system
+function NavPill({
+  onClick,
+  children,
+  ariaLabel,
+  className = "",
+}: {
+  onClick: () => void;
+  children: React.ReactNode;
+  ariaLabel: string;
+  className?: string;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={ariaLabel}
+      className={`shrink-0 inline-flex items-center justify-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-dark-surface hover:bg-sunset hover:text-white dark:hover:bg-sunset dark:hover:text-white transition-colors ${className}`}
+    >
+      {children}
+    </button>
+  );
+}
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,83 +51,103 @@ export default function Nav() {
   const { openSearch } = useSearch();
 
   return (
-    <nav className="sticky top-0 z-50 glass-nav border-b border-sand/30 dark:border-dark-border/50">
-      <div className="w-full px-4 h-16 flex items-center gap-4">
+    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-stone-200 dark:border-dark-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0 group">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sunset to-sunset-light flex items-center justify-center text-base transition-transform group-hover:scale-110 btn-press">
-            <span className="w-8 h-8" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} />
+        <Link
+          href="/"
+          className="flex items-center gap-2 shrink-0 group"
+          aria-label="AussieMate home"
+        >
+          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-sunset to-sunset-light flex items-center justify-center text-white transition-transform group-hover:scale-105">
+            <span
+              className="w-5 h-5"
+              dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }}
+            />
           </div>
-          <span className="font-bold text-sunset text-lg hidden sm:block">AussieMate</span>
+          <span className="font-serif text-xl text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors hidden sm:inline">
+            AussieMate
+          </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        <div className="hidden md:flex items-center gap-1 flex-1 min-w-0 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all btn-press ${
+                className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   isActive
-                    ? "text-sunset dark:text-sunset active"
-                    : "text-eucalypt/70 dark:text-dark-muted/70 hover:text-sunset dark:hover:text-sunset hover:bg-sand dark:hover:bg-dark-surface"
+                    ? "text-white bg-sunset"
+                    : "text-stone-600 dark:text-stone-300 hover:text-sunset hover:bg-sunset/10"
                 }`}
               >
                 {link.label}
               </Link>
             );
           })}
-
         </div>
-        <div className="ml-auto flex items-center gap-2">
-          <button
-            onClick={openSearch}
-            className="shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-sand/50 dark:bg-dark-surface hover:bg-sunset/20 text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset transition-all btn-press"
-            aria-label="Search"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+
+        {/* Action buttons */}
+        <div className="ml-auto flex items-center gap-2 shrink-0">
+          <NavPill onClick={openSearch} ariaLabel="Search">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
             </svg>
-            <En><span className="text-xs font-semibold">Search</span></En>
-            <Ko><span className="text-xs font-semibold">검색</span></Ko>
-          </button>
-
-          <button
-            onClick={() => setLang(lang === "en" ? "ko" : "en")}
-            className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-sage/20 text-sage hover:bg-sage/30 transition-colors shrink-0"
-            aria-label="Toggle language"
-          >
-            <span key={lang} className="lang-flip">
-              {lang === "en" ? "EN" : "🇰🇷"}
+            <span className="hidden lg:inline text-xs font-semibold">
+              <En>Search</En>
+              <Ko>검색</Ko>
             </span>
-          </button>
+          </NavPill>
 
-          <button
+          <NavPill
+            onClick={() => setLang(lang === "en" ? "ko" : "en")}
+            ariaLabel="Toggle language"
+          >
+            <span key={lang} className="text-xs font-bold tracking-wide">
+              {lang === "en" ? "EN" : "한국어"}
+            </span>
+          </NavPill>
+
+          <NavPill
             onClick={toggleTheme}
-            className="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-sand/50 dark:bg-dark-surface hover:bg-sunset/20 text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset transition-all btn-press"
-            aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+            ariaLabel={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+            className="!w-9 !px-0"
           >
             <span
               className="w-4 h-4"
-              dangerouslySetInnerHTML={{ __html: theme === "light" ? ICONS.moon : ICONS.sun }}
+              dangerouslySetInnerHTML={{
+                __html: theme === "light" ? ICONS.moon : ICONS.sun,
+              }}
             />
-          </button>
+          </NavPill>
 
           {/* Hamburger (mobile only) */}
           <button
-            className="md:hidden shrink-0 p-2 rounded-lg bg-sand dark:bg-dark-surface hover:bg-sunset/20 transition-all btn-press"
+            className="md:hidden shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-dark-surface hover:bg-sunset hover:text-white transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -115,8 +157,8 @@ export default function Nav() {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="md:hidden glass-nav border-t border-sand/30 dark:border-dark-border/50 animate-scale-in rounded-b-2xl">
-          <div className="w-full px-4 py-3 flex flex-col gap-1">
+        <div className="md:hidden bg-white dark:bg-darkbg border-t border-stone-200 dark:border-dark-border shadow-lg">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -124,17 +166,16 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-all btn-press ${
+                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-sunset bg-sunset/10"
-                      : "text-eucalypt/80 dark:text-dark-muted/80 hover:text-sunset hover:bg-sand dark:hover:bg-dark-surface"
+                      ? "text-white bg-sunset"
+                      : "text-stone-700 dark:text-stone-300 hover:text-sunset hover:bg-sunset/10"
                   }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
-
           </div>
         </div>
       )}

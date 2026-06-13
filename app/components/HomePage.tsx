@@ -114,8 +114,8 @@ export default function HomePage() {
           </p>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-7 max-w-5xl">
             <span className="block">
-              <En>Discover Australia</En>
-              <Ko>호주를 발견하다</Ko>
+              <En>Discover Sydney</En>
+              <Ko>시드니를 발견하다</Ko>
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed font-light">
@@ -172,21 +172,21 @@ export default function HomePage() {
                   onClick={() => setActive(s.key)}
                   className={`reveal reveal-delay-${i + 1} group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 ${
                     isActive
-                      ? "bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 border-stone-900 dark:border-stone-100 shadow-2xl scale-[1.02]"
-                      : "bg-stone-50 dark:bg-darkbg border-stone-200 dark:border-dark-border hover:border-stone-400 dark:hover:border-stone-600"
+                      ? "bg-sunset text-white border-sunset shadow-2xl scale-[1.02]"
+                      : "bg-white dark:bg-dark-surface border-stone-200 dark:border-dark-border text-stone-900 dark:text-stone-100 hover:border-sunset/50 hover:shadow-lg"
                   }`}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <span className={`font-mono text-xs ${isActive ? "opacity-50" : "text-stone-400"}`}>
+                    <span className={`font-mono text-xs ${isActive ? "text-white/70" : "text-stone-400 dark:text-stone-500"}`}>
                       0{i + 1}
                     </span>
-                    <span className={`w-2 h-2 rounded-full ${isActive ? "bg-sunset" : "bg-stone-300 dark:bg-stone-700"}`} />
+                    <span className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-white" : "bg-stone-300 dark:bg-stone-700 group-hover:bg-sunset"}`} />
                   </div>
-                  <h3 className="font-serif text-2xl mb-1.5">
+                  <h3 className={`font-serif text-2xl mb-1.5 ${isActive ? "text-white" : "text-stone-900 dark:text-stone-100"}`}>
                     <En>{s.title}</En>
                     <Ko>{s.koTitle}</Ko>
                   </h3>
-                  <p className={`text-sm leading-relaxed ${isActive ? "opacity-80" : "text-stone-500 dark:text-stone-400"}`}>
+                  <p className={`text-sm leading-relaxed ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
                     <En>{s.subtitle}</En>
                     <Ko>{s.koSubtitle}</Ko>
                   </p>
