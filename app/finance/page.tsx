@@ -19,7 +19,7 @@ const sections: AccordionSection[] = [
       {
         label: "How to Open an Account",
         en: "You can open an account before you arrive using the bank’s website, or walk into any branch with your passport and visa (or bring your passport and a tenancy agreement as ID proof). It takes about 20 minutes. You'll get a debit card in 3-5 business days by mail.",
-        ko: "도착 전에 은행 웹사이트에서 계좌를 열거나, 여권과 비자(또는护照와 임대차 계약서)로 지점에 방문하면 됩니다. 약 20분이 소요됩니다. 직불 카드는 3-5영업일 안에 우편으로 배달됩니다.",
+        ko: "도착 전에 은행 웹사이트에서 계좌를 열거나, 여권과 비자(또는여권와 임대차 계약서)로 지점에 방문하면 됩니다. 약 20분이 소요됩니다. 직불 카드는 3-5영업일 안에 우편으로 배달됩니다.",
       },
       {
         label: "BSB and Account Number",
@@ -47,14 +47,14 @@ const sections: AccordionSection[] = [
     id: "tax-file-number",
     iconKey: "ReceiptAlt",
     title: "Tax File Number (TFN)",
-    koTitle: "납세识别号 (TFN)",
+    koTitle: "납세식별 번호 (TFN)",
     desc: "What a TFN is and why you need one",
     koDesc: "TFN이란 무엇이며 왜 필요한지",
     items: [
       {
         label: "What is a TFN?",
         en: "A Tax File Number (TFN) is your personal tax identification number in Australia. It's free to get and completely separate from your visa. You need a TFN to work legally, open a bank account with full features, and lodge a tax return.",
-        ko: "납세识别号(TFN)는 호주의 개인 세금 식별 번호입니다. 무료로 받을 수 있으며 비자와 완전히 별개입니다. 합법적으로 근무하려면 TFN이 필요하고, 모든 기능을 갖춘 은행 계좌를 열거나 탈세 신고를 하려면 TFN이 필요합니다.",
+        ko: "납세식별 번호(TFN)는 호주의 개인 세금 식별 번호입니다. 무료로 받을 수 있으며 비자와 완전히 별개입니다. 합법적으로 근무하려면 TFN이 필요하고, 모든 기능을 갖춘 은행 계좌를 열거나 탈세 신고를 하려면 TFN이 필요합니다.",
       },
       {
         label: "Do I Need One?",
@@ -69,7 +69,7 @@ const sections: AccordionSection[] = [
       {
         label: "What Happens if You Don't Have One",
         en: "If you work without a TFN, you'll pay more tax unnecessarily. You can claim it back at tax return time, but it's easier to just get the TFN upfront. Some employers might not hire you without a TFN.",
-        ko: "TFN 없이 일하면 불필요하게 더 많은 세금을 냅니다. 탈세 신고 시 되돌려받을 수 있지만,最初から TFN을 받는 게 훨씬簡単です. 일부 고용주는 TFN 없으면 고용하지 않을 수도 있습니다.",
+        ko: "TFN 없이 일하면 불필요하게 더 많은 세금을 냅니다. 탈세 신고 시 되돌려받을 수 있지만,첫이로부 TFN을 받는 게 훨씬훐쉐 처은시니다. 일부 고용주는 TFN 없으면 고용하지 않을 수도 있습니다.",
       },
     ],
   },
@@ -84,7 +84,7 @@ const sections: AccordionSection[] = [
       {
         label: "What is Super?",
         en: "Superannuation (super) is a mandatory savings system — every employer must pay 11.5% of your salary into a super fund. This money is invested and grows over time. You can't access it until you retire (around age 60).",
-        ko: "Superannuation(super)은 의무 저축 시스템입니다 — 모든 고용주가 급여의 11.5%를 퇴직연금 기금에 납부해야 합니다. 이 돈은 투자되어 시간에 따라 증가합니다.退休(약 60세)에 접근할 수 있습니다.",
+        ko: "Superannuation(super)은 의무 저축 시스템입니다 — 모든 고용주가 급여의 11.5%를 퇴직연금 기금에 납부해야 합니다. 이 돈은 투자되어 시간에 따라 증가합니다.퇴직(약 60세)에 접근할 수 있습니다.",
       },
       {
         label: "Why It Matters for You",
@@ -104,7 +104,7 @@ const sections: AccordionSection[] = [
       {
         label: "Low Fees Matter",
         en: "Super funds charge annual fees. Even a 1% fee difference can cost you thousands over a few years. Use a comparison tool like 'Stack or SuperRatings' to compare funds. The fund your employer suggests isn't always the best.",
-        ko: "퇴직연금 기금은 연간 수수료를 부과합니다. 1%만费率 차이가 나도 몇 년에 걸쳐 수천 달러가 될 수 있습니다. Stack이나 SuperRatings 같은 비교 도구를 사용하세요. 고용주가 제안한 기금이 항상最好的은 아닙니다.",
+        ko: "퇴직연금 기금은 연간 수수료를 부과합니다. 1%만수수천울 차이가 나도 몇 년에 걸쳐 수천 달러가 될 수 있습니다. Stack이나 SuperRatings 같은 비교 도구를 사용하세요. 고용주가 제안한 기금이 항상가장 좋은은 아닙니다.",
       },
     ],
   },
@@ -124,17 +124,17 @@ const sections: AccordionSection[] = [
       {
         label: "How It Works",
         en: "Each financial year runs July 1 to June 30. You lodge your tax return between July 1 and October 31. If you had tax withheld from your pay and earned below $18,200, you'll likely get a full refund. Most students get money back.",
-        ko: "매 회계연도는 7월 1일부터 6월 30일까지입니다. 7월 1日到 10월 31일 사이에 탈세 신고를 합니다. 급여에서 세금을 원천징수했고 $18,200 이하로 벌었으면 전액 환급을 받을 수 있습니다. 대부분의 학생들이 돈을 돌려받습니다.",
+        ko: "매 회계연도는 7월 1일부터 6월 30일까지입니다. 7월 1이마로 10월 31일 사이에 탈세 신고를 합니다. 급여에서 세금을 원천징수했고 $18,200 이하로 벌었으면 전액 환급을 받을 수 있습니다. 대부분의 학생들이 돈을 돌려받습니다.",
       },
       {
         label: "Using a Tax Agent",
         en: "Many students use a tax agent (like H&R Block or a local accountant). They charge $80-150 but often find deductions you missed. First year in Australia — worth using one to learn how it works. After that, you can do it yourself online for free via myTax on the ATO website.",
-        ko: "많은 학생들이 세금 에이전트(H&R Block이나 지역 회계사)를 이용합니다. $80-150가 들지만 często 놓친 공제분을 찾아줍니다. 호주 첫 해에는、利用해서仕組みを学ぶ価値があります. 그 후에는 ATO 웹사이트의 myTax로 직접 무료로 할 수 있습니다.",
+        ko: "많은 학생들이 세금 에이전트(H&R Block이나 지역 회계사)를 이용합니다. $80-150가 들지만 자주 놓친 공제분을 찾아줍니다. 호주 첫 해에는와활용하여 제대를 배울면. 그 후에는 ATO 웹사이트의 myTax로 직접 무료로 할 수 있습니다.",
       },
       {
         label: "Deductions You Can Claim",
         en: "As a student working part-time, you can claim: work-related travel (if not reimbursed), self-education costs (if work-related), protective clothing/equipment, and union fees. Keep receipts! If you worked from home, you can claim a portion of electricity and internet.",
-        ko: "아르바이트하는 학생으로서 청구할 수 있는 것: 업무 관련 교통비(환급되지 않은 경우), 자기 교육비(업무 관련인 경우), 보호 의류/장비, 조합비. 영수증을保管하세요! 재택 근무를 했다면 전기와 인터넷 비용의 일부를 청구할 수 있습니다.",
+        ko: "아르바이트하는 학생으로서 청구할 수 있는 것: 업무 관련 교통비(환급되지 않은 경우), 자기 교육비(업무 관련인 경우), 보호 의류/장비, 조합비. 영수증을보괈하세요! 재택 근무를 했다면 전기와 인터넷 비용의 일부를 청구할 수 있습니다.",
       },
     ],
   },
@@ -164,7 +164,7 @@ const sections: AccordionSection[] = [
       {
         label: "Medicare and Centrelink",
         en: "If you're from a country with a reciprocal healthcare agreement with Australia (UK, Ireland, Sweden, Netherlands, Finland, Norway, Malta, Italy, Belgium, Slovenia, New Zealand), you can access Medicare. Centrelink manages some Medicare related services.",
-        ko: "호주와 의료비 상호 협정이 있는 국가(영국, 아일랜드, 스웨덴, 네덜란드, 핀란드, 노르웨이, 몰타, 이탈리아, 벨기에, 슬로베니아, 뉴질랜드)에서 왔다면 Medicare를 利用할 수 있습니다. Centrelink는 일부 Medicare 관련 서비스를 관리합니다.",
+        ko: "호주와 의료비 상호 협정이 있는 국가(영국, 아일랜드, 스웨덴, 네덜란드, 핀란드, 노르웨이, 몰타, 이탈리아, 벨기에, 슬로베니아, 뉴질랜드)에서 왔다면 Medicare를 활용할 수 있습니다. Centrelink는 일부 Medicare 관련 서비스를 관리합니다.",
       },
     ],
   },
@@ -179,7 +179,7 @@ const sections: AccordionSection[] = [
       {
         label: "Weekly Budget Estimate",
         en: "As a student in Sydney, expect to spend $300-500 per week on basics (rent, food, transport, phone). Rent alone is $180-300 depending on location and sharing. This varies a lot — regional areas are much cheaper than Sydney.",
-        ko: "시드니에서 학생으로서 기본(임대료, 식비, 교통비, 전화요금)에 주당 $300-500을 쓸 것으로 예상하세요. 임대료만 location과合roommates에 따라 $180-300입니다. 다른 지역은 시드니보다 훨씬 저렴합니다.",
+        ko: "시드니에서 학생으로서 기본(임대료, 식비, 교통비, 전화요금)에 주당 $300-500을 쓸 것으로 예상하세요. 임대료만 location과합roommates에 따라 $180-300입니다. 다른 지역은 시드니보다 훨씬 저렴합니다.",
       },
       {
         label: "Save on Groceries",
@@ -199,7 +199,7 @@ const sections: AccordionSection[] = [
       {
         label: "Transportation Savings",
         en: "Get an Opal card for public transport — always cheaper than paying cash. If you're a full-time student, you can get a Concession Opal card (half price). Work out if a monthly pass is worth it vs pay-as-you-go. Ferries are gorgeous and sometimes the cheapest option!",
-        ko: "대중교통에는 Opal 카드를 이용하세요 — 현금으로払う 것보다 항상 저렴합니다. 전학생이면 Concession Opal 카드(50% 할인)를받을 수 있습니다. 월정액 패스가pay-as-you-go보다価値 있는지 계산하세요. 페리는景色도 좋고 때때로 가장 저렴한 옵션입니다!",
+        ko: "대중교통에는 Opal 카드를 이용하세요 — 현금으로 지불하는 것보다 항상 저렴합니다. 전학생이면 Concession Opal 카드(50% 할인)를받을 수 있습니다. 월정액 패스가pay-as-you-go보다 있는지 계산하세요. 페리는경칔도 좋고 때때로 가장 저렴한 옵션입니다!",
       },
     ],
   },

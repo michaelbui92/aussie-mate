@@ -40,7 +40,7 @@ const sections: AccordionSection[] = [
       {
         label: "Transferring Between Modes",
         en: "One of Opal's best features: you can transfer between bus, train, ferry, and light rail within 60 minutes and only pay one fare (the highest mode). You must tap off each time and tap on the next mode. The system caps the total cost.",
-        ko: "Opal의最高の機能: 버스, 기차, 페리, 라이트 레일 사이에서 60분 이내에 환승하면 하나의 운임(가장 높은 모드)만 부과됩니다. 매번 탭 오프하고 다음 모드를 탭 온해야 합니다. 시스템이 총 비용을 상한선까지 제한합니다.",
+        ko: "Opal의 최적의 기능: 버스, 기차, 페리, 라이트 레일 사이에서 60분 이내에 환승하면 하나의 운임(가장 높은 모드)만 부과됩니다. 매번 탭 오프하고 다음 모드를 탭 온해야 합니다. 시스템이 총 비용을 상한선까지 제한합니다.",
       },
     ],
   },
@@ -55,7 +55,7 @@ const sections: AccordionSection[] = [
       {
         label: "Train Network Basics",
         en: "Sydney has a suburban train network (Sydney Trains) with lines covering the city, eastern suburbs, inner west, North Shore, and outer areas. Trains run from about 4am to midnight every day. On Friday and Saturday nights, some lines run 24 hours.",
-        ko: "시드니에는 시내, 이스턴 서브urbs, 이너 웨스트, 노스 쇼어, 외곽 지역을covering하는郊外 기차 네트워크(Sydney Trains)가 있습니다. 기차는 매일 약 새벽 4시부터 자정까지 운행됩니다. 금요일과 토요일 밤에는 일부 노선이 24시간 운영됩니다.",
+        ko: "시드니에는 시내, 이스턴 서브urbs, 이너 웨스트, 노스 쇼어, 외곽 지역을covering the 교와 area - 기차 네트워크(Sydney Trains)가 있습니다. 기차는 매일 약 새벽 4시부터 자정까지 운행됩니다. 금요일과 토요일 밤에는 일부 노선이 24시간 운영됩니다.",
       },
       {
         label: "Zones and Fares",
@@ -65,7 +65,7 @@ const sections: AccordionSection[] = [
       {
         label: "Reading Timetables",
         en: "Most trains run every 5-15 minutes during peak hours (6-9am, 4-7pm). Off-peak, it can be every 20-30 minutes. Use the Trip Planner app or Google Maps — real-time updates are available. The T1 North Shore line is the busiest.",
-        ko: "대부분의 기차는 러시아워(6-9am, 4-7pm)에 5-15분 간격으로 운행됩니다. 비 러시아워에는 20-30분 간격일 수 있습니다. Trip Planner 앱이나 Google Maps를 사용하세요 — 실시간 업데이트를利用할 수 있습니다. T1 노스 쇼어 노선이 가장 붐빈다.",
+        ko: "대부분의 기차는 러시아워(6-9am, 4-7pm)에 5-15분 간격으로 운행됩니다. 비 러시아워에는 20-30분 간격일 수 있습니다. Trip Planner 앱이나 Google Maps를 사용하세요 — 실시간 업데이트를활용할 수 있습니다. T1 노스 쇼어 노선이 가장 붐빈다.",
       },
       {
         label: "Airport Link",
@@ -90,7 +90,7 @@ const sections: AccordionSection[] = [
       {
         label: "Getting On and Off",
         en: "Tap on when you get on (front door of the bus). Tap off when you get off — this is important! If you forget to tap off, you'll be charged the maximum fare from where you tapped on. Use the Opal reader near the driver.",
-        ko: "탑승할 때 탭 온하세요(버スの앞문). 하차할 때 탭 오프하세요 — 이것 중요합니다! 탭 오프하는 것을 잊은으면 최대 운임이 부과됩니다. 운전기사 근처의 Opal 리더를 사용하세요.",
+        ko: "탑승할 때 탭 온하세요(버스의 앞문). 하차할 때 탭 오프하세요 — 이것 중요합니다! 탭 오프하는 것을 잊은으면 최대 운임이 부과됩니다. 운전기사 근처의 Opal 리더를 사용하세요.",
       },
       {
         label: "Express Buses",
@@ -100,7 +100,7 @@ const sections: AccordionSection[] = [
       {
         label: "School Buses",
         en: "Some routes have dedicated school buses for students. These are free with a valid Opal concession card during school terms. Check your route at transportnsw.info.",
-        ko: "일부 노선에는 학생 전용 스쿨 버스가 있습니다.学期 중 유효한 Opal Concession 카드로 무료입니다. transportnsw.info에서 노선을 확인하세요.",
+        ko: "일부 노선에는 학생 전용 스쿨 버스가 있습니다.학기 중 유효한 Opal Concession 카드로 무료입니다. transportnsw.info에서 노선을 확인하세요.",
       },
     ],
   },
@@ -115,7 +115,7 @@ const sections: AccordionSection[] = [
       {
         label: "Sydney Ferries",
         en: "Sydney's ferry network is one of the most beautiful commutes in the world. Routes go to Manly, Taronga Zoo, Watson's Bay, Parramatta (via the river), and many more. The harbour is huge — ferries are often faster than buses for cross-harbour trips.",
-        ko: "시드니의 페리 네트워크는 세계에서 가장美しい 통근 중 하나입니다. 노선은 Manly, Taronga Zoo, Watson's Bay, Parramatta(강을 통해), 그 외 많은 곳으로 갑니다. 항구가 매우 크므로 페리가 크로스-harbour 이동에 버스보다 빠른 경우가 많습니다.",
+        ko: "시드니의 페리 네트워크는 세계에서 가장아리류은 통근 중 하나입니다. 노선은 Manly, Taronga Zoo, Watson's Bay, Parramatta(강을 통해), 그 외 많은 곳으로 갑니다. 항구가 매우 크므로 페리가 크로스-harbour 이동에 버스보다 빠른 경우가 많습니다.",
       },
       {
         label: "Tap On and Off",
@@ -150,7 +150,7 @@ const sections: AccordionSection[] = [
       {
         label: "Professional Driving Lessons",
         en: "Many people take professional lessons to pass their driving test faster. A competent instructor can help you understand what the tester is looking for. Lessons typically cost $50-80/hour in Sydney. Doing a package of 5-10 lessons is usually better value than one-off sessions.",
-        ko: "많은 사람들이 운전 시험을 빨리 통과하기 위해 전문 레슨을 받습니다. 유능한 강사는 테스트자가 무엇을 찾는지 이해하는 데 도움이 됩니다. 시드니에서 레슨은 일반적으로 $50-80/시간입니다. 5-10회 패키지를 하면 일회성セッション보다 더 나은 가치를 제공합니다.",
+        ko: "많은 사람들이 운전 시험을 빨리 통과하기 위해 전문 레슨을 받습니다. 유능한 강사는 테스트자가 무엇을 찾는지 이해하는 데 도움이 됩니다. 시드니에서 레슨은 일반적으로 $50-80/시간입니다. 5-10회 패키지를 하면 일회성세션보다 더 나은 가치를 제공합니다.",
       },
       {
         label: "Korea to Australia Licence",

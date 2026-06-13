@@ -23,11 +23,11 @@ export const destinations: Destination[] = [
     region: "New South Wales",
     description: {
       en: "Just 90 minutes from Sydney by train, the Blue Mountains are one of NSW's most spectacular natural wonders. Ancient eucalyptus forests, dramatic sandstone cliffs, and cascading waterfalls make this a must-visit. The Three Sisters at Echo Point are the most famous sight — best viewed at sunrise or sunset when the rock faces glow orange and pink.",
-      ko: "시드니에서 기차로 단 90분, 블루마운틴은 NSW에서 가장 황홀한 자연경관입니다. 고대 유칼립투스 숲, 장엄한 사암 절벽, 준폭포가 어우러진 이 곳은 반드시 방문해야 할 명소입니다. 에코 포인트의 삼姉妹岩이 가장 유명한데, 일출이나 일몰 때 rock이 주황빛과 분홍빛으로 빛나는 모습을 보는 것이 가장 좋습니다."
+ko: "시드니에서 기차로 단 90분, 블루마운틴은 NSW에서 가장 황홀한 자연경관입니다. 고대 유칼립투스 숲, 장엄한 사암 절벽, 준폭포가 어우러진 이 곳은 반드시 방문해야 할 명소입니다. 에코 포인트의 'Three Sisters'가 가장 유명한데, 일출이나 일몰 때 바위가 주황빛과 분홍빛으로 빛나는 모습을 보는 것이 가장 좋습니다."
     },
     highlights: [
-      { en: "Three Sisters & Echo Point", ko: "삼姉妹岩 & 에코 포인트", icon: "mountain" },
-      { en: "Scenic World cable car", ko: "시enic 월드 케이블카", icon: "hiking" },
+      { en: "Three Sisters & Echo Point", ko: "삼.site Sisters & 에코 포인트", icon: "mountain" },
+      { en: "Scenic World cable car", ko: "시니악 월드 케이블카", icon: "hiking" },
       { en: "Wentworth Falls", ko: "웬트워스 폭포", icon: "swim" },
       { en: "Jenolan Caves", ko: "제놀란 동굴", icon: "museum" },
     ],
@@ -44,7 +44,7 @@ export const destinations: Destination[] = [
     region: "New South Wales",
     description: {
       en: "Australia's oldest wine region, about 2 hours north of Sydney. Hunter Valley is famous for Semillon and Shiraz, but there's so much more — gourmet restaurants, sake tastings, hot air balloons at sunrise, and boutique breweries. A popular weekend escape that's at its best during vintage (March–April).",
-      ko: "호주에서 가장 오래된 와인产区으로 시드니에서 북쪽으로 약 2시간. 헌터 밸리는 세미뇽과 시라즈로 유명하지만 그 이상입니다 — 미식 레스토랑, 사케 테이스팅, 일출 핫에어볼론, 그리고 바이크릿 양조장. 빈티지 시즌(3~4월)에 가장 아름다습니다."
+      ko: "호주에서 가장 오래된 와인 생산지로 시드니에서 북쪽으로 약 2시간. 헌터 밸리는 세미뇽과 시라즈로 유명하지만 그 이상입니다 — 미식 레스토랑, 사케 테이스팅, 일출 핫에어볼론, 그리고 바이크릿 양조장. 빈티지 시즌(3~4월)에 가장 아름다습니다."
     },
     highlights: [
       { en: "Wine tasting at boutique wineries", ko: "바이크릿 와이너리 와인 테이스팅", icon: "wine" },
@@ -65,10 +65,10 @@ export const destinations: Destination[] = [
     region: "New South Wales",
     description: {
       en: "From the white sands of Hyams Beach (Guinness World Record for the whitest sand on Earth) to the dramatic cliffs of Kiama, the South Coast is one of Australia's most beautiful coastal drives. Stop at charming towns like Berry, Gerroa, and Ulladulla. Dolphins are commonly spotted from shore, and whales migrate past from May to November.",
-      ko: "지에이滔화奚最的白砂岩으로 유명한 하임스 비치에서부터 키아마의 장엄한 절벽에 이르는 사우스 코스트는 호주에서 가장 아름다운 해안 드라이브 중 하나입니다. 베리, 제로아, 울라둘라 같은 매력적인 마을에서 발을 멈추세요. 돌고래는 자주 볼 수 있으며, 고래는 5월부터 11월 사이에 이동합니다."
+      ko: "세계에서 가장 흰 백사로 유명한 하임스 비치에서부터 키아마의 장엄한 절벽에 이르는 사우스 코스트는 호주에서 가장 아름다운 해안 드라이브 중 하나입니다. 베리, 제로아, 울라둘라 같은 매력적인 마을에서 발을 멈추세요. 돌고래는 자주 볼 수 있으며, 고래는 5월부터 11월 사이에 이동합니다."
     },
     highlights: [
-      { en: "Hyams Beach (whitest sand on Earth)", ko: "하임스 비치 (地球上 가장 흰砂)", icon: "beach" },
+      { en: "Hyams Beach (whitest sand on Earth)", ko: "하임스 비치 (세계에서 가장 흰 모래)", icon: "beach" },
       { en: "Kiama Blowhole", ko: "키아마 브로우홀", icon: "swim" },
       { en: "Dolphin & whale watching", ko: "돌고래 & 고래 관찰", icon: "whale" },
       { en: "Coastal villages & seafood", ko: "해안 마을 & 해산물", icon: "utensils" },
@@ -86,7 +86,7 @@ export const destinations: Destination[] = [
     region: "New South Wales",
     description: {
       en: "The Snowy Mountains in winter are pure magic — Perisher, Thredbo, and Mount Blue offer ski runs from beginner-friendly to advanced terrain. Australia's highest peak, Mount Kosciuszko (2,228m), is accessible by chairlift from Perisher and offers stunning views in any season. In summer the same slopes become hiking trails through alpine wildflowers.",
-      ko: "겨울의 스노이 마운틴은 순수한 매직입니다 — Perisher, Thredbo, Mount Blue滑走路는 초보자부터 고급 지형까지 다양한 스키장을 제공합니다. 호주 최고봉 마운트 코시우스코 (2,228m)는 페리셔에서 체어리프트로 방문할 수 있으며 사계절 스펙타클한 경관을 제공합니다. 여름에는 같은 슬로프가 고산 야생화를 배경으로 하는 트레킹 코스가 됩니다."
+      ko: "겨울의 스노이 마운틴은 순수한 매직입니다 — Perisher, Thredbo, Mount Blue슬로프는 초보자부터 고급 지형까지 다양한 스키장을 제공합니다. 호주 최고봉 마운트 코시우스코 (2,228m)는 페리셔에서 체어리프트로 방문할 수 있으며 사계절 황홀한 경관을 제공합니다. 여름에는 같은 슬로프가 고산 야생화를 배경으로 하는 트레킹 코스가 됩니다."
     },
     highlights: [
       { en: "Skiing & snowboarding at Perisher", ko: "페리셔 스키 & 스노보드", icon: "ski" },
@@ -107,7 +107,7 @@ export const destinations: Destination[] = [
     region: "Sydney, New South Wales",
     description: {
       en: "Sydney Harbour is arguably the most beautiful city harbour in the world. The Opera House and Harbour Bridge are best experienced from the water — and the best way to do that is on a ferry. The Manly Ferry crossing at sunset is pure magic. Beyond the icons: Barangaroo foreshore, the Barangaroo Boardwalk, and the Royal Botanic Garden are all free, accessible, and spectacular.",
-      ko: "시드니 하버는 아마도 세계에서 가장 아름다운 도시 항구일 것입니다. 오페라 하우스와 하버 브리지는 물 위에서 경험할 때 가장 좋습니다 — 그最佳的 방법은 페리이용입니다. 해질녘 매슬리 페리 이동은 순수한 매직입니다. 아이콘之外: 바라부가루 해안, 바라부가루 보드워크, 로열 보타닉 가든은 모두 무료로 접근 가능하고 스펙타클합니다."
+      ko: "시드니 하버는 아마도 세계에서 가장 아름다운 도시 항구일 것입니다. 오페라 하우스와 하버 브리지는 물 위에서 경험할 때 가장 좋습니다 — 그 최적의 방법은 페리입니다. 해질녘 매슬리 페리 이동은 순수한 매직입니다. 아이콘 외: 바라부가루 해안, 바라부가루 보드워크, 로열 보타닉 가든은 모두 무료로 접근 가능하고 황홀합니다."
     },
     highlights: [
       { en: "Ferry to Manly at sunset", ko: "일몰 매슬리 페리", icon: "swim" },
@@ -128,7 +128,7 @@ export const destinations: Destination[] = [
     region: "New South Wales",
     description: {
       en: "Less than an hour from Sydney by train, the Central Coast is where city slickers escape for beach days, bushwalks, and pub lunches by the water. Several beaches hold Ecotourism certification — protected, clean, and quietly spectacular. The Brisbane Water National Park has coastal trails with stunning views, and there are over 20 art galleries worth visiting.",
-      ko: "기차로 단 1시간 이하의 거리, 센트럴 코스트는 도시 거주자들이 해변 나들이, 숲 산책, 물가에서의 퍼브 점심을 즐기는 곳입니다. 여러 해변은 생태관광 인증을 가지고 있습니다 — 보호받고, 깨끗고, 조용히 스펙타클합니다. 브리즈베인 워터 내셔날 파크에는素晴らしい 경관의 해안 트레일이 있고, 방문할 만한 미술관이 20개 이상 있습니다."
+      ko: "기차로 단 1시간 이하의 거리, 센트럴 코스트는 도시 거주자들이 해변 나들이, 숲 산책, 물가에서의 퍼브 점심을 즐기는 곳입니다. 여러 해변은 생태관광 인증을 가지고 있습니다 — 보호받고, 깨끗고, 조용히 황홀합니다. 브리즈베인 워터 내셔날 파크에는환상적인 경관의 해안 트레일이 있고, 방문할 만한 미술관이 20개 이상 있습니다."
     },
     highlights: [
       { en: "Ecotourism beaches", ko: "생태관광 해변", icon: "beach" },
