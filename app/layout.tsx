@@ -5,7 +5,7 @@ import { LangProvider } from "@/components/LangBlocks";
 import { SearchProvider } from "@/components/SearchModal";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { geistSans } from "@/lib/fonts";
+import { geistSans, fraunces } from "@/lib/fonts";
 import PageTransition from "@/components/PageTransition";
 import { SearchModal } from "@/components/SearchModal";
 import ScrollAnimations from "@/components/ScrollAnimations";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "AussieMate — Your Australian Survival Guide",
   description: "A friendly guide to Aussie English, renting, working, studying, and settling in Australia.",
   icons: {
-    icon: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23e07830%22%3E%3Cpath%20d%3D%22M7%204c-1%200-2%201-2%203v4c0%202%202%204%205%205l2-2-2-2%204-3c0-3-2-5-5-5z%22/%3E%3Ccircle%20cx%3D%2215%22%20cy%3D%225%22%20r%3D%223%22/%3E%3Cellipse%20cx%3D%2216%22%20cy%3D%2216%22%20rx%3D%224%22%20ry%3D%225%22/%3E%3Cpath%20d%3D%22M14%2014l-2%203M18%2020l-2-3%22/%3E%3C/svg%3E",
+    icon: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23e07830%22%3E%3Cpath%20d%3D%22M7%204c-1%200-2%201-2%203v4c0%202%202%204%205%205l2-2-2-2%204-3c0-3-2-5-5-5z%22/%3E%3Ccircle%20cx%3D%2215%22%20cy%3D%225%22%20r%3D%223%22/%3E%3Cellipse%20cx%3D%2216%22%20cy%3D%2216%22%20rx%3D%224%22%20ry%3D%225%22/%3E%3Cpath%20d%3D%22M14%2014l-2%203M18%2020l-2-3%22/%3E%3C/svg%3E",
   },
 };
 
@@ -37,11 +37,11 @@ const themeInitScript = `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${fraunces.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className={`${geistSans.className} bg-cream dark:bg-darkbg text-eucalypt dark:text-dark-muted transition-colors duration-300`}>
+      <body className={`${geistSans.className} bg-stone-50 dark:bg-darkbg text-stone-800 dark:text-stone-200 antialiased`}>
         <ThemeProvider>
           <LangProvider>
             <SearchProvider>

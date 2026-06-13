@@ -8,263 +8,449 @@ import ArrivedContent from "@/components/personas/ArrivedContent";
 import HomeContent from "@/components/personas/HomeContent";
 import { SearchModal } from "@/components/SearchModal";
 import { useTheme } from "@/components/ThemeProvider";
+import { destinations } from "@/destinations/data";
 
 type StageKey = "visiting" | "arrived" | "home";
+type SeasonKey = "winter" | "spring" | "summer" | "autumn";
 
-const stages: { key: StageKey; title: string; koTitle: string; numBg: string; numColor: string }[] = [
-  { key: "visiting", title: "I'm visiting", koTitle: "여행 중이에요", numBg: "bg-teal-400", numColor: "text-teal-900" },
-  { key: "arrived", title: "I just got here", koTitle: "방금 도착했어요", numBg: "bg-emerald-400", numColor: "text-emerald-900" },
-  { key: "home", title: "I call this home", koTitle: "여기가 내 집이에요", numBg: "bg-sky-400", numColor: "text-sky-900" },
+const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string }[] = [
+  { 
+    key: "visiting", 
+    title: "I'm visiting", 
+    koTitle: "여행 중이에요", 
+    subtitle: "Holiday, working holiday, or just passing through",
+    koSubtitle: "휴가, 워홀, 또는 잠시 들른 경우",
+    img: "https://images.unsplash.com/photo-1523428096881-5bd79d043006?w=1200&q=80",
+  },
+  { 
+    key: "arrived", 
+    title: "I just got here", 
+    koTitle: "방금 도착했어요", 
+    subtitle: "First month sorted: bank, TFN, SIM, place to live",
+    koSubtitle: "첫 달 셋업: 은행, TFN, SIM,住处",
+    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
+  },
+  { 
+    key: "home", 
+    title: "I call this home", 
+    koTitle: "여기가 내 집이에요", 
+    subtitle: "Long-term Australian — work, lifestyle, finances",
+    koSubtitle: "장기 호주 거주 — 직장, 생활, 재무",
+    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
+  },
+];
+
+const thingsToDo: { icon: keyof typeof ICONS; title: string; koTitle: string; blurb: string; koBlurb: string; href: string; accent: string }[] = [
+  { icon: "beach", title: "Beaches", koTitle: "해변", blurb: "From Bondi to Hyams — find your stretch of sand.", koBlurb: "본다이에서 하임스까지 — 나만의 해변을 찾으세요.", href: "/destinations/south-coast", accent: "from-cyan-500 to-sky-600" },
+  { icon: "kangaroo", title: "Wildlife", koTitle: "야생동물", blurb: "Kangaroos at sunrise, whales from the coast.", koBlurb: "일출의 캥거루, 해안의 고래.", href: "/destinations/blue-mountains", accent: "from-emerald-500 to-teal-600" },
+  { icon: "wine", title: "Food & Wine", koTitle: "식음료", blurb: "Hunter Valley vintages, laneway brunches.", koBlurb: "헌터밸리 와인, 골목 브런치.", href: "/destinations/hunter-valley", accent: "from-rose-500 to-orange-500" },
+  { icon: "hiking", title: "Adventure", koTitle: "어드벤처", blurb: "Ski fields, mountain bikes, ocean swims.", koBlurb: "스키장, 산악자전거, 바다 수영.", href: "/destinations/snowy-mountains", accent: "from-sky-500 to-indigo-600" },
+  { icon: "museum", title: "Culture", koTitle: "문화", blurb: "Indigenous heritage, galleries, festivals.", koBlurb: "원주민 유산, 미술관, 축제.", href: "/resources", accent: "from-amber-500 to-yellow-600" },
+  { icon: "car", title: "Road Trips", koTitle: "로드트립", blurb: "Pacific Coast, Great Ocean Road, outback.", koBlurb: "태평양 해안, 그레이트오션로드, 아웃백.", href: "/destinations/south-coast", accent: "from-stone-500 to-stone-700" },
 ];
 
 const topics = [
-  { href: "/apartment", title: "Apartment", titleKo: "부동산", tagline: "Lease, bond, flatmates", taglineKo: "임대, 보증금, 쉐어하우스", color: "bg-teal-50", accent: "text-teal-600" },
-  { href: "/finance", title: "Finance", titleKo: "금융", tagline: "Bank, TFN, super — first week", taglineKo: "은행, 세금, 퇴직연금", color: "bg-emerald-50", accent: "text-emerald-600" },
-  { href: "/aussie-english", title: "Aussie English", titleKo: "호주 영어", tagline: "Arvo, ta, no worries — decoded", taglineKo: "호주 속어 해독", color: "bg-sky-50", accent: "text-sky-600" },
-  { href: "/sport", title: "Sport", titleKo: "스포츠", tagline: "NRL, AFL, cricket obsession", taglineKo: "호주 스포츠의 모든 것", color: "bg-orange-50", accent: "text-orange-600" },
-  { href: "/workplace", title: "Workplace", titleKo: "직장", tagline: "Award wages, your rights", taglineKo: "노동자 권리와 직장 문화", color: "bg-teal-50", accent: "text-teal-600" },
-  { href: "/weather", title: "Weather", titleKo: "날씨", tagline: "Seasons, UV, Aussie quirks", taglineKo: "계절, 자외선, 호주 날씨 특징", color: "bg-indigo-50", accent: "text-indigo-600" },
-  { href: "/transport", title: "Transport", titleKo: "교통", tagline: "Opal, trains, ferries, rideshare", taglineKo: "오팔, 기차, 버스, 페리", color: "bg-cyan-50", accent: "text-cyan-600" },
-  { href: "/tourist", title: "Tourist", titleKo: "여행자", tagline: "Sydney, coast, Blue Mountains", taglineKo: "시드니와 NSW 필수 명소", color: "bg-teal-50", accent: "text-teal-600" },
-  { href: "/destinations/blue-mountains", title: "Beyond Sydney", titleKo: "시드니 밖으로", tagline: "Weekend drives and road trips", taglineKo: "주말 드라이브와 여행", color: "bg-emerald-50", accent: "text-emerald-600" },
-  { href: "/resources", title: "Resources", titleKo: "자료", tagline: "Medicare, Centrelink, community", taglineKo: "Medicare, TFN, 커뮤니티", color: "bg-stone-50", accent: "text-stone-600" },
+  { href: "/apartment", title: "Apartment", titleKo: "부동산", tagline: "Lease, bond, flatmates", taglineKo: "임대, 보증금, 쉐어하우스" },
+  { href: "/finance", title: "Finance", titleKo: "금융", tagline: "Bank, TFN, super — first week", taglineKo: "은행, 세금, 퇴직연금" },
+  { href: "/aussie-english", title: "Aussie English", titleKo: "호주 영어", tagline: "Arvo, ta, no worries — decoded", taglineKo: "호주 속어 해독" },
+  { href: "/sport", title: "Sport", titleKo: "스포츠", tagline: "NRL, AFL, cricket obsession", taglineKo: "호주 스포츠의 모든 것" },
+  { href: "/workplace", title: "Workplace", titleKo: "직장", tagline: "Award wages, your rights", taglineKo: "노동자 권리와 직장 문화" },
+  { href: "/weather", title: "Weather", titleKo: "날씨", tagline: "Seasons, UV, Aussie quirks", taglineKo: "계절, 자외선, 호주 날씨 특징" },
+  { href: "/transport", title: "Transport", titleKo: "교통", tagline: "Opal, trains, ferries, rideshare", taglineKo: "오팔, 기차, 버스, 페리" },
+  { href: "/tourist", title: "Tourist", titleKo: "여행자", tagline: "Sydney, coast, Blue Mountains", taglineKo: "시드니와 NSW 필수 명소" },
+  { href: "/resources", title: "Resources", titleKo: "자료", tagline: "Medicare, Centrelink, community", taglineKo: "Medicare, TFN, 커뮤니티" },
 ];
 
-const destinations = [
-  { name: { en: "Blue Mountains", ko: "블루마운틴" }, tagline: { en: "A World Heritage site with fabulous views", ko: "유네스코 세계유산, 숨멊이는 절경" }, img: "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=800&q=80", href: "/destinations/blue-mountains", accent: "bg-emerald-500" },
-  { name: { en: "Hunter Valley", ko: "헌터 밸리" }, tagline: { en: "World-class wines & gourmet getaways", ko: "세계적 와인과 미식 여행지" }, img: "https://images.pexels.com/photos/442116/pexels-photo-442116.jpeg?auto=compress&cs=tinysrgb&w=800&q=80", href: "/destinations/hunter-valley", accent: "bg-rose-500" },
-  { name: { en: "South Coast", ko: "사우스 코스트" }, tagline: { en: "Brilliant beaches & pretty coastal towns", ko: "수려한 해변과 아담한 해안 마을" }, img: "https://images.unsplash.com/1507525428034-b723cf961d3e?w=800&q=80", href: "/destinations/south-coast", accent: "bg-sky-500" },
-  { name: { en: "Snowy Mountains", ko: "스노이 마운틴" }, tagline: { en: "Snow adventures & Australia's highest peak", ko: "스노보드, 스키와 호주 최고봉" }, img: "https://images.unsplash.com/1551698618-1dfe5d97d256?w=800&q=80", href: "/destinations/snowy-mountains", accent: "bg-sky-600" },
-  { name: { en: "Sydney Harbour", ko: "시드니 하버" }, tagline: { en: "Icons, ferries & that glorious harbour", ko: "시드니 아이콘과 하버의 스플렌더" }, img: "https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?w=800&q=80", href: "/destinations/sydney-harbour", accent: "bg-amber-500" },
-  { name: { en: "Central Coast", ko: "센트럴 코스트" }, tagline: { en: "Eco-certified beaches & outdoor adventures", ko: "생태인증 해변과 아웃도어 어드벤처" }, img: "https://images.pexels.com/photos/6256449/pexels-photo-6256449.jpeg?auto=compress&cs=tinysrgb&w=800&q=80", href: "/destinations/central-coast", accent: "bg-teal-500" },
-];
-
-type SeasonKey = "winter" | "spring" | "summer" | "autumn";
 const seasonOrder: SeasonKey[] = ["winter", "spring", "summer", "autumn"];
-const seasonColors: Record<SeasonKey, { bg: string; text: string; border: string }> = {
-  winter: { bg: "bg-sky-400", text: "text-sky-900", border: "border-t-sky-400" },
-  spring: { bg: "bg-emerald-400", text: "text-emerald-900", border: "border-t-emerald-400" },
-  summer: { bg: "bg-amber-400", text: "text-amber-900", border: "border-t-amber-400" },
-  autumn: { bg: "bg-orange-400", text: "text-orange-900", border: "border-t-orange-400" },
+const seasonAccent: Record<SeasonKey, { bg: string; text: string; img: string }> = {
+  winter: { bg: "bg-sky-100 dark:bg-sky-950/50", text: "text-sky-900 dark:text-sky-200", img: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&q=80" },
+  spring: { bg: "bg-emerald-100 dark:bg-emerald-950/50", text: "text-emerald-900 dark:text-emerald-200", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80" },
+  summer: { bg: "bg-amber-100 dark:bg-amber-950/50", text: "text-amber-900 dark:text-amber-200", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" },
+  autumn: { bg: "bg-orange-100 dark:bg-orange-950/50", text: "text-orange-900 dark:text-orange-200", img: "https://images.unsplash.com/photo-1507371341162-763b5e419408?w=800&q=80" },
 };
-
-const seasons: { key: SeasonKey; title: { en: string; ko: string }; icon: string; months: string }[] = [
-  { key: "winter", title: { en: "Winter", ko: "겨울" }, icon: "snowflake", months: "Jun · Jul · Aug" },
-  { key: "spring", title: { en: "Spring", ko: "봄" }, icon: "flower", months: "Sep · Oct · Nov" },
-  { key: "summer", title: { en: "Summer", ko: "여름" }, icon: "sun", months: "Dec · Jan · Feb" },
-  { key: "autumn", title: { en: "Autumn", ko: "가을" }, icon: "leaf", months: "Mar · Apr · May" },
+const seasons: { key: SeasonKey; title: { en: string; ko: string }; months: string; blurb: { en: string; ko: string } }[] = [
+  { key: "winter", title: { en: "Winter", ko: "겨울" }, months: "Jun · Jul · Aug", blurb: { en: "Ski season, cosy pubs, whale watching starts.", ko: "스키시즌, 아늑한 퍼브, 고래관찰 시작." } },
+  { key: "spring", title: { en: "Spring", ko: "봄" }, months: "Sep · Oct · Nov", blurb: { en: "Wildflowers, baby animals, perfect hiking weather.", ko: "야생화, 새끼동물, 최적의 트레킹 날씨." } },
+  { key: "summer", title: { en: "Summer", ko: "여름" }, months: "Dec · Jan · Feb", blurb: { en: "Beach every weekend, sunset ferries, festivals.", ko: "매주 해변, 일몰 페리, 축제." } },
+  { key: "autumn", title: { en: "Autumn", ko: "가을" }, months: "Mar · Apr · May", blurb: { en: "Gold and red mountains, wine harvest, mild days.", ko: "금빛과 적빛 산, 와인 수확, 온화한 날." } },
 ];
-
-const seasonContent: Record<SeasonKey, { en: string; ko: string; activities: { en: string; ko: string; icon: string }[] }> = {
-  winter: { en: "Cold nights, mild days. Perfect for indoor pleasures — winery dinners, museum visits, and cosy pub meals. Up in the Snowy Mountains, it's ski season.", ko: "찬 밤, 온화한 낮. 실내에서 즐기는 활동에 최적 — 와이너리 디너, 박물관 방문, 아늑한 퍼브 식사. 스노이 마운틴에서는 스키 시즌.", activities: [{ en: "Skiing at Perisher", ko: "Perisher 스키", icon: "ski" }, { en: "Winery dinners", ko: "와이너리 디너", icon: "wine" }, { en: "Cosy pub meals", ko: "아늑한 퍼브", icon: "ribs" }, { en: "Museum hopping", ko: "박물관 투어", icon: "museum" }] },
-  spring: { en: "Wildflowers bloom, baby animals appear, warmth returns. The best time to visit the outback. Windy in some areas — check the forecast.", ko: "야생화 피고, 새끼 동물들이 나타나고, 따뜻함이 돌아옵니다. 아웃백 방문 최적기. 일부 지역엔 바람 — 예보 확인하세요.", activities: [{ en: "Wildflower drives", ko: "야생화 드라이브", icon: "wheat" }, { en: "Coastal walks", ko: "해안 산책", icon: "hiking" }, { en: "Blue Mountains day trip", ko: "블루마운틴 당일치기", icon: "mountain" }, { en: "Pick your own fruit", ko: "과일 따기", icon: "strawberry" }] },
-  summer: { en: "Hot, humid, beach season. Christmas at the beach is completely normal. Afternoon thunderstorms are common — they pass quickly. Sun protection is essential every day.", ko: "덥고 습한 해변 시즌. 해변에서 크리스마스는 완전히 정상. 오후 뇌우는 흔함 — 빠르게 지나감. 자외선 차단은 매일 필수.", activities: [{ en: "Beach every weekend", ko: "매주 해변", icon: "beach" }, { en: "Harbour swimming", ko: "하버 수영", icon: "swim" }, { en: "Outdoor festivals", ko: "야외 축제", icon: "music" }, { en: "Road trips", ko: "로드트리", icon: "car" }] },
-  autumn: { en: "Mild and pleasant. Prime walking weather. The Blue Mountains turn gold and red. Easter brings extra crowds — plan ahead for long weekends.", ko: "온화하고 쾌적. 산책 최적기. 블루마운틴이 금빛과 적금빛으로. 부활절에는 인파 증가 — 긴 연휴는 미리 계획.", activities: [{ en: "Blue Mountains walks", ko: "블루마운틴 트레킹", icon: "hiking" }, { en: "Hunter Valley wine tours", ko: "헌터 밸리 와인 투어", icon: "wine" }, { en: "Food & wine festivals", ko: "푸드 & 와인 축제", icon: "utensils" }, { en: "Whale watching", ko: "고래 관찰", icon: "whale" }] },
-};
 
 export default function HomePage() {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
   const [active, setActive] = useState<StageKey>("visiting");
   const [season, setSeason] = useState<SeasonKey>("summer");
   const activeIdx = stages.findIndex((s) => s.key === active);
-  const seasonData = seasonContent[season];
-  const seasonStyle = seasonColors[season];
 
-  // Dynamic theme colors — teal (light/coastal) or amber (dark/Bondi)
-  const primary = isDark ? "amber" : "teal";
-  const stageBg = isDark ? "bg-amber-500" : "bg-teal-500";
-  const stageInactive = isDark ? "bg-amber-600 text-amber-200 hover:bg-amber-500" : "bg-teal-600 text-teal-200 hover:bg-teal-500";
-  const heroLabel = isDark ? "text-amber-400" : "text-teal-400";
-  const destLabel = isDark ? "text-amber-400" : "text-teal-400";
-  const viewAllLink = isDark ? "text-amber-600 hover:text-amber-500" : "text-teal-600 hover:text-teal-500";
-  const cardLeftBorder = isDark ? "border-t-amber-400" : "border-t-teal-400";
-  const topicBg = isDark ? "bg-amber-50" : "bg-teal-50";
-  const topicAccent = isDark ? "text-amber-600" : "text-teal-600";
-  const visitingBadge = isDark ? "bg-amber-400" : "bg-teal-400";
-  const visitingColor = isDark ? "text-amber-900" : "text-teal-900";
-  const centralCoastAccent = isDark ? "bg-amber-500" : "bg-teal-500";
-
-  // Map topics with dynamic theme colors
-  const themedTopics = topics.map((t) => {
-    if (["/apartment", "/workplace", "/tourist"].includes(t.href)) {
-      return { ...t, color: topicBg, accent: topicAccent };
-    }
-    return t;
-  });
-
-  // Map destinations with dynamic central coast accent
-  const themedDestinations = destinations.map((d, i) => {
-    if (i === 5) return { ...d, accent: centralCoastAccent };
-    return d;
-  });
-
-  // Map stages with dynamic visiting badge
-  const themedStages = stages.map((s) => {
-    if (s.key === "visiting") return { ...s, numBg: visitingBadge, numColor: visitingColor };
-    return s;
-  });
+  // Editorial palette
+  const heroImg = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=2400&q=85"; // Sydney Opera House at dusk
+  const featured = destinations[4]; // Sydney Harbour
+  const remainingDestinations = destinations.filter((d) => d.slug !== featured.slug);
 
   return (
-    <>
-      <div className="bg-stone-100 min-h-screen">
-        {/* Full-bleed hero */}
-        <div className="relative min-h-[520px] overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=1800&q=85"
-            alt="Great Ocean Road, Victoria"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/70 to-stone-900/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-transparent to-transparent" />
-          <div className="relative max-w-5xl mx-auto px-4 pt-10 pb-12">
-            <div className="mb-6">
-              <p className={`text-[10px] font-black uppercase tracking-[0.4em] ${heroLabel} mb-4`}>
-                <En>AussieMate · Bilingual · AU/KO</En>
-                <Ko>호주 메이트 · 바이링구얼 · 호주 한인</Ko>
-              </p>
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-none mb-3 drop-shadow-lg">
-                <En>G&apos;day.<br/>Welcome<br/>home <span className="inline-block w-7 h-7 align-middle" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} /></En>
-                <Ko>호주에<br/>오신 것을<br/>환영합니다</Ko>
-              </h1>
-              <p className="text-stone-300 text-sm font-medium max-w-sm">
-                <En>Your bilingual guide to Aussie life — landing, working, living.</En>
-                <Ko>호주 생활의 바이링구얼 동반자.</Ko>
-              </p>
-            </div>
+    <div className="bg-stone-50 dark:bg-darkbg">
+      {/* ============================ HERO ============================ */}
+      <section className="relative h-[100svh] min-h-[680px] max-h-[1000px] overflow-hidden">
+        <img
+          src={heroImg}
+          alt="Sydney Opera House at dusk"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70" />
+        <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
+          <p className="text-[11px] md:text-xs font-medium uppercase tracking-[0.35em] text-white/85 mb-6">
+            <En>AussieMate · Bilingual · AU/KO</En>
+            <Ko>호주 메이트 · 호주 한인을 위한</Ko>
+          </p>
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-7 max-w-5xl">
+            <span className="block">
+              <En>Discover Australia</En>
+              <Ko>호주를 발견하다</Ko>
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed font-light">
+            <En>Your bilingual guide to the most beautiful places, the best experiences, and the smartest way to travel Down Under.</En>
+            <Ko>호주의 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드립니다.</Ko>
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              href="/destinations"
+              className="group inline-flex items-center justify-center gap-2 bg-sunset hover:bg-sunset-light text-white px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full shadow-lg shadow-sunset/30 hover:shadow-xl hover:shadow-sunset/40"
+            >
+              <En>Explore Destinations</En>
+              <Ko>여행지 둘러보기</Ko>
+              <span className="transition-transform group-hover:translate-x-0.5">→</span>
+            </Link>
+            <Link
+              href="/tourist"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full"
+            >
+              <En>Plan Your Trip</En>
+              <Ko>여행 계획 세우기</Ko>
+            </Link>
           </div>
         </div>
+        {/* Scroll cue */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60">
+          <span className="text-[10px] uppercase tracking-[0.3em]">
+            <En>Scroll</En>
+            <Ko>스크롤</Ko>
+          </span>
+          <div className="w-px h-10 bg-white/30 animate-pulse" />
+        </div>
+      </section>
 
-        {/* Stage selector */}
-        <div className={`${stageBg} border-b-4 border-black`}>
-          <div className="max-w-5xl mx-auto px-4 pb-6">
-            <div className="grid grid-cols-3 gap-2 sm:gap-3">
-              {themedStages.map((s, i) => {
-                const isActive = active === s.key;
-                return (
-                  <button
-                    key={s.key}
-                    onClick={() => setActive(s.key)}
-                    className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-4 border-4 border-black font-black text-[10px] sm:text-sm transition-all ${isActive ? `${s.numBg} shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -translate-y-1` : `${stageInactive} shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]`}`}
-                  >
-                    <div className={`${s.numBg} ${s.numColor} font-mono text-[10px] sm:text-xs font-black w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center shrink-0`}>
-                      {i + 1}
-                    </div>
-                    <span><En>{s.title}</En><Ko>{s.koTitle}</Ko></span>
-                  </button>
-                );
-              })}
-            </div>
+      {/* ============================ PERSONA SELECTOR ============================ */}
+      <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <div className="text-center mb-8">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+              <En>Where are you in the journey?</En>
+              <Ko>여정의 어디에 있나요?</Ko>
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100">
+              <En>Choose your stage</En>
+              <Ko>단계별 가이드</Ko>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {stages.map((s, i) => {
+              const isActive = active === s.key;
+              return (
+                <button
+                  key={s.key}
+                  onClick={() => setActive(s.key)}
+                  className={`group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 ${
+                    isActive
+                      ? "bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 border-stone-900 dark:border-stone-100 shadow-2xl scale-[1.02]"
+                      : "bg-stone-50 dark:bg-darkbg border-stone-200 dark:border-dark-border hover:border-stone-400 dark:hover:border-stone-600"
+                  }`}
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <span className={`font-mono text-xs ${isActive ? "opacity-50" : "text-stone-400"}`}>
+                      0{i + 1}
+                    </span>
+                    <span className={`w-2 h-2 rounded-full ${isActive ? "bg-sunset" : "bg-stone-300 dark:bg-stone-700"}`} />
+                  </div>
+                  <h3 className="font-serif text-2xl mb-1.5">
+                    <En>{s.title}</En>
+                    <Ko>{s.koTitle}</Ko>
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isActive ? "opacity-80" : "text-stone-500 dark:text-stone-400"}`}>
+                    <En>{s.subtitle}</En>
+                    <Ko>{s.koSubtitle}</Ko>
+                  </p>
+                </button>
+              );
+            })}
           </div>
         </div>
+      </section>
 
-        {/* Content */}
-        <div className="max-w-5xl mx-auto px-4 py-8">
-          <div className={`bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 md:p-8 mb-8 border-t-8 ${["border-t-teal-400", "border-t-emerald-400", "border-t-sky-400"][activeIdx]}`}>
+      {/* ============================ PERSONA CONTENT ============================ */}
+      <section className="bg-stone-50 dark:bg-darkbg">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <div className="bg-white dark:bg-dark-surface rounded-3xl shadow-xl shadow-stone-900/5 dark:shadow-black/30 p-6 md:p-10 border border-stone-100 dark:border-dark-border">
             {active === "visiting" && <VisitingContent />}
             {active === "arrived" && <ArrivedContent />}
             {active === "home" && <HomeContent />}
           </div>
         </div>
+      </section>
 
-        {/* Places to go */}
-        <div className="max-w-5xl mx-auto px-4 pb-8">
-          <div className="flex items-end justify-between mb-4">
+      {/* ============================ FEATURED DESTINATION ============================ */}
+      <section className="bg-white dark:bg-dark-surface border-y border-stone-200 dark:border-dark-border">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="flex items-end justify-between mb-8">
             <div>
-              <p className={`text-[10px] font-black uppercase tracking-widest ${destLabel} mb-1`}>
-                <En>Destinations</En>
-                <Ko>주요 여행지</Ko>
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+                <En>Featured this week</En>
+                <Ko>이번 주 추천</Ko>
               </p>
-              <h2 className="text-2xl font-black text-stone-900">
-                <En>Places to go</En>
-                <Ko>가볼 만한 곳</Ko>
+              <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
+                <En>The harbour of harbours</En>
+                <Ko>세계에서 가장 아름다운 항구</Ko>
               </h2>
             </div>
-            <Link href="/beyond-sydney" className={`text-xs font-bold ${viewAllLink} transition-colors flex items-center gap-1`}>
+          </div>
+          <Link
+            href={`/destinations/${featured.slug}`}
+            className="group block relative overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9]"
+          >
+            <img
+              src={featured.heroImg}
+              alt={featured.name.en}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-3">
+                {featured.region}
+              </p>
+              <h3 className="font-serif text-4xl md:text-6xl mb-3 leading-none">
+                <En>{featured.name.en}</En>
+                <Ko>{featured.name.ko}</Ko>
+              </h3>
+              <p className="text-white/80 text-base md:text-lg max-w-2xl leading-relaxed mb-5">
+                <En>{featured.tagline.en}</En>
+                <Ko>{featured.tagline.ko}</Ko>
+              </p>
+              <span className="inline-flex items-center gap-2 text-sm font-medium border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">
+                <En>Read the guide</En>
+                <Ko>가이드 읽기</Ko>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* ============================ MORE DESTINATIONS ============================ */}
+      <section className="bg-stone-50 dark:bg-darkbg">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+                <En>Destinations</En>
+                <Ko>여행지</Ko>
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
+                <En>Where to go next</En>
+                <Ko>다음 여행지는?</Ko>
+              </h2>
+            </div>
+            <Link
+              href="/destinations"
+              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+            >
               <En>View all</En>
               <Ko>전체 보기</Ko>
               <span>→</span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3">
-            {themedDestinations.map((d) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {remainingDestinations.map((d) => (
               <Link
-                key={d.name.en}
-                href={d.href}
-                className="group relative overflow-hidden border-4 border-black block aspect-[4/3] hover:-translate-y-0.5 transition-all"
+                key={d.slug}
+                href={`/destinations/${d.slug}`}
+                className="group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 dark:bg-stone-800"
               >
-                <img src={d.img} alt={d.name.en} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <div className={`absolute top-3 right-3 w-3 h-3 ${d.accent} border-2 border-white rounded-full`} />
-                  <h3 className="font-black text-white text-sm leading-tight"><En>{d.name.en}</En><Ko>{d.name.ko}</Ko></h3>
-                  <p className="text-white/70 text-[10px] font-medium leading-tight mt-0.5"><En>{d.tagline.en}</En><Ko>{d.tagline.ko}</Ko></p>
+                <img
+                  src={d.cardImg}
+                  alt={d.name.en}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-white/80" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-white/60 mb-1.5">
+                    {d.region}
+                  </p>
+                  <h3 className="font-serif text-2xl mb-1 leading-tight">
+                    <En>{d.name.en}</En>
+                    <Ko>{d.name.ko}</Ko>
+                  </h3>
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    <En>{d.tagline.en}</En>
+                    <Ko>{d.tagline.ko}</Ko>
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center md:hidden">
+            <Link
+              href="/destinations"
+              className="inline-flex items-center gap-1 text-sm font-medium text-sunset"
+            >
+              <En>View all destinations</En>
+              <Ko>전체 여행지 보기</Ko>
+              <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================ THINGS TO DO ============================ */}
+      <section className="bg-stone-900 dark:bg-black text-white">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="text-center mb-12">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-light mb-2">
+              <En>What to do</En>
+              <Ko>즐길 거리</Ko>
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl mb-4">
+              <En>Make memories, not itineraries</En>
+              <Ko>일정표가 아닌 추억을</Ko>
+            </h2>
+            <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
+              <En>Six ways to fall in love with Australia. Pick what calls to you.</En>
+              <Ko>호주에 빠지는 여섯 가지 방법. 마음이 끌리는 것을 선택하세요.</Ko>
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {thingsToDo.map((t) => (
+              <Link
+                key={t.title}
+                href={t.href}
+                className="group relative overflow-hidden rounded-2xl p-6 md:p-7 min-h-[200px] flex flex-col justify-between bg-gradient-to-br hover:scale-[1.02] transition-transform duration-300"
+                style={{ background: undefined }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-90 group-hover:opacity-100 transition-opacity`} />
+                <div className="relative">
+                  <span className="w-7 h-7 block mb-4 text-white" dangerouslySetInnerHTML={{ __html: ICONS[t.icon] }} />
+                  <h3 className="font-serif text-2xl mb-2 text-white">
+                    <En>{t.title}</En>
+                    <Ko>{t.koTitle}</Ko>
+                  </h3>
+                  <p className="text-white/85 text-sm leading-relaxed">
+                    <En>{t.blurb}</En>
+                    <Ko>{t.koBlurb}</Ko>
+                  </p>
+                </div>
+                <div className="relative mt-4 text-white/80 text-xs font-medium uppercase tracking-widest group-hover:text-white transition-colors">
+                  <En>Explore</En>
+                  <Ko>둘러보기</Ko>
+                  <span className="ml-2 transition-transform group-hover:translate-x-1 inline-block">→</span>
                 </div>
               </Link>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Choose your season */}
-        <div className="max-w-5xl mx-auto px-4 pb-8">
-          <div className="bg-white border-4 border-black">
-            <div className="border-b-4 border-black px-5 pt-5 pb-4">
-              <p className="text-[10px] font-black uppercase tracking-widest text-stone-500 mb-1"><En>Plan your trip</En><Ko>여행 계획</Ko></p>
-              <h2 className="text-2xl font-black text-stone-900"><En>Choose your season</En><Ko>계절별 추천</Ko></h2>
-            </div>
-            <div className="flex border-b-4 border-black">
-              {seasons.map((s) => {
-                const isActive = season === s.key;
-                const style = seasonColors[s.key];
-                return (
-                  <button
-                    key={s.key}
-                    onClick={() => setSeason(s.key)}
-                    className={`flex-1 flex flex-col items-center py-3 px-2 border-r-4 border-black last:border-r-0 font-black text-xs transition-all ${isActive ? `${style.bg} ${style.text}` : "bg-stone-100 text-stone-500 hover:bg-stone-200 hover:text-stone-700"}`}
-                  >
-                    <span className="text-lg mb-0.5" dangerouslySetInnerHTML={{ __html: ICONS[s.icon] }} />
-                    <span><En>{s.title.en}</En><Ko>{s.title.ko}</Ko></span>
-                    <span className="text-[9px] font-mono opacity-50">{s.months}</span>
-                  </button>
-                );
-              })}
-            </div>
-            <div className="p-5">
-              <div className={`border-l-4 ${seasonStyle.border} pl-4 mb-4`}>
-                <p className="text-sm text-stone-600 leading-relaxed"><En>{seasonData.en}</En><Ko>{seasonData.ko}</Ko></p>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-                {seasonData.activities.map((a) => (
-                  <div key={a.en} className={`${seasonStyle.bg} border-4 border-black p-2 sm:p-3 flex flex-col items-center text-center gap-1`}>
-                    <span className="w-4 h-4 sm:w-5 sm:h-5" dangerouslySetInnerHTML={{ __html: ICONS[a.icon] }} />
-                    <span className={`font-black text-[9px] sm:text-xs leading-tight ${seasonStyle.text}`}><En>{a.en}</En><Ko>{a.ko}</Ko></span>
+      {/* ============================ SEASONS ============================ */}
+      <section className="bg-white dark:bg-dark-surface border-y border-stone-200 dark:border-dark-border">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="text-center mb-10">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+              <En>Plan around the year</En>
+              <Ko>연중 계획</Ko>
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
+              <En>When to come</En>
+              <Ko>언제 방문할까</Ko>
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            {seasonOrder.map((key) => {
+              const s = seasons.find((x) => x.key === key)!;
+              const a = seasonAccent[key];
+              const isActive = season === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => setSeason(key)}
+                  className={`group text-left rounded-2xl overflow-hidden transition-all duration-300 ${
+                    isActive ? "shadow-2xl scale-[1.02] ring-2 ring-sunset" : "shadow-md hover:shadow-xl"
+                  }`}
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={a.img}
+                      alt={s.title.en}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    <div className="absolute top-3 left-3 text-[9px] font-mono uppercase tracking-widest text-white/80 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full">
+                      {s.months}
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                  <div className={`${a.bg} ${a.text} p-4 md:p-5`}>
+                    <h3 className="font-serif text-xl md:text-2xl mb-1">
+                      <En>{s.title.en}</En>
+                      <Ko>{s.title.ko}</Ko>
+                    </h3>
+                    <p className="text-xs md:text-sm leading-relaxed opacity-80">
+                      <En>{s.blurb.en}</En>
+                      <Ko>{s.blurb.ko}</Ko>
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
+      </section>
 
-        {/* Topic grid */}
-        <div className="max-w-5xl mx-auto px-4 pb-12">
+      {/* ============================ TOPICS ============================ */}
+      <section className="bg-stone-50 dark:bg-darkbg">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="text-center mb-10">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+              <En>All guides</En>
+              <Ko>전체 가이드</Ko>
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
+              <En>Everything you need</En>
+              <Ko>필요한 모든 것</Ko>
+            </h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {themedTopics.map((t) => (
+            {topics.map((t) => (
               <Link
                 key={t.href}
                 href={t.href}
-                className={`group block ${t.color} border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all`}
+                className="group flex items-center justify-between bg-white dark:bg-dark-surface hover:bg-sunset hover:text-white p-5 rounded-2xl border border-stone-200 dark:border-dark-border transition-all duration-300 hover:border-sunset hover:shadow-xl"
               >
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className={`font-black text-lg ${t.accent}`}><En>{t.title}</En><Ko>{t.titleKo}</Ko></h3>
-                  <svg className="w-4 h-4 text-black/30 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 12h14M12 5l7 7-7 7" /></svg>
+                <div>
+                  <h3 className="font-serif text-xl text-stone-900 dark:text-stone-100 group-hover:text-white transition-colors">
+                    <En>{t.title}</En>
+                    <Ko>{t.titleKo}</Ko>
+                  </h3>
+                  <p className="text-xs text-stone-500 dark:text-stone-400 group-hover:text-white/80 mt-1 transition-colors">
+                    <En>{t.tagline}</En>
+                    <Ko>{t.taglineKo}</Ko>
+                  </p>
                 </div>
-                <p className={`text-sm font-medium ${t.accent} opacity-70`}><En>{t.tagline}</En><Ko>{t.taglineKo}</Ko></p>
+                <span className="w-8 h-8 rounded-full bg-stone-100 dark:bg-darkbg group-hover:bg-white/20 flex items-center justify-center transition-colors shrink-0 ml-3">
+                  <span className="text-stone-400 group-hover:text-white transition-all group-hover:translate-x-0.5">→</span>
+                </span>
               </Link>
             ))}
           </div>
         </div>
-      </div>
+      </section>
+
       <SearchModal />
-    </>
+    </div>
   );
 }
