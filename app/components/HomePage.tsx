@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
+import { Book } from "@/components/Icons";
 import { ICONS } from "@/destinations/icons";
 import VisitingContent from "./personas/VisitingContent";
 import ArrivedContent from "./personas/ArrivedContent";
@@ -262,7 +263,7 @@ export default function HomePage() {
       <section className="border-t border-eucalypt/10 dark:border-dark-border glass-section py-6 px-4">
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm text-eucalypt/70 dark:text-dark-muted/70">
           <div className="flex items-center gap-1.5">
-            <span aria-hidden>📚</span>
+            <Book className="inline w-4 h-4" />
             <En><strong className="text-eucalypt dark:text-white font-bold">10</strong> guides</En>
             <Ko><strong className="text-eucalypt dark:text-white font-bold">10</strong>개의 가이드</Ko>
           </div>

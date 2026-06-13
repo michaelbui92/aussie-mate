@@ -6,7 +6,7 @@
 
 import { useState, ReactNode, ComponentType } from "react";
 import { Icons } from "./Icons";
-import { Car } from "@/components/Icons";
+import { Car, MapPin } from "@/components/Icons";
 import { En, Ko } from "./LangBlocks";
 
 export interface BeyondSydneyDestination {
@@ -127,7 +127,7 @@ export default function FilteredAccordion({
                     </span>
                   </div>
                   <p className="text-xs text-eucalypt/50 dark:text-dark-muted/50">
-                    📍 <En>{dest.distance}</En>
+                    <MapPin className="inline w-3 h-3" /> <En>{dest.distance}</En>
                     <Ko>{dest.distance}</Ko>
                   </p>
                 </div>

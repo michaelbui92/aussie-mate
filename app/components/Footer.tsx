@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ICONS } from "@/destinations/icons";
+import { AlertTriangle } from "@/components/Icons";
 
 export default function Footer() {
   return (
@@ -15,7 +16,7 @@ export default function Footer() {
           </p>
           {/* AI Disclaimer */}
           <div className="bg-sunset/5 border border-sunset/20 rounded-xl px-4 py-3 text-xs text-eucalypt/60 dark:text-dark-muted/60 max-w-md mx-auto">
-            <p className="font-semibold text-sunset mb-1">⚠️ Disclaimer</p>
+            <p className="font-semibold text-sunset mb-1"><AlertTriangle className="inline w-4 h-4 mr-1" /> Disclaimer</p>
             <p>Information on this site is AI-generated and may not always be accurate or up to date. Always verify with official government sources.</p>
           </div>
         </div>

@@ -2,12 +2,12 @@
 // All interactivity is via <En>/<Ko> (client islands from LangBlocks).
 
 import {
-  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit,
+  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit, Home,
 } from "@/components/Icons";
 import { En, Ko } from "@/components/LangBlocks";
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit,
+  Search, Clipboard, Scale, BuildingSkyscraper, Flag, Coin, Edit, Home,
 };
 
 const sections = [
@@ -132,8 +132,8 @@ export default function ApartmentPage() {
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En>Apartment Guide 🏠</En>
-            <Ko>임대 가이드 🏠</Ko>
+            <En><Home className="inline w-4 h-4" /> Apartment Guide </En>
+            <Ko><Home className="inline w-4 h-4" /> 임대 가이드 </Ko>
           </h1>
           <p className="text-eucalypt/60 dark:text-dark-muted/60">
             <En>Renting in NSW — your rights, your money, your home</En>

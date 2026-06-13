@@ -1,5 +1,5 @@
 import { En, Ko } from "@/components/LangBlocks";
-import { Car, Book } from "@/components/Icons";
+import { Car, Book, MapPin } from "@/components/Icons";
 
 export const metadata = {
   title: "About — AussieMate",
@@ -28,7 +28,7 @@ export default function AboutPage() {
         {/* What it is */}
         <section className="bg-white dark:bg-dark-card border border-sand dark:border-dark-border rounded-2xl p-6">
           <div className="flex items-start gap-3 mb-4">
-            <span className="text-2xl">📍</span>
+            <span className="text-2xl"><MapPin className="w-5 h-5" /></span>
             <div>
               <h2 className="font-bold text-base text-eucalypt dark:text-white mb-1">
                 <En>What AussieMate is</En>

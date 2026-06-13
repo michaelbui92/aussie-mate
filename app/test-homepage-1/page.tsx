@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
+import { ICONS } from "@/destinations/icons";
 import VisitingContent from "@/components/personas/VisitingContent";
 import ArrivedContent from "@/components/personas/ArrivedContent";
 import HomeContent from "@/components/personas/HomeContent";
@@ -182,7 +183,7 @@ export default function TestHomepage1() {
                 <Ko>호주 메이트 · 바이링구얼 · 호주 한인</Ko>
               </p>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-none mb-3 drop-shadow-lg">
-                <En>G&apos;day.<br/>Welcome<br/>home 🦘</En>
+                <En>G&apos;day.<br/>Welcome<br/>home <span className="inline-block w-7 h-7 align-middle" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} /></En>
                 <Ko>호주에<br/>오신 것을<br/>환영합니다</Ko>
               </h1>
               <p className="text-stone-300 text-sm font-medium max-w-sm">
