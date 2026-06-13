@@ -1,29 +1,37 @@
 "use client";
 import Link from "next/link";
 import { useLang } from "@/components/LangBlocks";
-import { ICONS } from "@/destinations/icons";
+import { FLAG_AU_SVG } from "@/components/FlagAU";
 
 export default function NotFound() {
   const { lang } = useLang();
   const isKo = lang === "ko";
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
-      <div className="text-8xl mb-4" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} />
-      <h1 className="text-4xl font-bold text-eucalypt dark:text-white mb-2">
-        {isKo ? "페이지를 찾을 수 없습니다" : "Page Not Found"}
+    <main className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center bg-stone-50 dark:bg-darkbg">
+      <div className="w-24 h-12 rounded overflow-hidden shadow-lg ring-1 ring-stone-200/60 dark:ring-dark-border mb-6">
+        <span
+          className="block w-full h-full"
+          dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }}
+        />
+      </div>
+      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        404
+      </p>
+      <h1 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
+        {isKo ? "페이지를 찾을 수 없습니다" : "Page not found"}
       </h1>
-      <p className="text-base text-eucalypt/60 dark:text-dark-muted/60 mb-8 max-w-md">
+      <p className="text-stone-500 dark:text-stone-400 max-w-md mb-8">
         {isKo
           ? "죄송합니다. 찾으시는 페이지가 존재하지 않거나 이동되었습니다."
           : "Sorry, the page you're looking for doesn't exist or has been moved."}
       </p>
       <Link
         href="/"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sunset text-white font-semibold hover:bg-sunset-light transition-colors"
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sunset text-white text-sm font-medium hover:bg-sunset-light transition-colors shadow-md hover:shadow-lg"
       >
-        <span className="w-5 h-5" dangerouslySetInnerHTML={{ __html: ICONS.home }} />
-        {isKo ? "홈으로 가기" : "Go Home"}
+        {isKo ? "홈으로 가기" : "Go home"}
+        <span>→</span>
       </Link>
     </main>
   );

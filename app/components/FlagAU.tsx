@@ -1,0 +1,16 @@
+// Shared Australian flag SVG. Used inline in Nav, Footer, not-found, etc.
+// viewBox is 60x30 (2:1 aspect ratio like the real flag).
+// Sized by the parent — w-* h-* classes on the wrapper control display size.
+
+export const FLAG_AU_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" role="img" aria-label="Flag of Australia"><rect width="60" height="30" fill="#00008B"/><rect width="30" height="15" fill="#012169"/><rect x="0" y="5.5" width="30" height="4" fill="#FFFFFF"/><rect x="13" y="0" width="4" height="15" fill="#FFFFFF"/><rect x="0" y="6.5" width="30" height="2" fill="#C8102E"/><rect x="14" y="0" width="2" height="15" fill="#C8102E"/><path d="M0 0L30 15M30 0L0 15" stroke="#FFFFFF" stroke-width="2"/><path d="M0 0L30 15M30 0L0 15" stroke="#C8102E" stroke-width="1"/><polygon fill="#FFFFFF" points="15,18 15.87,20.2 18.13,19.51 16.95,21.44 18.74,22.87 16.44,22.75 16.74,25.1 15,24 13.26,25.1 13.56,22.75 11.26,22.87 13.05,21.44 11.87,19.51 14.13,20.2"/><circle cx="40" cy="22" r="1.5" fill="#FFFFFF"/><circle cx="48" cy="15" r="1.2" fill="#FFFFFF"/><circle cx="52" cy="8" r="1" fill="#FFFFFF"/><circle cx="44" cy="5" r="0.7" fill="#FFFFFF"/><circle cx="54" cy="20" r="0.6" fill="#FFFFFF"/></svg>`;
+
+export default function FlagAU({ className = "" }: { className?: string }) {
+  return (
+    <span
+      className={className}
+      role="img"
+      aria-label="Flag of Australia"
+      dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }}
+    />
+  );
+}

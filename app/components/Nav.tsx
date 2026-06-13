@@ -1,10 +1,10 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLang, En, Ko } from "@/components/LangBlocks";
-import { useTheme } from "@/components/ThemeProvider";
-import { ICONS } from "@/destinations/icons";
+import { En, Ko, useLang } from "./LangBlocks";
+import { useTheme } from "./ThemeProvider";
+import { FLAG_AU_SVG } from "./FlagAU";
 import { useSearch } from "@/components/SearchModal";
 
 const navLinks = [
@@ -59,10 +59,10 @@ export default function Nav() {
           className="flex items-center gap-2 shrink-0 group"
           aria-label="AussieMate home"
         >
-          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-sunset to-sunset-light flex items-center justify-center text-white transition-transform group-hover:scale-105">
+          <div className="w-9 h-6 rounded overflow-hidden shadow-sm ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105">
             <span
-              className="w-5 h-5"
-              dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }}
+              className="block w-full h-full"
+              dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }}
             />
           </div>
           <span className="font-serif text-xl text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors hidden sm:inline">
@@ -128,11 +128,11 @@ export default function Nav() {
             className="!w-9 !px-0"
           >
             <span
-              className="w-4 h-4"
-              dangerouslySetInnerHTML={{
-                __html: theme === "light" ? ICONS.moon : ICONS.sun,
-              }}
-            />
+              className="w-4 h-4 flex items-center justify-center text-base leading-none"
+              aria-hidden="true"
+            >
+              {theme === "light" ? "☽" : "☀"}
+            </span>
           </NavPill>
 
           {/* Hamburger (mobile only) */}
