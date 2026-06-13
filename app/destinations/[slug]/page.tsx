@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { En, Ko } from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
-import { ICONS } from "../icons";
 
 export async function generateStaticParams() {
   return destinations.map((d) => ({ slug: d.slug }));
@@ -78,14 +77,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </h2>
               <div className="grid grid-cols-2 gap-3">
                 {d.highlights.map((h) => (
-                  <div key={h.en} className="flex items-start gap-3 p-3 bg-stone-50 border-4 border-black">
-                    <div className="w-5 h-5 shrink-0" dangerouslySetInnerHTML={{ __html: ICONS[h.icon] }} />
-                    <div>
-                      <p className="font-black text-xs text-stone-900 leading-tight">
-                        <En>{h.en}</En>
-                        <Ko>{h.ko}</Ko>
-                      </p>
-                    </div>
+                  <div key={h.en} className="p-3 bg-stone-50 border-4 border-black">
+                    <p className="font-black text-xs text-stone-900 leading-tight">
+                      <En>{h.en}</En>
+                      <Ko>{h.ko}</Ko>
+                    </p>
                   </div>
                 ))}
               </div>

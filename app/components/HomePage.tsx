@@ -2,12 +2,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
-import { ICONS } from "@/destinations/icons";
 import VisitingContent from "@/components/personas/VisitingContent";
 import ArrivedContent from "@/components/personas/ArrivedContent";
 import HomeContent from "@/components/personas/HomeContent";
 import { SearchModal } from "@/components/SearchModal";
-import { useTheme } from "@/components/ThemeProvider";
 import { destinations } from "@/destinations/data";
 
 type StageKey = "visiting" | "arrived" | "home";
@@ -40,13 +38,13 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
   },
 ];
 
-const thingsToDo: { icon: keyof typeof ICONS; title: string; koTitle: string; blurb: string; koBlurb: string; href: string; accent: string }[] = [
-  { icon: "beach", title: "Beaches", koTitle: "해변", blurb: "From Bondi to Hyams — find your stretch of sand.", koBlurb: "본다이에서 하임스까지 — 나만의 해변을 찾으세요.", href: "/destinations/south-coast", accent: "from-cyan-500 to-sky-600" },
-  { icon: "kangaroo", title: "Wildlife", koTitle: "야생동물", blurb: "Kangaroos at sunrise, whales from the coast.", koBlurb: "일출의 캥거루, 해안의 고래.", href: "/destinations/blue-mountains", accent: "from-emerald-500 to-teal-600" },
-  { icon: "wine", title: "Food & Wine", koTitle: "식음료", blurb: "Hunter Valley vintages, laneway brunches.", koBlurb: "헌터밸리 와인, 골목 브런치.", href: "/destinations/hunter-valley", accent: "from-rose-500 to-orange-500" },
-  { icon: "hiking", title: "Adventure", koTitle: "어드벤처", blurb: "Ski fields, mountain bikes, ocean swims.", koBlurb: "스키장, 산악자전거, 바다 수영.", href: "/destinations/snowy-mountains", accent: "from-sky-500 to-indigo-600" },
-  { icon: "museum", title: "Culture", koTitle: "문화", blurb: "Indigenous heritage, galleries, festivals.", koBlurb: "원주민 유산, 미술관, 축제.", href: "/resources", accent: "from-amber-500 to-yellow-600" },
-  { icon: "car", title: "Road Trips", koTitle: "로드트립", blurb: "Pacific Coast, Great Ocean Road, outback.", koBlurb: "태평양 해안, 그레이트오션로드, 아웃백.", href: "/destinations/south-coast", accent: "from-stone-500 to-stone-700" },
+const thingsToDo: { title: string; koTitle: string; blurb: string; koBlurb: string; href: string; accent: string }[] = [
+  { title: "Beaches", koTitle: "해변", blurb: "From Bondi to Hyams — find your stretch of sand.", koBlurb: "본다이에서 하임스까지 — 나만의 해변을 찾으세요.", href: "/destinations/south-coast", accent: "from-cyan-500 to-sky-600" },
+  { title: "Wildlife", koTitle: "야생동물", blurb: "Kangaroos at sunrise, whales from the coast.", koBlurb: "일출의 캥거루, 해안의 고래.", href: "/destinations/blue-mountains", accent: "from-emerald-500 to-teal-600" },
+  { title: "Food & Wine", koTitle: "식음료", blurb: "Hunter Valley vintages, laneway brunches.", koBlurb: "헌터밸리 와인, 골목 브런치.", href: "/destinations/hunter-valley", accent: "from-rose-500 to-orange-500" },
+  { title: "Adventure", koTitle: "어드벤처", blurb: "Ski fields, mountain bikes, ocean swims.", koBlurb: "스키장, 산악자전거, 바다 수영.", href: "/destinations/snowy-mountains", accent: "from-sky-500 to-indigo-600" },
+  { title: "Culture", koTitle: "문화", blurb: "Indigenous heritage, galleries, festivals.", koBlurb: "원주민 유산, 미술관, 축제.", href: "/resources", accent: "from-amber-500 to-yellow-600" },
+  { title: "Road Trips", koTitle: "로드트립", blurb: "Pacific Coast, Great Ocean Road, outback.", koBlurb: "태평양 해안, 그레이트오션로드, 아웃백.", href: "/destinations/south-coast", accent: "from-stone-500 to-stone-700" },
 ];
 
 const topics = [
@@ -172,9 +170,10 @@ export default function HomePage() {
                   onClick={() => setActive(s.key)}
                   className={`reveal reveal-delay-${i + 1} group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 ${
                     isActive
-                      ? "bg-sunset text-white border-sunset shadow-2xl scale-[1.02]"
+                      ? "bg-sunset text-white border-sunset shadow-2xl scale-[1.02] ring-4 ring-sunset/30 [&_*]:!text-white"
                       : "bg-white dark:bg-dark-surface border-stone-200 dark:border-dark-border text-stone-900 dark:text-stone-100 hover:border-sunset/50 hover:shadow-lg"
                   }`}
+                  style={isActive ? { color: "#ffffff" } : undefined}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <span className={`font-mono text-xs ${isActive ? "text-white/70" : "text-stone-400 dark:text-stone-500"}`}>
@@ -225,7 +224,7 @@ export default function HomePage() {
           </div>
           <Link
             href={`/destinations/${featured.slug}`}
-            className="reveal group block relative overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9] shadow-2xl"
+            className="reveal group block relative overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9] shadow-2xl bg-stone-900"
           >
             <img
               src={featured.heroImg}
@@ -283,7 +282,7 @@ export default function HomePage() {
               <Link
                 key={d.slug}
                 href={`/destinations/${d.slug}`}
-                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 dark:bg-stone-800 shadow-md hover:shadow-2xl transition-shadow`}
+                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
               >
                 <img
                   src={d.cardImg}
@@ -344,11 +343,9 @@ export default function HomePage() {
                 key={t.title}
                 href={t.href}
                 className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl p-6 md:p-7 min-h-[200px] flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300 shadow-lg hover:shadow-2xl`}
-                style={{ background: undefined }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-90 group-hover:opacity-100 transition-opacity`} />
                 <div className="relative">
-                  <span className="w-7 h-7 block mb-4 text-white" dangerouslySetInnerHTML={{ __html: ICONS[t.icon] }} />
                   <h3 className="font-serif text-2xl mb-2 text-white">
                     <En>{t.title}</En>
                     <Ko>{t.koTitle}</Ko>
