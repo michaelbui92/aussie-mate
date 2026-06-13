@@ -224,21 +224,32 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* === SCROLL ANIMATIONS (triggered by .in-view class) === */
+/* === SCROLL / MOUNT ANIMATIONS ===
+   Uses a CSS animation with fill-mode: both so the element always
+   ends at opacity:1 — no JS required. This means re-mounted content
+   (e.g. persona stage content) animates in on mount instead of being
+   permanently stuck at opacity:0 if the IntersectionObserver doesn't
+   re-observe it. */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: revealIn 0.6s ease-out both;
 }
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes revealIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.reveal-delay-1 { transition-delay: 0.08s; }
-.reveal-delay-2 { transition-delay: 0.16s; }
-.reveal-delay-3 { transition-delay: 0.24s; }
-.reveal-delay-4 { transition-delay: 0.32s; }
-.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-1 { animation-delay: 0.08s; }
+.reveal-delay-2 { animation-delay: 0.16s; }
+.reveal-delay-3 { animation-delay: 0.24s; }
+.reveal-delay-4 { animation-delay: 0.32s; }
+.reveal-delay-5 { animation-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-delay-1, .reveal-delay-2, .reveal-delay-3,
+  .reveal-delay-4, .reveal-delay-5 {
+    animation: none;
+  }
+}
 
 /* === AMBIENT FLOAT (hero elements) === */
 @keyframes drift {
