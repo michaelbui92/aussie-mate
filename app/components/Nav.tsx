@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLang, En, Ko } from "@/components/LangBlocks";
+import { useTheme } from "@/components/ThemeProvider";
 import { ICONS } from "@/destinations/icons";
 import { useSearch } from "@/components/SearchModal";
 
@@ -19,15 +20,12 @@ const navLinks = [
   { href: "/resources", label: "Resources" },
 ];
 
-const testLinks = [
-  { href: "/test-homepage-1", label: "T1: Bondi" },
-  { href: "/test-homepage-2", label: "T2: Coastal" },
-];
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const { lang, setLang } = useLang();
+  const { toggle: toggleTheme, theme } = useTheme();
   const { openSearch } = useSearch();
 
   return (
@@ -59,20 +57,7 @@ export default function Nav() {
               </Link>
             );
           })}
-          <span className="text-eucalypt/20 dark:text-dark-muted/20 mx-1">|</span>
-          {testLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`nav-link px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all btn-press ${
-                pathname === link.href
-                  ? "text-violet-600 dark:text-violet-400 active"
-                  : "text-eucalypt/40 dark:text-dark-muted/40 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-sand dark:hover:bg-dark-surface"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+
         </div>
         <div className="ml-auto flex items-center gap-2">
           <button
@@ -95,6 +80,17 @@ export default function Nav() {
             <span key={lang} className="lang-flip">
               {lang === "en" ? "EN" : "🇰🇷"}
             </span>
+          </button>
+
+          <button
+            onClick={toggleTheme}
+            className="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-sand/50 dark:bg-dark-surface hover:bg-sunset/20 text-eucalypt/60 dark:text-dark-muted/60 hover:text-sunset transition-all btn-press"
+            aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+          >
+            <span
+              className="w-4 h-4"
+              dangerouslySetInnerHTML={{ __html: theme === "light" ? ICONS.moon : ICONS.sun }}
+            />
           </button>
 
           {/* Hamburger (mobile only) */}
@@ -138,21 +134,7 @@ export default function Nav() {
                 </Link>
               );
             })}
-            <div className="border-t border-eucalypt/10 dark:border-dark-border/50 my-2" />
-            {testLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-all btn-press ${
-                  pathname === link.href
-                    ? "text-violet-600 bg-violet-50"
-                    : "text-eucalypt/40 dark:text-dark-muted/40 hover:text-violet-500"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+
           </div>
         </div>
       )}
