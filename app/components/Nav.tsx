@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLang, En, Ko } from "@/components/LangBlocks";
+import { ICONS } from "@/destinations/icons";
 import { useSearch } from "@/components/SearchModal";
 
 const navLinks = [
@@ -35,7 +36,7 @@ export default function Nav() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0 group">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sunset to-sunset-light flex items-center justify-center text-base transition-transform group-hover:scale-110 btn-press">
-            <span className="text-white">🦘</span>
+            <span className="w-8 h-8" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} />
           </div>
           <span className="font-bold text-sunset text-lg hidden sm:block">AussieMate</span>
         </Link>

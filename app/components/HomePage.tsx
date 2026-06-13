@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
+import { ICONS } from "@/destinations/icons";
 import VisitingContent from "./personas/VisitingContent";
 import ArrivedContent from "./personas/ArrivedContent";
 import HomeContent from "./personas/HomeContent";
@@ -160,8 +161,8 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-eucalypt dark:text-white mb-3 leading-tight">
-            <En>Welcome to <span className="text-sunset">Australia 🦘</span></En>
-            <Ko>호주에 오신 것을 <span className="text-sunset">환영합니다 🦘</span></Ko>
+            <En>Welcome to <span className="text-sunset">Australia </span><span className="inline-block w-6 h-6 align-middle" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} /></En>
+            <Ko>호주에 오신 것을 <span className="text-sunset">환영합니다 </span><span className="inline-block w-6 h-6 align-middle" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} /></Ko>
           </h1>
 
           <p className="text-base md:text-lg text-eucalypt/70 dark:text-dark-muted/70 mb-2 max-w-md mx-auto">

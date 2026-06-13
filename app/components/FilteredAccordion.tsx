@@ -6,6 +6,7 @@
 
 import { useState, ReactNode, ComponentType } from "react";
 import { Icons } from "./Icons";
+import { Car } from "@/components/Icons";
 import { En, Ko } from "./LangBlocks";
 
 export interface BeyondSydneyDestination {
@@ -161,7 +162,7 @@ export default function FilteredAccordion({
 
                   <div className="bg-sand/50 dark:bg-dark-surface rounded-xl p-4 mb-3">
                     <p className="text-xs font-semibold text-eucalypt/50 dark:text-dark-muted/50 mb-1">
-                      <En>🚗 How to get there</En><Ko>🚗 가는 방법</Ko>
+                      <En><Car className="inline-block w-3 h-3" /> How to get there</En><Ko><Car className="inline-block w-3 h-3" /> 가는 방법</Ko>
                     </p>
                     <p className="text-sm text-eucalypt/70 dark:text-dark-muted/70">
                       <En>{dest.transport}</En>

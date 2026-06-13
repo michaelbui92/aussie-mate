@@ -5,6 +5,7 @@
 // FilteredAccordion client island.
 
 import { En, Ko } from "@/components/LangBlocks";
+import { MapPin, Car } from "@/components/Icons";
 import FilteredAccordion, { type BeyondSydneyDestination } from "@/components/FilteredAccordion";
 
 const destinations: BeyondSydneyDestination[] = [
@@ -210,8 +211,8 @@ export default function BeyondSydneyPage() {
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En>🗺️ Beyond Sydney</En>
-            <Ko>🗺️ 시드니 밖으로</Ko>
+            <En><MapPin className="inline-block w-6 h-6 mr-1" /> Beyond Sydney</En>
+            <Ko><MapPin className="inline-block w-6 h-6 mr-1" /> 시드니 밖으로</Ko>
           </h1>
           <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60">
             <En>Weekend trips, road trips, and day adventures from Sydney — Australia's east coast has a lot more to offer</En>

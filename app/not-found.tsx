@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useLang } from "@/components/LangBlocks";
+import { ICONS } from "@/destinations/icons";
 
 export default function NotFound() {
   const { lang } = useLang();
@@ -8,7 +9,7 @@ export default function NotFound() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
-      <div className="text-8xl mb-4">🦘</div>
+      <div className="text-8xl mb-4" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} />
       <h1 className="text-4xl font-bold text-eucalypt dark:text-white mb-2">
         {isKo ? "페이지를 찾을 수 없습니다" : "Page Not Found"}
       </h1>
@@ -21,7 +22,8 @@ export default function NotFound() {
         href="/"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sunset text-white font-semibold hover:bg-sunset-light transition-colors"
       >
-        {isKo ? "🏠 홈으로 가기" : "🏠 Go Home"}
+        <span className="w-5 h-5" dangerouslySetInnerHTML={{ __html: ICONS.home }} />
+        {isKo ? "홈으로 가기" : "Go Home"}
       </Link>
     </main>
   );

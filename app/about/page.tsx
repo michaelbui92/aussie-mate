@@ -1,4 +1,5 @@
 import { En, Ko } from "@/components/LangBlocks";
+import { Car, Book } from "@/components/Icons";
 
 export const metadata = {
   title: "About — AussieMate",
@@ -108,7 +109,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="flex items-start gap-3 p-4 bg-sunset/5 rounded-xl hover:bg-sunset/10 transition-colors group"
             >
-              <span className="text-xl">🚗</span>
+              <span className="text-xl"><Car className="w-5 h-5" /></span>
               <div>
                 <p className="font-semibold text-sm text-sunset group-hover:underline">Drive with Bui</p>
                 <p className="text-xs text-eucalypt/60 dark:text-dark-muted/60">
@@ -123,7 +124,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="flex items-start gap-3 p-4 bg-sage/5 rounded-xl hover:bg-sage/10 transition-colors group"
             >
-              <span className="text-xl">📚</span>
+              <span className="text-xl"><Book className="w-5 h-5" /></span>
               <div>
                 <p className="font-semibold text-sm text-sage group-hover:underline">Study Buddy (Boba)</p>
                 <p className="text-xs text-eucalypt/60 dark:text-dark-muted/60">

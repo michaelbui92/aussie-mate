@@ -1,4 +1,6 @@
 import { En, Ko } from "@/components/LangBlocks";
+import { ICONS } from "@/destinations/icons";
+import { Sun, MapPin } from "@/components/Icons";
 
 export default function WeatherPage() {
   return (
@@ -16,32 +18,32 @@ export default function WeatherPage() {
       <div className="grid grid-cols-2 gap-4 mb-10">
         {[
           {
-            season: { en: "Summer", ko: "여름", icon: "☀️", bg: "bg-orange-400" },
+            season: { en: "Summer", ko: "여름", icon: "sun", bg: "bg-orange-400" },
             months: "Dec · Jan · Feb",
             en: "Hot, humid, beach season. 25–40°C. Australian summer runs December to February — Christmas at the beach is completely normal.",
             ko: "더움과 습기, 해변 시즌. 25–40°C. 호주의 여름은 12월부터 2월까지 — 해변에서 크리스마스는 완전히 정상입니다.",
           },
           {
-            season: { en: "Autumn", ko: "가을", icon: "🍂", bg: "bg-amber-500" },
+            season: { en: "Autumn", ko: "가을", icon: "leaf", bg: "bg-amber-500" },
             months: "Mar · Apr · May",
             en: "Mild and pleasant. 15–25°C. The leaves in the Blue Mountains turn gold and red. Prime walking weather.",
             ko: "온화하고 쾌적함. 15–25°C. 블루마운틴 단풍이 노랑과 빨강으로 물듭. 산책 최적기.",
           },
           {
-            season: { en: "Winter", ko: "겨울", icon: "❄️", bg: "bg-sky-400" },
+            season: { en: "Winter", ko: "겨울", icon: "snowflake", bg: "bg-sky-400" },
             months: "Jun · Jul · Aug",
             en: "Cool but rarely cold. 8–18°C in Sydney. Snow falls in the Alps and Tasmania — but not in Sydney. Frost at night in regional areas.",
             ko: "선선하지만 거의 추운 편 아님. 시드니는 8–18°C. 눈은 알프스 지방과 태즈먼니아에 내림 — 시드니엔 안 냄. 지역에 따라 밤에 서리.",
           },
           {
-            season: { en: "Spring", ko: "봄", icon: "🌸", bg: "bg-emerald-400" },
+            season: { en: "Spring", ko: "봄", icon: "cherry", bg: "bg-emerald-400" },
             months: "Sep · Oct · Nov",
             en: "Wildflowers, baby animals, warmth returning. 15–28°C. Windy in some areas. The best time to visit the outback.",
             ko: "야생화, 새끼 동물들, 따뜻함 복귀. 15–28°C. 일부 지역엔 바람이 많음. 아웃백 방문 최적기.",
           },
         ].map((s) => (
           <div key={s.season.en} className={`${s.season.bg} border-4 border-black p-5 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]`}>
-            <div className="text-3xl mb-2">{s.season.icon}</div>
+            <div className="text-3xl mb-2" dangerouslySetInnerHTML={{ __html: ICONS[s.season.icon] }} />
             <div className="text-xs font-black uppercase tracking-wider text-black/60 mb-1">{s.months}</div>
             <h3 className="font-black text-xl text-stone-900 mb-2">
               <En>{s.season.en}</En>
@@ -57,7 +59,7 @@ export default function WeatherPage() {
 
       {/* UV section */}
       <div className="bg-amber-50 border-4 border-black p-6 mb-8 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
-        <h2 className="text-xl font-black text-stone-900 mb-3">☀️ UV and Sun Safety</h2>
+        <h2 className="text-xl font-black text-stone-900 mb-3"><Sun className="inline-block w-6 h-6" /> UV and Sun Safety</h2>
         <p className="text-sm text-stone-700 mb-4">
           <En>
             Australia has the highest UV radiation in the world. Even on cloudy days, UV can be extreme. Slip, slop, slap:
@@ -68,12 +70,12 @@ export default function WeatherPage() {
         </p>
         <div className="grid grid-cols-3 gap-3">
           {[
-            { en: "Slip on a shirt", ko: "Slip: 셔츠 입기", emoji: "👕" },
-            { en: "Slop on sunscreen (SPF 50+)", ko: "Slop: 선크림 (SPF 50+)", emoji: "🧴" },
-            { en: "Slap on a hat", ko: "Slap: 모자 쓰기", emoji: "🧢" },
+            { en: "Slip on a shirt", ko: "Slip: 셔츠 입기", emoji: "shirt" },
+            { en: "Slop on sunscreen (SPF 50+)", ko: "Slop: 선크림 (SPF 50+)", emoji: "sunscreen" },
+            { en: "Slap on a hat", ko: "Slap: 모자 쓰기", emoji: "cap" },
           ].map((item) => (
             <div key={item.en} className="bg-white border-2 border-black p-3 text-center">
-              <div className="text-2xl mb-1">{item.emoji}</div>
+              <div className="text-2xl mb-1" dangerouslySetInnerHTML={{ __html: ICONS[item.emoji] }} />
               <p className="text-xs font-black text-stone-800">
                 <En>{item.en}</En>
                 <Ko>{item.ko}</Ko>
@@ -85,7 +87,7 @@ export default function WeatherPage() {
 
       {/* Weather quirks */}
       <div className="bg-sky-50 border-4 border-black p-6 mb-8 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
-        <h2 className="text-xl font-black text-stone-900 mb-3">🌤️ Aussie Weather Quirks</h2>
+        <h2 className="text-xl font-black text-stone-900 mb-3"><span className="inline-block w-6 h-6" dangerouslySetInnerHTML={{ __html: ICONS.suncloud }} /> Aussie Weather Quirks</h2>
         <div className="space-y-3">
           {[
             { en: '"Four seasons in one day"', ko: '"하루에 네 계절"', descEn: "Sydney and Melbourne especially can shift from sunny to rain to wind in hours. Always bring a light jacket.", descKo: "시드니와 멜버른은 특히 몇 시간 만에 맑음에서 비, 바람으로 바뀔 수 있습니다. 항상 가벼운 재킷을 가지고 다니세요." },
@@ -112,7 +114,7 @@ export default function WeatherPage() {
 
       {/* Sydney specifics */}
       <div className="bg-emerald-50 border-4 border-black p-6 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
-        <h2 className="text-xl font-black text-stone-900 mb-3">📍 Sydney Climate Summary</h2>
+        <h2 className="text-xl font-black text-stone-900 mb-3"><MapPin className="inline-block w-6 h-6" /> Sydney Climate Summary</h2>
         <div className="grid grid-cols-2 gap-3 mb-4">
           {[
             { labelEn: "Avg Summer", labelKo: "여름 평균", val: "24°C / 19°C" },

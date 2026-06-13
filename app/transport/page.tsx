@@ -200,8 +200,8 @@ export default function TransportPage() {
       <section className="bg-gradient-to-br from-cream via-sand to-cream dark:from-darkbg dark:via-dark-surface dark:to-darkbg pt-10 pb-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-eucalypt dark:text-white mb-2">
-            <En>🚗 Transport</En>
-            <Ko>🚗 교통</Ko>
+            <En><Car className="inline-block w-6 h-6 mr-1" /> Transport</En>
+            <Ko><Car className="inline-block w-6 h-6 mr-1" /> 교통</Ko>
           </h1>
           <p className="text-sm md:text-base text-eucalypt/60 dark:text-dark-muted/60">
             <En>Opal cards, trains, buses, ferries, and driving in NSW</En>

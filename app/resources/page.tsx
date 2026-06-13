@@ -1,4 +1,5 @@
 import { En, Ko } from "@/components/LangBlocks";
+import { ICONS } from "@/destinations/icons";
 import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
 import { AlertTriangle, Ambulance, Book, Building2 } from "@/components/Icons";
 
@@ -292,8 +293,8 @@ export default function ResourcesPage() {
         {/* Bottom note */}
         <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Made with 🦘 for everyone new to Australia</En>
-            <Ko>호주에 처음 오시는 모든 분들을 위한 친근한 가이드입니다 🦘</Ko>
+            <En>Made with <span className="inline-block w-4 h-4 align-middle" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} /> for everyone new to Australia</En>
+            <Ko>호주에 처음 오시는 모든 분들을 위한 친근한 가이드입니다 <span className="inline-block w-4 h-4 align-middle" dangerouslySetInnerHTML={{ __html: ICONS.kangaroo }} /></Ko>
           </p>
         </div>
       </div>
