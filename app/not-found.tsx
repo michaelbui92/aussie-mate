@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useLang } from "@/components/LangBlocks";
-import { FLAG_AU_SVG } from "@/components/FlagAU";
+
+const FLAG_EMOJI = "🇦🇺";
 
 export default function NotFound() {
   const { lang } = useLang();
@@ -9,11 +10,8 @@ export default function NotFound() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center bg-stone-50 dark:bg-darkbg">
-      <div className="w-24 h-12 rounded overflow-hidden shadow-lg ring-1 ring-stone-200/60 dark:ring-dark-border mb-6">
-        <span
-          className="block w-full h-full"
-          dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }}
-        />
+      <div className="w-16 h-16 rounded-full bg-stone-100 dark:bg-dark-surface flex items-center justify-center text-3xl ring-1 ring-stone-200/60 dark:ring-dark-border shadow-md mb-6">
+        {FLAG_EMOJI}
       </div>
       <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
         404

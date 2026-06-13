@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { En, Ko } from "./LangBlocks";
-import { FLAG_AU_SVG } from "./FlagAU";
+
+const FLAG_EMOJI = "🇦🇺";
 
 export default function Footer() {
   return (
@@ -10,10 +11,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2 group mb-3">
-              <span
-                className="block w-9 h-6 rounded overflow-hidden shadow-sm ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105"
-                dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }}
-              />
+              <span className="w-9 h-9 rounded-full bg-stone-100 dark:bg-dark-surface flex items-center justify-center text-xl ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105">
+                {FLAG_EMOJI}
+              </span>
               <span className="font-serif text-lg text-stone-900 dark:text-stone-100">AussieMate</span>
             </Link>
             <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed max-w-xs">
@@ -65,8 +65,8 @@ export default function Footer() {
         <div className="flex items-center justify-between flex-wrap gap-2">
           <p className="text-xs text-stone-400 dark:text-stone-500">© 2026 AussieMate</p>
           <p className="text-xs text-stone-400 dark:text-stone-500">
-            <En>Made with <span className="inline-block w-3.5 h-2.5 align-middle rounded-sm overflow-hidden align-text-top" dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }} /> in Australia</En>
-            <Ko>호주에서 만든 <span className="inline-block w-3.5 h-2.5 align-middle rounded-sm overflow-hidden align-text-top" dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }} /></Ko>
+            <En>Made with {FLAG_EMOJI} in Australia</En>
+            <Ko>호주에서 만든 {FLAG_EMOJI}</Ko>
           </p>
         </div>
       </div>

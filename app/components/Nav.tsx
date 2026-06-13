@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { En, Ko, useLang } from "./LangBlocks";
 import { useTheme } from "./ThemeProvider";
-import { FLAG_AU_SVG } from "./FlagAU";
 import { useSearch } from "@/components/SearchModal";
+const FLAG_EMOJI = "🇦🇺";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -14,21 +14,23 @@ const navLinks = [
   { href: "/finance", label: "Finance" },
   { href: "/apartment", label: "Apartment" },
   { href: "/workplace", label: "Workplace" },
-  { href: "/weather", label: "Weather" },
-  { href: "/faq", label: "FAQ" },
   { href: "/transport", label: "Transport" },
-  { href: "/resources", label: "Resources" },
+  { href: "/weather", label: "Weather" },
+  { href: "/destinations", label: "Destinations" },
+  { href: "/study", label: "Study" },
+  { href: "/tourist", label: "Tourist" },
+  { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
 ];
 
-// Pill-style action button — matches the rest of the editorial system
 function NavPill({
-  onClick,
   children,
+  onClick,
   ariaLabel,
   className = "",
 }: {
-  onClick: () => void;
   children: React.ReactNode;
+  onClick?: () => void;
   ariaLabel: string;
   className?: string;
 }) {
@@ -36,7 +38,7 @@ function NavPill({
     <button
       onClick={onClick}
       aria-label={ariaLabel}
-      className={`shrink-0 inline-flex items-center justify-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-dark-surface hover:bg-sunset hover:text-white dark:hover:bg-sunset dark:hover:text-white transition-colors ${className}`}
+      className={`h-9 px-3 inline-flex items-center justify-center gap-1.5 rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-colors ${className}`}
     >
       {children}
     </button>
@@ -44,14 +46,14 @@ function NavPill({
 }
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const { lang, setLang } = useLang();
-  const { toggle: toggleTheme, theme } = useTheme();
+  const { lang } = useLang();
+  const { theme, toggle: toggleTheme } = useTheme();
   const { openSearch } = useSearch();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-stone-200 dark:border-dark-border">
+    <header className="sticky top-0 z-50 bg-white/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-stone-200/60 dark:border-dark-border/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4">
         {/* Logo */}
         <Link
@@ -59,11 +61,8 @@ export default function Nav() {
           className="flex items-center gap-2 shrink-0 group"
           aria-label="AussieMate home"
         >
-          <div className="w-9 h-6 rounded overflow-hidden shadow-sm ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105">
-            <span
-              className="block w-full h-full"
-              dangerouslySetInnerHTML={{ __html: FLAG_AU_SVG }}
-            />
+          <div className="w-9 h-9 rounded-full bg-stone-100 dark:bg-dark-surface flex items-center justify-center text-xl ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105">
+            {FLAG_EMOJI}
           </div>
           <span className="font-serif text-xl text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors hidden sm:inline">
             AussieMate
@@ -114,7 +113,13 @@ export default function Nav() {
           </NavPill>
 
           <NavPill
-            onClick={() => setLang(lang === "en" ? "ko" : "en")}
+            onClick={() => {
+              const next = lang === "en" ? "ko" : "en";
+              if (typeof document !== "undefined") {
+                document.documentElement.lang = next;
+                try { localStorage.setItem("aussiemate-lang", next); } catch {}
+              }
+            }}
             ariaLabel="Toggle language"
           >
             <span key={lang} className="text-xs font-bold tracking-wide">
@@ -137,9 +142,9 @@ export default function Nav() {
 
           {/* Hamburger (mobile only) */}
           <button
-            className="md:hidden shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-dark-surface hover:bg-sunset hover:text-white transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            className="md:hidden h-9 w-9 inline-flex items-center justify-center rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-colors"
+            aria-label="Open menu"
             aria-expanded={menuOpen}
           >
             {menuOpen ? (
@@ -155,10 +160,10 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-darkbg border-t border-stone-200 dark:border-dark-border shadow-lg">
-          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
+        <div className="md:hidden border-t border-stone-200/60 dark:border-dark-border/60 bg-white dark:bg-darkbg">
+          <nav className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -166,19 +171,19 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-3 py-1.5 rounded-full text-sm font-medium ${
                     isActive
                       ? "text-white bg-sunset"
-                      : "text-stone-700 dark:text-stone-300 hover:text-sunset hover:bg-sunset/10"
+                      : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
                   }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
-          </div>
+          </nav>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
