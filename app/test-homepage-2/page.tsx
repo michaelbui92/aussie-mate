@@ -82,11 +82,32 @@ const seasonColors: Record<SeasonKey, { bg: string; text: string; border: string
   autumn: { bg: "bg-orange-400", text: "text-orange-900", border: "border-t-orange-400" },
 };
 
+const ICONS: Record<string, string> = {
+  snowflake: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/></svg>',
+  flower: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2a3 3 0 0 1 3 3M12 19a3 3 0 0 1 3 3M2 12a3 3 0 0 1 3-3M19 12a3 3 0 0 1 3 3M5.64 5.64a3 3 0 0 1 0 4.24M18.36 18.36a3 3 0 0 1 0 4.24M18.36 5.64a3 3 0 0 1 0 4.24M5.64 18.36a3 3 0 0 1 0 4.24"/></svg>',
+  sun: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>',
+  leaf: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 3 2 3c0 5 4 9 10 9zM12 12c0-5 5-9 10-9-1 5-5 9-10 9z"/></svg>',
+  ski: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-4 4 4 4"/><circle cx="10" cy="10" r="2"/><path d="M14 20l-2 2M6 14l-4 4"/></svg>',
+  wine: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 22v-9M7 3h10l-2 7a6 6 0 0 1-6 0L7 3z"/></svg>',
+  ribs: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h10M7 14h10M5 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM19 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM5 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM19 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>',
+  museum: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22v-8h6v8M5 8h14M7 8v4M11 8v4M15 8v4"/></svg>',
+  wheat: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 8 4 4 4c0 4 4 8 8 8zM12 12c0-5 4-8 8-8-1 4-4 8-8 8z"/></svg>',
+  hiking: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+  mountain: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20L2 8l6 4 4-6 4 6 4-6 4 12H8z"/></svg>',
+  strawberry: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 1 3 3c0 2-3 3-3 6H9c0-3-3-4-3-6a3 3 0 0 1 3-3z"/><path d="M12 14v8M8 22h8"/></svg>',
+  beach: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M5 22V12c0-4 3-7 7-7s7 3 7 7v10"/><path d="M12 5V2"/></svg>',
+  swim: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="14" r="2"/><path d="M3 18l3-3m0 6 3-3M14 14l-4 4M18 10l-4 4M10 18l-2 2"/></svg>',
+  music: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l12-3v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="15" r="3"/></svg>',
+  car: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3v-5l2-4h10l2 4v5h-2M7 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M5 17h14v-4H5z"/></svg>',
+  utensils: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6v12a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M5 6V4M19 6V4"/></svg>',
+  whale: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-4 6-6 10-6s8 2 10 6c-2 4-6 6-10 6s-8-2-10-6z"/><path d="M5 12c1-2 3-3 7-3s6 1 7 3"/><path d="M18 8c2-3 5-4 4-1"/><circle cx="6" cy="11" r="1" fill="currentColor"/></svg>',
+};
+
 const seasons: { key: SeasonKey; title: { en: string; ko: string }; icon: string; months: string }[] = [
-  { key: "winter", title: { en: "Winter", ko: "겨울" }, icon: "❄️", months: "Jun · Jul · Aug" },
-  { key: "spring", title: { en: "Spring", ko: "봄" }, icon: "🌸", months: "Sep · Oct · Nov" },
-  { key: "summer", title: { en: "Summer", ko: "여름" }, icon: "☀️", months: "Dec · Jan · Feb" },
-  { key: "autumn", title: { en: "Autumn", ko: "가을" }, icon: "🍂", months: "Mar · Apr · May" },
+  { key: "winter", title: { en: "Winter", ko: "겨울" }, icon: "snowflake", months: "Jun · Jul · Aug" },
+  { key: "spring", title: { en: "Spring", ko: "봄" }, icon: "flower", months: "Sep · Oct · Nov" },
+  { key: "summer", title: { en: "Summer", ko: "여름" }, icon: "sun", months: "Dec · Jan · Feb" },
+  { key: "autumn", title: { en: "Autumn", ko: "가을" }, icon: "leaf", months: "Mar · Apr · May" },
 ];
 
 const seasonContent: Record<SeasonKey, { en: string; ko: string; activities: { en: string; ko: string; icon: string }[] }> = {
@@ -94,40 +115,40 @@ const seasonContent: Record<SeasonKey, { en: string; ko: string; activities: { e
     en: "Cold nights, mild days. Perfect for indoor pleasures — winery dinners, museum visits, and cosy pub meals. Up in the Snowy Mountains, it's ski season.",
     ko: "찬 밤, 온화한 낮. 실내에서 즐기는 활동에 최적 — 와이너리 디너, 박물관 방문, 아늑한 퍼브 식사. 스노이 마운틴에서는 스키 시즌.",
     activities: [
-      { en: "Skiing at Perisher", ko: "Perisher 스키", icon: "⛷️" },
-      { en: "Winery dinners", ko: "와이너리 디너", icon: "🍷" },
-      { en: "Cosy pub meals", ko: "아늑한 퍼브", icon: "🍖" },
-      { en: "Museum hopping", ko: "박물관 투어", icon: "🏛️" },
+      { en: "Skiing at Perisher", ko: "Perisher 스키", icon: "ski" },
+      { en: "Winery dinners", ko: "와이너리 디너", icon: "wine" },
+      { en: "Cosy pub meals", ko: "아늑한 퍼브", icon: "ribs" },
+      { en: "Museum hopping", ko: "박물관 투어", icon: "museum" },
     ],
   },
   spring: {
     en: "Wildflowers bloom, baby animals appear, warmth returns. The best time to visit the outback. Windy in some areas — check the forecast.",
     ko: "야생화 피고, 새끼 동물들이 나타나고, 따뜻함이 돌아옵니다. 아웃백 방문 최적기. 일부 지역엔 바람 — 예보 확인하세요.",
     activities: [
-      { en: "Wildflower drives", ko: "야생화 드라이브", icon: "🌾" },
-      { en: "Coastal walks", ko: "해안 산책", icon: "🥾" },
-      { en: "Blue Mountains day trip", ko: "블루마운틴 당일치기", icon: "🏔️" },
-      { en: "Pick your own fruit", ko: "과일 따기", icon: "🍓" },
+      { en: "Wildflower drives", ko: "야생화 드라이브", icon: "wheat" },
+      { en: "Coastal walks", ko: "해안 산책", icon: "hiking" },
+      { en: "Blue Mountains day trip", ko: "블루마운틴 당일치기", icon: "mountain" },
+      { en: "Pick your own fruit", ko: "과일 따기", icon: "strawberry" },
     ],
   },
   summer: {
     en: "Hot, humid, beach season. Christmas at the beach is completely normal. Afternoon thunderstorms are common — they pass quickly. Sun protection is essential every day.",
     ko: "덥고 습한 해변 시즌. 해변에서 크리스마스는 완전히 정상. 오후 뇌우는 흔함 — 빠르게 지나감. 자외선 차단은 매일 필수.",
     activities: [
-      { en: "Beach every weekend", ko: "매주 해변", icon: "🏖️" },
-      { en: "Harbour swimming", ko: "하버 수영", icon: "🏊" },
-      { en: "Outdoor festivals", ko: "야외 축제", icon: "🎶" },
-      { en: "Road trips", ko: "로드트리", icon: "🚗" },
+      { en: "Beach every weekend", ko: "매주 해변", icon: "beach" },
+      { en: "Harbour swimming", ko: "하버 수영", icon: "swim" },
+      { en: "Outdoor festivals", ko: "야외 축제", icon: "music" },
+      { en: "Road trips", ko: "로드트리", icon: "car" },
     ],
   },
   autumn: {
     en: "Mild and pleasant. Prime walking weather. The Blue Mountains turn gold and red. Easter brings extra crowds — plan ahead for long weekends.",
     ko: "온화하고 쾌적. 산책 최적기. 블루마운틴이 금빛과 적금빛으로. 부활절에는 인파 증가 — 긴 연휴는 미리 계획.",
     activities: [
-      { en: "Blue Mountains walks", ko: "블루마운틴 트레킹", icon: "🥾" },
-      { en: "Hunter Valley wine tours", ko: "헌터 밸리 와인 투어", icon: "🍷" },
-      { en: "Food & wine festivals", ko: "푸드 & 와인 축제", icon: "🍽️" },
-      { en: "Whale watching", ko: "고래 관찰", icon: "🐋" },
+      { en: "Blue Mountains walks", ko: "블루마운틴 트레킹", icon: "hiking" },
+      { en: "Hunter Valley wine tours", ko: "헌터 밸리 와인 투어", icon: "wine" },
+      { en: "Food & wine festivals", ko: "푸드 & 와인 축제", icon: "utensils" },
+      { en: "Whale watching", ko: "고래 관찰", icon: "whale" },
     ],
   },
 };
@@ -158,7 +179,7 @@ export default function TestHomepage2() {
                 <En>AussieMate · Bilingual · AU/KO</En>
                 <Ko>호주 메이트 · 바이링구얼 · 호주 한인</Ko>
               </p>
-              <h1 className="text-5xl md:text-7xl font-black text-white leading-none mb-3 drop-shadow-lg">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-none mb-3 drop-shadow-lg">
                 <En>G&apos;day.<br/>Welcome<br/>home 🦘</En>
                 <Ko>호주에<br/>오신 것을<br/>환영합니다</Ko>
               </h1>
@@ -173,20 +194,20 @@ export default function TestHomepage2() {
         {/* Stage selector — teal theme */}
         <div className="bg-teal-500 border-b-4 border-black">
           <div className="max-w-5xl mx-auto px-4 pb-6">
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {stages.map((s, i) => {
                 const isActive = active === s.key;
                 return (
                   <button
                     key={s.key}
                     onClick={() => setActive(s.key)}
-                    className={`flex items-center gap-3 p-4 border-4 border-black font-black text-sm transition-all ${
+                    className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-4 border-4 border-black font-black text-[10px] sm:text-sm transition-all ${
                       isActive
                         ? `${s.numBg} shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -translate-y-1`
                         : "bg-teal-600 text-teal-200 hover:bg-teal-500 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
                     }`}
                   >
-                    <div className={`${s.numBg} ${s.numColor} font-mono text-xs font-black w-6 h-6 rounded-full flex items-center justify-center shrink-0`}>
+                    <div className={`${s.numBg} ${s.numColor} font-mono text-[10px] sm:text-xs font-black w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center shrink-0`}>
                       {i + 1}
                     </div>
                     <span>
@@ -228,7 +249,7 @@ export default function TestHomepage2() {
               <span>→</span>
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3">
             {destinations.map((d) => (
               <Link
                 key={d.name.en}
@@ -286,7 +307,7 @@ export default function TestHomepage2() {
                         : "bg-stone-100 text-stone-500 hover:bg-stone-200 hover:text-stone-700"
                     }`}
                   >
-                    <span className="text-lg mb-0.5">{s.icon}</span>
+                    <span className="text-lg mb-0.5" dangerouslySetInnerHTML={{ __html: ICONS[s.icon] }} />
                     <span><En>{s.title.en}</En><Ko>{s.title.ko}</Ko></span>
                     <span className="text-[9px] font-mono opacity-50">{s.months}</span>
                   </button>
@@ -302,11 +323,11 @@ export default function TestHomepage2() {
                   <Ko>{seasonData.ko}</Ko>
                 </p>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
                 {seasonData.activities.map((a) => (
-                  <div key={a.en} className={`${seasonStyle.bg} border-4 border-black p-3 flex flex-col items-center text-center gap-1`}>
-                    <span className="text-xl">{a.icon}</span>
-                    <span className={`font-black text-xs ${seasonStyle.text}`}>
+                  <div key={a.en} className={`${seasonStyle.bg} border-4 border-black p-2 sm:p-3 flex flex-col items-center text-center gap-1`}>
+                    <span className="w-4 h-4 sm:w-5 sm:h-5" dangerouslySetInnerHTML={{ __html: ICONS[a.icon] }} />
+                    <span className={`font-black text-[9px] sm:text-xs leading-tight ${seasonStyle.text}`}>
                       <En>{a.en}</En>
                       <Ko>{a.ko}</Ko>
                     </span>
