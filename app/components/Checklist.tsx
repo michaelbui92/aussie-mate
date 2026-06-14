@@ -127,7 +127,7 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
       </ul>
 
       {hydrated && done > 0 && (
-        <button
+        <button type="button"
           onClick={reset}
           className="mt-3 text-xs text-eucalypt/50 dark:text-dark-muted/50 hover:text-sunset transition-colors"
         >

@@ -76,7 +76,7 @@ export default function FilteredAccordion({
               <><En>{vibeLabels[vibe].en}</En><Ko>{vibeLabels[vibe].ko}</Ko></>
             );
             return (
-              <button
+              <button type="button"
                 key={vibe}
                 onClick={() => setFilter(vibe)}
                 className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] ${
@@ -111,7 +111,7 @@ export default function FilteredAccordion({
               key={dest.id}
               className={`reveal reveal-delay-${(i % 5) + 1} bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-2xl overflow-hidden hover:border-sunset/40 transition-all`}
             >
-              <button
+              <button type="button"
                 onClick={() => setOpenId(isOpen ? null : dest.id)}
                 className="w-full text-left px-5 md:px-6 py-4 md:py-5 flex items-center gap-4 hover:bg-stone-50 dark:hover:bg-darkbg/50 transition-colors"
                 aria-expanded={isOpen}

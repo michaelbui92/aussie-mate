@@ -165,7 +165,7 @@ export default function HomePage() {
             {stages.map((s, i) => {
               const isActive = active === s.key;
               return (
-                <button
+                <button type="button"
                   key={s.key}
                   onClick={() => setActive(s.key)}
                   className={`reveal reveal-delay-${i + 1} group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 ${
@@ -385,7 +385,7 @@ export default function HomePage() {
               const a = seasonAccent[key];
               const isActive = season === key;
               return (
-                <button
+                <button type="button"
                   key={key}
                   onClick={() => setSeason(key)}
                   className={`reveal reveal-delay-${i + 1} group text-left rounded-2xl overflow-hidden transition-all duration-300 ${

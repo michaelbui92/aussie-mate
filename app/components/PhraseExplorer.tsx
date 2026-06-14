@@ -98,7 +98,7 @@ export default function PhraseExplorer({
             />
           </div>
 
-          <button
+          <button type="button"
             onClick={() => setReviewFlipped(!reviewFlipped)}
             className="w-full bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-3xl p-8 md:p-12 text-center hover:shadow-lg hover:border-sunset/30 transition-all min-h-[320px] flex flex-col items-center justify-center gap-5"
             aria-label={reviewFlipped ? "Hide meaning" : "Reveal meaning"}
@@ -136,7 +136,7 @@ export default function PhraseExplorer({
           </button>
 
           <div className="flex items-center justify-center gap-3 mt-8">
-            <button
+            <button type="button"
               onClick={prevCard}
               disabled={reviewIndex === 0}
               className="px-5 py-2.5 rounded-full text-sm font-medium border border-stone-200 dark:border-dark-border text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface disabled:opacity-30 disabled:cursor-not-allowed transition-all"
@@ -144,7 +144,7 @@ export default function PhraseExplorer({
               <En>← Previous</En>
               <Ko>← 이전</Ko>
             </button>
-            <button
+            <button type="button"
               onClick={nextCard}
               className="px-5 py-2.5 rounded-full text-sm font-medium bg-sunset text-white hover:bg-sunset-light transition-all shadow-sm"
             >
@@ -157,7 +157,7 @@ export default function PhraseExplorer({
           </div>
 
           <div className="text-center mt-6">
-            <button
+            <button type="button"
               onClick={() => setReviewMode(false)}
               className="text-xs text-stone-400 dark:text-stone-500 hover:text-sunset transition-colors"
             >
@@ -191,7 +191,7 @@ export default function PhraseExplorer({
             style={{ fontSize: "16px" }}
           />
           {search && (
-            <button
+            <button type="button"
               onClick={() => setSearch("")}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-sunset p-2 min-w-[36px] min-h-[36px] flex items-center justify-center transition-colors"
               aria-label="Clear search"
@@ -203,7 +203,7 @@ export default function PhraseExplorer({
           )}
         </div>
 
-        <button
+        <button type="button"
           onClick={startReview}
           disabled={filtered.length === 0}
           className="shrink-0 px-5 py-3 rounded-full bg-stone-900 dark:bg-sunset text-white dark:text-white text-sm font-medium hover:bg-sunset dark:hover:bg-sunset-light transition-all shadow-sm disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -221,7 +221,7 @@ export default function PhraseExplorer({
         {categories.map((cat) => {
           const isActive = activeCategory === cat.value;
           return (
-            <button
+            <button type="button"
               key={cat.value}
               onClick={() => setActiveCategory(cat.value)}
               className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
@@ -260,7 +260,7 @@ export default function PhraseExplorer({
             <En>Try a different word or clear the filters.</En>
             <Ko>다른 단어를 입력하거나 필터를 해제해 보세요.</Ko>
           </p>
-          <button
+          <button type="button"
             onClick={() => {
               setSearch("");
               setActiveCategory("all");

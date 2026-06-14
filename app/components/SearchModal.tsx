@@ -128,7 +128,7 @@ export function SearchModal() {
                 placeholder='Search AussieMate... try "visa", "bond", "medicare"'
                 className="flex-1 text-base text-eucalypt dark:text-dark-muted placeholder:text-eucalypt/30 dark:placeholder:text-dark-muted/30 bg-transparent outline-none"
               />
-              <button
+              <button type="button"
                 onClick={closeSearch}
                 className="text-xs text-eucalypt/40 hover:text-eucalypt dark:text-dark-muted/40 dark:hover:text-dark-muted px-1.5 py-0.5 border border-sand dark:border-dark-border rounded"
               >
@@ -168,7 +168,7 @@ export function SearchModal() {
                     const globalIdx = flat.indexOf(item);
                     const isActive = globalIdx === activeIndex;
                     return (
-                      <button
+                      <button type="button"
                         key={`${item.page}-${item.section || "page"}`}
                         onClick={() => { closeSearch(); router.push(item.href); }}
                         onMouseEnter={() => setActiveIndex(globalIdx)}

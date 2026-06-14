@@ -35,7 +35,7 @@ function NavPill({
   className?: string;
 }) {
   return (
-    <button
+    <button type="button"
       onClick={onClick}
       aria-label={ariaLabel}
       className={`h-9 px-3 inline-flex items-center justify-center gap-1.5 rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-colors ${className}`}
@@ -141,7 +141,7 @@ export default function Nav() {
           </NavPill>
 
           {/* Hamburger (mobile only) */}
-          <button
+          <button type="button"
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden h-9 w-9 inline-flex items-center justify-center rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-colors"
             aria-label="Open menu"

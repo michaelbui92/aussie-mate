@@ -70,7 +70,7 @@ export default function Accordion({
             className={`reveal reveal-delay-${(si % 5) + 1} rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border overflow-hidden hover:border-sunset/40 transition-all`}
             style={itemDelayS > 0 ? { animationDelay: `${si * itemDelayS}s` } : undefined}
           >
-            <button
+            <button type="button"
               onClick={() => setOpenId(isOpen ? null : section.id)}
               className="w-full text-left px-5 md:px-6 py-4 md:py-5 min-h-[64px] flex items-center gap-4 hover:bg-stone-50 dark:hover:bg-darkbg/50 transition-colors"
               aria-expanded={isOpen}
