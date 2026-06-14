@@ -47,7 +47,7 @@ function NavPill({
 
 export default function Nav() {
   const pathname = usePathname();
-  const { lang } = useLang();
+  const { lang, toggleLang } = useLang();
   const { theme, toggle: toggleTheme } = useTheme();
   const { openSearch } = useSearch();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -113,13 +113,7 @@ export default function Nav() {
           </NavPill>
 
           <NavPill
-            onClick={() => {
-              const next = lang === "en" ? "ko" : "en";
-              if (typeof document !== "undefined") {
-                document.documentElement.lang = next;
-                try { localStorage.setItem("aussiemate-lang", next); } catch {}
-              }
-            }}
+            onClick={toggleLang}
             ariaLabel="Toggle language"
           >
             <span key={lang} className="text-xs font-bold tracking-wide">
