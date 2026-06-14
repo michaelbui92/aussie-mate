@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { En, Ko } from "./LangBlocks";
 
 type SeasonKey = "summer" | "autumn" | "winter" | "spring";
@@ -107,6 +107,152 @@ type SeasonCard = {
   ko: string;
 };
 
+/* ─── Animated panel (expands via max-height tracking) ─── */
+function useAutoHeight(active: boolean) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [h, setH] = useState(0);
+
+  useEffect(() => {
+    if (!active) {
+      setH(0);
+      return;
+    }
+    // Reset then measure on next frame so the DOM has rendered
+    setH(0);
+    const raf = requestAnimationFrame(() => {
+      if (ref.current) setH(ref.current.scrollHeight);
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [active]);
+
+  return { ref, style: { maxHeight: h || undefined, overflow: "hidden" as const, transition: "max-height 500ms ease-in-out" } };
+}
+
+/* ─── A single season card ─── */
+function SeasonCard({
+  s,
+  isOpen,
+  onToggle,
+  compact,
+}: {
+  s: SeasonCard;
+  isOpen: boolean;
+  onToggle: () => void;
+  compact?: boolean;
+}) {
+  const detail = seasonDetails[s.key];
+  const cornerAccent = s.accent.replace("from-", "to-").split(" ")[0];
+  const { ref, style } = useAutoHeight(isOpen);
+
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      className={`
+        block relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl
+        text-left w-full transition-all duration-500 ease-in-out
+        ${compact ? "aspect-[4/5] sm:aspect-[5/6]" : ""}
+      `}
+    >
+      {/* Gradient fallback */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${s.accent}`} aria-hidden="true" />
+
+      {/* Image */}
+      <img
+        src={s.img}
+        alt={`${s.title.en} in Australia`}
+        loading="lazy"
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ${
+          isOpen ? "scale-105" : "hover:scale-105"
+        }`}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" aria-hidden="true" />
+
+      {/* Always-visible overlay */}
+      <div
+        className={`relative p-5 md:p-6 flex flex-col justify-end text-white transition-all duration-500 ease-in-out ${
+          isOpen ? "min-h-[200px]" : "h-full"
+        }`}
+      >
+        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-2">
+          {s.months}
+        </p>
+        <h3 className="font-serif text-2xl md:text-3xl mb-2 leading-tight">
+          <En>{s.title.en}</En>
+          <Ko>{s.title.ko}</Ko>
+        </h3>
+        <p className="text-white/85 text-xs md:text-sm leading-relaxed">
+          <En>{s.en}</En>
+          <Ko>{s.ko}</Ko>
+        </p>
+
+        {!isOpen && (
+          <span className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-white/50">
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            <En>Tap to explore</En>
+            <Ko>눌러서 살펴보기</Ko>
+          </span>
+        )}
+      </div>
+
+      {/* Animated detail panel */}
+      <div ref={ref} style={style}>
+        {isOpen && (
+          <div className="bg-black/70 backdrop-blur-sm p-5 md:p-6 border-t border-white/10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div>
+                <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
+                  <En>What to do</En><Ko>추천 활동</Ko>
+                </p>
+                <ul className="space-y-1.5">
+                  {detail.whatToDo.map((item, j) => (
+                    <li key={j} className="text-white/80 text-xs leading-relaxed flex gap-2">
+                      <span className={`shrink-0 mt-0.5 w-1.5 h-1.5 rounded-full ${cornerAccent}`} />
+                      <span><En>{item.en}</En><Ko>{item.ko}</Ko></span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
+                  <En>What to pack</En><Ko>준비물</Ko>
+                </p>
+                <ul className="space-y-1.5">
+                  {detail.whatToPack.map((item, j) => (
+                    <li key={j} className="text-white/80 text-xs leading-relaxed flex gap-2">
+                      <span className={`shrink-0 mt-0.5 w-1.5 h-1.5 rounded-full ${cornerAccent}`} />
+                      <span><En>{item.en}</En><Ko>{item.ko}</Ko></span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
+                  <En>Heads up</En><Ko>주의사항</Ko>
+                </p>
+                <ul className="space-y-1.5">
+                  {detail.warnings.map((item, j) => (
+                    <li key={j} className="text-white/80 text-xs leading-relaxed flex gap-2">
+                      <span className="shrink-0 mt-0.5 w-1.5 h-1.5 rounded-full bg-amber-400" />
+                      <span><En>{item.en}</En><Ko>{item.ko}</Ko></span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+              <En>Tap again to collapse</En><Ko>다시 탭하여 접기</Ko>
+            </p>
+          </div>
+        )}
+      </div>
+    </button>
+  );
+}
+
+/* ─── Main accordion ─── */
 export default function SeasonAccordion({
   seasons,
 }: {
@@ -118,134 +264,56 @@ export default function SeasonAccordion({
     setOpenKey((prev) => (prev === key ? null : key));
   };
 
+  // Reorder: open season first, rest follow
+  const sorted = useMemo(() => {
+    if (!openKey) return seasons;
+    const open = seasons.filter((s) => s.key === openKey);
+    const rest = seasons.filter((s) => s.key !== openKey);
+    return [...open, ...rest];
+  }, [seasons, openKey]);
+
+  const hasOpen = openKey !== null;
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-12">
-      {seasons.map((s, i) => {
-        const isOpen = openKey === s.key;
-        const detail = seasonDetails[s.key];
-        const cornerAccent = s.accent.replace("from-", "to-").split(" ")[0];
-
-        return (
-          <button
-            key={s.key}
-            type="button"
-            onClick={() => toggle(s.key)}
-            className={`reveal reveal-delay-${(i % 5) + 1} block relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 text-left w-full ${
-              isOpen ? "sm:col-span-2" : "aspect-[4/5] sm:aspect-[5/6]"
-            }`}
-          >
-            {/* Image (with gradient fallback underneath) */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${s.accent}`} aria-hidden="true" />
-            <img
-              src={s.img}
-              alt={`${s.title.en} in Australia`}
-              loading="lazy"
-              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105`}
+    <div className="mb-12">
+      {!hasOpen && (
+        /* ========== Grid view (no season open) ========== */
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+          {sorted.map((s) => (
+            <SeasonCard
+              key={s.key}
+              s={s}
+              isOpen={false}
+              onToggle={() => toggle(s.key)}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" aria-hidden="true" />
+          ))}
+        </div>
+      )}
 
-            {/* Always-visible overlay */}
-            <div
-              className={`relative p-5 md:p-6 flex flex-col justify-end text-white transition-all duration-300 ${
-                isOpen ? "min-h-[200px]" : "h-full"
-              }`}
-            >
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-2">
-                {s.months}
-              </p>
-              <h3 className="font-serif text-2xl md:text-3xl mb-2 leading-tight">
-                <En>{s.title.en}</En>
-                <Ko>{s.title.ko}</Ko>
-              </h3>
-              <p className="text-white/85 text-xs md:text-sm leading-relaxed">
-                <En>{s.en}</En>
-                <Ko>{s.ko}</Ko>
-              </p>
+      {hasOpen && (
+        /* ========== One season open: expanded at top, rest in grid below ========== */
+        <div className="space-y-5">
+          {/* Expanded season — full width at the top */}
+          <SeasonCard
+            s={sorted[0]}
+            isOpen={true}
+            onToggle={() => toggle(sorted[0].key)}
+          />
 
-              {/* Expand indicator */}
-              {!isOpen && (
-                <span className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-white/50">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                  </svg>
-                  <En>Tap to expand</En>
-                  <Ko>탭하여 펼치기</Ko>
-                </span>
-              )}
-            </div>
-
-            {/* Expanded detail panel */}
-            {isOpen && (
-              <div className="relative bg-black/70 backdrop-blur-sm p-5 md:p-6 border-t border-white/10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                  {/* What to do */}
-                  <div>
-                    <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
-                      <En>What to do</En>
-                      <Ko>추천 활동</Ko>
-                    </p>
-                    <ul className="space-y-1.5">
-                      {detail.whatToDo.map((item, j) => (
-                        <li key={j} className="text-white/80 text-xs leading-relaxed flex gap-2">
-                          <span className={`shrink-0 mt-0.5 w-1.5 h-1.5 rounded-full ${cornerAccent}`} />
-                          <span>
-                            <En>{item.en}</En>
-                            <Ko>{item.ko}</Ko>
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* What to pack */}
-                  <div>
-                    <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
-                      <En>What to pack</En>
-                      <Ko>준비물</Ko>
-                    </p>
-                    <ul className="space-y-1.5">
-                      {detail.whatToPack.map((item, j) => (
-                        <li key={j} className="text-white/80 text-xs leading-relaxed flex gap-2">
-                          <span className={`shrink-0 mt-0.5 w-1.5 h-1.5 rounded-full ${cornerAccent}`} />
-                          <span>
-                            <En>{item.en}</En>
-                            <Ko>{item.ko}</Ko>
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Warnings */}
-                  <div>
-                    <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
-                      <En>Heads up</En>
-                      <Ko>주의사항</Ko>
-                    </p>
-                    <ul className="space-y-1.5">
-                      {detail.warnings.map((item, j) => (
-                        <li key={j} className="text-white/80 text-xs leading-relaxed flex gap-2">
-                          <span className="shrink-0 mt-0.5 w-1.5 h-1.5 rounded-full bg-amber-400" />
-                          <span>
-                            <En>{item.en}</En>
-                            <Ko>{item.ko}</Ko>
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Close indicator */}
-                <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
-                  <En>Tap again to collapse</En>
-                  <Ko>다시 탭하여 접기</Ko>
-                </p>
-              </div>
-            )}
-          </button>
-        );
-      })}
+          {/* Remaining 3 seasons — compact 2-column grid below */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            {sorted.slice(1).map((s) => (
+              <SeasonCard
+                key={s.key}
+                s={s}
+                isOpen={false}
+                onToggle={() => toggle(s.key)}
+                compact
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
