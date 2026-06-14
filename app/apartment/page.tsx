@@ -1,23 +1,22 @@
 // Server component — bilingual apartment rental guide for NSW.
-// All interactivity is via <En>/<Ko> (client islands from LangBlocks).
+// Redesigned in editorial style: dark hero header, stat strip, then a
+// vertical sequence of EditorialSection cards.
 
 import { En, Ko } from "@/components/LangBlocks";
+import EditorialSection, {
+  type EditorialSectionData,
+} from "@/components/EditorialSection";
 
 type ApartmentItem = { label: string; en: string; ko: string; url?: string };
-type ApartmentSection = {
-  id: string;
-  emoji: string;
-  title: string;
-  koTitle: string;
-  desc: string;
-  koDesc: string;
+type ApartmentSectionData = Omit<EditorialSectionData, "items"> & {
   items: ApartmentItem[];
 };
 
-const sections: ApartmentSection[] = [
+const sections: ApartmentSectionData[] = [
   {
     id: "search",
-    emoji: "🔍",
+    iconKey: "Search",
+    accent: "sage",
     title: "Finding a Place",
     koTitle: "부동산 찾기",
     desc: "Where to search and what to know",
@@ -31,7 +30,8 @@ const sections: ApartmentSection[] = [
   },
   {
     id: "application",
-    emoji: "📋",
+    iconKey: "Clipboard",
+    accent: "coast",
     title: "Rental Application",
     koTitle: "임대 지원",
     desc: "Everything you need to apply for a rental property in NSW",
@@ -46,7 +46,8 @@ const sections: ApartmentSection[] = [
   },
   {
     id: "rights",
-    emoji: "⚖️",
+    iconKey: "ShieldCheck",
+    accent: "amber",
     title: "Tenant Rights in NSW",
     koTitle: "NSW 임차인 권리",
     desc: "You have legal rights — know them",
@@ -61,7 +62,8 @@ const sections: ApartmentSection[] = [
   },
   {
     id: "re-phrases",
-    emoji: "🏢",
+    iconKey: "Building",
+    accent: "stone",
     title: "Common Real Estate Phrases",
     koTitle: "부동산 표현",
     desc: "What agents actually mean",
@@ -78,7 +80,8 @@ const sections: ApartmentSection[] = [
   },
   {
     id: "red-flags",
-    emoji: "🚩",
+    iconKey: "Flag",
+    accent: "rose",
     title: "Red Flags to Watch",
     koTitle: "주의해야 할 위험 신호",
     desc: "Walk away if you see these",
@@ -93,7 +96,8 @@ const sections: ApartmentSection[] = [
   },
   {
     id: "costs",
-    emoji: "💰",
+    iconKey: "DollarSign",
+    accent: "sunset",
     title: "Bills & Move-in Costs",
     koTitle: "공과금 및 입주 비용",
     desc: "What to budget for",
@@ -108,7 +112,8 @@ const sections: ApartmentSection[] = [
   },
   {
     id: "cover-letter",
-    emoji: "✏️",
+    iconKey: "Edit",
+    accent: "coast",
     title: "Cover Letter Tips",
     koTitle: "지원서 작성 팁",
     desc: "How to write an application that stands out",
@@ -123,63 +128,99 @@ const sections: ApartmentSection[] = [
   },
 ];
 
+const quickFacts = [
+  { labelEn: "Bond", labelKo: "보증금", value: "4 weeks rent" },
+  { labelEn: "Notice to vacate", labelKo: "퇴거 통보", value: "90 days" },
+  { labelEn: "ID points", labelKo: "신분증 점수", value: "100 points" },
+  { labelEn: "Repairs window", labelKo: "수리 기한", value: "14 days" },
+];
+
 export default function ApartmentPage() {
   return (
-    <div className="min-h-screen">
-      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-          <En>Renting in NSW</En>
-          <Ko>NSW 임대</Ko>
-        </p>
-        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          <En>Apartment guide</En>
-          <Ko>임대 가이드</Ko>
-        </h1>
-        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>Renting in NSW — your rights, your money, your home.</En>
-          <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집.</Ko>
-        </p>
+    <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
+      {/* Hero header (dark) */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Renting in NSW</En>
+            <Ko>NSW 임대</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Apartment guide</En>
+            <Ko>임대 가이드</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>Renting in NSW — your rights, your money, your home. A practical guide from search to signature.</En>
+            <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집. 검색부터 계약까지의 실용 가이드.</Ko>
+          </p>
+        </div>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 space-y-10">
-        {sections.map((section, si) => (
-          <section
-            key={section.id}
-            className={`reveal reveal-delay-${(si % 5) + 1}`}
-          >
-            <div className="mb-4">
-              <div className="flex items-center gap-3 mb-1.5">
-                <span className="text-2xl shrink-0">{section.emoji}</span>
-                <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-                  <En>{section.title}</En>
-                  <Ko>{section.koTitle || section.title}</Ko>
-                </h2>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        {/* Quick facts strip */}
+        <section className="mb-12">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
+            <En>Quick facts</En>
+            <Ko>핵심 정보</Ko>
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {quickFacts.map((f, i) => (
+              <div
+                key={f.labelEn}
+                className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border`}
+              >
+                <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
+                  <En>{f.labelEn}</En>
+                  <Ko>{f.labelKo}</Ko>
+                </p>
+                <p className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 leading-tight">
+                  {f.value}
+                </p>
               </div>
-              <p className="text-sm text-stone-500 dark:text-stone-400 pl-10">
-                <En>{section.desc}</En>
-                <Ko>{section.koDesc || section.desc}</Ko>
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border overflow-hidden divide-y divide-stone-200/60 dark:divide-dark-border/60">
-              {section.items.map((item, ii) => (
-                <div key={ii} className="px-5 md:px-6 py-4">
-                  <p className="font-medium text-sm text-sunset mb-1.5 leading-snug">
-                    {item.label}
-                    {item.url && (
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="ml-2 text-stone-400 hover:text-sunset text-xs font-normal">↗</a>
-                    )}
-                  </p>
-                  <En>
-                    <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{item.en}</p>
-                  </En>
-                  <Ko>
-                    <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{item.ko}</p>
-                  </Ko>
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
+            ))}
+          </div>
+        </section>
+
+        {/* Editorial sections */}
+        <div className="space-y-12">
+          {sections.map((section, i) => (
+            <EditorialSection key={section.id} data={section} index={i} />
+          ))}
+        </div>
+
+        {/* Dark CTA footer */}
+        <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
+            <En>Official resources</En>
+            <Ko>공식 자료</Ko>
+          </p>
+          <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
+            <En>Know your rights, in writing.</En>
+            <Ko>서면으로 권리를 확인하세요.</Ko>
+          </h2>
+          <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
+            <En>NSW Fair Trading is the government body that handles tenancy disputes. If something goes wrong, they&apos;re your first call. Always get a written lease — verbal agreements aren&apos;t enforceable.</En>
+            <Ko>NSW Fair Trading는 임대차 분쟁을 처리하는 정부 기관입니다. 문제가 생기면 첫 번째로 연락할 곳입니다. 반드시 서면 임대차 계약서를 받으세요 — 구두 합의는 법적 효력이 없습니다.</Ko>
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://www.nsw.gov.au/departments-and-agencies/fair-trading"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors"
+            >
+              NSW Fair Trading ↗
+            </a>
+            <a
+              href="https://www.tenants.org.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors"
+            >
+              Tenants&apos; Union of NSW ↗
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   );
