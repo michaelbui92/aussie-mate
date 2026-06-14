@@ -20,6 +20,7 @@ const sections: SportSection[] = [
     koTitle: "호주 3대 스포츠",
     desc: "NRL (Rugby League), AFL (Aussie Rules), and Rugby Union — the sports that define Australian culture",
     koDesc: "NRL, AFL, 럭비 — 호주 문화를 대표하는 스포츠",
+    img: "https://picsum.photos/seed/aussie-rugby-stadium/1200/600",
     items: [
       { label: "NRL — National Rugby League", en: "NRL is Sydney's heartbeat. A 17-team competition (9 based in NSW, 3 in QLD, plus others) running March to October. Grand Final is an unofficial national holiday in NSW. Key teams: Penrith Panthers, South Sydney Rabbitohs, Sydney Roosters, Parramatta Eels, Wests Tigers (Michael's team!), Brisbane Broncos, Melbourne Storm. Tickets from ~$25 at Ticketek or the team websites. The rivalries are fierce and the atmosphere is incredible — especially for a local derby.", ko: "NRL은 시드니의 심장입니다. 17개 팀이 참가하는 대회로(NSW 9팀, QLD 3팀 포함) 3월부터 10월까지 열립니다. 그랜드 파이널은 NSW에서는 비공식 국경일 수준의 열기를 보여줍니다. 주요 팀: Penrith Panthers, South Sydney Rabbitohs, Sydney Roosters, Parramatta Eels, Wests Tigers (마이클의 팀!), Brisbane Broncos, Melbourne Storm. 티켓은 Ticketek 또는 팀 웹사이트에서 약 $25부터 구매 가능합니다." },
       { label: "AFL — Australian Rules Football", en: "AFL is the nation's most-watched sport. 18 teams from all over Australia compete in a fast, high-scoring game played on an oval ball. The season runs March-September with the Grand Final in September/October. Sydney has two teams: Sydney Swans (based at the SCG in Moore Park) and Greater Western Sydney Giants (GIANTS Stadium at Homebush). The Swans have a huge following — if they make the Grand Final, the city stops. Tickets from ~$30 at Ticketmaster.", ko: "AFL은 호주에서 가장 많은 시청자를 끌어 모으는 스포츠입니다. 18개 팀이 오벌 볼로 진행되는 빠르고 점수 왕복이 많은 경기를 펼칩니다. 시즌은 3월부터 9월까지, 그랜드 파이널은 9월/10월에 열립니다. 시드니에는 두 개의 팀이 있습니다: Sydney Swans (Moore Park의 SCG)그리고 Greater Western Sydney Giants (Homebush의 GIANTS Stadium). Swans는 팬 기반이 매우 큽니다 — 그랜드 파이널에 진출하면 도시가 멈춥니다. 티켓은 Ticketmaster에서 약 $30부터." },
@@ -34,6 +35,7 @@ const sections: SportSection[] = [
     koTitle: "크리켓",
     desc: "Australia's national summer sport — Test matches, BBL, and the Ashes",
     koDesc: "호주의 국민 서머 스포츠 — 테스트 매치, BBL, 애즈 시리즈",
+    img: "https://picsum.photos/seed/aussie-cricket-scg/1200/600",
     items: [
       { label: "International Cricket (Tests & ODIs)", en: "Cricket is Australia's national sport played mainly in summer (November to March). The Australian men's team (the Baggy Greens) is one of the best in the world. Big rivalries: Australia vs England (The Ashes — held every 2 years, alternating between the two countries), Australia vs India, Australia vs South Africa. Test matches at the SCG or Manuka Oval in Canberra can run for 5 days. Tickets from ~$40.", ko: "크리켓은 주로 하계(11월부터 3월)에 열리는 호주의 국민 스포츠입니다. 호주 남자 대표팀(Baggy Greens)은 세계 최고 수준입니다. 큰 라이벌: 호주 vs 영국(더 애즈 — 2년마다 번갈아 개최), 호주 vs 인도, 호주 vs 남아프리카. SCG나 캔버라의 Manuka Oval에서 열리는 테스트 매치는 5일까지 진행됩니다. 티켓은 약 $40부터." },
       { label: "BBL — Big Bash League", en: "The BBL is the domestic T20 (short-format) league running December to January — perfect for summer evenings. 8 city-based teams play 20-over matches in 3 hours. Sydney Sixers and Sydney Thunder are the local teams. The atmosphere is very family-friendly and entertainment-focused, with fireworks, music, and fun promotions. Tickets from ~$25 at Ticketek. The playoffs and final (usually mid-February) sell out fast.", ko: "BBL은 12월부터 1월까지 진행되는 국내 T20(단판 형식) 리그로, 여름 저녁에 딱 좋습니다. 8개 도시 기반 팀이 20오버 매치를 3시간 만에 펼칩니다. Sydney Sixers와 Sydney Thunder가 시드니 팀입니다. 분위기는 가족 단위로 즐기기에 좋으며, 불꽃놀이, 음악, 재미있는 프로모션이 펼쳐집니다. 티켓은 Ticketek에서 약 $25부터. 플레이오프와 결승(보통 2월 중순)은 매진됩니다." },
@@ -48,6 +50,7 @@ const sections: SportSection[] = [
     koTitle: "축구",
     desc: "A-League, Matildas, and why soccer is booming in Australia",
     koDesc: "A-League, 마틸다스, 호주에서 급부상하는 축구",
+    img: "https://picsum.photos/seed/aussie-soccer-pitch/1200/600",
     items: [
       { label: "A-League (Men's)", en: "The A-League runs October to May with 12 teams. Sydney FC, Western Sydney Wanderers, Newcastle Jets, and Macarthur FC are the NSW clubs. The Sydney Derby (Sydney FC vs Western Sydney Wanderers) is one of the most intense rivalries in Australian sport — absolutely electric atmosphere. Melbourne Victory vs Sydney FC is another huge fixture. Tickets from ~$30 at Ticketek.", ko: "A-League는 10월부터 5월까지 12개 팀이 참가합니다. 시드니 FC, 웨스턴 시드니 원더러스, 뉴캐슬 제츠, 마카서 FC가 NSW 클럽입니다. 시드니 더비(시드니 FC vs 웨스턴 시드니 원더러스)는 호주 스포츠에서 가장 격렬한 라이벌 중 하나입니다. Melbourne Victory vs Sydney FC도 흥미로운 경기입니다. 티켓은 Ticketek에서 약 $30부터." },
       { label: "Matildas (Women's National Team)", en: "Australia's women's national football team (the Matildas) has become one of the most beloved teams in the country, especially after their 2023 FIFA Women's World Cup performance (held in Australia/New Zealand). Sam Kerr is the star player. They play home matches at various stadiums including ANZ Stadium, Marvel Stadium (Melbourne), and Suncorp Stadium (Brisbane). When they play in Sydney, tickets sell out fast — get them early.", ko: "호주 여자 축구 대표팀(Matildas)은 2023년 FIFA 여자 월드컵(호주/뉴질랜드 공동 개최) 이후 가장 사랑받는 팀 중 하나가 되었습니다. 샘 케르가 스타 플레이어입니다. ANZ 스타디움, Marvel Stadium(멜버른), Suncorp Stadium(브리즈번) 등 다양한 경기장에서 홈 경기를 치릅니다. 시드니 경기는 표가 빨리 매진되므로 일찍 구매하세요." },
@@ -62,24 +65,11 @@ const sections: SportSection[] = [
     koTitle: "기타 인기 스포츠",
     desc: "Swimming, tennis, golf, and Australia's fitness culture",
     koDesc: "수영, 테니스, 골프, 호주의 피트니스 문화",
+    img: "https://picsum.photos/seed/aussie-swimming-pool/1200/600",
     items: [
       { label: "Swimming", en: "Australians are obsessed with swimming — we produce world-class swimmers. Olympic-standard pools are available across Sydney (Sydney Olympic Park Aquatic Centre, Cook+Philip Park, Laurentian). Summer means ocean swims and beach sprints — Bondi Icebergs swim club runs year-round in the frozen ocean pool at Bondi. You don't have to be fast; it's about being there. Junior swimming lessons start from ~$15/week at local council pools.", ko: "호주인들은 수영에 빠져 있습니다 — 세계적 수준 수영 선수를 배출합니다. 올림픽 표준 수영장이 시드니 전역에 있습니다(시드니 올림피아크 파크 액워틱 센터, Cook+Philip Park, Laurentian). 여름에는 바다 수영과 비치 스프린트가 있습니다 — Bondi Icebergs 클럽은 Bondi의 frozen ocean pool에서 년내내 운영됩니다. 잘 하기보다는 그냥 참여하는 것입니다. 청소년 수영 레슨은 지역 의회 수영장에서 약 $15/주부터 시작합니다." },
       { label: "Tennis", en: "The Australian Open in Melbourne (January) is one of the four Grand Slam tournaments and draws huge crowds. It's also the most accessible Grand Slam — grounds passes start around $50, and you can watch multiple matches simultaneously on outer courts. Sydney hosts the Sydney Tennis International (ATP/WTA) in January at the Sydney Olympic Park Tennis Centre. Public tennis courts are available in most parks — book via Inner West Council or your local council website for ~$15-$20/hour.", ko: "호주 오프연고qq Melbourne의 호주 오프연고qq(1월)는 4대 그랜드 슬램 대회 중 하나이며 많은 군중을 끌어 모읍니다. 가장 접근하기 쉬운 그랜드 슬램이기도 합니다 — 그라운드 패스는 약 $50부터, 외부코트에서 여러 경기를 동시에 볼 수 있습니다. 시드니는 시드니 올림피아크 파크 테니스 센터에서 1월에 시드니 테니스 인터내셔널(ATP/WTA)을 개최합니다. 공공 테니스 코트는 대부분의 공원에서 이용 가능하며, 지역 의회 웹사이트에서 약 $15-$20/시간에 예약할 수 있습니다." },
       { label: "Fitness Culture & Gyms", en: "Australians are genuinely fitness-obsessed. Anytime Fitness (24/7, ~$15/week), F45 (functional training, ~$60/week), and Genesis (upmarket) are the main chains. Most suburbs have a local gym. Gym memberships are cheaper than in Korea — most start around $10-$15/week with no lock-in contracts. Many people use their commute time to exercise. Running is huge — the City2Sydney run (10km, August) and Sydney Marathon (September) are popular events.", ko: "호주인들은 진짜 피트니스에 미쳐 있습니다. Anytime Fitness(24/7, 약 $15/주), F45(기능성 트레이닝, 약 $60/주), Genesis(고급) 등 주요 체인점이 있습니다. 대부분의 교외에는 로컬 헬스장도 있습니다. 헬스장 멤버십은 한국보다 저렴합니다 — 대부분 회비는 주당 $10-$15 정도이며, 사용하지 않을 때 지불하는 계약은 없습니다. 시간에 운동하는 사람이 많습니다. 러닝이 활발합니다 — City2Sydney 러닝(10km, 8월)과 시드니 마라톤(9월)이 인기 있습니다." },
-    ],
-  },
-  {
-    id: "watching-sport",
-    iconKey: "Star",
-    accent: "rose",
-    title: "Watching Sports",
-    koTitle: "스포츠 시청",
-    desc: "TV, streaming, apps — how to follow your favourite sports",
-    koDesc: "TV, 스트리밍, 앱 — 좋아하는 스포츠 시청 방법",
-    items: [
-      { label: "Free-to-Air TV", en: "The ABC (Channel 2/ABC TV) broadcasts some AFL, cricket, and Olympics. Nine Network (Channel 9) shows NRL (Friday night and Sunday arvo games), some cricket, and the Olympics. Network 10 shows some A-League and other sports. Check the TV guide on the ABC or Nine websites. The Nine and 10 apps let you stream some content for free after broadcast.", ko: "ABC(채널 2/ABC TV)는 일부 AFL, 크리켓, 올림픽을 방송합니다. Nine Network(채널 9)는 NRL(금요일 밤, 일요일 오후 경기), 일부 크리켓, 올림픽을 보여줍니다. Network 10은 일부 A-League와 다른 스포츠를방송합니다. ABC 또는 Nine 웹사이트에서 TV 가이드를 확인하세요. Nine과 10 앱은 방송 후 일부 콘텐츠를 무료로 스트리밍할 수 있습니다." },
-      { label: "Kayo Sports (~$25/month)", en: "Kayo Sports is the main pay-TV sports platform in Australia. It shows: NRL, AFL, A-League, Super Rugby, cricket (domestic and international), Formula 1, tennis, and more. No lock-in contract — cancel anytime. It's owned by Fox Sports and has been a game-changer for sports fans. Best for watching multiple sports or games that aren't on free-to-air.", ko: "Kayo Sports는 호주 주요 유료 TV 스포츠 플랫폼입니다. NRL, AFL, A-League, Super Rugby, 크리켓(국내/국제), 포뮬러 1, 테니스 등을 보여줍니다. 기간 약정 없음 — 언제든지 취소 가능. Fox Sports 소유로 스포츠 팬들에게 게임 체인저였습니다. 프리-TO-에어가 아닌 여러 스포츠나 경기를 시청하기에 최적입니다." },
-      { label: "Optus Sport (~$15/month)", en: "Optus Sport is the go-to for soccer fans. It has exclusive rights to the English Premier League (EPL) in Australia — every match, every week. Also shows UEFA Champions League, Bundesliga, and some A-League matches. If you follow European soccer, this is essential. It's much cheaper than Kayo for soccer-only viewing.", ko: "Optus Sport은 축구 팬들에게 필수입니다. 호주에서 프리미어리그(EPL)의 독점 방송권자로, 경기마다 매주 시청할 수 있습니다. UEFA 챔피언스리그, 분데스리가, 일부 A-League 경기도방송합니다. 유럽 축구를 따라한다면 필수입니다. 축구만 시청하기에는 Kayo보다 훨씬 저렴합니다." },
     ],
   },
   {
@@ -90,19 +80,13 @@ const sections: SportSection[] = [
     koTitle: "호주의 스포츠 베팅 문화",
     desc: "Sports betting is everywhere in Australia — what international students need to know",
     koDesc: "호주에 자리 잡은 스포츠 베팅 — 국제 학생이 알아야 할 것들",
+    img: "https://picsum.photos/seed/aussie-stadium-crowd/1200/600",
     items: [
       { label: "Why It's So Prevalent", en: "Sports betting is advertised constantly during TV broadcasts — every ad break during a footy game seems to have a betting ad. Australia has some of the most liberal gambling laws in the world. The TAB (Totalisator Agency Board) was government-owned but most betting is now done through corporate bookmakers (Sportsbet, Bet365, Ladbrokes, PointsBet). This is a significant social issue in Australia — problem gambling affects ~1% of adults but the harm extends to families and communities.", ko: "스포츠 베팅은 TV 방송 중에 끊임없이 광고됩니다 — 풋볼 경기 중 광고 휴식마다 베팅 광고가 나오는 것 같습니다. 호주는 세계에서 가장 자유로운 도박법 중 하나를 가지고 있습니다. TAB(국영 도박 위원회)이었지만 현재 베팅의 대부분은 민간 북메이커(Sportsbet, Bet365, Ladbrokes, PointsBet)를 통해 이루어집니다.이것은 호주에서 중요한 사회적 문제입니다 — 문제 도박은 성인 약 1%에 영향을 미치지만 가족과 공동체까지 해를 끼칩니다." },
       { label: "International Students — AVOID", en: "Sports betting is illegal or heavily restricted in many countries including South Korea. Even if legal in Australia, participating in sports betting as an international student can: violate your student visa conditions (check your specific visa subclass), lead to significant financial harm, result in addiction that affects your studies and wellbeing. If gambling is legal in your home country and you were already gambling before arriving, you are still strongly encouraged to avoid it while on a student visa. Australia has one of the highest gambling participation rates in the world — it is not normal and it causes real harm.", ko: "스포츠 베팅은 한국을 포함한 많은 국가에서 불법이거나 엄격히 제한되어 있습니다. 호주에서 합법이더라도 국제 학생이 스포츠 베팅에 참여하면: 학생 비자 조건을 위반할 수 있습니다(비자 종류를 확인하세요), 심각한 재정적 피해를 입을 수 있습니다, 학업과 안녕에 영향을 미치는 중독으로 이어질 수 있습니다. 모국에서 도박이 합법이고 도착하기 전에 이미 도박을 했다면, 학생 비자 기간중에는특히 피하는피할 것을 강력히 권장. 호주는 세계에서 가장 높은 도박 참여율을 가지고 있습니다 — 이것은 정상적이지 않으며 실제 피해를 끼칩니다." },
       { label: "Getting Help", en: "If you or someone you know is struggling with gambling, free and confidential help is available: Gambling Help Online (gamblinghelponline.org.au, 1800 858 858). These services are available in multiple languages including Korean. You can also speak to a counsellor at your university. Many universities have free confidential counselling services. Speaking up early makes a huge difference.", ko: "도박으로 고통받고 있거나 알고 있는 사람이 있다면, 무료이자 비밀 보장인 도움말을 받을 수 있습니다: Gambling Help Online(gamblinghelponline.org.au, 1800 858 858). 이러한 서비스는 한국어를 포함한 여러 언어로 제공됩니다. 대학교 상담사에게도 말할 수 있습니다. 많은 대학교에는 무료 비밀 상담 서비스가 있습니다. 일찍 말하는 것이 큰 차이를 만듭니다." },
     ],
   },
-];
-
-const quickFacts = [
-  { labelEn: "NRL teams", labelKo: "NRL 팀", value: "17" },
-  { labelEn: "Big Bash", labelKo: "BBL 시즌", value: "Dec–Feb" },
-  { labelEn: "Super rate", labelKo: "퇴직연금", value: "11.5%" },
-  { labelEn: "Kayo price", labelKo: "Kayo 가격", value: "$25/mo" },
 ];
 
 export default function SportPage() {
@@ -124,22 +108,6 @@ export default function SportPage() {
       </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <section className="mb-12">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
-            <En>Quick facts</En><Ko>핵심 정보</Ko>
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {quickFacts.map((f, i) => (
-              <div key={f.labelEn} className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border`}>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
-                  <En>{f.labelEn}</En><Ko>{f.labelKo}</Ko>
-                </p>
-                <p className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 leading-tight">{f.value}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <div className="space-y-12">
           {sections.map((section, i) => (
             <EditorialSection key={section.id} data={section} index={i} />
