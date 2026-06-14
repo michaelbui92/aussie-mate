@@ -5,6 +5,7 @@ const seasons = [
     key: "summer",
     title: { en: "Summer", ko: "여름" },
     months: "Dec · Jan · Feb",
+    img: "https://picsum.photos/seed/aussie-summer-bondi/1200/900",
     accent: "from-orange-400 to-amber-500",
     en: "Hot, humid, beach season. 25–40°C. Australian summer runs December to February — Christmas at the beach is completely normal.",
     ko: "더움과 습기, 해변 시즌. 25–40°C. 호주의 여름은 12월부터 2월까지 — 해변에서 크리스마스는 완전히 정상입니다.",
@@ -13,6 +14,7 @@ const seasons = [
     key: "autumn",
     title: { en: "Autumn", ko: "가을" },
     months: "Mar · Apr · May",
+    img: "https://picsum.photos/seed/aussie-autumn-mountains/1200/900",
     accent: "from-amber-500 to-yellow-600",
     en: "Mild and pleasant. 15–25°C. The leaves in the Blue Mountains turn gold and red. Prime walking weather.",
     ko: "온화하고 쾌적함. 15–25°C. 블루마운틴 단풍이 노랑과 빨강으로 물듭. 산책 최적기.",
@@ -21,6 +23,7 @@ const seasons = [
     key: "winter",
     title: { en: "Winter", ko: "겨울" },
     months: "Jun · Jul · Aug",
+    img: "https://picsum.photos/seed/aussie-winter-snow/1200/900",
     accent: "from-sky-400 to-blue-500",
     en: "Cool but rarely cold. 8–18°C in Sydney. Snow falls in the Alps and Tasmania — but not in Sydney. Frost at night in regional areas.",
     ko: "선선하지만 거의 추운 편 아님. 시드니는 8–18°C. 눈은 알프스 지방과 태즈먼니아에 내림 — 시드니엔 안 냄. 지역에 따라 밤에 서리.",
@@ -29,6 +32,7 @@ const seasons = [
     key: "spring",
     title: { en: "Spring", ko: "봄" },
     months: "Sep · Oct · Nov",
+    img: "https://picsum.photos/seed/aussie-spring-wildflowers/1200/900",
     accent: "from-emerald-400 to-green-500",
     en: "Wildflowers, baby animals, warmth returning. 15–28°C. Windy in some areas. The best time to visit the outback.",
     ko: "야생화, 새끼 동물들, 따뜻함 복귀. 15–28°C. 일부 지역엔 바람이 많음. 아웃백 방문 최적기.",
@@ -57,133 +61,152 @@ const sydneyStats = [
 
 export default function WeatherPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-        <En>Weather</En>
-        <Ko>날씨</Ko>
-      </p>
-      <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-        <En>Weather in Australia</En>
-        <Ko>호주의 날씨</Ko>
-      </h1>
-      <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl mb-12">
-        <En>What to expect, season by season — and why summer is nothing like Korea.</En>
-        <Ko>호주의 계절별 날씨 가이드 — 여름이 한국이랑 어떻게 다른지.</Ko>
-      </p>
+    <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
+      {/* Header */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Weather</En>
+            <Ko>날씨</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Weather in Australia</En>
+            <Ko>호주의 날씨</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>What to expect, season by season — and why summer is nothing like Korea.</En>
+            <Ko>호주의 계절별 날씨 가이드 — 여름이 한국이랑 어떻게 다른지.</Ko>
+          </p>
+        </div>
+      </header>
 
       {/* Season cards */}
-      <div className="grid grid-cols-2 gap-3 md:gap-4 mb-12">
-        {seasons.map((s, i) => (
-          <div
-            key={s.key}
-            className={`reveal reveal-delay-${(i % 5) + 1} relative overflow-hidden rounded-2xl aspect-[4/5] sm:aspect-[5/6] shadow-md hover:shadow-xl transition-shadow`}
-          >
-            <div className={`absolute inset-0 bg-gradient-to-br ${s.accent}`} />
-            <div className="relative h-full p-5 md:p-6 flex flex-col justify-end text-white">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-2">
-                {s.months}
-              </p>
-              <h3 className="font-serif text-2xl md:text-3xl mb-2 leading-tight">
-                <En>{s.title.en}</En>
-                <Ko>{s.title.ko}</Ko>
-              </h3>
-              <p className="text-white/85 text-xs md:text-sm leading-relaxed">
-                <En>{s.en}</En>
-                <Ko>{s.ko}</Ko>
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* UV section */}
-      <section className="mb-10 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30 p-6 md:p-8">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-3">
-          <En>UV &amp; sun safety</En>
-          <Ko>자외선 &amp; 안전</Ko>
-        </p>
-        <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
-          <En>The sun here is different.</En>
-          <Ko>호주의 태양은 다릅니다.</Ko>
-        </h2>
-        <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-          <En>Australia has the highest UV radiation in the world. Even on cloudy days, UV can be extreme. Slip, slop, slap:</En>
-          <Ko>호주는 세계 최고 자외선 지수를 보유한 나라입니다. 흐린 날에도 자외선이 강할 수 있습니다. Slip, slop, slap:</Ko>
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {slipSlop.map((item, i) => (
-            <div
-              key={item.en}
-              className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-2xl bg-white/80 dark:bg-dark-surface/80 backdrop-blur-sm border border-amber-200/40 dark:border-amber-900/30`}
-            >
-              <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
-                <En>{item.en}</En>
-                <Ko>{item.ko}</Ko>
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Weather quirks */}
-      <section className="mb-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-          <En>Aussie weather quirks</En>
-          <Ko>호주 날씨의 특이점</Ko>
+          <En>Four seasons</En>
+          <Ko>네 계절</Ko>
         </p>
-        <ul className="space-y-3">
-          {quirks.map((item, i) => (
-            <li
-              key={item.en}
-              className={`reveal reveal-delay-${(i % 5) + 1} flex gap-4 group`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-12">
+          {seasons.map((s, i) => (
+            <article
+              key={s.key}
+              className={`reveal reveal-delay-${(i % 5) + 1} group block relative overflow-hidden rounded-2xl aspect-[4/5] sm:aspect-[5/6] shadow-md hover:shadow-2xl transition-shadow`}
             >
-              <span className="shrink-0 w-8 h-8 rounded-full bg-sky-50 dark:bg-sky-950/50 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
-                →
-              </span>
-              <div>
-                <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
-                  <En>{item.en}</En>
-                  <Ko>{item.ko}</Ko>
+              {/* Image (with gradient fallback underneath so the card stays visual if picsum is down) */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${s.accent}`} aria-hidden="true" />
+              <img
+                src={s.img}
+                alt={`${s.title.en} in Australia`}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" aria-hidden="true" />
+              <div className="relative h-full p-5 md:p-6 flex flex-col justify-end text-white">
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-2">
+                  {s.months}
+                </p>
+                <h3 className="font-serif text-2xl md:text-3xl mb-2 leading-tight">
+                  <En>{s.title.en}</En>
+                  <Ko>{s.title.ko}</Ko>
                 </h3>
-                <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                  <En>{item.descEn}</En>
-                  <Ko>{item.descKo}</Ko>
+                <p className="text-white/85 text-xs md:text-sm leading-relaxed">
+                  <En>{s.en}</En>
+                  <Ko>{s.ko}</Ko>
                 </p>
               </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Sydney specifics */}
-      <section className="rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-          <En>Sydney climate</En>
-          <Ko>시드니 기후</Ko>
-        </p>
-        <h2 className="font-serif text-2xl md:text-3xl mb-5 leading-tight">
-          <En>The numbers behind the experience.</En>
-          <Ko>경험의 이면의 숫자들.</Ko>
-        </h2>
-        <div className="grid grid-cols-2 gap-3 mb-5">
-          {sydneyStats.map((item, i) => (
-            <div
-              key={item.labelEn}
-              className={`reveal reveal-delay-${(i % 5) + 1} p-3.5 rounded-xl bg-stone-800 dark:bg-stone-900 border border-stone-700/50`}
-            >
-              <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-1">
-                <En>{item.labelEn}</En>
-                <Ko>{item.labelKo}</Ko>
-              </p>
-              <p className="font-serif text-lg text-white">{item.val}</p>
-            </div>
+            </article>
           ))}
         </div>
-        <p className="text-xs text-stone-400">
-          <En>Source: Bureau of Meteorology (bom.gov.au) — download the app for real-time forecasts.</En>
-          <Ko>출처: 기상청 (bom.gov.au) — 실시간 예보를 보려면 앱을 다운로드하세요.</Ko>
-        </p>
-      </section>
+
+        {/* UV section */}
+        <section className="mb-10 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30 p-6 md:p-8">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-3">
+            <En>UV &amp; sun safety</En>
+            <Ko>자외선 &amp; 안전</Ko>
+          </p>
+          <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
+            <En>The sun here is different.</En>
+            <Ko>호주의 태양은 다릅니다.</Ko>
+          </h2>
+          <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
+            <En>Australia has the highest UV radiation in the world. Even on cloudy days, UV can be extreme. Slip, slop, slap:</En>
+            <Ko>호주는 세계 최고 자외선 지수를 보유한 나라입니다. 흐린 날에도 자외선이 강할 수 있습니다. Slip, slop, slap:</Ko>
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {slipSlop.map((item, i) => (
+              <div
+                key={item.en}
+                className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-2xl bg-white/80 dark:bg-dark-surface/80 backdrop-blur-sm border border-amber-200/40 dark:border-amber-900/30`}
+              >
+                <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
+                  <En>{item.en}</En>
+                  <Ko>{item.ko}</Ko>
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Weather quirks */}
+        <section className="mb-10">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+            <En>Aussie weather quirks</En>
+            <Ko>호주 날씨의 특이점</Ko>
+          </p>
+          <ul className="space-y-3">
+            {quirks.map((item, i) => (
+              <li
+                key={item.en}
+                className={`reveal reveal-delay-${(i % 5) + 1} flex gap-4 group`}
+              >
+                <span className="shrink-0 w-8 h-8 rounded-full bg-sky-50 dark:bg-sky-950/50 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
+                  →
+                </span>
+                <div>
+                  <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
+                    <En>{item.en}</En>
+                    <Ko>{item.ko}</Ko>
+                  </h3>
+                  <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+                    <En>{item.descEn}</En>
+                    <Ko>{item.descKo}</Ko>
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Sydney specifics */}
+        <section className="rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
+            <En>Sydney climate</En>
+            <Ko>시드니 기후</Ko>
+          </p>
+          <h2 className="font-serif text-2xl md:text-3xl mb-5 leading-tight">
+            <En>The numbers behind the experience.</En>
+            <Ko>경험의 이면의 숫자들.</Ko>
+          </h2>
+          <div className="grid grid-cols-2 gap-3 mb-5">
+            {sydneyStats.map((item, i) => (
+              <div
+                key={item.labelEn}
+                className={`reveal reveal-delay-${(i % 5) + 1} p-3.5 rounded-xl bg-stone-800 dark:bg-stone-900 border border-stone-700/50`}
+              >
+                <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-1">
+                  <En>{item.labelEn}</En>
+                  <Ko>{item.labelKo}</Ko>
+                </p>
+                <p className="font-serif text-lg text-white">{item.val}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-stone-400">
+            <En>Source: Bureau of Meteorology (bom.gov.au) — download the app for real-time forecasts.</En>
+            <Ko>출처: 기상청 (bom.gov.au) — 실시간 예보를 보려면 앱을 다운로드하세요.</Ko>
+          </p>
+        </section>
+      </div>
     </div>
   );
 }
