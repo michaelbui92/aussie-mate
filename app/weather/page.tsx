@@ -1,11 +1,12 @@
 import { En, Ko } from "@/components/LangBlocks";
+import SeasonAccordion from "@/components/SeasonAccordion";
 
 const seasons = [
   {
     key: "summer",
     title: { en: "Summer", ko: "여름" },
     months: "Dec · Jan · Feb",
-    img: "https://picsum.photos/seed/aussie-summer-bondi/1200/900",
+    img: "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "from-orange-400 to-amber-500",
     en: "Hot, humid, beach season. 25–40°C. Australian summer runs December to February — Christmas at the beach is completely normal.",
     ko: "더움과 습기, 해변 시즌. 25–40°C. 호주의 여름은 12월부터 2월까지 — 해변에서 크리스마스는 완전히 정상입니다.",
@@ -14,7 +15,7 @@ const seasons = [
     key: "autumn",
     title: { en: "Autumn", ko: "가을" },
     months: "Mar · Apr · May",
-    img: "https://picsum.photos/seed/aussie-autumn-mountains/1200/900",
+    img: "https://images.pexels.com/photos/34907670/pexels-photo-34907670.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "from-amber-500 to-yellow-600",
     en: "Mild and pleasant. 15–25°C. The leaves in the Blue Mountains turn gold and red. Prime walking weather.",
     ko: "온화하고 쾌적함. 15–25°C. 블루마운틴 단풍이 노랑과 빨강으로 물듭. 산책 최적기.",
@@ -23,7 +24,7 @@ const seasons = [
     key: "winter",
     title: { en: "Winter", ko: "겨울" },
     months: "Jun · Jul · Aug",
-    img: "https://picsum.photos/seed/aussie-winter-snow/1200/900",
+    img: "https://images.pexels.com/photos/21660236/pexels-photo-21660236.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "from-sky-400 to-blue-500",
     en: "Cool but rarely cold. 8–18°C in Sydney. Snow falls in the Alps and Tasmania — but not in Sydney. Frost at night in regional areas.",
     ko: "선선하지만 거의 추운 편 아님. 시드니는 8–18°C. 눈은 알프스 지방과 태즈먼니아에 내림 — 시드니엔 안 냄. 지역에 따라 밤에 서리.",
@@ -32,32 +33,32 @@ const seasons = [
     key: "spring",
     title: { en: "Spring", ko: "봄" },
     months: "Sep · Oct · Nov",
-    img: "https://picsum.photos/seed/aussie-spring-wildflowers/1200/900",
+    img: "https://images.pexels.com/photos/33329755/pexels-photo-33329755.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "from-emerald-400 to-green-500",
     en: "Wildflowers, baby animals, warmth returning. 15–28°C. Windy in some areas. The best time to visit the outback.",
     ko: "야생화, 새끼 동물들, 따뜻함 복귀. 15–28°C. 일부 지역엔 바람이 많음. 아웃백 방문 최적기.",
   },
-];
+] as const;
 
 const slipSlop = [
   { en: "Slip on a shirt", ko: "Slip: 셔츠 입기" },
   { en: "Slop on sunscreen (SPF 50+)", ko: "Slop: 선크림 (SPF 50+)" },
   { en: "Slap on a hat", ko: "Slap: 모자 쓰기" },
-];
+] as const;
 
 const quirks = [
   { en: '"Four seasons in one day"', ko: '"하루에 네 계절"', descEn: "Sydney and Melbourne especially can shift from sunny to rain to wind in hours. Always bring a light jacket.", descKo: "시드니와 멜버른은 특히 몇 시간 만에 맑음에서 비, 바람으로 바뀔 수 있습니다. 항상 가벼운 재킷을 가지고 다니세요." },
   { en: "Summer storms", ko: "여름 뇌우", descEn: "Afternoon thunderstorms are common in summer — especially in the east. They pass quickly.", descKo: "여름철 오후 천둥번개가 흔함 — 특히 동부. 빠르게 지나갑니다." },
   { en: "Bushfire season", ko: "산불 시즌", descEn: "Summer (Dec–Feb) brings high fire danger, especially in regional NSW. Check the RFS website before regional travel.", descKo: "여름(12–2월)에는 산불 위험이 높음, 특히 NSW 지역. 지역 여행 전 RFS 웹사이트를 확인하세요." },
   { en: "El Niño years", ko: "엘니뇨 해", descEn: "Drought conditions are more common in El Niño years. Water restrictions can apply. Check your local council website.", descKo: "엘니뇨 해에는 가뭄이 더 흔합니다. 상수도 사용 제한이 적용될 수 있습니다." },
-];
+] as const;
 
 const sydneyStats = [
   { labelEn: "Avg Summer", labelKo: "여름 평균", val: "24°C / 19°C" },
   { labelEn: "Avg Winter", labelKo: "겨울 평균", val: "17°C / 9°C" },
   { labelEn: "Sea temp (summer)", labelKo: "해수 온도 (여름)", val: "23–26°C" },
   { labelEn: "Rainiest month", labelKo: "강수량이 가장 많은 월", val: "June (130mm)" },
-];
+] as const;
 
 export default function WeatherPage() {
   return (
@@ -86,37 +87,7 @@ export default function WeatherPage() {
           <En>Four seasons</En>
           <Ko>네 계절</Ko>
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-12">
-          {seasons.map((s, i) => (
-            <article
-              key={s.key}
-              className={`reveal reveal-delay-${(i % 5) + 1} group block relative overflow-hidden rounded-2xl aspect-[4/5] sm:aspect-[5/6] shadow-md hover:shadow-2xl transition-shadow`}
-            >
-              {/* Image (with gradient fallback underneath so the card stays visual if picsum is down) */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${s.accent}`} aria-hidden="true" />
-              <img
-                src={s.img}
-                alt={`${s.title.en} in Australia`}
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" aria-hidden="true" />
-              <div className="relative h-full p-5 md:p-6 flex flex-col justify-end text-white">
-                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-2">
-                  {s.months}
-                </p>
-                <h3 className="font-serif text-2xl md:text-3xl mb-2 leading-tight">
-                  <En>{s.title.en}</En>
-                  <Ko>{s.title.ko}</Ko>
-                </h3>
-                <p className="text-white/85 text-xs md:text-sm leading-relaxed">
-                  <En>{s.en}</En>
-                  <Ko>{s.ko}</Ko>
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <SeasonAccordion seasons={seasons} />
 
         {/* UV section */}
         <section className="mb-10 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30 p-6 md:p-8">
