@@ -77,9 +77,9 @@ export default function DestinationsPage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { title: "Beaches", koTitle: "해변", blurb: "From Bondi to Hyams — find your stretch of sand.", koBlurb: "본다이에서 하임스까지 — 나만의 해변을 찾으세요.", href: "/destinations/south-coast", accent: "from-cyan-500 to-sky-600" },
-            { title: "Wildlife", koTitle: "야생동물", blurb: "Kangaroos at sunrise, whales from the coast.", koBlurb: "일출의 캥거루, 해안의 고래.", href: "/destinations/blue-mountains", accent: "from-emerald-500 to-teal-600" },
-            { title: "Food & Wine", koTitle: "식음료", blurb: "Hunter Valley vintages, laneway brunches.", koBlurb: "헌터밸리 와인, 골목 브런치.", href: "/destinations/hunter-valley", accent: "from-rose-500 to-orange-500" },
+            { title: "Beaches", koTitle: "해변", blurb: "Bondi, Manly, ocean pools & coastal walks.", koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.", href: "/destinations/beaches", accent: "from-cyan-500 to-sky-600" },
+            { title: "Wildlife", koTitle: "야생동물", blurb: "Taronga Zoo, national parks & wild encounters.", koBlurb: "타롱가 동물원, 국립공원, 야생 동물 만남.", href: "/destinations/wildlife", accent: "from-emerald-500 to-teal-600" },
+            { title: "Food & Wine", koTitle: "식음료", blurb: "Newtown eats, diverse cuisines & Sydney's best bites.", koBlurb: "뉴타운 맛집, 다양한 음식 문화, 시드니 최고의 맛.", href: "/destinations/food", accent: "from-rose-500 to-orange-500" },
             { title: "Adventure", koTitle: "어드벤처", blurb: "Ski fields, mountain bikes, ocean swims.", koBlurb: "스키장, 산악자전거, 바다 수영.", href: "/destinations/snowy-mountains", accent: "from-sky-500 to-indigo-600" },
             { title: "Culture", koTitle: "문화", blurb: "Indigenous heritage, galleries, festivals.", koBlurb: "원주민 유산, 미술관, 축제.", href: "/resources", accent: "from-amber-500 to-yellow-600" },
             { title: "Road Trips", koTitle: "로드트립", blurb: "Pacific Coast, Great Ocean Road, outback.", koBlurb: "태평양 해안, 그레이트오션로드, 아웃백.", href: "/destinations/south-coast", accent: "from-stone-500 to-stone-700" },
