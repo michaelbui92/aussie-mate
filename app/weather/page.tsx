@@ -75,8 +75,8 @@ export default function WeatherPage() {
             <Ko>호주의 날씨</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>What to expect, season by season — and why summer is nothing like Korea.</En>
-            <Ko>호주의 계절별 날씨 가이드 — 여름이 한국이랑 어떻게 다른지.</Ko>
+            <En>What to expect, season by season — plan when to visit, what to pack, and how to make the most of each season.</En>
+            <Ko>계절별 날씨 가이드 — 언제 방문할지, 무엇을 챙길지, 각 계절을 최대한 즐기는 방법.</Ko>
           </p>
         </div>
       </header>

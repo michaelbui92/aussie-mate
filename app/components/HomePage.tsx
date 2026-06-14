@@ -9,7 +9,6 @@ import { SearchModal } from "@/components/SearchModal";
 import { destinations } from "@/destinations/data";
 
 type StageKey = "visiting" | "arrived" | "home";
-type SeasonKey = "winter" | "spring" | "summer" | "autumn";
 
 const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string }[] = [
   { 
@@ -38,15 +37,6 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
   },
 ];
 
-const thingsToDo: { title: string; koTitle: string; blurb: string; koBlurb: string; href: string; accent: string }[] = [
-  { title: "Beaches", koTitle: "해변", blurb: "From Bondi to Hyams — find your stretch of sand.", koBlurb: "본다이에서 하임스까지 — 나만의 해변을 찾으세요.", href: "/destinations/south-coast", accent: "from-cyan-500 to-sky-600" },
-  { title: "Wildlife", koTitle: "야생동물", blurb: "Kangaroos at sunrise, whales from the coast.", koBlurb: "일출의 캥거루, 해안의 고래.", href: "/destinations/blue-mountains", accent: "from-emerald-500 to-teal-600" },
-  { title: "Food & Wine", koTitle: "식음료", blurb: "Hunter Valley vintages, laneway brunches.", koBlurb: "헌터밸리 와인, 골목 브런치.", href: "/destinations/hunter-valley", accent: "from-rose-500 to-orange-500" },
-  { title: "Adventure", koTitle: "어드벤처", blurb: "Ski fields, mountain bikes, ocean swims.", koBlurb: "스키장, 산악자전거, 바다 수영.", href: "/destinations/snowy-mountains", accent: "from-sky-500 to-indigo-600" },
-  { title: "Culture", koTitle: "문화", blurb: "Indigenous heritage, galleries, festivals.", koBlurb: "원주민 유산, 미술관, 축제.", href: "/resources", accent: "from-amber-500 to-yellow-600" },
-  { title: "Road Trips", koTitle: "로드트립", blurb: "Pacific Coast, Great Ocean Road, outback.", koBlurb: "태평양 해안, 그레이트오션로드, 아웃백.", href: "/destinations/south-coast", accent: "from-stone-500 to-stone-700" },
-];
-
 const topics = [
   { href: "/apartment", title: "Apartment", titleKo: "부동산", tagline: "Lease, bond, flatmates", taglineKo: "임대, 보증금, 쉐어하우스" },
   { href: "/finance", title: "Finance", titleKo: "금융", tagline: "Bank, TFN, super — first week", taglineKo: "은행, 세금, 퇴직연금" },
@@ -59,24 +49,8 @@ const topics = [
   { href: "/resources", title: "Resources", titleKo: "자료", tagline: "Medicare, Centrelink, community", taglineKo: "Medicare, TFN, 커뮤니티" },
 ];
 
-const seasonOrder: SeasonKey[] = ["winter", "spring", "summer", "autumn"];
-const seasonAccent: Record<SeasonKey, { bg: string; text: string; img: string }> = {
-  winter: { bg: "bg-sky-100 dark:bg-sky-950/50", text: "text-sky-900 dark:text-sky-200", img: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&q=80" },
-  spring: { bg: "bg-emerald-100 dark:bg-emerald-950/50", text: "text-emerald-900 dark:text-emerald-200", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80" },
-  summer: { bg: "bg-amber-100 dark:bg-amber-950/50", text: "text-amber-900 dark:text-amber-200", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" },
-  autumn: { bg: "bg-orange-100 dark:bg-orange-950/50", text: "text-orange-900 dark:text-orange-200", img: "https://images.unsplash.com/photo-1507371341162-763b5e419408?w=800&q=80" },
-};
-const seasons: { key: SeasonKey; title: { en: string; ko: string }; months: string; blurb: { en: string; ko: string } }[] = [
-  { key: "winter", title: { en: "Winter", ko: "겨울" }, months: "Jun · Jul · Aug", blurb: { en: "Ski season, cosy pubs, whale watching starts.", ko: "스키시즌, 아늑한 퍼브, 고래관찰 시작." } },
-  { key: "spring", title: { en: "Spring", ko: "봄" }, months: "Sep · Oct · Nov", blurb: { en: "Wildflowers, baby animals, perfect hiking weather.", ko: "야생화, 새끼동물, 최적의 트레킹 날씨." } },
-  { key: "summer", title: { en: "Summer", ko: "여름" }, months: "Dec · Jan · Feb", blurb: { en: "Beach every weekend, sunset ferries, festivals.", ko: "매주 해변, 일몰 페리, 축제." } },
-  { key: "autumn", title: { en: "Autumn", ko: "가을" }, months: "Mar · Apr · May", blurb: { en: "Gold and red mountains, wine harvest, mild days.", ko: "금빛과 적빛 산, 와인 수확, 온화한 날." } },
-];
-
 export default function HomePage() {
   const [active, setActive] = useState<StageKey>("visiting");
-  const [season, setSeason] = useState<SeasonKey>("summer");
-  const activeIdx = stages.findIndex((s) => s.key === active);
 
   // Subtle hero parallax — image moves at 40% of scroll speed
   useEffect(() => {
@@ -316,106 +290,6 @@ export default function HomePage() {
               <Ko>전체 여행지 보기</Ko>
               <span>→</span>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================ THINGS TO DO ============================ */}
-      <section className="bg-stone-900 dark:bg-black text-white">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="text-center mb-12 reveal">
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-light mb-2">
-              <En>What to do</En>
-              <Ko>즐길 거리</Ko>
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-4">
-              <En>Make memories, not itineraries</En>
-              <Ko>일정표가 아닌 추억을</Ko>
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
-              <En>Six ways to fall in love with Australia. Pick what calls to you.</En>
-              <Ko>호주에 빠지는 여섯 가지 방법. 마음이 끌리는 것을 선택하세요.</Ko>
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {thingsToDo.map((t, i) => (
-              <Link
-                key={t.title}
-                href={t.href}
-                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl p-6 md:p-7 min-h-[200px] flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300 shadow-lg hover:shadow-2xl`}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-90 group-hover:opacity-100 transition-opacity`} />
-                <div className="relative">
-                  <h3 className="font-serif text-2xl mb-2 text-white">
-                    <En>{t.title}</En>
-                    <Ko>{t.koTitle}</Ko>
-                  </h3>
-                  <p className="text-white/85 text-sm leading-relaxed">
-                    <En>{t.blurb}</En>
-                    <Ko>{t.koBlurb}</Ko>
-                  </p>
-                </div>
-                <div className="relative mt-4 text-white/80 text-xs font-medium uppercase tracking-widest group-hover:text-white transition-colors">
-                  <En>Explore</En>
-                  <Ko>둘러보기</Ko>
-                  <span className="ml-2 transition-transform group-hover:translate-x-1 inline-block">→</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================ SEASONS ============================ */}
-      <section className="bg-white dark:bg-dark-surface border-y border-stone-200 dark:border-dark-border">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="text-center mb-10 reveal">
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-              <En>Plan around the year</En>
-              <Ko>연중 계획</Ko>
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
-              <En>When to come</En>
-              <Ko>언제 방문할까</Ko>
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-            {seasonOrder.map((key, i) => {
-              const s = seasons.find((x) => x.key === key)!;
-              const a = seasonAccent[key];
-              const isActive = season === key;
-              return (
-                <button type="button"
-                  key={key}
-                  onClick={() => setSeason(key)}
-                  className={`reveal reveal-delay-${i + 1} group text-left rounded-2xl overflow-hidden transition-all duration-300 ${
-                    isActive ? "shadow-2xl scale-[1.02] ring-2 ring-sunset" : "shadow-md hover:shadow-xl"
-                  }`}
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={a.img}
-                      alt={s.title.en}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                    <div className="absolute top-3 left-3 text-[9px] font-mono uppercase tracking-widest text-white/80 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full">
-                      {s.months}
-                    </div>
-                  </div>
-                  <div className={`${a.bg} ${a.text} p-4 md:p-5`}>
-                    <h3 className="font-serif text-xl md:text-2xl mb-1">
-                      <En>{s.title.en}</En>
-                      <Ko>{s.title.ko}</Ko>
-                    </h3>
-                    <p className="text-xs md:text-sm leading-relaxed opacity-80">
-                      <En>{s.blurb.en}</En>
-                      <Ko>{s.blurb.ko}</Ko>
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
           </div>
         </div>
       </section>
