@@ -649,6 +649,10 @@ export const AlertTriangle = wrap(
   </>
 );
 
+export const Umbrella = wrap(
+  <path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a4 4 0 0 1-8 0V12" />
+);
+
 export const Briefcase2 = wrap(
   <>
     <rect x="2" y="7" width="20" height="14" rx="2" />
@@ -744,6 +748,6 @@ export const Icons = {
   Mountain, Sunrise, Sunset, Waves, Wine, TheaterMasks, SurfBoard, CityScape,
   Koala, Dolphin, Scooter, PersonSpeaking, Handshake, PersonGroup, Person,
   Graduation, Clipboard, FlagAU, Ambulance, PersonBoard, Smartphone, Ticket,
-  AlertTriangle, Briefcase2, LawGavel, Home2, Tree, QuokkaIcon, Kangaroo,
+  AlertTriangle, Umbrella, Briefcase2, LawGavel, Home2, Tree, QuokkaIcon, Kangaroo,
   Beach, PassengerTrain, Plane, Target,
 };
