@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable Tailwind v4 dark: classes to trigger on .dark class (theme toggle pattern) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-cream: #FDF8F3;
   --color-sunset: #E8722A;
