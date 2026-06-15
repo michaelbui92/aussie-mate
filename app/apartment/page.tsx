@@ -128,13 +128,6 @@ const sections: ApartmentSectionData[] = [
   },
 ];
 
-const quickFacts = [
-  { labelEn: "Bond", labelKo: "보증금", value: "4 weeks rent" },
-  { labelEn: "Notice to vacate", labelKo: "퇴거 통보", value: "90 days" },
-  { labelEn: "ID points", labelKo: "신분증 점수", value: "100 points" },
-  { labelEn: "Repairs window", labelKo: "수리 기한", value: "14 days" },
-];
-
 export default function ApartmentPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
@@ -157,30 +150,6 @@ export default function ApartmentPage() {
       </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        {/* Quick facts strip */}
-        <section className="mb-12">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
-            <En>Quick facts</En>
-            <Ko>핵심 정보</Ko>
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {quickFacts.map((f, i) => (
-              <div
-                key={f.labelEn}
-                className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border`}
-              >
-                <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
-                  <En>{f.labelEn}</En>
-                  <Ko>{f.labelKo}</Ko>
-                </p>
-                <p className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 leading-tight">
-                  {f.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Editorial sections */}
         <div className="space-y-12">
           {sections.map((section, i) => (

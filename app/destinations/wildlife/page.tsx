@@ -210,13 +210,6 @@ const safetyItems = [
   },
 ];
 
-const quickFacts = [
-  { labelEn: "Taronga Zoo", labelKo: "타롱가 동물원", value: "$50" },
-  { labelEn: "Koala Park", labelKo: "코알라 파크", value: "$30" },
-  { labelEn: "Featherdale", labelKo: "페더데일", value: "$40" },
-  { labelEn: "WIRES", labelKo: "WIRES 구조", value: "1300 094 737" },
-];
-
 export const metadata = {
   title: "Australian Wildlife Guide — AussieMate",
   description:
@@ -290,30 +283,6 @@ export default function WildlifePage() {
               가장 중요하게는 안전하게 그리고 동물을 존중하는 방법을 알려드립니다.
             </Ko>
           </p>
-        </section>
-
-        {/* Quick facts bar */}
-        <section className="mb-12">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
-            <En>At a glance</En>
-            <Ko>한눈에 보기</Ko>
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {quickFacts.map((f, i) => (
-              <div
-                key={f.labelEn}
-                className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border`}
-              >
-                <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
-                  <En>{f.labelEn}</En>
-                  <Ko>{f.labelKo}</Ko>
-                </p>
-                <p className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 leading-tight">
-                  {f.value}
-                </p>
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* Zoo & wildlife park sections */}

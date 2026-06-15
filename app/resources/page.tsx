@@ -1,5 +1,5 @@
 import { En, Ko } from "@/components/LangBlocks";
-import Accordion, { type AccordionSection, type AccordionItem } from "@/components/Accordion";
+import Accordion, { type AccordionSection } from "@/components/Accordion";
 
 const FLAG_EMOJI = "🇦🇺";
 import { AlertTriangle, Ambulance, Book, Building2 } from "@/components/Icons";
@@ -11,9 +11,6 @@ interface ResourceItem {
   url?: string;
   urlLabel?: string;
 }
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type _ResourceShape = ResourceItem;  // preserved for reference; AccordionItem has label/en/ko only.
 
 const sections: AccordionSection[] = [
   {
@@ -159,7 +156,7 @@ const sections: AccordionSection[] = [
       {
         label: "Hospital ER vs Urgent Care (응급실 vs 응급 진료)",
         en: "For genuine emergencies (chest pain, severe bleeding, difficulty breathing, unconsciousness) — go to a public hospital Emergency Department. It's free at public hospitals regardless of visa status. For non-life-threatening after-hours issues (minor infections, sprains, cuts), visit an Urgent Care Centre — cheaper and faster than ER with no appointment needed.",
-        ko: "진정한 응급 상황(흉통, 심한 출혈, 호흡 곤란, 의식 불명) — 공립 병원 응급실로 가세요. 비자 상태에 관계없이 공립 병원 응급실은 무료입니다. 생명에 위협이 되지 않는 야간 문제(가벼운 감염, 염좌, 상처)는 Urgent Care Centre를 방문하세요 — 응급실보다 저렴하고 빠르며예약이 필요 없습니다.",
+        ko: "진정한 응급 상황(흉통, 심한 출혈, 호흡 곤란, 의식 불명) — 공립 병원 응급실로 가세요. 비자 상태에 관계없이 공립 병원 응급실은 무료입니다. 생명에 위협이 되지 않는 야간 문제(가벼운 감염, 염좌, 상처)는 Urgent Care Centre를 방문하세요 — 응급실보다 저렴하고 빠르며 예약이 필요 없습니다.",
         url: "https://www.health.nsw.gov.au/urgentcare",
         urlLabel: "health.nsw.gov.au/urgentcare",
       },
@@ -223,26 +220,28 @@ const iconKeys = ["AlertTriangle", "Ambulance", "Book", "Building2"];
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-          <En>Resources</En>
-          <Ko>자료</Ko>
-        </p>
-        <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          <En>Resources</En>
-          <Ko>자료</Ko>
-        </h1>
-        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>Essential Australian services and community resources.</En>
-          <Ko>호주의 필수 서비스와 지역 사회 자료.</Ko>
-        </p>
+    <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
+      {/* Hero header (dark) */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Resources</En>
+            <Ko>자료</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Official resources</En>
+            <Ko>공식 자료</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>Government services, education, healthcare, and emergency contacts for life in NSW.</En>
+            <Ko>NSW 생활을 위한 정부 서비스, 교육, 의료, 비상 연락처.</Ko>
+          </p>
+        </div>
       </header>
 
-      {/* Emergency banner — always visible, not buried in accordions */}
-      <div className="max-w-4xl mx-auto px-4 pt-8">
-        <div className="bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/30 rounded-2xl p-4">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        {/* Emergency banner — always visible, not buried in accordions */}
+        <div className="mb-12 bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/30 rounded-2xl p-4">
           <div className="flex items-start gap-3">
             <span className="text-rose-500 text-lg shrink-0 mt-0.5">🚨</span>
             <div className="flex-1 min-w-0">
@@ -287,14 +286,14 @@ export default function ResourcesPage() {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 py-10 space-y-4">
-        <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
+        {/* Content */}
+        <div className="space-y-4">
+          <Accordion sections={sections} iconKeys={iconKeys} itemDelayS={0.08} />
+        </div>
 
         {/* Bottom note */}
-        <div className="bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
+        <div className="mt-16 bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
             <En>Made with {FLAG_EMOJI} for everyone new to Australia</En>
             <Ko>호주에 처음 오시는 모든 분들을 위한 친근한 가이드입니다 {FLAG_EMOJI}</Ko>
