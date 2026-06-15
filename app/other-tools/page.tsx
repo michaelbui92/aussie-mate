@@ -47,12 +47,12 @@ export default function OtherToolsPage() {
           <Ko>다른 프로젝트</Ko>
         </p>
         <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          <En>Other tools</En>
-          <Ko>다른 도구들</Ko>
+          <En>My Projects</En>
+          <Ko>내 프로젝트</Ko>
         </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En>Other things I&apos;ve built to help people navigate life in Australia.</En>
-          <Ko>호주 생활에 도움이 되는 다른 도구들.</Ko>
+          <Ko>호주 생활에 도움이 되는 다른 프로젝트들.</Ko>
         </p>
       </header>
 

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-stone-200 dark:border-dark-border bg-stone-50 dark:bg-darkbg mt-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2 group mb-3">
@@ -22,7 +22,23 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Explore */}
+          {/* Living */}
+          <div>
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
+              <En>Living</En>
+              <Ko>생활</Ko>
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/apartment" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Apartment</En><Ko>부동산</Ko></Link></li>
+              <li><Link href="/finance" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Finance</En><Ko>금융</Ko></Link></li>
+              <li><Link href="/transport" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Transport</En><Ko>교통</Ko></Link></li>
+              <li><Link href="/workplace" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Workplace</En><Ko>직장</Ko></Link></li>
+              <li><Link href="/study" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Study</En><Ko>학습</Ko></Link></li>
+              <li><Link href="/weather" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Weather</En><Ko>날씨</Ko></Link></li>
+            </ul>
+          </div>
+
+          {/* Explore + Learn */}
           <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
               <En>Explore</En>
@@ -30,20 +46,23 @@ export default function Footer() {
             </p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/destinations" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Destinations</En><Ko>여행지</Ko></Link></li>
+              <li><Link href="/tourist" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Tourist</En><Ko>관광</Ko></Link></li>
+              <li><Link href="/sport" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Sport</En><Ko>스포츠</Ko></Link></li>
+              <li><Link href="/beyond-sydney" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Beyond Sydney</En><Ko>시드니 밖으로</Ko></Link></li>
               <li><Link href="/aussie-english" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Aussie English</En><Ko>호주 영어</Ko></Link></li>
-              <li><Link href="/finance" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Finance</En><Ko>금융</Ko></Link></li>
-              <li><Link href="/apartment" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Apartment</En><Ko>부동산</Ko></Link></li>
-              <li><Link href="/workplace" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Workplace</En><Ko>직장</Ko></Link></li>
+              <li><Link href="/faq" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>FAQ</En><Ko>자주 묻는 질문</Ko></Link></li>
             </ul>
           </div>
 
-          {/* About */}
+          {/* More */}
           <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
-              <En>About</En>
-              <Ko>소개</Ko>
+              <En>More</En>
+              <Ko>더보기</Ko>
             </p>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/resources" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Resources</En><Ko>자료</Ko></Link></li>
+              <li><Link href="/other-tools" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>My Projects</En><Ko>내 프로젝트</Ko></Link></li>
               <li><Link href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>About AussieMate</En><Ko>AussieMate 소개</Ko></Link></li>
               <li><a href="https://drivewithbui.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors">Drive with Bui →</a></li>
             </ul>

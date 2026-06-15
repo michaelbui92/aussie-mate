@@ -17,7 +17,7 @@ const labels: Record<string, { en: string; ko: string }> = {
   "/tourist":        { en: "Tourist",        ko: "여행자" },
   "/beyond-sydney":  { en: "Beyond Sydney",  ko: "시드니 밖으로" },
   "/resources":      { en: "Resources",      ko: "자료" },
-  "/other-tools":    { en: "Other Tools",    ko: "다른 도구" },
+  "/other-tools":    { en: "My Projects",     ko: "내 프로젝트" },
   "/about":          { en: "About",          ko: "소개" },
 };
 

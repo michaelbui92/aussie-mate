@@ -1,33 +1,18 @@
 // Server component — bilingual Sydney tourist guide.
 // Redesigned in editorial style.
 
+import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
-import { Beach, Building2, Car, Coin, DollarSign, PassengerTrain, Scooter, Smartphone, Tree } from "@/components/Icons";
+import { Beach, Building2, Car, Coin, DollarSign, Scooter, Smartphone, Tree } from "@/components/Icons";
 
 type TouristSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
 };
 
 const sections: TouristSection[] = [
-  {
-    id: "getting-around",
-    iconKey: "PassengerTrain",
-    accent: "sunset",
-    title: "Getting Around",
-    koTitle: "시드니 이동",
-    desc: "Opal cards, transport modes, and navigating Sydney",
-    koDesc: "오팔 카드, 교통수단, 시드니 길찾기",
-    items: [
-      { label: "Opal Card Basics", en: "The Opal card is a reusable smart card for all Sydney public transport — trains, buses, ferries, and light rail. Tap on at the start of your trip and tap off at the end. You can top up at 7-Eleven stores, newsagents, convenience stores, or online via the Opal app or website.", ko: "오팔 카드는 시드니의 모든 대중교통(기차, 버스, 페리, 경전첨)에서 사용할 수 있는 충전식 스마트 카드입니다. 여행 시작 시 태그온, 종료 시 태그오프하세요. 7-Eleven, 뉴스에이전시, 편의점, 또는 오팔 앱/웹사이트에서 충전할 수 있습니다." },
-      { label: "Trains, Buses & Ferries", en: "Sydney Trains runs the suburban rail network connecting the CBD to most suburbs. Sydney Buses covers the whole city. Sydney Ferries is one of the most scenic ways to travel — the ferry from Circular Quay to Manly is a must-do. All use the same Opal card system.", ko: "Sydney Trains은 CBD와 대부분의 교외 지역을 연결하는 철도 네트워크를 운영합니다. Sydney Buses는 도시 전체를 커버합니다. Sydney Ferries는 가장 경치 좋은 이동 수단 중 하나입니다 — Circular Quay에서 Manly까지의 페리는 꼭 타보세요. 모두 동일한 오팔 카드 시스템을 사용합니다." },
-      { label: "Peak vs Off-Peak", en: "Peak fares apply on weekdays from 6:30-10:00am and 3:30-7:00pm. Off-peak fares are about 30% cheaper. Weekends and public holidays are charged at off-peak rates all day. If you can travel outside peak hours, you will save significantly.", ko: "평일 오전 6:30-10:00, 오후 3:30-7:00에는 피크 요금이 적용됩니다. 오프피크 요금은 약 30% 저렴합니다. 주말과 공휴일은 하루 종일 오프피크 요금이 적용됩니다. 피크 시간 피해 이동할 수 있다면 상당히 절약할 수 있습니다." },
-      { label: "Using Google Maps", en: "Google Maps is incredibly accurate for Sydney public transport. It shows real-time departure times, platform numbers, service disruptions, and even which carriage is best for your connecting station. Just enter your destination, select transit, and follow along.", ko: "구글 지도는 시드니 대중교통에 놀랍도록 정확합니다. 실시간 출발 시간, 플랫폼 번호, 운행 중단 정보, 환승역에 가장 글운 객차 위치까지 알려줍니다. 목적지만 입력하고 대중교통 옵션을 선택하면 됩니다." },
-      { label: "How to Complain", en: "If you experience bad service — delays, dirty trains, rude staff — you can lodge a complaint through the Transport for NSW website or app. Go to transportnsw.info and click 'Contact us' or 'Feedback'. You will usually get a response within a few business days.", ko: "지연, 더러운 기차, 무례한 직원 등 불량 서비스를 경험했다면 Transport for NSW 웹사이트나 앱을 통해 민원을 제기할 수 있습니다. transportnsw.info에 접속해 'Contact us' 또는 'Feedback'을 클릭하세요. 보통 영업일 기준 몇 내에 답변을 받을 수 있습니다." },
-    ],
-  },
   {
     id: "top-sights",
     iconKey: "Building2",
@@ -189,6 +174,25 @@ export default function TouristPage() {
       </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <section className="mb-10 p-5 rounded-2xl bg-sunset/5 border border-sunset/20 dark:bg-sunset/10">
+          <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <En>
+              For transport in depth — Opal cards, peak vs off-peak fares, how to complain — see the{" "}
+              <Link href="/transport" className="text-sunset font-medium hover:underline">
+                Transport page
+              </Link>
+              .
+            </En>
+            <Ko>
+              오팔 카드, 피크/오프피크 요금, 민원 제기 등 자세한 교통 정보는{" "}
+              <Link href="/transport" className="text-sunset font-medium hover:underline">
+                Transport 페이지
+              </Link>
+              에서 확인하세요.
+            </Ko>
+          </p>
+        </section>
+
         <section className="mb-12">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
             <En>Quick facts</En><Ko>핵심 정보</Ko>
