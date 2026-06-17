@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LangProvider } from "@/components/LangBlocks";
@@ -60,6 +60,22 @@ export const metadata: Metadata = {
     follow: true,
   },
   // Favicon handled by app/icon.tsx (renders 🇦🇺 via Next/og ImageResponse).
+};
+
+// Viewport + theme color — required for proper mobile rendering.
+// Next.js 13+ uses a separate `viewport` export (typed) instead of a
+// raw <meta name="viewport"> tag. Without this, mobile browsers fall
+// back to 980px viewport then scale the page down, making text tiny
+// even on a responsive layout.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover", // allows safe-area-inset on notched devices
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)",  color: "#0f0e0c" }, // darkbg
+  ],
 };
 
 // Blocking script: apply stored theme + language before first paint

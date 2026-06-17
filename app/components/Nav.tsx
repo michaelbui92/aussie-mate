@@ -67,7 +67,7 @@ function NavPill({
       type="button"
       onClick={onClick}
       aria-label={ariaLabel}
-      className={`h-9 px-3 inline-flex items-center justify-center gap-1.5 rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-all duration-200 ease-out active:scale-95 ${className}`}
+      className={`h-11 px-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-all duration-200 ease-out active:scale-95 ${className}`}
     >
       {children}
     </button>
@@ -304,7 +304,7 @@ export default function Nav() {
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden h-9 w-9 inline-flex items-center justify-center rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-all duration-200 active:scale-90"
+            className="md:hidden h-11 w-11 inline-flex items-center justify-center rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-all duration-200 active:scale-90"
             aria-label="Open menu"
             aria-expanded={menuOpen}
           >
@@ -352,7 +352,7 @@ export default function Nav() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
+                        className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
                           itemActive
                             ? "text-white bg-sunset"
                             : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
