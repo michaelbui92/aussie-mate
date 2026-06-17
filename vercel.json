@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "aussie-mate.vercel.app"
+        }
+      ],
+      "destination": "https://youraussieguides.com/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.youraussieguides.com"
+        }
+      ],
+      "destination": "https://youraussieguides.com/:path*",
+      "statusCode": 301
+    }
+  ]
+}
