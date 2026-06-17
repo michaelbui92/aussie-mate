@@ -38,6 +38,7 @@ const navGroups: NavGroup[] = [
     label: "Learn",
     items: [
       { href: "/aussie-english", label: "Aussie English" },
+      { href: "/visa", label: "Visa Guide" },
       { href: "/faq", label: "FAQ" },
     ],
   },

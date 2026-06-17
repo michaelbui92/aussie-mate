@@ -50,6 +50,7 @@ export default function Footer() {
               <li><Link href="/sport" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Sport</En><Ko>스포츠</Ko></Link></li>
               <li><Link href="/beyond-sydney" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Beyond Sydney</En><Ko>시드니 밖으로</Ko></Link></li>
               <li><Link href="/aussie-english" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Aussie English</En><Ko>호주 영어</Ko></Link></li>
+              <li><Link href="/visa" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Visa Guide</En><Ko>비자 가이드</Ko></Link></li>
               <li><Link href="/faq" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>FAQ</En><Ko>자주 묻는 질문</Ko></Link></li>
             </ul>
           </div>

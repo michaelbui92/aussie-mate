@@ -47,6 +47,7 @@ const topics = [
   { href: "/transport", title: "Transport", titleKo: "교통", tagline: "Opal, trains, ferries, rideshare", taglineKo: "오팔, 기차, 버스, 페리" },
   { href: "/tourist", title: "Tourist", titleKo: "여행자", tagline: "Sydney, coast, Blue Mountains", taglineKo: "시드니와 NSW 필수 명소" },
   { href: "/resources", title: "Resources", titleKo: "자료", tagline: "Medicare, Centrelink, community", taglineKo: "Medicare, TFN, 커뮤니티" },
+  { href: "/visa", title: "Visa Guide", titleKo: "비자 가이드", tagline: "417, 500, 189/190, 820, 600", taglineKo: "워홀·유학·기술·파트너·방문" },
 ];
 
 export default function HomePage() {

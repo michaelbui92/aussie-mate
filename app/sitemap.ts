@@ -6,6 +6,7 @@
 
 import type { MetadataRoute } from "next";
 import { destinations } from "@/destinations/data";
+import { visas } from "@/visa/data";
 
 const SITE_URL = "https://aussie-mate.vercel.app";
 
@@ -32,7 +33,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/other-tools",           priority: 0.6,  changeFrequency: "monthly" },
     { path: "/resources",             priority: 0.7,  changeFrequency: "monthly" },
     { path: "/faq",                   priority: 0.7,  changeFrequency: "monthly" },
-    { path: "/about",                 priority: 0.5,  changeFrequency: "yearly"  },
+    { path: "/visa",                  priority: 0.9,  changeFrequency: "monthly" },
+    { path: "/about",                 priority: 0.5,  changeFrequency: "yearly" },
     { path: "/privacy",               priority: 0.3,  changeFrequency: "yearly"  },
     { path: "/terms",                 priority: 0.3,  changeFrequency: "yearly"  },
   ];
@@ -51,5 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticEntries, ...destinationEntries];
+  const visaEntries: MetadataRoute.Sitemap = visas.map((v) => ({
+    url: `${SITE_URL}/visa/${v.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...destinationEntries, ...visaEntries];
 }
