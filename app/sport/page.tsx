@@ -7,6 +7,12 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Flag, Star, Trophy, Users } from "@/components/Icons";
 
+export const metadata = {
+  title: "Sport — 호주 스포츠 문화 (NRL, AFL, 크리켓)",
+  description:
+    "호주 스포츠 가이드 — NRL(럭비리그), AFL(애플 풋볼), 크리켓, State of Origin, 슬레딩(sledging), 호주 스포츠 문화 한국어 정리.",
+};
+
 type SportSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
 };

@@ -7,6 +7,12 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@/components/Icons";
 
+export const metadata = {
+  title: "Workplace & rights — 호주 직장 문화와 노동자 권리",
+  description:
+    "호주 직장 가이드 — 직장 문화(수평적 구조, 직설적 소통), 캐주얼 vs 정규직, 최저 임금(Award), 퇴직연금(Super) 11.5%, 캐주얼 노동자 권리, 부당한 해고 보호까지.",
+};
+
 type WorkplaceSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
 };
@@ -40,7 +46,7 @@ const sections: WorkplaceSection[] = [
       { label: "Direct Feedback is Normal", en: "Aussies will tell you directly if there's an issue. This is not personal — it's professional. Don't take it as an attack. And equally, you are expected to speak up if something isn't right.", ko: "호주인들은 문제가 있으면 바로 말해줍니다. 개인적인 게 아니라 전문적인 것입니다. 공격으로 받아들이지 마세요. 반대로, 무언가 잘못되었으면 당신도 의문을 제기해야 합니다." },
       { label: "How to Raise Issues", en: "Start with facts, not emotions. 'I've noticed X happens and it causes Y problem' is better than 'X always ruins everything'. Be specific, be calm, suggest a solution if you have one.", ko: "감정보다 사실부터 말하세요. 'X가 일어나고 Y문제를 야기한다는 것을 확인했습니다'가 'X가 항상 모든 걸 망칩니다'보다 좋습니다. 구체적으로, 침착하게, 해결책이 있다면 제안하세요." },
       { label: "Know Your Rights", en: "In Australia, it's illegal to fire someone for raising a workplace issue (this is called 'adverse action'). If you feel you've been treated unfairly after raising a concern, you have legal protections.", ko: "호주에서는 직장 문제를 제기한 사람을 해고하는 것은 불법입니다('부당한 행위'라고 합니다). 문제 제기 후 불공정하게 대우받았다고 느끼면 법적 보호를 받을 수 있습니다." },
-      { label: "Constructive vs Destructive", en: "Feedback is valued — but destructively criticising colleagues or managers is not. If you have a serious issue with someone, handle it privately and respectfully, not in front of others.", ko: "피드백은 높이평가됩니다 — 하지만 동료나 상사를 건설적으로 비판하지 않는 것은 문제가 있습니다. 누군가와 심각한 문제가 있으면 공개적으로 아닌 조용하고 존중하게 처리하세요." },
+      { label: "Constructive vs Destructive", en: "Feedback is valued — but destructively criticising colleagues or managers is not. If you have a serious issue with someone, handle it privately and respectfully, not in front of others.", ko: "건설적인 피드백은 환영받습니다 — 하지만 동료나 상사를 파괴적으로 비판하는 것은 안 됩니다. 누군가와 심각한 문제가 있다면 공개적으로가 아니라 조용히, 그리고 존중하는 태도로 처리하세요." },
     ],
   },
   {
@@ -85,7 +91,7 @@ const sections: WorkplaceSection[] = [
       { label: "You're Allowed to Say No", en: "As a casual, you can refuse a shift. You don't have to give a reason. However, if you consistently refuse available shifts, the employer may reduce the shifts they offer you.", ko: "캐주얼로서 근무를 거절할 수 있습니다. 이유를 제공할 필요가 없습니다. 그러나 계속 이용 가능한 근무를 거절하면 고용주가 제공하는 근무 시간을 줄일 수 있습니다." },
       { label: "Casual Conversion", en: "After 6 months (12 months for small businesses), your employer must offer you permanent part-time or full-time work if you've worked regular hours. You can also request conversion yourself at any time.", ko: "6개월 후(소기업은 12개월) 정규 근무를 해왔다면 고용주가 정규 파트타임 또는 전일제 근무를 제안해야 합니다. 언제든지 본인이 직접 전환을 요청할 수도 있습니다." },
       { label: "Protection from Unfair Dismissal", en: "Casual employees who have been working regular hours for 6+ months are protected from unfair dismissal. If fired without proper reason, you can make a claim to the Fair Work Commission.", ko: "정규 근무를 6개월 이상 해온 캐주얼 직원은 부당한 해고로부터 보호받습니다. 정당한 이유 없이 해고되면 공정노동위원회에 청구할 수 있습니다." },
-      { label: "Paid Leave Entitlements", en: "Casuals do NOT get paid sick leave or annual leave. That's why the 25% casual loading exists — it compensates for this. However, casual employees can still access unpaid carer's leave and compassionate leave.", ko: "캐주얼 직원은 유급 병가나 연차 휴가를 받지 않습니다. 그래서 25% 캐주얼 로딩이 존재합니다 — 이를 보상하기 위함입니다. 그러나 캐주얼 직원도 무급 간병인 휴가와 조기 휴가를이용할 수 있습니다." },
+      { label: "Paid Leave Entitlements", en: "Casuals do NOT get paid sick leave or annual leave. That's why the 25% casual loading exists — it compensates for this. However, casual employees can still access unpaid carer's leave and compassionate leave.", ko: "캐주얼 직원은 유급 병가나 연차 휴가를 받지 않습니다. 그래서 25% 캐주얼 로딩이 존재하는 것입니다 — 이것은 그에 대한 보상입니다. 다만 캐주얼 직원도 무급 간병 휴가와 조의 휴가는 사용할 수 있습니다." },
     ],
   },
 ];

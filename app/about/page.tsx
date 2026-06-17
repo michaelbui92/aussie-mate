@@ -46,8 +46,8 @@ const sections = [
         name: "Drive with Bui",
         url: "https://drivewithbui.com",
         accent: "bg-sunset/10 border-sunset/30",
-        en: "Professional driving lessons in Sydney for new and international drivers. Book online.",
-        ko: "시드니에서 신입 및 국제 운전자를 위한 전문 운전 레슨. 온라인 예약 가능.",
+        en: "Sydney driving lessons for new and international drivers. Note: full NSW driving instructor licensing is in progress; lessons are currently offered on a supervised practice basis. Book online.",
+        ko: "시드니에서 신입 및 국제 운전자를 위한 운전 레슨. 참고: NSW 운전 강사 정식 자격증 취득 절차가 진행 중이며, 현재는 동반 실습 형태로 레슨이 제공됩니다. 온라인 예약 가능.",
       },
       {
         emoji: "📚",

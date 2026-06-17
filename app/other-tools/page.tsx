@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 
+export const metadata = {
+  title: "Other tools — Michael이 만든 다른 도구들",
+  description:
+    "AussieMate 운영자가 만든 다른 도구들 — Drive with Bui(운전 레슨, 자격증 진행 중), Study Buddy(AI 플래시카드).",
+};
+
 const tools = [
   {
     id: "drive-with-bui",

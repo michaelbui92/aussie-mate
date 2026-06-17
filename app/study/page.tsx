@@ -7,6 +7,12 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Book, Clipboard, Edit, Graduation, PersonBoard, PersonGroup, Target } from "@/components/Icons";
 
+export const metadata = {
+  title: "Study in Australia — 호주 유학 가이드 (PTE, IELTS, 대학 문화)",
+  description:
+    "호주 유학 가이드 — 영어 시험(PTE vs IELTS 점수, 비용, 합격 전략), 호주 대학 문화, 교수님과 소통법, 그룹 과제, 학술 윤리(Turnitin, 표절, AI 사용)까지.",
+};
+
 type StudySection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
 };
@@ -29,8 +35,8 @@ const sections: StudySection[] = [
       { label: "PTE format", en: "3 hours total, four sections in one sitting: Speaking & Writing (77-93 min), Reading (32-41 min), Listening (45-57 min). Questions are machine-adaptive — harder questions appear if you're doing well.", ko: "총 3시간, 네 섹션이 한 세션으로: 말하기 & 쓰기(77-93분), 읽기(32-41분), 듣기(45-57분). 문항이 시스템에 의해 자동으로 조절됩니다 — 잘하면 더 어려운 문항이 나옵니다." },
       { label: "IELTS format", en: "Paper-based: 2h 45min. Computer-delivered: same content, faster results. Four sections: Listening (30 min), Reading (60 min), Writing (60 min), Speaking (11-14 min — face-to-face with examiner).", ko: "지필: 2시간 45분. 컴퓨터로 응시: 같은 내용, 더 빠른 결과. 네 섹션: 듣기(30분), 읽기(60분), 쓰기(60분), 말하기(11-14분 — 시험관과 대면)." },
       { label: "Why Korean students prefer PTE", en: "Many find PTE easier because: speaking is into a microphone (no examiner judgement), AI doesn't penalise accent, questions are objective and consistent, and you can use templates for writing. Popular resources: E2 Language (YouTube) and MyPTE.", ko: "많은 한국 학생들이 PTE가 더 쉽다고 느끼는 이유: 1) 마이크로 녹음(시험관 판단 없음), 2) AI가 억양을 감점하지 않음, 3) 문항이 객관적이고 일관됨, 4) 쓰기에 템플릿 사용 가능. 대표적인 준비 자료: E2 Language(유튜브), MyPTE." },
-      { label: "How to prepare", en: "Allow 4-8 weeks of focused preparation. Practice with official test simulators. Focus on your weakest skill first. For PTE: E2 Language YouTube channel (free, excellent). For IELTS: British Council website has free practice tests.", ko: "집중 준비에 4-8주 정도 잡으세요. 공식 시뮬레이터로 연습하세요. 가장 약한 기능부터중점적으로 공부하세요. PTE는 E2 Language(유튜브) — 무료이고 우수합니다. IELTS는 British Council 웹사이트에서 무료 연습 시험을 제공합니다." },
-      { label: "When to book", en: "Don't wait until the last minute. Most universities accept results up to 2 years old for admissions. DHA typically requires results within 1 year for visa applications. Book 2-3 months before your deadline to allow for a re-sit if needed.", ko: "마감일에 쫓기지 말고 준비됐을 때 치르세요. 대부분의 대학은 입학 심사 시 최대 2년 된 성적도 인정합니다. DHA는 비자 신청 시 보통 1년 이내의 성적을 요구합니다. 비자 마감일 2-3개월 전에 예약하세요. 다시 받아야 할 경우를 대비해서입니다." },
+      { label: "How to prepare", en: "Allow 4-8 weeks of focused preparation. Practice with official test simulators. Focus on your weakest skill first. For PTE: E2 Language YouTube channel (free, excellent). For IELTS: British Council website has free practice tests.", ko: "집중 준비에 4-8주 정도 잡으세요. 공식 시뮬레이터로 연습하세요. 가장 약한 영역부터 중점적으로 공부하세요. PTE는 E2 Language(유튜브) — 무료이고 우수합니다. IELTS는 British Council 웹사이트에서 무료 연습 시험을 제공합니다." },
+      { label: "When to book", en: "Don't wait until the last minute. Most universities accept results up to 2 years old for admissions. DHA typically requires results within 1 year for visa applications. Book 2-3 months before your deadline to allow for a re-sit if needed.", ko: "마감일에 쫓기지 말고 여유 있게 미리 보세요. 대부분의 대학은 입학 심사 시 최대 2년 된 성적도 인정합니다. DHA는 비자 신청 시 보통 1년 이내의 성적을 요구합니다. 재응시를 고려해 마감일 2-3개월 전에 예약하세요." },
     ],
   },
   {

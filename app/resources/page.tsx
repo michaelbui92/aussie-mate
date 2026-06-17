@@ -4,6 +4,12 @@ import Accordion, { type AccordionSection } from "@/components/Accordion";
 const FLAG_EMOJI = "🇦🇺";
 import { AlertTriangle, Ambulance, Book, Building2 } from "@/components/Icons";
 
+export const metadata = {
+  title: "Resources — 호주 정부/공식 자료 링크",
+  description:
+    "호주 생활에 필요한 정부/공식 자료 — ATO(세무서), Services Australia(Centrelink), Fair Work(노동), NSW Fair Trading(부동산), 000(응급) 등 한국어 설명과 함께 정리.",
+};
+
 interface ResourceItem {
   label: string;
   en: string;

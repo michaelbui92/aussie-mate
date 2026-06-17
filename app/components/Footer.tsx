@@ -65,6 +65,8 @@ export default function Footer() {
               <li><Link href="/other-tools" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>My Projects</En><Ko>내 프로젝트</Ko></Link></li>
               <li><Link href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>About AussieMate</En><Ko>AussieMate 소개</Ko></Link></li>
               <li><a href="https://drivewithbui.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors">Drive with Bui →</a></li>
+              <li><Link href="/privacy" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Privacy</En><Ko>개인정보</Ko></Link></li>
+              <li><Link href="/terms" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Terms</En><Ko>이용약관</Ko></Link></li>
             </ul>
           </div>
         </div>

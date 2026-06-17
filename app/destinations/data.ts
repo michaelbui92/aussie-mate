@@ -26,7 +26,7 @@ export const destinations: Destination[] = [
 ko: "시드니에서 기차로 단 90분, 블루마운틴은 NSW에서 가장 황홀한 자연경관입니다. 고대 유칼립투스 숲, 장엄한 사암 절벽, 준폭포가 어우러진 이 곳은 반드시 방문해야 할 명소입니다. 에코 포인트의 'Three Sisters'가 가장 유명한데, 일출이나 일몰 때 바위가 주황빛과 분홍빛으로 빛나는 모습을 보는 것이 가장 좋습니다."
     },
     highlights: [
-      { en: "Three Sisters & Echo Point", ko: "삼.site Sisters & 에코 포인트", icon: "mountain" },
+      { en: "Three Sisters & Echo Point", ko: "삼자매 & 에코 포인트", icon: "mountain" },
       { en: "Scenic World cable car", ko: "시니악 월드 케이블카", icon: "hiking" },
       { en: "Wentworth Falls", ko: "웬트워스 폭포", icon: "swim" },
       { en: "Jenolan Caves", ko: "제놀란 동굴", icon: "museum" },

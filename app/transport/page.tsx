@@ -7,6 +7,12 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Bus, Car, Coin, Plane, Train, Tree } from "@/components/Icons";
 
+export const metadata = {
+  title: "Getting around — 시드니 교통 (오팔, 기차, 버스, 페리)",
+  description:
+    "시드니 대중교통 완전 가이드 — 오팔 카드(Adult/Concession), Sydney Trains, 버스, 페리, 공항 링크(400번 버스), 자전거, 도보까지. 요금, 환승, 시간표 한국어 정리.",
+};
+
 type TransportSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
 };
@@ -38,10 +44,10 @@ const sections: TransportSection[] = [
     desc: "How the train system works",
     koDesc: "기차 시스템이 어떻게 작동하는지",
     items: [
-      { label: "Train Network Basics", en: "Sydney has a suburban train network (Sydney Trains) with lines covering the city, eastern suburbs, inner west, North Shore, and outer areas. Trains run from about 4am to midnight every day. On Friday and Saturday nights, some lines run 24 hours.", ko: "시드니에는 시내, 이스턴 서브urbs, 이너 웨스트, 노스 쇼어, 외곽 지역을covering the 교와 area - 기차 네트워크(Sydney Trains)가 있습니다. 기차는 매일 약 새벽 4시부터 자정까지 운행됩니다. 금요일과 토요일 밤에는 일부 노선이 24시간 운영됩니다." },
-      { label: "Zones and Fares", en: "Sydney is divided into zones 1-3. Most of what you need (CBD, Bondi, Manly, Parramatta) is in Zone 1 or 2. Opal calculates your fare based on zones travelled. Don't tap off at Circular Quay if you're heading to the Opera House — take the ferry instead (it's free with your Opal within the harbour).", ko: "시드니는 1-3 존으로 나뉩니다. 필요한 대부분의 곳(CBD, Bondi, Manly, Parramatta)은 1존 또는 2존에 있습니다. Opal이 존 기반 운임을 계산합니다. 오페라 하우스로 가려면 시어큐에서 탭 오프하지 마세요 — 대신 페리를 타세요(항구 내에서는 Opal로 무료입니다)." },
+      { label: "Train Network Basics", en: "Sydney has a suburban train network (Sydney Trains) with lines covering the city, eastern suburbs, inner west, North Shore, and outer areas. Trains run from about 4am to midnight every day. On Friday and Saturday nights, some lines run 24 hours.", ko: "시드니에는 시내, 동부 교외, 이너 웨스트, 노스 쇼어, 외곽 지역을 연결하는 광역 기차 네트워크(Sydney Trains)가 있습니다. 기차는 매일 약 새벽 4시부터 자정까지 운행됩니다. 금요일과 토요일 밤에는 일부 노선이 24시간 운영됩니다." },
+      { label: "Zones and Fares", en: "Sydney is divided into zones 1-3. Most of what you need (CBD, Bondi, Manly, Parramatta) is in Zone 1 or 2. Opal calculates your fare based on zones travelled. Don't tap off at Circular Quay if you're heading to the Opera House — take the ferry instead (it's free with your Opal within the harbour).", ko: "시드니는 1~3존으로 나뉩니다. 필요한 대부분의 곳(CBD, 본다이, 맨리, 파라마타)은 1존 또는 2존에 있습니다. 오팔이 존 기반으로 운임을 계산합니다. 오페라 하우스로 가려면 서큘러 키(Circular Quay)에서 내리지 마세요 — 대신 페리를 타세요(항구 내 구간은 오팔로 무료입니다)." },
       { label: "Reading Timetables", en: "Most trains run every 5-15 minutes during peak hours (6-9am, 4-7pm). Off-peak, it can be every 20-30 minutes. Use the Trip Planner app or Google Maps — real-time updates are available. The T1 North Shore line is the busiest.", ko: "대부분의 기차는 러시아워(6-9am, 4-7pm)에 5-15분 간격으로 운행됩니다. 비 러시아워에는 20-30분 간격일 수 있습니다. Trip Planner 앱이나 Google Maps를 사용하세요 — 실시간 업데이트를활용할 수 있습니다. T1 노스 쇼어 노선이 가장 붐빈다." },
-      { label: "Airport Link", en: "The Airport line (T8) costs extra — about $20-25 for a single trip from the airport. Don't take the train if you're on a budget — the 400 bus from the airport terminals costs about $3 and takes a bit longer. If your accommodation is near Central or Redfern, it's often walkable.", ko: "공항 노선(T8)은 추가 요금이 필요합니다 — 공항에서 약 $20-25입니다. 예산이 빠듯하면 기차를 타지 마세요 — 400 버스는 약 $3이고 조금 더 걸립니다. 중앙역이나 레드퍼른 근처에 있으면 도보로 가능할 때가 많습니다." },
+      { label: "Airport Link", en: "The Airport line (T8) costs extra — about $20-25 for a single trip from the airport. Don't take the train if you're on a budget — the 400 bus from the airport terminals costs about $3 and takes a bit longer. If your accommodation is near Central or Redfern, it's often walkable.", ko: "공항 노선(T8)은 추가 요금이 발생합니다 — 공항에서 시내까지 편도 약 $20-25입니다. 예산이 빠듯하다면 기차를 타지 마세요 — 400번 버스는 약 $3이고 약간 더 걸립니다. 숙소가 Central이나 Redfern 근처라면 도보로도 갈 수 있습니다." },
     ],
   },
   {
@@ -54,7 +60,7 @@ const sections: TransportSection[] = [
     koDesc: "버스 네트워크와 시드니에서 가장 멋진 교통수단",
     items: [
       { label: "Bus Network", en: "Sydney Buses covers the whole city and most suburbs. Most routes run from 5am to midnight, with Nightride services covering major routes 24/7. Use Google Maps or the Trip Planner app for real-time tracking. Buses are usually the cheapest way to get around if you don't live near a train station.", ko: "Sydney Buses는 도시 전체와 대부분의 교외 지역을 커버합니다. 대부분의 노선은 오전 5시부터 자정까지 운행되며, Nightride 서비스는 주요 노선을 24시간 운행합니다. 실시간 추적은 Google Maps나 Trip Planner 앱을 사용하세요. 기차역 근처에 살지 않는다면 보통 버스가 가장 저렴한 이동 수단입니다." },
-      { label: "Light Rail (L1, L2, L3)", en: "Sydney's light rail serves the CBD, inner west (L1), and the eastern suburbs to Kingsford (L2) and Juniors Kingsford (L3). Great for getting around Surry Hills, Pyrmont, and the inner west. Same Opal card, same caps as buses and trains.", ko: "시드니의 라이트 레일은 CBD, 이너 웨스트(L1), 이스턴 서브urbs의 Kingsford(L2)와 Juniors Kingsford(L3)까지 운행됩니다. Surry Hills, Pyrmont, 이너 웨스트를 이동하기에 좋습니다. 버스와 기차와 동일한 Opal 카드, 동일한 상한선이 적용됩니다." },
+      { label: "Light Rail (L1, L2, L3)", en: "Sydney's light rail serves the CBD, inner west (L1), and the eastern suburbs to Kingsford (L2) and Juniors Kingsford (L3). Great for getting around Surry Hills, Pyrmont, and the inner west. Same Opal card, same caps as buses and trains.", ko: "시드니의 라이트 레일은 CBD, 이너 웨스트(L1), 동부 교외의 Kingsford(L2)와 Juniors Kingsford(L3)까지 운행됩니다. Surry Hills, Pyrmont, 이너 웨스트를 이동하기에 좋습니다. 버스와 기차와 동일한 오팔 카드, 동일한 일일 상한선이 그대로 적용됩니다." },
       { label: "Sydney Ferries", en: "Sydney Ferries is one of the most scenic transport networks in the world. The F1 from Circular Quay to Manly (30 min, ~$7.20) is a must-do. The F2 to Taronga Zoo, F4 to Pyrmont, and F5 to Neutral Bay are all gorgeous. All use the same Opal card. Ferries within the harbour are surprisingly cheap — often cheaper than a bus for the same distance.", ko: "Sydney Ferries는 세계에서 가장 경치 좋은 교통 네트워크 중 하나입니다. Circular Quay에서 Manly까지 F1(30분, 약 $7.20)은 꼭 타보세요. Taronga Zoo행 F2, Pyrmont행 F4, Neutral Bay행 F5도 모두 멋집니다. 모두 동일한 Opal 카드를 사용합니다. 항구 내의 페리는 의외로 저렴합니다 — 종종 같은 거리의 버스보다 저렴합니다." },
     ],
   },
@@ -67,7 +73,7 @@ const sections: TransportSection[] = [
     desc: "Active transport in Sydney",
     koDesc: "시드니의 자발적 교통수단",
     items: [
-      { label: "Cycling in Sydney", en: "Sydney has a growing network of bike paths. The CBD to inner west has separated lanes on many roads. Bike share schemes (oBike, Lime) operate in some areas. Helmets are mandatory — fines apply for riding without one. Sydney's hilly in places — be prepared for climbs!", ko: "시드니에는 늘어나는 자전거 도로 네트워크가 있습니다. CBD에서 이너 웨스트는 많은 도로에 분리된 자전거 lanes가 있습니다. 일부 지역에서는 자전거 공유(오바이크, 라임) 운영. 헬멧 착용은 의무 — 미착용 시 벌금이 부과됩니다. 시드니에는 경사가 있으니 오르막에 대비하세요!" },
+      { label: "Cycling in Sydney", en: "Sydney has a growing network of bike paths. The CBD to inner west has separated lanes on many roads. Bike share schemes (oBike, Lime) operate in some areas. Helmets are mandatory — fines apply for riding without one. Sydney's hilly in places — be prepared for climbs!", ko: "시드니에는 늘어나는 자전거 도로 네트워크가 있습니다. CBD와 이너 웨스트 구간에는 많은 도로에 분리된 자전거 차선이 있습니다. 일부 지역에서는 자전거 공유(오바이크, 라임) 서비스를 운영합니다. 헬멧 착용은 의무입니다 — 미착용 시 벌금이 부과됩니다. 시드니에는 경사가 있는 구간도 있으니 오르막에 대비하세요!" },
       { label: "Walking Distances", en: "Sydney's CBD is compact and walkable. The Rocks to Circular Quay is 10 minutes. Darling Harbour to Barangaroo is 15 minutes. Most inner-city suburbs (Surry Hills, Newtown, Glebe) are easily explored on foot. Wear comfortable shoes and bring water in summer.", ko: "시드니 CBD는 컴팩트하고 도보로 이동할 수 있습니다. The Rocks에서 Circular Quay는 10분. Darling Harbour에서 Barangaroo는 15분. 대부분의 시내 근처 지역(Surry Hills, Newtown, Glebe)은 도보로 쉽게 탐험할 수 있습니다. 편안한 신발을 신고 여름에는 물을 지참하세요." },
     ],
   },

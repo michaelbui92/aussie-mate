@@ -1,5 +1,11 @@
 import { En, Ko } from "@/components/LangBlocks";
 
+export const metadata = {
+  title: "FAQ — 호주 유학/워홀 자주 묻는 질문",
+  description:
+    "호주 유학, 워홀, 이민에 관한 자주 묻는 질문 — 비자, 은행, 세금, 직장, 부동산, 의료까지. 한국인을 위한 호주 생활 FAQ 모음.",
+};
+
 const faqs = [
   {
     q: { en: "Do I need a visa to visit Australia?", ko: "호주 방문에 비자가 필요한가요?" },

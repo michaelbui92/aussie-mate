@@ -7,6 +7,12 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 
+export const metadata = {
+  title: "Apartment & renting — 시드니/NSW 부동산 가이드",
+  description:
+    "시드니 부동산 가이드 — 부동산 검색(Flatmates, Domain, Realestate), 임대 신청 서류, NSW 임차인 권리, 보증금(Bond), 주의해야 할 사기 신호까지 한국어로 정리.",
+};
+
 type ApartmentItem = { label: string; en: string; ko: string; url?: string };
 type ApartmentSectionData = Omit<EditorialSectionData, "items"> & {
   items: ApartmentItem[];
@@ -57,7 +63,7 @@ const sections: ApartmentSectionData[] = [
       { label: "Repairs", en: "Landlord must fix anything that affects health, safety, or basic living — within 14 days for non-urgent, immediately for urgent", ko: "임대인은 건강, 안전, 기본 생활에 영향을 미치는 문제를 수리해야 함 — 긴급하지 않은 것은 14일, 긴급한 것은 즉시" },
       { label: "Entry notice", en: "Landlord must give 24 hours written notice before entering your home (except in emergencies)", ko: "임대인은 긴급 상황을 제외하고는 입주 전 24시간 서면 고지를 해야 함" },
       { label: "Eviction", en: "Landlord must give 90 days notice if ending a periodic lease without cause. 30 days if you're behind on rent.", ko: "임대인이 정당한 사유 없이 월세를 종료하려면 90일 전에 고지해야 함. 임대료 연체 시 30일." },
-      { label: "No cause termination", en: "Even without a reason, landlord must give 90 days (periodic) or 30 days (fixed-term) notice to move out", ko: "이유 없이도 임대인은 퇴거 통보 시 월세는 90일, 정해진 기간은 30일 전에 고지해야 함" },
+      { label: "No cause termination", en: "Even without a reason, landlord must give 90 days (periodic) or 30 days (fixed-term) notice to move out", ko: "이유 없이도 임대인은 퇴거를 통보할 때, 정기 계약(periodic)은 90일, 기간 정한 계약(fixed-term)은 30일 전에 고지해야 합니다." },
     ],
   },
   {

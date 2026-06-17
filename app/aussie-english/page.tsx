@@ -9,6 +9,12 @@ import { phrases, type Phrase } from "@/lib/phrases";
 import { En, Ko } from "@/components/LangBlocks";
 import PhraseExplorer, { type PhraseCategory } from "@/components/PhraseExplorer";
 
+export const metadata = {
+  title: "Aussie English — 호주 영어 슬랭 209개 (한국어 해설)",
+  description:
+    "호주에서 실제로 쓰는 영어 표현 209개를 한국어와 영어로 정리. 술집, 직장, 처음 만난 사람, 풋볼 중계까지 상황별로 정리했습니다. G'day, arvo, no worries, she's right 등.",
+};
+
 const categories: PhraseCategory[] = [
   { value: "all", label: "All" },
   { value: "daily-life", label: "Daily Life", enLabel: "Daily Life", koLabel: "일상" },
