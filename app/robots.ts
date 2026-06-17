@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://aussie-mate.vercel.app/sitemap.xml",
-    host: "https://aussie-mate.vercel.app",
+    sitemap: "https://youraussieguides.com/sitemap.xml",
+    host: "https://youraussieguides.com",
   };
 }

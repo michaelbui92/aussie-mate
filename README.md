@@ -4,7 +4,7 @@
 > into life in Australia. Bite-size Aussie English phrases, cultural context,
 > and practical info for apartments, work, study, and travel.
 
-**Live:** [aussie-mate.vercel.app](https://aussie-mate.vercel.app)
+**Live:** [youraussieguides.com](https://youraussieguides.com)
 **Repo:** [github.com/michaelbui92/aussie-mate](https://github.com/michaelbui92/aussie-mate)
 **Stack:** Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · TypeScript 5
 **Hosting:** Vercel (auto-deploys from `main`)

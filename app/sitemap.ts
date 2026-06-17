@@ -8,7 +8,7 @@ import type { MetadataRoute } from "next";
 import { destinations } from "@/destinations/data";
 import { visas } from "@/visa/data";
 
-const SITE_URL = "https://aussie-mate.vercel.app";
+const SITE_URL = "https://youraussieguides.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

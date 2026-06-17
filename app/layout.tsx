@@ -12,7 +12,7 @@ import ScrollAnimations from "@/components/ScrollAnimations";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BackToTop from "@/components/BackToTop";
 
-const SITE_URL = "https://aussie-mate.vercel.app";
+const SITE_URL = "https://youraussieguides.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
