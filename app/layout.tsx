@@ -94,10 +94,11 @@ const themeInitScript = `
 `;
 
 // Google AdSense — Auto Ads. Google picks placements; we just load the script.
-// To activate: replace the placeholder with your real ca-pub-XXXXXXXXXXXXXXXX
-// publisher ID from https://adsense.google.com (Settings → Account → Account ID).
-// Leave empty to disable AdSense entirely.
-const ADSENSE_PUBLISHER_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || "";
+// Publisher ID is hardcoded from the user's AdSense account (ca-pub-7794121496618493).
+// To disable AdSense, set NEXT_PUBLIC_ADSENSE_ID="" in Vercel env vars — the
+// env var wins over the hardcoded value.
+const HARDCODED_ADSENSE_ID = "ca-pub-7794121496618493";
+const ADSENSE_PUBLISHER_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || HARDCODED_ADSENSE_ID;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
