@@ -4,7 +4,7 @@ import { En, Ko } from "@/components/LangBlocks";
 export const metadata = {
   title: "Other tools — Michael이 만든 다른 도구들",
   description:
-    "AussieMate 운영자가 만든 다른 도구들 — Drive with Bui(운전 레슨, 자격증 진행 중), Study Buddy(AI 플래시카드).",
+    "AussieGuides 운영자가 만든 다른 도구들 — Drive with Bui(운전 레슨, 자격증 진행 중), Study Buddy(AI 플래시카드).",
 };
 
 const tools = [
@@ -110,8 +110,8 @@ export default function OtherToolsPage() {
 
         <div className="text-center pt-4">
           <Link href="/" className="text-sm text-sunset hover:underline">
-            <En>← Back to AussieMate home</En>
-            <Ko>← AussieMate 홈으로</Ko>
+            <En>← Back to AussieGuides home</En>
+            <Ko>← AussieGuides 홈으로</Ko>
           </Link>
         </div>
       </div>

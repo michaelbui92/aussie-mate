@@ -3,7 +3,7 @@ import { destinations } from "./data";
 import { En, Ko } from "@/components/LangBlocks";
 
 export const metadata = {
-  title: "Places to Go — AussieMate",
+  title: "Places to Go — AussieGuides",
   description: "Discover the best places to visit across Australia — from the Blue Mountains to Sydney Harbour.",
 };
 

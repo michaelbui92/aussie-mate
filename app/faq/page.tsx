@@ -45,8 +45,8 @@ const faqs = [
   {
     q: { en: "Do I need to speak English well to get by?", ko: "영어를 잘해야 살 수 있나요?" },
     a: {
-      en: "You can get by with limited English, especially in Sydney's Korean areas (Strathfield, Chatswood, Eastwood). But life gets significantly easier with English — at the doctor, at the bank, in legal situations. Even intermediate English will open far more doors. AussieMate's Aussie English guide and the Language Exchange page are starting points.",
-      ko: "영어가 부족해도 살 수 있습니다, 특히 시드니의 한국인 밀집 지역(Strathfield, Chatswood, Eastwood)에서는. 하지만 영어가 있으면 생활이 훨씬 나아집니다 — 병원, 은행, 법적 상황에서. 중급 영어만 되어도 훨씬 많은 문이 열립니다. AussieMate의 호주 영어 가이드와 언어교환 페이지를 시작점으로 삼으세요.",
+      en: "You can get by with limited English, especially in Sydney's Korean areas (Strathfield, Chatswood, Eastwood). But life gets significantly easier with English — at the doctor, at the bank, in legal situations. Even intermediate English will open far more doors. Our Aussie English guide and the Language Exchange page are good starting points.",
+      ko: "영어가 부족해도 살 수 있습니다, 특히 시드니의 한국인 밀집 지역(Strathfield, Chatswood, Eastwood)에서는. 하지만 영어가 있으면 생활이 훨씬 나아집니다 — 병원, 은행, 법적 상황에서. 중급 영어만 되어도 훨씬 많은 문이 열립니다. 호주 영어 가이드와 언어교환 페이지가 좋은 시작점이 될 수 있습니다.",
     },
   },
   {

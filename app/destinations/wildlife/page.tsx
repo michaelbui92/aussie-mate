@@ -211,7 +211,7 @@ const safetyItems = [
 ];
 
 export const metadata = {
-  title: "Australian Wildlife Guide — AussieMate",
+  title: "Australian Wildlife Guide — AussieGuides",
   description:
     "Practical guide to seeing Australian wildlife around Sydney — Taronga Zoo, Koala Park, Featherdale, national parks, and critical safety advice.",
 };

@@ -17,8 +17,8 @@ const SITE_URL = "https://youraussieguides.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AussieMate — 호주 생활 가이드 (한국어/English)",
-    template: "%s · AussieMate",
+    default: "AussieGuides — 호주 생활 가이드 (한국어/English)",
+    template: "%s · AussieGuides",
   },
   description:
     "한국인 유학생과 워홀러를 위한 호주 생활 가이드. 오팔 카드, 은행 계좌, 세금 신고(TFN), 퇴직연금(Super), 부동산, 직장 문화, 호주 영어 슬랭까지 — 한국어와 영어로 정리했습니다.",
@@ -39,20 +39,20 @@ export const metadata: Metadata = {
     "Aussie English slang",
     "Sydney for Koreans",
   ],
-  authors: [{ name: "AussieMate" }],
-  creator: "AussieMate",
+  authors: [{ name: "AussieGuides" }],
+  creator: "AussieGuides",
   openGraph: {
     type: "website",
     locale: "en_AU",
     url: SITE_URL,
-    siteName: "AussieMate",
-    title: "AussieMate — 호주 생활 가이드 (한국어/English)",
+    siteName: "AussieGuides",
+    title: "AussieGuides — 호주 생활 가이드 (한국어/English)",
     description:
       "한국인을 위한 호주 생활 가이드 — 은행, 세금, 직장, 부동산, 호주 영어 슬랭까지.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AussieMate — 호주 생활 가이드",
+    title: "AussieGuides — 호주 생활 가이드",
     description: "한국인을 위한 호주 생활 가이드. 한국어/English.",
   },
   robots: {
@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                name: "AussieMate",
+                name: "AussieGuides",
                 url: SITE_URL,
                 description:
                   "Bilingual (English / 한국어) guide to Australian daily life for Korean newcomers — students, working holiday makers, and migrants.",
@@ -113,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                name: "AussieMate",
+                name: "AussieGuides",
                 url: SITE_URL,
                 inLanguage: ["en", "ko"],
                 potentialAction: {

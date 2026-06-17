@@ -3,7 +3,7 @@ import { En, Ko } from "@/components/LangBlocks";
 import { visas } from "./data";
 
 export const metadata = {
-  title: "Australian Visa Guide for Koreans — AussieMate",
+  title: "Australian Visa Guide for Koreans — AussieGuides",
   description:
     "Plain-English (and Korean) overview of Australia's main visa subclasses for Korean visitors and migrants: 417 Working Holiday, 500 Student, 189/190 Skilled, 820/801 Partner, and 600/601/651 Visitor.",
 };

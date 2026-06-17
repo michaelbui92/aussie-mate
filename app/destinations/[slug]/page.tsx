@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const d = getDestination(slug);
   if (!d) return {};
   return {
-    title: `${d.name.en} — AussieMate`,
+    title: `${d.name.en} — AussieGuides`,
     description: d.description.en,
   };
 }

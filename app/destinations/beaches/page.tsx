@@ -130,7 +130,7 @@ const packingList = [
 ];
 
 export const metadata = {
-  title: "Sydney Beaches — AussieMate",
+  title: "Sydney Beaches — AussieGuides",
   description: "A practical guide to Sydney's best beaches — Bondi, Manly, Palm Beach, Bronte, Coogee.",
 };
 

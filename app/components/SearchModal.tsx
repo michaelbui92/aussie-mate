@@ -125,7 +125,7 @@ export function SearchModal() {
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder='Search AussieMate... try "visa", "bond", "medicare"'
+                placeholder='Search AussieGuides... try "visa", "bond", "medicare"'
                 className="flex-1 text-base text-eucalypt dark:text-dark-muted placeholder:text-eucalypt/30 dark:placeholder:text-dark-muted/30 bg-transparent outline-none"
               />
               <button type="button"

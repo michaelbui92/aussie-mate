@@ -119,7 +119,7 @@ export const searchIndex: SearchResult[] = [
     matches: { en: "tenant rights, rent increase, repairs, entry notice, eviction, break lease, notice period, landlord obligations, 60 days notice, 90 days notice", ko: "임차인 권리, 임대료 인상, 수리, 입주 고지, 퇴거, 임대차 해지, 임대인 의무" },
   },
   {
-    page: "AussieMate",
+    page: "AussieGuides",
     pageKo: "호주 영어",
     href: "/apartment",
     section: "Bills & Move-in Costs",

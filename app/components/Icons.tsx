@@ -1,5 +1,5 @@
 // ============================================
-// AussieMate SVG Icons — drop-in replacements for emoji
+// AussieGuides SVG Icons — drop-in replacements for emoji
 // Usage A (legacy):  <Icons.ArrowRight className="w-5 h-5" />
 // Usage B (preferred, tree-shakable):
 //   import { ArrowRight } from "@/components/Icons";
@@ -337,7 +337,7 @@ export const Eye = wrap(
   </>
 );
 
-// ── Specific AussieMate icons ──────────────────────────────────
+// ── Specific AussieGuides icons ──────────────────────────────────
 
 /** For Finance — Tax File Number */
 export const FileText = wrap(
@@ -402,7 +402,7 @@ export const XCircle = wrap(
   </>
 );
 
-// ── New AussieMate Icons ────────────────────────────────────────
+// ── New AussieGuides Icons ────────────────────────────────────────
 
 export const Scale = wrap(
   <>

@@ -4,13 +4,13 @@ const sections = [
   {
     id: "what",
     emoji: "📍",
-    title: "What AussieMate is",
-    koTitle: "AussieMate란",
+    title: "What AussieGuides is",
+    koTitle: "AussieGuides란",
     desc: "And what it isn't",
     koDesc: "그리고 무엇이 아닌지",
     en: [
-      "AussieMate is a free bilingual guide to Australian daily life — written for people who are new here. Practical, honest, and in plain language.",
-      "AussieMate is NOT an official source. It is not affiliated with any university, government, or organisation. Always check official websites for legal and up-to-date information.",
+      "AussieGuides is a free bilingual guide to Australian daily life — written for people who are new here. Practical, honest, and in plain language.",
+      "AussieGuides is NOT an official source. It is not affiliated with any university, government, or organisation. Always check official websites for legal and up-to-date information.",
     ],
     ko: [
       "호주 일상 생활에 대한 무료 가이드입니다 — 호주에 처음 온 사람들을 위해 실용적으로, 정직하게, 평범한 언어로 썼어요.",
@@ -72,8 +72,8 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "About — AussieMate",
-  description: "About AussieMate and why it exists",
+  title: "About — AussieGuides",
+  description: "About AussieGuides and why it exists",
 };
 
 export default function AboutPage() {
@@ -85,8 +85,8 @@ export default function AboutPage() {
           <Ko>소개</Ko>
         </p>
         <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          <En>About AussieMate</En>
-          <Ko>AussieMate 소개</Ko>
+          <En>About AussieGuides</En>
+          <Ko>AussieGuides 소개</Ko>
         </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En>What we do and who it's for.</En>
@@ -180,8 +180,8 @@ export default function AboutPage() {
 
         <div className="text-center pt-2">
           <a href="/" className="text-sm text-sunset hover:underline">
-            <En>← Back to AussieMate</En>
-            <Ko>← AussieMate로 돌아가기</Ko>
+            <En>← Back to AussieGuides</En>
+            <Ko>← AussieGuides로 돌아가기</Ko>
           </a>
         </div>
       </div>

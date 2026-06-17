@@ -16,10 +16,10 @@ export default function VisitingContent() {
         </h3>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En>
-            AussieMate is a bilingual guide for Korean visitors to Sydney and NSW. Whether you&apos;re here for a holiday, a working holiday, or your first week in Australia — this is the site that explains the things your travel guide doesn&apos;t.
+            AussieGuides is a bilingual guide for Korean visitors to Sydney and NSW. Whether you&apos;re here for a holiday, a working holiday, or your first week in Australia — this is the site that explains the things your travel guide doesn&apos;t.
           </En>
           <Ko>
-            AussieMate는 시드니와 NSW를 방문하는 한국인 여행자를 위한 바이링구얼 가이드입니다. 호캘리데이든, 워킹 홀리데이든, 호주에서의 첫 주든 — 여행 가이드에서 찾을 수 없는 것들을 알려드립니다.
+            AussieGuides는 시드니와 NSW를 방문하는 한국인 여행자를 위한 바이링구얼 가이드입니다. 호캘리데이든, 워킹 홀리데이든, 호주에서의 첫 주든 — 여행 가이드에서 찾을 수 없는 것들을 알려드립니다.
           </Ko>
         </p>
       </section>

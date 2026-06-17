@@ -7,7 +7,7 @@ import { En, Ko } from "@/components/LangBlocks";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "AussieMate terms of service — no affiliation with government, no professional advice, use at your own risk, content may be outdated.",
+    "AussieGuides terms of service — no affiliation with government, no professional advice, use at your own risk, content may be outdated.",
 };
 
 const lastUpdated = "17 June 2026";
@@ -38,7 +38,7 @@ export default function TermsPage() {
           </h2>
           <En>
             <p>
-              AussieMate is a general information site. Nothing on this site is legal,
+              AussieGuides is a general information site. Nothing on this site is legal,
               financial, immigration, tax, medical, or other professional advice.
               Always verify current rules and prices on the official Australian
               government and bank websites before acting. The author is not a lawyer,
@@ -47,7 +47,7 @@ export default function TermsPage() {
           </En>
           <Ko>
             <p>
-              AussieMate는 일반 정보 제공 목적의 사이트입니다. 본 사이트의 어떠한
+              AussieGuides는 일반 정보 제공 목적의 사이트입니다. 본 사이트의 어떠한
               내용도 법률·재무·이민·세무·의료 등 전문 자문에 해당하지 않습니다. 행동을
               취하기 전에 반드시 호주 정부·은행의 공식 웹사이트에서 최신 규정과
               가격을 확인하세요. 운영자는 변호사·회계사·��민 에이전트·재무 상담사가
@@ -63,7 +63,7 @@ export default function TermsPage() {
           </h2>
           <En>
             <p>
-              AussieMate is an independent, non-commercial project. We are not
+              AussieGuides is an independent, non-commercial project. We are not
               affiliated with any Australian government agency, university, bank,
               employer, or organisation mentioned on the site. References to third
               parties (ATO, Services Australia, Fair Work, NSW Fair Trading, the big
@@ -73,7 +73,7 @@ export default function TermsPage() {
           </En>
           <Ko>
             <p>
-              AussieMate는 독립적인 비상업 프로젝트입니다. 호주 정부 기관, 대학,
+              AussieGuides는 독립적인 비상업 프로젝트입니다. 호주 정부 기관, 대학,
               은행, 고용주 또는 사이트에 언급된 어느 조직과도 제휴 관계가 없습니다.
               제3자(ATO, Services Australia, Fair Work, NSW Fair Trading, 4대 은행 등)에
               대한 언급은 사실 관계를 설명하기 위한 것일 뿐 보증 또는 파트너십을

@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="w-9 h-9 rounded-full bg-stone-100 dark:bg-dark-surface flex items-center justify-center text-xl ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105">
                 {FLAG_EMOJI}
               </span>
-              <span className="font-serif text-lg text-stone-900 dark:text-stone-100">AussieMate</span>
+              <span className="font-serif text-lg text-stone-900 dark:text-stone-100">AussieGuides</span>
             </Link>
             <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed max-w-xs">
               <En>A bilingual guide for Korean visitors to Sydney and NSW. Made for everyone new to Australia.</En>
@@ -64,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/resources" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Resources</En><Ko>자료</Ko></Link></li>
               <li><Link href="/other-tools" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>My Projects</En><Ko>내 프로젝트</Ko></Link></li>
-              <li><Link href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>About AussieMate</En><Ko>AussieMate 소개</Ko></Link></li>
+              <li><Link href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>About AussieGuides</En><Ko>AussieGuides 소개</Ko></Link></li>
               <li><a href="https://drivewithbui.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors">Drive with Bui →</a></li>
               <li><Link href="/privacy" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Privacy</En><Ko>개인정보</Ko></Link></li>
               <li><Link href="/terms" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Terms</En><Ko>이용약관</Ko></Link></li>
@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center justify-between flex-wrap gap-2">
-          <p className="text-xs text-stone-400 dark:text-stone-500">© 2026 AussieMate</p>
+          <p className="text-xs text-stone-400 dark:text-stone-500">© 2026 AussieGuides</p>
           <p className="text-xs text-stone-400 dark:text-stone-500">
             <En>Made with {FLAG_EMOJI} in Australia</En>
             <Ko>호주에서 만든 {FLAG_EMOJI}</Ko>

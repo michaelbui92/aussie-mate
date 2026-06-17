@@ -47,7 +47,7 @@ const navGroups: NavGroup[] = [
     items: [
       { href: "/resources", label: "Resources" },
       { href: "/other-tools", label: "My Projects" },
-      { href: "/about", label: "About AussieMate" },
+      { href: "/about", label: "About AussieGuides" },
     ],
   },
 ];
@@ -129,13 +129,13 @@ export default function Nav() {
         <Link
           href="/"
           className="flex items-center gap-2 shrink-0 group"
-          aria-label="AussieMate home"
+          aria-label="AussieGuides home"
         >
           <div className="w-9 h-9 rounded-full bg-stone-100 dark:bg-dark-surface flex items-center justify-center text-xl ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105">
             {FLAG_EMOJI}
           </div>
           <span className="font-serif text-xl text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors hidden sm:inline">
-            AussieMate
+            AussieGuides
           </span>
         </Link>
 

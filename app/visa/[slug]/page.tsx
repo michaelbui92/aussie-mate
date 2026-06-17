@@ -16,7 +16,7 @@ export async function generateMetadata({
   const v = getVisa(slug);
   if (!v) return {};
   return {
-    title: `${v.name.en} — AussieMate`,
+    title: `${v.name.en} — AussieGuides`,
     description: v.tagline.en,
   };
 }

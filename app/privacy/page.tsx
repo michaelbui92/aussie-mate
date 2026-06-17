@@ -7,7 +7,7 @@ import { En, Ko } from "@/components/LangBlocks";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "AussieMate privacy policy — what data we collect, how we use it, cookies, advertising (Google AdSense), and your rights.",
+    "AussieGuides privacy policy — what data we collect, how we use it, cookies, advertising (Google AdSense), and your rights.",
 };
 
 const lastUpdated = "17 June 2026";
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
           </h2>
           <En>
             <p>
-              AussieMate (youraussieguides.com) is a free bilingual (English / 한국어)
+              AussieGuides (youraussieguides.com) is a free bilingual (English / 한국어)
               information site about Australian daily life for Korean newcomers. We are not a
               business, government body, or educational institution — see our{" "}
               <a href="/about" className="text-sunset underline">About page</a>.
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
           </En>
           <Ko>
             <p>
-              AussieMate(youraussieguides.com)는 호주에 새로 온 한국인을 위한 무료
+              AussieGuides(youraussieguides.com)는 호주에 새로 온 한국인을 위한 무료
               영한 생활 정보 사이트입니다. 당사는 기업·정부·교육기관이 아니며, 자세한
               내용은 <a href="/about" className="text-sunset underline">소개 페이지</a>를
               참고하세요.

@@ -82,7 +82,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70" />
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <p className="text-[11px] md:text-xs font-medium uppercase tracking-[0.35em] text-white/85 mb-6">
-            <En>AussieMate · Bilingual · AU/KO</En>
+            <En>AussieGuides · Bilingual · AU/KO</En>
             <Ko>호주 메이트 · 호주 한인을 위한</Ko>
           </p>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-7 max-w-5xl">
