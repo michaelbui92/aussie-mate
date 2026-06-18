@@ -111,12 +111,13 @@ If you find yourself writing regex with `\{` / `\}` and counting depth, **stop a
 | 1 | Breadcrumb JSON-LD on all pages | ⚠️ 1/20 — only `/about` |
 | 1 | Manual `<AdSlot />` on more pages | ⚠️ 2/26 — `/` and `/visa` only |
 | 1 | FAQPage JSON-LD on visa sub-pages | ❌ Not done |
-| 2 | Core Web Vitals pass (LCP/CLS/INP) | ❌ Not done |
-| 2 | Internal link graph (related-content sections) | ❌ Not done |
-| 3 | 5 new long-tail content pages | ❌ Not done |
+| 2 | Hero `<Image priority>` LCP | ✅ Done (`e073191`) — `<link rel=preload as=image>` in head |
+| 2 | Internal `<RelatedContent />` link graph | ✅ 7/26 hub pages — finance/apartment/visa/workplace/transport/tourist/study |
+| 3 | Image width/height on remaining `<img>` tags | ⚠️ Partial — destinations pages still use raw `<img>` |
+| 3 | 5 new long-tail content pages (`/guides/*`) | ❌ Not done |
 | 3 | Search Console + Bing Webmaster setup | ❌ Not done |
 
-## Repo file counts (as of HEAD = `988605b`)
+## Repo file counts (as of HEAD = `e073191`)
 
 - 26 `page.tsx` files
 - `app/lib/seo.ts` (helpers), `app/lib/site.ts` (SITE_URL)
