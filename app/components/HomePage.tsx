@@ -12,7 +12,7 @@ import { destinations } from "@/destinations/data";
 
 type StageKey = "visiting" | "arrived" | "home";
 
-const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string; bullets: { en: string; ko: string }[]; stat: { value: string; koValue: string; label: string; koLabel: string } }[] = [
+const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string; bullets: { en: string; ko: string }[] }[] = [
   {
     key: "visiting",
     title: "I'm visiting",
@@ -25,7 +25,6 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
       { en: "UV, Opal, no-tipping rules", ko: "자외선, 오팔, 팁 문화" },
       { en: "Sydney & NSW must-sees", ko: "시드니 & NSW 필수 코스" },
     ],
-    stat: { value: "0–2 wks", koValue: "0–2주", label: "Typical stay", koLabel: "평균 체류" },
   },
   {
     key: "arrived",
@@ -39,7 +38,6 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
       { en: "Medicare & private health", ko: "Medicare & 민간 보험" },
       { en: "3 money mistakes to avoid", ko: "피해야 할 3가지 돈 실수" },
     ],
-    stat: { value: "4 wks", koValue: "4주", label: "To settled", koLabel: "정착까지" },
   },
   {
     key: "home",
@@ -53,7 +51,6 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
       { en: "Award wages & your rights", ko: "임금등급 & 권리" },
       { en: "PR pathways & community", ko: "영주권 루트 & 커뮤니티" },
     ],
-    stat: { value: "2 yrs", koValue: "2년", label: "To belonging", koLabel: "소속감까지" },
   },
 ];
 
@@ -204,21 +201,6 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  {/* Stat footer — anchors the card to a real timeframe */}
-                  <div className={`mt-auto pt-4 border-t flex items-baseline justify-between ${
-                    isActive ? "border-white/20" : "border-stone-200 dark:border-dark-border"
-                  }`}>
-                    <span className={`font-serif text-xl ${isActive ? "text-white" : "text-stone-900 dark:text-stone-100"}`}>
-                      <En>{s.stat.value}</En>
-                      <Ko>{s.stat.koValue}</Ko>
-                    </span>
-                    <span className={`text-[11px] uppercase tracking-[0.2em] ${
-                      isActive ? "text-white/60" : "text-stone-400 dark:text-stone-500"
-                    }`}>
-                      <En>{s.stat.label}</En>
-                      <Ko>{s.stat.koLabel}</Ko>
-                    </span>
-                  </div>
                 </button>
               );
             })}
