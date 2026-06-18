@@ -16,8 +16,13 @@ The repo is at `/opt/data/data_dir/workspace/aussie-mate`. Two important non-obv
 ## AdSense
 
 - **Publisher ID:** `ca-pub-7794121496618493`
-- Hardcoded in `app/layout.tsx` as `HARDCODED_ADSENSE_ID` with env-var override
-- Auto Ads mode (no manual slot placement) — Google picks positions
+- Auto Ads script loaded in `app/layout.tsx` `<head>` (line ~117)
+- **Manual ad units:** `<AdSlot />` component at `app/components/AdSlot.tsx`
+  - Placed on `/` (HomePage, before SearchModal) — committed `988605b`
+  - Placed on `/visa` (hub, before BreadcrumbList JSON-LD) — committed `988605b`
+  - Other pages: NOT YET — see "Tier 1 gaps" below
+- AdSlot is a client component; calls `adsbygoogle.push({})` on mount
+- Without `data-ad-slot` it relies on Auto Ads to fill (mode set in AdSense console)
 - New accounts: 24–48h after first script load before impressions start
 - To disable: set `NEXT_PUBLIC_ADSENSE_ID=""` in Vercel env vars (env wins over hardcode)
 
@@ -104,13 +109,14 @@ If you find yourself writing regex with `\{` / `\}` and counting depth, **stop a
 | 1 | OG image | ✅ Done (`007b52e`) |
 | 1 | Analytics wired | ✅ Done (was already in HEAD) |
 | 1 | Breadcrumb JSON-LD on all pages | ⚠️ 1/20 — only `/about` |
+| 1 | Manual `<AdSlot />` on more pages | ⚠️ 2/26 — `/` and `/visa` only |
 | 1 | FAQPage JSON-LD on visa sub-pages | ❌ Not done |
 | 2 | Core Web Vitals pass (LCP/CLS/INP) | ❌ Not done |
 | 2 | Internal link graph (related-content sections) | ❌ Not done |
 | 3 | 5 new long-tail content pages | ❌ Not done |
 | 3 | Search Console + Bing Webmaster setup | ❌ Not done |
 
-## Repo file counts (as of HEAD = `a75076b`)
+## Repo file counts (as of HEAD = `988605b`)
 
 - 26 `page.tsx` files
 - `app/lib/seo.ts` (helpers), `app/lib/site.ts` (SITE_URL)
