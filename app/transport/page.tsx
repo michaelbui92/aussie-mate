@@ -6,12 +6,18 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Bus, Car, Coin, Plane, Train, Tree } from "@/components/Icons";
+import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/transport"),
   title: "Getting around — 시드니 교통 (오팔, 기차, 버스, 페리)",
   description:
     "시드니 대중교통 완전 가이드 — 오팔 카드(Adult/Concession), Sydney Trains, 버스, 페리, 공항 링크(400번 버스), 자전거, 도보까지. 요금, 환승, 시간표 한국어 정리.",
-};
+  },
+  "/transport"
+);
 
 type TransportSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
@@ -137,6 +143,29 @@ export default function TransportPage() {
           </div>
         </section>
       </div>
+
+      {/* Structured data for Google. Article + BreadcrumbList rich results. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleLdJson({
+              path: "transport",
+              headline: "Getting around Sydney — transport, Opal, and driving in NSW",
+              description:
+                "시드니 교통 가이드 — 오팔 카드, 기차/버스/페리, 우버, 시드니에서 운전하기, 지방 여행 교통편까지 한국어로 정리.",
+            })
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Transport", path: "transport" }])
+          ),
+        }}
+      />
     </div>
   );
 }

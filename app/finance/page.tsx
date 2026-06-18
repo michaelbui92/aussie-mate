@@ -6,12 +6,18 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } from "@/components/Icons";
+import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/finance"),
   title: "Finance & banking — 호주 은행, TFN, 세금 신고, 퇴직연금",
   description:
     "호주에서 돈과 관련된 모든 것 — 4대 은행(CBA, Westpac, ANZ, NAB) 계좌 개설, TFN 신청, 퇴직연금(Super) 안내, 세금 신고(tax return) 방법, 시드니 생활비 팁까지 한국어로 정리.",
-};
+  },
+  "/finance"
+);
 
 type FinanceSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
@@ -157,6 +163,30 @@ export default function FinancePage() {
           </div>
         </section>
       </div>
+
+      {/* Structured data for Google. Article = eligible for top-story /
+          article rich results. BreadcrumbList = "Home › Finance" in SERP. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleLdJson({
+              path: "finance",
+              headline: "Finance & banking in Australia — a Korean newcomer's guide",
+              description:
+                "호주에서 돈과 관련된 모든 것 — 4대 은행 계좌 개설, TFN 신청, 퇴직연금(Super), 세금 신고(tax return), 시드니 생활비.",
+            })
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Finance", path: "finance" }])
+          ),
+        }}
+      />
     </div>
   );
 }

@@ -7,12 +7,18 @@
 import { En, Ko } from "@/components/LangBlocks";
 import { MapPin, Car } from "@/components/Icons";
 import FilteredAccordion, { type BeyondSydneyDestination } from "@/components/FilteredAccordion";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/beyond-sydney"),
   title: "Beyond Sydney — 시드니 외 호주 여행지",
   description:
     "시드니 외 호주 여행지 가이드 — 블루마운틴, 헌터밸리, 울런공, 뉴캐슬, 사우스코스트, 그리고 멜버른·브리즈번·퍼스까지. 각지 명소, 교통, 추천 일정.",
-};
+  },
+  "/beyond-sydney"
+);
 
 const destinations: BeyondSydneyDestination[] = [
   {

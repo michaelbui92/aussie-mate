@@ -6,6 +6,7 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Beach, Sun, MapPin, Shield, Flag, AlertTriangle, Umbrella } from "@/components/Icons";
+import { seoFor, withSeo } from "@/lib/seo";
 
 type BeachSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
@@ -129,10 +130,15 @@ const packingList = [
   { en: "Light beach shelter or umbrella", ko: "경량 비치 텐트 또는 파라솔" },
 ];
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/destinations/beaches"),
   title: "Sydney Beaches — AussieGuides",
   description: "A practical guide to Sydney's best beaches — Bondi, Manly, Palm Beach, Bronte, Coogee.",
-};
+  },
+  "/destinations/beaches"
+);
 
 export default function BeachesPage() {
   return (

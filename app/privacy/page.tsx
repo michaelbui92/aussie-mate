@@ -3,12 +3,17 @@
 
 import type { Metadata } from "next";
 import { En, Ko } from "@/components/LangBlocks";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "AussieGuides privacy policy — what data we collect, how we use it, cookies, advertising (Google AdSense), and your rights.",
-};
+export const metadata: Metadata = withSeo(
+  {
+    ...seoFor("/privacy"),
+    title: "Privacy Policy",
+    description:
+      "AussieGuides privacy policy — what data we collect, how we use it, cookies, advertising (Google AdSense), and your rights.",
+  },
+  "/privacy"
+);
 
 const lastUpdated = "17 June 2026";
 

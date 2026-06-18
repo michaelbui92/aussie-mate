@@ -3,12 +3,18 @@
 
 import type { Metadata } from "next";
 import { En, Ko } from "@/components/LangBlocks";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSeo(
+  {
+
+  ...seoFor("/terms"),
   title: "Terms of Service",
   description:
     "AussieGuides terms of service — no affiliation with government, no professional advice, use at your own risk, content may be outdated.",
-};
+  },
+  "/terms"
+);
 
 const lastUpdated = "17 June 2026";
 

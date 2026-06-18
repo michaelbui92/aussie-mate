@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/other-tools"),
   title: "Other tools — Michael이 만든 다른 도구들",
   description:
     "AussieGuides 운영자가 만든 다른 도구들 — Drive with Bui(운전 레슨, 자격증 진행 중), Study Buddy(AI 플래시카드).",
-};
+  },
+  "/other-tools"
+);
 
 const tools = [
   {

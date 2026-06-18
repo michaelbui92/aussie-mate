@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { destinations } from "./data";
 import { En, Ko } from "@/components/LangBlocks";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/destinations"),
   title: "Places to Go — AussieGuides",
   description: "Discover the best places to visit across Australia — from the Blue Mountains to Sydney Harbour.",
-};
+  },
+  "/destinations"
+);
 
 export default function DestinationsPage() {
   return (

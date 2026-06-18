@@ -87,8 +87,8 @@ export default function HomePage() {
           </p>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-7 max-w-5xl">
             <span className="block">
-              <En>Discover Sydney</En>
-              <Ko>시드니를 발견하다</Ko>
+              <En>Your Australian life guide</En>
+              <Ko>호주 생활 가이드</Ko>
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed font-light">

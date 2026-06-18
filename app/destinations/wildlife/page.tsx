@@ -19,6 +19,7 @@ import {
   Sunrise,
   Heart,
 } from "@/components/Icons";
+import { seoFor, withSeo } from "@/lib/seo";
 
 type WildlifeSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;
@@ -210,11 +211,16 @@ const safetyItems = [
   },
 ];
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/destinations/wildlife"),
   title: "Australian Wildlife Guide — AussieGuides",
   description:
     "Practical guide to seeing Australian wildlife around Sydney — Taronga Zoo, Koala Park, Featherdale, national parks, and critical safety advice.",
-};
+  },
+  "/destinations/wildlife"
+);
 
 export default function WildlifePage() {
   return (

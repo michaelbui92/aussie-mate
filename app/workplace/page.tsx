@@ -6,12 +6,18 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@/components/Icons";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/workplace"),
   title: "Workplace & rights — 호주 직장 문화와 노동자 권리",
   description:
     "호주 직장 가이드 — 직장 문화(수평적 구조, 직설적 소통), 캐주얼 vs 정규직, 최저 임금(Award), 퇴직연금(Super) 11.5%, 캐주얼 노동자 권리, 부당한 해고 보호까지.",
-};
+  },
+  "/workplace"
+);
 
 type WorkplaceSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;

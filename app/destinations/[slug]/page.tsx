@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { En, Ko } from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
+import { seoFor } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return destinations.map((d) => ({ slug: d.slug }));
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const d = getDestination(slug);
   if (!d) return {};
   return {
+    ...seoFor(`/destinations/${slug}`),
     title: `${d.name.en} — AussieGuides`,
     description: d.description.en,
   };

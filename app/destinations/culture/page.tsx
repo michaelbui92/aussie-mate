@@ -1,10 +1,23 @@
 // Server component — bilingual guide to Sydney's multicultural neighbourhoods.
 // Editorial style — where to go for authentic cultural experiences.
 
+import type { Metadata } from "next";
 import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
+import { seoFor, withSeo } from "@/lib/seo";
+
+export const metadata: Metadata = withSeo(
+  {
+
+  ...seoFor("/destinations/culture"),
+  title: "Sydney's Multicultural Neighbourhoods — AussieGuides",
+  description:
+    "Cabramatta, Hurstville, Chatswood, Strathfield, Eastwood — Sydney's Korean, Vietnamese, Chinese and other cultural hubs, with what to eat and do in each.",
+  },
+  "/destinations/culture"
+);
 
 type CultureSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;

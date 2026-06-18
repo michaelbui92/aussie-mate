@@ -6,13 +6,13 @@ import { SearchProvider } from "@/components/SearchModal";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans, fraunces } from "@/lib/fonts";
+import { SITE_URL } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/react";
 import PageTransition from "@/components/PageTransition";
 import { SearchModal } from "@/components/SearchModal";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BackToTop from "@/components/BackToTop";
-
-const SITE_URL = "https://youraussieguides.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,6 +49,8 @@ export const metadata: Metadata = {
     title: "AussieGuides — 호주 생활 가이드 (한국어/English)",
     description:
       "한국인을 위한 호주 생활 가이드 — 은행, 세금, 직장, 부동산, 호주 영어 슬랭까지.",
+    // images is auto-populated by app/opengraph-image.tsx (1200x630 PNG
+    // generated at build time). No need to set it explicitly.
   },
   twitter: {
     card: "summary_large_image",
@@ -59,6 +61,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // Per-page canonical URL + hreflang EN/KO alternates are set per page
+  // (see lib/seo.ts). Bilingual site with content in both languages on
+  // the same URL — Google needs explicit signals to serve the right
+  // version to the right audience and to consolidate duplicate-URL signals.
   // Favicon handled by app/icon.tsx (renders 🇦🇺 via Next/og ImageResponse).
 };
 
@@ -161,6 +167,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </SearchProvider>
           </LangProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

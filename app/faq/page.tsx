@@ -1,10 +1,16 @@
 import { En, Ko } from "@/components/LangBlocks";
+import { breadcrumbLdJson, faqLdJson, seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/faq"),
   title: "FAQ — 호주 유학/워홀 자주 묻는 질문",
   description:
     "호주 유학, 워홀, 이민에 관한 자주 묻는 질문 — 비자, 은행, 세금, 직장, 부동산, 의료까지. 한국인을 위한 호주 생활 FAQ 모음.",
-};
+  },
+  "/faq"
+);
 
 const faqs = [
   {
@@ -82,6 +88,13 @@ const faqs = [
 export default function FAQPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      {/* FAQPage JSON-LD — surfaces Q&A in Google search as rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqLdJson(faqs, "/faq")),
+        }}
+      />
       <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
         <En>Common questions</En>
         <Ko>자주 묻는 질문</Ko>
@@ -122,6 +135,20 @@ export default function FAQPage() {
           <Ko>으로 이메일을 보내주세요.</Ko>
         </p>
       </div>
+
+      {/* FAQPage schema — Google rich result (expandable Q&A in SERP). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLdJson(faqs, "faq")) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "FAQ", path: "faq" }])
+          ),
+        }}
+      />
     </div>
   );
 }

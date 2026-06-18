@@ -1,12 +1,18 @@
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 import { visas } from "./data";
+import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/visa"),
   title: "Australian Visa Guide for Koreans — AussieGuides",
   description:
     "Plain-English (and Korean) overview of Australia's main visa subclasses for Korean visitors and migrants: 417 Working Holiday, 500 Student, 189/190 Skilled, 820/801 Partner, and 600/601/651 Visitor.",
-};
+  },
+  "/visa"
+);
 
 const quickFacts = [
   {
@@ -26,6 +32,15 @@ const quickFacts = [
 export default function VisaHub() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
+      {/* BreadcrumbList JSON-LD — shows the path under the page title in Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Visa Guide", path: "visa" }])
+          ),
+        }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-sunset/15 via-stone-50 to-amber-50 dark:from-sunset/20 dark:via-darkbg dark:to-amber-950/20 border-b border-stone-200/60 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-24">
@@ -216,6 +231,19 @@ export default function VisaHub() {
           ))}
         </div>
       </section>
+
+      {/* BreadcrumbList — shows "Home › Visa Guide" path in SERP. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([
+              { name: "Home", path: "" },
+              { name: "Visa Guide", path: "visa" },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }

@@ -6,12 +6,18 @@ import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
+import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/apartment"),
   title: "Apartment & renting — 시드니/NSW 부동산 가이드",
   description:
     "시드니 부동산 가이드 — 부동산 검색(Flatmates, Domain, Realestate), 임대 신청 서류, NSW 임차인 권리, 보증금(Bond), 주의해야 할 사기 신호까지 한국어로 정리.",
-};
+  },
+  "/apartment"
+);
 
 type ApartmentItem = { label: string; en: string; ko: string; url?: string };
 type ApartmentSectionData = Omit<EditorialSectionData, "items"> & {
@@ -197,6 +203,29 @@ export default function ApartmentPage() {
           </div>
         </section>
       </div>
+
+      {/* Structured data for Google. Article + BreadcrumbList rich results. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleLdJson({
+              path: "apartment",
+              headline: "Renting an apartment in Sydney — a Korean newcomer's guide",
+              description:
+                "시드니에서 부동산 구하기 — 입주 가능한 지역, 부동산 사이트, 보증금(bond), 집주인 협상, 입주 시 주의사항까지 한국어로 정리.",
+            })
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Apartment", path: "apartment" }])
+          ),
+        }}
+      />
     </div>
   );
 }

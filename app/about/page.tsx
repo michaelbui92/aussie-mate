@@ -1,4 +1,5 @@
 import { En, Ko } from "@/components/LangBlocks";
+import { seoFor, withSeo } from "@/lib/seo";
 
 const sections = [
   {
@@ -71,10 +72,15 @@ const sections = [
   },
 ];
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/about"),
   title: "About — AussieGuides",
   description: "About AussieGuides and why it exists",
-};
+  },
+  "/about"
+);
 
 export default function AboutPage() {
   return (

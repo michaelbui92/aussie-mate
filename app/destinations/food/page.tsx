@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/destinations/food"),
   title: "Sydney Food Guide — AussieGuides",
   description: "A practical guide to Sydney's food scene — from Newtown Thai and Chinatown dumplings to fine dining, market eats, and the Sydney BYO culture.",
-};
+  },
+  "/destinations/food"
+);
 
 const neighbourhoods = [
   {

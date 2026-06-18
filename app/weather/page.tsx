@@ -1,11 +1,17 @@
 import { En, Ko } from "@/components/LangBlocks";
 import SeasonAccordion from "@/components/SeasonAccordion";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/weather"),
   title: "Weather & seasons — 호주 날씨와 계절",
   description:
     "호주(시드니 기준) 사계절 — 여름·겨울·봄·가을 특징, 자외선(UV), 비 오는 패턴, 자연재해(산불, 폭풍) 한국어 정리. 한국과 반대인 남반구 계절이 핵심.",
-};
+  },
+  "/weather"
+);
 
 const seasons = [
   {

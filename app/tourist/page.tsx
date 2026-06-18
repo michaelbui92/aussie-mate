@@ -7,12 +7,18 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Beach, Building2, Car, Coin, DollarSign, Scooter, Smartphone, Tree } from "@/components/Icons";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/tourist"),
   title: "Tourist & travel — 시드니 여행 가이드",
   description:
     "시드니 여행 가이드 — 블루마운틴, 본다이, 오페라 하우스, 페리, 와이프, 식당, 교통패스, 숙소, 예산까지 한국인이 시드니를 처음 방문할 때 알아야 할 모든 것.",
-};
+  },
+  "/tourist"
+);
 
 type TouristSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;

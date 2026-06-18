@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { En, Ko } from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
+import { seoFor, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return visas.map((v) => ({ slug: v.slug }));
@@ -16,6 +17,7 @@ export async function generateMetadata({
   const v = getVisa(slug);
   if (!v) return {};
   return {
+    ...seoFor(`/visa/${slug}`),
     title: `${v.name.en} — AussieGuides`,
     description: v.tagline.en,
   };
@@ -297,6 +299,61 @@ export default async function VisaPage({
           </div>
         </section>
       </div>
+
+      {/* Structured data for Google rich results.
+          - FAQPage schema: questions auto-derived from the visa's own fields
+            (duration / workRights / studyRights / cost / processingTime). Zero
+            new content needed; rich-result eligible immediately.
+          - BreadcrumbList: shows "Home › Visa Guide › Working Holiday (417)"
+            path under the page title in SERP. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqLdJson(
+              [
+                {
+                  q: { en: `How long is the ${v.name.en} valid?` },
+                  a: { en: v.duration.en },
+                },
+                {
+                  q: { en: `Can I work on the ${v.name.en}?` },
+                  a: { en: v.workRights.en },
+                },
+                {
+                  q: { en: `Can I study on the ${v.name.en}?` },
+                  a: { en: v.studyRights.en },
+                },
+                {
+                  q: { en: `How much does the ${v.name.en} cost?` },
+                  a: { en: v.cost.en },
+                },
+                {
+                  q: { en: `How long does ${v.name.en} processing take?` },
+                  a: { en: v.processingTime.en },
+                },
+                {
+                  q: { en: `Who is the ${v.name.en} for?` },
+                  a: { en: v.audience.en },
+                },
+              ],
+              `visa/${slug}`
+            )
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([
+              { name: "Home", path: "" },
+              { name: "Visa Guide", path: "visa" },
+              { name: v.name.en, path: `visa/${slug}` },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }

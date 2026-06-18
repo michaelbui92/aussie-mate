@@ -6,12 +6,18 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Book, Clipboard, Edit, Graduation, PersonBoard, PersonGroup, Target } from "@/components/Icons";
+import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withSeo(
+  {
+
+  ...seoFor("/study"),
   title: "Study in Australia — 호주 유학 가이드 (PTE, IELTS, 대학 문화)",
   description:
     "호주 유학 가이드 — 영어 시험(PTE vs IELTS 점수, 비용, 합격 전략), 호주 대학 문화, 교수님과 소통법, 그룹 과제, 학술 윤리(Turnitin, 표절, AI 사용)까지.",
-};
+  },
+  "/study"
+);
 
 type StudySection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; en: string; ko: string }>;

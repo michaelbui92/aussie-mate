@@ -1,14 +1,13 @@
 // app/sitemap.ts — auto-generated sitemap.xml referenced by app/robots.ts
 //
 // Lists every public page with lastModified, changeFrequency, priority.
-// Dynamic /destinations/[slug] pages are enumerated from destinations data
-// so new destinations automatically show up in the sitemap.
+// Dynamic /destinations/[slug] and /visa/[slug] pages are enumerated from
+// their data files so new entries automatically show up in the sitemap.
 
 import type { MetadataRoute } from "next";
 import { destinations } from "@/destinations/data";
 import { visas } from "@/visa/data";
-
-const SITE_URL = "https://youraussieguides.com";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
