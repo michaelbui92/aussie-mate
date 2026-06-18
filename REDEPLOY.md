@@ -115,11 +115,15 @@ If you find yourself writing regex with `\{` / `\}` and counting depth, **stop a
 | 2 | Internal `<RelatedContent />` link graph | ✅ 7/26 hub pages — finance/apartment/visa/workplace/transport/tourist/study |
 | 3 | Image width/height on remaining `<img>` tags | ⚠️ Partial — destinations pages still use raw `<img>` |
 | 3 | 5 new long-tail content pages (`/guides/*`) | ❌ Not done |
+| 3 | More destinations | ✅ 4 added (`6aef151`) — byron-bay, jervis-bay, wollongong, port-stephens |
+| 3 | Destinations hub filter (trip-length chips) | ✅ Done (`6aef151`) |
+| 3 | Destinations FAQPage + Suggested stay | ✅ Done (`6aef151`) — 10 destinations upgraded |
 | 3 | Search Console + Bing Webmaster setup | ❌ Not done |
 
-## Repo file counts (as of HEAD = `e073191`)
+## Repo file counts (as of HEAD = `6aef151`)
 
+- 10 destinations in `app/destinations/data.ts` (was 6 — added byron-bay, jervis-bay, wollongong, port-stephens)
 - 26 `page.tsx` files
 - `app/lib/seo.ts` (helpers), `app/lib/site.ts` (SITE_URL)
-- `app/opengraph-image.tsx`, `app/twitter-image.tsx`
-- 1 hero component (`app/components/HomePage.tsx`) — has the homepage H1
+- `app/components/RelatedContent.tsx` (internal-link component)
+- `app/components/AdSlot.tsx` (AdSense unit)
