@@ -186,9 +186,9 @@ export const destinations: Destination[] = [
     slug: "jervis-bay",
     name: { en: "Jervis Bay", ko: "저비스 베이" },
     tagline: { en: "White sand, dolphins & kangaroos on the beach", ko: "하얀 모래, 돌고래, 해변의 캥거루" },
-    // Aerial view of Jervis Bay — Wikimedia Commons (CC BY-SA)
-    heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jervisbayabove.jpg/1280px-Jervisbayabove.jpg",
-    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jervisbayabove.jpg/960px-Jervisbayabove.jpg",
+    // Hyams Beach (the iconic white-sand beach inside Jervis Bay) — Wikimedia Commons (CC BY-SA)
+    heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Hyams_Beach_at_Jervis_Bay_National_Park.jpg/1280px-Hyams_Beach_at_Jervis_Bay_National_Park.jpg",
+    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Hyams_Beach_at_Jervis_Bay_National_Park.jpg/960px-Hyams_Beach_at_Jervis_Bay_National_Park.jpg",
     accentColor: "bg-cyan-500",
     region: "South Coast, NSW",
     tripLength: "weekend",
@@ -234,9 +234,9 @@ export const destinations: Destination[] = [
     slug: "port-stephens",
     name: { en: "Port Stephens", ko: "포트 스테판스" },
     tagline: { en: "Dolphin capital & the biggest sand dunes in the southern hemisphere", ko: "돌고래의 수도와 남반구 최대 사구" },
-    // Nelson Bay, the main town at Port Stephens — Wikimedia Commons (CC BY-SA)
-    heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Nelsonbay.JPG/1280px-Nelsonbay.JPG",
-    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Nelsonbay.JPG/960px-Nelsonbay.JPG",
+    // Stockton Bight Sand Dunes at Anna Bay (largest moving dunes in the southern hemisphere) — Wikimedia Commons (CC BY-SA)
+    heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sand_dunes_at_Anna_Bay.jpg/1280px-Sand_dunes_at_Anna_Bay.jpg",
+    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sand_dunes_at_Anna_Bay.jpg/960px-Sand_dunes_at_Anna_Bay.jpg",
     accentColor: "bg-blue-500",
     region: "Hunter Region, NSW",
     tripLength: "weekend",
