@@ -164,7 +164,7 @@ export const destinations: Destination[] = [
     tagline: { en: "Australia's most famous beach town", ko: "호주에서 가장 유명한 해변 타운" },
     // Cape Byron Lighthouse + Wategos Bay — Wikimedia Commons (CC BY-SA)
     heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Wategos_Bay_and_the_Byron_Bay_Lighthouse.jpg/1280px-Wategos_Bay_and_the_Byron_Bay_Lighthouse.jpg",
-    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Wategos_Bay_and_the_Byron_Bay_Lighthouse.jpg/640px-Wategos_Bay_and_the_Byron_Bay_Lighthouse.jpg",
+    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Wategos_Bay_and_the_Byron_Bay_Lighthouse.jpg/250px-Wategos_Bay_and_the_Byron_Bay_Lighthouse.jpg",
     accentColor: "bg-orange-500",
     region: "Northern NSW",
     tripLength: "longer",
@@ -188,7 +188,7 @@ export const destinations: Destination[] = [
     tagline: { en: "White sand, dolphins & kangaroos on the beach", ko: "하얀 모래, 돌고래, 해변의 캥거루" },
     // Aerial view of Jervis Bay — Wikimedia Commons (CC BY-SA)
     heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jervisbayabove.jpg/1280px-Jervisbayabove.jpg",
-    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jervisbayabove.jpg/640px-Jervisbayabove.jpg",
+    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jervisbayabove.jpg/250px-Jervisbayabove.jpg",
     accentColor: "bg-cyan-500",
     region: "South Coast, NSW",
     tripLength: "weekend",
@@ -212,7 +212,7 @@ export const destinations: Destination[] = [
     tagline: { en: "Sea cliff bridge & an easy coastal escape", ko: "시클리프 브리지와 가벼운 해안 여행" },
     // Sea Cliff Bridge from air, Grand Pacific Drive — Wikimedia Commons (CC BY-SA)
     heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/73/Sea_Cliff_Bridge_from_air.jpg",
-    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Sea_Cliff_Bridge_from_air.jpg/640px-Sea_Cliff_Bridge_from_air.jpg",
+    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Sea_Cliff_Bridge_from_air.jpg/250px-Sea_Cliff_Bridge_from_air.jpg",
     accentColor: "bg-indigo-500",
     region: "South Coast, NSW",
     tripLength: "day",
@@ -236,7 +236,7 @@ export const destinations: Destination[] = [
     tagline: { en: "Dolphin capital & the biggest sand dunes in the southern hemisphere", ko: "돌고래의 수도와 남반구 최대 사구" },
     // Nelson Bay, the main town at Port Stephens — Wikimedia Commons (CC BY-SA)
     heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Nelsonbay.JPG/1280px-Nelsonbay.JPG",
-    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Nelsonbay.JPG/640px-Nelsonbay.JPG",
+    cardImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Nelsonbay.JPG/250px-Nelsonbay.JPG",
     accentColor: "bg-blue-500",
     region: "Hunter Region, NSW",
     tripLength: "weekend",
