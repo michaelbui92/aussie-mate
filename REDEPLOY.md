@@ -123,8 +123,10 @@ If you find yourself writing regex with `\{` / `\}` and counting depth, **stop a
 | 3 | Destinations image overhaul | ✅ Wikimedia Commons landmarks (`2e58542` → `2eccda1` → `a5cc46d`) — Byrons lighthouse, Jervis Bay→Hyams Beach, Wollongong→Sea Cliff Bridge, Port Stephens→Stockton Bight dunes at Anna Bay; all 960px cards |
 | 3 | Destinations Attractions section (name + blurb + time + cost) | ✅ Blue Mountains only (`6e5f61e`) — optional field, other 9 destinations skip the section cleanly; backfill later |
 | 3 | Homepage stages revamp (what's-inside bullets + time stat) | ✅ `e9bbd88` — visiting / arrived / home cards now show 3 content previews + a timeframe anchor stat |
+| 3 | Homepage stages — drop prescriptive timeframe | ✅ `7f9d2ac` — stat footer removed; "belonging happens on its own schedule" now in persona content |
+| 3 | Persona content overhaul (visiting / arrived / home) | ✅ `a618115` — each stage is now a 6-section card: intro → start here → detail list → dark callout → after this guide → keep reading. Parallel layout across all 3. Sky / emerald / teal color per stage |
 
-## Repo file counts (as of HEAD = `e9bbd88`)
+## Repo file counts (as of HEAD = `a618115`)
 
 - 10 destinations in `app/destinations/data.ts` (was 6 — added byron-bay, jervis-bay, wollongong, port-stephens)
 - 26 `page.tsx` files
