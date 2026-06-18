@@ -6,6 +6,7 @@ import VisitingContent from "@/components/personas/VisitingContent";
 import ArrivedContent from "@/components/personas/ArrivedContent";
 import HomeContent from "@/components/personas/HomeContent";
 import { SearchModal } from "@/components/SearchModal";
+import AdSlot from "@/components/AdSlot";
 import { destinations } from "@/destinations/data";
 
 type StageKey = "visiting" | "arrived" | "home";
@@ -333,6 +334,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* AdSense slot — between topics and footer. Mid-page ad catches
+          engaged readers; high CTR zone. */}
+      <AdSlot format="horizontal" />
 
       <SearchModal />
     </div>

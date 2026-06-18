@@ -2,6 +2,7 @@ import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 import { visas } from "./data";
 import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import AdSlot from "@/components/AdSlot";
 
 export const metadata = withSeo(
   {
@@ -231,6 +232,9 @@ export default function VisaHub() {
           ))}
         </div>
       </section>
+
+      {/* AdSense slot — high-traffic guide, mid-content ad. */}
+      <AdSlot format="horizontal" />
 
       {/* BreadcrumbList — shows "Home › Visa Guide" path in SERP. */}
       <script
