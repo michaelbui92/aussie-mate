@@ -7,6 +7,7 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -225,6 +226,35 @@ export default function ApartmentPage() {
             breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Apartment", path: "apartment" }])
           ),
         }}
+      />
+
+      <RelatedContent
+        items={[
+          {
+            href: "/finance",
+            title: { en: "Finance & banking", ko: "금융과 은행" },
+            description: {
+              en: "Bank account, TFN, and how the bond refund lands back in your account.",
+              ko: "은행 계좌, TFN, 그리고 보증금 환급이 계좌로 들어오는 과정.",
+            },
+          },
+          {
+            href: "/transport",
+            title: { en: "Transport & Opal", ko: "교통과 오팔 카드" },
+            description: {
+              en: "Where to live matters — commute time vs rent. Opal weekly caps.",
+              ko: "어디에 사느냐가 중요 — 통근 시간과 임대료의 균형. 오팔 주간 한도.",
+            },
+          },
+          {
+            href: "/tourist",
+            title: { en: "Short-term stays", ko: "단기 체류" },
+            description: {
+              en: "Not ready to sign a lease? Airbnb, serviced apartments, share houses.",
+              ko: "임대 계약 전? 에어비앤비, 서비스드 아파트, 쉐어하우스 옵션.",
+            },
+          },
+        ]}
       />
     </div>
   );

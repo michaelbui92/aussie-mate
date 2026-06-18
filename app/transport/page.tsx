@@ -7,6 +7,7 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Bus, Car, Coin, Plane, Train, Tree } from "@/components/Icons";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -165,6 +166,35 @@ export default function TransportPage() {
             breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Transport", path: "transport" }])
           ),
         }}
+      />
+
+      <RelatedContent
+        items={[
+          {
+            href: "/apartment",
+            title: { en: "Where to live", ko: "어디에 살까" },
+            description: {
+              en: "Where you live determines your commute. Opal weekly travel caps.",
+              ko: "거주지에 따라 통근이 결정됩니다. 오팔 주간 교통비 한도.",
+            },
+          },
+          {
+            href: "/tourist",
+            title: { en: "Sydney day trips", ko: "시드니 당일치기" },
+            description: {
+              en: "Blue Mountains, Hunter Valley, Northern Beaches — how to get there.",
+              ko: "블루마운틴, 헌터밸리, 노던비치 — 가는 법.",
+            },
+          },
+          {
+            href: "/finance",
+            title: { en: "Saving on transit", ko: "교통비 절약" },
+            description: {
+              en: "Concession Opal, weekly caps, and tax-deductible work travel.",
+              ko: "할인 오팔, 주간 한도, 그리고 직장 통근의 세액 공제.",
+            },
+          },
+        ]}
       />
     </div>
   );

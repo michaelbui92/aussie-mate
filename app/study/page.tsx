@@ -7,6 +7,7 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Book, Clipboard, Edit, Graduation, PersonBoard, PersonGroup, Target } from "@/components/Icons";
 import { seoFor, withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -188,6 +189,35 @@ export default function StudyPage() {
           </div>
         </section>
       </div>
+
+      <RelatedContent
+        items={[
+          {
+            href: "/visa",
+            title: { en: "Student visa (subclass 500)", ko: "학생 비자 (500)" },
+            description: {
+              en: "Working hours, COE requirements, and what happens if you fail a subject.",
+              ko: "근로 시간, COE 요건, 그리고 과목 낙제 시 발생하는 일들.",
+            },
+          },
+          {
+            href: "/finance",
+            title: { en: "Money & bank accounts", ko: "금융과 은행 계좌" },
+            description: {
+              en: "OSHC, tuition payments, opening a bank account without an address.",
+              ko: "OSHC, 학비 납부, 주소 없이 은행 계좌 개설.",
+            },
+          },
+          {
+            href: "/aussie-english",
+            title: { en: "Aussie English", ko: "호주 영어" },
+            description: {
+              en: "Lecturer speak is fast. Office hours are casual. Get fluent for class.",
+              ko: "강의는 빠르고, 교수 면담은 캐주얼. 수업에 필요한 영어 실력 키우기.",
+            },
+          },
+        ]}
+      />
     </div>
   );
 }

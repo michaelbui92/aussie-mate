@@ -8,6 +8,7 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Beach, Building2, Car, Coin, DollarSign, Scooter, Smartphone, Tree } from "@/components/Icons";
 import { seoFor, withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -223,6 +224,35 @@ export default function TouristPage() {
           </div>
         </section>
       </div>
+
+      <RelatedContent
+        items={[
+          {
+            href: "/transport",
+            title: { en: "Getting around", ko: "교통과 이동" },
+            description: {
+              en: "Opal cards, airport transfers, rideshare apps, and ferry routes.",
+              ko: "오팔 카드, 공항 이동, 차량 호출 앱, 페리 노선.",
+            },
+          },
+          {
+            href: "/apartment",
+            title: { en: "Where to stay", ko: "어디에 머물까" },
+            description: {
+              en: "CBD convenience vs beach suburb calm. Best areas by trip type.",
+              ko: "CBD의便利 vs 해변 교외의 평온. 여행 유형별 최적 지역.",
+            },
+          },
+          {
+            href: "/finance",
+            title: { en: "Budget & payments", ko: "예산과 결제" },
+            description: {
+              en: "Travel money, card surcharges, and how much a week in Sydney really costs.",
+              ko: "여행 자금, 카드 수수료, 그리고 시드니 1주의 실제 비용.",
+            },
+          },
+        ]}
+      />
     </div>
   );
 }

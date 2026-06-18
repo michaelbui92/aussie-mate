@@ -3,6 +3,7 @@ import { En, Ko } from "@/components/LangBlocks";
 import { visas } from "./data";
 import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import AdSlot from "@/components/AdSlot";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -247,6 +248,35 @@ export default function VisaHub() {
             ])
           ),
         }}
+      />
+
+      <RelatedContent
+        items={[
+          {
+            href: "/finance",
+            title: { en: "Tax & TFN", ko: "세금과 TFN" },
+            description: {
+              en: "Your visa subclass determines tax residency. Apply for TFN within 28 days.",
+              ko: "비자 종류에 따라 세법상 거주자 신분이 결정됩니다. 28일 내 TFN 신청.",
+            },
+          },
+          {
+            href: "/workplace",
+            title: { en: "Workplace rights", ko: "직장 권리" },
+            description: {
+              en: "Award wages, super, leave — different protections for different visas.",
+              ko: "임금, 퇴직연금, 휴가 — 비자별 보호 수준이 다릅니다.",
+            },
+          },
+          {
+            href: "/apartment",
+            title: { en: "Renting in Australia", ko: "호주 부동산" },
+            description: {
+              en: "Lease length, bond, what landlords need (and can't ask).",
+              ko: "임차 기간, 보증금, 집주인이 요구할 수 있는 것과 없는 것.",
+            },
+          },
+        ]}
       />
     </div>
   );

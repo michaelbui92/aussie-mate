@@ -7,6 +7,7 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@/components/Icons";
 import { seoFor, withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -148,6 +149,35 @@ export default function WorkplacePage() {
           </div>
         </section>
       </div>
+
+      <RelatedContent
+        items={[
+          {
+            href: "/finance",
+            title: { en: "Finance & banking", ko: "금융과 은행" },
+            description: {
+              en: "Payslip deductions, super contributions, and how to read your tax summary.",
+              ko: "급여명세서 공제, 퇴직연금 납입, 그리고 연말정산 읽는 법.",
+            },
+          },
+          {
+            href: "/visa",
+            title: { en: "Visa Guide", ko: "비자 가이드" },
+            description: {
+              en: "Working Holiday vs Student vs Skilled — different hours, different rights.",
+              ko: "워홀 vs 학생 vs 기술 비자 — 근로 시간과 권리가 다릅니다.",
+            },
+          },
+          {
+            href: "/aussie-english",
+            title: { en: "Aussie English", ko: "호주 영어" },
+            description: {
+              en: "Workplace slang, polite disagreement, and meetings that say one thing and mean another.",
+              ko: "직장 슬랭, 정중한 거절 표현, 그리고 결정을 미루는 회의 언어.",
+            },
+          },
+        ]}
+      />
     </div>
   );
 }

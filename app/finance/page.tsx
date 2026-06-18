@@ -7,6 +7,7 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } from "@/components/Icons";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -186,6 +187,36 @@ export default function FinancePage() {
             breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Finance", path: "finance" }])
           ),
         }}
+      />
+
+      {/* Contextual next-steps — internal link graph fix */}
+      <RelatedContent
+        items={[
+          {
+            href: "/apartment",
+            title: { en: "Renting in Australia", ko: "호주 부동산과 임대" },
+            description: {
+              en: "Lease, bond, flatmates — and how your TFN ties into rental applications.",
+              ko: "임대차 계약, 보증금, 쉐어하우스 — 그리고 임대 신청과 TFN의 관계.",
+            },
+          },
+          {
+            href: "/visa",
+            title: { en: "Visa Guide", ko: "비자 가이드" },
+            description: {
+              en: "Tax residency changes by visa type. Pick the right one before you file.",
+              ko: "비자 종류에 따라 세법상 거주자 신분이 달라집니다. 세금 신고 전 확인.",
+            },
+          },
+          {
+            href: "/workplace",
+            title: { en: "Workplace rights", ko: "직장 권리" },
+            description: {
+              en: "Award wages, payslips, super contributions — your employer has obligations.",
+              ko: "임금, 급여명세서, 퇴직연금 납입 — 고용주의 법적 의무.",
+            },
+          },
+        ]}
       />
     </div>
   );
