@@ -120,7 +120,9 @@ If you find yourself writing regex with `\{` / `\}` and counting depth, **stop a
 | 3 | Destinations FAQPage + Suggested stay | ✅ Done (`6aef151`) — 10 destinations upgraded |
 | 3 | Search Console + Bing Webmaster setup | ❌ Not done |
 
-## Repo file counts (as of HEAD = `6aef151`)
+| 3 | Destinations image overhaul | ✅ Wikimedia Commons landmarks (`2e58542` → `2eccda1` → `a5cc46d`) — Byrons lighthouse, Jervis Bay→Hyams Beach, Wollongong→Sea Cliff Bridge, Port Stephens→Stockton Bight dunes at Anna Bay; all 960px cards |
+
+## Repo file counts (as of HEAD = `a5cc46d`)
 
 - 10 destinations in `app/destinations/data.ts` (was 6 — added byron-bay, jervis-bay, wollongong, port-stephens)
 - 26 `page.tsx` files
