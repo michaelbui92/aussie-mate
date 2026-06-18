@@ -1,5 +1,5 @@
 import { En, Ko } from "@/components/LangBlocks";
-import { seoFor, withSeo } from "@/lib/seo";
+import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
 const sections = [
   {
@@ -191,6 +191,18 @@ export default function AboutPage() {
           </a>
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([
+              { name: "Home", path: "" },
+              { name: "About", path: "about" },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }
