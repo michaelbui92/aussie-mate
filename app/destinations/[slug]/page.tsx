@@ -119,6 +119,51 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </div>
             </section>
 
+            {/* Attractions — deeper dive with time + cost. Renders only when
+                the destination has the optional `attractions` field populated,
+                so older entries without it are unaffected. */}
+            {d.attractions && d.attractions.length > 0 && (
+              <section className="reveal">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+                  <En>Attractions</En>
+                  <Ko>주요 명소</Ko>
+                </p>
+                <p className="text-sm text-stone-500 dark:text-stone-400 mb-5 max-w-2xl">
+                  <En>What to see, how long to spend, and roughly what it costs.</En>
+                  <Ko>볼 거리, 머무를 시간, 대략적인 비용.</Ko>
+                </p>
+                <div className="space-y-3">
+                  {d.attractions.map((a, i) => (
+                    <div
+                      key={a.name.en}
+                      className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
+                    >
+                      <div className="flex items-start justify-between gap-4 mb-2">
+                        <h3 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-snug">
+                          <En>{a.name.en}</En>
+                          <Ko>{a.name.ko}</Ko>
+                        </h3>
+                        <div className="shrink-0 flex flex-col items-end gap-0.5 text-[11px] uppercase tracking-wider">
+                          <span className="text-sunset font-semibold">
+                            <En>{a.time.en}</En>
+                            <Ko>{a.time.ko}</Ko>
+                          </span>
+                          <span className="text-stone-500 dark:text-stone-400 font-medium">
+                            <En>{a.cost.en}</En>
+                            <Ko>{a.cost.ko}</Ko>
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+                        <En>{a.blurb.en}</En>
+                        <Ko>{a.blurb.ko}</Ko>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* FAQ — answers the three most-asked visitor questions */}
             <section className="reveal">
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">

@@ -17,6 +17,14 @@ export interface Destination {
   gettingThere: { en: string; ko: string };
   /** Suggested stay length for trip planning */
   suggestedDays: { en: string; ko: string };
+  /** Deeper dive into the top sights — name, 1-2 sentence blurb, time on site,
+   *  rough cost. Optional: destinations without this field skip the section. */
+  attractions?: {
+    name: { en: string; ko: string };
+    blurb: { en: string; ko: string };
+    time: { en: string; ko: string };
+    cost: { en: string; ko: string };
+  }[];
 }
 
 export const destinations: Destination[] = [
@@ -42,6 +50,44 @@ export const destinations: Destination[] = [
     bestTime: { en: "Year-round — best in spring for wildflowers", ko: "년 내내 — 봄에 야생화를 즐기기에 최적" },
     gettingThere: { en: "Train from Central Station to Katoomba ($18 Opal, 2hrs). Drive via Great Western Highway.", ko: "센트럴 스테이션에서 카툼바까지 기차 ($18 오팔, 2시간). 그레이트 웨스턴 하이웨이 이용." },
     suggestedDays: { en: "1–2 days (long day trip or one overnight)", ko: "1~2일 (당일 또는 1박)" },
+    attractions: [
+      {
+        name: { en: "Three Sisters & Echo Point", ko: "삼자매 & 에코 포인트" },
+        blurb: {
+          en: "The iconic three-rock formation at Echo Point lookout. Best at sunrise or sunset when the sandstone glows orange and pink. Flat walk from Katoomba Station.",
+          ko: "에코 포인트 전망대의 상징적인 세 바위 형상. 일출이나 일몰에 사암이 주황빛과 분홍빛으로 빛날 때 가장 아름다움. 카툼바역에서 평지 산책.",
+        },
+        time: { en: "1–2 hrs", ko: "1~2시간" },
+        cost: { en: "Free", ko: "무료" },
+      },
+      {
+        name: { en: "Scenic World", ko: "시니악 월드" },
+        blurb: {
+          en: "Cable car, glass-floor skyway, and the steepest passenger railway in the world through old-growth rainforest. The Discovery Pass covers all three rides.",
+          ko: "구름 낀 옛날 비옥림을 지나는 케이블카, 유리 바닥 스카이웨이, 세계에서 가장 가파른 여객 열차. 디스커버리 패스로 3가지 탑승 모두 이용 가능.",
+        },
+        time: { en: "2–3 hrs", ko: "2~3시간" },
+        cost: { en: "From $55 (Discovery Pass)", ko: "$55부터 (디스커버리 패스)" },
+      },
+      {
+        name: { en: "Wentworth Falls", ko: "웬트워스 폭포" },
+        blurb: {
+          en: "A 187m waterfall at the end of a well-graded track. The National Pass walks along the cliff edge to the base of the falls — one of the best half-day walks in NSW.",
+          ko: "잘 정비된 트랙 끝에 있는 187m 폭포. 내셔널 패스는 절벽 끝을 따라 폭포 아래까지 이어지며, NSW 최고의 반일 하이킹 코스 중 하나.",
+        },
+        time: { en: "2–3 hrs (return)", ko: "2~3시간 (왕복)" },
+        cost: { en: "Free (national park)", ko: "무료 (국립공원)" },
+      },
+      {
+        name: { en: "Jenolan Caves", ko: "제놀란 동굴" },
+        blurb: {
+          en: "One of the oldest cave systems in the world, about 90 minutes' drive from Katoomba. Guided tours only — Lucas Cave and Imperial Cave are the most spectacular.",
+          ko: "카툼바에서 차로 약 90분 거리에 있는 세계에서 가장 오래된 동굴 시스템 중 하나. 가이드 투어만 가능 — 루카스 동굴과 임페리얼 동굴이 가장 화려하다.",
+        },
+        time: { en: "2–4 hrs (incl. drive)", ko: "2~4시간 (운전 포함)" },
+        cost: { en: "From $49 (guided tour)", ko: "$49부터 (가이드 투어)" },
+      },
+    ],
   },
   {
     slug: "hunter-valley",
