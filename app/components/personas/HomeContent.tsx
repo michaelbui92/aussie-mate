@@ -24,6 +24,54 @@ export default function HomeContent() {
         </p>
       </section>
 
+      {/* Start here — three things worth doing before the long list. */}
+      <section className="mb-10">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-5">
+          <En>Start here</En>
+          <Ko>먼저 이것부터</Ko>
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl">
+          {[
+            {
+              icon: "💰",
+              en: "Check your super balance",
+              ko: "퇴직연금 잔액 확인",
+              blurbEn: "It's your money, not a bonus. Log in once a year, consolidate if you've had multiple jobs, and make sure it's actually being invested.",
+              blurbKo: "퇴직연금은 보너스가 아니라 당신의 돈입니다. 연 1회 로그인해 잔액을 확인하고, 여러 직장이 있었다면 통합하고, 실제 투자되고 있는지 점검하세요.",
+            },
+            {
+              icon: "🏠",
+              en: "Know your tenant rights",
+              ko: "임차인 권리 파악",
+              blurbEn: "NSW tenancy law is strong. Rent increases, break lease, repairs, bond disputes — the rules exist and most tenants never read them.",
+              blurbKo: "NSW 임대차법은 강력합니다. 임대료 인상, 중도 해지, 수리, 보증금 분쟁 — 규정은 존재하며 대부분 임차인이 읽어보지 않습니다.",
+            },
+            {
+              icon: "🌏",
+              en: "Map your PR timeline",
+              ko: "영주권 타임라인 설계",
+              blurbEn: "PR, partner visa, citizenship — these take years. If it's in your plan, start understanding the process now. Most people leave this too late.",
+              blurbKo: "영주권, 파트너 비자, 시민권 — 수년이 걸립니다. 계획에 있다면 지금부터 프로세스를 이해하세요. 대부분 너무 늦게 시작합니다.",
+            },
+          ].map((w, i) => (
+            <div
+              key={w.en}
+              className={`reveal reveal-delay-${i + 1} p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-teal-900/20 border border-teal-100/50 dark:border-teal-900/30`}
+            >
+              <div className="text-2xl mb-2">{w.icon}</div>
+              <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
+                <En>{w.en}</En>
+                <Ko>{w.ko}</Ko>
+              </h4>
+              <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
+                <En>{w.blurbEn}</En>
+                <Ko>{w.blurbKo}</Ko>
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* The stuff that matters */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-5">
@@ -37,8 +85,10 @@ export default function HomeContent() {
             { icon: "💼", en: "Workplace culture and your worth", ko: "직장 문화와 나의 가치", descEn: "Award wages exist for a reason. If you're being underpaid, that's not normal and not your fault. Fair Work Ombudsman handles it — for free, in Korean if you need.", descKo: "임금등급은 존재하는 이유가 있습니다. 미만급을 받는다면, 그것은 정상이 아니며 당신 잘못이 아닙니다. Fair Work Ombudsman이 처리해줍니다 — 무료, 필요시 한국어로." },
             { icon: "🌏", en: "PR pathways and planning ahead", ko: "영주권 루트와 장기 계획", descEn: "PR, partner visas, citizenship — these take years. If it's in your plan, start understanding the process now. Most people leave this way too late.", descKo: "영주권, 파트너 비자, 시민권 — 수년이 걸립니다. 계획에 있다면 지금부터 프로세스를 이해하세요. 대부분 너무 늦게 시작합니다." },
             { icon: "🤝", en: "Belonging, not just settling", ko: "적응이 아닌 소속감", descEn: "After the practical stuff is sorted, the harder question is community. Korean churches, sports clubs, language exchanges, volunteering — pick one and commit. Friendships here take longer than you think.", descKo: "실용적인 것들이 정리된 후, 더 어려운 질문은 커뮤니티입니다. 한인 교회, 동호회, 언어교환, 자원봉사 — 하나를 골라 꾸준히 하세요. 여기서 우정은 생각보다 오래 걸립니다." },
+            { icon: "📊", en: "Build a credit history", ko: "신용 기록 쌓기", descEn: "Yes, you have a credit score in Australia. Utilities, phone plans, and BNPL all build it. It helps with future rentals, car loans, and a better mortgage rate. It starts the day you open your first account.", descKo: "네, 호주에도 신용점수가 있습니다. 공과금, 휴대폰 요금제, BNPL이 모두 점수에 반영됩니다. 향후 임대, 자동차 대출, 더 좋은 모기지 금리에 도움이 됩니다. 첫 계좌를 여는 날부터 시작됩니다." },
+            { icon: "🇦🇺", en: "Citizenship test prep", ko: "시민권 시험 준비", descEn: "If you're eligible, the test is doable in a few weeks of study with the official resource. Most people regret waiting — start when you can, the residency clock is already running.", descKo: "자격이 된다면, 공식 자료로 몇 주 공부하면 충분합니다. 대부분 시작을 미뤄서 후회합니다 — 가능할 때 시작하세요. 거주 기간 카운트는 이미 돌고 있습니다." },
           ].map((item, i) => (
-            <li key={item.en} className={`reveal reveal-delay-${i + 1} flex gap-4 group`}>
+            <li key={item.en} className={`reveal reveal-delay-${(i % 5) + 1} flex gap-4 group`}>
               <span className="shrink-0 w-10 h-10 rounded-full bg-teal-50 dark:bg-teal-950/50 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
                 {item.icon}
               </span>
@@ -57,7 +107,9 @@ export default function HomeContent() {
         </ul>
       </section>
 
-      {/* The slow part */}
+      {/* The slow part — softened. Previous version prescribed "first two
+          years are hardest", which assumes a single timeline. Replaced with
+          language that acknowledges belonging happens on its own schedule. */}
       <section className="mb-10 bg-stone-900 dark:bg-dark-surface rounded-3xl p-7 md:p-9 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl" />
         <div className="relative">
@@ -66,25 +118,84 @@ export default function HomeContent() {
             <Ko>솔직한 이야기</Ko>
           </p>
           <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
-            <En>The first two years are the hardest part.</En>
-            <Ko>처음 2년이 가장 어렵습니다.</Ko>
+            <En>There&apos;s no single timeline for belonging.</En>
+            <Ko>소속감의 시간표는 사람마다 다릅니다.</Ko>
           </h4>
           <p className="text-white/80 text-sm md:text-base leading-relaxed mb-4">
             <En>
-              Most people who leave Australia in year one or two say the same thing in hindsight: it gets good around year three. The novelty wears off, the homesickness spikes, and the friends you thought were friends drift apart — and then, slowly, you build the version of your life here that actually feels like yours.
+              Some people feel at home in weeks. Others take years. Both are normal. The first year is when most people consider leaving — the novelty wears off, homesickness spikes, and the friends you made in the first month turn out to be passing through. The ones who stay are usually the ones who stop measuring their life here against where they came from, and start measuring it on its own terms.
             </En>
             <Ko>
-              1~2년 차에 호주를 떠나는 사람 대부분은 돌아보며 같은 말을 합니다: 3년 차쯤부터 좋아진다고. 새로움은 식고, 향수병은 극에 달하고, 친구라고 생각했던 사람들은 멀어지고 — 그리고 천천히, 진짜 당신만의 호주 생활이 만들어집니다.
+              어떤 사람은 몇 주 만에 집처럼 느낍니다. 어떤 사람은 몇 년이 걸립니다. 둘 다 정상입니다. 첫 1년은 대부분 떠날까 고민하는 시기 — 새로움은 식고, 향수병은 극에 달하고, 첫 달에 사귄 친구들이 다 지나가는 사람이었다는 걸 알게 됩니다. 남는 사람들은 보통 출신지와 비교하는 것을 멈추고, 여기에서의 삶을 자체 기준으로 재기 시작하는 사람들입니다.
             </Ko>
           </p>
           <p className="text-white/60 text-sm leading-relaxed">
             <En>
-              The work is the work. Stay long enough for it to land.
+              There is no shortcut. There is also no deadline.
             </En>
             <Ko>
-              과정은 과정입니다. 정착할 만큼 충분히 머무르세요.
+              지름길은 없습니다. 마감일도 없습니다.
             </Ko>
           </p>
+        </div>
+      </section>
+
+      {/* After this guide — what you'll walk away with. Symmetric to
+          "Start here" at the top: the "long-game" outcomes that make the
+          rest of life here actually work. Uses the same teal-themed card
+          style. Deliberately avoids prescribed timeframes — belonging
+          happens on its own schedule. */}
+      <section className="mb-10">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-5">
+          <En>After this guide</En>
+          <Ko>이 가이드를 마치면</Ko>
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl">
+          {[
+            {
+              icon: "💰",
+              en: "A super and tax picture that works",
+              ko: "퇴직연금과 세금, 정돈된 그림",
+              blurbEn: "Your balance consolidated, your fund performing, and tax time handled by someone who speaks your language.",
+              blurbKo: "잔액 통합, 펀드 운용 점검, 한국어 가능 회계사와 함께하는 연말 정산.",
+            },
+            {
+              icon: "🏠",
+              en: "Tenant rights in your back pocket",
+              ko: "주머니 속 임차인 권리",
+              blurbEn: "NSW tenancy law is on your side — rent increases, break lease, repairs, bond disputes. You know the rules now.",
+              blurbKo: "NSW 임대차법이 임차인 편입니다 — 임대료 인상, 중도 해지, 수리, 보증금 분쟁. 이제 규정을 압니다.",
+            },
+            {
+              icon: "🌏",
+              en: "A PR or citizenship plan, if you want one",
+              ko: "원한다면 영주권·시민권 계획",
+              blurbEn: "A realistic timeline and the process steps, so this isn't a thing you scramble to learn in year four.",
+              blurbKo: "현실적인 타임라인과 단계별 진행, 4년 차에 허겁지겁 알아보는 일이 없도록.",
+            },
+            {
+              icon: "🤝",
+              en: "A community anchor",
+              ko: "하나의 커뮤니티 기반",
+              blurbEn: "One group, one routine, one reason to show up. Friendships here take longer than you think — but they're worth it.",
+              blurbKo: "하나의 모임, 하나의 루틴, 참여할 이유. 여기서 우정은 생각보다 오래 걸리지만 — 그만큼 가치 있습니다.",
+            },
+          ].map((w, i) => (
+            <div
+              key={w.en}
+              className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-darkbg border border-teal-100/50 dark:border-teal-900/30`}
+            >
+              <div className="text-2xl mb-2">{w.icon}</div>
+              <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
+                <En>{w.en}</En>
+                <Ko>{w.ko}</Ko>
+              </h4>
+              <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
+                <En>{w.blurbEn}</En>
+                <Ko>{w.blurbKo}</Ko>
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
