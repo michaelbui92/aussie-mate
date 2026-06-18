@@ -12,30 +12,48 @@ import { destinations } from "@/destinations/data";
 
 type StageKey = "visiting" | "arrived" | "home";
 
-const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string }[] = [
-  { 
-    key: "visiting", 
-    title: "I'm visiting", 
-    koTitle: "여행 중이에요", 
+const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string; bullets: { en: string; ko: string }[]; stat: { value: string; koValue: string; label: string; koLabel: string } }[] = [
+  {
+    key: "visiting",
+    title: "I'm visiting",
+    koTitle: "여행 중이에요",
     subtitle: "Holiday, working holiday, or just passing through",
     koSubtitle: "휴가, 워홀, 또는 잠시 들른 경우",
     img: "https://images.unsplash.com/photo-1523428096881-5bd79d043006?w=1200&q=80",
+    bullets: [
+      { en: "Visa, money & SIM basics", ko: "비자, 돈, SIM 기본" },
+      { en: "UV, Opal, no-tipping rules", ko: "자외선, 오팔, 팁 문화" },
+      { en: "Sydney & NSW must-sees", ko: "시드니 & NSW 필수 코스" },
+    ],
+    stat: { value: "0–2 wks", koValue: "0–2주", label: "Typical stay", koLabel: "평균 체류" },
   },
-  { 
-    key: "arrived", 
-    title: "I just got here", 
-    koTitle: "방금 도착했어요", 
+  {
+    key: "arrived",
+    title: "I just got here",
+    koTitle: "방금 도착했어요",
     subtitle: "First month sorted: bank, TFN, SIM, place to live",
-    koSubtitle: "첫 달 셋업: 은행, TFN, SIM,거주지",
+    koSubtitle: "첫 달 셋업: 은행, TFN, SIM, 거주지",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
+    bullets: [
+      { en: "SIM → bank → Opal → TFN, in order", ko: "SIM → 은행 → 오팔 → TFN 순서" },
+      { en: "Medicare & private health", ko: "Medicare & 민간 보험" },
+      { en: "3 money mistakes to avoid", ko: "피해야 할 3가지 돈 실수" },
+    ],
+    stat: { value: "4 wks", koValue: "4주", label: "To settled", koLabel: "정착까지" },
   },
-  { 
-    key: "home", 
-    title: "I call this home", 
-    koTitle: "여기가 내 집이에요", 
+  {
+    key: "home",
+    title: "I call this home",
+    koTitle: "여기가 내 집이에요",
     subtitle: "Long-term Australian — work, lifestyle, finances",
     koSubtitle: "장기 호주 거주 — 직장, 생활, 재무",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
+    bullets: [
+      { en: "Super, tax, renting smarter", ko: "Super, 세금, 똑똑한 임대" },
+      { en: "Award wages & your rights", ko: "임금등급 & 권리" },
+      { en: "PR pathways & community", ko: "영주권 루트 & 커뮤니티" },
+    ],
+    stat: { value: "2 yrs", koValue: "2년", label: "To belonging", koLabel: "소속감까지" },
   },
 ];
 
@@ -153,7 +171,7 @@ export default function HomePage() {
                 <button type="button"
                   key={s.key}
                   onClick={() => setActive(s.key)}
-                  className={`reveal reveal-delay-${i + 1} group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 ${
+                  className={`reveal reveal-delay-${i + 1} group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 flex flex-col ${
                     isActive
                       ? "bg-sunset text-white border-sunset shadow-2xl scale-[1.02] ring-4 ring-sunset/30 [&_*]:!text-white"
                       : "bg-white dark:bg-dark-surface border-stone-200 dark:border-dark-border text-stone-900 dark:text-stone-100 hover:border-sunset/50 hover:shadow-lg"
@@ -170,10 +188,37 @@ export default function HomePage() {
                     <En>{s.title}</En>
                     <Ko>{s.koTitle}</Ko>
                   </h3>
-                  <p className={`text-sm leading-relaxed ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
+                  <p className={`text-sm leading-relaxed mb-4 ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
                     <En>{s.subtitle}</En>
                     <Ko>{s.koSubtitle}</Ko>
                   </p>
+                  {/* What's inside — gives the user a reason to click a stage */}
+                  <ul className={`space-y-1.5 mb-5 text-sm ${isActive ? "text-white/85" : "text-stone-600 dark:text-stone-400"}`}>
+                    {s.bullets.map((b) => (
+                      <li key={b.en} className="flex items-start gap-2">
+                        <span className={`shrink-0 mt-1.5 w-1 h-1 rounded-full ${isActive ? "bg-white/70" : "bg-sunset"}`} />
+                        <span>
+                          <En>{b.en}</En>
+                          <Ko>{b.ko}</Ko>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  {/* Stat footer — anchors the card to a real timeframe */}
+                  <div className={`mt-auto pt-4 border-t flex items-baseline justify-between ${
+                    isActive ? "border-white/20" : "border-stone-200 dark:border-dark-border"
+                  }`}>
+                    <span className={`font-serif text-xl ${isActive ? "text-white" : "text-stone-900 dark:text-stone-100"}`}>
+                      <En>{s.stat.value}</En>
+                      <Ko>{s.stat.koValue}</Ko>
+                    </span>
+                    <span className={`text-[11px] uppercase tracking-[0.2em] ${
+                      isActive ? "text-white/60" : "text-stone-400 dark:text-stone-500"
+                    }`}>
+                      <En>{s.stat.label}</En>
+                      <Ko>{s.stat.koLabel}</Ko>
+                    </span>
+                  </div>
                 </button>
               );
             })}
