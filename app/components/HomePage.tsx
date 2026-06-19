@@ -102,7 +102,7 @@ export default function HomePage() {
           fetchPriority="high"
           sizes="100vw"
           quality={85}
-          className="hero-parallax object-cover scale-105 will-change-transform"
+          className="hero-parallax object-cover object-left md:object-center scale-105 will-change-transform"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70" />
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
@@ -161,36 +161,37 @@ export default function HomePage() {
               <Ko>단계별 가이드</Ko>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {/* Mobile: compact pill selectors (just title). Desktop: full card with subtitle + bullets. */}
+          <div className="flex flex-col md:grid md:grid-cols-3 gap-2 md:gap-3">
             {stages.map((s, i) => {
               const isActive = active === s.key;
               return (
                 <button type="button"
                   key={s.key}
                   onClick={() => setActive(s.key)}
-                  className={`reveal reveal-delay-${i + 1} group text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 flex flex-col ${
+                  className={`reveal reveal-delay-${i + 1} group text-left p-3 md:p-6 rounded-2xl border transition-all duration-300 flex flex-col ${
                     isActive
                       ? "bg-sunset text-white border-sunset shadow-2xl scale-[1.02] ring-4 ring-sunset/30 [&_*]:!text-white"
                       : "bg-white dark:bg-dark-surface border-stone-200 dark:border-dark-border text-stone-900 dark:text-stone-100 hover:border-sunset/50 hover:shadow-lg"
                   }`}
                   style={isActive ? { color: "#ffffff" } : undefined}
                 >
-                  <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-start justify-between mb-2 md:mb-3">
                     <span className={`font-mono text-xs ${isActive ? "text-white/70" : "text-stone-400 dark:text-stone-500"}`}>
                       0{i + 1}
                     </span>
                     <span className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-white" : "bg-stone-300 dark:bg-stone-700 group-hover:bg-sunset"}`} />
                   </div>
-                  <h3 className={`font-serif text-2xl mb-1.5 ${isActive ? "text-white" : "text-stone-900 dark:text-stone-100"}`}>
+                  <h3 className={`font-serif text-base md:text-2xl mb-1.5 ${isActive ? "text-white" : "text-stone-900 dark:text-stone-100"}`}>
                     <En>{s.title}</En>
                     <Ko>{s.koTitle}</Ko>
                   </h3>
-                  <p className={`text-sm leading-relaxed mb-4 ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
+                  {/* Subtitle + bullets hidden on mobile — they live in the persona card below */}
+                  <p className={`hidden md:block text-sm leading-relaxed mb-4 ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
                     <En>{s.subtitle}</En>
                     <Ko>{s.koSubtitle}</Ko>
                   </p>
-                  {/* What's inside — gives the user a reason to click a stage */}
-                  <ul className={`space-y-1.5 mb-5 text-sm ${isActive ? "text-white/85" : "text-stone-600 dark:text-stone-400"}`}>
+                  <ul className={`hidden md:block space-y-1.5 mb-5 text-sm ${isActive ? "text-white/85" : "text-stone-600 dark:text-stone-400"}`}>
                     {s.bullets.map((b) => (
                       <li key={b.en} className="flex items-start gap-2">
                         <span className={`shrink-0 mt-1.5 w-1 h-1 rounded-full ${isActive ? "bg-white/70" : "bg-sunset"}`} />
@@ -289,7 +290,7 @@ export default function HomePage() {
               <span>→</span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {remainingDestinations.map((d, i) => (
               <Link
                 key={d.slug}
