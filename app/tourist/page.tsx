@@ -6,8 +6,8 @@ import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
-import { Beach, Building2, Car, Coin, DollarSign, Scooter, Smartphone, Tree } from "@/components/Icons";
-import { seoFor, withSeo } from "@/lib/seo";
+import { Beach, Building2, Coin, Smartphone, Tree } from "@/components/Icons";
+import { articleLdJson, breadcrumbLdJson, faqLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
@@ -48,40 +48,6 @@ const sections: TouristSection[] = [
     ],
   },
   {
-    id: "day-trips",
-    iconKey: "Car",
-    accent: "sage",
-    title: "Day Trips from Sydney",
-    koTitle: "시드니 당일 여행",
-    desc: "Places you can see in a single day with public transport or a short drive",
-    koDesc: "대중교통이나 짪은 운전으로 하루 안에 갈 수 있는 장소",
-    items: [
-      { label: "Blue Mountains", en: "Take a train from Central to Katoomba (2 hours, about $7 with Opal). See the Three Sisters at Echo Point, ride the Scenic Railway and Skyway cable car, and walk through the Valley of the Waters. Pack warm clothes — it's cold up there even in summer.", ko: "Central에서 Katoomba까지 기차로(2시간, 오팔 약 $7). 에코 포인트에서 Three Sisters를 보고, 스카이 레일과 스카이웨이 케이블카를 타며, 밸리 오브 더 워터스를 산책하세요. 따뜻한 옷을 챙기세요 — 여름도 산 위는 추웁니다." },
-      { label: "Royal National Park (Coastal Track)", en: "Take the train to Cronulla, then the ferry to Bundeena. Walk the Royal Coastal Track — 26km one way but you can do a shorter section. The Figure 8 Pools are a famous natural rock pool at the southern end. Car or rideshare needed to get back. Park entry $12 per vehicle.", ko: "기차로 Cronulla까지 간 후 페리로 Bundeena로 갑니다. 로열 코스탈 트랙을 산책하세요 — 편도 26km이지만 짪은 구간도 가능합니다. 피규어 8 풀스는 남쪽 쪽에 있는 유명한 자연 수영장입니다. 차량 입장료는 $12입니다." },
-      { label: "Wollongong & Shellharbour", en: "Take a train south from Central (about 1.5 hours). Visit the iconic Sea Cliff Bridge between Coalcliff and Lawrence Hargrave Drive. Visit Nan Tien Temple (largest Buddhist temple in the southern hemisphere) near Shellharbour. Great beaches and a more laid-back feel than Sydney.", ko: "Central에서 남쪽으로 기차를 타면 약 1시간 30분입니다. Coalcliff와 Lawrence Hargrave Drive 사이의 시 클리프 브릿지를 지나보세요. Shellharbour 근처의 난티엔 사원도 방문하세요. 시드니보다 여유로운 분위기와 좋은 해변이 있습니다." },
-      { label: "Palm Beach & the Northern Beaches", en: "Take the L90 bus from the city to the northern tip of Sydney's peninsula. Palm Beach is the northernmost beach — the Barrenjoey Lighthouse at the end is a great walk. Stop at Whale Beach, Avalon, and Bilgola on the way.", ko: "L90 버스를 타고 시드니 반도의 최북단으로 가세요. Palm Beach는 가장 북단에 있는 해변입니다 — 끝에 있는 Barrenjoey 등대까지 산책하기 좋습니다. 길에 Whale Beach, Avalon, Bilgola도 들러 보세요." },
-      { label: "Hawkesbury River & Wiseman's Ferry", en: "Drive north to Wiseman's Ferry (about 1.5 hours). Do a river cruise, walk to historic ruins, or just enjoy the scenic waterway. Sandstone formations and ancient landscapes unlike anything near Sydney. Popular for kayaking, fishing, and scenic drives.", ko: "북쪽으로 차를 타고 Wiseman's Ferry까지(약 1시간 30분). 강 크루즈를 타거나, 역사적 유적지를 산책하거나, 아름다운 수로를 즐기세요. 사암 구조물과 고대 풍경은 시드니 근처에서는 독특합니다." },
-      { label: "Kamay Botany Bay (Kurnell)", en: "Drive south to Kurnell — where Captain Cook first landed in 1770. Visit the Captain Cook Landing Site, the Kamay Botany Bay Visitor Centre, and the stunning coastal cliffs. Beautiful walking tracks, historical monuments, and a tranquil beach atmosphere.", ko: "남쪽으로 차를 타고 Kurnell까지 — 캡틴 쿡이 1770년에 처음 상륙한 곳입니다. 캡틴 쿡 랜딩 사이트, 박물관, 멋진 해안 절벽을 방문하세요. 아름다운 산책로, 역사적 기념물이 있습니다." },
-    ],
-  },
-  {
-    id: "weekend-trips",
-    iconKey: "Scooter",
-    accent: "amber",
-    title: "Weekend Trips",
-    koTitle: "주말 여행",
-    desc: "Destinations worth the overnight stay — from cheap to memorable",
-    koDesc: "하룻밤의 가치가 있는 목적지 — 저렴한 곳부터 기억에 남는 곳까지",
-    items: [
-      { label: "Melbourne", en: "Fly (1.5 hours, often $99-$199 on Jetstar or Qantas sale) or take an overnight coach. Australia's cultural capital — street art, coffee, food, live music, and laneway bars. Great Ocean Road is a stunning coastal drive. Great for 2-3 nights.", ko: "비행기로(1시간 30분, Jetstar나 Qantas 세일 시 $99-$199) 또는 야간 버스로. 호주의 문화 수도 — 거리 아트, 커피, 음식, 라이브 음악, 골목길 바. 그레이트 오션 로드는 멋진 해안 드라이브입니다. 2-3박에 좋습니다." },
-      { label: "Byron Bay", en: "Fly to Ballina/Byron (1.5 hours) or drive from Brisbane (1 hour). Famous for alternative culture, beautiful beaches, and the easternmost point of mainland Australia. Cape Byron Lighthouse is a must-visit. Great for surf, yoga retreats, and relaxed beach vibes.", ko: "Ballina/Byron으로 비행(1시간 30분) 또는 브리즈번에서 운전(1시간). 대안 문화, 아름다운 해변, 호주 본토 최동단으로 유명합니다. 케이프 바이런 등대는 괭 방문할 만합니다." },
-      { label: "Canberra", en: "Drive 3.5 hours south (or fly 1 hour). Australia's capital with world-class museums and galleries — all free. Visit the Australian War Memorial, National Gallery of Australia, Parliament House. Ideal for a culture-filled weekend.", ko: "남쪽으로 3시간 30분 운전(또는 1시간 비행). 세계적 수준의 박물관과 갤러리가 있는 호주 수도입니다 — 모두 무료. 전쟁 기념관, 국립 미술관, 국회의사당을 방문하세요." },
-      { label: "Hunter Valley", en: "Drive 2 hours north of Sydney. Australia's oldest wine region — known for Shiraz, Semillon, and Chardonnay. Do a wine tasting at some of 150+ wineries. Consider an overnight stay to enjoy without rushing. Also has brewery and distillery options.", ko: "시드니에서 북쪽으로 2시간 운전. 호주에서 가장 오래된 와인 지역 — Shiraz, Semillon, Chardonnay로 유명합니다. 150개 이상의 와이너리 중 일부에서 와인 시음을 하세요." },
-      { label: "Jervis Bay", en: "Drive 3 hours south. Famous for impossibly white sand (Hyams Beach) and crystal-clear turquoise water. Excellent for snorkelling, dolphin watching, and kayaking. Book accommodation in Huskisson well ahead — it books out fast.", ko: "남쪽으로 3시간 운전. 밑어진 하얀 모래(Hyams Beach)와 수정처럼 맑은 청록색 물이 유명합니다. 스노클링, 돌고래 관찰, 카약에 좋습니다. Huskisson의 숙소를 미리 예약하세요." },
-      { label: "Gold Coast (Queensland)", en: "Fly 1.5 hours or drive via Brisbane (1 hour). Theme parks (Dreamworld, Movie World, Sea World), beautiful beaches, and the famous Springbrook and Tamborine mountain villages nearby. Great for families or anyone who loves beaches and nightlife.", ko: "비행기로 1시간 30분 또는 브리즈번 경유 운전(1시간). 테마파크, 아름다운 해변, Springbrook과 Tamborine 산악 마을로 유명합니다." },
-    ],
-  },
-  {
     id: "safety-beach",
     iconKey: "Beach",
     accent: "sky",
@@ -114,20 +80,6 @@ const sections: TouristSection[] = [
     ],
   },
   {
-    id: "tipping",
-    iconKey: "DollarSign",
-    accent: "stone",
-    title: "Tipping Culture",
-    koTitle: "팁 문화",
-    desc: "Do you tip? Short answer: usually not — here is how it works",
-    koDesc: "팁을 주나요? 짧은 대답: 보통 아니요",
-    items: [
-      { label: "Tipping is NOT Expected", en: "Unlike the US or Canada, tipping is not part of Australian culture. Service workers earn Award wages (minimum $24+/hour) and do not rely on tips. You are never expected to tip at cafes, pubs, taxis, or for most services. Even in restaurants, tipping is optional, not expected.", ko: "미국이나 캐나다와 달리, 호주 문화에서 팁은 일반적이지 않습니다. 서비스 직종 근로자는 법정 최저 임금(시간당 $24+)을 받습니다. 카페, 펍, 택시, 레스토랑에서 팁이 예상되지 않습니다." },
-      { label: "When You Might Tip", en: "If you receive extraordinary service at a high-end restaurant, a 10% tip is generous and appreciated but never required. Some fancy restaurants include a service charge (10-15%) for large groups — check your bill before adding extra.", ko: "고급 레스토랑에서 탁월한 서비스를 받았다면 10% 팁은 관대하지만 필수는 아닙니다. 일부 레스토랑은 대규모 그룹에 서비스 차지(10-15%)를 포함합니다." },
-      { label: "Why No Tipping?", en: "Australia has strong labour laws. Hospitality workers earn Award wages with penalty rates for nights and weekends. They have sick leave, annual leave, and superannuation. Fair wages for good service are built into the price you pay. Tips are a bonus, not a necessity.", ko: "호주는 강력한 노동법을 가지고 있습니다. 좋은 서비스에 대한 공정한 임금은 가격에 포함되어 있습니다. 팁은 보너스일 뿐 필수가 아닙니다." },
-    ],
-  },
-  {
     id: "budget-tips",
     iconKey: "Coin",
     accent: "coast",
@@ -136,11 +88,9 @@ const sections: TouristSection[] = [
     desc: "How to enjoy Sydney without breaking the bank",
     koDesc: "돈을 많이 쓰지 않고 시드니 즐기기",
     items: [
-      { label: "Daily Opal Cap", en: "The Opal system has a daily cap: $15.60 for adults (Mon-Sat), $19.50 for Sun. Once you reach the cap, all further travel that day is free. After 8 paid journeys in a week, the rest are half price. Plan trips strategically to maximise value.", ko: "오팔 일일 상한선: 성인 월-토 $15.60, 일요일 $19.50. 상한선 도달 후 모든 여행 무료. 주당 8회 유료 여행 후 나머지는 반가입니다." },
       { label: "Free Things to Do", en: "Royal Botanic Garden, The Rocks, Art Gallery of NSW, Hyde Park, harbour walks, Bondi-Coogee walk — all free. Most museums have free entry days. Free fireworks at Darling Harbour Saturday nights (summer). Free outdoor concerts and events throughout the year.", ko: "로열 보태닉 가든, 더 록스, 아트 갤러리, 하이드 파크, 항구 산책, 본다이-쿠지 산책 — 모두 무료. 대부분 박물관에 무료 입장일이 있습니다." },
       { label: "Cheapest Meals", en: "Asian food courts (Dixon House in Chinatown, Thai Town at Campbell Street, Korean food court on Pitt Street) serve hearty meals for $10-$15. Thai, Vietnamese, Korean, and Indian restaurants offer the best value. Sushi trains are $3-$5 per plate.", ko: "아시안 푸드코트에서 $10-$15로 든든한 식사 가능. 타이, 베트남, 한국, 인도 레스토랑이 가성비 최고. 스시 트레인은 접시당 $3-$5." },
       { label: "Museum Discounts", en: "Many museums have discounted or free entry on certain days. Australian Museum (free general entry), Powerhouse Museum (free), Museum of Contemporary Art (always free). Check websites before visiting. Wednesdays are often the cheapest day.", ko: "많은 박물관이 특정 요일에 할인 또는 무료 입장. Australian Museum(항상 무료), 다비드 박물관(무료). 수요일이 가장 저렴한 경우가 많습니다." },
-      { label: "Opal Concession for Students", en: "Full-time international students in NSW can apply for an Opal Concession card — 50% off adult fares. Apply through your university or TAFE, or at a transportnsw.info service centre. Takes about 2 weeks to arrive. Bring your student ID and visa documents.", ko: "NSW 풀타임 유학생은 오팔 할인 카드 신청 가능 — 성인 요금의 50% 할인. 대학교나 TAFE, transportnsw.info 서비스 센터에서 신청하세요. 학생증과 비자 서류를 지참하세요." },
     ],
   },
   {
@@ -180,24 +130,44 @@ export default function TouristPage() {
       </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <section className="mb-10 p-5 rounded-2xl bg-sunset/5 border border-sunset/20 dark:bg-sunset/10">
-          <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
-            <En>
-              For transport in depth — Opal cards, peak vs off-peak fares, how to complain — see the{" "}
-              <Link href="/transport" className="text-sunset font-medium hover:underline">
-                Transport page
-              </Link>
-              .
-            </En>
-            <Ko>
-              오팔 카드, 피크/오프피크 요금, 민원 제기 등 자세한 교통 정보는{" "}
-              <Link href="/transport" className="text-sunset font-medium hover:underline">
-                Transport 페이지
-              </Link>
-              에서 확인하세요.
-            </Ko>
-          </p>
-        </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
+          <section className="p-5 rounded-2xl bg-sunset/5 border border-sunset/20 dark:bg-sunset/10">
+            <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+              <En>
+                For transport in depth — Opal cards, peak vs off-peak fares, how to complain — see the{" "}
+                <Link href="/transport" className="text-sunset font-medium hover:underline">
+                  Transport page
+                </Link>
+                .
+              </En>
+              <Ko>
+                오팔 카드, 피크/오프피크 요금, 민원 제기 등 자세한 교통 정보는{" "}
+                <Link href="/transport" className="text-sunset font-medium hover:underline">
+                  Transport 페이지
+                </Link>
+                에서 확인하세요.
+              </Ko>
+            </p>
+          </section>
+          <section className="p-5 rounded-2xl bg-sage/5 border border-sage/20 dark:bg-sage/10">
+            <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+              <En>
+                Looking for day trips or weekend getaways beyond Sydney? See{" "}
+                <Link href="/destinations" className="text-sunset font-medium hover:underline">
+                  Destinations
+                </Link>
+                .
+              </En>
+              <Ko>
+                시드니 밖 당일 여행이나 주말 여행지는{" "}
+                <Link href="/destinations" className="text-sunset font-medium hover:underline">
+                  Destinations 페이지
+                </Link>
+                에서 확인하세요.
+              </Ko>
+            </p>
+          </section>
+        </div>
 
         
         <div className="space-y-12">
@@ -205,6 +175,58 @@ export default function TouristPage() {
             <EditorialSection key={section.id} data={section} index={i} />
           ))}
         </div>
+
+        {/* FAQ — short visitor questions, mirrored as JSON-LD below for Google rich results */}
+        <section className="mt-16">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Common questions</En><Ko>자주 묻는 질문</Ko>
+          </p>
+          <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-6 leading-tight">
+            <En>Before you go.</En><Ko>가기 전에.</Ko>
+          </h2>
+          <div className="space-y-5">
+            <div>
+              <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
+                <En>Do I need a visa?</En><Ko>비자가 필요한가요?</Ko>
+              </h3>
+              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                <En>Korean passport holders need an ETA, eVisitor, or visitor visa before flying. Apply online before you book flights — see the{" "}
+                  <Link href="/visa" className="text-sunset font-medium hover:underline">Visa Guide</Link> for the full breakdown by trip length.
+                </En>
+                <Ko>한국 여행자는 비행기 탑승 전 ETA, eVisitor 또는 방문 비자가 필요합니다. 항공권 예약 전에 온라인으로 신청하세요. 자세한 내용은{" "}
+                  <Link href="/visa" className="text-sunset font-medium hover:underline">비자 가이드</Link>에서 확인하세요.
+                </Ko>
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
+                <En>Is tipping expected?</En><Ko>팁을 줘야 하나요?</Ko>
+              </h3>
+              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                <En>No. Australian service workers earn Award wages and tipping is not part of the culture. See <Link href="/finance" className="text-sunset font-medium hover:underline">Finance</Link> for the full tipping and money guide.</En>
+                <Ko>아니요. 호주 서비스 직원은 법정 최저 임금을 받으며 팁 문화가 없습니다. 자세한 내용은 <Link href="/finance" className="text-sunset font-medium hover:underline">금융 가이드</Link>에서 확인하세요.</Ko>
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
+                <En>How safe is Sydney at night?</En><Ko>시드니 밤에 안전한가요?</Ko>
+              </h3>
+              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                <En>The CBD, Darling Harbour, The Rocks, and inner suburbs like Newtown and Surry Hills are safe to walk at night. Stick to lit streets and use common sense — Sydney is calmer than most big cities, but standard precautions apply. Trains stop around midnight, so plan a taxi or rideshare for late nights.</En>
+                <Ko>CBD, 달라 항구, 더 록스, 뉴타운과 서리힐스 같은 시내 교외는 밤에도 걸어다니기 안전합니다. 밝은 거리로 다니고 상식적인 주의를 기울이세요 — 시드니는 대부분의 대도시보다 조용하지만 기본적인 주의는 필요합니다. 기차는 자정 무렵에 끊기므로 늦은 밤에는 택시나 차량 호출 앱을 이용하세요.</Ko>
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
+                <En>How do I get from the airport to the city?</En><Ko>공항에서 시내로 어떻게 가나요?</Ko>
+              </h3>
+              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                <En>The airport train (T8) is fast but pricey ($20–25). The 400 bus from the airport terminals runs to Bondi Junction via the CBD for about $3 with Opal — best value. Rideshare apps (Uber/Ola/DiDi) sit between the two in price and convenience. See <Link href="/transport" className="text-sunset font-medium hover:underline">Transport</Link> for the full breakdown.</En>
+                <Ko>공항 기차(T8)는 빠르지만 비쌉니다($20–25). 공항 터미널에서 출발하는 400번 버스는 CBD를 경유해 본다이 정션까지 가며 오팔로 약 $3입니다 — 가성비 최고. 차량 호출 앱(Uber/Ola/DiDi)은 가격과 편의성 면에서 그 중간입니다. 자세한 내용은 <Link href="/transport" className="text-sunset font-medium hover:underline">교통 가이드</Link>에서 확인하세요.</Ko>
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
@@ -224,6 +246,64 @@ export default function TouristPage() {
           </div>
         </section>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleLdJson({
+              path: "tourist",
+              headline: "Sydney tourist guide — top sights, safety, apps for Korean visitors",
+              description:
+                "시드니 관광 가이드 — 블루마운틴, 본다이, 오페라 하우스, 페리, 와이프, 식당, 교통패스, 숙소, 예산까지 한국인이 시드니를 처음 방문할 때 알아야 할 모든 것.",
+            })
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqLdJson(
+              [
+                {
+                  q: { en: "Do I need a visa to visit Australia as a Korean citizen?" },
+                  a: {
+                    en: "Yes. Korean passport holders need an ETA, eVisitor, or visitor visa before flying to Australia. Apply online before you book flights.",
+                  },
+                },
+                {
+                  q: { en: "Is tipping expected in Sydney?" },
+                  a: {
+                    en: "No. Australian service workers earn Award wages and tipping is not part of the culture. You are not expected to tip at cafes, pubs, taxis, or restaurants.",
+                  },
+                },
+                {
+                  q: { en: "How safe is Sydney at night?" },
+                  a: {
+                    en: "The CBD, Darling Harbour, The Rocks, and inner suburbs like Newtown and Surry Hills are safe to walk at night. Sydney is calmer than most big cities, but standard precautions apply.",
+                  },
+                },
+                {
+                  q: { en: "What is the cheapest way to get from Sydney Airport to the city?" },
+                  a: {
+                    en: "The 400 bus from the airport terminals runs to Bondi Junction via the CBD for about $3 with Opal — the best value option. The airport train (T8) is faster but costs $20–25.",
+                  },
+                },
+              ],
+              "tourist"
+            )
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Tourist", path: "tourist" }])
+          ),
+        }}
+      />
 
       <RelatedContent
         items={[
