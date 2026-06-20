@@ -1,11 +1,14 @@
 // Server component — bilingual Australian study guide.
-// Redesigned in editorial style.
+// Redesigned in editorial style: full-bleed hero image with dual CTAs
+// (matches the homepage vocabulary), persona chips, then a vertical
+// sequence of EditorialSection cards (some with image banners).
 
 import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Book, Clipboard, Edit, Graduation, PersonBoard, PersonGroup, Target } from "@/components/Icons";
+import PageHero from "@/components/PageHero";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -33,6 +36,7 @@ const sections: StudySection[] = [
     koTitle: "영어 시험: PTE와 IELTS",
     desc: "Everything you need to know about PTE and IELTS for Australian visas and university entry",
     koDesc: "호주 비자 및 대학 진학에 필요한 PTE와 IELTS 모든 것",
+    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80",
     items: [
       { label: "What is PTE?", en: "PTE Academic (Pearson Test of English Academic) is a computer-based English test accepted by all Australian universities, vocational colleges, and for visa purposes. You get results in 1-2 days — much faster than IELTS.", ko: "PTE Academic(Pearson Test of English Academic)는 컴퓨터로 치르는 영어 시험으로, 모든 호주 대학, 직업 교육 기관, 비자 심사에 인정됩니다. 결과가 1-2일 안에 나오므로 IELTS보다 훨씬 빠릅니다." },
       { label: "What is IELTS?", en: "IELTS (International English Language Testing System) is the older, more widely recognised test. Used for student visas, skilled migration, and professional registration. Available in paper-based or computer-delivered format.", ko: "IELTS(International English Language Testing System)는 더 오래되고 널리 인정되는 시험입니다. 학생 비자, 기술 이민, 전문 등록에 사용됩니다. 지필로 또는 컴퓨터로 응시할 수 있습니다." },
@@ -134,6 +138,7 @@ const sections: StudySection[] = [
     koTitle: "성적 체계 이해",
     desc: "Understanding the Australian grading system",
     koDesc: "호주 성적 평가 시스템 이해",
+    img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80",
     items: [
       { label: "Grade Scale", en: "Universities use letter grades with corresponding marks. Generally: HD (High Distinction) = 85-100%, DN (Distinction) = 75-84%, CR (Credit) = 65-74%, P (Pass) = 50-64%, F (Fail) = below 50%. Some subjects have different thresholds — check the subject outline.", ko: "대학은 점수에 해당하는 알파벳 성적을 사용합니다: HD(High Distinction/최우수) = 85-100%, DN(Distinction/우수) = 75-84%, CR(Credit/양호) = 65-74%, P(Pass/통과) = 50-64%, F(Fail/낙제) = 50% 미만입니다. 과목에 따라 기준이 다를 수 있습니다." },
       { label: "What Each Grade Means", en: "HD = exceptional performance (very rare, usually top 5-10%). DN = above average (strong understanding). CR = good solid work (meets expectations well). P = satisfactory (meets minimum requirements). F = did not meet minimum requirements.", ko: "HD = 탁월한 성과(매우 드물며, 보통 상위 5-10%). DN = 평균 이상(이해도가 높음). CR = 우수한 작업(기대치를 잘 충족). P = 만족(최소 요건 충족). F = 최소 요건 미달." },
@@ -148,20 +153,25 @@ const sections: StudySection[] = [
 export default function StudyPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      <header className="bg-stone-900 dark:bg-stone-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Study</En><Ko>학습</Ko>
-          </p>
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Study in Australia</En><Ko>호주에서 공부하기</Ko>
-          </h1>
-          <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>University life, academic culture, and grades in Australia.</En>
-            <Ko>호주의 대학 생활, 학문 문화, 성적 체계.</Ko>
-          </p>
-        </div>
-      </header>
+      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
+      <PageHero
+        eyebrow={{ en: "Study", ko: "학습" }}
+        title={{ en: "Study in Australia", ko: "호주에서 공부하기" }}
+        lead={{
+          en: "University life, academic culture, and grades in Australia.",
+          ko: "호주의 대학 생활, 학문 문화, 성적 체계.",
+        }}
+        image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=2400&q=85"
+        imageAlt="Graduation ceremony at Australian university"
+        primaryCTA={{ label: { en: "English tests", ko: "영어 시험" }, href: "#english-tests" }}
+        secondaryCTA={{ label: { en: "Uni culture", ko: "대학 문화" }, href: "#uni-culture" }}
+        personas={[
+          { sectionId: "english-tests", label: { en: "English", ko: "영어" } },
+          { sectionId: "uni-culture", label: { en: "Uni life", ko: "대학" } },
+          { sectionId: "grades", label: { en: "Grades", ko: "성적" } },
+        ]}
+        scrollCueTarget="english-tests"
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         

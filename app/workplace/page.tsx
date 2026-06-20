@@ -1,11 +1,14 @@
 // Server component — bilingual Australian workplace guide.
-// Redesigned in editorial style.
+// Redesigned in editorial style: full-bleed hero image with dual CTAs
+// (matches the homepage vocabulary), persona chips, then a vertical
+// sequence of EditorialSection cards (some with image banners).
 
 import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@/components/Icons";
+import PageHero from "@/components/PageHero";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -33,6 +36,7 @@ const sections: WorkplaceSection[] = [
     koTitle: "직장 문화",
     desc: "What makes Aussie workplaces different",
     koDesc: "호주 직장이 다른 점",
+    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80",
     items: [
       { label: "Direct Communication", en: "Australians are direct. If something is wrong, your manager will tell you straight — it's not rude, it's how things get done. There's very little 'saving face' in the way you might find in some Asian workplaces.", ko: "호주인들은 직설적입니다. 문제가 있으면 매니저가 바로 말합니다 — 무례한 게 아니라 일을 처리하는 방식입니다. 아시아 직장에서 흔한 '체면' 문화가 거의 없습니다." },
       { label: "Flat Hierarchy", en: "Managers and CEOs are approachable. You call people by their first name — even the boss. Hierarchy doesn't mean formality. A cleaner and a director might share the same lunch table.", ko: "조직 구조가 수평적입니다. 매니저나 CEO도 접근하기 쉽습니다. 상사라도 이름(퍼스트 네임)으로 부릅니다. 청소부와 디렉터가 같은 점심 테이블을 쓸 정도입니다." },
@@ -94,6 +98,7 @@ const sections: WorkplaceSection[] = [
     koTitle: "캐주얼 노동자 권리",
     desc: "Your rights as a casual worker in Australia",
     koDesc: "호주 캐주얼 노동자의 권리",
+    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80",
     items: [
       { label: "You're Allowed to Say No", en: "As a casual, you can refuse a shift. You don't have to give a reason. However, if you consistently refuse available shifts, the employer may reduce the shifts they offer you.", ko: "캐주얼로서 근무를 거절할 수 있습니다. 이유를 제공할 필요가 없습니다. 그러나 계속 이용 가능한 근무를 거절하면 고용주가 제공하는 근무 시간을 줄일 수 있습니다." },
       { label: "Casual Conversion", en: "After 6 months (12 months for small businesses), your employer must offer you permanent part-time or full-time work if you've worked regular hours. You can also request conversion yourself at any time.", ko: "6개월 후(소기업은 12개월) 정규 근무를 해왔다면 고용주가 정규 파트타임 또는 전일제 근무를 제안해야 합니다. 언제든지 본인이 직접 전환을 요청할 수도 있습니다." },
@@ -106,22 +111,25 @@ const sections: WorkplaceSection[] = [
 export default function WorkplacePage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      <header className="bg-stone-900 dark:bg-stone-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Workplace</En>
-            <Ko>직장</Ko>
-          </p>
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Working in Australia</En>
-            <Ko>호주에서 일하기</Ko>
-          </h1>
-          <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Culture, pay, and your rights — what makes Aussie workplaces work.</En>
-            <Ko>문화, 급여, 그리고 귀하의 권리 — 호주 직장문화의 모든 것.</Ko>
-          </p>
-        </div>
-      </header>
+      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
+      <PageHero
+        eyebrow={{ en: "Workplace", ko: "직장" }}
+        title={{ en: "Working in Australia", ko: "호주에서 일하기" }}
+        lead={{
+          en: "Culture, pay, and your rights — what makes Aussie workplaces work.",
+          ko: "문화, 급여, 그리고 귀하의 권리 — 호주 직장문화의 모든 것.",
+        }}
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85"
+        imageAlt="Modern office workspace"
+        primaryCTA={{ label: { en: "Workplace culture", ko: "직장 문화" }, href: "#workplace-culture" }}
+        secondaryCTA={{ label: { en: "Pay & super", ko: "급여 & 퇴직연금" }, href: "#award-super" }}
+        personas={[
+          { sectionId: "workplace-culture", label: { en: "Culture", ko: "문화" } },
+          { sectionId: "casual-permanent", label: { en: "Casual", ko: "캐주얼" } },
+          { sectionId: "casual-rights", label: { en: "Rights", ko: "권리" } },
+        ]}
+        scrollCueTarget="workplace-culture"
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         

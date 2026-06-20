@@ -1,11 +1,13 @@
 // Server component — bilingual apartment rental guide for NSW.
-// Redesigned in editorial style: dark hero header, stat strip, then a
-// vertical sequence of EditorialSection cards.
+// Redesigned in editorial style: full-bleed hero image with dual CTAs
+// (matches the homepage vocabulary), persona chips, then a vertical
+// sequence of EditorialSection cards (some with image banners).
 
 import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
+import PageHero from "@/components/PageHero";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -30,6 +32,7 @@ const sections: ApartmentSectionData[] = [
     id: "search",
     iconKey: "Search",
     accent: "sage",
+    img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80",
     title: "Finding a Place",
     koTitle: "부동산 찾기",
     desc: "Where to search and what to know",
@@ -100,17 +103,18 @@ const sections: ApartmentSectionData[] = [
     desc: "Walk away if you see these",
     koDesc: "이런 것이 보이면 걸어 다니세요",
     items: [
-      { label: "No formal lease", en: "Always get a written Residential Tenancy Agreement — verbal agreements are not enforceable", ko: "반드시 서면 임대차계약서를 받아야 함 — 구두 합의는 법적 구속력이 없음" },
-      { label: "Landlord won't do repairs", en: "Persistent damage that's ignored is a sign the landlord won't look after the property", ko: "수리되지 않는 지속적인 손상은 임대인이 부동산을 관리하지 않음을 의미함" },
+      { label: "No formal lease", en: "Always get a written Residential Tenancy Agreement — verbal agreements are not enforceable", ko: "반드시 서면 임대차계약서를 받아야 함 — 구두 합의는 법적 효력이 없습니다" },
+      { label: "Landlord won't do repairs", en: "Persistent damage that's ignored is a sign the landlord won't look after the property", ko: "수리 요청을 계속 무시하는 임대인은 부동산 관리에 관심이 없는 것입니다" },
       { label: "Pressure to pay cash", en: "Never pay bond or rent in cash without a receipt. All payments should be traceable.", ko: "영수증 없이 현금으로 보증금이나 임대료를 지불하지 마세요. 모든 결제내역은 추적 가능해야 합니다." },
-      { label: "Rent too cheap", en: "If it's significantly below market rate, something is wrong — or it's a scam", ko: "시세보다 현저히 낮으면 무언가 문제 있다는 신호 — 또는 사기일 수 있음" },
-      { label: "Won't meet in person", en: "Legitimate landlords will meet you or have an agent. Be wary of online-only transactions.", ko: "합법적인 임대인은 직접 만나거나 중개인을 둠. 온라인 거래만 고집하는 경우 주의." },
+      { label: "Rent too cheap", en: "If it's significantly below market rate, something is wrong — or it's a scam", ko: "시세보다 현저히 낮으면 무언가 문제가 있다는 신호 — 사기일 수 있습니다" },
+      { label: "Won't meet in person", en: "Legitimate landlords will meet you or have an agent. Be wary of online-only transactions.", ko: "정당한 임대인은 직접 만나거나 중개인을 섭외합니다. 온라인 거래만 고집하는 경우는 주의하세요." },
     ],
   },
   {
     id: "costs",
     iconKey: "DollarSign",
     accent: "sunset",
+    img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600&q=80",
     title: "Bills & Move-in Costs",
     koTitle: "공과금 및 입주 비용",
     desc: "What to budget for",
@@ -144,23 +148,25 @@ const sections: ApartmentSectionData[] = [
 export default function ApartmentPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      {/* Hero header (dark) */}
-      <header className="bg-stone-900 dark:bg-stone-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Renting in NSW</En>
-            <Ko>NSW 임대</Ko>
-          </p>
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Apartment guide</En>
-            <Ko>임대 가이드</Ko>
-          </h1>
-          <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Renting in NSW — your rights, your money, your home. A practical guide from search to signature.</En>
-            <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집. 검색부터 계약까지의 실용 가이드.</Ko>
-          </p>
-        </div>
-      </header>
+      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
+      <PageHero
+        eyebrow={{ en: "Renting in NSW", ko: "NSW 임대" }}
+        title={{ en: "Apartment guide", ko: "임대 가이드" }}
+        lead={{
+          en: "Renting in NSW — your rights, your money, your home. A practical guide from search to signature.",
+          ko: "NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집. 검색부터 계약까지의 실용 가이드.",
+        }}
+        image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=2400&q=85"
+        imageAlt="Modern apartment interior"
+        primaryCTA={{ label: { en: "Find a place", ko: "집 찾기" }, href: "#search" }}
+        secondaryCTA={{ label: { en: "Know your rights", ko: "권리 확인" }, href: "#rights" }}
+        personas={[
+          { sectionId: "search", label: { en: "Looking", ko: "찾는 중" } },
+          { sectionId: "application", label: { en: "Applying", ko: "지원 중" } },
+          { sectionId: "rights", label: { en: "Renting", ko: "거주 중" } },
+        ]}
+        scrollCueTarget="search"
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Editorial sections */}

@@ -1,11 +1,14 @@
 // Server component — bilingual finance and banking guide for Australia.
-// Redesigned in editorial style.
+// Redesigned in editorial style: full-bleed hero image with dual CTAs
+// (matches the homepage vocabulary), persona chips, then a vertical
+// sequence of EditorialSection cards (some with image banners).
 
 import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } from "@/components/Icons";
+import PageHero from "@/components/PageHero";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -33,6 +36,7 @@ const sections: FinanceSection[] = [
     koTitle: "호주 은행 시스템",
     desc: "Opening accounts, understanding fees, and moving money",
     koDesc: "계좌 개설, 수수료 이해, 송금",
+    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80",
     items: [
       { label: "Major Banks", en: "The four big banks are: Commonwealth Bank (CBA), Westpac, ANZ, and NAB. All have international student packages with low or no monthly fees. Most have Korean-speaking staff or 24/7 phone banking in multiple languages.", ko: "4대 은행은 Commonwealth Bank(CBA), Westpac, ANZ, NAB입니다. 모두 국제 학생 전용 패키지로 월 수수료가 없거나 낮은 계정을 제공합니다. 대부분 한국어 서비스 직원이나 다국어 전화 뱅킹을 제공합니다." },
       { label: "How to Open an Account", en: "You can open an account before you arrive using the bank's website, or walk into any branch with your passport and visa (or bring your passport and a tenancy agreement as ID proof). It takes about 20 minutes. You'll get a debit card in 3-5 business days by mail.", ko: "도착 전에 은행 웹사이트에서 계좌를 열거나, 여권과 비자(또는 여권과 임대차 계약서)를 지니고 지점에 방문하면 됩니다. 약 20분이 소요됩니다. 직불 카드는 영업일 기준 3~5일 안에 우편으로 배달됩니다." },
@@ -81,6 +85,7 @@ const sections: FinanceSection[] = [
     koTitle: "세금 신고",
     desc: "Lodging your tax return — when, how, and why you might get money back",
     koDesc: "세금 신고 시기, 방법, 환급 가능성",
+    img: "https://images.unsplash.com/photo-1554224155-3a589877462e?w=1600&q=80",
     items: [
       { label: "Do You Need to Lodge?", en: "If you earned money in Australia, you may need to lodge a tax return — even if you earned below the tax-free threshold ($18,200 per year). The ATO will tell you if you need to. Not lodging when you should can result in fines.", ko: "호주에서 돈을 벌었다면 세금 신고를 해야 할 수 있습니다 — 연간 비과세 구간($18,200) 이하로 벌었더라도 마찬가지입니다. ATO가 필요 여부를 알려줍니다. 신고해야 할 때 하지 않으면 벌금이 부과될 수 있습니다." },
       { label: "How It Works", en: "Each financial year runs July 1 to June 30. You lodge your tax return between July 1 and October 31. If you had tax withheld from your pay and earned below $18,200, you'll likely get a full refund. Most students get money back.", ko: "호주의 회계연도는 7월 1일부터 이듬해 6월 30일까지입니다. 7월 1일부터 10월 31일 사이에 세금 신고를 합니다. 급여에서 세금이 원천징수되었고 $18,200 이하로 벌었으면 전액 환급을 받을 가능성이 높습니다. 대부분의 학생들이 환급을 받습니다." },
@@ -123,20 +128,25 @@ const sections: FinanceSection[] = [
 export default function FinancePage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      <header className="bg-stone-900 dark:bg-stone-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Money</En><Ko>금융</Ko>
-          </p>
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Finance &amp; banking</En><Ko>금융과 은행</Ko>
-          </h1>
-          <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Everything about money in Australia — banking, tax, super, and budgeting.</En>
-            <Ko>호주에서의 돈에 관한 모든 것 — 은행, 세금, 퇴직연금, 예산 관리.</Ko>
-          </p>
-        </div>
-      </header>
+      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
+      <PageHero
+        eyebrow={{ en: "Money", ko: "금융" }}
+        title={{ en: "Finance & banking", ko: "금융과 은행" }}
+        lead={{
+          en: "Everything about money in Australia — banking, tax, super, and budgeting.",
+          ko: "호주에서의 돈에 관한 모든 것 — 은행, 세금, 퇴직연금, 예산 관리.",
+        }}
+        image="https://images.unsplash.com/photo-1601597110533-4c7b1c5b2c5d?w=2400&q=85"
+        imageAlt="Sydney CBD skyline"
+        primaryCTA={{ label: { en: "Open account", ko: "계좌 개설" }, href: "#banking" }}
+        secondaryCTA={{ label: { en: "Tax return", ko: "세금 신고" }, href: "#tax-return" }}
+        personas={[
+          { sectionId: "banking", label: { en: "Banking", ko: "은행" } },
+          { sectionId: "tax-file-number", label: { en: "TFN", ko: "TFN" } },
+          { sectionId: "superannuation", label: { en: "Super", ko: "퇴직연금" } },
+        ]}
+        scrollCueTarget="banking"
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         

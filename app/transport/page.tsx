@@ -1,11 +1,14 @@
 // Server component — bilingual Sydney transport guide.
-// Redesigned in editorial style.
+// Redesigned in editorial style: full-bleed hero image with dual CTAs
+// (matches the homepage vocabulary), persona chips, then a vertical
+// sequence of EditorialSection cards (some with image banners).
 
 import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Bus, Car, Coin, Plane, Train, Tree } from "@/components/Icons";
+import PageHero from "@/components/PageHero";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -33,6 +36,7 @@ const sections: TransportSection[] = [
     koTitle: "오팔 카드",
     desc: "Sydney's public transport card — how to get one and use it",
     koDesc: "시드니 대중교통 카드 — 얻는 방법과 사용법",
+    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&q=80",
     items: [
       { label: "What is Opal?", en: "Opal is the contactless card you use for buses, trains, ferries, and light rail in Sydney and NSW. You tap on and tap off at every journey. It saves you money — cash fares are almost double Opal prices.", ko: "Opal은 시드니와 NSW의 버스, 기차, 페리, 라이트 레일에 사용하는 비접촉식 카드입니다. 매 이동마다 탭 온과 탭 오프를 합니다. 현금보다 훨씬 저렴합니다." },
       { label: "Adult vs Concession", en: "There are two Opal types: Adult (full price) and Concession (half price for full-time students, seniors, pensioners). If you're a full-time student, apply for a Concession Opal card — you need your student ID and a passport photo.", ko: "Opal에는 두 종류가 있습니다: Adult(정가)와 Concession(전학생, 시니어, 연금수급자 50% 할인). 전학생이라면 Concession Opal 카드를 신청하세요 — 학생증과 여권 사진이 필요합니다." },
@@ -50,6 +54,7 @@ const sections: TransportSection[] = [
     koTitle: "시드니 기차",
     desc: "How the train system works",
     koDesc: "기차 시스템이 어떻게 작동하는지",
+    img: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=1600&q=80",
     items: [
       { label: "Train Network Basics", en: "Sydney has a suburban train network (Sydney Trains) with lines covering the city, eastern suburbs, inner west, North Shore, and outer areas. Trains run from about 4am to midnight every day. On Friday and Saturday nights, some lines run 24 hours.", ko: "시드니에는 시내, 동부 교외, 이너 웨스트, 노스 쇼어, 외곽 지역을 연결하는 광역 기차 네트워크(Sydney Trains)가 있습니다. 기차는 매일 약 새벽 4시부터 자정까지 운행됩니다. 금요일과 토요일 밤에는 일부 노선이 24시간 운영됩니다." },
       { label: "Zones and Fares", en: "Sydney is divided into zones 1-3. Most of what you need (CBD, Bondi, Manly, Parramatta) is in Zone 1 or 2. Opal calculates your fare based on zones travelled. Don't tap off at Circular Quay if you're heading to the Opera House — take the ferry instead (it's free with your Opal within the harbour).", ko: "시드니는 1~3존으로 나뉩니다. 필요한 대부분의 곳(CBD, 본다이, 맨리, 파라마타)은 1존 또는 2존에 있습니다. 오팔이 존 기반으로 운임을 계산합니다. 오페라 하우스로 가려면 서큘러 키(Circular Quay)에서 내리지 마세요 — 대신 페리를 타세요(항구 내 구간은 오팔로 무료입니다)." },
@@ -103,20 +108,25 @@ const sections: TransportSection[] = [
 export default function TransportPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      <header className="bg-stone-900 dark:bg-stone-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Transport</En><Ko>교통</Ko>
-          </p>
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Getting around</En><Ko>시드니 교통</Ko>
-          </h1>
-          <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Opal cards, trains, buses, ferries — Sydney&apos;s transport, decoded.</En>
-            <Ko>오팔 카드, 기차, 버스, 페리 — 시드니 교통의 모든 것.</Ko>
-          </p>
-        </div>
-      </header>
+      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
+      <PageHero
+        eyebrow={{ en: "Transport", ko: "교통" }}
+        title={{ en: "Getting around", ko: "시드니 교통" }}
+        lead={{
+          en: "Opal cards, trains, buses, ferries — Sydney's transport, decoded.",
+          ko: "오팔 카드, 기차, 버스, 페리 — 시드니 교통의 모든 것.",
+        }}
+        image="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=2400&q=85"
+        imageAlt="Sydney ferry at dusk"
+        primaryCTA={{ label: { en: "Get Opal card", ko: "오팔 카드" }, href: "#opal-card" }}
+        secondaryCTA={{ label: { en: "Sydney trains", ko: "시드니 기차" }, href: "#sydney-trains" }}
+        personas={[
+          { sectionId: "opal-card", label: { en: "Opal", ko: "오팔" } },
+          { sectionId: "sydney-trains", label: { en: "Trains", ko: "기차" } },
+          { sectionId: "driving-cycling", label: { en: "Cycle", ko: "자전거" } },
+        ]}
+        scrollCueTarget="opal-card"
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         
