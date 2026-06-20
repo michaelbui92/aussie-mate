@@ -12,7 +12,7 @@ import { destinations } from "@/destinations/data";
 
 type StageKey = "visiting" | "arrived" | "home";
 
-const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string; bullets: { en: string; ko: string }[] }[] = [
+const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string }[] = [
   {
     key: "visiting",
     title: "I'm visiting",
@@ -20,11 +20,6 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
     subtitle: "Holiday, working holiday, or just passing through",
     koSubtitle: "휴가, 워홀, 또는 잠시 들른 경우",
     img: "https://images.unsplash.com/photo-1523428096881-5bd79d043006?w=1200&q=80",
-    bullets: [
-      { en: "Visa, money & SIM basics", ko: "비자, 돈, SIM 기본" },
-      { en: "UV, Opal, no-tipping rules", ko: "자외선, 오팔, 팁 문화" },
-      { en: "Sydney & NSW must-sees", ko: "시드니 & NSW 필수 코스" },
-    ],
   },
   {
     key: "arrived",
@@ -33,11 +28,6 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
     subtitle: "First month sorted: bank, TFN, SIM, place to live",
     koSubtitle: "첫 달 셋업: 은행, TFN, SIM, 거주지",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
-    bullets: [
-      { en: "SIM → bank → Opal → TFN, in order", ko: "SIM → 은행 → 오팔 → TFN 순서" },
-      { en: "Medicare & private health", ko: "Medicare & 민간 보험" },
-      { en: "3 money mistakes to avoid", ko: "피해야 할 3가지 돈 실수" },
-    ],
   },
   {
     key: "home",
@@ -46,25 +36,7 @@ const stages: { key: StageKey; title: string; koTitle: string; subtitle: string;
     subtitle: "Long-term Australian — work, lifestyle, finances",
     koSubtitle: "장기 호주 거주 — 직장, 생활, 재무",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
-    bullets: [
-      { en: "Super, tax, renting smarter", ko: "Super, 세금, 똑똑한 임대" },
-      { en: "Award wages & your rights", ko: "임금등급 & 권리" },
-      { en: "PR pathways & community", ko: "영주권 루트 & 커뮤니티" },
-    ],
   },
-];
-
-const topics = [
-  { href: "/apartment", title: "Apartment", titleKo: "부동산", tagline: "Lease, bond, flatmates", taglineKo: "임대, 보증금, 쉐어하우스" },
-  { href: "/finance", title: "Finance", titleKo: "금융", tagline: "Bank, TFN, super — first week", taglineKo: "은행, 세금, 퇴직연금" },
-  { href: "/aussie-english", title: "Aussie English", titleKo: "호주 영어", tagline: "Arvo, ta, no worries — decoded", taglineKo: "호주 속어 해독" },
-  { href: "/sport", title: "Sport", titleKo: "스포츠", tagline: "NRL, AFL, cricket obsession", taglineKo: "호주 스포츠의 모든 것" },
-  { href: "/workplace", title: "Workplace", titleKo: "직장", tagline: "Award wages, your rights", taglineKo: "노동자 권리와 직장 문화" },
-  { href: "/weather", title: "Weather", titleKo: "날씨", tagline: "Seasons, UV, Aussie quirks", taglineKo: "계절, 자외선, 호주 날씨 특징" },
-  { href: "/transport", title: "Transport", titleKo: "교통", tagline: "Opal, trains, ferries, rideshare", taglineKo: "오팔, 기차, 버스, 페리" },
-  { href: "/tourist", title: "Tourist", titleKo: "여행자", tagline: "Sydney, coast, Blue Mountains", taglineKo: "시드니와 NSW 필수 명소" },
-  { href: "/resources", title: "Resources", titleKo: "자료", tagline: "Medicare, Centrelink, community", taglineKo: "Medicare, TFN, 커뮤니티" },
-  { href: "/visa", title: "Visa Guide", titleKo: "비자 가이드", tagline: "417, 500, 189/190, 820, 600", taglineKo: "워홀·유학·기술·파트너·방문" },
 ];
 
 export default function HomePage() {
@@ -85,7 +57,9 @@ export default function HomePage() {
   // Editorial palette
   const heroImg = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=2400&q=85"; // Sydney Opera House at dusk
   const featured = destinations[4]; // Sydney Harbour
-  const remainingDestinations = destinations.filter((d) => d.slug !== featured.slug);
+  const remainingDestinations = destinations.filter(
+    (d) => d.slug === "blue-mountains" || d.slug === "south-coast" || d.slug === "jervis-bay"
+  );
 
   return (
     <div className="bg-stone-50 dark:bg-darkbg">
@@ -187,21 +161,10 @@ export default function HomePage() {
                     <Ko>{s.koTitle}</Ko>
                   </h3>
                   {/* Subtitle + bullets hidden on mobile — they live in the persona card below */}
-                  <p className={`hidden md:block text-sm leading-relaxed mb-4 ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
+                  <p className={`hidden md:block text-sm leading-relaxed ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
                     <En>{s.subtitle}</En>
                     <Ko>{s.koSubtitle}</Ko>
                   </p>
-                  <ul className={`hidden md:block space-y-1.5 mb-5 text-sm ${isActive ? "text-white/85" : "text-stone-600 dark:text-stone-400"}`}>
-                    {s.bullets.map((b) => (
-                      <li key={b.en} className="flex items-start gap-2">
-                        <span className={`shrink-0 mt-1.5 w-1 h-1 rounded-full ${isActive ? "bg-white/70" : "bg-sunset"}`} />
-                        <span>
-                          <En>{b.en}</En>
-                          <Ko>{b.ko}</Ko>
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                 </button>
               );
             })}
@@ -320,60 +283,19 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="mt-8 text-center md:hidden">
+          <div className="mt-8 text-center">
             <Link
               href="/destinations"
-              className="inline-flex items-center gap-1 text-sm font-medium text-sunset"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
-              <En>View all destinations</En>
-              <Ko>전체 여행지 보기</Ko>
+              <En>See more destinations</En>
+              <Ko>더 많은 여행지 보기</Ko>
               <span>→</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ============================ TOPICS ============================ */}
-      <section className="bg-stone-50 dark:bg-darkbg">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="text-center mb-10 reveal">
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-              <En>All guides</En>
-              <Ko>전체 가이드</Ko>
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
-              <En>Everything you need</En>
-              <Ko>필요한 모든 것</Ko>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {topics.map((t, i) => (
-              <Link
-                key={t.href}
-                href={t.href}
-                className={`reveal reveal-delay-${(i % 5) + 1} group flex items-center justify-between bg-white dark:bg-dark-surface hover:bg-sunset hover:text-white p-5 rounded-2xl border border-stone-200 dark:border-dark-border transition-all duration-300 hover:border-sunset hover:shadow-xl`}
-              >
-                <div>
-                  <h3 className="font-serif text-xl text-stone-900 dark:text-stone-100 group-hover:text-white transition-colors">
-                    <En>{t.title}</En>
-                    <Ko>{t.titleKo}</Ko>
-                  </h3>
-                  <p className="text-xs text-stone-500 dark:text-stone-400 group-hover:text-white/80 mt-1 transition-colors">
-                    <En>{t.tagline}</En>
-                    <Ko>{t.taglineKo}</Ko>
-                  </p>
-                </div>
-                <span className="w-8 h-8 rounded-full bg-stone-100 dark:bg-darkbg group-hover:bg-white/20 flex items-center justify-center transition-colors shrink-0 ml-3">
-                  <span className="text-stone-400 group-hover:text-white transition-all group-hover:translate-x-0.5">→</span>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AdSense slot — between topics and footer. Mid-page ad catches
-          engaged readers; high CTR zone. */}
       <AdSlot format="horizontal" />
 
       <SearchModal />
