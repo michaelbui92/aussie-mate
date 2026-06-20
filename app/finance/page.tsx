@@ -8,7 +8,6 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } from "@/components/Icons";
-import PageHero from "@/components/PageHero";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -128,25 +127,21 @@ const sections: FinanceSection[] = [
 export default function FinancePage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
-      <PageHero
-        eyebrow={{ en: "Money", ko: "금융" }}
-        title={{ en: "Finance & banking", ko: "금융과 은행" }}
-        lead={{
-          en: "Everything about money in Australia — banking, tax, super, and budgeting.",
-          ko: "호주에서의 돈에 관한 모든 것 — 은행, 세금, 퇴직연금, 예산 관리.",
-        }}
-        image="https://images.unsplash.com/photo-1601597110533-4c7b1c5b2c5d?w=2400&q=85"
-        imageAlt="Sydney CBD skyline"
-        primaryCTA={{ label: { en: "Open account", ko: "계좌 개설" }, href: "#banking" }}
-        secondaryCTA={{ label: { en: "Tax return", ko: "세금 신고" }, href: "#tax-return" }}
-        personas={[
-          { sectionId: "banking", label: { en: "Banking", ko: "은행" } },
-          { sectionId: "tax-file-number", label: { en: "TFN", ko: "TFN" } },
-          { sectionId: "superannuation", label: { en: "Super", ko: "퇴직연금" } },
-        ]}
-        scrollCueTarget="banking"
-      />
+      {/* Hero — minimal text header, matches weather page style */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Money</En><Ko>금융</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Finance &amp; banking</En><Ko>금융과 은행</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>Everything about money in Australia — banking, tax, super, and budgeting.</En>
+            <Ko>호주에서의 돈에 관한 모든 것 — 은행, 세금, 퇴직연금, 예산 관리.</Ko>
+          </p>
+        </div>
+      </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         

@@ -8,7 +8,6 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Bus, Car, Coin, Plane, Train, Tree } from "@/components/Icons";
-import PageHero from "@/components/PageHero";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -108,25 +107,23 @@ const sections: TransportSection[] = [
 export default function TransportPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
-      <PageHero
-        eyebrow={{ en: "Transport", ko: "교통" }}
-        title={{ en: "Getting around", ko: "시드니 교통" }}
-        lead={{
-          en: "Opal cards, trains, buses, ferries — Sydney's transport, decoded.",
-          ko: "오팔 카드, 기차, 버스, 페리 — 시드니 교통의 모든 것.",
-        }}
-        image="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=2400&q=85"
-        imageAlt="Sydney ferry at dusk"
-        primaryCTA={{ label: { en: "Get Opal card", ko: "오팔 카드" }, href: "#opal-card" }}
-        secondaryCTA={{ label: { en: "Sydney trains", ko: "시드니 기차" }, href: "#sydney-trains" }}
-        personas={[
-          { sectionId: "opal-card", label: { en: "Opal", ko: "오팔" } },
-          { sectionId: "sydney-trains", label: { en: "Trains", ko: "기차" } },
-          { sectionId: "driving-cycling", label: { en: "Cycle", ko: "자전거" } },
-        ]}
-        scrollCueTarget="opal-card"
-      />
+      {/* Hero — minimal text header, matches weather page style */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Transport</En>
+            <Ko>교통</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Getting around</En>
+            <Ko>시드니 교통</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>Opal cards, trains, buses, ferries — Sydney's transport, decoded.</En>
+            <Ko>오팔 카드, 기차, 버스, 페리 — 시드니 교통의 모든 것.</Ko>
+          </p>
+        </div>
+      </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         

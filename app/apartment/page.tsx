@@ -7,7 +7,6 @@ import { En, Ko } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
-import PageHero from "@/components/PageHero";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -148,25 +147,23 @@ const sections: ApartmentSectionData[] = [
 export default function ApartmentPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
-      <PageHero
-        eyebrow={{ en: "Renting in NSW", ko: "NSW 임대" }}
-        title={{ en: "Apartment guide", ko: "임대 가이드" }}
-        lead={{
-          en: "Renting in NSW — your rights, your money, your home. A practical guide from search to signature.",
-          ko: "NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집. 검색부터 계약까지의 실용 가이드.",
-        }}
-        image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=2400&q=85"
-        imageAlt="Modern apartment interior"
-        primaryCTA={{ label: { en: "Find a place", ko: "집 찾기" }, href: "#search" }}
-        secondaryCTA={{ label: { en: "Know your rights", ko: "권리 확인" }, href: "#rights" }}
-        personas={[
-          { sectionId: "search", label: { en: "Looking", ko: "찾는 중" } },
-          { sectionId: "application", label: { en: "Applying", ko: "지원 중" } },
-          { sectionId: "rights", label: { en: "Renting", ko: "거주 중" } },
-        ]}
-        scrollCueTarget="search"
-      />
+      {/* Hero — minimal text header, matches weather page style */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Renting in NSW</En>
+            <Ko>NSW 임대</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Apartment guide</En>
+            <Ko>임대 가이드</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>Renting in NSW — your rights, your money, your home. A practical guide from search to signature.</En>
+            <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집. 검색부터 계약까지의 실용 가이드.</Ko>
+          </p>
+        </div>
+      </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Editorial sections */}

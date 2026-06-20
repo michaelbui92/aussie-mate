@@ -8,7 +8,6 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@/components/Icons";
-import PageHero from "@/components/PageHero";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -111,25 +110,23 @@ const sections: WorkplaceSection[] = [
 export default function WorkplacePage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
-      <PageHero
-        eyebrow={{ en: "Workplace", ko: "직장" }}
-        title={{ en: "Working in Australia", ko: "호주에서 일하기" }}
-        lead={{
-          en: "Culture, pay, and your rights — what makes Aussie workplaces work.",
-          ko: "문화, 급여, 그리고 귀하의 권리 — 호주 직장문화의 모든 것.",
-        }}
-        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85"
-        imageAlt="Modern office workspace"
-        primaryCTA={{ label: { en: "Workplace culture", ko: "직장 문화" }, href: "#workplace-culture" }}
-        secondaryCTA={{ label: { en: "Pay & super", ko: "급여 & 퇴직연금" }, href: "#award-super" }}
-        personas={[
-          { sectionId: "workplace-culture", label: { en: "Culture", ko: "문화" } },
-          { sectionId: "casual-permanent", label: { en: "Casual", ko: "캐주얼" } },
-          { sectionId: "casual-rights", label: { en: "Rights", ko: "권리" } },
-        ]}
-        scrollCueTarget="workplace-culture"
-      />
+      {/* Hero — minimal text header, matches weather page style */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Workplace</En>
+            <Ko>직장</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Working in Australia</En>
+            <Ko>호주에서 일하기</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>Culture, pay, and your rights — what makes Aussie workplaces work.</En>
+            <Ko>문화, 급여, 그리고 귀하의 권리 — 호주 직장문화의 모든 것.</Ko>
+          </p>
+        </div>
+      </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         

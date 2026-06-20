@@ -8,7 +8,6 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Book, Clipboard, Edit, Graduation, PersonBoard, PersonGroup, Target } from "@/components/Icons";
-import PageHero from "@/components/PageHero";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -153,25 +152,23 @@ const sections: StudySection[] = [
 export default function StudyPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      {/* Hero — full-bleed image with dual CTAs + persona chips, mirrors homepage */}
-      <PageHero
-        eyebrow={{ en: "Study", ko: "학습" }}
-        title={{ en: "Study in Australia", ko: "호주에서 공부하기" }}
-        lead={{
-          en: "University life, academic culture, and grades in Australia.",
-          ko: "호주의 대학 생활, 학문 문화, 성적 체계.",
-        }}
-        image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=2400&q=85"
-        imageAlt="Graduation ceremony at Australian university"
-        primaryCTA={{ label: { en: "English tests", ko: "영어 시험" }, href: "#english-tests" }}
-        secondaryCTA={{ label: { en: "Uni culture", ko: "대학 문화" }, href: "#uni-culture" }}
-        personas={[
-          { sectionId: "english-tests", label: { en: "English", ko: "영어" } },
-          { sectionId: "uni-culture", label: { en: "Uni life", ko: "대학" } },
-          { sectionId: "grades", label: { en: "Grades", ko: "성적" } },
-        ]}
-        scrollCueTarget="english-tests"
-      />
+      {/* Hero — minimal text header, matches weather page style */}
+      <header className="bg-stone-900 dark:bg-stone-950">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+            <En>Study</En>
+            <Ko>학습</Ko>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+            <En>Study in Australia</En>
+            <Ko>호주에서 공부하기</Ko>
+          </h1>
+          <p className="text-stone-300 max-w-lg leading-relaxed">
+            <En>University life, academic culture, and grades in Australia.</En>
+            <Ko>호주의 대학 생활, 학문 문화, 성적 체계.</Ko>
+          </p>
+        </div>
+      </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         
