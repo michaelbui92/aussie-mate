@@ -35,7 +35,7 @@ const sections: StudySection[] = [
     koTitle: "영어 시험: PTE와 IELTS",
     desc: "Everything you need to know about PTE and IELTS for Australian visas and university entry",
     koDesc: "호주 비자 및 대학 진학에 필요한 PTE와 IELTS 모든 것",
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80",
+    img: "https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80",
     items: [
       { label: "What is PTE?", en: "PTE Academic (Pearson Test of English Academic) is a computer-based English test accepted by all Australian universities, vocational colleges, and for visa purposes. You get results in 1-2 days — much faster than IELTS.", ko: "PTE Academic(Pearson Test of English Academic)는 컴퓨터로 치르는 영어 시험으로, 모든 호주 대학, 직업 교육 기관, 비자 심사에 인정됩니다. 결과가 1-2일 안에 나오므로 IELTS보다 훨씬 빠릅니다." },
       { label: "What is IELTS?", en: "IELTS (International English Language Testing System) is the older, more widely recognised test. Used for student visas, skilled migration, and professional registration. Available in paper-based or computer-delivered format.", ko: "IELTS(International English Language Testing System)는 더 오래되고 널리 인정되는 시험입니다. 학생 비자, 기술 이민, 전문 등록에 사용됩니다. 지필로 또는 컴퓨터로 응시할 수 있습니다." },

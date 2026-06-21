@@ -84,7 +84,6 @@ const sections: FinanceSection[] = [
     koTitle: "세금 신고",
     desc: "Lodging your tax return — when, how, and why you might get money back",
     koDesc: "세금 신고 시기, 방법, 환급 가능성",
-    img: "https://images.unsplash.com/photo-1554224155-3a589877462e?w=1600&q=80",
     items: [
       { label: "Do You Need to Lodge?", en: "If you earned money in Australia, you may need to lodge a tax return — even if you earned below the tax-free threshold ($18,200 per year). The ATO will tell you if you need to. Not lodging when you should can result in fines.", ko: "호주에서 돈을 벌었다면 세금 신고를 해야 할 수 있습니다 — 연간 비과세 구간($18,200) 이하로 벌었더라도 마찬가지입니다. ATO가 필요 여부를 알려줍니다. 신고해야 할 때 하지 않으면 벌금이 부과될 수 있습니다." },
       { label: "How It Works", en: "Each financial year runs July 1 to June 30. You lodge your tax return between July 1 and October 31. If you had tax withheld from your pay and earned below $18,200, you'll likely get a full refund. Most students get money back.", ko: "호주의 회계연도는 7월 1일부터 이듬해 6월 30일까지입니다. 7월 1일부터 10월 31일 사이에 세금 신고를 합니다. 급여에서 세금이 원천징수되었고 $18,200 이하로 벌었으면 전액 환급을 받을 가능성이 높습니다. 대부분의 학생들이 환급을 받습니다." },
