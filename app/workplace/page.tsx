@@ -97,7 +97,6 @@ const sections: WorkplaceSection[] = [
     koTitle: "캐주얼 노동자 권리",
     desc: "Your rights as a casual worker in Australia",
     koDesc: "호주 캐주얼 노동자의 권리",
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80",
     items: [
       { label: "You're Allowed to Say No", en: "As a casual, you can refuse a shift. You don't have to give a reason. However, if you consistently refuse available shifts, the employer may reduce the shifts they offer you.", ko: "캐주얼로서 근무를 거절할 수 있습니다. 이유를 제공할 필요가 없습니다. 그러나 계속 이용 가능한 근무를 거절하면 고용주가 제공하는 근무 시간을 줄일 수 있습니다." },
       { label: "Casual Conversion", en: "After 6 months (12 months for small businesses), your employer must offer you permanent part-time or full-time work if you've worked regular hours. You can also request conversion yourself at any time.", ko: "6개월 후(소기업은 12개월) 정규 근무를 해왔다면 고용주가 정규 파트타임 또는 전일제 근무를 제안해야 합니다. 언제든지 본인이 직접 전환을 요청할 수도 있습니다." },
