@@ -214,12 +214,12 @@ const safetyItems = [
 export const metadata = withSeo(
   {
 
-  ...seoFor("/destinations/wildlife"),
+  ...seoFor("/experiences/wildlife"),
   title: "Australian Wildlife Guide — AussieGuides",
   description:
     "Practical guide to seeing Australian wildlife around Sydney — Taronga Zoo, Koala Park, Featherdale, national parks, and critical safety advice.",
   },
-  "/destinations/wildlife"
+  "/experiences/wildlife"
 );
 
 export default function WildlifePage() {
@@ -228,8 +228,8 @@ export default function WildlifePage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/33329755/pexels-photo-33329755.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
-          alt="Australian spring wildflowers"
+          src="https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
+          alt="Australian wildlife at Taronga Zoo"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />

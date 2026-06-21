@@ -55,13 +55,22 @@ const navGroups: NavGroup[] = [
   },
   destinationsGroup,
   {
-    label: "Learn",
+    label: "Experiences",
     items: [
-      { href: "/aussie-english", label: "Aussie English" },
-      { href: "/visa", label: "Visa Guide" },
-      { href: "/faq", label: "FAQ" },
+      { href: "/experiences/beaches", label: "Beaches" },
+      { href: "/experiences/wildlife", label: "Wildlife" },
+      { href: "/experiences/food", label: "Food & Wine" },
+      { href: "/experiences/adventure", label: "Adventure" },
+      { href: "/experiences/culture", label: "Culture" },
+      { href: "/experiences/road-trips", label: "Road Trips" },
     ],
   },
+  { label: "Learn", items: [
+    { href: "/aussie-english", label: "Aussie English" },
+    { href: "/visa", label: "Visa Guide" },
+    { href: "/faq", label: "FAQ" },
+  ],
+},
   {
     label: "More",
     items: [

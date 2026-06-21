@@ -11,12 +11,12 @@ import { seoFor, withSeo } from "@/lib/seo";
 export const metadata: Metadata = withSeo(
   {
 
-  ...seoFor("/destinations/road-trips"),
+  ...seoFor("/experiences/road-trips"),
   title: "Australian Road Trips — AussieGuides",
   description:
     "Great Ocean Road, Sydney to Melbourne, Red Centre, Pacific Coast — Australia's iconic drives with route notes, distances, best seasons, and Korean-friendly tips.",
   },
-  "/destinations/road-trips"
+  "/experiences/road-trips"
 );
 
 type RoadTripSection = Omit<EditorialSectionData, "items"> & {

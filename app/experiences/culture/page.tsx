@@ -11,12 +11,12 @@ import { seoFor, withSeo } from "@/lib/seo";
 export const metadata: Metadata = withSeo(
   {
 
-  ...seoFor("/destinations/culture"),
+  ...seoFor("/experiences/culture"),
   title: "Sydney's Multicultural Neighbourhoods — AussieGuides",
   description:
     "Cabramatta, Hurstville, Chatswood, Strathfield, Eastwood — Sydney's Korean, Vietnamese, Chinese and other cultural hubs, with what to eat and do in each.",
   },
-  "/destinations/culture"
+  "/experiences/culture"
 );
 
 type CultureSection = Omit<EditorialSectionData, "items"> & {

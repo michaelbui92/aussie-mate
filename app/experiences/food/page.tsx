@@ -5,11 +5,11 @@ import { seoFor, withSeo } from "@/lib/seo";
 export const metadata = withSeo(
   {
 
-  ...seoFor("/destinations/food"),
+  ...seoFor("/experiences/food"),
   title: "Sydney Food Guide — AussieGuides",
   description: "A practical guide to Sydney's food scene — from Newtown Thai and Chinatown dumplings to fine dining, market eats, and the Sydney BYO culture.",
   },
-  "/destinations/food"
+  "/experiences/food"
 );
 
 const neighbourhoods = [
@@ -106,8 +106,8 @@ export default function SydneyFoodGuide() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
-          alt="Sydney food scene"
+          src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
+          alt="Sydney cafe culture"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/30" />

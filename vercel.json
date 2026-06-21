@@ -22,6 +22,31 @@
       ],
       "destination": "https://youraussieguides.com/:path*",
       "statusCode": 301
+    },
+    {
+      "source": "/destinations/beaches",
+      "destination": "/experiences/beaches",
+      "statusCode": 301
+    },
+    {
+      "source": "/destinations/wildlife",
+      "destination": "/experiences/wildlife",
+      "statusCode": 301
+    },
+    {
+      "source": "/destinations/food",
+      "destination": "/experiences/food",
+      "statusCode": 301
+    },
+    {
+      "source": "/destinations/culture",
+      "destination": "/experiences/culture",
+      "statusCode": 301
+    },
+    {
+      "source": "/destinations/road-trips",
+      "destination": "/experiences/road-trips",
+      "statusCode": 301
     }
   ]
 }

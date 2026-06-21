@@ -137,12 +137,12 @@ export default function DestinationsPage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { title: "Beaches", koTitle: "해변", blurb: "Bondi, Manly, ocean pools & coastal walks.", koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.", href: "/destinations/beaches", accent: "from-cyan-500 to-sky-600" },
-            { title: "Wildlife", koTitle: "야생동물", blurb: "Taronga Zoo, national parks & wild encounters.", koBlurb: "타롱가 동물원, 국립공원, 야생 동물 만남.", href: "/destinations/wildlife", accent: "from-emerald-500 to-teal-600" },
-            { title: "Food & Wine", koTitle: "식음료", blurb: "Newtown eats, diverse cuisines & Sydney's best bites.", koBlurb: "뉴타운 맛집, 다양한 음식 문화, 시드니 최고의 맛.", href: "/destinations/food", accent: "from-rose-500 to-orange-500" },
-            { title: "Adventure", koTitle: "어드벤처", blurb: "Ski fields, mountain bikes, ocean swims.", koBlurb: "스키장, 산악자전거, 바다 수영.", href: "/destinations/snowy-mountains", accent: "from-sky-500 to-indigo-600" },
-            { title: "Culture", koTitle: "문화", blurb: "Cabramatta, Burwood, Strathfield — Sydney's multicultural soul.", koBlurb: "카브라마타, 버우드, 스트라스필드 — 다문화 시드니의 영혼.", href: "/destinations/culture", accent: "from-amber-500 to-yellow-600" },
-            { title: "Road Trips", koTitle: "로드트립", blurb: "Wollongong, Newcastle, Blue Mountains — plan your escape.", koBlurb: "울런공, 뉴캐슬, 블루마운틴 — 탈출 계획을 세우세요.", href: "/destinations/road-trips", accent: "from-stone-500 to-stone-700" },
+            { title: "Beaches", koTitle: "해변", blurb: "Bondi, Manly, ocean pools & coastal walks.", koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.", href: "/experiences/beaches", accent: "from-cyan-500 to-sky-600" },
+            { title: "Wildlife", koTitle: "야생동물", blurb: "Taronga Zoo, national parks & wild encounters.", koBlurb: "타롱가 동물원, 국립공원, 야생 동물 만남.", href: "/experiences/wildlife", accent: "from-emerald-500 to-teal-600" },
+            { title: "Food & Wine", koTitle: "식음료", blurb: "Newtown eats, diverse cuisines & Sydney's best bites.", koBlurb: "뉴타운 맛집, 다양한 음식 문화, 시드니 최고의 맛.", href: "/experiences/food", accent: "from-rose-500 to-orange-500" },
+            { title: "Adventure", koTitle: "어드벤처", blurb: "Hiking, mountain biking & coastal cliff walks.", koBlurb: "하이킹, 산악자전거, 해안 절벽 산책.", href: "/experiences/adventure", accent: "from-sky-500 to-indigo-600" },
+            { title: "Culture", koTitle: "문화", blurb: "Chinatown, Cabramatta, Burwood, Strathfield — Sydney's multicultural soul.", koBlurb: "차이나타운, 카브라마타, 버우드, 스트라스필드 — 다문화 시드니의 영혼.", href: "/experiences/culture", accent: "from-amber-500 to-yellow-600" },
+            { title: "Road Trips", koTitle: "로드트립", blurb: "Wollongong, Newcastle, Blue Mountains — plan your escape.", koBlurb: "울런공, 뉴캐슬, 블루마운틴 — 탈출 계획을 세우세요.", href: "/experiences/road-trips", accent: "from-stone-500 to-stone-700" },
           ].map((t, i) => (
             <Link
               key={t.title}

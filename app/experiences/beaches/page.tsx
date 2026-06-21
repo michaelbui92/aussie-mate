@@ -133,11 +133,11 @@ const packingList = [
 export const metadata = withSeo(
   {
 
-  ...seoFor("/destinations/beaches"),
+  ...seoFor("/experiences/beaches"),
   title: "Sydney Beaches — AussieGuides",
   description: "A practical guide to Sydney's best beaches — Bondi, Manly, Palm Beach, Bronte, Coogee.",
   },
-  "/destinations/beaches"
+  "/experiences/beaches"
 );
 
 export default function BeachesPage() {
@@ -146,8 +146,8 @@ export default function BeachesPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg"
-          alt="Sydney beach"
+          src="https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
+          alt="Bondi Beach, Sydney's most iconic coastline"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
