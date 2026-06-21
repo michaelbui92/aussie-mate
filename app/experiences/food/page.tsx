@@ -95,7 +95,7 @@ const byoInfo = {
 const tips = [
   { en: "Book for dinner — most good restaurants fill up by Wednesday", ko: "저녁 예약은 필수 — 좋은 레스토랑은 수요일이면 자리 차있음" },
   { en: "Lunch specials are real — $15–20 gets you the same dinner meal for half price", ko: "런치 스페셜 활용 — $15–20으로 저녁 메뉴를 반값에" },
-  { en: "Tipping is not mandatory — but rounding up or leaving 5–10% for great service is appreciated", ko: "팁은 의무 아님 — 하지만 서비스가 좋았다면 거스름돈이나 5–10% 팁은 환영받음" },
+  { en: "Tipping is not required in Australia — it's not a cultural expectation", ko: "호주는 팁 문화가 아님 — 팁은 의무가 아닙니다" },
   { en: "Tapping = paying — tap your card or phone everywhere, cash is rare", ko: "카드/폰 결제 — 현금 거의 안 씀" },
   { en: "Water is free — ask for tap water, it's perfectly safe and drinkable", ko: "물은 무료 — 수돗물 요청 가능, 완전히 안전하고 마시기에 좋음" },
 ];
