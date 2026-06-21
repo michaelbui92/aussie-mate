@@ -43,6 +43,12 @@ const destinationsGroup: NavGroup = {
 
 const navGroups: NavGroup[] = [
   {
+    label: "Aussie English",
+    items: [
+      { href: "/aussie-english", label: "Aussie English" },
+    ],
+  },
+  {
     label: "Living",
     items: [
       { href: "/apartment", label: "Apartment" },
@@ -66,7 +72,6 @@ const navGroups: NavGroup[] = [
     ],
   },
   { label: "Learn", items: [
-    { href: "/aussie-english", label: "Aussie English" },
     { href: "/visa", label: "Visa Guide" },
     { href: "/faq", label: "FAQ" },
   ],

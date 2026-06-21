@@ -114,8 +114,8 @@ export default function AdventurePage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/2356049/pexels-photo-2356049.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
-          alt="Australian national park — Blue Mountains, NSW"
+          src="/adventure.jpg"
+          alt="Adventure in an Australian national park"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />

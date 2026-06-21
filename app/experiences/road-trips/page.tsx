@@ -92,7 +92,7 @@ export default function RoadTripsPage() {
 
         <img
 
-          src="https://images.pexels.com/photos/1209982/pexels-photo-1209982.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
+          src="/roadtrip.jpg"
 
           alt="Person driving on an Australian road trip"
 
