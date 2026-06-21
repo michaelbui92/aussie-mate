@@ -31,7 +31,7 @@ function buildFaqs(d: ReturnType<typeof getDestination> & {}) {
       a: { en: d.suggestedDays.en, ko: d.suggestedDays.ko },
     },
     {
-      q: { en: `When is the best time to visit ${d.name.en}?`, ko: `${d.name.ko}的最佳 방문 시기는 언제인가요?` },
+      q: { en: `When is the best time to visit ${d.name.en}?`, ko: `${d.name.ko}의 최적 방문 시기는 언제인가요?` },
       a: { en: d.bestTime.en, ko: d.bestTime.ko },
     },
     {
