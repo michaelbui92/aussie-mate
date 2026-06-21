@@ -6,10 +6,39 @@ import { En, Ko, useLang } from "./LangBlocks";
 import { useTheme } from "./ThemeProvider";
 import { useSearch } from "@/components/SearchModal";
 import { ChevronDown } from "@/components/Icons";
+import { destinations, type TripLength } from "@/destinations/data";
+
+type NavItem = { href: string; label: string };
 
 type NavGroup = {
   label: string;
-  items: { href: string; label: string }[];
+  /** Flat item list (used by Living/Explore/Learn/More). */
+  items?: NavItem[];
+  /** Grouped sub-sections (used by Destinations). Mutually exclusive with items. */
+  sections?: { heading: string; items: NavItem[] }[];
+  /** Optional trailing link rendered after sections, e.g. a "View all" CTA. */
+  trailing?: NavItem;
+};
+
+// Build the Destinations group from the data file so adding/removing a
+// destination auto-updates the nav. Ordering: items keep the order they
+// appear in `destinations`, grouped by tripLength.
+const TRIP_LENGTH_ORDER: TripLength[] = ["day", "weekend", "longer"];
+const TRIP_LENGTH_HEADING: Record<TripLength, string> = {
+  day: "Day trips",
+  weekend: "Weekends",
+  longer: "Multi-day",
+  far: "Further afield",
+};
+const destinationsGroup: NavGroup = {
+  label: "Destinations",
+  sections: TRIP_LENGTH_ORDER.map((tl) => ({
+    heading: TRIP_LENGTH_HEADING[tl],
+    items: destinations
+      .filter((d) => d.tripLength === tl)
+      .map((d) => ({ href: `/destinations/${d.slug}`, label: d.name.en })),
+  })).filter((s) => s.items.length > 0),
+  trailing: { href: "/destinations", label: "View all destinations" },
 };
 
 const navGroups: NavGroup[] = [
@@ -24,15 +53,7 @@ const navGroups: NavGroup[] = [
       { href: "/workplace", label: "Workplace" },
     ],
   },
-  {
-    label: "Explore",
-    items: [
-      { href: "/destinations", label: "Destinations" },
-      { href: "/tourist", label: "Tourist" },
-      { href: "/sport", label: "Sport" },
-      { href: "/beyond-sydney", label: "Beyond Sydney" },
-    ],
-  },
+  destinationsGroup,
   {
     label: "Learn",
     items: [
@@ -74,8 +95,13 @@ function NavPill({
   );
 }
 
-function isActiveInGroup(pathname: string, items: { href: string }[]) {
-  return items.some((it) => pathname === it.href);
+function isActiveInGroup(pathname: string, group: NavGroup) {
+  const allItems = [
+    ...(group.items ?? []),
+    ...(group.sections?.flatMap((s) => s.items) ?? []),
+    ...(group.trailing ? [group.trailing] : []),
+  ];
+  return allItems.some((it) => pathname === it.href);
 }
 
 export default function Nav() {
@@ -175,7 +201,7 @@ export default function Nav() {
         >
           {navGroups.map((group) => {
             const isOpen = openDropdown === group.label;
-            const isActive = isActiveInGroup(pathname, group.items);
+            const isActive = isActiveInGroup(pathname, group);
             return (
               <div
                 key={group.label}
@@ -225,33 +251,82 @@ export default function Nav() {
                       : "opacity-0 -translate-y-1 scale-[0.98] pointer-events-none"
                   }`}
                 >
-                  {group.items.map((item, i) => {
-                    const itemActive = pathname === item.href;
-                    return (
+                  {group.sections
+                    ? group.sections.map((section) => (
+                        <div key={section.heading} className="px-1">
+                          <p className="px-3 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500">
+                            {section.heading}
+                          </p>
+                          {section.items.map((item) => {
+                            const itemActive = pathname === item.href;
+                            return (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                role="menuitem"
+                                tabIndex={isOpen ? 0 : -1}
+                                className={`group/item relative block px-4 py-1.5 text-sm transition-all duration-200 ${
+                                  itemActive
+                                    ? "text-sunset font-medium"
+                                    : "text-stone-600 dark:text-stone-300 hover:text-sunset hover:pl-5"
+                                }`}
+                              >
+                                <span
+                                  className={`absolute left-1.5 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-sunset transition-all duration-200 ${
+                                    itemActive
+                                      ? "opacity-100 scale-100"
+                                      : "opacity-0 scale-0 group-hover/item:opacity-100 group-hover/item:scale-100"
+                                  }`}
+                                />
+                                {item.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      ))
+                    : group.items?.map((item, i) => {
+                        const itemActive = pathname === item.href;
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            role="menuitem"
+                            tabIndex={isOpen ? 0 : -1}
+                            style={{ transitionDelay: isOpen ? `${i * 25}ms` : "0ms" }}
+                            className={`group/item relative block px-4 py-2 text-sm transition-all duration-200 ${
+                              itemActive
+                                ? "text-sunset font-medium"
+                                : "text-stone-600 dark:text-stone-300 hover:text-sunset hover:pl-5"
+                            }`}
+                          >
+                            <span
+                              className={`absolute left-1.5 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-sunset transition-all duration-200 ${
+                                itemActive
+                                  ? "opacity-100 scale-100"
+                                  : "opacity-0 scale-0 group-hover/item:opacity-100 group-hover/item:scale-100"
+                              }`}
+                            />
+                            {item.label}
+                          </Link>
+                        );
+                      })}
+                  {group.trailing && (
+                    <>
+                      <div className="my-1 mx-3 border-t border-stone-200/60 dark:border-dark-border/60" />
                       <Link
-                        key={item.href}
-                        href={item.href}
+                        href={group.trailing.href}
                         role="menuitem"
                         tabIndex={isOpen ? 0 : -1}
-                        style={{ transitionDelay: isOpen ? `${i * 25}ms` : "0ms" }}
-                        className={`group/item relative block px-4 py-2 text-sm transition-all duration-200 ${
-                          itemActive
-                            ? "text-sunset font-medium"
-                            : "text-stone-600 dark:text-stone-300 hover:text-sunset hover:pl-5"
-                        }`}
+                        onClick={() => {
+                          cancelClose();
+                          setOpenDropdown(null);
+                        }}
+                        className="group/item relative block px-4 py-2 text-sm font-medium text-sunset hover:text-sunset-dark transition-all duration-200"
                       >
-                        {/* Hover indicator bar that slides in from the left */}
-                        <span
-                          className={`absolute left-1.5 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-sunset transition-all duration-200 ${
-                            itemActive
-                              ? "opacity-100 scale-100"
-                              : "opacity-0 scale-0 group-hover/item:opacity-100 group-hover/item:scale-100"
-                          }`}
-                        />
-                        {item.label}
+                        {group.trailing.label} →
                       </Link>
-                    );
-                  })}
+                    </>
+                  )}
                 </div>
               </div>
             );
@@ -344,25 +419,65 @@ export default function Nav() {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 px-3">
                   {group.label}
                 </p>
-                <div className="flex flex-wrap gap-1 pl-3">
-                  {group.items.map((item) => {
-                    const itemActive = pathname === item.href;
-                    return (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setMenuOpen(false)}
-                        className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
-                          itemActive
-                            ? "text-white bg-sunset"
-                            : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    );
-                  })}
-                </div>
+                {group.sections
+                  ? group.sections.map((section) => (
+                      <div key={section.heading} className="space-y-1 pl-3">
+                        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500 px-3">
+                          {section.heading}
+                        </p>
+                        <div className="flex flex-wrap gap-1 pl-3">
+                          {section.items.map((item) => {
+                            const itemActive = pathname === item.href;
+                            return (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setMenuOpen(false)}
+                                className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
+                                  itemActive
+                                    ? "text-white bg-sunset"
+                                    : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
+                                }`}
+                              >
+                                {item.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))
+                  : (
+                    <div className="flex flex-wrap gap-1 pl-3">
+                      {(group.items ?? []).map((item) => {
+                        const itemActive = pathname === item.href;
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
+                              itemActive
+                                ? "text-white bg-sunset"
+                                : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                {group.trailing && (
+                  <div className="pl-3 pt-1">
+                    <Link
+                      href={group.trailing.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-sunset hover:underline"
+                    >
+                      {group.trailing.label} →
+                    </Link>
+                  </div>
+                )}
               </div>
             ))}
           </nav>
