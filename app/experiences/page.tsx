@@ -25,7 +25,7 @@ const themes = [
     koBlurb: "타롱가 동물원, 국립공원, 야생 동물 만남.",
     href: "/experiences/wildlife",
     accent: "from-emerald-500 to-teal-600",
-    heroImg: "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    heroImg: "/kangaroo.jpg",
   },
   {
     title: "Food & Wine",
@@ -43,7 +43,7 @@ const themes = [
     koBlurb: "하이킹, 산악자전거, 해안 절벽 산책.",
     href: "/experiences/adventure",
     accent: "from-sky-500 to-indigo-600",
-    heroImg: "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    heroImg: "/adventure.jpg",
   },
   {
     title: "Culture",
@@ -61,7 +61,7 @@ const themes = [
     koBlurb: "울런공, 뉴캐슬, 블루마운틴 — 탈출 계획을 세우세요.",
     href: "/experiences/road-trips",
     accent: "from-stone-500 to-stone-700",
-    heroImg: "https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    heroImg: "/roadtrip.jpg",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function ExperiencesPage() {
 
       {/* Experience grid */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
           {themes.map((t, i) => (
             <Link
               key={t.title}
