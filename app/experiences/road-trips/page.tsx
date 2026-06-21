@@ -88,21 +88,46 @@ const sections: RoadTripSection[] = [
 export default function RoadTripsPage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
-      <header className="bg-stone-900 dark:bg-stone-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
+
+        <img
+
+          src="https://images.pexels.com/photos/1209982/pexels-photo-1209982.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
+
+          alt="Person driving on an Australian road trip"
+
+          className="absolute inset-0 w-full h-full object-cover"
+
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
+
+        <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
+
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+
             <En>Road Trips</En><Ko>로드트립</Ko>
+
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
+
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
+
             <En>Hit the road</En>
+
             <Ko>길을 떠나자</Ko>
+
           </h1>
-          <p className="text-stone-300 max-w-lg leading-relaxed">
+
+          <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
+
             <En>The best weekend getaways and day trips from Sydney — south to Kiama, north to Port Stephens, west to the Blue Mountains, and everything in between.</En>
             <Ko>시드니에서 떠나는 최고의 주말 여행과 당일 여행 — 남쪽 카이아마, 북쪽 포트스테판, 서쪽 블루마운틴까지.</Ko>
+
           </p>
+
         </div>
-      </header>
+
+      </section>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="space-y-12">

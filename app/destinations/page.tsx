@@ -123,53 +123,6 @@ export default function DestinationsPage() {
         })}
       </div>
 
-      {/* Experiences — what kind of trip are you after */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
-        <div className="text-center mb-8 reveal">
-          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-            <En>Find experiences, not just places</En>
-            <Ko>장소가 아닌 경험을 찾아서</Ko>
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100">
-            <En>Make memories, not itineraries</En>
-            <Ko>일정표가 아닌 추억을</Ko>
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            { title: "Beaches", koTitle: "해변", blurb: "Bondi, Manly, ocean pools & coastal walks.", koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.", href: "/experiences/beaches", accent: "from-cyan-500 to-sky-600" },
-            { title: "Wildlife", koTitle: "야생동물", blurb: "Taronga Zoo, national parks & wild encounters.", koBlurb: "타롱가 동물원, 국립공원, 야생 동물 만남.", href: "/experiences/wildlife", accent: "from-emerald-500 to-teal-600" },
-            { title: "Food & Wine", koTitle: "식음료", blurb: "Newtown eats, diverse cuisines & Sydney's best bites.", koBlurb: "뉴타운 맛집, 다양한 음식 문화, 시드니 최고의 맛.", href: "/experiences/food", accent: "from-rose-500 to-orange-500" },
-            { title: "Adventure", koTitle: "어드벤처", blurb: "Hiking, mountain biking & coastal cliff walks.", koBlurb: "하이킹, 산악자전거, 해안 절벽 산책.", href: "/experiences/adventure", accent: "from-sky-500 to-indigo-600" },
-            { title: "Culture", koTitle: "문화", blurb: "Chinatown, Cabramatta, Burwood, Strathfield — Sydney's multicultural soul.", koBlurb: "차이나타운, 카브라마타, 버우드, 스트라스필드 — 다문화 시드니의 영혼.", href: "/experiences/culture", accent: "from-amber-500 to-yellow-600" },
-            { title: "Road Trips", koTitle: "로드트립", blurb: "Wollongong, Newcastle, Blue Mountains — plan your escape.", koBlurb: "울런공, 뉴캐슬, 블루마운틴 — 탈출 계획을 세우세요.", href: "/experiences/road-trips", accent: "from-stone-500 to-stone-700" },
-          ].map((t, i) => (
-            <Link
-              key={t.title}
-              href={t.href}
-              className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl p-6 md:p-7 min-h-[200px] flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300 shadow-lg hover:shadow-2xl`}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-90 group-hover:opacity-100 transition-opacity`} />
-              <div className="relative">
-                <h3 className="font-serif text-2xl mb-2 text-white">
-                  <En>{t.title}</En>
-                  <Ko>{t.koTitle}</Ko>
-                </h3>
-                <p className="text-white/85 text-sm leading-relaxed">
-                  <En>{t.blurb}</En>
-                  <Ko>{t.koBlurb}</Ko>
-                </p>
-              </div>
-              <span className="relative mt-4 text-white/80 text-xs font-medium uppercase tracking-widest group-hover:text-white transition-colors">
-                <En>Explore</En>
-                <Ko>둘러보기</Ko>
-                <span className="ml-2 transition-transform group-hover:translate-x-1 inline-block">→</span>
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* Contextual next-steps — internal link graph */}
       <RelatedContent
         items={[
