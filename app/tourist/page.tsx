@@ -56,7 +56,7 @@ const sections: TouristSection[] = [
     koTitle: "비치 안전",
     desc: "What to watch out for at Sydney's beaches",
     koDesc: "시드니 해변에서 주의할 점",
-    img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/%281%29Bondi_Beach_lifesavers.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/1/15/Beach_flags_at_Northcliffe_Beach%2C_Surfers_Paradise%2C_Queensland_04.jpg",
     items: [
       { label: "Always Swim Between the Flags", en: "Red and yellow flags mark the safest swimming zone supervised by lifeguards. NEVER swim outside the flags — even if it looks calm, rips can pull you out quickly. If caught in a rip: stay calm, float and signal for help, do not fight the current.", ko: "빨간색과 노란색 깃발은 인명 구조원이 감독하는 가장 안전한 수영 구역입니다. 절대로 깃발 밖에서 수영하지 마세요 — 이안류에 휩쓸리면: 침착하게, 도움을 요청하고, 해류와 싸우지 마세요." },
       { label: "Read the Beach Safety Signs", en: "Before entering the water, check the safety signs at the beach entrance. They show today's conditions — safe to swim, water quality, and any specific hazards like jellyfish or sharks. If in doubt, ask a lifeguard.", ko: "물에 들어가기 전에 해변 입구의 안전 표지판을 확인하세요. 오늘의 상황, 수질, 해파리나 상어 같은 위험 요소를 알려줍니다." },
