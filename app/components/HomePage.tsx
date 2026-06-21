@@ -56,10 +56,40 @@ export default function HomePage() {
 
   // Editorial palette
   const heroImg = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=2400&q=85"; // Sydney Opera House at dusk
-  const featured = destinations[4]; // Sydney Harbour
   const remainingDestinations = destinations.filter(
     (d) => d.slug === "blue-mountains" || d.slug === "south-coast" || d.slug === "jervis-bay"
   );
+  // Top 3 experiences to surface on the homepage. Mirrors the cards in
+  // app/experiences/page.tsx — keep these in sync if the home row changes.
+  const topExperiences = [
+    {
+      slug: "beaches",
+      title: "Beaches",
+      koTitle: "해변",
+      blurb: "Bondi, Manly, ocean pools & coastal walks.",
+      koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.",
+      cardImg: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+      href: "/experiences/beaches",
+    },
+    {
+      slug: "wildlife",
+      title: "Wildlife",
+      koTitle: "야생동물",
+      blurb: "Taronga Zoo, national parks & wild encounters.",
+      koBlurb: "타롱가 동물원, 국립공원, 야생 동물 만남.",
+      cardImg: "/kangaroo.jpg",
+      href: "/experiences/wildlife",
+    },
+    {
+      slug: "food",
+      title: "Food & Wine",
+      koTitle: "식음료",
+      blurb: "Newtown eats, diverse cuisines & Sydney's best bites.",
+      koBlurb: "뉴타운 맛집, 다양한 음식 문화, 시드니 최고의 맛.",
+      cardImg: "https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+      href: "/experiences/food",
+    },
+  ];
 
   return (
     <div className="bg-stone-50 dark:bg-darkbg">
@@ -183,53 +213,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============================ FEATURED DESTINATION ============================ */}
-      <section className="bg-white dark:bg-dark-surface border-y border-stone-200 dark:border-dark-border">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="flex items-end justify-between mb-8 reveal">
-            <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-                <En>Featured this week</En>
-                <Ko>이번 주 추천</Ko>
-              </p>
-              <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
-                <En>The harbour of harbours</En>
-                <Ko>세계에서 가장 아름다운 항구</Ko>
-              </h2>
-            </div>
-          </div>
-          <Link
-            href={`/destinations/${featured.slug}`}
-            className="reveal group block relative overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9] shadow-2xl bg-stone-900"
-          >
-            <img
-              src={featured.heroImg}
-              alt={featured.name.en}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-3">
-                {featured.region}
-              </p>
-              <h3 className="font-serif text-4xl md:text-6xl mb-3 leading-none">
-                <En>{featured.name.en}</En>
-                <Ko>{featured.name.ko}</Ko>
-              </h3>
-              <p className="text-white/80 text-base md:text-lg max-w-2xl leading-relaxed mb-5">
-                <En>{featured.tagline.en}</En>
-                <Ko>{featured.tagline.ko}</Ko>
-              </p>
-              <span className="inline-flex items-center gap-2 text-sm font-medium border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">
-                <En>Read the guide</En>
-                <Ko>가이드 읽기</Ko>
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </span>
-            </div>
-          </Link>
-        </div>
-      </section>
-
       {/* ============================ MORE DESTINATIONS ============================ */}
       <section className="bg-stone-50 dark:bg-darkbg">
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
@@ -290,6 +273,72 @@ export default function HomePage() {
             >
               <En>See more destinations</En>
               <Ko>더 많은 여행지 보기</Ko>
+              <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================ TOP EXPERIENCES ============================ */}
+      <section className="bg-white dark:bg-dark-surface border-y border-stone-200 dark:border-dark-border">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="flex items-end justify-between mb-8 reveal">
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+                <En>Experiences</En>
+                <Ko>경험</Ko>
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
+                <En>Top experiences</En>
+                <Ko>추천 경험</Ko>
+              </h2>
+            </div>
+            <Link
+              href="/experiences"
+              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+            >
+              <En>View all</En>
+              <Ko>전체 보기</Ko>
+              <span>→</span>
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+            {topExperiences.map((e, i) => (
+              <Link
+                key={e.slug}
+                href={e.href}
+                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
+              >
+                <img
+                  src={e.cardImg}
+                  alt={e.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-white/60 mb-1.5">
+                    <En>Experience</En>
+                    <Ko>경험</Ko>
+                  </p>
+                  <h3 className="font-serif text-2xl mb-1 leading-tight">
+                    <En>{e.title}</En>
+                    <Ko>{e.koTitle}</Ko>
+                  </h3>
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    <En>{e.blurb}</En>
+                    <Ko>{e.koBlurb}</Ko>
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/experiences"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+            >
+              <En>See more experiences</En>
+              <Ko>더 많은 경험 보기</Ko>
               <span>→</span>
             </Link>
           </div>

@@ -45,7 +45,7 @@ const navGroups: NavGroup[] = [
   {
     label: "Aussie English",
     items: [
-      { href: "/aussie-english", label: "Aussie English" },
+      { href: "/aussie-english", label: "Learn Aussie Slang" },
     ],
   },
   {
@@ -70,6 +70,7 @@ const navGroups: NavGroup[] = [
       { href: "/experiences/culture", label: "Culture" },
       { href: "/experiences/road-trips", label: "Road Trips" },
     ],
+    trailing: { href: "/experiences", label: "View all experiences" },
   },
   { label: "Learn", items: [
     { href: "/visa", label: "Visa Guide" },
