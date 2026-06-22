@@ -106,25 +106,29 @@ const checklists: Checklist[] = [
 export default function BeforeContent() {
   return (
     <>
-      {/* Intro */}
+      {/* Intro — warm welcome framing. The checklist below is the
+          practical answer, but the page opens by acknowledging that
+          making the move is itself the bold part. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sky-600 mb-3">
           <En>Pre-arrival</En>
           <Ko>출발 전</Ko>
         </p>
         <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
-          <En>Are you ready to fly?</En>
-          <Ko>출발 준비 되셨나요?</Ko>
+          <En>You&apos;re moving to a new country. That&apos;s a big deal.</En>
+          <Ko>새로운 나라로 떠나시는 거네요. 대단한 일이에요.</Ko>
         </h3>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En>
-            The 4–6 weeks before your flight are when most of the expensive
-            mistakes are made. Run this list and you'll land with a clear
-            head and the boring admin already done.
+            Most of the expensive mistakes happen in the 4–6 weeks before
+            you fly — the boring admin, the things nobody tells you about.
+            Run this list and you&apos;ll touch down with a clear head,
+            ready for the exciting part.
           </En>
           <Ko>
-            비행 전 4-6주에 가장 큰 실수가 일어나기 쉽습니다. 이 리스트를
-            따라가면 도착할 때 머리가 맑고, 번거로운 행정은 이미 끝나 있습니다.
+            가장 큰 실수는 비행 전 4-6주에 일어납니다 — 지루한 행정,
+            아무도 알려주지 않는 것들. 이 리스트를 따라가면 도착할 때
+            머리가 맑고, 신나는 부분을 즐길 준비가 되어 있습니다.
           </Ko>
         </p>
       </section>

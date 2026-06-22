@@ -4,24 +4,82 @@ import { En, Ko } from "../LangBlocks";
 export default function ArrivedContent() {
   return (
     <>
-      {/* Intro */}
+      {/* Intro — warm framing before the practical list. "You made it"
+          and "don't try to do everything at once" sets the right tone
+          for a first-week checklist. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-600 mb-3">
           <En>First month</En>
           <Ko>첫 한 달</Ko>
         </p>
         <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
-          <En>You made it. Here&apos;s how to not fumble the first month.</En>
-          <Ko>도착했네요. 첫 한 달을 안정적으로 보내는 법.</Ko>
+          <En>You made it. Take a breath — then read this.</En>
+          <Ko>도착하셨네요. 한숨 돌리시고 — 천천히 읽어보세요.</Ko>
         </h3>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En>
-            The first few weeks in Australia are overwhelming — new city, new systems, new accents. Don&apos;t try to do everything at once. Here&apos;s the order that actually matters, written by someone who fumbled most of it the first time.
+            The first few weeks in Australia are overwhelming — new city,
+            new systems, new accents, all at once. Don&apos;t try to do
+            everything. Here&apos;s the order that actually matters, written
+            by someone who fumbled most of it the first time. Living in a
+            new place can be daunting, but you&apos;ll be fine.
           </En>
           <Ko>
-            호주에서의 첫 몇 주는 압도적입니다 — 낯선 도시, 낯선 시스템, 낯선 억양. 한꺼번에 모든 걸 하려 하지 마세요. 처음에 대부분 헤맨 사람이 직접 정리한, 실제로 중요한 순서대로 알려드립니다.
+            호주에서의 첫 몇 주는 압도적입니다 — 낯선 도시, 낯선 시스템,
+            낯선 억양, 한꺼번에. 다 하려 하지 마세요. 처음에 대부분 헤맨
+            사람이 직접 정리한, 실제로 중요한 순서대로 알려드립니다.
+            새로운 곳에서 사는 건 막막할 수 있지만, 잘 될 거예요.
           </Ko>
         </p>
+      </section>
+
+      {/* Watch out — scam warning callout. Echoes the hub's "be wary of
+          scammers" line. Common newcomer-targeting scams in the first
+          month. Compact, amber, sits between the intro and the
+          actionable sections. */}
+      <section className="mb-10 rounded-3xl border-2 border-amber-300/80 dark:border-amber-700/50 bg-amber-50/60 dark:bg-amber-950/20 p-6 md:p-8 relative overflow-hidden">
+        <div className="flex items-start gap-4">
+          <span className="shrink-0 w-10 h-10 rounded-2xl bg-amber-200/70 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 flex items-center justify-center text-lg" aria-hidden="true">
+            ⚠️
+          </span>
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-amber-800 dark:text-amber-400 mb-2">
+              <En>Watch out</En>
+              <Ko>주의</Ko>
+            </p>
+            <h4 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
+              <En>Scammers target new arrivals.</En>
+              <Ko>사기꾼들은 신참을 노립니다.</Ko>
+            </h4>
+            <ul className="space-y-2.5 text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed">
+              <li className="flex gap-3">
+                <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">01</span>
+                <span>
+                  <En><strong className="text-stone-900 dark:text-stone-100">Fake job ads.</strong> Anyone asking for payment to "process" your application is a scam. Real employers never ask for money upfront.</En>
+                  <Ko><strong className="text-stone-900 dark:text-stone-100">가짜 구인 광고.</strong> "처리 수수료"를 요구하면 사기. 진짜 고용주는 upfront 결제를 요구하지 않습니다.</Ko>
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">02</span>
+                <span>
+                  <En><strong className="text-stone-900 dark:text-stone-100">Rental scams.</strong> Never send a deposit on a property you haven&apos;t inspected in person. Photos and addresses can be stolen from other listings.</En>
+                  <Ko><strong className="text-stone-900 dark:text-stone-100">부동산 사기.</strong> 직접 보지 않은 집의 보증금을 보내지 마세요. 사진과 주소는 다른 매물에서 훔쳐올 수 있습니다.</Ko>
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">03</span>
+                <span>
+                  <En><strong className="text-stone-900 dark:text-stone-100">ATO &amp; immigration impersonation.</strong> The ATO never asks for payment via gift cards, wire transfer, or cryptocurrency. Real calls end with "you can verify at ato.gov.au" — not urgency.</En>
+                  <Ko><strong className="text-stone-900 dark:text-stone-100">ATO·이민사 사칭.</strong> ATO는 gift card, 해외송금, 암호화폐로 결제를 요구하지 않습니다. 진짜 전화는 "ato.gov.au에서 확인하세요"로 끝납니다 — 조급함으로 끝나지 않습니다.</Ko>
+                </span>
+              </li>
+            </ul>
+            <p className="text-xs text-stone-500 dark:text-stone-400 mt-4">
+              <En>If something feels off, report it to <a href="https://www.scamwatch.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700 dark:hover:text-amber-300">ScamWatch</a>. You won&apos;t be the first to report it.</En>
+              <Ko>뭔가 이상하다면 <a href="https://www.scamwatch.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700 dark:hover:text-amber-300">ScamWatch</a>에 신고하세요. 당신이 첫 번째가 아닙니다.</Ko>
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Start here — three things worth doing before the long list. */}
@@ -236,6 +294,54 @@ export default function ArrivedContent() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Scammers target new arrivals — common scams and how to spot them.
+          Same dark-callout pattern as the other "honest take" blocks,
+          with emerald accent. Added per Michael — biggest gap in the
+          original visited-arrived funnel. */}
+      <section className="mb-10 bg-stone-900 dark:bg-dark-surface rounded-3xl p-7 md:p-9 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
+        <div className="relative">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-400 mb-3">
+            <En>Heads up</En>
+            <Ko>주의사항</Ko>
+          </p>
+          <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
+            <En>Scammers target new arrivals.</En>
+            <Ko>사기꾼들은 신참을 노립니다.</Ko>
+          </h4>
+          <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
+            <li className="flex gap-3">
+              <span className="text-emerald-400 font-mono shrink-0">01</span>
+              <span>
+                <En><strong className="text-white">Fake job offers.</strong> &quot;You&apos;re hired, just send $200 for the training kit.&quot; Real employers never ask for upfront fees. If they did, that&apos;s the scam.</En>
+                <Ko><strong className="text-white">가짜 채용.</strong> &quot;채용되셨습니다, 교육 키트 비용 $200만 보내주세요.&quot; 실제 고용주는 선불 비용을 요구하지 않습니다. 요구한다면 그것이 사기입니다.</Ko>
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-emerald-400 font-mono shrink-0">02</span>
+              <span>
+                <En><strong className="text-white">Rental scams.</strong> Overseas landlord, can&apos;t show you the place, asks for a deposit via bank transfer. Real landlords don&apos;t take deposits sight-unseen.</En>
+                <Ko><strong className="text-white">임대 사기.</strong> 해외에 있는 집주인이 직접 보여줄 수 없다며 계좌이체로 보증금을 요청합니다. 진짜 집주인은 보여주지 않은 채로 보증금을 받지 않습니다.</Ko>
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-emerald-400 font-mono shrink-0">03</span>
+              <span>
+                <En><strong className="text-white">ATO / MyGov phishing.</strong> &quot;You owe $2,847 in tax, click here to pay.&quot; ATO and MyGov never email or text asking for payment. Go directly to the site, never via the link.</En>
+                <Ko><strong className="text-white">ATO / MyGov 피싱.</strong> &quot;세금 $2,847 미납, 여기를 클릭해 결제하세요.&quot; ATO와 MyGov는 결제를 요청하는 이메일이나 문자를 보내지 않습니다. 링크를 통하지 말고 직접 사이트에 접속하세요.</Ko>
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-emerald-400 font-mono shrink-0">04</span>
+              <span>
+                <En><strong className="text-white">&quot;Korean community&quot; crypto groups.</strong> Get-rich-quick WeChat / KakaoTalk groups targeting Korean-Aussies. If it sounds too good to be true, it is.</En>
+                <Ko><strong className="text-white">&quot;한인 커뮤니티&quot; 코인 그룹.</strong> 한인 호주를 노리는 빠르게 부자되기 WeChat / KakaoTalk 그룹. 너무 좋아 보이면 사기입니다.</Ko>
+              </span>
+            </li>
+          </ul>
         </div>
       </section>
 
