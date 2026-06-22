@@ -1,21 +1,25 @@
-// /journey/visiting — re-uses the existing VisitingContent component.
-// Metadata is set here (server component) so the page gets its own
-// SEO title, description, canonical URL, and hreflang.
+// /journey/before-you-come — Stage 01 of The Journey.
+// Pre-arrival planning checklist. Replaces the old /journey/visiting
+// page (which was a half-tourist, half-newcomer mismatch).
+//
+// Server component: sets the SEO metadata, renders the persona content
+// (BeforeContent) inside a card. The persona component supplies all
+// the structure; the page just provides layout + metadata.
 
 import { En, Ko } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
-import VisitingContent from "@/components/personas/VisitingContent";
+import BeforeContent from "@/components/personas/BeforeContent";
 
 export const metadata = withSeo(
   {
-    title: "I'm visiting Australia — 호주 첫 방문 가이드 (한국어/English)",
+    title: "Before you come to Australia — 호주 출발 전 준비 (한국어/English)",
     description:
-      "호주에 처음 오신 한국인을 위한 가이드. SPF 50+, 오팔 카드, GST, 팁 문화, 자외선, 대중교통 시간, 콘센트 — 여행 가이드에 없는 호주의 기본 규칙을 한국어와 영어로 정리했습니다.",
+      "호주 출발 전 4-6주 동안 해야 할 일: 비자, 은행, 돈, 통신, 앱, 짐, 숙소, 건강보험, 공항 교통 — 출발 전 체크리스트를 한국어와 영어로 정리했습니다.",
   },
-  "journey/visiting"
+  "journey/before-you-come"
 );
 
-export default function VisitingPage() {
+export default function BeforeYouComePage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg">
       <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
@@ -29,7 +33,7 @@ export default function VisitingPage() {
       <section className="bg-stone-50 dark:bg-darkbg">
         <div className="max-w-4xl mx-auto px-6 py-10 md:py-14">
           <div className="bg-white dark:bg-dark-surface rounded-3xl shadow-xl shadow-stone-900/5 dark:shadow-black/30 p-6 md:p-10 border border-stone-100 dark:border-dark-border">
-            <VisitingContent />
+            <BeforeContent />
           </div>
         </div>
       </section>

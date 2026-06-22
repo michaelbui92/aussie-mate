@@ -30,26 +30,33 @@ export default function ArrivedContent() {
           <En>Start here</En>
           <Ko>먼저 이것부터</Ko>
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl">
           {[
             {
               icon: "📱",
-              en: "SIM on day one",
-              ko: "첫날 SIM 개통",
-              blurbEn: "No SIM, no navigation, no messaging, no Uber. Woolworths, Coles, or any 7-Eleven sets you up in 10 minutes with your passport.",
-              blurbKo: "SIM 없이는 지도, 메시지, Uber 모두 불가. Woolworths, Coles, 7-Eleven 어느 곳이든 여권으로 10분이면 개통됩니다.",
+              en: "Get your Australian number",
+              ko: "호주 전화번호 받기",
+              blurbEn: "Woolworths, Coles, or any 7-Eleven sets you up in 10 minutes with your passport. eSIM works too if you bought one before you flew.",
+              blurbKo: "Woolworths, Coles, 7-Eleven 어느 곳이든 여권으로 10분이면 개통됩니다. 출발 전 eSIM을 사왔다면 그것도 됩니다.",
             },
             {
               icon: "🏦",
-              en: "Bank account this week",
-              ko: "이번 주 은행 계좌",
-              blurbEn: "Your employer needs an Australian account to pay you. Commonwealth, ANZ, Westpac, NAB all open online with a passport — about 20 minutes.",
-              blurbKo: "고용주가 월급을 입금하려면 호주 계좌가 필요합니다. Commonwealth, ANZ, Westpac, NAB 모두 여권으로 온라인 개설 — 약 20분.",
+              en: "Visit your bank",
+              ko: "은행 방문",
+              blurbEn: "Open an Australian account online with a passport — about 20 minutes. Your employer needs an Australian account to pay you. Skip the branch queues.",
+              blurbKo: "여권으로 온라인 개설 — 약 20분. 고용주가 급여를 입금하려면 호주 계좌가 필요합니다. 지점 줄을 서지 마세요.",
+            },
+            {
+              icon: "🏠",
+              en: "Find a permanent place to live",
+              ko: "정착할 집 구하기",
+              blurbEn: "Domain and Realestate.com.au are your friends. Inspect 3–5 places before signing. Photos lie. Most newcomers spend 2–4 weeks house hunting before settling.",
+              blurbKo: "Domain과 Realestate.com.au를 활용하세요. 서명 전에 3-5곳을 직접 봅니다. 사진은 거짓말을 합니다. 대부분 2-4주 집을 보고 정착합니다.",
             },
             {
               icon: "📋",
-              en: "TFN before your first pay",
-              ko: "첫 월급 전 TFN 신청",
+              en: "Apply for a TFN",
+              ko: "TFN 신청",
               blurbEn: "Free from ato.gov.au. Without it your employer withholds tax at the emergency rate — you lose 30–40% of your take-home pay until you do.",
               blurbKo: "ato.gov.au에서 무료 신청. 신청하지 않으면 고용주가 긴급 세율로 원천징수 — 신청할 때까지 실수령액의 30–40%를 잃습니다.",
             },
@@ -80,9 +87,9 @@ export default function ArrivedContent() {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-3xl">
           {[
-            { en: "SIM working", ko: "SIM 개통" },
+            { en: "Phone active", ko: "전화 개통" },
             { en: "Bank account open", ko: "은행 계좌" },
-            { en: "Opal in wallet", ko: "오팔 카드" },
+            { en: "Permanent place secured", ko: "정착할 집 확보" },
             { en: "TFN applied for", ko: "TFN 신청" },
           ].map((step, i) => (
             <div
@@ -229,6 +236,46 @@ export default function ArrivedContent() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* What travel guides don't tell you — honest take on first-week
+          realities. Same dark-callout pattern as HomeContent's "Honest
+          take" block, with emerald accent. */}
+      <section className="mb-10 bg-stone-900 dark:bg-dark-surface rounded-3xl p-7 md:p-9 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
+        <div className="relative">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-400 mb-3">
+            <En>Honest take</En>
+            <Ko>솔직한 이야기</Ko>
+          </p>
+          <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
+            <En>What travel guides don&apos;t tell you.</En>
+            <Ko>여행 가이드에는 없는 이야기.</Ko>
+          </h4>
+          <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
+            <li className="flex gap-3">
+              <span className="text-emerald-400 font-mono shrink-0">01</span>
+              <span>
+                <En><strong className="text-white">It&apos;s more expensive than you think.</strong> Coffee $5, casual lunch $20, dinner $40+ per person, a pint of beer $12. A couple&apos;s weekly food budget is realistically $500–$700. Budget more than the guidebooks say.</En>
+                <Ko><strong className="text-white">생각보다 비쌉니다.</strong> 커피 $5, 캐주얼 점심 $20, 1인당 저녁 $40+, 맥주 한 파인트 $12. 커플의 주간 식비 현실은 $500–$700. 가이드북보다 더 여유 있게 잡으세요.</Ko>
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-emerald-400 font-mono shrink-0">02</span>
+              <span>
+                <En><strong className="text-white">Public transport stops at midnight.</strong> Trains, buses, ferries all wind down around 12am. Plan a taxi or Uber for the way home after a night out — or you will be walking.</En>
+                <Ko><strong className="text-white">대중교통은 자정 전후로 끊깁니다.</strong> 기차, 버스, 페리 모두 자정 무렵에 운행 종료. 밤에 외출 시 귀가 taxi나 Uber를 미리 계획하세요 — 아니면 걸어가야 합니다.</Ko>
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-emerald-400 font-mono shrink-0">03</span>
+              <span>
+                <En><strong className="text-white">Wildlife is loud and weird.</strong> Possums fight on your roof at 3am. Cockatoos scream at dawn. Magpies dive-bomb in spring. It is not a horror movie — it is just Australia.</En>
+                <Ko><strong className="text-white">야생동물은 시끄럽고 특이합니다.</strong> 주머니쥐가 새벽 3시에 지붕 위에서 싸웁니다. 앵무새가 동에 소리를 지릅니다. 봄에는 까치가 급습합니다. 공포영화가 아니라 그냥 호주입니다.</Ko>
+              </span>
+            </li>
+          </ul>
         </div>
       </section>
 

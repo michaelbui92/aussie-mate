@@ -1,6 +1,7 @@
 // The Journey — hub page. Replaces the homepage persona selector.
-// Three cards: Visiting / Arrived / Home. Each links to a sub-route that
-// renders the corresponding persona content (VisitingContent, etc.).
+// Three cards: Before you come / I arrived / I call this home. Each links
+// to a sub-route that renders the corresponding persona content
+// (BeforeContent, ArrivedContent, HomeContent).
 //
 // Why a hub page instead of tabs on the homepage:
 //   1. Homepage stays visual (hero → CTA → destinations → experiences)
@@ -19,7 +20,7 @@ export const metadata = withSeo(
   {
     title: "The Journey — 호주 여정 가이드 (한국어/English)",
     description:
-      "호주에 처음 오셨나요, 방금 도착하셨나요, 아니면 오래 살아오셨나요? 단계별로 정리한 호주 생활 가이드. 첫 방문 필수 정보, 첫 달 셋업, 장기 체류 노하우까지 한국어와 영어로 안내합니다.",
+      "호주에 출발 전, 방금 도착, 장기 체류 — 단계별로 정리한 호주 생활 가이드. 비자, 은행, SIM, TFN, 집 구하기, 퇴직연금, 영주권까지 한국어와 영어로 안내합니다.",
   },
   "journey"
 );
@@ -42,20 +43,20 @@ type Stage = {
 
 const stages: Stage[] = [
   {
-    href: "/journey/visiting",
+    href: "/journey/before-you-come",
     number: "01",
-    emoji: "✈️",
+    emoji: "📋",
     accent: "sky",
-    titleEn: "I'm visiting",
-    titleKo: "여행 중이에요",
-    taglineEn: "Holiday, working holiday, or just passing through.",
-    taglineKo: "휴가, 워홀, 또는 잠시 들른 경우.",
-    startHereEn: "Start here",
-    startHereKo: "먼저 이것부터",
+    titleEn: "Before you come",
+    titleKo: "호주에 오기 전에",
+    taglineEn: "The 4-6 weeks before your flight. Visa, bank, eSIM, packing.",
+    taglineKo: "출발 전 4-6주. 비자, 은행, eSIM, 짐 싸기.",
+    startHereEn: "Pre-flight checklist",
+    startHereKo: "출발 전 체크리스트",
     pills: [
-      { icon: "☀️", en: "SPF 50+ on day one", ko: "첫날부터 SPF 50+" },
-      { icon: "💳", en: "Opal at the airport", ko: "공항에서 오팔 카드" },
-      { icon: "🗣️", en: "Five Aussie words", ko: "호주식 영어 다섯 단어" },
+      { icon: "📄", en: "Visa + documents", ko: "비자 + 서류" },
+      { icon: "🏦", en: "Open a bank account", ko: "은행 계좌 개설" },
+      { icon: "📶", en: "eSIM sorted", ko: "eSIM 준비" },
     ],
   },
   {
@@ -63,16 +64,16 @@ const stages: Stage[] = [
     number: "02",
     emoji: "📦",
     accent: "emerald",
-    titleEn: "I just got here",
+    titleEn: "I arrived",
     titleKo: "방금 도착했어요",
-    taglineEn: "First month sorted: bank, TFN, SIM, place to live.",
-    taglineKo: "첫 달 셋업: 은행, TFN, SIM, 거주지.",
+    taglineEn: "First month sorted: number, bank, place to live, TFN.",
+    taglineKo: "첫 달 셋업: 전화번호, 은행, 거주지, TFN.",
     startHereEn: "Start here",
     startHereKo: "먼저 이것부터",
     pills: [
-      { icon: "📱", en: "SIM on day one", ko: "첫날 SIM 개통" },
-      { icon: "🏦", en: "Bank account this week", ko: "이번 주 은행 계좌" },
-      { icon: "📋", en: "TFN before first pay", ko: "첫 월급 전 TFN 신청" },
+      { icon: "📱", en: "Get your number", ko: "전화번호 받기" },
+      { icon: "🏠", en: "Find a place", ko: "집 구하기" },
+      { icon: "📋", en: "Apply for TFN", ko: "TFN 신청" },
     ],
   },
   {
@@ -132,19 +133,20 @@ export default function JourneyPage() {
             <Ko>호주 여정</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-stone-900 dark:text-stone-100 leading-tight mb-5">
-            <En>Where are you in the journey?</En>
-            <Ko>여정의 어디에 있나요?</Ko>
+            <En>Before you fly, after you land, and everything in between.</En>
+            <Ko>출발 전, 도착 후, 그 사이의 모든 것.</Ko>
           </h1>
           <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl mx-auto">
             <En>
-              Three stages, three different guides. Pick where you are — each
-              page gives you the things to do in the first week, the mistakes
-              that cost real money, and the links that actually matter.
+              Three stages of being in Australia, three different guides.
+              Pick where you are — each page gives you the things to do in
+              the first week, the mistakes that cost real money, and the
+              links that actually matter.
             </En>
             <Ko>
-              세 단계, 세 가지 다른 가이드. 현재 상황에 맞는 단계를 선택하세요 —
-              각 페이지에서 첫 주에 할 일, 실제로 돈이 드는 실수, 그리고 진짜
-              중요한 링크를 알려드립니다.
+              호주에서의 세 단계, 세 가지 다른 가이드. 현재 상황에 맞는 단계를
+              선택하세요 — 각 페이지에서 첫 주에 할 일, 실제로 돈이 드는 실수,
+              그리고 진짜 중요한 링크를 알려드립니다.
             </Ko>
           </p>
         </div>
@@ -227,16 +229,17 @@ export default function JourneyPage() {
           </h2>
           <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-base md:text-lg max-w-3xl">
             <En>
-              A tourist needs Opal, sunscreen, and the harbour walk. A new
-              resident needs a bank account, a TFN, and a GP. A long-termer
-              needs super, tenant rights, and a PR plan. The three stages are
-              kept separate because the answers barely overlap.
+              Someone still planning their move needs a visa, a bank
+              account, and an eSIM. Someone in their first week needs a
+              phone number, a TFN, and a place to live. Someone staying
+              long-term needs super, tenant rights, and a PR plan. The three
+              stages are kept separate because the answers barely overlap.
             </En>
             <Ko>
-              여행자는 오팔, 자외선 차단제, 하버 산책이 필요합니다. 신참
-              이주민은 은행 계좌, TFN, GP가 필요합니다. 장기 체류자는 퇴직연금,
-              임차인 권리, 영주권 계획이 필요합니다. 세 단계가 거의 겹치지
-              않기 때문에 분리해 두었습니다.
+              출발 준비 중인 사람은 비자, 은행 계좌, eSIM이 필요합니다.
+              첫 주에 있는 사람은 전화번호, TFN, 집이 필요합니다. 장기
+              체류자는 퇴직연금, 임차인 권리, 영주권 계획이 필요합니다.
+              세 단계가 거의 겹치지 않기 때문에 분리해 두었습니다.
             </Ko>
           </p>
         </div>
