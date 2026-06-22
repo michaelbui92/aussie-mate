@@ -1,47 +1,23 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { En, Ko } from "@/components/LangBlocks";
-import VisitingContent from "@/components/personas/VisitingContent";
-import ArrivedContent from "@/components/personas/ArrivedContent";
-import HomeContent from "@/components/personas/HomeContent";
 import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
 import { destinations } from "@/destinations/data";
 
-type StageKey = "visiting" | "arrived" | "home";
-
-const stages: { key: StageKey; title: string; koTitle: string; subtitle: string; koSubtitle: string; img: string }[] = [
-  {
-    key: "visiting",
-    title: "I'm visiting",
-    koTitle: "여행 중이에요",
-    subtitle: "Holiday, working holiday, or just passing through",
-    koSubtitle: "휴가, 워홀, 또는 잠시 들른 경우",
-    img: "https://images.unsplash.com/photo-1523428096881-5bd79d043006?w=1200&q=80",
-  },
-  {
-    key: "arrived",
-    title: "I just got here",
-    koTitle: "방금 도착했어요",
-    subtitle: "First month sorted: bank, TFN, SIM, place to live",
-    koSubtitle: "첫 달 셋업: 은행, TFN, SIM, 거주지",
-    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
-  },
-  {
-    key: "home",
-    title: "I call this home",
-    koTitle: "여기가 내 집이에요",
-    subtitle: "Long-term Australian — work, lifestyle, finances",
-    koSubtitle: "장기 호주 거주 — 직장, 생활, 재무",
-    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
-  },
-];
+// Homepage — revamped 2026-06-22.
+// Changes:
+//   - Removed the persona selector + persona content card (the three stages
+//     of "I'm visiting / I just got here / I call this home" used to live
+//     here as a tab interface, but it was too much text near the top and
+//     competed with destinations/experiences for attention).
+//   - Stages now live at /journey with their own URLs and SEO.
+//   - Added a slim 2-card CTA banner pointing to /journey and /aussie-english
+//     so the deep content is still discoverable from the homepage.
 
 export default function HomePage() {
-  const [active, setActive] = useState<StageKey>("visiting");
-
   // Subtle hero parallax — image moves at 40% of scroll speed
   useEffect(() => {
     const onScroll = () => {
@@ -148,63 +124,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============================ PERSONA SELECTOR ============================ */}
-      <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <div className="text-center mb-8 reveal">
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-              <En>Where are you in the journey?</En>
-              <Ko>여정의 어디에 있나요?</Ko>
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100">
-              <En>Choose your stage</En>
-              <Ko>단계별 가이드</Ko>
-            </h2>
-          </div>
-          {/* Mobile: compact pill selectors (just title). Desktop: full card with subtitle + bullets. */}
-          <div className="flex flex-col md:grid md:grid-cols-3 gap-2 md:gap-3">
-            {stages.map((s, i) => {
-              const isActive = active === s.key;
-              return (
-                <button type="button"
-                  key={s.key}
-                  onClick={() => setActive(s.key)}
-                  className={`reveal reveal-delay-${i + 1} group text-left p-3 md:p-6 rounded-2xl border transition-all duration-300 flex flex-col ${
-                    isActive
-                      ? "bg-sunset text-white border-sunset shadow-2xl scale-[1.02] ring-4 ring-sunset/30 [&_*]:!text-white"
-                      : "bg-white dark:bg-dark-surface border-stone-200 dark:border-dark-border text-stone-900 dark:text-stone-100 hover:border-sunset/50 hover:shadow-lg"
-                  }`}
-                  style={isActive ? { color: "#ffffff" } : undefined}
-                >
-                  <div className="flex items-start justify-between mb-2 md:mb-3">
-                    <span className={`font-mono text-xs ${isActive ? "text-white/70" : "text-stone-400 dark:text-stone-500"}`}>
-                      0{i + 1}
-                    </span>
-                    <span className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-white" : "bg-stone-300 dark:bg-stone-700 group-hover:bg-sunset"}`} />
-                  </div>
-                  <h3 className={`font-serif text-base md:text-2xl mb-1.5 ${isActive ? "text-white" : "text-stone-900 dark:text-stone-100"}`}>
-                    <En>{s.title}</En>
-                    <Ko>{s.koTitle}</Ko>
-                  </h3>
-                  {/* Subtitle + bullets hidden on mobile — they live in the persona card below */}
-                  <p className={`hidden md:block text-sm leading-relaxed ${isActive ? "text-white/90" : "text-stone-500 dark:text-stone-400"}`}>
-                    <En>{s.subtitle}</En>
-                    <Ko>{s.koSubtitle}</Ko>
-                  </p>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* ============================ ENTRY-POINT CTAs ============================
+          Slim 2-card banner that surfaces the two non-obvious-but-valuable
+          entry points: /journey (for people planning/relocating) and
+          /aussie-english (for anyone who's heard "she'll be right" and
+          wondered what just happened). Sits between hero and destinations
+          so the homepage reads as: see pretty things → if you live here,
+          click here. */}
+      <section className="bg-stone-50 dark:bg-darkbg border-b border-stone-200/60 dark:border-dark-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            {/* Journey CTA */}
+            <Link
+              href="/journey"
+              className="reveal reveal-delay-1 group flex items-center justify-between gap-4 p-5 md:p-6 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all"
+            >
+              <div className="min-w-0">
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-1.5">
+                  <En>The Journey</En>
+                  <Ko>여정</Ko>
+                </p>
+                <h2 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
+                  <En>New to Australia?</En>
+                  <Ko>호주에 처음 오셨나요?</Ko>
+                </h2>
+                <p className="text-xs md:text-sm text-stone-500 dark:text-stone-400 leading-snug">
+                  <En>Start here → three stages, one guide</En>
+                  <Ko>여정 시작하기 → 세 단계, 하나의 가이드</Ko>
+                </p>
+              </div>
+              <span
+                aria-hidden="true"
+                className="shrink-0 w-10 h-10 rounded-full bg-sunset/10 dark:bg-sunset/20 text-sunset inline-flex items-center justify-center text-lg transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </Link>
 
-      {/* ============================ PERSONA CONTENT ============================ */}
-      <section className="bg-stone-50 dark:bg-darkbg">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <div className="bg-white dark:bg-dark-surface rounded-3xl shadow-xl shadow-stone-900/5 dark:shadow-black/30 p-6 md:p-10 border border-stone-100 dark:border-dark-border">
-            {active === "visiting" && <VisitingContent />}
-            {active === "arrived" && <ArrivedContent />}
-            {active === "home" && <HomeContent />}
+            {/* Aussie English CTA */}
+            <Link
+              href="/aussie-english"
+              className="reveal reveal-delay-2 group flex items-center justify-between gap-4 p-5 md:p-6 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all"
+            >
+              <div className="min-w-0">
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-1.5">
+                  <En>Aussie English</En>
+                  <Ko>호주 영어</Ko>
+                </p>
+                <h2 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
+                  <En>Stuck with English slang?</En>
+                  <Ko>호주 영어 슬랭이 어렵다면?</Ko>
+                </h2>
+                <p className="text-xs md:text-sm text-stone-500 dark:text-stone-400 leading-snug">
+                  <En>Check here → 209 phrases decoded</En>
+                  <Ko>확인하기 → 209개 표현 해설집</Ko>
+                </p>
+              </div>
+              <span
+                aria-hidden="true"
+                className="shrink-0 w-10 h-10 rounded-full bg-sunset/10 dark:bg-sunset/20 text-sunset inline-flex items-center justify-center text-lg transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </Link>
           </div>
         </div>
       </section>
