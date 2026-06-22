@@ -7,15 +7,11 @@ import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
 import { destinations } from "@/destinations/data";
 
-// Homepage — revamped 2026-06-22.
-// Changes:
-//   - Removed the persona selector + persona content card (the three stages
-//     of "I'm visiting / I just got here / I call this home" used to live
-//     here as a tab interface, but it was too much text near the top and
-//     competed with destinations/experiences for attention).
-//   - Stages now live at /journey with their own URLs and SEO.
-//   - Added a slim 2-card CTA banner pointing to /journey and /aussie-english
-//     so the deep content is still discoverable from the homepage.
+// Homepage restructured: persona selector moved to /journey (now a
+// dedicated page with three sub-routes). The homepage is now: hero →
+// two CTA cards (Journey + Aussie English) → destinations → experiences.
+// Goal: less text, more visual scroll, lower friction for first-time
+// visitors.
 
 export default function HomePage() {
   // Subtle hero parallax — image moves at 40% of scroll speed
@@ -124,66 +120,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============================ ENTRY-POINT CTAs ============================
-          Slim 2-card banner that surfaces the two non-obvious-but-valuable
-          entry points: /journey (for people planning/relocating) and
-          /aussie-english (for anyone who's heard "she'll be right" and
-          wondered what just happened). Sits between hero and destinations
-          so the homepage reads as: see pretty things → if you live here,
-          click here. */}
-      <section className="bg-stone-50 dark:bg-darkbg border-b border-stone-200/60 dark:border-dark-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:py-8">
+      {/* ============================ PRIMARY CTAs (Journey + Aussie English) ============================
+          Two cards that surface the site's two highest-value content lanes
+          for newcomers. Replaces the old persona-selector strip — the
+          persona content is now on /journey with its own URLs. The CTAs
+          here are small (one row on desktop, stacked on mobile) so the
+          homepage stays visual. */}
+      <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
+        <div className="max-w-6xl mx-auto px-6 py-10 md:py-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            {/* Journey CTA */}
+            {/* Card 1: Journey */}
             <Link
               href="/journey"
-              className="reveal reveal-delay-1 group flex items-center justify-between gap-4 p-5 md:p-6 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all"
+              className="reveal reveal-delay-1 group flex items-center gap-4 p-5 md:p-6 rounded-2xl border border-stone-200 dark:border-dark-border bg-gradient-to-br from-sunset/5 via-sunset/5 to-sunset/10 dark:from-sunset/10 dark:via-sunset/5 dark:to-transparent hover:border-sunset/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="min-w-0">
-                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-1.5">
-                  <En>The Journey</En>
-                  <Ko>여정</Ko>
-                </p>
-                <h2 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
+              <span className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-sunset/10 dark:bg-sunset/20 flex items-center justify-center text-2xl md:text-3xl">
+                ✈️
+              </span>
+              <div className="flex-1 min-w-0">
+                <p className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
                   <En>New to Australia?</En>
                   <Ko>호주에 처음 오셨나요?</Ko>
-                </h2>
-                <p className="text-xs md:text-sm text-stone-500 dark:text-stone-400 leading-snug">
-                  <En>Start here → three stages, one guide</En>
-                  <Ko>여정 시작하기 → 세 단계, 하나의 가이드</Ko>
+                </p>
+                <p className="text-sm font-semibold text-sunset">
+                  <En>Start here →</En>
+                  <Ko>여기서 시작 →</Ko>
                 </p>
               </div>
-              <span
-                aria-hidden="true"
-                className="shrink-0 w-10 h-10 rounded-full bg-sunset/10 dark:bg-sunset/20 text-sunset inline-flex items-center justify-center text-lg transition-transform group-hover:translate-x-0.5"
-              >
+              <span className="shrink-0 text-stone-300 dark:text-stone-600 group-hover:text-sunset transition-colors text-2xl">
                 →
               </span>
             </Link>
 
-            {/* Aussie English CTA */}
+            {/* Card 2: Aussie English */}
             <Link
               href="/aussie-english"
-              className="reveal reveal-delay-2 group flex items-center justify-between gap-4 p-5 md:p-6 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all"
+              className="reveal reveal-delay-2 group flex items-center gap-4 p-5 md:p-6 rounded-2xl border border-stone-200 dark:border-dark-border bg-gradient-to-br from-sky-500/5 via-sky-500/5 to-sky-500/10 dark:from-sky-500/10 dark:via-sky-500/5 dark:to-transparent hover:border-sky-500/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="min-w-0">
-                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-1.5">
-                  <En>Aussie English</En>
-                  <Ko>호주 영어</Ko>
-                </p>
-                <h2 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
+              <span className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-sky-500/10 dark:bg-sky-500/20 flex items-center justify-center text-2xl md:text-3xl">
+                🗣️
+              </span>
+              <div className="flex-1 min-w-0">
+                <p className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
                   <En>Stuck with English slang?</En>
-                  <Ko>호주 영어 슬랭이 어렵다면?</Ko>
-                </h2>
-                <p className="text-xs md:text-sm text-stone-500 dark:text-stone-400 leading-snug">
-                  <En>Check here → 209 phrases decoded</En>
-                  <Ko>확인하기 → 209개 표현 해설집</Ko>
+                  <Ko>호주식 영어가 안 통하나요?</Ko>
+                </p>
+                <p className="text-sm font-semibold text-sky-600 dark:text-sky-400">
+                  <En>Check here →</En>
+                  <Ko>여기 확인 →</Ko>
                 </p>
               </div>
-              <span
-                aria-hidden="true"
-                className="shrink-0 w-10 h-10 rounded-full bg-sunset/10 dark:bg-sunset/20 text-sunset inline-flex items-center justify-center text-lg transition-transform group-hover:translate-x-0.5"
-              >
+              <span className="shrink-0 text-stone-300 dark:text-stone-600 group-hover:text-sky-500 transition-colors text-2xl">
                 →
               </span>
             </Link>

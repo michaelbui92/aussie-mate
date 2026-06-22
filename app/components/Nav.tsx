@@ -49,13 +49,13 @@ const navGroups: NavGroup[] = [
     ],
   },
   {
-    label: "Journey",
+    label: "The Journey",
     items: [
+      { href: "/journey", label: "All Stages" },
       { href: "/journey/visiting", label: "I'm visiting" },
       { href: "/journey/arrived", label: "I just got here" },
       { href: "/journey/home", label: "I call this home" },
     ],
-    trailing: { href: "/journey", label: "View the full journey" },
   },
   {
     label: "Living",

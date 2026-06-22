@@ -25,6 +25,10 @@ const labels: Record<string, { en: string; ko: string }> = {
   "/destinations/wildlife":    { en: "Wildlife",    ko: "야생동물" },
   "/destinations/road-trips":  { en: "Road Trips",  ko: "로드 트립" },
   "/destinations/culture":     { en: "Culture",     ko: "문화" },
+  "/journey":         { en: "The Journey", ko: "여정" },
+  "/journey/visiting":{ en: "Visiting",    ko: "여행 중" },
+  "/journey/arrived": { en: "Just Arrived",ko: "방금 도착" },
+  "/journey/home":    { en: "Settled In",  ko: "정착" },
   "/tourist":         { en: "Tourist",         ko: "여행자" },
   "/beyond-sydney":   { en: "Beyond Sydney",   ko: "시드니 밖으로" },
   "/resources":       { en: "Resources",       ko: "자료" },
@@ -64,6 +68,9 @@ export default function Breadcrumbs() {
   // For /destinations/<slug>, show the parent crumb too
   const destMatch = pathname.match(/^\/destinations\/([^\/]+)$/);
   const isDestDetail = destMatch && getDestination(destMatch[1]);
+  // Same for /journey/<stage>
+  const journeyMatch = pathname.match(/^\/journey\/([^\/]+)$/);
+  const isJourneyDetail = journeyMatch && labels[`/journey/${journeyMatch[1]}`];
 
   return (
     <nav
@@ -81,6 +88,17 @@ export default function Breadcrumbs() {
             className="hover:text-sunset transition-colors"
           >
             {lang === "ko" ? "여행지" : "Destinations"}
+          </Link>
+          <span className="mx-1.5">›</span>
+        </>
+      )}
+      {isJourneyDetail && (
+        <>
+          <Link
+            href="/journey"
+            className="hover:text-sunset transition-colors"
+          >
+            {lang === "ko" ? "여정" : "The Journey"}
           </Link>
           <span className="mx-1.5">›</span>
         </>

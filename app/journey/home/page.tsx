@@ -1,41 +1,34 @@
-// Journey > Home — wraps the existing HomeContent persona component.
-// See /journey/visiting/page.tsx for the pattern.
+// /journey/home — re-uses the existing HomeContent component.
 
 import { En, Ko } from "@/components/LangBlocks";
+import { withSeo } from "@/lib/seo";
 import HomeContent from "@/components/personas/HomeContent";
-import { withSeo, seoFor } from "@/lib/seo";
 
 export const metadata = withSeo(
   {
-    ...seoFor("/journey/home"),
-    title: "I call this home — 여기가 내 집이에요 (장기 정착 가이드)",
+    title: "I call Australia home — 장기 호주 거주 가이드 (한국어/English)",
     description:
-      "장기 호주 거주자를 위한 가이드. 직장, 생활, 재무, 호주 영어, 문화 적응까지 — 적응이 아니라 소속감을 만드는 단계.",
+      "오래 호주에 거주하는 한국인을 위한 가이드. 퇴직연금(Super), 임차인 권리, 영주권, 시민권, 신용점수, 소속감 — 장기 관점의 호주 생활을 한국어와 영어로 정리했습니다.",
   },
-  "/journey/home"
+  "journey/home"
 );
 
-export default function Page() {
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-darkbg">
-      <header className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 md:pt-16 pb-6">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 dark:text-teal-400 mb-3">
-          <En>Stage 03 — The Journey</En>
-          <Ko>단계 03 — 여정</Ko>
-        </p>
-        <h1 className="font-serif text-3xl md:text-5xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-3">
-          <En>I call this home</En>
-          <Ko>여기가 내 집이에요</Ko>
-        </h1>
-        <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-base md:text-lg max-w-2xl">
-          <En>Long-term Australian — work, lifestyle, finances.</En>
-          <Ko>장기 호주 거주 — 직장, 생활, 재무.</Ko>
-        </p>
-      </header>
-
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 md:pb-24">
-        <div className="bg-white dark:bg-dark-surface rounded-3xl shadow-xl shadow-stone-900/5 dark:shadow-black/30 p-6 md:p-10 border border-stone-100 dark:border-dark-border">
-          <HomeContent />
+    <div className="bg-stone-50 dark:bg-darkbg">
+      <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
+        <div className="max-w-4xl mx-auto px-6 pt-8 md:pt-12">
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-teal-600">
+            <En>The Journey · Stage 03</En>
+            <Ko>호주 여정 · 3단계</Ko>
+          </p>
+        </div>
+      </section>
+      <section className="bg-stone-50 dark:bg-darkbg">
+        <div className="max-w-4xl mx-auto px-6 py-10 md:py-14">
+          <div className="bg-white dark:bg-dark-surface rounded-3xl shadow-xl shadow-stone-900/5 dark:shadow-black/30 p-6 md:p-10 border border-stone-100 dark:border-dark-border">
+            <HomeContent />
+          </div>
         </div>
       </section>
     </div>
