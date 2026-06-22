@@ -108,8 +108,11 @@ export default function ArrivedContent() {
               icon: "🏠",
               en: "Find a permanent place to live",
               ko: "정착할 집 구하기",
-              blurbEn: "Domain and Realestate.com.au are your friends. Inspect 3–5 places before signing. Photos lie. Most newcomers spend 2–4 weeks house hunting before settling.",
-              blurbKo: "Domain과 Realestate.com.au를 활용하세요. 서명 전에 3-5곳을 직접 봅니다. 사진은 거짓말을 합니다. 대부분 2-4주 집을 보고 정착합니다.",
+              blurbEn: "Flatmates.com.au is where most newcomers find their first share house. Naver and Hojunara are the Korean-community listings channels. Inspect 3–5 places before signing. Photos lie. Most newcomers spend 2–4 weeks house hunting before settling.",
+              blurbKo: "대부분의 신참은 flatmates.com.au에서 첫 쉐어하우스를 구합니다. 네이버 부동산과 호주나라는 한인 커뮤니티 매물 채널입니다. 서명 전에 3-5곳을 직접 봅니다. 사진은 거짓말을 합니다. 대부분 2-4주 집을 보고 정착합니다.",
+              href: "/transport",
+              hrefLabelEn: "Once you've picked a suburb — see how to get around →",
+              hrefLabelKo: "동네를 정했다면 — 시드니 이동 방법은 여기 →",
             },
             {
               icon: "📋",
@@ -121,7 +124,7 @@ export default function ArrivedContent() {
           ].map((w, i) => (
             <div
               key={w.en}
-              className={`reveal reveal-delay-${i + 1} p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/50 dark:border-emerald-900/30`}
+              className={`reveal reveal-delay-${i + 1} p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/50 dark:border-emerald-900/30 flex flex-col`}
             >
               <div className="text-2xl mb-2">{w.icon}</div>
               <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
@@ -132,6 +135,15 @@ export default function ArrivedContent() {
                 <En>{w.blurbEn}</En>
                 <Ko>{w.blurbKo}</Ko>
               </p>
+              {w.href && (
+                <Link
+                  href={w.href}
+                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                >
+                  <En>{w.hrefLabelEn}</En>
+                  <Ko>{w.hrefLabelKo}</Ko>
+                </Link>
+              )}
             </div>
           ))}
         </div>
@@ -180,7 +192,6 @@ export default function ArrivedContent() {
             { icon: "📋", en: "Apply for your TFN (tax number)", ko: "TFN(세금번호) 신청", descEn: "Free from ato.gov.au. Without it, your employer withholds tax at the emergency rate — which means a lot less take-home pay. Do it in your first week if you're job hunting.", descKo: "ato.gov.au에서 무료 신청. 없으면 고용주가 긴급 세율로 원천징수 — 실수령액이 크게 줄어듭니다. 구직 중이라면 첫 주에 신청하세요." },
             { icon: "🏥", en: "Sort Medicare and private health", ko: "Medicare 및 민간 보험 정리", descEn: "If you're on a reciprocal visa (UK, NZ, some EU), Medicare covers you. Everyone else needs private cover from day one — it's not optional. Compare at iSelect or choose a fund directly.", descKo: "상호주의 비자(영국, 뉴질랜드, 일부 EU)라면 Medicare 적용. 그 외는 첫날부터 민간 보험 필수 — 선택이 아닙니다. iSelect에서 비교하거나 펀드를 직접 선택하세요." },
             { icon: "🔗", en: "Link MyGov to ATO and Services Australia", ko: "MyGov에 ATO/Services Australia 연동", descEn: "MyGov is the single sign-on for tax, Medicare, Centrelink and more. Set it up once in your first month with two forms of ID — saves you hours later when you actually need it.", descKo: "MyGov는 세금, Medicare, Centrelink 등을 위한 통합 로그인입니다. 첫 달 안에 신분증 두 개로 한 번 설정해두세요 — 나중에 진짜 필요할 때 시간을 크게 절약합니다." },
-            { icon: "👨‍⚕️", en: "Register with a GP near home", ko: "집 근처 GP(일반의) 등록", descEn: "Find a bulk-billing GP within walking distance of where you live. Most popular ones close their books within months of opening — register while you can, not when you're already sick.", descKo: "집에서 걸어갈 수 있는 거리의 bulk-billing GP를 찾으세요. 인기 있는 곳은 개설 후 몇 달 내로 환자 접수를 닫습니다 — 아플 때가 아니라 가능한 빨리 등록하세요." },
           ].map((item, i) => (
             <li key={item.en} className={`reveal reveal-delay-${(i % 5) + 1} flex gap-4 group`}>
               <span className="shrink-0 w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-950/50 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
@@ -266,10 +277,10 @@ export default function ArrivedContent() {
             },
             {
               icon: "🏥",
-              en: "Health sorted, GP on file",
-              ko: "의료 정리, GP 등록",
-              blurbEn: "Medicare or private cover in place, and a local bulk-billing GP registered before you actually need one.",
-              blurbKo: "Medicare 또는 민간 보험 정리, 그리고 진짜 필요해지기 전 가까운 bulk-billing GP에 등록 완료.",
+              en: "Health sorted",
+              ko: "의료 정리",
+              blurbEn: "Medicare or private cover in place. You can sort a GP when you actually need one — most people wait until they're sick, and that's fine too.",
+              blurbKo: "Medicare 또는 민간 보험 정리. GP는 진짜 필요할 때 등록해도 됩니다 — 대부분은 아플 때까지 기다리고, 그것도 괜찮습니다.",
             },
             {
               icon: "🔗",

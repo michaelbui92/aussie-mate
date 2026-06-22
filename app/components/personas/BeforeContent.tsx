@@ -156,8 +156,7 @@ export default function BeforeContent() {
                 key={item.en}
                 className={`reveal reveal-delay-${(i % 5) + 1} flex items-start gap-3 p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sky-500/30 transition-colors`}
               >
-                <span className="shrink-0 w-5 h-5 mt-0.5 rounded border-2 border-sky-500/60 group-hover:border-sky-500 flex items-center justify-center" />
-                <span className="text-sm md:text-base text-stone-700 dark:text-stone-300 leading-snug">
+                <span className="text-sm md:text-base text-stone-700 dark:text-stone-300 leading-snug pl-1">
                   <En>{item.en}</En>
                   <Ko>{item.ko}</Ko>
                 </span>

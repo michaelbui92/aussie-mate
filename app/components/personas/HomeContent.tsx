@@ -47,6 +47,9 @@ export default function HomeContent() {
                 "Sydney's a base, not a destination. Weekend trips, regional NSW, the Red Centre, Tassie, the Reef. Your WHV or student visa is the only one that lets you do this cheaply — use it.",
               blurbKo:
                 "시드니는 거점이지 목적지가 아닙니다. 주말 여행, NSW 지방, 레드 센터, 태즈메이니아, 그레이트 베리어 리프. 워홀이나 학생 비자만이 이렇게 싸게 할 수 있는 시기를 줍니다 — 활용하세요.",
+              href: "/destinations",
+              hrefLabelEn: "See destinations →",
+              hrefLabelKo: "여행지 보러 가기 →",
             },
             {
               icon: "🎓",
@@ -74,11 +77,14 @@ export default function HomeContent() {
                 "Beyond ordering coffee — jokes, subtext, workplace banter. A daily podcast, a book, and one real conversation a day. Six months and you'll feel the difference in every interaction.",
               blurbKo:
                 "커피 주문에서 한 단계 더 — 농담, 함의, 직장 농담. 매일 팟캐스트, 책, 하루 한 번 진짜 대화. 6개월이면 모든 대화가 달라집니다.",
+              href: "/aussie-english",
+              hrefLabelEn: "Open the slang library →",
+              hrefLabelKo: "호주 슬랭 라이브러리 열기 →",
             },
           ].map((w, i) => (
             <div
               key={w.en}
-              className={`reveal reveal-delay-${i + 1} p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-teal-900/20 border border-teal-100/50 dark:border-teal-900/30`}
+              className={`reveal reveal-delay-${i + 1} p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-teal-900/20 border border-teal-100/50 dark:border-teal-900/30 flex flex-col`}
             >
               <div className="text-2xl mb-2">{w.icon}</div>
               <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
@@ -89,6 +95,15 @@ export default function HomeContent() {
                 <En>{w.blurbEn}</En>
                 <Ko>{w.blurbKo}</Ko>
               </p>
+              {w.href && (
+                <Link
+                  href={w.href}
+                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300 transition-colors"
+                >
+                  <En>{w.hrefLabelEn}</En>
+                  <Ko>{w.hrefLabelKo}</Ko>
+                </Link>
+              )}
             </div>
           ))}
         </div>
