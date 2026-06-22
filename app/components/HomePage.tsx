@@ -108,19 +108,15 @@ export default function HomePage() {
           quality={85}
           className="hero-parallax object-cover object-left md:object-center scale-105 will-change-transform"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/50 to-white/80" />
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
-          <p className="text-[11px] md:text-xs font-medium uppercase tracking-[0.35em] text-white/85 mb-6">
-            <En>AussieGuides · Bilingual · AU/KO</En>
-            <Ko>호주 메이트 · 호주 한인을 위한</Ko>
-          </p>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-7 max-w-5xl">
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-stone-900 leading-[0.95] tracking-tight mb-7 max-w-5xl">
             <span className="block">
               <En>안녕하세요 I&apos;m Michael and welcome to my guides</En>
               <Ko>안녕하세요, 마이클입니다. 제 호주 가이드에 오신 것을 환영합니다.</Ko>
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed font-light">
+          <p className="text-base sm:text-lg md:text-xl text-stone-700 max-w-2xl mb-10 leading-relaxed font-light">
             <En>Your bilingual guide to the most beautiful places, the best experiences, and the smartest way to travel Down Under.</En>
             <Ko>호주의 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드립니다.</Ko>
           </p>
@@ -135,7 +131,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/tourist"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full"
+              className="inline-flex items-center justify-center gap-2 bg-stone-900/10 hover:bg-stone-900/20 backdrop-blur-md text-stone-900 border border-stone-900/30 px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full"
             >
               <En>Plan Your Trip</En>
               <Ko>여행 계획 세우기</Ko>
@@ -143,12 +139,12 @@ export default function HomePage() {
           </div>
         </div>
         {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-900/60">
           <span className="text-[10px] uppercase tracking-[0.3em]">
             <En>Scroll</En>
             <Ko>스크롤</Ko>
           </span>
-          <div className="w-px h-10 bg-white/30 animate-pulse" />
+          <div className="w-px h-10 bg-stone-900/30 animate-pulse" />
         </div>
       </section>
 
