@@ -59,6 +59,9 @@ export default function HomeContent() {
                 "If your student visa is going well, look at the 485. If you loved the WHV year, second WHV or regional sponsorship. Partner, PR, citizenship — these all take years. Start the conversation now.",
               blurbKo:
                 "학생 비자가 잘 풀리고 있다면 485 비자를 살펴보세요. 워홀 1년이 좋았다면 두 번째 워홀이나 지방 sponsorship. 파트너 비자, 영주권, 시민권 — 모두 수년이 걸립니다. 지금부터 대화를 시작하세요.",
+              href: "/visa",
+              hrefLabelEn: "See visa options →",
+              hrefLabelKo: "비자 옵션 보기 →",
             },
             {
               icon: "🤝",
@@ -68,6 +71,9 @@ export default function HomeContent() {
                 "Friendships here take longer than back home. Sports clubs, climbing gyms, language exchanges, volunteer groups — pick one and commit for six months. That's how it works.",
               blurbKo:
                 "여기서 우정은 고국보다 오래 걸립니다. 동호회, 클라이밍 짐, 언어교환, 자원봉사 — 하나를 골라 6개월은 꾸준히. 그래야 됩니다.",
+              href: "/resources",
+              hrefLabelEn: "Find your community →",
+              hrefLabelKo: "커뮤니티 찾기 →",
             },
             {
               icon: "🗣️",

@@ -18,6 +18,9 @@ type Checklist = {
   subtitleEn: string;
   subtitleKo: string;
   items: { en: string; ko: string }[];
+  // Optional "read more" link below the items. Used for sections where
+  // a related site page goes deeper than a checklist can cover.
+  link?: { href: string; labelEn: string; labelKo: string };
 };
 
 const checklists: Checklist[] = [
@@ -67,6 +70,11 @@ const checklists: Checklist[] = [
       { en: "Enable Korean carrier roaming as a 24h backup", ko: "24시간 백업용으로 한국 통신사 로밍 활성화" },
       { en: "Download offline maps of Sydney", ko: "시드니 오프라인 지도 다운로드" },
     ],
+    link: {
+      href: "/transport",
+      labelEn: "See how to get around Sydney once you land →",
+      labelKo: "시드니에서 이동하는 법 보기 →",
+    },
   },
   {
     id: "pack",
@@ -163,6 +171,15 @@ export default function BeforeContent() {
               </li>
             ))}
           </ul>
+          {section.link && (
+            <Link
+              href={section.link.href}
+              className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-300 transition-colors"
+            >
+              <En>{section.link.labelEn}</En>
+              <Ko>{section.link.labelKo}</Ko>
+            </Link>
+          )}
         </section>
       ))}
 
