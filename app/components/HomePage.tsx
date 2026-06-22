@@ -108,17 +108,17 @@ export default function HomePage() {
           quality={85}
           className="hero-parallax object-cover object-left md:object-center scale-105 will-change-transform"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/50 to-white/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white/50" />
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-stone-900 leading-[0.95] tracking-tight mb-7 max-w-5xl">
             <span className="block">
-              <En>안녕하세요 I&apos;m Michael and welcome to my guides</En>
-              <Ko>안녕하세요, 마이클입니다. 제 호주 가이드에 오신 것을 환영합니다.</Ko>
+              <En>Aussie Guides to Sydney and beyond</En>
+              <Ko>시드니와 그 너머의 Aussie Guides</Ko>
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-700 max-w-2xl mb-10 leading-relaxed font-light">
-            <En>Your bilingual guide to the most beautiful places, the best experiences, and the smartest way to travel Down Under.</En>
-            <Ko>호주의 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드립니다.</Ko>
+            <En>안녕하세요 I&apos;m Michael and I created this bilingual guide to the most beautiful places, the best experiences, and the smartest way to travel in Sydney.</En>
+            <Ko>안녕하세요, 마이클입니다. 시드니에서 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드리는 bilingual 가이드를 직접 만들었습니다.</Ko>
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
