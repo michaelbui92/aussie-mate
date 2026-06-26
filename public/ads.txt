@@ -1,0 +1,17 @@
+# ads.txt — Authorized Digital Sellers declaration for AussieGuides
+# Format per the IAB Tech Lab spec (https://iabtechlab.com/ads-txt/):
+#   <ad system domain>, <publisher account ID>, <relationship>, <certification authority ID>
+#
+#   Relationship values:
+#     DIRECT — site has a direct contractual relationship with the ad system
+#     RESELLER — site sells inventory through a third-party reseller
+#
+#
+# Google AdSense (publisher of record)
+# ------------------------------------
+# ACTION REQUIRED: replace `ca-pub-0000000000000000` with your actual AdSense
+# publisher ID once AdSense approves youraussieguides.com. The placeholder
+# keeps the file well-formed and reachable so crawlers don't 404, but real
+# ads only serve when the real pub-id is here.
+#
+google.com, ca-pub-0000000000000000, DIRECT, f08c47fec0942fa0

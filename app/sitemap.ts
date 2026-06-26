@@ -32,8 +32,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/other-tools",           priority: 0.6,  changeFrequency: "monthly" },
     { path: "/resources",             priority: 0.7,  changeFrequency: "monthly" },
     { path: "/faq",                   priority: 0.7,  changeFrequency: "monthly" },
+    { path: "/editorial",             priority: 0.5,  changeFrequency: "yearly" },
     { path: "/visa",                  priority: 0.9,  changeFrequency: "monthly" },
-    { path: "/about",                 priority: 0.5,  changeFrequency: "yearly" },
+    { path: "/about",                 priority: 0.7,  changeFrequency: "yearly" },
     { path: "/privacy",               priority: 0.3,  changeFrequency: "yearly"  },
     { path: "/terms",                 priority: 0.3,  changeFrequency: "yearly"  },
   ];
