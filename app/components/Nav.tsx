@@ -90,6 +90,7 @@ const navGroups: NavGroup[] = [
     items: [
       { href: "/resources", label: "Resources" },
       { href: "/other-tools", label: "My Projects" },
+      { href: "/editorial", label: "Editorial standards" },
       { href: "/about", label: "About AussieGuides" },
     ],
   },

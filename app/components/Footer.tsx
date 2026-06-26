@@ -64,6 +64,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/resources" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Resources</En><Ko>자료</Ko></Link></li>
               <li><Link href="/other-tools" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>My Projects</En><Ko>내 프로젝트</Ko></Link></li>
+              <li><Link href="/editorial" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Editorial standards</En><Ko>편집 기준</Ko></Link></li>
               <li><Link href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>About AussieGuides</En><Ko>AussieGuides 소개</Ko></Link></li>
               <li><a href="https://drivewithbui.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors">Drive with Bui →</a></li>
               <li><Link href="/privacy" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En>Privacy</En><Ko>개인정보</Ko></Link></li>
@@ -72,16 +73,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Disclaimer */}
+        {/* Editorial note — visible signal that the content is human-written
+            and reviewed, NOT AI-generated. Previously we carried an
+            "AI-generated may not be accurate" disclaimer which directly
+            contradicted the helpful-content/AdSense signals. Swapped for a
+            positive editorial note. Links to /editorial for full standards. */}
         <div className="bg-stone-100 dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-xl px-4 py-3 text-xs text-stone-500 dark:text-stone-400 mb-6">
           <p className="font-semibold text-sunset mb-1">
-            <En>Disclaimer</En>
-            <Ko>면책 조항</Ko>
+            <En>Editorial note</En>
+            <Ko>편집 노트</Ko>
           </p>
-          <p>
-            <En>Information on this site is AI-generated and may not always be accurate or up to date. Always verify with official government sources.</En>
-            <Ko>이 사이트의 정보는 AI가 생성한 것으로 항상 정확하거나 최신 정보가 아닐 수 있습니다. 반드시 공식 정부 출처를 확인하세요.</Ko>
+          <p className="mb-1">
+            <En>Written and reviewed by a human editor. Information is checked against official Australian government sources before publishing.</En>
+            <Ko>사람 편집자가 직접 작성 및 검토했습니다. 발행 전 호주 정부 공식 출처를 교차 검증합니다.</Ko>
           </p>
+          <Link href="/editorial" className="text-sunset hover:underline font-medium">
+            <En>Read our editorial standards →</En>
+            <Ko>편집 기준 보기 →</Ko>
+          </Link>
         </div>
 
         <div className="flex items-center justify-between flex-wrap gap-2">

@@ -1,0 +1,14 @@
+{
+  "contact_email": "hello@aussiemate.com.au",
+  "contact_website": "https://youraussieguides.com/about",
+  "version": "1.0",
+  "identifiers": [
+    {
+      "name": "Google AdSense",
+      "id": "ca-pub-0000000000000000",
+      "scope": "DIRECT",
+      "tags": ["display", "personalized"]
+    }
+  ],
+  "notes": "ACTION REQUIRED: replace the placeholder AdSense ID with the real publisher ID once AdSense approves youraussieguides.com. Authoritative format reference: https://iabtechlab.com/sellers-json/"
+}

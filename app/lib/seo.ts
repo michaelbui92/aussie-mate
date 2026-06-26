@@ -16,7 +16,48 @@
 //  - One OG image route, one canonical pattern, one place to update copy.
 
 import type { Metadata } from "next";
-import { SITE_URL } from "./site";
+import { SITE_URL, SITE_AUTHOR } from "./site";
+
+/**
+ * Person/Organization schema for the site's named author.
+ * Surface on every page so search engines can attribute content to a real
+ * human + organisation (E-E-A-T signal). Used by the `author` field of
+ * articleLdJson and by the layout-level metadata block.
+ */
+export const authorSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE_AUTHOR.name,
+  url: SITE_AUTHOR.url,
+  jobTitle: SITE_AUTHOR.role,
+  knowsAbout: [
+    "Australian visas",
+    "Korean-Australian community",
+    "Sydney daily life",
+    "Public transport in NSW",
+    "Tax and superannuation in Australia",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "AussieGuides",
+    url: SITE_URL,
+  },
+} as const;
+
+export const publisherSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "AussieGuides",
+  url: SITE_URL,
+  founder: {
+    "@type": "Person",
+    name: SITE_AUTHOR.name,
+    url: SITE_AUTHOR.url,
+  },
+  inLanguage: ["en", "ko"],
+  description:
+    "Bilingual (English / 한국어) Australian-life guide written by a single named editor.",
+} as const;
 
 /**
  * Merge canonical + hreflang into an existing metadata object.
@@ -174,12 +215,13 @@ export function articleLdJson(opts: {
     image: `${SITE_URL}${opts.imagePath ?? "/opengraph-image"}`,
     datePublished: opts.datePublished ?? "2026-01-01",
     dateModified: opts.dateModified ?? new Date().toISOString().slice(0, 10),
-    author: { "@type": "Organization", name: "AussieGuides", url: SITE_URL },
+    // Named-author attribution: every Article block points back at the
+    // same Person schema, so Google can attribute content to a real human
+    // rather than treating each page as anonymous text. E-E-A-T signal.
+    author: { ...authorSchema, "@id": `${SITE_AUTHOR.url}#author` },
     publisher: {
-      "@type": "Organization",
-      name: "AussieGuides",
-      url: SITE_URL,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/opengraph-image` },
+      ...publisherSchema,
+      "@id": `${SITE_URL}#publisher`,
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };

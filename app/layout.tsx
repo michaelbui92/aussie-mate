@@ -6,7 +6,8 @@ import { SearchProvider } from "@/components/SearchModal";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans, fraunces } from "@/lib/fonts";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, SITE_AUTHOR } from "@/lib/site";
+import { authorSchema, publisherSchema } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/react";
 import PageTransition from "@/components/PageTransition";
 import { SearchModal } from "@/components/SearchModal";
@@ -39,8 +40,9 @@ export const metadata: Metadata = {
     "Aussie English slang",
     "Sydney for Koreans",
   ],
-  authors: [{ name: "AussieGuides" }],
-  creator: "AussieGuides",
+  authors: [{ name: SITE_AUTHOR.name, url: SITE_AUTHOR.url }],
+  creator: SITE_AUTHOR.name,
+  publisher: SITE_AUTHOR.name,
   openGraph: {
     type: "website",
     locale: "en_AU",
@@ -119,35 +121,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             crossOrigin="anonymous"
           />
         )}
-        {/* JSON-LD: Organization + WebSite structured data for Google rich results */}
+        {/* JSON-LD: Person (author) + Organization (publisher) + WebSite structured data
+            for Google rich results. The Person block gives Google an explicit named
+            human it can attribute this content to (E-E-A-T signal). */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                name: "AussieGuides",
-                url: SITE_URL,
-                description:
-                  "Bilingual (English / 한국어) guide to Australian daily life for Korean newcomers — students, working holiday makers, and migrants.",
-                inLanguage: ["en", "ko"],
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                name: "AussieGuides",
-                url: SITE_URL,
-                inLanguage: ["en", "ko"],
-                potentialAction: {
-                  "@type": "SearchAction",
-                  target: `${SITE_URL}/search?q={search_term_string}`,
-                  "query-input": "required name=search_term_string",
+            __html: JSON.stringify({
+              ...authorSchema,
+              "@graph": [
+                authorSchema,
+                publisherSchema,
+                {
+                  "@context": "https://schema.org",
+                  "@type": "WebSite",
+                  name: "AussieGuides",
+                  url: SITE_URL,
+                  inLanguage: ["en", "ko"],
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: `${SITE_URL}/search?q={search_term_string}`,
+                    "query-input": "required name=search_term_string",
+                  },
+                  publisher: publisherSchema,
                 },
-              },
-            ]),
+              ],
+            }),
           }}
         />
+        {/* <meta name="author"> — duplicate of the Person schema in plain HTML,
+            so even crawlers that don't execute JSON-LD see a human author. */}
+        <meta name="author" content={SITE_AUTHOR.name} />
+        <link rel="author" href={SITE_AUTHOR.url} />
       </head>
       <body className={`${geistSans.className} bg-stone-50 dark:bg-darkbg text-stone-800 dark:text-stone-200 antialiased`}>
         <ThemeProvider>
