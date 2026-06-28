@@ -57,7 +57,8 @@ export default function EditorialPage() {
             </p>
             <p className="mt-3">
               Where the information is based on personal experience — for
-              example, which suburbs have Korean-speaking GPs — I'll say so
+              example, which suburbs have weekend GP availability or
+              which banks have multilingual staff — I'll say so
               plainly. Where it isn't, I'll link to the official source and
               stop there.
             </p>

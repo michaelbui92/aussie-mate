@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · AussieGuides",
   },
   description:
-    "A bilingual travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — Korean students, working-holiday makers, expats, and English-first travellers. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW in English and 한국어.",
+    "A bilingual (English / 한국어) travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — international students, working-holiday makers, expats, English-first travellers, Australians returning home. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW in English and 한국어.",
   keywords: [
     "Australia travel guide",
     "Sydney travel guide",
@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     "Sydney living costs",
     "Opal card Sydney",
     "TFN Australia",
+    "Sydney guide for Koreans",
     "호주 여행",
     "시드니 가이드",
     "호주 유학",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
     "시드니 부동산",
     "PTE IELTS",
     "Australia guide Korean",
-    "Sydney for Koreans",
+    "Sydney living for newcomers",
   ],
   authors: [{ name: SITE_AUTHOR.name, url: SITE_AUTHOR.url }],
   creator: SITE_AUTHOR.name,
@@ -67,16 +68,16 @@ export const metadata: Metadata = {
     locale: "en_AU",
     url: SITE_URL,
     siteName: "AussieGuides",
-    title: "AussieGuides — 호주 생활 가이드 (한국어/English)",
+    title: "AussieGuides — Travel & Living Guide for Sydney and NSW (English / 한국어)",
     description:
-      "한국인을 위한 호주 생활 가이드 — 은행, 세금, 직장, 부동산, 호주 영어 슬랭까지.",
+      "A bilingual (English / 한국어) guide to Australian daily life — for anyone new here, written by an Australian-born Sydneysider.",
     // images is auto-populated by app/opengraph-image.tsx (1200x630 PNG
     // generated at build time). No need to set it explicitly.
   },
   twitter: {
     card: "summary_large_image",
-    title: "AussieGuides — 호주 생활 가이드",
-    description: "한국인을 위한 호주 생활 가이드. 한국어/English.",
+    title: "AussieGuides — Travel & Living Guide for Sydney and NSW",
+    description: "A bilingual (English / 한국어) guide to Australian daily life.",
   },
   robots: {
     index: true,

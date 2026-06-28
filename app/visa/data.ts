@@ -1,4 +1,4 @@
-// Bilingual visa guide data — Korean visitors to Australia
+// Bilingual visa guide data — for any visitor to Australia.
 // General information only. Not immigration advice.
 // Verify all details at the Department of Home Affairs: https://immi.homeaffairs.gov.au/
 // For advice, consult a registered MARA agent: https://www.mara.gov.au/
@@ -38,7 +38,7 @@ export const visas: Visa[] = [
       ko: "최대 1년간 호주에서 여행과 일을 함께 즐기고 싶은 청년(18–30세, 일부 국적은 35세)을 위한 비자입니다.",
     },
     audience: {
-      en: "Korean citizens aged 18–30 (or 35 for select nationalities) holding a valid Korean passport.",
+      en: "Holders of eligible Working Holiday passports (Korea is one of around 19 participating countries) aged 18–30 at application — 35 for some nationalities. Check the Home Affairs tool below for your specific case.",
       ko: "유효한 한국 여권을 소지한 18–30세(일부 국적 35세) 한국 국민.",
     },
     duration: {
@@ -175,7 +175,7 @@ export const visas: Visa[] = [
       ko: "호주의 정규 교육기관(대학교, VET, 학교, 어학연수 등)에서 전일제 과정을 수강하는 유학생을 위한 비자입니다.",
     },
     audience: {
-      en: "International students accepted into a registered course of study in Australia. Korean applicants must satisfy GTE (Genuine Temporary Entrant) requirements.",
+      en: "Holders of an offer of full-time study from a CRICOS-registered course in Australia. All applicants must satisfy GTE (Genuine Temporary Entrant) requirements — that is true regardless of passport.",
       ko: "호주의 등록된 교육과정에 합격한 유학생. 한국 신청자는 GTE(진정 일시 입국자) 요건을 충족해야 함.",
     },
     duration: {
@@ -586,11 +586,11 @@ export const visas: Visa[] = [
       ko: "방문자 비자 (서브클래스 600/601/651)",
     },
     tagline: {
-      en: "Short-stay visas for tourism, visiting family, or short business trips. Korean citizens often use eVisitor (651) for short visits.",
+      en: "Short-stay visas for tourism, visiting family, or short business trips. eVisitor (651) is available to many European and select Asia-Pacific passport holders for short visits — check your passport on the Home Affairs tool below.",
       ko: "관광·가족 방문·단기 출장을 위한 단기 체류 비자. 한국인은 단기 방문 시 eVisitor(651) 자주 이용.",
     },
     audience: {
-      en: "Tourists, family visitors, and short-term business travellers. Korean passport holders can use eVisitor (651) for up to 90 days per visit, or Visitor visa (600) for longer or multiple-entry stays.",
+      en: "Tourists, family visitors, and short-term business travellers. The right subclass depends on your passport — passport holders from the EU, UK, USA, Canada, Korea, Japan, Singapore, and many more are eligible for either eVisitor (651) for short visits (typically up to 90 days per visit) or Visitor visa (600) for longer or multiple-entry stays.",
       ko: "관광객, 가족 방문객, 단기 출장자. 한국 여권 소지자는 1회 최대 90일 eVisitor(651) 또는 장기/복수 입국 시 Visitor 비자(600) 이용 가능.",
     },
     duration: {
@@ -627,7 +627,7 @@ export const visas: Visa[] = [
         ko: "건강·신원 요건 충족 (체류 기간·국적에 따라 상이).",
       },
       {
-        en: "651: must be outside Australia and hold an eligible passport (Korea is eligible).",
+        en: "651: must be outside Australia and hold an eligible passport (check the tool linked above — many EU, UK, US, and APEC passport holders qualify, alongside Korean and other Asian passports).",
         ko: "651: 호주境外에 있으며 대상국(한국 포함) 여권 소지.",
       },
     ],

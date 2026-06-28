@@ -15,9 +15,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/finance"),
-  title: "Finance & banking — 호주 은행, TFN, 세금 신고, 퇴직연금",
+  title: "Finance & banking in Australia — AussieGuides (English / 한국어)",
   description:
-    "호주에서 돈과 관련된 모든 것 — 4대 은행(CBA, Westpac, ANZ, NAB) 계좌 개설, TFN 신청, 퇴직연금(Super) 안내, 세금 신고(tax return) 방법, 시드니 생활비 팁까지 한국어로 정리.",
+    "Open a bank account, apply for a TFN, claim superannuation, lodge a tax return — practical money and banking essentials in Australia for anyone new to the country.",
   },
   "/finance"
 );
@@ -37,7 +37,7 @@ const sections: FinanceSection[] = [
     koDesc: "계좌 개설, 수수료 이해, 송금",
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80",
     items: [
-      { label: "Major Banks", en: "The four big banks are: Commonwealth Bank (CBA), Westpac, ANZ, and NAB. All have international student packages with low or no monthly fees. Most have Korean-speaking staff or 24/7 phone banking in multiple languages.", ko: "4대 은행은 Commonwealth Bank(CBA), Westpac, ANZ, NAB입니다. 모두 국제 학생 전용 패키지로 월 수수료가 없거나 낮은 계정을 제공합니다. 대부분 한국어 서비스 직원이나 다국어 전화 뱅킹을 제공합니다." },
+      { label: "Major Banks", en: "The four big banks are: Commonwealth Bank (CBA), Westpac, ANZ, and NAB. All have international student packages with low or no monthly fees. Most have multilingual support — 24/7 phone banking is available in many languages, and the largest branches have staff who can help in-language.", ko: "4대 은행은 Commonwealth Bank(CBA), Westpac, ANZ, NAB입니다. 모두 국제 학생 전용 패키지로 월 수수료가 없거나 낮은 계정을 제공합니다. 대부분 한국어 서비스 직원이나 다국어 전화 뱅킹을 제공합니다." },
       { label: "How to Open an Account", en: "You can open an account before you arrive using the bank's website, or walk into any branch with your passport and visa (or bring your passport and a tenancy agreement as ID proof). It takes about 20 minutes. You'll get a debit card in 3-5 business days by mail.", ko: "도착 전에 은행 웹사이트에서 계좌를 열거나, 여권과 비자(또는 여권과 임대차 계약서)를 지니고 지점에 방문하면 됩니다. 약 20분이 소요됩니다. 직불 카드는 영업일 기준 3~5일 안에 우편으로 배달됩니다." },
       { label: "BSB and Account Number", en: "Every Australian bank account has two identifying numbers: BSB (6 digits — identifies the bank and branch) and Account Number (8 digits). You need both to receive transfers or set up salary payments. This is like Korea's 은행코드+계좌번호.", ko: "모든 호주 은행 계좌에는 BSB(6자리 — 은행과 지점 식별)와 계좌번호(8자리)가 있습니다. 송금이나 급여 설정 시 두 개가 모두 필요합니다. 한국의 은행코드+계좌번호와 비슷합니다." },
       { label: "Debit vs Credit Cards", en: "Most students get a debit card linked directly to their account (no credit). You can use it anywhere Visa/Mastercard is accepted. Some banks offer credit cards if you're over 18 and have regular income — but you don't need one.", ko: "대부분의 학생들은 계좌에 직접 연결된 직불 카드를 받습니다(신용 없음). Visa/Mastercard가 허용되는 곳이면 어디서든 사용할 수 있습니다. 일부 은행은 18세 이상에 정기 소득이 있으면 신용카드를 제공하지만, 필요하지 않습니다." },
@@ -177,9 +177,9 @@ export default function FinancePage() {
           __html: JSON.stringify(
             articleLdJson({
               path: "finance",
-              headline: "Finance & banking in Australia — a Korean newcomer's guide",
+              headline: "Finance & banking in Australia for newcomers",
               description:
-                "호주에서 돈과 관련된 모든 것 — 4대 은행 계좌 개설, TFN 신청, 퇴직연금(Super), 세금 신고(tax return), 시드니 생활비.",
+                "Open a bank account, apply for a TFN, claim superannuation, lodge a tax return — practical money and banking essentials in Australia.",
             })
           ),
         }}

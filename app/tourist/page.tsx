@@ -193,7 +193,7 @@ export default function TouristPage() {
                 <En>Do I need a visa?</En><Ko>비자가 필요한가요?</Ko>
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                <En>Korean passport holders need an ETA, eVisitor, or visitor visa before flying. Apply online before you book flights — see the{" "}
+                <En>Most passport holders need an ETA, eVisitor, or visitor visa before flying. Apply online before you book flights — see the{" "}
                   <Link href="/visa" className="text-sunset font-medium hover:underline">Visa Guide</Link> for the full breakdown by trip length.
                 </En>
                 <Ko>한국 여행자는 비행기 탑승 전 ETA, eVisitor 또는 방문 비자가 필요합니다. 항공권 예약 전에 온라인으로 신청하세요. 자세한 내용은{" "}
@@ -256,7 +256,7 @@ export default function TouristPage() {
           __html: JSON.stringify(
             articleLdJson({
               path: "tourist",
-              headline: "Sydney tourist guide — top sights, safety, apps for Korean visitors",
+              headline: "Sydney tourist guide — top sights, safety, apps and first-timer essentials",
               description:
                 "시드니 관광 가이드 — 블루마운틴, 본다이, 오페라 하우스, 페리, 와이프, 식당, 교통패스, 숙소, 예산까지 한국인이 시드니를 처음 방문할 때 알아야 할 모든 것.",
             })
@@ -270,9 +270,10 @@ export default function TouristPage() {
             faqLdJson(
               [
                 {
-                  q: { en: "Do I need a visa to visit Australia as a Korean citizen?" },
+                  q: { en: "Do I need a visa to visit Australia?", ko: "호주 방문에 비자가 필요한가요?" },
                   a: {
-                    en: "Yes. Korean passport holders need an ETA, eVisitor, or visitor visa before flying to Australia. Apply online before you book flights.",
+                    en: "Almost always. Most passport holders — Korean, American, British, European, most others — need an ETA, eVisitor, or visitor visa before flying. Apply online before you book flights.",
+                    ko: "네, 한국 여행자는 비행기 탑승 전 ETA, eVisitor 또는 방문 비자가 필요합니다.",
                   },
                 },
                 {

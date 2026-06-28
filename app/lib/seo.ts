@@ -4,7 +4,7 @@
 //
 //   export const metadata = {
 //     ...seoFor("/visa"),
-//     title: "Australian Visa Guide for Koreans",
+//     title: "Australian Visa Guide",
 //     description: "..."
 //   };
 //
@@ -32,7 +32,7 @@ export const authorSchema = {
   jobTitle: SITE_AUTHOR.role,
   knowsAbout: [
     "Australian visas",
-    "Korean-Australian community",
+    "Multilingual community support in NSW",
     "Sydney daily life",
     "Public transport in NSW",
     "Tax and superannuation in Australia",

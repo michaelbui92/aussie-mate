@@ -160,7 +160,7 @@ const sections: AccordionSection[] = [
       },
       {
         label: "Bulk Billing Clinics (벌크 빌링 의원)",
-        en: "A 'bulk billing' clinic means the doctor bills Medicare directly and you pay nothing out of pocket. You must have a valid Medicare card to use bulk billing. Search 'bulk billing GP near me' to find clinics. Many clinics in areas with large Korean populations (Strathfield, Campsie, Lidcombe) have Korean-speaking doctors.",
+        en: "A 'bulk billing' clinic means the doctor bills Medicare directly and you pay nothing out of pocket. You must have a valid Medicare card to use bulk billing. Search 'bulk billing GP near me' to find clinics. Many large branches in Sydney have multilingual staff — Strathfield, Campsie, and Lidcombe are well-known pockets for Korean-speaking doctors, while suburbs like Hurstville and Parramatta have Mandarin- and Cantonese-speaking staff.",
         ko: "'벌크 빌링' 의원은 의사가 메디케어에 직접 청구하므로 본인 부담금이 없습니다. 벌크 빌링을 이용하려면 유효한 메디케어 카드가 있어야 합니다. 'bulk billing GP near me'를 검색해 의원을 찾으세요. 한인 밀집 지역(Strathfield, Campsie, Lidcombe)의 많은 의원에는 한국어 구사 의사가 있습니다.",
         url: "https://www.healthdirect.gov.au/bulk-billing",
         urlLabel: "healthdirect.gov.au",
