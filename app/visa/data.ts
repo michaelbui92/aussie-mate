@@ -693,7 +693,7 @@ export const visas: Visa[] = [
     ],
     nextSteps: {
       en: "Pick the right subclass (651 for short, 600 for longer), apply online via ImmiAccount, and carry supporting documents when you travel.",
-      ko: "서브클래스(단기는 651, 장기는 600)를 정하고 ImmiAccount로 온라인 신청한 뒤, 여행 시 관련 서류를随身 지참하세요.",
+      ko: "서브클래스(단기는 651, 장기는 600)를 정하고 ImmiAccount로 온라인 신청한 뒤, 여행 시 관련 서류를휴대하세요.",
     },
     links: [
       {

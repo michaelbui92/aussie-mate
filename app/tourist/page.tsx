@@ -324,7 +324,7 @@ export default function TouristPage() {
             title: { en: "Where to stay", ko: "어디에 머물까" },
             description: {
               en: "CBD convenience vs beach suburb calm. Best areas by trip type.",
-              ko: "CBD의便利 vs 해변 교외의 평온. 여행 유형별 최적 지역.",
+              ko: "CBD의편의 vs 해변 교외의 평온. 여행 유형별 최적 지역.",
             },
           },
           {
