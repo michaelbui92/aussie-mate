@@ -17,16 +17,36 @@ import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  // Title flipped to English-first per the 2026-06-28 audience review:
+  // Vercel analytics showed significant American traffic and the prior
+  // Korean-led title was a soft signal to Google that the page was for
+  // Korean readers only. English-first here, with 한국어 as the alt.
   title: {
-    default: "AussieGuides — 호주 생활 가이드 (한국어/English)",
+    default: "AussieGuides — Travel & Living Guide for Sydney and NSW (English / 한국어)",
     template: "%s · AussieGuides",
   },
   description:
-    "한국인 유학생과 워홀러를 위한 호주 생활 가이드. 오팔 카드, 은행 계좌, 세금 신고(TFN), 퇴직연금(Super), 부동산, 직장 문화, 호주 영어 슬랭까지 — 한국어와 영어로 정리했습니다.",
+    "A bilingual travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — Korean students, working-holiday makers, expats, and English-first travellers. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW in English and 한국어.",
   keywords: [
+    "Australia travel guide",
+    "Sydney travel guide",
+    "Sydney for international visitors",
+    "moving to Sydney",
+    "Australia for beginners",
+    "Aussie English slang",
+    "Australian slang explained",
+    "Sydney destinations",
+    "Blue Mountains day trip",
+    "Byron Bay guide",
+    "Australian visa guide",
+    "Australian working holiday",
+    "Sydney living costs",
+    "Opal card Sydney",
+    "TFN Australia",
+    "호주 여행",
+    "시드니 가이드",
     "호주 유학",
     "호주 워홀",
-    "시드니 가이드",
     "호주 영어",
     "호주 슬랭",
     "오팔 카드",
@@ -37,7 +57,6 @@ export const metadata: Metadata = {
     "시드니 부동산",
     "PTE IELTS",
     "Australia guide Korean",
-    "Aussie English slang",
     "Sydney for Koreans",
   ],
   authors: [{ name: SITE_AUTHOR.name, url: SITE_AUTHOR.url }],
@@ -87,7 +106,13 @@ export const viewport: Viewport = {
 };
 
 // Blocking script: apply stored theme + language before first paint
-// to prevent flash of light theme / English content (issue #5)
+// to prevent flash of light theme / English content (issue #5).
+//
+// Language auto-detect (2026-06-28 review): a first-time visitor with no
+// localStorage entry is shown Korean ONLY if their browser reports ko as
+// the primary language. Anyone else (EN-first visitors, Americans,
+// Europeans, expats) lands on English immediately. The lang blocks then
+// render that language without a flash on hydration.
 const themeInitScript = `
 (function() {
   try {
@@ -95,7 +120,20 @@ const themeInitScript = `
     var d = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (d) document.documentElement.classList.add('dark');
     var l = localStorage.getItem('aussiemate-lang');
-    if (!l && navigator.language && navigator.language.indexOf('ko') === 0) l = 'ko';
+    if (!l) {
+      // Check both navigator.language (string) and navigator.languages
+      // (priority list) so a bilingual browser with ko anywhere in the
+      // list picks Korean, not English.
+      var langs = (navigator.languages && navigator.languages.length)
+        ? navigator.languages
+        : [navigator.language];
+      var detected = 'en';
+      for (var i = 0; i < langs.length; i++) {
+        if (langs[i] && langs[i].indexOf('ko') === 0) { detected = 'ko'; break; }
+      }
+      l = detected;
+      localStorage.setItem('aussiemate-lang', l);
+    }
     if (l === 'ko') document.documentElement.lang = 'ko';
   } catch (e) {}
 })();

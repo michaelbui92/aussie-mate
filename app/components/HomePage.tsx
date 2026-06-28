@@ -124,7 +124,7 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed font-light">
-            <En>안녕하세요 I&apos;m Michael and I created this bilingual guide to the most beautiful places, the best experiences, and the smartest way to travel in Sydney.</En>
+            <En>Hi, I&apos;m Michael. I built this guide for anyone planning time in Sydney — first-time visitors, students, working-holiday makers, and anyone curious about how Australia actually works. Pick a destination below, or jump into the topics that matter most to you.</En>
             <Ko>안녕하세요, 마이클입니다. 시드니에서 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드리는 bilingual 가이드를 직접 만들었습니다.</Ko>
           </p>
           <div className="flex flex-col sm:flex-row gap-3">

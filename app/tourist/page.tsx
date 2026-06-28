@@ -14,9 +14,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/tourist"),
-  title: "Tourist & travel — 시드니 여행 가이드",
+  title: "Sydney Travel Guide — Tourist & Visitor Essentials",
   description:
-    "시드니 여행 가이드 — 블루마운틴, 본다이, 오페라 하우스, 페리, 와이프, 식당, 교통패스, 숙소, 예산까지 한국인이 시드니를 처음 방문할 때 알아야 할 모든 것.",
+    "Sydney travel essentials for international visitors and first-timers — top sights, beach safety, what to budget, bush and park safety, and the apps that make getting around easier. English and 한국어.",
   },
   "/tourist"
 );

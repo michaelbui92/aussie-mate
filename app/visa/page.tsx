@@ -9,9 +9,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/visa"),
-  title: "Australian Visa Guide for Koreans — AussieGuides",
+  title: "Australian Visa Guide — AussieGuides (English / 한국어)",
   description:
-    "Plain-English (and Korean) overview of Australia's main visa subclasses for Korean visitors and migrants: 417 Working Holiday, 500 Student, 189/190 Skilled, 820/801 Partner, and 600/601/651 Visitor.",
+    "Bilingual overview of Australia's main visa subclasses for anyone moving to or visiting Australia — 417 Working Holiday, 500 Student, 189/190 Skilled, 820/801 Partner, and 600/601/651 Visitor. English and 한국어 side by side.",
   },
   "/visa"
 );
@@ -56,8 +56,12 @@ export default function VisaHub() {
           </h1>
           <p className="font-serif text-lg md:text-xl text-stone-700 dark:text-stone-300 max-w-2xl leading-relaxed mb-8">
             <En>
-              The five visa subclasses most Korean visitors, students, workers,
-              and partners encounter. Plain English and 한국어 side by side.
+              The five visa subclasses most visitors, students, workers, and
+              partners encounter when planning time in Australia — from a
+              short trip to permanent residency. Every visa below is valid
+              for many nationalities; if you are checking on behalf of a
+              specific passport, confirm your eligibility on the Home Affairs
+              tool linked below. Plain English and 한국어 side by side.
             </En>
             <Ko>
               한국인 방문자, 유학생, 직장인, 파트너가 가장 자주 접하는 다섯 가지
