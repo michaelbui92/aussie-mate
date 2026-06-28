@@ -17,8 +17,8 @@ export default function Footer() {
               <span className="font-serif text-lg text-stone-900 dark:text-stone-100">AussieGuides</span>
             </Link>
             <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed max-w-xs">
-              <En>A bilingual guide for Korean visitors to Sydney and NSW. Made for everyone new to Australia.</En>
-              <Ko>시드니와 NSW를 방문하는 한국인을 위한 바이링구얼 가이드. 호주에 처음 오시는 모든 분들을 위해.</Ko>
+              <En>A bilingual (English / 한국어) guide to Australian daily life — for anyone new here, regardless of where you&apos;re coming from.</En>
+              <Ko>호주 일상 생활에 대한 바이링구얼(영어/한국어) 가이드 — 어디서 오신 분이든 호주를 처음 접하시는 모든 분들을 위해.</Ko>
             </p>
           </div>
 
@@ -77,7 +77,9 @@ export default function Footer() {
             and reviewed, NOT AI-generated. Previously we carried an
             "AI-generated may not be accurate" disclaimer which directly
             contradicted the helpful-content/AdSense signals. Swapped for a
-            positive editorial note. Links to /editorial for full standards. */}
+            positive editorial note. Links to /editorial for full standards.
+            Email contact now lives here too (since the editorial page
+            contact was rewritten to email Michael directly). */}
         <div className="bg-stone-100 dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-xl px-4 py-3 text-xs text-stone-500 dark:text-stone-400 mb-6">
           <p className="font-semibold text-sunset mb-1">
             <En>Editorial note</En>
@@ -86,6 +88,15 @@ export default function Footer() {
           <p className="mb-1">
             <En>Written and reviewed by a human editor. Information is checked against official Australian government sources before publishing.</En>
             <Ko>사람 편집자가 직접 작성 및 검토했습니다. 발행 전 호주 정부 공식 출처를 교차 검증합니다.</Ko>
+          </p>
+          <p className="mb-2">
+            <En>Spotted an error? Email </En>
+            <Ko>오류를 발견하셨나요? </Ko>
+            <a href="mailto:michaelbui@outlook.com.au" className="text-sunset hover:underline font-medium">
+              michaelbui@outlook.com.au
+            </a>
+            <En> — thank you.</En>
+            <Ko> — 감사합니다.</Ko>
           </p>
           <Link href="/editorial" className="text-sunset hover:underline font-medium">
             <En>Read our editorial standards →</En>

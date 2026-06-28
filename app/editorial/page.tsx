@@ -177,19 +177,22 @@ export default function EditorialPage() {
           </h2>
           <En>
             <p>
-              If you spot something that's wrong, outdated, or missing —
-              whether it's a price that's moved on, a train station that
-              closed, or a Korean phrase that's been translated incorrectly —
-              please tell me. Corrections are welcome, attribution is given
-              when wanted, and the page is updated promptly.
+              If you spot something that's wrong, outdated, or missing — whether
+              it's a price that's moved on, a train station that closed, or a
+              Korean phrase that's been translated incorrectly — please tell me.
+              Corrections are welcome, attribution is given when wanted, and
+              the page is updated promptly.
             </p>
             <p className="mt-3">
-              The fastest route is the{" "}
-              <a href="/about" className="text-sunset underline">
-                About page contact form
-              </a>{" "}
-              — it goes to a personal inbox rather than a support queue. Or
-              open a GitHub issue on{" "}
+              The fastest route is email:{" "}
+              <a
+                href="mailto:michaelbui@outlook.com.au"
+                className="text-sunset underline"
+              >
+                michaelbui@outlook.com.au
+              </a>
+              . It goes to a personal inbox rather than a support queue. You
+              can also open a GitHub issue on{" "}
               <a
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
@@ -205,14 +208,17 @@ export default function EditorialPage() {
             <p>
               잘못된 부분, 변경된 부분, 빠진 부분을 발견하셨다면 알려주세요 —
               변경된 가격, 폐쇄된 역, 잘못 번역된 한국어 표현 모두. 수정 의견은
-              환영하며, 원하시면 크레딧을 표기하고, 페이지는 빠르게 업데이트합니다.
+              환영하며, 원하시면 크레딧을 표기하고 페이지는 빠르게 업데이트합니다.
             </p>
             <p className="mt-3">
-              가장 빠른 경로는{" "}
-              <a href="/about" className="text-sunset underline">
-                소개 페이지 문의 양식
+              가장 빠른 경로는 이메일입니다:{" "}
+              <a
+                href="mailto:michaelbui@outlook.com.au"
+                className="text-sunset underline"
+              >
+                michaelbui@outlook.com.au
               </a>
-              입니다 — support 큐가 아닌 개인 inbox로 전달됩니다. 또는{" "}
+              . support 큐가 아닌 개인 inbox로 전달됩니다. 또는{" "}
               <a
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"

@@ -15,7 +15,7 @@ export const faqs: FaqItem[] = [
   {
     q: { en: "Do I need a visa to visit Australia?", ko: "호주 방문에 비자가 필요한가요?" },
     a: {
-      en: "Yes, almost certainly. Korean passport holders need a visa for Australia. Tourist visa (ETA subclass 601) is the easiest — it takes minutes to apply online and is valid for 12 months with stays up to 3 months per visit. Working Holiday Maker visa (subclass 417) if you're eligible. Check at homeaffairs.gov.au.",
+      en: "Almost always, yes. Australia requires most passport holders to have a visa — only New Zealand citizens enter visa-free. The easiest starting point for a short trip is the ETA (subclass 601), which you can apply for online in minutes and is valid for 12 months with stays up to 3 months per visit. Eligibility and fees depend on your passport — whether you're visiting from Korea, the US, the UK, Europe, or anywhere else, the same rule applies: check your specific case on homeaffairs.gov.au before you book flights. Longer stays, work, and study each have their own subclasses — the visa guide walks through the main five.",
       ko: "네, 거의 확실히 필요합니다. 한국 여권 소지자는 호주 비자가 필요합니다. Tourist visa (ETA subclass 601)가 가장 간단 — 온라인으로 몇 분 만에 신청 가능, 12개월 유효, 1회 방문 시 최대 3개월 체류. 워킹 홀리데이 비자(subclass 417)는 eligibility가 되면 가능. homeaffairs.gov.au에서 확인하세요.",
     },
   },
