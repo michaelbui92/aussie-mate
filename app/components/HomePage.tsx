@@ -6,6 +6,8 @@ import { En, Ko } from "@/components/LangBlocks";
 import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
 import { destinations } from "@/destinations/data";
+import { topHomepageFaqs } from "@/lib/faqs";
+import { topHomepageExperiences } from "@/experiences/data";
 
 // Homepage restructured: persona selector moved to /journey (now a
 // dedicated page with three sub-routes). The homepage is now: hero →
@@ -74,40 +76,23 @@ export default function HomePage() {
 
   // Editorial palette
   const heroImg = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=2400&q=85"; // Sydney Opera House at dusk
-  const remainingDestinations = destinations.filter(
-    (d) => d.slug === "blue-mountains" || d.slug === "south-coast" || d.slug === "jervis-bay"
+  // Six destinations on the home row — spans day/weekend/longer to give
+  // a balanced first impression of what the site covers. Sydney Harbour
+  // is the must-include (most recognised Sydney thing).
+  const remainingDestinations = destinations.filter((d) =>
+    [
+      "sydney-harbour",
+      "blue-mountains",
+      "hunter-valley",
+      "jervis-bay",
+      "south-coast",
+      "byron-bay",
+    ].includes(d.slug)
   );
-  // Top 3 experiences to surface on the homepage. Mirrors the cards in
-  // app/experiences/page.tsx — keep these in sync if the home row changes.
-  const topExperiences = [
-    {
-      slug: "beaches",
-      title: "Beaches",
-      koTitle: "해변",
-      blurb: "Bondi, Manly, ocean pools & coastal walks.",
-      koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.",
-      cardImg: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-      href: "/experiences/beaches",
-    },
-    {
-      slug: "wildlife",
-      title: "Wildlife",
-      koTitle: "야생동물",
-      blurb: "Taronga Zoo, national parks & wild encounters.",
-      koBlurb: "타롱가 동물원, 국립공원, 야생 동물 만남.",
-      cardImg: "/kangaroo.jpg",
-      href: "/experiences/wildlife",
-    },
-    {
-      slug: "food",
-      title: "Food & Wine",
-      koTitle: "식음료",
-      blurb: "Newtown eats, diverse cuisines & Sydney's best bites.",
-      koBlurb: "뉴타운 맛집, 다양한 음식 문화, 시드니 최고의 맛.",
-      cardImg: "https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-      href: "/experiences/food",
-    },
-  ];
+  // Top 3 experiences shown on the homepage. Driven centrally from
+  // /experiences/data.ts so home and hub stay in sync automatically
+  // when a theme is added or reordered.
+  const topExperiences = topHomepageExperiences;
 
   return (
     <div className="bg-stone-50 dark:bg-darkbg">
@@ -325,7 +310,7 @@ export default function HomePage() {
                 className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
               >
                 <img
-                  src={e.cardImg}
+                  src={e.heroImg}
                   alt={e.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -361,6 +346,86 @@ export default function HomePage() {
       </section>
 
       <AdSlot format="horizontal" />
+
+      {/* ============================ TOP FAQs (T6) ============================
+          Pulls the three highest-leverage visitor questions from /faq so
+          first-time visitors see the depth without leaving the home.
+          Data is shared via app/lib/faqs.ts — single source of truth. */}
+      <section className="bg-stone-50 dark:bg-darkbg border-t border-stone-200/60 dark:border-dark-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+          <div className="flex items-end justify-between mb-8 reveal">
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+                <En>Common questions</En>
+                <Ko>자주 묻는 질문</Ko>
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100">
+                <En>Before you book</En>
+                <Ko>예약 전에</Ko>
+              </h2>
+            </div>
+            <Link
+              href="/faq"
+              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+            >
+              <En>See all questions</En>
+              <Ko>전체 질문 보기</Ko>
+              <span>→</span>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
+            {topHomepageFaqs.map((faq, i) => (
+              <Link
+                key={i}
+                href="/faq"
+                className={`reveal reveal-delay-${(i % 5) + 1} block p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all h-full`}
+              >
+                <p className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-2 leading-snug">
+                  <En>{faq.q.en}</En>
+                  <Ko>{faq.q.ko}</Ko>
+                </p>
+                <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+                  <En>{faq.a.en}</En>
+                  <Ko>{faq.a.ko}</Ko>
+                </p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+            >
+              <En>Read more FAQs</En>
+              <Ko>더 많은 질문 보기</Ko>
+              <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================ EDITORIAL NOTE (H3) ============================
+          Last-reviewed signal — strengthens E-E-A-T and the helpful-content
+          signal that surfaces this site as human-written on first paint.
+          Aligns with the AdSense + helpful-content compliance pattern. */}
+      <section className="bg-white dark:bg-dark-surface border-t border-stone-200/60 dark:border-dark-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap items-center justify-center gap-3 text-xs text-stone-500 dark:text-stone-400">
+          <span>
+            <En>Written and reviewed by Michael Bui</En>
+            <Ko>작성·검토: Michael Bui</Ko>
+          </span>
+          <span aria-hidden="true">·</span>
+          <span>
+            <En>Last reviewed: 28 June 2026</En>
+            <Ko>최종 검토: 2026년 6월 28일</Ko>
+          </span>
+          <span aria-hidden="true">·</span>
+          <Link href="/editorial" className="text-sunset hover:underline font-medium">
+            <En>Editorial standards</En>
+            <Ko>편집 기준</Ko>
+          </Link>
+        </div>
+      </section>
 
       <SearchModal />
     </div>

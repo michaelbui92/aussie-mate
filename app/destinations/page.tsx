@@ -3,9 +3,11 @@ import { destinations } from "./data";
 import { En, Ko } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
+import TripLengthFilter from "@/components/TripLengthFilter";
 
-// How far / how long — the user's #1 question after "where?". Drives the
-// filter pills below.
+// Trip-length filter — picked from data shape + sticky nav layout.
+// Mirrors the order used by the new TripLengthFilter client component
+// (which highlights the active pill as the user scrolls).
 type TripLength = "weekend" | "day" | "longer" | "far";
 const TRIP_LABELS: Record<TripLength, { en: string; ko: string; hint: { en: string; ko: string } }> = {
   weekend: { en: "Weekend trip", ko: "주말 여행", hint: { en: "2–3 hours from Sydney", ko: "시드니에서 2~3시간" } },
@@ -47,27 +49,22 @@ export default function DestinationsPage() {
         </div>
       </header>
 
-      {/* Trip-length filter chips — links to anchors below for quick scanning */}
+      {/* Trip-count + destination count band — sets expectation for the
+          scroll time ahead. */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-2">
+        <p className="text-xs text-stone-500 dark:text-stone-400">
+          <En>{destinations.length} places to explore — scroll or use the filter above.</En>
+          <Ko>{destinations.length}곳의 여행지 — 스크롤하거나 위 필터를 사용하세요.</Ko>
+        </p>
+      </div>
+
+      {/* Trip-length filter chips — sticky, with active-pill indicator
+          driven by IntersectionObserver (see TripLengthFilter.tsx). */}
       <nav
         aria-label="Filter destinations by trip length"
-        className="border-b border-stone-200/60 dark:border-dark-border bg-white/60 dark:bg-dark-surface/60 backdrop-blur sticky top-0 z-10"
+        className="border-y border-stone-200/60 dark:border-dark-border bg-white/60 dark:bg-dark-surface/60 backdrop-blur sticky top-0 z-10"
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-2 overflow-x-auto">
-          <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 shrink-0 mr-1">
-            <En>Trip</En>
-            <Ko>일정</Ko>
-          </span>
-          {TRIP_ORDER.map((len) => (
-            <a
-              key={len}
-              href={`#${len}`}
-              className="shrink-0 inline-flex items-center gap-1.5 px-3 h-9 rounded-full bg-stone-100 dark:bg-darkbg text-stone-700 dark:text-stone-300 text-xs font-medium hover:bg-sunset hover:text-white transition-colors"
-            >
-              <En>{TRIP_LABELS[len].en}</En>
-              <Ko>{TRIP_LABELS[len].ko}</Ko>
-            </a>
-          ))}
-        </div>
+        <TripLengthFilter />
       </nav>
 
       {/* Destination grid — grouped by trip length */}

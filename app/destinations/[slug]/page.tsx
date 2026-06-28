@@ -4,6 +4,27 @@ import { En, Ko } from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
 import { seoFor, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
+import * as Icons from "@/components/Icons";
+
+// Map highlight.icon string -> Icon component. Falls back to a small
+// sunset bullet via `null` so adding a new highlight icon doesn't break
+// the page. Strings outside the map render the original bullet — safe
+// backward-compatible change.
+type IconCmp = React.ComponentType<{ className?: string; strokeWidth?: number }>;
+const HIGHLIGHT_ICON_MAP: Record<string, IconCmp> = {
+  mountain: Icons.Mountain,
+  hiking: Icons.Mountain,
+  swim: Icons.Waves,
+  museum: Icons.Building2,
+  wine: Icons.Wine,
+  sun: Icons.Sunrise,
+  utensils: Icons.ReceiptAlt,
+  beach: Icons.Beach,
+  whale: Icons.Waves,
+  ski: Icons.Mountain,
+  wheat: Icons.Tree,
+  car: Icons.Car,
+};
 
 export async function generateStaticParams() {
   return destinations.map((d) => ({ slug: d.slug }));
@@ -104,18 +125,25 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 <Ko>하이라이트</Ko>
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {d.highlights.map((h, i) => (
-                  <div
-                    key={h.en}
-                    className={`reveal reveal-delay-${(i % 5) + 1} flex items-start gap-3 p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
-                  >
-                    <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-sunset mt-2.5" />
-                    <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
-                      <En>{h.en}</En>
-                      <Ko>{h.ko}</Ko>
-                    </p>
-                  </div>
-                ))}
+                {d.highlights.map((h, i) => {
+                  const Icon = h.icon && HIGHLIGHT_ICON_MAP[h.icon];
+                  return (
+                    <div
+                      key={h.en}
+                      className={`reveal reveal-delay-${(i % 5) + 1} flex items-start gap-3 p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
+                    >
+                      {Icon ? (
+                        <Icon className="shrink-0 w-5 h-5 text-sunset mt-0.5" strokeWidth={2} />
+                      ) : (
+                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-sunset mt-2.5" />
+                      )}
+                      <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
+                        <En>{h.en}</En>
+                        <Ko>{h.ko}</Ko>
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </section>
 
@@ -190,8 +218,21 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             </section>
           </div>
 
-          {/* Sidebar */}
+          {/* Sidebar — logistics first (Getting there is the first implicit
+              question after choosing a destination). Best time + suggested
+              stay follow as day-planning details. */}
           <div className="space-y-5">
+            <div className="reveal p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-2">
+                <En>Getting there</En>
+                <Ko>가는 방법</Ko>
+              </p>
+              <p className="text-stone-200 text-sm leading-relaxed">
+                <En>{d.gettingThere.en}</En>
+                <Ko>{d.gettingThere.ko}</Ko>
+              </p>
+            </div>
+
             <div className="reveal p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-2">
                 <En>Best time to visit</En>
@@ -211,17 +252,6 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
                 <En>{d.suggestedDays.en}</En>
                 <Ko>{d.suggestedDays.ko}</Ko>
-              </p>
-            </div>
-
-            <div className="reveal p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-2">
-                <En>Getting there</En>
-                <Ko>가는 방법</Ko>
-              </p>
-              <p className="text-stone-200 text-sm leading-relaxed">
-                <En>{d.gettingThere.en}</En>
-                <Ko>{d.gettingThere.ko}</Ko>
               </p>
             </div>
           </div>
@@ -267,9 +297,34 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           {
             href: "/tourist",
             title: { en: "Plan your Sydney trip", ko: "시드니 여행 계획" },
+            // Personalise by trip length: day/weekend copy reads as a
+            // specific invitation, not a generic "use X as a trip".
+            // Korean copy mirrors the same intent.
             description: {
-              en: `Use ${d.name.en} as a day trip or weekend escape from a longer Sydney base.`,
-              ko: `${d.name.ko}을(를) 시드니 베이스에서의 당일치기 또는 주말 여행으로 활용하세요.`,
+              en: (() => {
+                if (d.tripLength === "day") {
+                  return `Build a ${d.name.en} day trip out of a Sydney base — pick the train, pick the morning, pick the lookout.`;
+                }
+                if (d.tripLength === "weekend") {
+                  return `Plan a ${d.name.en} weekend from Sydney — overnight, two meals, the main thing you came for, and a Sunday-morning walk back.`;
+                }
+                if (d.tripLength === "longer") {
+                  return `${d.name.en} is worth 3+ days — a longer stay lets you catch the second-day-favourite spots that day-trippers miss.`;
+                }
+                return `${d.name.en} is a real trip — fly or drive, give it a week, and slow down enough to actually enjoy the place.`;
+              })(),
+              ko: (() => {
+                if (d.tripLength === "day") {
+                  return `시드니 베이스에서 ${d.name.ko} 당일치기 — 기차, 아침 일정, 주요 전망대까지 짜보세요.`;
+                }
+                if (d.tripLength === "weekend") {
+                  return `시드니에서 ${d.name.ko} 주말 여행 — 1박, 두 끼, 핵심 장소, 그리고 일요일 아침 산책.`;
+                }
+                if (d.tripLength === "longer") {
+                  return `${d.name.ko}은 3일 이상 충분 — 긴 일정에서만 보이는 명소가 있습니다.`;
+                }
+                return `${d.name.ko}은 진짜 여행 — 항공 또는 운전으로, 일주일을 잡고 천천히 즐기세요.`;
+              })(),
             },
           },
           {
