@@ -305,7 +305,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {topExperiences.map((e, i) => (
               <Link
-                key={e.slug}
+                key={e.href}
                 href={e.href}
                 className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
               >
