@@ -17,8 +17,8 @@ export default function Footer() {
               <span className="font-serif text-lg text-stone-900 dark:text-stone-100">AussieGuides</span>
             </Link>
             <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed max-w-xs">
-              <En>A bilingual (English / 한국어) guide to Australian daily life — for anyone new here, regardless of where you&apos;re coming from.</En>
-              <Ko>호주 일상 생활에 대한 바이링구얼(영어/한국어) 가이드 — 어디서 오신 분이든 호주를 처음 접하시는 모든 분들을 위해.</Ko>
+              <En>A guide to Australian daily life — for anyone new here, regardless of where you&apos;re coming from. (Available in English and 한국어)</En>
+              <Ko>호주 일상 생활에 대한 가이드 — 어디서 오신 분이든 호주를 처음 접하시는 모든 분들을 위해. (영어와 한국어로 제공)</Ko>
             </p>
           </div>
 
