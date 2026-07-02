@@ -45,16 +45,18 @@ export default function PrivacyPage() {
           <En>
             <p>
               AussieGuides (youraussieguides.com) is a free bilingual (English / 한국어)
-              information site about Australian daily life for Korean newcomers. We are not a
-              business, government body, or educational institution — see our{" "}
+              information site about Australian daily life — for anyone visiting, studying,
+              working, or settling in Australia, regardless of passport or background. We are
+              not a business, government body, or educational institution — see our{" "}
               <a href="/about" className="text-sunset underline">About page</a>.
             </p>
           </En>
           <Ko>
             <p>
-              AussieGuides(youraussieguides.com)는 호주에 새로 온 한국인을 위한 무료
-              영한 생활 정보 사이트입니다. 당사는 기업·정부·교육기관이 아니며, 자세한
-              내용은 <a href="/about" className="text-sunset underline">소개 페이지</a>를
+              AussieGuides(youraussieguides.com)는 호주를 처음 찾아오신 분들을 위한 무료
+              영한 생활 정보 사이트입니다 — 방문, 유학, 취업, 정착 무엇이든, 국적과 배경에
+              상관없이. 당사는 기업·정부·교육기관이 아니며, 자세한 내용은
+              <a href="/about" className="text-sunset underline">소개 페이지</a>를
               참고하세요.
             </p>
           </Ko>

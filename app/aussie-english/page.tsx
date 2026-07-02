@@ -16,7 +16,7 @@ export const metadata = withSeo(
   ...seoFor("/aussie-english"),
   title: "Aussie English — Australian Slang & Everyday Phrases (English / 한국어)",
   description:
-    "Australian phrases and everyday English you'd hear at the pub, at work, on the footy, and out in the suburbs — explained in plain English for foreigners and learners, with Korean for Korean-speakers. G'day, arvo, brekkie, no worries, she'll be right and more.",
+    "Australian phrases and everyday English you'd hear at the pub, at work, on the footy, and out in the suburbs — explained in plain English for anyone new here, foreigners, learners, and curious locals. Available 한국어 for Korean-speakers. G'day, arvo, brekkie, no worries, she'll be right and more.",
   },
   "/aussie-english"
 );
@@ -160,7 +160,7 @@ export default function AussieEnglishPage() {
           <Ko>호주 영어</Ko>
         </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>{phrases.length} Australian phrases explained in plain English — and 한국어 for Korean-speakers — sorted by where you&apos;ll actually hear and use them.</En>
+          <En>{phrases.length} Australian phrases explained in plain English — sorted by where you&apos;ll actually hear and use them. Also available 한국어 for Korean-speakers.</En>
           <Ko>{phrases.length}개의 호주 ��현, 영어와 한국어로 해석 — 실제로 쓰게 될 상황별로 정리.</Ko>
         </p>
       </header>
