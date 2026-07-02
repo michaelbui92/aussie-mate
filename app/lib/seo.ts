@@ -148,9 +148,12 @@ export function seoFor(path: string): Pick<
 //   />
 // ---------------------------------------------------------------------------
 
-/** FAQPage schema — Q&A rich results in Google search. */
+/** FAQPage schema — Q&A rich results in Google search.
+ * `ko` is optional because some callers (visa pages, tourist EN-only entries)
+ * only carry English. The function only serialises `en` — Korean stays in
+ * the visible Kaq block, not the JSON-LD payload. */
 export function faqLdJson(
-  faqs: Array<{ q: { en: string }; a: { en: string } }>,
+  faqs: ReadonlyArray<{ q: { en: string; ko?: string }; a: { en: string; ko?: string } }>,
   pagePath: string
 ) {
   const url = pagePath
