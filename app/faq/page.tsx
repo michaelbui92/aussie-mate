@@ -57,7 +57,7 @@ export default function FAQPage() {
         <p className="text-sm text-stone-300 leading-relaxed">
           <En>Can&apos;t find your question? Email us at </En>
           <Ko>원하는 답변이 없으세요? </Ko>
-          <span className="font-medium text-sunset">hello@aussiemate.com.au</span>
+          <span className="font-medium text-sunset">michaelbui@outlook.com.au</span>
           <En> and we&apos;ll add it.</En>
           <Ko>으로 이메일을 보내주세요.</Ko>
         </p>

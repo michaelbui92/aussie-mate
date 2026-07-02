@@ -4,9 +4,14 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata: Metadata = withSeo(
   {
-    title: "AussieGuides — 호주 생활 가이드 (한국어/English)",
+    // EN-first mirroring the 2026-06-28 audience restructure: Korean
+    // remains an alt-attribute keyword for 한국어 search but the override
+    // title/description here shouldn't _lead_ with Korean (which would
+    // re-signal "for Korean users only" to Google and undercut the EN
+    // audience gained in the ab4e873 identity pivot).
+    title: "AussieGuides — Australia Travel & Living Guide (English / 한국어)",
     description:
-      "한국인 유학생과 워홀러를 위한 호주 생활 가이드. 오팔 카드, 은행 계좌, 세금 신고(TFN), 퇴직연금(Super), 부동산, 직장 문화, 호주 영어 슬랭까지 — 한국어와 영어로 정리했습니다.",
+      "A bilingual (English / 한국어) travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — international students, working-holiday makers, expats, English-first travellers. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW.",
   },
   "/"
 );

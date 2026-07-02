@@ -12,5 +12,5 @@ export const SITE_AUTHOR = {
   name: "Michael Bui",
   role: "Founder, editor, and lead writer",
   url: `${SITE_URL}/about`,
-  email: "hello@aussiemate.com.au",
+  email: "michaelbui@outlook.com.au",
 } as const;

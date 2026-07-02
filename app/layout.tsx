@@ -142,24 +142,38 @@ const themeInitScript = `
 
 // Google AdSense — Auto Ads. Google picks placements; we just load the script.
 // Publisher ID is hardcoded from the user's AdSense account (ca-pub-7794121496618493).
-// To disable AdSense, set NEXT_PUBLIC_ADSENSE_ID="" in Vercel env vars — the
-// env var wins over the hardcoded value.
-const HARDCODED_ADSENSE_ID = "ca-pub-7794121496618493";
-const ADSENSE_PUBLISHER_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || HARDCODED_ADSENSE_ID;
+//
+// To disable AdSense, leave the env var UNSET in Vercel. Setting it to an empty
+// string does NOT disable — we previously used `|| HARDCODED`, which falls
+// through on falsy values, and `""` is falsy, so empty env vars silently kept
+// ads live. The first condition below explicitly checks for `_IS_SET` by
+// looking for the env var in process.env rather than reading its value: any
+// presence (including empty string) means "user wants to control this
+// manually," and absence means "fall back to the hardcoded AdSense ID."
+const HAS_ADSENSE_ENV = Object.prototype.hasOwnProperty.call(
+  process.env,
+  "NEXT_PUBLIC_ADSENSE_ID"
+);
+function resolveAdsenseId(): string | undefined {
+  if (!HAS_ADSENSE_ENV) return "ca-pub-7794121496618493"; // default ON
+  const env = process.env.NEXT_PUBLIC_ADSENSE_ID;
+  return env && env.length > 0 ? env : undefined; // env-present + non-empty = custom; env-present + empty = OFF
+}
+const ADSENSE_PUBLISHER_ID = resolveAdsenseId();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${fraunces.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        {/* AdSense Auto Ads — only loads when NEXT_PUBLIC_ADSENSE_ID is set */}
-        {ADSENSE_PUBLISHER_ID && (
+        {/* AdSense Auto Ads — loads when env-on; ungated by truthy check now */}
+        {ADSENSE_PUBLISHER_ID ? (
           <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUBLISHER_ID}`}
             crossOrigin="anonymous"
           />
-        )}
+        ) : null}
         {/* JSON-LD: Person (author) + Organization (publisher) + WebSite structured data
             for Google rich results. The Person block gives Google an explicit named
             human it can attribute this content to (E-E-A-T signal). */}
