@@ -102,7 +102,7 @@ const checklists: Checklist[] = [
       "첫 주를 위한 준비. 도착 당일에 하지 마세요.",
     items: [
       { en: "Accommodation for the first 1–2 weeks", ko: "첫 1-2주 숙소 예약" },
-      { en: "Transport from Sydney Airport — most people take the train, but the airport station has a $14+ access fee on top of fare, so plan accordingly", ko: "시드니 공항 교통 — 대부분 기차를 타지만 공항역 이용료가 요금 외에 $14+ 추가되니 미리 계획하세요" },
+      { en: "Transport from Sydney Airport — most people take the train, but the airport station has a $14+ AUD access fee on top of fare, so plan accordingly", ko: "시드니 공항 교통 — 대부분 기차를 타지만 공항역 이용료가 요금 외에 $14+ AUD 추가되니 미리 계획하세요" },
       { en: "Travel insurance (flight changes, medical, lost luggage)", ko: "여행자보험 (항공편 변경, 의료, 분실물)" },
       { en: "Health insurance sorted (OSHC for students, reciprocal Medicare for some, private for everyone else)", ko: "건강보험 정리 (학생은 OSHC, 일부는 상호주의 Medicare, 그 외는 민간 보험)" },
       { en: "Job secured, OR a 3-month financial runway saved", ko: "구직 완료, 또는 3개월치 생활비 확보" },

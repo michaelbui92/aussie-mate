@@ -122,8 +122,8 @@ const sections: ApartmentSectionData[] = [
       { label: "Bond", en: "Usually 4 weeks rent — paid upfront before moving in", ko: "보통 임대료의 4주분 — 입주 전에 선불로 지불" },
       { label: "First week rent", en: "Paid in advance, from the day you move in", ko: "선불로 지불, 입주일부터" },
       { label: "Utility connections", en: "Electricity, gas, internet — you set these up yourself. Some providers charge connection fees.", ko: "전기, 가스, 인터넷 — 직접 신청해야 합니다. 일부 공급업체는 연결 비용을 부과합니다." },
-      { label: "Moving costs", en: "Hire a van or movers. Sydney moves typically cost $150-$500 depending on distance.", ko: "밴을 빌리거나 이사팀을 이용하세요. 시드니에서는 거리대에 따라 $150~$500 정도 소요됩니다." },
-      { label: "Contents insurance", en: "$20-$50/month for a basic policy. Highly recommended — landlord's insurance doesn't cover your belongings.", ko: "기본 보험은 월 $20~$50입니다. 강력히 권장합니다 — 임대인의 보험은 내 소유물을 보장하지 않습니다." },
+      { label: "Moving costs", en: "Hire a van or movers. Sydney moves typically cost $150-$500 AUD depending on distance.", ko: "밴을 빌리거나 이사팀을 이용하세요. 시드니에서는 거리대에 따라 $150~$500 AUD 정도 소요됩니다." },
+      { label: "Contents insurance", en: "$20-$50 AUD/month for a basic policy. Highly recommended — landlord's insurance doesn't cover your belongings.", ko: "기본 보험은 월 $20~$50 AUD입니다. 강력히 권장합니다 — 임대인의 보험은 내 소유물을 보장하지 않습니다." },
     ],
   },
   {

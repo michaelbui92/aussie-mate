@@ -186,7 +186,7 @@ export default function ArrivedContent() {
         </p>
         <ul className="space-y-4 max-w-3xl">
           {[
-            { icon: "📱", en: "Get a SIM card on day one", ko: "첫날 SIM 카드 구매", descEn: "You can't navigate, message, or call anyone without a phone. Woolworths, Coles, or any 7-Eleven will set you up. Bring your passport. Cost: $10–$30 for a prepaid starter. Telstra has the best coverage.", descKo: "스마트폰 없이는 길 찾기, 메시지, 전화가 모두 불가합니다. Woolworths, Coles, 7-Eleven에서 모두 가능합니다. 여권을 지참하세요. 선불 스타터 비용: $10–$30. Telstra가 가장 넓은 커버리지." },
+            { icon: "📱", en: "Get a SIM card on day one", ko: "첫날 SIM 카드 구매", descEn: "You can't navigate, message, or call anyone without a phone. Woolworths, Coles, or any 7-Eleven will set you up. Bring your passport. Cost: $10–$30 AUD for a prepaid starter. Telstra has the best coverage.", descKo: "스마트폰 없이는 길 찾기, 메시지, 전화가 모두 불가합니다. Woolworths, Coles, 7-Eleven에서 모두 가능합니다. 여권을 지참하세요. 선불 스타터 비용: $10–$30 AUD. Telstra가 가장 넓은 커버리지." },
             { icon: "💳", en: "Open a bank account within the week", ko: "일주일 안에 은행 계좌 개설", descEn: "Commonwealth, ANZ, Westpac, NAB all let you open online with a passport — about 20 minutes. Your employer needs an Australian account to pay you. Skip the queues.", descKo: "Commonwealth, ANZ, Westpac, NAB 모두 여권으로 온라인 개설 가능 — 약 20분. 고용주가 월급을 입금하려면 호주 계좌가 필요합니다. 줄 서지 마세요.", href: "/finance", hrefLabelEn: "Banking in Australia →", hrefLabelKo: "호주 은행 계좌 가이드 →" },
             { icon: "🚆", en: "Get an Opal card before you ride", ko: "탑승 전 오팔 카드 준비", descEn: "Sydney's public transport runs on Opal — trains, buses, ferries, light rail. Grab one at any train station or convenience store. Tap on, tap off. No card, no ride.", descKo: "시드니 대중교통은 오팔로 운영 — 기차, 버스, 페리, 경전철. 기차역이나 편의점에서 구매하세요. 탭 온, 탭 오프. 카드 없이는 탑승 불가.", href: "/transport", hrefLabelEn: "How to get and use Opal →", hrefLabelKo: "오팔 얻고 사용하기 →" },
             { icon: "📋", en: "Apply for your TFN (tax number)", ko: "TFN(세금번호) 신청", descEn: "Free from ato.gov.au. Without it, your employer withholds tax at the emergency rate — which means a lot less take-home pay. Do it in your first week if you're job hunting.", descKo: "ato.gov.au에서 무료 신청. 없으면 고용주가 긴급 세율로 원천징수 — 실수령액이 크게 줄어듭니다. 구직 중이라면 첫 주에 신청하세요." },
@@ -336,8 +336,8 @@ export default function ArrivedContent() {
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>
               <span>
-                <En><strong className="text-white">Fake job offers.</strong> &quot;You&apos;re hired, just send $200 for the training kit.&quot; Real employers never ask for upfront fees. If they did, that&apos;s the scam.</En>
-                <Ko><strong className="text-white">가짜 채용.</strong> &quot;채용되셨습니다, 교육 키트 비용 $200만 보내주세요.&quot; 실제 고용주는 선불 비용을 요구하지 않습니다. 요구한다면 그것이 사기입니다.</Ko>
+                <En><strong className="text-white">Fake job offers.</strong> &quot;You&apos;re hired, just send $200 AUD for the training kit.&quot; Real employers never ask for upfront fees. If they did, that&apos;s the scam.</En>
+                <Ko><strong className="text-white">가짜 채용.</strong> &quot;채용되셨습니다, 교육 키트 비용 $200 AUD만 보내주세요.&quot; 실제 고용주는 선불 비용을 요구하지 않습니다. 요구한다면 그것이 사기입니다.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
@@ -350,8 +350,8 @@ export default function ArrivedContent() {
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">03</span>
               <span>
-                <En><strong className="text-white">ATO / MyGov phishing.</strong> &quot;You owe $2,847 in tax, click here to pay.&quot; ATO and MyGov never email or text asking for payment. Go directly to the site, never via the link.</En>
-                <Ko><strong className="text-white">ATO / MyGov 피싱.</strong> &quot;세금 $2,847 미납, 여기를 클릭해 결제하세요.&quot; ATO와 MyGov는 결제를 요청하는 이메일이나 문자를 보내지 않습니다. 링크를 통하지 말고 직접 사이트에 접속하세요.</Ko>
+                <En><strong className="text-white">ATO / MyGov phishing.</strong> &quot;You owe $2,847 AUD in tax, click here to pay.&quot; ATO and MyGov never email or text asking for payment. Go directly to the site, never via the link.</En>
+                <Ko><strong className="text-white">ATO / MyGov 피싱.</strong> &quot;세금 $2,847 AUD 미납, 여기를 클릭해 결제하세요.&quot; ATO와 MyGov는 결제를 요청하는 이메일이나 문자를 보내지 않습니다. 링크를 통하지 말고 직접 사이트에 접속하세요.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
@@ -383,8 +383,8 @@ export default function ArrivedContent() {
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>
               <span>
-                <En><strong className="text-white">It&apos;s more expensive than you think.</strong> Coffee $5, casual lunch $20, dinner $40+ per person, a pint of beer $12. A couple&apos;s weekly food budget is realistically $500–$700. Budget more than the guidebooks say.</En>
-                <Ko><strong className="text-white">생각보다 비쌉니다.</strong> 커피 $5, 캐주얼 점심 $20, 1인당 저녁 $40+, 맥주 한 파인트 $12. 커플의 주간 식비 현실은 $500–$700. 가이드북보다 더 여유 있게 잡으세요.</Ko>
+                <En><strong className="text-white">It&apos;s more expensive than you think.</strong> Coffee $5 AUD, casual lunch $20 AUD, dinner $40+ AUD per person, a pint of beer $12 AUD. A couple&apos;s weekly food budget is realistically $500–$700 AUD. Budget more than the guidebooks say.</En>
+                <Ko><strong className="text-white">생각보다 비쌉니다.</strong> 커피 $5 AUD, 캐주얼 점심 $20 AUD, 1인당 저녁 $40+ AUD, 맥주 한 파인트 $12 AUD. 커플의 주간 식비 현실은 $500–$700 AUD. 가이드북보다 더 여유 있게 잡으세요.</Ko>
               </span>
             </li>
             <li className="flex gap-3">

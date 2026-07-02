@@ -37,13 +37,13 @@ const sections: WildlifeSection[] = [
     items: [
       {
         label: "Getting there",
-        en: "Take the F2 ferry from Circular Quay to Taronga Zoo ($7–8 Opal, 12 min). The ferry itself is one of the best harbour experiences — you'll sail past the Opera House and under the Harbour Bridge. A zoo entry ticket includes the Sky Safari cable car from the wharf up to the main entrance.",
-        ko: "서큘러 키에서 F2 페리를 타고 타롱가 동물원까지 ($7–8 오팔, 12분). 페리 자체가 최고의 하버 경험 중 하나 — 오페라 하우스를 지나 하버 브리지 아래로 항해합니다. 동물원 입장권에는 선착장에서 정문까지 가는 스카이 사파리 케이블카가 포함됩니다.",
+        en: "Take the F2 ferry from Circular Quay to Taronga Zoo ($7 AUD–8 Opal, 12 min). The ferry itself is one of the best harbour experiences — you'll sail past the Opera House and under the Harbour Bridge. A zoo entry ticket includes the Sky Safari cable car from the wharf up to the main entrance.",
+        ko: "서큘러 키에서 F2 페리를 타고 타롱가 동물원까지 ($7 AUD–8 오팔, 12분). 페리 자체가 최고의 하버 경험 중 하나 — 오페라 하우스를 지나 하버 브리지 아래로 항해합니다. 동물원 입장권에는 선착장에서 정문까지 가는 스카이 사파리 케이블카가 포함됩니다.",
       },
       {
         label: "Entry & hours",
-        en: "Adult tickets ~$50 online (cheaper than the gate). Open 9:30am–4:30pm daily. The zoo is on a steep hillside — wear comfortable shoes. The Sky Safari cable car saves you the uphill walk, but you can also take the free shuttle bus from the wharf.",
-        ko: "성인 온라인 티켓 약 $50 (현장보다 저렴). 매일 9:30am–4:30pm 운영. 경사진 언덕에 위치 — 편한 신발을 신으세요. 스카이 사파리 케이블카로 오르막을 피할 수 있지만, 선착장에서 무료 셔틀버스도 있습니다.",
+        en: "Adult tickets ~$50 AUD online (cheaper than the gate). Open 9:30am–4:30pm daily. The zoo is on a steep hillside — wear comfortable shoes. The Sky Safari cable car saves you the uphill walk, but you can also take the free shuttle bus from the wharf.",
+        ko: "성인 온라인 티켓 약 $50 AUD (현장보다 저렴). 매일 9:30am–4:30pm 운영. 경사진 언덕에 위치 — 편한 신발을 신으세요. 스카이 사파리 케이블카로 오르막을 피할 수 있지만, 선착장에서 무료 셔틀버스도 있습니다.",
       },
       {
         label: "Bird show (must-see)",
@@ -57,8 +57,8 @@ const sections: WildlifeSection[] = [
       },
       {
         label: "Best for",
-        en: "Families, couples, and anyone who wants a full-day outing. Combine the zoo with a sunset ferry back to Circular Quay for one of Sydney's best value days out (~$70 per person including ferry and entry).",
-        ko: "가족, 커플, 그리고 하루 종일 나들이를 원하는 모든 분. 동물원 관람 후 일몰 페리로 서큘러 키로 돌아오는 코스는 시드니 최고의 가성비 당일치기 중 하나 (페리 & 입장권 포함 1인 약 $70).",
+        en: "Families, couples, and anyone who wants a full-day outing. Combine the zoo with a sunset ferry back to Circular Quay for one of Sydney's best value days out (~$70 AUD per person including ferry and entry).",
+        ko: "가족, 커플, 그리고 하루 종일 나들이를 원하는 모든 분. 동물원 관람 후 일몰 페리로 서큘러 키로 돌아오는 코스는 시드니 최고의 가성비 당일치기 중 하나 (페리 & 입장권 포함 1인 약 $70 AUD).",
       },
     ],
   },
@@ -73,13 +73,13 @@ const sections: WildlifeSection[] = [
     items: [
       {
         label: "Entry & hours",
-        en: "Adult entry ~$30 — the most affordable dedicated koala sanctuary near Sydney. Open 9:00am–5:00pm daily. Located in Pennant Hills, about 40 minutes from the CBD by car. Much quieter and less crowded than Taronga or Featherdale.",
-        ko: "성인 약 $30 — 시드니 근교에서 가장 저렴한 코알라 전문 보호구역. 매일 9:00am–5:00pm 운영. Pennant Hills에 위치, CBD에서 차로 약 40분. 타롱가나 페더데일보다 훨씬 조용하고 붐비지 않습니다.",
+        en: "Adult entry ~$30 AUD — the most affordable dedicated koala sanctuary near Sydney. Open 9:00am–5:00pm daily. Located in Pennant Hills, about 40 minutes from the CBD by car. Much quieter and less crowded than Taronga or Featherdale.",
+        ko: "성인 약 $30 AUD — 시드니 근교에서 가장 저렴한 코알라 전문 보호구역. 매일 9:00am–5:00pm 운영. Pennant Hills에 위치, CBD에서 차로 약 40분. 타롱가나 페더데일보다 훨씬 조용하고 붐비지 않습니다.",
       },
       {
         label: "Getting there",
-        en: "Drive (free parking available) or take a train from Central to Pennant Hills station (~35 min, ~$5 Opal), then a 10-minute taxi or Uber. Buses run hourly from the station — check the Transport NSW app for route 651 or 632.",
-        ko: "자동차 이용 (무료 주차 가능) 또는 센트럴에서 Pennant Hills 역까지 기차 (~35분, ~$5 오팔), 이후 택시나 Uber로 10분. 역에서 651번 또는 632번 버스가 시간당 1회 운행 — Transport NSW 앱 확인.",
+        en: "Drive (free parking available) or take a train from Central to Pennant Hills station (~35 min, ~$5 AUD Opal), then a 10-minute taxi or Uber. Buses run hourly from the station — check the Transport NSW app for route 651 or 632.",
+        ko: "자동차 이용 (무료 주차 가능) 또는 센트럴에서 Pennant Hills 역까지 기차 (~35분, ~$5 AUD 오팔), 이후 택시나 Uber로 10분. 역에서 651번 또는 632번 버스가 시간당 1회 운행 — Transport NSW 앱 확인.",
       },
       {
         label: "Koala experience",
@@ -104,13 +104,13 @@ const sections: WildlifeSection[] = [
     items: [
       {
         label: "Entry & hours",
-        en: "Adult tickets ~$40. Open 9:00am–5:00pm daily. Located in Doonside, about 45 minutes from the CBD by car. Featherdale is famous for its walk-through kangaroo enclosure where you can buy a bag of kangaroo feed ($2) and feed them by hand.",
-        ko: "성인 약 $40. 매일 9:00am–5:00pm 운영. Doonside에 위치, CBD에서 차로 약 45분. 페더데일은 캥거루 우리를 걸으며 캥거루 사료 봉지($2)를 사서 손으로 먹이를 줄 수 있는 것으로 유명합니다.",
+        en: "Adult tickets ~$40 AUD. Open 9:00am–5:00pm daily. Located in Doonside, about 45 minutes from the CBD by car. Featherdale is famous for its walk-through kangaroo enclosure where you can buy a bag of kangaroo feed ($2 AUD) and feed them by hand.",
+        ko: "성인 약 $40 AUD. 매일 9:00am–5:00pm 운영. Doonside에 위치, CBD에서 차로 약 45분. 페더데일은 캥거루 우리를 걸으며 캥거루 사료 봉지($2 AUD)를 사서 손으로 먹이를 줄 수 있는 것으로 유명합니다.",
       },
       {
         label: "Getting there",
-        en: "Train from Central to Doonside station (~45 min, ~$6 Opal), then a 5-minute taxi. By car: take the M4 motorway west, exit at Doonside Road. Free parking on-site. Consider combining Featherdale with a day trip to the Blue Mountains — they're on the same train line.",
-        ko: "센트럴에서 Doonside 역까지 기차 (~45분, ~$6 오팔), 이후 택시 5분. 자동차: M4 고속도로 서쪽, Doonside Road 출구. 현장 무료 주차. 블루마운틴 당일 여행과 페더데일을 결합하는 것도 고려 — 같은 기차 노선상에 있습니다.",
+        en: "Train from Central to Doonside station (~45 min, ~$6 AUD Opal), then a 5-minute taxi. By car: take the M4 motorway west, exit at Doonside Road. Free parking on-site. Consider combining Featherdale with a day trip to the Blue Mountains — they're on the same train line.",
+        ko: "센트럴에서 Doonside 역까지 기차 (~45분, ~$6 AUD 오팔), 이후 택시 5분. 자동차: M4 고속도로 서쪽, Doonside Road 출구. 현장 무료 주차. 블루마운틴 당일 여행과 페더데일을 결합하는 것도 고려 — 같은 기차 노선상에 있습니다.",
       },
       {
         label: "Kangaroo feeding tips",
@@ -145,8 +145,8 @@ const sections: WildlifeSection[] = [
       },
       {
         label: "Entry & access",
-        en: "Vehicle entry ~$12 per day. Park gates open 7am–8:30pm (summer) or 7am–5:30pm (winter). Train to Cronulla then ferry to Bundeena is a popular car-free option. Bring water, sunscreen, and a hat — there's very little shade on the coastal track.",
-        ko: "차량 입장료 1일 약 $12. 공원 개방 시간 오전 7시–오후 8시 30분(여름) 또는 오전 7시–오후 5시 30분(겨울). Cronulla까지 기차 후 Bundeena행 페리는 무차량 인기 옵션. 물, 선크림, 모자 필수 — 해안 트레일에 그늘이 거의 없습니다.",
+        en: "Vehicle entry ~$12 AUD per day. Park gates open 7am–8:30pm (summer) or 7am–5:30pm (winter). Train to Cronulla then ferry to Bundeena is a popular car-free option. Bring water, sunscreen, and a hat — there's very little shade on the coastal track.",
+        ko: "차량 입장료 1일 약 $12 AUD. 공원 개방 시간 오전 7시–오후 8시 30분(여름) 또는 오전 7시–오후 5시 30분(겨울). Cronulla까지 기차 후 Bundeena행 페리는 무차량 인기 옵션. 물, 선크림, 모자 필수 — 해안 트레일에 그늘이 거의 없습니다.",
       },
       {
         label: "Wildlife safety",
@@ -176,8 +176,8 @@ const sections: WildlifeSection[] = [
       },
       {
         label: "Entry & access",
-        en: "Vehicle entry ~$12 per day. Gates open 6am–7:30pm (summer), 6am–6pm (winter). By car: take the Pacific Highway north or the Mona Vale Road. Parking fills early on weekends — arrive before 9am. Limited public transport — consider a tour if you don't have a car.",
-        ko: "차량 입장료 1일 약 $12. 개방 시간 오전 6시–오후 7시 30분(여름), 오전 6시–오후 6시(겨울). 자동차: Pacific Highway 북쪽 또는 Mona Vale Road 이용. 주말에는 주차장이 일찍 만석 — 오전 9시 전 도착. 대중교통 제한적 — 차가 없으면 투어를 고려하세요.",
+        en: "Vehicle entry ~$12 AUD per day. Gates open 6am–7:30pm (summer), 6am–6pm (winter). By car: take the Pacific Highway north or the Mona Vale Road. Parking fills early on weekends — arrive before 9am. Limited public transport — consider a tour if you don't have a car.",
+        ko: "차량 입장료 1일 약 $12 AUD. 개방 시간 오전 6시–오후 7시 30분(여름), 오전 6시–오후 6시(겨울). 자동차: Pacific Highway 북쪽 또는 Mona Vale Road 이용. 주말에는 주차장이 일찍 만석 — 오전 9시 전 도착. 대중교통 제한적 — 차가 없으면 투어를 고려하세요.",
       },
       {
         label: "Best time",

@@ -32,8 +32,8 @@ const neighbourhoods = [
     labelEn: "Chinatown & Haymarket",
     labelKo: "차이나타운 & 헤이마켓",
     img: "https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-    descEn: "Sydney's Chinatown is compact but punchy. Din Tai Fung is the most famous stop — their xiao long bao (soup dumplings) draw queues every night. But don't stop there: Emperor's Garden BBQ does incredible roast duck and pork hanging in the window, the Dixon Street food court is a budget paradise ($10–15 feeds you well), and little bakeries sell egg tarts and pork buns fresh from the oven. The weekend Paddy's Market food stalls are a bonus — try the banh mi and fresh juice combos.",
-    descKo: "시드니 차이나타운은 작지만 강력합니다. Din Tai Fung이 가장 유명한 곳 — 쉬아오롱바오(만두)는 매일 밤 줄을 잇게 만듭니다. 하지만 거기서 멈추지 마세요: Emperor's Garden BBQ는 창문에 걸린 로스트 덕과 돼지고기가 환상적이고, 딕슨 스트리트 푸드코트는 가성비 천국($10–15면 푸짐하게 먹음), 작은 빵집에서는 갓 구운 에그타르트와 찐빵을 팝니다. 주말 패디스 마켓의 포장마차도 보너스 — 반미와 신선한 주스를 꼭 드셔보세요.",
+    descEn: "Sydney's Chinatown is compact but punchy. Din Tai Fung is the most famous stop — their xiao long bao (soup dumplings) draw queues every night. But don't stop there: Emperor's Garden BBQ does incredible roast duck and pork hanging in the window, the Dixon Street food court is a budget paradise ($10 AUD–15 feeds you well), and little bakeries sell egg tarts and pork buns fresh from the oven. The weekend Paddy's Market food stalls are a bonus — try the banh mi and fresh juice combos.",
+    descKo: "시드니 차이나타운은 작지만 강력합니다. Din Tai Fung이 가장 유명한 곳 — 쉬아오롱바오(만두)는 매일 밤 줄을 잇게 만듭니다. 하지만 거기서 멈추지 마세요: Emperor's Garden BBQ는 창문에 걸린 로스트 덕과 돼지고기가 환상적이고, 딕슨 스트리트 푸드코트는 가성비 천국($10 AUD–15면 푸짐하게 먹음), 작은 빵집에서는 갓 구운 에그타르트와 찐빵을 팝니다. 주말 패디스 마켓의 포장마차도 보너스 — 반미와 신선한 주스를 꼭 드셔보세요.",
     spots: [
       { en: "Din Tai Fung — world-famous soup dumplings", ko: "Din Tai Fung — 세계적으로 유명한 만두" },
       { en: "Emperor's Garden BBQ — roast duck & pork", ko: "Emperor's Garden BBQ — 오리 구이 & 돼지고기" },
@@ -46,8 +46,8 @@ const neighbourhoods = [
     labelEn: "CBD Korean & Japanese",
     labelKo: "시티 한식 & 일식",
     img: "https://images.pexels.com/photos/691114/pexels-photo-691114.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-    descEn: "Sydney's CBD has a thriving Korean and Japanese dining scene centred around Pitt Street and Liverpool Street. Korean BBQ spots like 678 Korean BBQ (a chain from Seoul) pack in crowds with premium marinated meats grilled at your table — budget around $40–60 per person for the full experience. Mappen, a casual udon chain, is the go-to for a fast, satisfying lunch under $15. There's also Jap's Table, Yebisu, and an expanding network of Korean fried chicken joints (try Picnic or Seoul Chicken).",
-    descKo: "시드니 시티에는 Pitt Street와 Liverpool Street를 중심으로 활기찬 한식 및 일식 레스토랑이 자리잡고 있습니다. 678 Korean BBQ(서울에서 온 체인) 같은 고깃집은 테이블에서 직접 구워 먹는 프리미엄 양념 고기로 인파를 모읍니다 — 풀코스로 1인당 $40–60 정도 예산. Mappen은 캐주얼 우동 체인으로 $15 이하에 빠르고 든든한 점심을 해결할 수 있습니다. Jap's Table, Yebisu 그리고 계속 늘어나는 치킨 전문점(Picnic이나 Seoul Chicken 추천)도 있습니다.",
+    descEn: "Sydney's CBD has a thriving Korean and Japanese dining scene centred around Pitt Street and Liverpool Street. Korean BBQ spots like 678 Korean BBQ (a chain from Seoul) pack in crowds with premium marinated meats grilled at your table — budget around $40 AUD–60 per person for the full experience. Mappen, a casual udon chain, is the go-to for a fast, satisfying lunch under $15 AUD. There's also Jap's Table, Yebisu, and an expanding network of Korean fried chicken joints (try Picnic or Seoul Chicken).",
+    descKo: "시드니 시티에는 Pitt Street와 Liverpool Street를 중심으로 활기찬 한식 및 일식 레스토랑이 자리잡고 있습니다. 678 Korean BBQ(서울에서 온 체인) 같은 고깃집은 테이블에서 직접 구워 먹는 프리미엄 양념 고기로 인파를 모읍니다 — 풀코스로 1인당 $40 AUD–60 정도 예산. Mappen은 캐주얼 우동 체인으로 $15 AUD 이하에 빠르고 든든한 점심을 해결할 수 있습니다. Jap's Table, Yebisu 그리고 계속 늘어나는 치킨 전문점(Picnic이나 Seoul Chicken 추천)도 있습니다.",
     spots: [
       { en: "678 Korean BBQ — authentic tabletop BBQ", ko: "678 Korean BBQ — 정통 테이블 바베큐" },
       { en: "Mappen — fast, cheap udon bowls", ko: "Mappen — 빠르고 저렴한 우동" },
@@ -60,8 +60,8 @@ const neighbourhoods = [
     labelEn: "Fine Dining",
     labelKo: "파인 다이닝",
     img: "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-    descEn: "Sydney is home to some of the world's best restaurants. Tetsuya's — a Japanese-French degustation institution — is housed in a converted chapel and offers a multi-course journey for around $250 per person. Quay, with its stunning harbour view and Peter Gilmore's iconic Snow Egg dessert, has topped many 'best in Australia' lists. Other heavyweights: Aria (Opera House views), Bennelong (inside the Opera House itself), and Sixpenny in Stanmore. Book weeks — sometimes months — in advance.",
-    descKo: "시드니에는 세계 최고의 레스토랑들이 있습니다. Tetsuya's — 일식과 프렌치의 융합 디구스테이션 — 개조된 예배당에 자리잡고 있으며 1인당 약 $250의 멀티코스 코스를 제공합니다. Quay는 환상적인 하버 뷰와 Peter Gilmore의 상징적인 Snow Egg 디저트로 수많은 '호주 최고' 리스트에 올랐습니다. 다른 강자들: Aria(오페라 하우스 뷰), Bennelong(오페라 하우스 내부), Sixpenny(스탠모어). 몇 주 — 때로는 몇 달 — 전에 예약해야 합니다.",
+    descEn: "Sydney is home to some of the world's best restaurants. Tetsuya's — a Japanese-French degustation institution — is housed in a converted chapel and offers a multi-course journey for around $250 AUD per person. Quay, with its stunning harbour view and Peter Gilmore's iconic Snow Egg dessert, has topped many 'best in Australia' lists. Other heavyweights: Aria (Opera House views), Bennelong (inside the Opera House itself), and Sixpenny in Stanmore. Book weeks — sometimes months — in advance.",
+    descKo: "시드니에는 세계 최고의 레스토랑들이 있습니다. Tetsuya's — 일식과 프렌치의 융합 디구스테이션 — 개조된 예배당에 자리잡고 있으며 1인당 약 $250 AUD의 멀티코스 코스를 제공합니다. Quay는 환상적인 하버 뷰와 Peter Gilmore의 상징적인 Snow Egg 디저트로 수많은 '호주 최고' 리스트에 올랐습니다. 다른 강자들: Aria(오페라 하우스 뷰), Bennelong(오페라 하우스 내부), Sixpenny(스탠모어). 몇 주 — 때로는 몇 달 — 전에 예약해야 합니다.",
     spots: [
       { en: "Tetsuya's — legendary Japanese-French degustation", ko: "Tetsuya's — 전설적인 일식-프렌치 디구스테이션" },
       { en: "Quay — harbour views + Snow Egg dessert", ko: "Quay — 하버 뷰 + Snow Egg 디저트" },
@@ -88,13 +88,13 @@ const neighbourhoods = [
 const byoInfo = {
   titleEn: "BYO Culture — The Sydney Hack",
   titleKo: "BYO 문화 — 시드니 꿀팁",
-  descEn: "Bring Your Own (BYO) is one of Sydney's best dining traditions. Many smaller restaurants — especially Thai, Italian, and Chinese spots — don't have a liquor licence, which means you can bring your own wine or beer. Corkage is usually $3–5 per person (sometimes free), compared to $15–25+ for a single glass of wine at a licensed restaurant. It's an incredible way to eat well for less. Call ahead to check if the restaurant is BYO — and if they charge corkage. Pop into a bottleshop (Dan Murphy's or BWS) on the way and grab a bottle of Hunter Valley Semillon for $15.",
-  descKo: "Bring Your Own(BYO)은 시드니 최고의 다이닝 전통 중 하나입니다. 많은 작은 레스토랑 — 특히 태국, 이탈리안, 중국 식당 —은 주류 판매 면허가 없어서, 직접 와인이나 맥주를 가져갈 수 있습니다. 코르크 차지는 보통 1인당 $3–5(무료인 경우도 있음)인 반면, 면허가 있는 레스토랑에서 와인 한 잔은 $15–25+입니다. 적은 비용으로 훌륭한 식사를 즐길 수 있는 놀라운 방법입니다. 미리 전화해서 BYO 가능 여부와 코르크 차지 유무를 확인하세요. 가는 길에 Dan Murphy's나 BWS 같은 주류 판매점에 들러 헌터 밸리 세미뇽 한 병을 $15에 사가세요.",
+  descEn: "Bring Your Own (BYO) is one of Sydney's best dining traditions. Many smaller restaurants — especially Thai, Italian, and Chinese spots — don't have a liquor licence, which means you can bring your own wine or beer. Corkage is usually $3 AUD–5 per person (sometimes free), compared to $15 AUD–25+ for a single glass of wine at a licensed restaurant. It's an incredible way to eat well for less. Call ahead to check if the restaurant is BYO — and if they charge corkage. Pop into a bottleshop (Dan Murphy's or BWS) on the way and grab a bottle of Hunter Valley Semillon for $15 AUD.",
+  descKo: "Bring Your Own(BYO)은 시드니 최고의 다이닝 전통 중 하나입니다. 많은 작은 레스토랑 — 특히 태국, 이탈리안, 중국 식당 —은 주류 판매 면허가 없어서, 직접 와인이나 맥주를 가져갈 수 있습니다. 코르크 차지는 보통 1인당 $3 AUD–5(무료인 경우도 있음)인 반면, 면허가 있는 레스토랑에서 와인 한 잔은 $15 AUD–25+입니다. 적은 비용으로 훌륭한 식사를 즐길 수 있는 놀라운 방법입니다. 미리 전화해서 BYO 가능 여부와 코르크 차지 유무를 확인하세요. 가는 길에 Dan Murphy's나 BWS 같은 주류 판매점에 들러 헌터 밸리 세미뇽 한 병을 $15 AUD에 사가세요.",
 };
 
 const tips = [
   { en: "Book for dinner — most good restaurants fill up by Wednesday", ko: "저녁 예약은 필수 — 좋은 레스토랑은 수요일이면 자리 차있음" },
-  { en: "Lunch specials are real — $15–20 gets you the same dinner meal for half price", ko: "런치 스페셜 활용 — $15–20으로 저녁 메뉴를 반값에" },
+  { en: "Lunch specials are real — $15 AUD–20 gets you the same dinner meal for half price", ko: "런치 스페셜 활용 — $15 AUD–20으로 저녁 메뉴를 반값에" },
   { en: "Tipping is not required in Australia — it's not a cultural expectation", ko: "호주는 팁 문화가 아님 — 팁은 의무가 아닙니다" },
   { en: "Tapping = paying — tap your card or phone everywhere, cash is rare", ko: "카드/폰 결제 — 현금 거의 안 씀" },
   { en: "Water is free — ask for tap water, it's perfectly safe and drinkable", ko: "물은 무료 — 수돗물 요청 가능, 완전히 안전하고 마시기에 좋음" },
@@ -144,8 +144,8 @@ export default function SydneyFoodGuide() {
           </p>
           <div className="font-serif text-xl md:text-2xl text-stone-800 dark:text-stone-200 leading-relaxed space-y-4">
             <p>
-              <En>Sydney doesn&apos;t just have good restaurants — it has a real food culture. A city shaped by wave after wave of migration, where you can eat Thai on a paper plate in Newtown for $12, then turn around and book a $250 degustation at a restaurant that&apos;s in a converted chapel.</En>
-              <Ko>시드니에는 그냥 좋은 레스토랑이 있는 게 아니라 — 진정한 음식 문화가 있습니다. 이민의 물결이 만들어낸 도시로, 뉴타운에서 $12에 종이 접시에 담긴 태국 음식을 먹고, 다시 돌아서 개조된 예배당에서 $250 디구스테이션을 예약할 수 있는 곳입니다.</Ko>
+              <En>Sydney doesn&apos;t just have good restaurants — it has a real food culture. A city shaped by wave after wave of migration, where you can eat Thai on a paper plate in Newtown for $12 AUD, then turn around and book a $250 AUD degustation at a restaurant that&apos;s in a converted chapel.</En>
+              <Ko>시드니에는 그냥 좋은 레스토랑이 있는 게 아니라 — 진정한 음식 문화가 있습니다. 이민의 물결이 만들어낸 도시로, 뉴타운에서 $12 AUD에 종이 접시에 담긴 태국 음식을 먹고, 다시 돌아서 개조된 예배당에서 $250 AUD 디구스테이션을 예약할 수 있는 곳입니다.</Ko>
             </p>
             <p>
               <En>This guide skips the tourist traps and focuses on the places Sydneysiders actually eat. Warning: you&apos;ll get hungry reading this.</En>

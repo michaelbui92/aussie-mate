@@ -130,9 +130,9 @@ export default function HomeContent() {
               en: "Travel the country, not just Sydney",
               ko: "시드니만 보지 말고 호주를 여행하세요",
               descEn:
-                "A WHV year is the only time you'll fly domestically for $50. The Red Centre, Tassie, the Reef, the Whitsundays, Kakadu — most people leave Australia having seen three suburbs of Sydney. Don't be most people.",
+                "A WHV year is the only time you'll fly domestically for $50 AUD. The Red Centre, Tassie, the Reef, the Whitsundays, Kakadu — most people leave Australia having seen three suburbs of Sydney. Don't be most people.",
               descKo:
-                "워홀 1년은 국내선 $50에 fly할 수 있는 유일한 시기입니다. 레드 센터, 태즈메이니아, 그레이트 베리어 리프, 휘트선데이, 카카두 — 대부분은 시드니의 세 동네만 보고 떠납니다. 그런 대다수가 되지 마세요.",
+                "워홀 1년은 국내선 $50 AUD에 fly할 수 있는 유일한 시기입니다. 레드 센터, 태즈메이니아, 그레이트 베리어 리프, 휘트선데이, 카카두 — 대부분은 시드니의 세 동네만 보고 떠납니다. 그런 대다수가 되지 마세요.",
             },
             {
               icon: "🗣️",

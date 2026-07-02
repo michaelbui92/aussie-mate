@@ -84,7 +84,7 @@ const sections: WorkplaceSection[] = [
     koDesc: "최저 임금 기준과 퇴직연금",
     items: [
       { label: "What is an Award?", en: "An Award is a legal document that sets minimum pay and conditions for specific industries or jobs. If you're in a job covered by an Award, you must be paid at least the Award rate — not less.", ko: "Award는 특정 업종이나 직종에 대한 최저 임금과 근무 조건을 정한 법적 문서입니다. Award 적용 대상 직종에 있다면 최소한 Award 임금률을 받아야 합니다." },
-      { label: "Minimum Wage", en: "Australia has a national minimum wage. As of 2024, it's approximately $23 per hour for adult employees. This applies if no Award covers your job.", ko: "호주에는 전국 최저 임금이 있습니다. 2024년 기준 성인 직원 기준 시간당 약 $23입니다. Award 적용 대상이 아닌 경우 이 임금이 적용됩니다." },
+      { label: "Minimum Wage", en: "Australia has a national minimum wage. As of 2024, it's approximately $23 AUD per hour for adult employees. This applies if no Award covers your job.", ko: "호주에는 전국 최저 임금이 있습니다. 2024년 기준 성인 직원 기준 시간당 약 $23 AUD입니다. Award 적용 대상이 아닌 경우 이 임금이 적용됩니다." },
       { label: "Superannuation", en: "Superannuation (super) is money your employer must pay into your super fund — currently 11.5% of your wages. It goes into your nominated super fund and is accessible when you retire.", ko: "퇴직연금(super)은 고용주가 당신의 퇴직연금 계좌에 납부해야 하는 금액으로, 현재 임금의 11.5%입니다. 지정한 퇴직연금 계좌에 납부되며 퇴직 시 인출 가능집니다." },
       { label: "Payslips", en: "You must receive a payslip within 1 day of being paid. It must show: your hours, pay rate, any overtime, deductions, and super contributions. You can check your pay against the Award or minimum wage online.", ko: "급여를 받은 후 1일 이내에 급여 명세서를 받아야 합니다. 근무 시간, 임금률, 야근 수당, 공제, 퇴직연금 기여금을 표시해야 합니다. Award 또는 최저 임금에 맞게 급여를 확인할 수 있습니다." },
     ],

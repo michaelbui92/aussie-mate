@@ -48,7 +48,7 @@ export const destinations: Destination[] = [
       { en: "Jenolan Caves", ko: "제놀란 동굴", icon: "museum" },
     ],
     bestTime: { en: "Year-round — best in spring for wildflowers", ko: "년 내내 — 봄에 야생화를 즐기기에 최적" },
-    gettingThere: { en: "Train from Central Station to Katoomba ($18 Opal, 2hrs). Drive via Great Western Highway.", ko: "센트럴 스테이션에서 카툼바까지 기차 ($18 오팔, 2시간). 그레이트 웨스턴 하이웨이 이용." },
+    gettingThere: { en: "Train from Central Station to Katoomba ($18 AUD Opal, 2hrs). Drive via Great Western Highway.", ko: "센트럴 스테이션에서 카툼바까지 기차 ($18 AUD 오팔, 2시간). 그레이트 웨스턴 하이웨이 이용." },
     suggestedDays: { en: "1–2 days (long day trip or one overnight)", ko: "1~2일 (당일 또는 1박)" },
     attractions: [
       {
@@ -67,7 +67,7 @@ export const destinations: Destination[] = [
           ko: "구름 낀 옛날 비옥림을 지나는 케이블카, 유리 바닥 스카이웨이, 세계에서 가장 가파른 여객 열차. 디스커버리 패스로 3가지 탑승 모두 이용 가능.",
         },
         time: { en: "2–3 hrs", ko: "2~3시간" },
-        cost: { en: "From $55 (Discovery Pass)", ko: "$55부터 (디스커버리 패스)" },
+        cost: { en: "From $55 AUD (Discovery Pass)", ko: "$55 AUD부터 (디스커버리 패스)" },
       },
       {
         name: { en: "Wentworth Falls", ko: "웬트워스 폭포" },
@@ -85,7 +85,7 @@ export const destinations: Destination[] = [
           ko: "카툼바에서 차로 약 90분 거리에 있는 세계에서 가장 오래된 동굴 시스템 중 하나. 가이드 투어만 가능 — 루카스 동굴과 임페리얼 동굴이 가장 화려하다.",
         },
         time: { en: "2–4 hrs (incl. drive)", ko: "2~4시간 (운전 포함)" },
-        cost: { en: "From $49 (guided tour)", ko: "$49부터 (가이드 투어)" },
+        cost: { en: "From $49 AUD (guided tour)", ko: "$49 AUD부터 (가이드 투어)" },
       },
     ],
   },
@@ -119,7 +119,7 @@ export const destinations: Destination[] = [
           ko: "헌터에서 가장 오래된 와이너리 중 하나(1866), 브로큰백 산맥을 바라보며 세미뇽과 시라즈 테이스팅. 피크닉 잔디밭 포함.",
         },
         time: { en: "1–2 hrs", ko: "1~2시간" },
-        cost: { en: "$15–$25 (tasting flight)", ko: "$15~$25 (테이스팅 콩보)" },
+        cost: { en: "$15–$25 AUD (tasting flight)", ko: "$15~$25 AUD (테이스팅 콩보)" },
       },
       {
         name: { en: "Hunter Valley Gardens", ko: "헌터 밸리 가든" },
@@ -128,7 +128,7 @@ export const destinations: Destination[] = [
           ko: "60에이커가 넘는 테마 가든 — 동화, 장미, sunken — 겨울에는 3일간 진행되는 크리스마스 라이트 이벤트가 NSW 전역에서 가족 단위 방문객을 끌어모읍니다.",
         },
         time: { en: "2–4 hrs", ko: "2~4시간" },
-        cost: { en: "$32 adult / $19 child", ko: "성인 $32 / 어린이 $19" },
+        cost: { en: "$32 AUD adult / $19 AUD child", ko: "성인 $32 AUD / 어린이 $19 AUD" },
       },
       {
         name: { en: "Hot air balloon at sunrise", ko: "일출 핫에어볼론" },
@@ -137,7 +137,7 @@ export const destinations: Destination[] = [
           ko: "Balloon Aloft와 Beyond Ballooning 모두 포도원 위에서 1시간 일출 비행을 운영하며, 착륙 후 샴페인 조식 제공. 사전 예약 필수 — 주말에는 매진.",
         },
         time: { en: "3–4 hrs (incl. breakfast)", ko: "3~4시간 (조식 포함)" },
-        cost: { en: "From $335 per person", ko: "1인 $335부터" },
+        cost: { en: "From $335 AUD per person", ko: "1인 $335 AUD부터" },
       },
     ],
   },
@@ -189,7 +189,7 @@ export const destinations: Destination[] = [
           ko: "키아마 남쪽 내륙의 아담한 마을로 베이커리가 즐비한 메인 거리와 사우스 코스트 낙농 단지 — 현지 치즈와 무화과 식초를 꼭 둘러보세요.",
         },
         time: { en: "2–3 hrs", ko: "2~3시간" },
-        cost: { en: "Free to walk; tastings $5–$10", ko: "산책 무료; 테이스팅 $5~$10" },
+        cost: { en: "Free to walk; tastings $5–$10 AUD", ko: "산책 무료; 테이스팅 $5~$10 AUD" },
       },
     ],
   },
@@ -219,11 +219,11 @@ export const destinations: Destination[] = [
       {
         name: { en: "Perisher or Thredbo ski day", ko: "페리셔 또는 스레드보 스키 데이" },
         blurb: {
-          en: "Australia's two largest ski resorts — Perisher is the larger, Thredbo's village has the more European feel. Full-day lift + lesson + gear packages start around $200 for adults in peak season.",
-          ko: "호주의 두 대형 스키 리조트 — 페리셔가 규모가 크고, 스레드보의 빌리지는 유럽 스키 타운 느낌. 성인 1일 리프트 + 강습 + 장비 패키지는 피크시즌에 $200부터.",
+          en: "Australia's two largest ski resorts — Perisher is the larger, Thredbo's village has the more European feel. Full-day lift + lesson + gear packages start around $200 AUD for adults in peak season.",
+          ko: "호주의 두 대형 스키 리조트 — 페리셔가 규모가 크고, 스레드보의 빌리지는 유럽 스키 타운 느낌. 성인 1일 리프트 + 강습 + 장비 패키지는 피크시즌에 $200 AUD부터.",
         },
         time: { en: "Full day", ko: "종일" },
-        cost: { en: "From $200 (lift + lesson + gear)", ko: "$200부터 (리프트 + 강습 + 장비)" },
+        cost: { en: "From $200 AUD (lift + lesson + gear)", ko: "$200 AUD부터 (리프트 + 강습 + 장비)" },
       },
       {
         name: { en: "Mount Kosciuszko summit walk", ko: "마운트 코시우스코 정상 트레킹" },
@@ -232,7 +232,7 @@ export const destinations: Destination[] = [
           ko: "호주 최고봉 2,228m — 스레드보 정상역에서 13km 왕복, 대부분 금속 데크 길, 좋은 등산화면 누구나 가능. 12~2월(적설 없는 시기) 최적.",
         },
         time: { en: "4–5 hrs (return)", ko: "4~5시간 (왕복)" },
-        cost: { en: "From $36 (lift ticket; otherwise walk up)", ko: "$36부터 (리프트; 또는 도보)" },
+        cost: { en: "From $36 AUD (lift ticket; otherwise walk up)", ko: "$36 AUD부터 (리프트; 또는 도보)" },
       },
       {
         name: { en: "Yarrangobilly River thermal pool", ko: "야란고빌리 강 온천" },
@@ -265,26 +265,26 @@ export const destinations: Destination[] = [
       { en: "Barangaroo Boardwalk", ko: "바라부가루 보드워크", icon: "beach" },
     ],
     bestTime: { en: "Year-round — best sunset ferry in summer", ko: "년 내내 — 여름 일몰 페리가 가장 아름다움" },
-    gettingThere: { en: "Sydney CBD — ferry from Circular Quay (Ferry routes F1–F14, $3–7 Opal). Train to Circular Quay station.", ko: "시드니 CBD — 서큘러 키에서 페리 (F1~F14 노선, $3~7 오팔). 기차로 서큘러 키 역." },
+    gettingThere: { en: "Sydney CBD — ferry from Circular Quay (Ferry routes F1–F14, $3 AUD–7 Opal). Train to Circular Quay station.", ko: "시드니 CBD — 서큘러 키에서 페리 (F1~F14 노선, $3 AUD~7 오팔). 기차로 서큘러 키 역." },
     suggestedDays: { en: "1–2 days (most of it on foot + ferries)", ko: "1~2일 (도보와 페리로 대부분)" },
     attractions: [
       {
         name: { en: "Manly ferry crossing", ko: "매슬리 페리" },
         blurb: {
-          en: "The 30-minute trip from Circular Quay to Manly Wharf is the cheapest harbour cruise in Sydney ($4 Opal). Sit on the right side heading out for the Opera House shot.",
-          ko: "서큘러 키에서 매슬리 부두까지 30분 — 시드니에서 가장 저렴한 하버 크루즈 ($4 오팔). 출발 시 오른쪽에 앉으면 오페라 하우스 사진을 잡을 수 있어요.",
+          en: "The 30-minute trip from Circular Quay to Manly Wharf is the cheapest harbour cruise in Sydney ($4 AUD Opal). Sit on the right side heading out for the Opera House shot.",
+          ko: "서큘러 키에서 매슬리 부두까지 30분 — 시드니에서 가장 저렴한 하버 크루즈 ($4 AUD 오팔). 출발 시 오른쪽에 앉으면 오페라 하우스 사진을 잡을 수 있어요.",
         },
         time: { en: "1 hr (round trip)", ko: "1시간 (왕복)" },
-        cost: { en: "$3–$7 Opal", ko: "$3~$7 오팔" },
+        cost: { en: "$3–$7 AUD Opal", ko: "$3~$7 AUD 오팔" },
       },
       {
         name: { en: "Sydney Opera House tour", ko: "시드니 오페라 하우스 투어" },
         blurb: {
-          en: "30-minute guided tour of the inside of the Opera House — books open 2–3 months ahead for $50. The 1-hr 'Behind the Scenes' tour runs when a show is dark.",
-          ko: "오페라 하우스 내부 30분 가이드 투어 — $50에 2~3개월 전부터 예약. 공연 없는 날에는 1시간 'Behind the Scenes' 투어 운영.",
+          en: "30-minute guided tour of the inside of the Opera House — books open 2–3 months ahead for $50 AUD. The 1-hr 'Behind the Scenes' tour runs when a show is dark.",
+          ko: "오페라 하우스 내부 30분 가이드 투어 — $50 AUD에 2~3개월 전부터 예약. 공연 없는 날에는 1시간 'Behind the Scenes' 투어 운영.",
         },
         time: { en: "1 hr", ko: "1시간" },
-        cost: { en: "From $50", ko: "$50부터" },
+        cost: { en: "From $50 AUD", ko: "$50 AUD부터" },
       },
       {
         name: { en: "Royal Botanic Garden walk", ko: "로열 보타닉 가든 산책" },
@@ -317,7 +317,7 @@ export const destinations: Destination[] = [
       { en: "Art trail & local galleries", ko: "아트 트레일 & 현지 미술관", icon: "museum" },
     ],
     bestTime: { en: "Year-round — autumn for bushwalks, summer for beaches", ko: "년 내내 — 가을에는 숲 산책, 여름에는 해변" },
-    gettingThere: { en: "Train on the Central Coast Newcastle Line from Central to Gosford or Wyong (1–1.5hrs, $9 Opal). Drive via the M1.", ko: "센트럴 코스트 뉴캐슬 라인 타고 센트럴에서 고스퍼드/와이옹까지 (1~1.5시간, $9 오팔). M1 이용 운전." },
+    gettingThere: { en: "Train on the Central Coast Newcastle Line from Central to Gosford or Wyong (1–1.5hrs, $9 AUD Opal). Drive via the M1.", ko: "센트럴 코스트 뉴캐슬 라인 타고 센트럴에서 고스퍼드/와이옹까지 (1~1.5시간, $9 AUD 오팔). M1 이용 운전." },
     suggestedDays: { en: "1–2 days (day trip or quiet weekend)", ko: "1~2일 (당일치기 또는 조용한 주말)" },
     attractions: [
       {
@@ -345,7 +345,7 @@ export const destinations: Destination[] = [
           ko: "Ettalong에서 Pittwater를 건너 유명한 팜 비치(홈앤어웨이 Summer Bay 촬영지)까지 1시간 페리. 차량 없이 즐기는 풍경 좋은 1시간, 커피도 판매.",
         },
         time: { en: "1 hr (crossing only)", ko: "1시간 (페리 구간만)" },
-        cost: { en: "From $22 return", ko: "왕복 $22부터" },
+        cost: { en: "From $22 AUD return", ko: "왕복 $22 AUD부터" },
       },
     ],
   },
@@ -370,7 +370,7 @@ export const destinations: Destination[] = [
       { en: "Farmers markets & organic food", ko: "파머스 마켓 & 유기농 음식", icon: "utensils" },
     ],
     bestTime: { en: "Sep–Nov (whales + warm, fewer crowds) or Mar–May (warm sea)", ko: "9~11월 (고래 + 따뜻하고 한산) 또는 3~5월 (따뜻한 바다)" },
-    gettingThere: { en: "Fly Sydney→Ballina (1hr, $100–200), then shuttle (30min). Or drive via Pacific Hwy (8–9hrs).", ko: "시드니→발리나 항공 (1시간, $100~200) 후 셔틀 (30분). 또는 퍼시픽 하이웨이 운전 (8~9시간)." },
+    gettingThere: { en: "Fly Sydney→Ballina (1hr, $100 AUD–200), then shuttle (30min). Or drive via Pacific Hwy (8–9hrs).", ko: "시드니→발리나 항공 (1시간, $100 AUD~200) 후 셔틀 (30분). 또는 퍼시픽 하이웨이 운전 (8~9시간)." },
     suggestedDays: { en: "4–7 days (weekend minimum, week unlocks the hinterland)", ko: "4~7일 (최소 주말, 일주일이면 내륙까지)" },
     attractions: [
       {
@@ -385,8 +385,8 @@ export const destinations: Destination[] = [
       {
         name: { en: "Main Beach sunrise surf", ko: "메인 비치 일출 서핑" },
         blurb: {
-          en: "Beginner-friendly waves year-round at Main Beach; the Pass is the locals' right-hand point break. Board hire on the Cape is around $40 for 2 hours.",
-          ko: "메인 비치는 연중 초보자 친화적 파도; The Pass는 현지인들 포인트 브레이크. 케이프 지역에서 보드 대여 2시간 약 $40.",
+          en: "Beginner-friendly waves year-round at Main Beach; the Pass is the locals' right-hand point break. Board hire on the Cape is around $40 AUD for 2 hours.",
+          ko: "메인 비치는 연중 초보자 친화적 파도; The Pass는 현지인들 포인트 브레이크. 케이프 지역에서 보드 대여 2시간 약 $40 AUD.",
         },
         time: { en: "2 hrs", ko: "2시간" },
         cost: { en: "Free if you have a board", ko: "보드 지참 시 무료" },
@@ -398,7 +398,7 @@ export const destinations: Destination[] = [
           ko: "내륙의 크리스털 캐슬 정원 — 세계 최대 규모로 알려진 두 거대 수정, 우림 산책, 평화의 기둥 그로브 포함. 반나절 예정.",
         },
         time: { en: "3–4 hrs", ko: "3~4시간" },
-        cost: { en: "From $58 (check website for current pricing)", ko: "$58부터 (사이트에서 최신 가격 확인)" },
+        cost: { en: "From $58 AUD (check website for current pricing)", ko: "$58 AUD부터 (사이트에서 최신 가격 확인)" },
       },
     ],
   },
@@ -442,16 +442,16 @@ export const destinations: Destination[] = [
           ko: "허스키슨에서 출발하는 2시간 에코 크루즈 연중 95% 이상 돌고래 관측 확률. 보트가 가까이 떠들 권리가 있어 무리가 수 분간 배와 함께 헤엄치는 장면도 흔합니다.",
         },
         time: { en: "2.5 hrs (incl. boarding)", ko: "2.5시간 (탑승 포함)" },
-        cost: { en: "From $90 (adult); children cheaper", ko: "성인 $90부터; 어린이 할인" },
+        cost: { en: "From $90 AUD (adult); children cheaper", ko: "성인 $90 AUD부터; 어린이 할인" },
       },
       {
         name: { en: "Booderee bushwalk + kangaroos at dawn", ko: "부디리 산책 + 새벽 캥거루" },
         blurb: {
-          en: "Booderee National Park (entry ~$13/vehicle) at the right edge of the bay — white-sand beaches plus resident eastern-grey kangaroos on the lawn at Jervis Bay village at dawn.",
-          ko: "만 우측 끝의 부디리 국립공원 (입장료 차량당 약 $13) — 하얀 모래 해변과 함께 Jervis Bay 마을의 잔디밭에서 새벽에 만날 수 있는 동회색 캥거루.",
+          en: "Booderee National Park (entry ~$13 AUD/vehicle) at the right edge of the bay — white-sand beaches plus resident eastern-grey kangaroos on the lawn at Jervis Bay village at dawn.",
+          ko: "만 우측 끝의 부디리 국립공원 (입장료 차량당 약 $13 AUD) — 하얀 모래 해변과 함께 Jervis Bay 마을의 잔디밭에서 새벽에 만날 수 있는 동회색 캥거루.",
         },
         time: { en: "Half day", ko: "반나절" },
-        cost: { en: "~ $13 per vehicle (check current pass)", ko: "차량당 약 $13 (현행 패스 확인)" },
+        cost: { en: "~ $13 AUD per vehicle (check current pass)", ko: "차량당 약 $13 AUD (현행 패스 확인)" },
       },
     ],
   },
@@ -476,7 +476,7 @@ export const destinations: Destination[] = [
       { en: "Austinmer & Thirroul surf beaches", ko: "오스틴머 & 시룰 서핑 비치", icon: "swim" },
     ],
     bestTime: { en: "Year-round — autumn for the waterfalls, summer for beaches", ko: "년 내내 — 가을에는 폭포, 여름에는 해변" },
-    gettingThere: { en: "Drive via the M1 (1hr). Train from Central to Wollongong (1.5hrs, $8 Opal).", ko: "M1 이용 운전 (1시간). 센트럴에서 울런공까지 기차 (1.5시간, $8 오팔)." },
+    gettingThere: { en: "Drive via the M1 (1hr). Train from Central to Wollongong (1.5hrs, $8 AUD Opal).", ko: "M1 이용 운전 (1시간). 센트럴에서 울런공까지 기차 (1.5시간, $8 AUD 오팔)." },
     suggestedDays: { en: "1 day (drive the bridge + temple + beach) or a relaxed weekend", ko: "1일 (브리지+사원+해변 드라이브) 또는 여유로운 주말" },
     attractions: [
       {
@@ -539,7 +539,7 @@ export const destinations: Destination[] = [
           ko: "M.V. Kingdom호에서 출발하는 돌고래 관측 크루즈, 2.5시간, 병코 돌고래 관측 성공률 약 99%. 일부 크루즈는 5~11월 고래 관측과 결합.",
         },
         time: { en: "2.5 hrs", ko: "2.5시간" },
-        cost: { en: "From $42 (adult); children cheaper", ko: "성인 $42부터; 어린이 할인" },
+        cost: { en: "From $42 AUD (adult); children cheaper", ko: "성인 $42 AUD부터; 어린이 할인" },
       },
       {
         name: { en: "Stockton Bight sand dune sandboarding", ko: "스톡턴 바이트 사구 샌드보드" },
@@ -548,7 +548,7 @@ export const destinations: Destination[] = [
           ko: "남반구 최대 규모의 해안 이동 사구로 최대 30m 높이. 투어에는 4WD 차량 환승 + 샌드보드 대여 포함. 정상에서의 셀카가 엽서용 사진.",
         },
         time: { en: "1.5 hrs (incl. transfer)", ko: "1.5시간 (환승 포함)" },
-        cost: { en: "From $45 (per person; varies by operator)", ko: "1인 $45부터 (운영사별 상이)" },
+        cost: { en: "From $45 AUD (per person; varies by operator)", ko: "1인 $45 AUD부터 (운영사별 상이)" },
       },
       {
         name: { en: "Fly Point snorkel", ko: "플라이 포인트 스노클" },

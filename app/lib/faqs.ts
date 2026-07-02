@@ -29,8 +29,8 @@ export const faqs: FaqItem[] = [
   {
     q: { en: "Is Australia expensive?", ko: "호주는 비싼가요?" },
     a: {
-      en: "Yes — Sydney and Melbourne are among the world's most expensive cities. A coffee is around $5–$7. A casual restaurant meal is $20–$35 per person. Rent in Sydney is the biggest cost — a room in a shared house is $200–$350/week, a one-bedroom apartment starts around $450–$600/week. Use numbeo.com or expatistan.com for real-time comparisons.",
-      ko: "네 — 시드니와 멜버른은 세계에서 가장 비싼 도시 중 하나입니다. 커피 한 잔에 약 $5–$7. 비공식 레스토랑 식사는 1인당 $20–$35. 시드니에서 가장 큰 지출은 임대 — 쉐어하우스 방은 주 $200–$350, 1Bed 아파트는 주 $450–$600부터. 실시간 비교는 numbeo.com 또는 expatistan.com에서.",
+      en: "Yes — Sydney and Melbourne are among the world's most expensive cities. A coffee is around $5–$7 AUD. A casual restaurant meal is $20–$35 AUD per person. Rent in Sydney is the biggest cost — a room in a shared house is $200–$350 AUD/week, a one-bedroom apartment starts around $450–$600 AUD/week. Use numbeo.com or expatistan.com for real-time comparisons.",
+      ko: "네 — 시드니와 멜버른은 세계에서 가장 비싼 도시 중 하나입니다. 커피 한 잔에 약 $5–$7 AUD. 비공식 레스토랑 식사는 1인당 $20–$35 AUD. 시드니에서 가장 큰 지출은 임대 — 쉐어하우스 방은 주 $200–$350 AUD, 1Bed 아파트는 주 $450–$600 AUD부터. 실시간 비교는 numbeo.com 또는 expatistan.com에서.",
     },
   },
   {
@@ -64,8 +64,8 @@ export const faqs: FaqItem[] = [
   {
     q: { en: "What should I budget for a week in Sydney?", ko: "시드니에서 일주일 비용은 어느 정도인가요?" },
     a: {
-      en: "Budget travellers: $600–$900 AUD/week (shared accommodation, self-catering, free activities). Mid-range: $1,200–$2,000/week (private room, eating out 2–3 times, some paid attractions). This excludes flights, long-term visa costs, and health insurance. Use numbeo.com for detailed cost-of-living breakdowns.",
-      ko: "Budget 여행자: 주 $600–$900 AUD (셰어숙소, 직접 요리, 무료 활동 중심). 중급: 주 $1,200–$2,000 (개인 방, 주 2–3회 외식, 일부 유료 명소). 이는 항공권, 장기 비자 비용, 건강보험을 제외한 금액입니다. 생활비 상세 비교는 numbeo.com에서.",
+      en: "Budget travellers: $600–$900 AUD/week (shared accommodation, self-catering, free activities). Mid-range: $1,200–$2,000 AUD/week (private room, eating out 2–3 times, some paid attractions). This excludes flights, long-term visa costs, and health insurance. Use numbeo.com for detailed cost-of-living breakdowns.",
+      ko: "Budget 여행자: 주 $600–$900 AUD (셰어숙소, 직접 요리, 무료 활동 중심). 중급: 주 $1,200–$2,000 AUD (개인 방, 주 2–3회 외식, 일부 유료 명소). 이는 항공권, 장기 비자 비용, 건강보험을 제외한 금액입니다. 생활비 상세 비교는 numbeo.com에서.",
     },
   },
   {

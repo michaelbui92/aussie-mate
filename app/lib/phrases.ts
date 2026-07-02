@@ -1150,7 +1150,7 @@ export const phrases: Phrase[] = [
     phrase: "Avo",
     meaning: "Avocado",
     korean: "아보카도",
-    example: "Smashed avo on toast is like $18 at most places now.",
+    example: "Smashed avo on toast is like $18 AUD at most places now.",
     category: "daily-life",
   },
   {
@@ -1304,7 +1304,7 @@ export const phrases: Phrase[] = [
     phrase: "Op shop",
     meaning: "Opportunity shop / charity thrift store",
     korean: "재활용 옷가게",
-    example: "Got this jacket for $5 at the op shop.",
+    example: "Got this jacket for $5 AUD at the op shop.",
     category: "daily-life",
   },
   {
@@ -1318,7 +1318,7 @@ export const phrases: Phrase[] = [
     phrase: "Pokies",
     meaning: "Poker machines / slot machines in pubs and clubs",
     korean: "포커머신 / 슬롯머신",
-    example: "Lost $50 on the pokies in 10 minutes. Classic.",
+    example: "Lost $50 AUD on the pokies in 10 minutes. Classic.",
     category: "social",
   },
   {
@@ -1346,7 +1346,7 @@ export const phrases: Phrase[] = [
     phrase: "Salvos",
     meaning: "Salvation Army charity shop",
     korean: "구원군 자선 Shops",
-    example: "Got some decent clothes from the salvos for under $20.",
+    example: "Got some decent clothes from the salvos for under $20 AUD.",
     category: "daily-life",
   },
   {
