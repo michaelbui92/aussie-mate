@@ -119,8 +119,8 @@ export const searchIndex: SearchResult[] = [
     matches: { en: "tenant rights, rent increase, repairs, entry notice, eviction, break lease, notice period, landlord obligations, 60 days notice, 90 days notice", ko: "임차인 권리, 임대료 인상, 수리, 입주 고지, 퇴거, 임대차 해지, 임대인 의무" },
   },
   {
-    page: "AussieGuides",
-    pageKo: "호주 영어",
+    page: "Apartment Guide",
+    pageKo: "임대 가이드",
     href: "/apartment",
     section: "Bills & Move-in Costs",
     sectionKo: "공과금 및 입주 비용",
@@ -142,7 +142,7 @@ export const searchIndex: SearchResult[] = [
     href: "/study",
     section: "Aussie Uni Culture",
     sectionKo: "호주 대학 문화",
-    matches: { en: "university culture, lectures, tutorials, group work, participation mark, self-directed learning, study load, lecture recording", ko: "대학 문화, 강의, 튜토리얼, 그룹 작업, 참여 점수,학" },
+    matches: { en: "university culture, lectures, tutorials, group work, participation mark, self-directed learning, study load, lecture recording", ko: "대학 문화, 강의, 튜토리얼, 그룹 작업, 참여 점수, 자율 학습" },
   },
   {
     page: "Study",
