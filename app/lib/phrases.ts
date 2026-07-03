@@ -761,7 +761,7 @@ export const phrases: Phrase[] = [
   {
     phrase: "Sledging",
     meaning: "Trash talk between players (especially in cricket)",
-    korean: "선수 간 농담/트래시 톡 (크리켓에서 유행)",
+    korean: "상대편 약 올리기 (특히 크리켓)",
     example: "The Aussie team is known for their sledging.",
     category: "sports",
   },
