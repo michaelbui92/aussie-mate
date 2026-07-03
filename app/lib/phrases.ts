@@ -404,9 +404,9 @@ export const phrases: Phrase[] = [
   },
   {
     phrase: "Coorie",
-    meaning: "To cuddle / snuggle (but also a work break vibe)",
+    meaning: "To cuddle / snuggle (or relax into someone)",
     korean: "꼭 껴안다",
-    example: "Not commonly used at work, but in some contexts means relaxing.",
+    example: "We all cooried up on the couch after the long drive.",
     category: "work",
   },
   {
@@ -559,13 +559,6 @@ export const phrases: Phrase[] = [
     category: "social",
   },
   {
-    phrase: "Ripper",
-    meaning: "Really great / Fantastic",
-    korean: "진짜 좋아",
-    example: "We had a ripper time at the BBQ.",
-    category: "social",
-  },
-  {
     phrase: "Suss",
     meaning: "Suspicious / Check something out (verb)",
     korean: "수상한 / 살펴보다",
@@ -645,20 +638,6 @@ export const phrases: Phrase[] = [
 
   // === FOOD & DRINKS (20 phrases) ===
   {
-    phrase: "Brekkie",
-    meaning: "Breakfast",
-    korean: "아침 식사",
-    example: "What's for brekkie? I'm starving!",
-    category: "food",
-  },
-  {
-    phrase: "Sanger",
-    meaning: "Sandwich",
-    korean: "샌드위치",
-    example: "I'll grab a sanger from the cafe for lunch.",
-    category: "food",
-  },
-  {
     phrase: "Chook",
     meaning: "Chicken",
     korean: "닭고기",
@@ -677,48 +656,6 @@ export const phrases: Phrase[] = [
     meaning: "Sausage (especially for BBQs)",
     korean: "소시지 (바베큐용)",
     example: "Flip the snags on the barbie, they're almost ready.",
-    category: "food",
-  },
-  {
-    phrase: "Barbie",
-    meaning: "Barbecue / BBQ",
-    korean: "바베큐",
-    example: "We're having a barbie this Saturday — you should come!",
-    category: "food",
-  },
-  {
-    phrase: "Esky",
-    meaning: "Cooler / Ice box",
-    korean: "아이스박스",
-    example: "Load up the esky with drinks for the barbie.",
-    category: "food",
-  },
-  {
-    phrase: "Goon",
-    meaning: "Cheap boxed wine",
-    korean: "박스 와인 (저렴한)",
-    example: "We're bringing a bag of goon to the party.",
-    category: "food",
-  },
-  {
-    phrase: "Bottle-o",
-    meaning: "Bottle shop / Liquor store",
-    korean: "주류 판매점",
-    example: "We need to stop at the bottle-o before the party.",
-    category: "food",
-  },
-  {
-    phrase: "Stubby holder",
-    meaning: "Insulated can/bottle holder",
-    korean: "캔 홀더",
-    example: "Grab a stubby holder so your beer stays cold.",
-    category: "food",
-  },
-  {
-    phrase: "Cuppa",
-    meaning: "A cup of tea or coffee",
-    korean: "차 / 커피 한잔",
-    example: "Let's grab a cuppa and chat.",
     category: "food",
   },
   {
@@ -810,7 +747,7 @@ export const phrases: Phrase[] = [
   {
     phrase: "Wicket",
     meaning: "The stumps (target for bowler) or the dismissal of a batsman",
-    korean: "삼 cones (크리켓)/타자 아웃",
+    korean: "wicket (크리켓의 삼대) / 타자 아웃",
     example: "What a ripper catch at the wicket!",
     category: "sports",
   },
@@ -908,20 +845,6 @@ export const phrases: Phrase[] = [
 
   // === MEDIA (30 phrases) ===
   {
-    phrase: "Footy",
-    meaning: "Football (usually AFL or Rugby League depending on state)",
-    korean: "풋볼 (AFL 또는 럭비 리그)",
-    example: "Are you watching the footy tonight? Go the Blues!",
-    category: "media",
-  },
-  {
-    phrase: "The Ashes",
-    meaning: "The famous cricket series between Australia and England",
-    korean: "호주 vs 영국 크리켓 대회",
-    example: "We won The Ashes again! Three-nil!",
-    category: "media",
-  },
-  {
     phrase: "Sledge",
     meaning: "To tease / insult playfully (especially in sports)",
     korean: "약 올리다 (스포츠에서)",
@@ -968,13 +891,6 @@ export const phrases: Phrase[] = [
     meaning: "Ambulance / Paramedic",
     korean: "구급차 / 구급대원",
     example: "Quick, call an ambo — someone's been hurt!",
-    category: "media",
-  },
-  {
-    phrase: "Sanger",
-    meaning: "Sandwich (also re-listed here as it's common in social media)",
-    korean: "샌드위치",
-    example: "Check out the sanger I got from this cafe — unreal!",
     category: "media",
   },
   {
@@ -1119,20 +1035,6 @@ export const phrases: Phrase[] = [
   },
 
   {
-    phrase: "Arvo",
-    meaning: "Afternoon",
-    korean: "오후",
-    example: "Let's grab drinks this arvo at the local.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Ambo",
-    meaning: "Ambulance officer / paramedic",
-    korean: "구급대원",
-    example: "Call an ambo! That bloke's copped a bit of a knock.",
-    category: "daily-life",
-  },
-  {
     phrase: "Aggro",
     meaning: "Aggressive / anger",
     korean: "약올림 / 공격적",
@@ -1151,20 +1053,6 @@ export const phrases: Phrase[] = [
     meaning: "Avocado",
     korean: "아보카도",
     example: "Smashed avo on toast is like $18 AUD at most places now.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Bottle-o",
-    meaning: "Bottle shop / liquor store",
-    korean: "주류편의점",
-    example: "Need to duck down to the bottle-o, we've got nothing for dinner.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Brekkie",
-    meaning: "Breakfast",
-    korean: "아침식사",
-    example: "Brekkie at 7am, then I'm heading to the beach.",
     category: "daily-life",
   },
   {
@@ -1208,41 +1096,6 @@ export const phrases: Phrase[] = [
     korean: "호주 병사 / 호주 남자",
     example: "He was a true blue digger, fought in two wars.",
     category: "social",
-  },
-  {
-    phrase: "Dunny",
-    meaning: "Toilet / bathroom",
-    korean: "화장실",
-    example: "Where's the dunny in this place?",
-    category: "daily-life",
-  },
-  {
-    phrase: "Esky",
-    meaning: "Insulated cooler box for drinks and food",
-    korean: "보온 냉장백",
-    example: "Fill the esky with ice, we're going to the beach.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Flat out",
-    meaning: "Very busy / working hard",
-    korean: "바쁘다 / 몹시",
-    example: "I've been flat out all week, I need a weekend off.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Footy",
-    meaning: "Australian Rules Football (AFL) or Rugby League",
-    korean: "호주식 축구 / 럭비",
-    example: "You coming round for footy on Saturday?",
-    category: "social",
-  },
-  {
-    phrase: "Heaps",
-    meaning: "A lot / very much",
-    korean: "엄청 많이 / 매우",
-    example: "There's heaps of parking at the stadium.",
-    category: "daily-life",
   },
   {
     phrase: "Hoon",
@@ -1322,13 +1175,6 @@ export const phrases: Phrase[] = [
     category: "social",
   },
   {
-    phrase: "Postie",
-    meaning: "Postman / mail carrier",
-    korean: "우체부",
-    example: "The postie always comes around 9am.",
-    category: "daily-life",
-  },
-  {
     phrase: "Prezzie",
     meaning: "Present / gift",
     korean: "선물",
@@ -1345,15 +1191,8 @@ export const phrases: Phrase[] = [
   {
     phrase: "Salvos",
     meaning: "Salvation Army charity shop",
-    korean: "구원군 자선 Shops",
+    korean: "구원군 자선 매장",
     example: "Got some decent clothes from the salvos for under $20 AUD.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Sanger",
-    meaning: "Sandwich",
-    korean: "샌드위치",
-    example: "Fancy a sanger for lunch?",
     category: "daily-life",
   },
   {
@@ -1378,13 +1217,6 @@ export const phrases: Phrase[] = [
     category: "daily-life",
   },
   {
-    phrase: "Sickie",
-    meaning: "Taking a day off work when you're not actually sick",
-    korean: "병가",
-    example: "Pulling a sickie today to go to the cricket.",
-    category: "work",
-  },
-  {
     phrase: "Skinny",
     meaning: "A latte or flat white in a 180ml cup",
     korean: "스키니 라떼",
@@ -1399,38 +1231,10 @@ export const phrases: Phrase[] = [
     category: "social",
   },
   {
-    phrase: "Smoko",
-    meaning: "A smoke break / short work break",
-    korean: "흡연휴식 / 짧은 휴식",
-    example: "Let's have a smoko before the next meeting.",
-    category: "work",
-  },
-  {
-    phrase: "Snag",
-    meaning: "A sausage (usually for a BBQ)",
-    korean: "소세지",
-    example: "Chuck another snag on the barbie!",
-    category: "daily-life",
-  },
-  {
     phrase: "Spruiker",
     meaning: "A person who advertises / calls out deals on the street",
     korean: "길거리 광고인",
     example: "Watch out for the spruiker outside the shop, he'll trap you in.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Stoked",
-    meaning: "Very happy / excited",
-    korean: "매우 기쁜 / 신난",
-    example: "I'm absolutely stoked with how that turned out!",
-    category: "social",
-  },
-  {
-    phrase: "Suss",
-    meaning: "To check out / to be suspicious of",
-    korean: "살피다 / 의심하다",
-    example: "I reckon we should suss out the situation before jumping in.",
     category: "daily-life",
   },
   {
@@ -1448,31 +1252,10 @@ export const phrases: Phrase[] = [
     category: "daily-life",
   },
   {
-    phrase: "Tradie",
-    meaning: "A tradesperson ( plumber, electrician, builder etc.)",
-    korean: "기능공 / 기술자",
-    example: "Got a tradie round to fix the leaking tap this arvo.",
-    category: "daily-life",
-  },
-  {
     phrase: "Ute",
     meaning: "Utility vehicle / pickup truck",
     korean: "밴 / 픽업트럭",
     example: "Throw the esky in the ute, we're heading to the beach.",
-    category: "daily-life",
-  },
-  {
-    phrase: "Whinge",
-    meaning: "To complain / moan",
-    korean: "투정하다 / 불평하다",
-    example: "Stop your whinging and just get on with it.",
-    category: "social",
-  },
-  {
-    phrase: "Woop woop",
-    meaning: "The middle of nowhere / a remote area",
-    korean: "시골 개척지 / 아무 데도",
-    example: "It's a great job but you might end up in woop woop for a while.",
     category: "daily-life",
   },
   {
@@ -1481,5 +1264,5 @@ export const phrases: Phrase[] = [
     korean: "오래 / 한참",
     example: "I haven't seen Dave in yonks, he moved to Melbourne.",
     category: "daily-life",
-  },
+  }
 ];

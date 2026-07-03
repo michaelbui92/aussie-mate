@@ -29,7 +29,9 @@ npm run lint
 ```
 
 No env vars required — the site is fully static at build time. All content
-is in `app/lib/phrases.ts` (209 Aussie phrases) and the page-level `.tsx`
+is in `app/lib/phrases.ts` (178 Aussie phrases after the dedupe pass that
+removed 31 duplicate entries — same phrase was previously listed under
+multiple categories with drifting Korean glosses) and the page-level `.tsx`
 files.
 
 ---
