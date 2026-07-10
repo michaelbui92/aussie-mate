@@ -131,11 +131,13 @@ const themeInitScript = `
       var detected = 'en';
       for (var i = 0; i < langs.length; i++) {
         if (langs[i] && langs[i].indexOf('ko') === 0) { detected = 'ko'; break; }
+        if (langs[i] && langs[i].indexOf('zh') === 0) { detected = 'zh'; break; }
+        if (langs[i] && langs[i].indexOf('ja') === 0) { detected = 'ja'; break; }
       }
       l = detected;
       localStorage.setItem('aussiemate-lang', l);
     }
-    if (l === 'ko') document.documentElement.lang = 'ko';
+    if (l !== 'en') document.documentElement.lang = l;
   } catch (e) {}
 })();
 `;

@@ -6,7 +6,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLang } from "./LangBlocks";
+import { useLang, type Lang } from "./LangBlocks";
 import { getDestination } from "@/destinations/data";
 
 const labels: Record<string, { en: string; ko: string }> = {
@@ -38,7 +38,7 @@ const labels: Record<string, { en: string; ko: string }> = {
 
 // Fallback for paths not in the map: try destinations data, then
 // humanise the URL segment.
-function fallbackLabel(pathname: string, lang: "en" | "ko"): {
+function fallbackLabel(pathname: string, lang: Lang): {
   en: string;
   ko: string;
 } {
