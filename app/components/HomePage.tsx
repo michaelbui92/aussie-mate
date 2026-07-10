@@ -51,17 +51,18 @@ export default function HomePage() {
     };
     const onScroll = () => {
       if (window.scrollY > cutoff) {
-        // Past the hero — disconnect entirely. Lock the value at cutoff
-        // so the image doesn't snap back when we stop writing.
+        // Lock the value at cutoff so the image doesn't shift further
         document.documentElement.style.setProperty(
           "--scroll-y",
           `${cutoff * 0.25}px`
         );
+        if (detached) return;
         detached = true;
-        window.removeEventListener("scroll", onScroll);
         if (rafId !== null) cancelAnimationFrame(rafId);
         return;
       }
+      // Re-attach when scrolling back above cutoff
+      if (detached) detached = false;
       if (rafId === null) rafId = requestAnimationFrame(apply);
     };
 
