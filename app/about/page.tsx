@@ -1,4 +1,3 @@
-import { En, Ko } from "@/components/LangBlocks";
 import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
 const sections = [

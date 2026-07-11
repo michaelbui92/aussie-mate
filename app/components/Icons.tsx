@@ -729,6 +729,23 @@ export const Target = wrap(
   </>
 );
 
+// ── Food & Exploration ─────────────────────────────────────────
+
+export const Compass = wrap(
+  <>
+    <circle cx="12" cy="12" r="10" />
+    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+  </>
+);
+
+export const UtensilsCrossed = wrap(
+  <>
+    <path d="M16 3v5M14 3v7a2 2 0 0 0 2 2v9" />
+    <path d="M8 3v5M6 3v7a2 2 0 0 0 2 2v9" />
+    <path d="M12 12v9" />
+  </>
+);
+
 // ── Legacy aggregate (for backward compat) ────────────────────
 // Existing call sites use <Icons.ArrowRight /> etc. This object
 // is tree-shakeable per icon when used with named imports too,
@@ -750,4 +767,5 @@ export const Icons = {
   Graduation, Clipboard, FlagAU, Ambulance, PersonBoard, Smartphone, Ticket,
   AlertTriangle, Umbrella, Briefcase2, LawGavel, Home2, Tree, QuokkaIcon, Kangaroo,
   Beach, PassengerTrain, Plane, Target,
+  Compass, UtensilsCrossed,
 };
