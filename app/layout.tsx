@@ -183,12 +183,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              ...authorSchema,
+              "@context": "https://schema.org",
               "@graph": [
                 authorSchema,
                 publisherSchema,
                 {
-                  "@context": "https://schema.org",
                   "@type": "WebSite",
                   name: "AussieGuides",
                   url: SITE_URL,

@@ -1,52 +1,42 @@
 import { test, expect } from "@playwright/test";
 
 /**
- * Smoke tests for aussie-mate. Catches the regressions that matter:
- *   - Broken pages (500s, render errors)
- *   - Broken search (modal doesn't open, no results)
- *   - Broken navigation (key paths don't load)
- *
- * Data-driven content (the actual phrases) is verified by eye during
- * data updates, not by automated tests. The phrase count test is a
- * sanity floor, not an exhaustive check.
+ * Expanded smoke tests for aussie-mate.
+ * Covers: navigation, bilingual support, dark mode, 404, dynamic routes, mobile.
  */
 
 test.describe("Home page", () => {
   test("renders with the expected structure", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Aussie/i);
-    // Hero section + nav
     await expect(page.locator("nav")).toBeVisible();
-    // Footer is present
     await expect(page.locator("footer")).toBeVisible();
+    // Hero section should exist
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    // CTA buttons should be present
+    await expect(page.getByText("Explore Destinations").first()).toBeVisible();
   });
 });
 
 test.describe("Search modal", () => {
   test("opens when the Search button is clicked and accepts input", async ({ page }) => {
     await page.goto("/");
-    // Open via the nav search button (ariaLabel="Search")
-    await page.getByRole("button", { name: "Search" }).first().click();
-    // The modal should be visible — search for a placeholder or input
+    const searchBtn = page.getByRole("button", { name: "Search" }).first();
+    await searchBtn.click();
     const input = page.getByPlaceholder(/search/i).first();
     await expect(input).toBeVisible();
-    // Type a known Korean search term
     await input.fill("비자");
-    // Wait for results to appear (debounced)
     await page.waitForTimeout(300);
-    // Some result link should be visible
     const results = page.getByRole("link");
     await expect(results.first()).toBeVisible();
   });
 
-  test("closes via the close button", async ({ page }) => {
+  test("closes via Escape key", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "Search" }).first().click();
-    // Find the close button — it has text "ESC" or similar
-    const closeButton = page.getByRole("button").filter({ hasText: /esc|close|×/i }).first();
-    if (await closeButton.isVisible().catch(() => false)) {
-      await closeButton.click();
-    }
+    await expect(page.getByPlaceholder(/search/i).first()).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.getByPlaceholder(/search/i).first()).not.toBeVisible();
   });
 });
 
@@ -61,37 +51,119 @@ test.describe("Key navigation paths", () => {
     "/destinations",
     "/about",
     "/faq",
+    "/transport",
+    "/finance",
+    "/weather",
+    "/visa",
+    "/beyond-sydney",
+    "/sport",
+    "/other-tools",
+    "/privacy",
+    "/terms",
   ]) {
     test(`${path} loads without errors`, async ({ page }) => {
       const response = await page.goto(path);
-      expect(response?.status(), `${path} should return 2xx`).toBeLessThan(400);
-      // Every page should have a nav and footer
+      expect(response?.status()).toBeLessThan(400);
       await expect(page.locator("nav")).toBeVisible();
       await expect(page.locator("footer")).toBeVisible();
     });
   }
 });
 
-test.describe("Aussie English page", () => {
-  test("shows the phrase list with at least 100 phrases", async ({ page }) => {
-    await page.goto("/aussie-english");
-    // The phrase list is rendered as accordion items or similar
-    // Sanity check: at least 100 phrases
-    // (Actual count is 209, this is a floor that catches broken renders)
-    const phrases = await page.locator('[data-phrase], .phrase-item, button[aria-expanded]').count();
-    expect(phrases, "Should have at least 100 phrases").toBeGreaterThanOrEqual(100);
+test.describe("Dynamic routes", () => {
+  test("destination page loads", async ({ page }) => {
+    const response = await page.goto("/destinations/blue-mountains");
+    expect(response?.status()).toBeLessThan(400);
+    await expect(page.locator("nav")).toBeVisible();
+  });
+
+  test("visa page loads", async ({ page }) => {
+    const response = await page.goto("/visa/417");
+    expect(response?.status()).toBeLessThan(400);
+    await expect(page.locator("nav")).toBeVisible();
+  });
+});
+
+test.describe("404 handling", () => {
+  test("returns 404 for unknown paths", async ({ page }) => {
+    const response = await page.goto("/this-path-does-not-exist");
+    expect(response?.status()).toBe(404);
   });
 });
 
 test.describe("Bilingual support", () => {
   test("language toggle is present in nav", async ({ page }) => {
     await page.goto("/");
-    // There should be a way to switch language — typically a button or
-    // toggle in the nav. This test just verifies the toggle exists.
     const langToggle = page
       .getByRole("button")
       .filter({ hasText: /한국|english|ko|en/i })
       .first();
     await expect(langToggle).toBeVisible();
+  });
+
+  test("toggling language changes visible content", async ({ page }) => {
+    await page.goto("/");
+    // Find the language toggle
+    const langToggle = page
+      .getByRole("button")
+      .filter({ hasText: /한국어|EN/i })
+      .first();
+    await langToggle.click();
+    // After toggling, Korean text should be visible somewhere
+    await expect(page.getByText(/호주|시드니|한국어/i).first()).toBeVisible();
+  });
+});
+
+test.describe("Dark mode", () => {
+  test("theme toggle is present in nav", async ({ page }) => {
+    await page.goto("/");
+    const themeToggle = page
+      .getByRole("button", { name: /switch to (dark|light) mode/i })
+      .first();
+    await expect(themeToggle).toBeVisible();
+  });
+});
+
+test.describe("Mobile navigation", () => {
+  test.use({ viewport: { width: 375, height: 667 } });
+
+  test("hamburger menu opens and shows nav items", async ({ page }) => {
+    await page.goto("/");
+    const hamburger = page.getByRole("button", { name: /open menu/i });
+    await expect(hamburger).toBeVisible();
+    await hamburger.click();
+    // Mobile menu should show group labels
+    await expect(page.getByText("Living").first()).toBeVisible();
+    await expect(page.getByText("Destinations").first()).toBeVisible();
+  });
+
+  test("hamburger label updates when open", async ({ page }) => {
+    await page.goto("/");
+    const hamburger = page.getByRole("button", { name: /open menu/i });
+    await hamburger.click();
+    await expect(page.getByRole("button", { name: /close menu/i })).toBeVisible();
+  });
+});
+
+test.describe("SEO metadata", () => {
+  test("has JSON-LD structured data", async ({ page }) => {
+    await page.goto("/");
+    const ldJson = page.locator('script[type="application/ld+json"]');
+    const count = await ldJson.count();
+    expect(count).toBeGreaterThanOrEqual(1);
+  });
+
+  test("has canonical URL", async ({ page }) => {
+    await page.goto("/");
+    const canonical = page.locator('link[rel="canonical"]');
+    await expect(canonical).toHaveAttribute("href", /youraussieguides\.com/);
+  });
+});
+
+test.describe("Aussie English page", () => {
+  test("shows the phrase list with at least 100 phrases", async ({ page }) => {
+    await page.goto("/aussie-english");
+    const phrases = await page.locator('button[aria-expanded]').count();
+    expect(phrases, "Should have at least 100 phrases").toBeGreaterThanOrEqual(100);
   });
 });

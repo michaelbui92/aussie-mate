@@ -404,7 +404,7 @@ export default function Nav() {
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden h-11 w-11 inline-flex items-center justify-center rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-all duration-200 active:scale-90"
-            aria-label="Open menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
             <div className="relative w-4 h-4">

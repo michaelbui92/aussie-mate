@@ -111,6 +111,12 @@ If you find yourself writing regex with `\{` / `\}` and counting depth, **stop a
 | 1 | Breadcrumb JSON-LD on all pages | ⚠️ 1/20 — only `/about` |
 | 1 | Manual `<AdSlot />` on more pages | ⚠️ 2/26 — `/` and `/visa` only |
 | 1 | FAQPage JSON-LD on visa sub-pages | ❌ Not done |
+| Error boundary (`app/error.tsx`) | ✅ Added |
+| Loading state (`app/loading.tsx`) | ✅ Added |
+| Comprehensive Playwright tests | ✅ 20+ tests across navigation, a11y, mobile, dark mode, SEO, 404 |
+| JSON-LD `@graph` fix | ✅ Fixed — removed duplicate `authorSchema` spread + missing `@context` |
+| Homepage `<img>` → `<Image>` | ✅ Both destination + experience cards now use Next/Image with `fill` + `sizes` |
+| Hamburger `aria-label` | ✅ Dynamic — reads "Open menu" / "Close menu" based on state |
 | 2 | Hero `<Image priority>` LCP | ✅ Done (`e073191`) — `<link rel=preload as=image>` in head |
 | 2 | Internal `<RelatedContent />` link graph | ✅ 7/26 hub pages — finance/apartment/visa/workplace/transport/tourist/study |
 | 3 | Image width/height on remaining `<img>` tags | ⚠️ Partial — destinations pages still use raw `<img>` |
