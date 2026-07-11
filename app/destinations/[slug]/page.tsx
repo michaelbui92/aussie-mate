@@ -76,7 +76,6 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           src={d.heroImg}
           alt={d.name.en}
           className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />

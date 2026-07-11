@@ -97,10 +97,41 @@ export function SearchModal() {
     return () => window.removeEventListener("keydown", handler);
   }, [openSearch]);
 
+  // Focus trap: when modal opens, focus the search input
+  // and prevent Tab from leaving the modal
+  const modalRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const input = modalRef.current?.querySelector<HTMLInputElement>('input[type="text"]');
+    input?.focus();
+    const handleTab = (e: KeyboardEvent) => {
+      if (e.key !== "Tab" || !modalRef.current) return;
+      const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", handleTab);
+    return () => document.removeEventListener("keydown", handleTab);
+  }, [open]);
+
   const allResults = Object.entries(grouped);
 
   return (
     <div
+      ref={modalRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Search"
       className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh] px-4"
       style={{ display: open ? "flex" : "none" }}
     >
