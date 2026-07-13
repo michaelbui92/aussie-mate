@@ -204,7 +204,7 @@ export default function Nav() {
       ref={headerRef}
       className="sticky top-0 z-50 bg-white/85 dark:bg-darkbg/85 backdrop-blur-md border-b border-stone-200/60 dark:border-dark-border/60"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 flex items-center gap-4">
         {/* Logo — clicking goes home; no separate Home pill */}
         <Link
           href="/"
