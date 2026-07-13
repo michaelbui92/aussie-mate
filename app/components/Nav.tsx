@@ -220,9 +220,11 @@ export default function Nav() {
 
         {/* Desktop nav — hover-to-open grouped dropdowns */}
         <div
-          className="hidden md:flex items-center gap-1 flex-1 min-w-0 flex-wrap"
+          className="hidden md:flex items-center gap-1 flex-1 min-w-0"
           onMouseLeave={scheduleClose}
         >
+          {/* Scrollable button container */}
+          <div className="flex items-center gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden flex-1" style={{ scrollbarWidth: 'none' }}>
           {navGroups.map((group) => {
             const isOpen = openDropdown === group.label;
             const isActive = isActiveInGroup(pathname, group);
@@ -355,6 +357,7 @@ export default function Nav() {
               </div>
             );
           })}
+          </div>
         </div>
 
         {/* Action buttons */}
