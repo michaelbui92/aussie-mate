@@ -220,7 +220,7 @@ export default function Nav() {
 
         {/* Desktop nav — hover-to-open grouped dropdowns */}
         <div
-          className="hidden md:flex items-center gap-1 flex-1 flex-wrap"
+          className="hidden md:flex items-center gap-1 grow flex-wrap"
           onMouseLeave={scheduleClose}
         >
           {navGroups.map((group) => {
