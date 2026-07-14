@@ -102,7 +102,7 @@ export default function JourneyPage() {
     <div className="bg-stone-50 dark:bg-darkbg">
       {/* ============================ INTRO ============================ */}
       <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
-        <div className="max-w-4xl mx-auto px-6 py-12 md:py-20 text-center">
+        <div className="max-w-5xl mx-auto px-6 py-12 md:py-20 text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
             <En>The Journey</En>
             <Ko>호주 여정</Ko>

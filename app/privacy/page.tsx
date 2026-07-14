@@ -20,7 +20,7 @@ const lastUpdated = "17 June 2026";
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen">
-      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
           <En>Legal</En>
           <Ko>법적 고지</Ko>
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
         </p>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 space-y-10 text-stone-700 dark:text-stone-300 leading-relaxed">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 space-y-10 text-stone-700 dark:text-stone-300 leading-relaxed">
         {/* Section 1 */}
         <section>
           <h2 className="font-serif text-2xl text-stone-900 dark:text-stone-100 mb-3">

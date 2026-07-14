@@ -220,7 +220,7 @@ export default function BeyondSydneyPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
           <En>Beyond Sydney</En>
           <Ko>시드니 밖</Ko>

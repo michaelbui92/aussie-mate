@@ -22,7 +22,7 @@ const lastUpdated = "26 June 2026";
 export default function EditorialPage() {
   return (
     <div className="min-h-screen">
-      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
           <En>Editorial</En>
           <Ko>편집 기준</Ko>
@@ -37,7 +37,7 @@ export default function EditorialPage() {
         </p>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 space-y-12 text-stone-700 dark:text-stone-300 leading-relaxed">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 space-y-12 text-stone-700 dark:text-stone-300 leading-relaxed">
 
         {/* 1. Sources */}
         <article>

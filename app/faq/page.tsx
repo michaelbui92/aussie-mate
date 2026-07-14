@@ -14,7 +14,7 @@ export const metadata = withSeo(
 
 export default function FAQPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       {/* FAQPage JSON-LD — surfaces Q&A in Google search as rich results */}
       <script
         type="application/ld+json"

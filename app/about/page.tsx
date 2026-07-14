@@ -118,7 +118,7 @@ const contactSection = sections.find((s) => s.id === "contact")!;
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
           About
         </p>
@@ -130,7 +130,7 @@ export default function AboutPage() {
         </p>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 space-y-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 space-y-10">
         {bodySections.map((s, i) => (
           <section key={s.id} className={`reveal reveal-delay-${(i % 5) + 1}`}>
             <div className="flex items-start gap-3 mb-3">

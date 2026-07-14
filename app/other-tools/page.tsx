@@ -80,7 +80,7 @@ const toolsForSchema = tools.map((t) => ({
 export default function OtherToolsPage() {
   return (
     <div className="min-h-screen">
-      <header className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
           <En>Side projects</En>
           <Ko>다른 프로젝트</Ko>
@@ -108,7 +108,7 @@ export default function OtherToolsPage() {
         </p>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 space-y-5">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 space-y-5">
         {tools.map((tool, i) => (
           <article
             key={tool.id}
