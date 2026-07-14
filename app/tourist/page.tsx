@@ -34,7 +34,7 @@ const sections: TouristSection[] = [
     koTitle: "시드니 꼭 가볼 10곳",
     desc: "Sydney's iconic attractions you cannot miss",
     koDesc: "시드니의 아이코닉한 관광지",
-    img: "https://upload.wikimedia.org/wikipedia/commons/6/64/Taronga_Zoo%2C_Sydney_%28483465%29_%2824793297802%29.jpg",
+    img: "/images/Taronga_Zoo,_Sydney_(483465)_(24793297802).jpg",
     items: [
       { label: "1. Sydney Opera House", en: "Australia's most famous landmark. Take a guided tour inside or book a show — even just walking around the outside with a coffee is a memorable experience. Located at Bennelong Point, Circular Quay. Free to explore the exterior and foyer.", ko: "호주에서 가장 유명한 랜드마크입니다. 내부 가이드 투어를 하거나 공연을 예약하세요 — 커피 한잔 들고 외부를 산책하는 것만으로도 잊지 못할 경험입니다. Circular Quay의 Bennelong Point에 위치해 있습니다. 외부와 로비는 무료로 관람할 수 있습니다." },
       { label: "2. Sydney Harbour Bridge", en: "Walk across for free (15 min from The Rocks to Milsons Point) or climb to the top with BridgeClimb if you are feeling adventurous. The views from the top are absolutely spectacular — worth every cent.", ko: "무료로 걸어서 건널 수 있고(The Rocks에서 Milsons Point까지 15분), 모험심이 있다면 BridgeClimb으로 정상까지 올라갈 수 있습니다. 정상에서의 전망은 정말 장관입니다." },
@@ -56,7 +56,7 @@ const sections: TouristSection[] = [
     koTitle: "비치 안전",
     desc: "What to watch out for at Sydney's beaches",
     koDesc: "시드니 해변에서 주의할 점",
-    img: "https://upload.wikimedia.org/wikipedia/commons/1/15/Beach_flags_at_Northcliffe_Beach%2C_Surfers_Paradise%2C_Queensland_04.jpg",
+    img: "/images/Beach_flags_at_Northcliffe_Beach,_Surfers_Paradise,_Queensland_04.jpg",
     items: [
       { label: "Always Swim Between the Flags", en: "Red and yellow flags mark the safest swimming zone supervised by lifeguards. NEVER swim outside the flags — even if it looks calm, rips can pull you out quickly. If caught in a rip: stay calm, float and signal for help, do not fight the current.", ko: "빨간색과 노란색 깃발은 인명 구조원이 감독하는 가장 안전한 수영 구역입니다. 절대로 깃발 밖에서 수영하지 마세요 — 이안류에 휩쓸리면: 침착하게, 도움을 요청하고, 해류와 싸우지 마세요." },
       { label: "Read the Beach Safety Signs", en: "Before entering the water, check the safety signs at the beach entrance. They show today's conditions — safe to swim, water quality, and any specific hazards like jellyfish or sharks. If in doubt, ask a lifeguard.", ko: "물에 들어가기 전에 해변 입구의 안전 표지판을 확인하세요. 오늘의 상황, 수질, 해파리나 상어 같은 위험 요소를 알려줍니다." },
@@ -73,7 +73,7 @@ const sections: TouristSection[] = [
     koTitle: "숲과 국립공원",
     desc: "How to stay safe in Australian wilderness",
     koDesc: "호주 황무지에서 안전하게 지내는 방법",
-    img: "https://upload.wikimedia.org/wikipedia/commons/2/23/Walking_track_sign_towards_Andrew_Laurie_Lookout_in_Gloucester_Tops%2C_Barrington_Tops_National_Park.jpg",
+    img: "/images/Walking_track_sign_towards_Andrew_Laurie_Lookout_in_Gloucester_Tops,_Barrington_Tops_National_Park.jpg",
     items: [
       { label: "Snakes — Give Them Space", en: "Snakes are active in warmer months (Oct-Apr) throughout Sydney's national parks. If you see one: stop, back away slowly, give it space to escape. Do NOT try to pick it up or corner it. Walk loudly on tracks — snakes feel vibration and move away.", ko: "뱀은 따뜻한 달(10월-4월)에 활발합니다. 뱀을 보면: 멈추고, 천천히 뒤로 물러나세요. 절대 잡거나 구석으로 몰지 마세요. 시끄러운 걸음으로 걸으면 뱀이 진동을 느껴 자리를 피합니다." },
       { label: "Ticks — A Year-Round Risk", en: "Bush ticks (Ixodes holocyclus) found in bushy areas year-round. Can cause tick paralysis. Wear long sleeves and pants, use DEET repellent. After a walk, check your entire body — behind ears, hairline, armpits, and groin.", ko: "숲 진드기는 연중 발견됩니다. 진드기 마비를 일으킬 수 있습니다. 긴 옷을 입고 DEET 방충제를 사용하세요. 산책 후 귀 뒤, 머리카락, 겨드랑이, 사타구니를 확인하세요." },
