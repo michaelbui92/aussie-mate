@@ -76,7 +76,7 @@ export default function HomePage() {
   }, []);
 
   // Editorial palette
-  const heroImg = "/images/unsplash-1506973035872.jpg"; // Sydney Opera House at dusk
+  const heroImg = "/images/unsplash-1506973035872-a4ec16b8e8d9.jpg"; // Sydney Opera House at dusk
   // Six destinations on the home row — spans day/weekend/longer to give
   // a balanced first impression of what the site covers. Sydney Harbour
   // is the must-include (most recognised Sydney thing).

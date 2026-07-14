@@ -35,7 +35,7 @@ const sections: WorkplaceSection[] = [
     koTitle: "직장 문화",
     desc: "What makes Aussie workplaces different",
     koDesc: "호주 직장이 다른 점",
-    img: "/images/unsplash-1497366216548.jpg",
+    img: "/images/unsplash-1497366216548-37526070297c.jpg",
     items: [
       { label: "Direct Communication", en: "Australians are direct. If something is wrong, your manager will tell you straight — it's not rude, it's how things get done. There's very little 'saving face' in the way you might find in some Asian workplaces.", ko: "호주인들은 직설적입니다. 문제가 있으면 매니저가 바로 말합니다 — 무례한 게 아니라 일을 처리하는 방식입니다. 아시아 직장에서 흔한 '체면' 문화가 거의 없습니다." },
       { label: "Flat Hierarchy", en: "Managers and CEOs are approachable. You call people by their first name — even the boss. Hierarchy doesn't mean formality. A cleaner and a director might share the same lunch table.", ko: "조직 구조가 수평적입니다. 매니저나 CEO도 접근하기 쉽습니다. 상사라도 이름(퍼스트 네임)으로 부릅니다. 청소부와 디렉터가 같은 점심 테이블을 쓸 정도입니다." },
