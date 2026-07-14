@@ -252,6 +252,7 @@ export default function HomePage() {
                   src={d.cardImg}
                   alt={d.name.en}
                   fill
+                  priority={i < 3}
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -320,6 +321,7 @@ export default function HomePage() {
                   src={e.heroImg}
                   alt={e.title}
                   fill
+                  priority={i < 3}
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
