@@ -498,3 +498,81 @@
     radial-gradient(ellipse at 80% 100%, rgba(91, 138, 91, 0.1) 0%, transparent 55%),
     radial-gradient(ellipse at 50% 50%, rgba(107, 165, 181, 0.08) 0%, transparent 65%);
 }
+
+/* === FLOATING HERO ORBS === */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.08;
+  filter: blur(60px);
+}
+.hero-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #E8722A 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation: orbFloat 12s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #6BA5B5 0%, transparent 70%);
+  bottom: 0;
+  right: -5%;
+  animation: orbFloat 15s ease-in-out infinite reverse;
+}
+.hero-orb-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #5B8A5B 0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  animation: orbFloat 10s ease-in-out 2s infinite;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0) scale(1); }
+  25%      { transform: translate(20px, -30px) scale(1.05); }
+  50%      { transform: translate(-10px, 20px) scale(0.95); }
+  75%      { transform: translate(30px, 10px) scale(1.02); }
+}
+
+/* === SECTION DIVIDER GRADIENT === */
+.section-divider {
+  position: relative;
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(232, 114, 42, 0.15) 25%, rgba(91, 138, 91, 0.15) 50%, rgba(107, 165, 181, 0.15) 75%, transparent 100%);
+}
+
+/* === CARD GLOW EFFECT === */
+.card-glow {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s ease;
+}
+.card-glow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(232, 114, 42, 0.12),
+              0 0 0 1px rgba(232, 114, 42, 0.1);
+}
+.dark .card-glow:hover {
+  box-shadow: 0 12px 32px rgba(232, 114, 42, 0.08),
+              0 0 0 1px rgba(232, 114, 42, 0.15);
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb,
+  .hero-orb-1, .hero-orb-2, .hero-orb-3 {
+    opacity: 0.04;
+    animation: none !important;
+  }
+}

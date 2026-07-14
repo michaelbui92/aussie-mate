@@ -99,6 +99,10 @@ export default function HomePage() {
     <div className="bg-stone-50 dark:bg-darkbg">
       {/* ============================ HERO ============================ */}
       <section className="relative h-[100svh] min-h-[680px] max-h-[1000px] overflow-hidden">
+        {/* Ambient floating orbs */}
+        <div className="hero-orb hero-orb-1" aria-hidden="true" />
+        <div className="hero-orb hero-orb-2" aria-hidden="true" />
+        <div className="hero-orb hero-orb-3" aria-hidden="true" />
         {/* LCP hero — priority + fetchPriority="high" preloads the image so
             the largest contentful paint lands within ~1s instead of 3-4s.
             Next/Image also auto-generates srcset for different viewports. */}
