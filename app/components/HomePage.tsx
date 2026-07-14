@@ -166,7 +166,7 @@ export default function HomePage() {
           persona content is now on /journey with its own URLs. The CTAs
           here are small (one row on desktop, stacked on mobile) so the
           homepage stays visual. */}
-      <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
+      <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border section-divider">
         <div className="max-w-6xl mx-auto px-6 py-10 md:py-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {/* Card 1: Journey */}
@@ -219,8 +219,8 @@ export default function HomePage() {
       </section>
 
       {/* ============================ MORE DESTINATIONS ============================ */}
-      <section className="bg-stone-50 dark:bg-darkbg">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+      <section className="bg-stone-50 dark:bg-darkbg section-divider">
+                <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
           <div className="flex items-end justify-between mb-8 reveal">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
@@ -246,7 +246,7 @@ export default function HomePage() {
               <Link
                 key={d.slug}
                 href={`/destinations/${d.slug}`}
-                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
+                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow card-glow`}
               >
                 <Image
                   src={d.cardImg}
@@ -314,7 +314,7 @@ export default function HomePage() {
               <Link
                 key={e.href}
                 href={e.href}
-                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
+                className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow card-glow`}
               >
                 <Image
                   src={e.heroImg}
