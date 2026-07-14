@@ -26,7 +26,7 @@ export const experienceThemes: ExperienceTheme[] = [
     koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.",
     href: "/experiences/beaches",
     accent: "from-cyan-500 to-sky-600",
-    heroImg: "/images/pexels-1450353.jpg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    heroImg: "/images/pexels-1450353.jpg",
   },
   {
     title: "Wildlife",
@@ -44,7 +44,7 @@ export const experienceThemes: ExperienceTheme[] = [
     koBlurb: "뉴타운 맛집, 다양한 음식 문화, 시드니 최고의 맛.",
     href: "/experiences/food",
     accent: "from-rose-500 to-orange-500",
-    heroImg: "/images/pexels-1855214.jpg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    heroImg: "/images/pexels-1855214.jpg",
   },
   {
     title: "Adventure",
@@ -62,7 +62,7 @@ export const experienceThemes: ExperienceTheme[] = [
     koBlurb: "차이나타운, 카브라마타, 버우드, 스트라스필드 — 다문화 시드니의 영혼.",
     href: "/experiences/culture",
     accent: "from-amber-500 to-yellow-600",
-    heroImg: "/images/pexels-1444442.jpg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    heroImg: "/images/pexels-1444442.jpg",
   },
   {
     title: "Road Trips",

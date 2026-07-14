@@ -35,7 +35,7 @@ const sections: FinanceSection[] = [
     koTitle: "호주 은행 시스템",
     desc: "Opening accounts, understanding fees, and moving money",
     koDesc: "계좌 개설, 수수료 이해, 송금",
-    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80",
+    img: "/images/unsplash-1554224155.jpg",
     items: [
       { label: "Major Banks", en: "The four big banks are: Commonwealth Bank (CBA), Westpac, ANZ, and NAB. All have international student packages with low or no monthly fees. Most have multilingual support — 24/7 phone banking is available in many languages, and the largest branches have staff who can help in-language.", ko: "4대 은행은 Commonwealth Bank(CBA), Westpac, ANZ, NAB입니다. 모두 국제 학생 전용 패키지로 월 수수료가 없거나 낮은 계정을 제공합니다. 대부분 한국어 서비스 직원이나 다국어 전화 뱅킹을 제공합니다." },
       { label: "How to Open an Account", en: "You can open an account before you arrive using the bank's website, or walk into any branch with your passport and visa (or bring your passport and a tenancy agreement as ID proof). It takes about 20 minutes. You'll get a debit card in 3-5 business days by mail.", ko: "도착 전에 은행 웹사이트에서 계좌를 열거나, 여권과 비자(또는 여권과 임대차 계약서)를 지니고 지점에 방문하면 됩니다. 약 20분이 소요됩니다. 직불 카드는 영업일 기준 3~5일 안에 우편으로 배달됩니다." },

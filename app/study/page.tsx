@@ -35,7 +35,7 @@ const sections: StudySection[] = [
     koTitle: "영어 시험: PTE와 IELTS",
     desc: "Everything you need to know about PTE and IELTS for Australian visas and university entry",
     koDesc: "호주 비자 및 대학 진학에 필요한 PTE와 IELTS 모든 것",
-    img: "https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80",
+    img: "/images/unsplash-1568667256549.jpg",
     items: [
       { label: "What is PTE?", en: "PTE Academic (Pearson Test of English Academic) is a computer-based English test accepted by all Australian universities, vocational colleges, and for visa purposes. You get results in 1-2 days — much faster than IELTS.", ko: "PTE Academic(Pearson Test of English Academic)는 컴퓨터로 치르는 영어 시험으로, 모든 호주 대학, 직업 교육 기관, 비자 심사에 인정됩니다. 결과가 1-2일 안에 나오므로 IELTS보다 훨씬 빠릅니다." },
       { label: "What is IELTS?", en: "IELTS (International English Language Testing System) is the older, more widely recognised test. Used for student visas, skilled migration, and professional registration. Available in paper-based or computer-delivered format.", ko: "IELTS(International English Language Testing System)는 더 오래되고 널리 인정되는 시험입니다. 학생 비자, 기술 이민, 전문 등록에 사용됩니다. 지필로 또는 컴퓨터로 응시할 수 있습니다." },
@@ -137,7 +137,7 @@ const sections: StudySection[] = [
     koTitle: "성적 체계 이해",
     desc: "Understanding the Australian grading system",
     koDesc: "호주 성적 평가 시스템 이해",
-    img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80",
+    img: "/images/unsplash-1503676260728.jpg",
     items: [
       { label: "Grade Scale", en: "Universities use letter grades with corresponding marks. Generally: HD (High Distinction) = 85-100%, DN (Distinction) = 75-84%, CR (Credit) = 65-74%, P (Pass) = 50-64%, F (Fail) = below 50%. Some subjects have different thresholds — check the subject outline.", ko: "대학은 점수에 해당하는 알파벳 성적을 사용합니다: HD(High Distinction/최우수) = 85-100%, DN(Distinction/우수) = 75-84%, CR(Credit/양호) = 65-74%, P(Pass/통과) = 50-64%, F(Fail/낙제) = 50% 미만입니다. 과목에 따라 기준이 다를 수 있습니다." },
       { label: "What Each Grade Means", en: "HD = exceptional performance (very rare, usually top 5-10%). DN = above average (strong understanding). CR = good solid work (meets expectations well). P = satisfactory (meets minimum requirements). F = did not meet minimum requirements.", ko: "HD = 탁월한 성과(매우 드물며, 보통 상위 5-10%). DN = 평균 이상(이해도가 높음). CR = 우수한 작업(기대치를 잘 충족). P = 만족(최소 요건 충족). F = 최소 요건 미달." },

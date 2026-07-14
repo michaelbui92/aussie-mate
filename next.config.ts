@@ -4,15 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Allow Next/Image to optimize remote images from Unsplash.
   // Without this, <Image src="https://images.unsplash.com/..." /> errors at build.
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-    ],
-  },
+  images: {},
   async redirects() {
     return [
       // The old /journey/visiting page was renamed to /journey/before-you-come
