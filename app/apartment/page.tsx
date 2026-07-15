@@ -14,9 +14,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/apartment"),
-  title: "Apartment & renting — 시드니/NSW 부동산 가이드",
+  title: "Renting in Sydney — Apartments, Bonds, Tenants Rights & Rental Guide | AussieGuides",
   description:
-    "시드니 부동산 가이드 — 부동산 검색(Flatmates, Domain, Realestate), 임대 신청 서류, NSW 임차인 권리, 보증금(Bond), 주의해야 할 사기 신호까지 한국어로 정리.",
+    "How to rent an apartment in Sydney — Flatmates, Domain, Realestate search tips, rental application documents, NSW tenant rights, bonds, and common scams to avoid. Complete guide for newcomers.",
   },
   "/apartment"
 );

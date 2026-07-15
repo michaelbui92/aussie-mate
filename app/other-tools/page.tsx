@@ -9,9 +9,9 @@ import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 export const metadata = withSeo(
   {
     ...seoFor("/other-tools"),
-    title: "Other tools — Michael이 만든 다른 도구들",
+    title: "Other Tools — Driving Lessons, AI Flashcards & More by AussieGuides Creator | AussieGuides",
     description:
-      "AussieGuides 운영자가 만든 다른 도구들 — Drive with Bui(운전 레슨, 자격증 진행 중), Study Buddy(AI 플래시카드).",
+      "Other tools by the AussieGuides creator — Drive with Bui (driving lessons), Study Buddy (AI flashcard app), and more projects for the Korean-Australian community.",
   },
   "/other-tools"
 );

@@ -15,9 +15,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/study"),
-  title: "Study in Australia — 호주 유학 가이드 (PTE, IELTS, 대학 문화)",
+  title: "Study in Australia — PTE, IELTS, University Culture & Student Guide | AussieGuides",
   description:
-    "호주 유학 가이드 — 영어 시험(PTE vs IELTS 점수, 비용, 합격 전략), 호주 대학 문화, 교수님과 소통법, 그룹 과제, 학술 윤리(Turnitin, 표절, AI 사용)까지.",
+    "Complete guide to studying in Australia — PTE vs IELTS scores, costs, and strategies, Australian university culture, communicating with professors, group assignments, and academic integrity (Turnitin, plagiarism, AI use).",
   },
   "/study"
 );

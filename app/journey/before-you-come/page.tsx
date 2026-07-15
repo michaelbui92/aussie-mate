@@ -12,9 +12,9 @@ import BeforeContent from "@/components/personas/BeforeContent";
 
 export const metadata = withSeo(
   {
-    title: "Before you come to Australia — 호주 출발 전 준비 (한국어/English)",
+    title: "Before You Come to Australia — 4-6 Week Prep Checklist: Visa, Banking, Packing | AussieGuides",
     description:
-      "호주 출발 전 4-6주 동안 해야 할 일: 비자, 은행, 돈, 통신, 앱, 짐, 숙소, 건강보험, 공항 교통 — 출발 전 체크리스트를 한국어와 영어로 정리했습니다.",
+      "Preparing to move to Australia? 4-6 week checklist — visa, banking, money, phone, apps, packing, accommodation, health insurance, and airport transport. Everything you need before you arrive.",
   },
   "journey/before-you-come"
 );

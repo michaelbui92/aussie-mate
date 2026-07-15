@@ -15,9 +15,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/workplace"),
-  title: "Workplace & rights — 호주 직장 문화와 노동자 권리",
+  title: "Australian Workplace Guide — Culture, Worker Rights, Minimum Wage & Super | AussieGuides",
   description:
-    "호주 직장 가이드 — 직장 문화(수평적 구조, 직설적 소통), 캐주얼 vs 정규직, 최저 임금(Award), 퇴직연금(Super) 11.5%, 캐주얼 노동자 권리, 부당한 해고 보호까지.",
+    "Australian workplace culture explained — flat hierarchies, direct communication, casual vs permanent employment, minimum wage (Awards), superannuation (Super) 11.5%, casual worker rights, and unfair dismissal protection.",
   },
   "/workplace"
 );

@@ -22,8 +22,8 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/destinations"),
-  title: "Places to Go — AussieGuides",
-  description: "Discover the best places to visit across NSW — beaches, mountains, wine country, and coastal towns. Pick one and start planning.",
+  title: "Places to Go in NSW — Best Destinations, Beaches, Mountains & Wine Country | AussieGuides",
+  description: "Discover the best places to visit in NSW — from Sydney Harbour to the Blue Mountains, Hunter Valley wine country, Jervis Bay beaches, and Byron Bay. Travel tips, drive times, and day trip guides.",
   },
   "/destinations"
 );

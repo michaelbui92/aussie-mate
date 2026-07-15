@@ -12,9 +12,9 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
   {
-    title: "The Journey — 호주 여정 가이드 (한국어/English)",
+    title: "The Journey — Australia Guide by Stage: Before You Arrive, First Month, Long-Term | AussieGuides",
     description:
-      "호주에 출발 전, 방금 도착, 장기 체류 — 단계별로 정리한 호주 생활 가이드. 비자, 은행, SIM, TFN, 집 구하기, 영주권, 문화 적응, 친구 사귀기까지 한국어와 영어로 안내합니다.",
+      "Your Australia journey in three stages — before you arrive, just landed, and long-term settling. Visa, banking, SIM, TFN, finding housing, PR, culture shock, and making friends.",
   },
   "journey"
 );

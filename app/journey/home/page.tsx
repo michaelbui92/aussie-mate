@@ -6,9 +6,9 @@ import HomeContent from "@/components/personas/HomeContent";
 
 export const metadata = withSeo(
   {
-    title: "I call Australia home — 장기 호주 거주 가이드 (한국어/English)",
+    title: "Long-Term Australia Guide — Super, Tenancy Rights, PR, Citizenship & Settling In | AussieGuides",
     description:
-      "오래 호주에 거주하는 한국인을 위한 가이드. 퇴직연금(Super), 임차인 권리, 영주권, 시민권, 신용점수, 소속감 — 장기 관점의 호주 생활을 한국어와 영어로 정리했습니다.",
+      "Long-term Australia guide for established residents — superannuation, tenancy rights, permanent residency, citizenship, credit scores, and building a sense of belonging.",
   },
   "journey/home"
 );

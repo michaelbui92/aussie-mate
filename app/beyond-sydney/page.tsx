@@ -13,9 +13,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/beyond-sydney"),
-  title: "Beyond Sydney — 시드니 외 호주 여행지",
+  title: "Beyond Sydney — Best Places to Visit in NSW: Blue Mountains, Hunter Valley, Wollongong & More | AussieGuides",
   description:
-    "시드니 외 호주 여행지 가이드 — 블루마운틴, 헌터밸리, 울런공, 뉴캐슬, 사우스코스트, 그리고 멜버른·브리즈번·퍼스까지. 각지 명소, 교통, 추천 일정.",
+    "Best places to visit beyond Sydney — Blue Mountains, Hunter Valley, Wollongong, Newcastle, South Coast, and further afield to Melbourne, Brisbane, and Perth. Transport tips, highlights, and recommended itineraries.",
   },
   "/beyond-sydney"
 );

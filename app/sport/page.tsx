@@ -12,9 +12,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/sport"),
-  title: "Sport — 호주 스포츠 문화 (NRL, AFL, 크리켓)",
+  title: "Australian Sports Guide — NRL, AFL, Cricket & Sporting Culture Explained | AussieGuides",
   description:
-    "호주 스포츠 가이드 — NRL(럭비리그), AFL(애플 풋볼), 크리켓, State of Origin, 슬레딩(sledging), 호주 스포츠 문화 한국어 정리.",
+    "Australian sports explained for newcomers — NRL rugby league, AFL footy, cricket, State of Origin, and the unique culture of Aussie sport. What to watch, when, and how to follow along.",
   },
   "/sport"
 );

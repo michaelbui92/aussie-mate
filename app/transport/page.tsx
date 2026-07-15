@@ -15,9 +15,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/transport"),
-  title: "Getting around — 시드니 교통 (오팔, 기차, 버스, 페리)",
+  title: "Sydney Transport Guide — Opal Card, Trains, Buses, Ferries & Getting Around | AussieGuides",
   description:
-    "시드니 대중교통 완전 가이드 — 오팔 카드(Adult/Concession), Sydney Trains, 버스, 페리, 공항 링크(400번 버스), 자전거, 도보까지. 요금, 환승, 시간표 한국어 정리.",
+    "Complete Sydney public transport guide — Opal card (Adult/Concession), Sydney Trains, buses, ferries, airport link (Route 400), cycling, and walking. Fares, transfers, timetables, and tips for getting around.",
   },
   "/transport"
 );

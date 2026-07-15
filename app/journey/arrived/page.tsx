@@ -6,9 +6,9 @@ import ArrivedContent from "@/components/personas/ArrivedContent";
 
 export const metadata = withSeo(
   {
-    title: "I just got here — 호주 첫 달 셋업 가이드 (한국어/English)",
+    title: "Just Arrived in Australia? First Month Setup Guide — SIM, Bank, TFN, Medicare | AussieGuides",
     description:
-      "호주에 막 도착한 한국인을 위한 첫 달 가이드. SIM 카드, 은행 계좌, 오팔, TFN, Medicare, MyGov — 첫 주에 해야 할 일과 가장 흔한 실수를 한국어와 영어로 정리했습니다.",
+      "Just arrived in Australia? Your first month checklist — SIM card, bank account, Opal card, TFN, Medicare, MyGov. What to do in your first week and common mistakes to avoid.",
   },
   "journey/arrived"
 );
