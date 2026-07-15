@@ -6,8 +6,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/experiences/food"),
-  title: "Sydney Food Guide — AussieGuides",
-  description: "A practical guide to Sydney's food scene — from Newtown Thai and Chinatown dumplings to fine dining, market eats, and the Sydney BYO culture.",
+  title: "Traditional Food in Sydney — Best Restaurants, Markets & BYO Guide | AussieGuides",
+  description:
+    "Where to find traditional food in Sydney — from Newtown Thai and Chinatown dumplings to authentic Vietnamese, Korean BBQ, and the city's famous BYO culture. Practical guide with neighbourhoods, markets, and price ranges.",
   },
   "/experiences/food"
 );

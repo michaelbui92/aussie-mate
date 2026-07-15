@@ -134,8 +134,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/experiences/beaches"),
-  title: "Sydney Beaches — AussieGuides",
-  description: "A practical guide to Sydney's best beaches — Bondi, Manly, Palm Beach, Bronte, Coogee.",
+  title: "Sydney Beaches Guide — Best Beaches, Safety Tips & Things to Do | AussieGuides",
+  description:
+    "Australia's best Sydney beaches — Bondi, Manly, Palm Beach, Bronte, Coogee. Complete guide with swimming conditions, transport, parking, and coastal walks.",
   },
   "/experiences/beaches"
 );

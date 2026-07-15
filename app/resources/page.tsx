@@ -9,9 +9,9 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/resources"),
-  title: "Resources — 호주 정부/공식 자료 링크",
+  title: "Australia Resources — Government Services, Emergency Contacts & Essential Links | AussieGuides",
   description:
-    "호주 생활에 필요한 정부/공식 자료 — ATO(세무서), Services Australia(Centrelink), Fair Work(노동), NSW Fair Trading(부동산), 000(응급) 등 한국어 설명과 함께 정리.",
+    "Essential Australia resources for newcomers — ATO (tax), Services Australia (Centrelink), Fair Work, NSW Fair Trading, emergency 000,翻译 services, and more. Practical links with explanations.",
   },
   "/resources"
 );

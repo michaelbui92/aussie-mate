@@ -34,10 +34,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const d = getDestination(slug);
   if (!d) return {};
+  // Extract drive time from gettingThere for the title
+  const driveTime = d.gettingThere.en.match(/(\d+(?:[–-]\d+)?\s*(?:hrs?|hours?|min))/i);
+  const timePrefix = driveTime ? `${driveTime[0]} from Sydney — ` : "";
+  // Build a search-friendly description that front-loads the answer
+  const shortDesc = d.description.en.length > 160
+    ? d.description.en.split(".")[0] + "."
+    : d.description.en;
   return {
     ...seoFor(`/destinations/${slug}`),
-    title: `${d.name.en} — AussieGuides`,
-    description: d.description.en,
+    title: `${d.name.en}${timePrefix ? `: ${timePrefix}` : " — "}Beaches, Walks & Things to Do | AussieGuides`,
+    description: `${d.gettingThere.en.split(".")[0]}. ${d.suggestedDays.en}. ${shortDesc}`,
   };
 }
 
