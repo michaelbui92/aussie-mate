@@ -186,11 +186,11 @@
 
 /* === PAGE TRANSITIONS (CSS keyframe, re-runs on remount) === */
 .page-in {
-  animation: pageIn 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: .15s cubic-bezier(.22,1,.36,1) pageIn;
 }
 @keyframes pageIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* === MODAL (SearchModal) enter/exit === */
@@ -235,10 +235,10 @@
    permanently stuck at opacity:0 if the IntersectionObserver doesn't
    re-observe it. */
 .reveal {
-  animation: revealIn 0.6s ease-out both;
+  animation: .6s ease-out revealIn;
 }
 @keyframes revealIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .reveal-delay-1 { animation-delay: 0.08s; }
