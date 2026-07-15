@@ -9,14 +9,14 @@ const ThemeContext = createContext<{
 }>({ theme: "light", toggle: () => {} });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  // Read initial theme from DOM (set by blocking init script) — avoids hydration flash
+  const [theme, setTheme] = useState<Theme>(() =>
+    typeof document !== "undefined" && document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
 
   // Read from documentElement (already set by blocking init script in <head>)
   // — avoids the flash that comes from a useEffect-based localStorage read (issue #5)
-  useEffect(() => {
-    const initial = document.documentElement.classList.contains("dark") ? "dark" : "light";
-    setTheme(initial);
-  }, []);
+  // No longer needed — initial state reads from DOM synchronously
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");

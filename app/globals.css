@@ -19,6 +19,7 @@
   --color-dark-muted: #A8C8A0;
   --color-dark-border: #3A4A3A;
   --color-dark-card: #253325;
+  --font-serif: "Fraunces", Georgia, serif;
 }
 
 @layer base {
