@@ -1,8 +1,8 @@
 "use client";
-import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { En, Ko } from "@/components/LangBlocks";
+import { useSearch } from "@/components/SearchModal";
 import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
 import { destinations } from "@/destinations/data";
@@ -16,64 +16,7 @@ import { topHomepageExperiences } from "@/experiences/data";
 // visitors.
 
 export default function HomePage() {
-  // Subtle hero parallax — image moves at 25% of scroll speed.
-  // Performance optimisations:
-  //  • rAF-throttled (one transform write per frame max)
-  //  • skipped on coarse-pointer devices (touch scroll fires 60-120 Hz)
-  //  • hero element is cached on mount (no DOM query per scroll)
-  //  • scroll listener self-disconnects after the hero scrolls past
-  //    the viewport — no wasted work for the rest of the page
-  //  • dropped scale(1.05): the source image is already oversized, so
-  //    the 5% rasterisation cost was buying nothing visible
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.matchMedia("(pointer: coarse)").matches) return;
-
-    const hero = document.querySelector(".hero-parallax") as HTMLElement | null;
-    if (!hero) return;
-
-    const cutoff = window.innerHeight * 1.1; // past this, parallax stops
-    let rafId: number | null = null;
-    let detached = false;
-    // Set the CSS variable instead of style.transform so the browser can
-    // compose the transform via the static React style without re-running
-    // JS per frame. The hero <Image> reads `var(--scroll-y, 0px)` inline.
-    const apply = () => {
-      if (detached) {
-        rafId = null;
-        return;
-      }
-      document.documentElement.style.setProperty(
-        "--scroll-y",
-        `${window.scrollY * 0.25}px`
-      );
-      rafId = null;
-    };
-    const onScroll = () => {
-      if (window.scrollY > cutoff) {
-        // Lock the value at cutoff so the image doesn't shift further
-        document.documentElement.style.setProperty(
-          "--scroll-y",
-          `${cutoff * 0.25}px`
-        );
-        if (detached) return;
-        detached = true;
-        if (rafId !== null) cancelAnimationFrame(rafId);
-        return;
-      }
-      // Re-attach when scrolling back above cutoff
-      if (detached) detached = false;
-      if (rafId === null) rafId = requestAnimationFrame(apply);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (rafId !== null) cancelAnimationFrame(rafId);
-      // Clean up the CSS var on unmount
-      document.documentElement.style.removeProperty("--scroll-y");
-    };
-  }, []);
+  const { openSearch } = useSearch();
 
   // Editorial palette
   const heroImg = "/images/unsplash-1506973035872-a4ec16b8e8d9.jpg"; // Sydney Opera House at dusk
@@ -99,13 +42,6 @@ export default function HomePage() {
     <div className="bg-stone-50 dark:bg-darkbg">
       {/* ============================ HERO ============================ */}
       <section className="relative h-[100svh] min-h-[680px] max-h-[1000px] overflow-hidden">
-        {/* Ambient floating orbs */}
-        <div className="hero-orb hero-orb-1" aria-hidden="true" />
-        <div className="hero-orb hero-orb-2" aria-hidden="true" />
-        <div className="hero-orb hero-orb-3" aria-hidden="true" />
-        {/* LCP hero — priority + fetchPriority="high" preloads the image so
-            the largest contentful paint lands within ~1s instead of 3-4s.
-            Next/Image also auto-generates srcset for different viewports. */}
         <Image
           src={heroImg}
           alt="Sydney Opera House at dusk"
@@ -114,11 +50,7 @@ export default function HomePage() {
           fetchPriority="high"
           sizes="100vw"
           quality={85}
-          className="hero-parallax object-cover object-left md:object-center will-change-transform"
-          style={{
-            transform:
-              "translate3d(0, var(--scroll-y, 0px), 0) scale(1.05)",
-          }}
+          className="object-cover object-left md:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/75" />
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
@@ -132,7 +64,7 @@ export default function HomePage() {
             <En>Hi, I&apos;m Michael. I built this guide for anyone planning time in Sydney — first-time visitors, students, working-holiday makers, and anyone curious about how Australia actually works. Pick a destination below, or jump into the topics that matter most to you.</En>
             <Ko>안녕하세요, 마이클입니다. 시드니에서 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드리는 bilingual 가이드를 직접 만들었습니다.</Ko>
           </p>
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 mb-8">
             <Link
               href="/destinations"
               className="group inline-flex items-center justify-center gap-2 bg-sunset hover:bg-sunset-light text-white px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full shadow-lg shadow-sunset/30 hover:shadow-xl hover:shadow-sunset/40"
@@ -149,14 +81,20 @@ export default function HomePage() {
               <Ko>여행 계획 세우기</Ko>
             </Link>
           </div>
-        </div>
-        {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60">
-          <span className="text-[10px] uppercase tracking-[0.3em]">
-            <En>Scroll</En>
-            <Ko>스크롤</Ko>
-          </span>
-          <div className="w-px h-10 bg-white/30 animate-pulse" />
+          {/* Search bar */}
+          <button
+            onClick={openSearch}
+            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white/80 hover:text-white border border-white/20 px-5 py-3 rounded-full text-sm transition-all w-full max-w-md"
+          >
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span className="flex-1 text-left">
+              <En>Search guides, destinations, topics...</En>
+              <Ko>가이드, 여행지, 주제 검색...</Ko>
+            </span>
+            <kbd className="hidden sm:inline text-[10px] font-medium px-1.5 py-0.5 rounded bg-white/10 text-white/50">⌘K</kbd>
+          </button>
         </div>
       </section>
 
