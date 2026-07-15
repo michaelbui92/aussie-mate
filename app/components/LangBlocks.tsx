@@ -33,7 +33,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const toggleLang = () => {
-    const next = lang === "en" ? "ko" : lang === "ko" ? "zh" : lang === "zh" ? "ja" : "en";
+    const next = lang === "en" ? "ko" : "en";
     setLang(next);
     localStorage.setItem("aussiemate-lang", next);
     document.documentElement.lang = next;
@@ -55,7 +55,8 @@ export function LangProvider({ children }: { children: ReactNode }) {
 // Inline component so we can use the lang context
 export function En({ children }: { children: ReactNode }) {
   const { lang } = useLang();
-  if (lang !== "en") return null;
+  // Fall back to English for Chinese/Japanese (no content written for those yet)
+  if (lang !== "en" && lang !== "zh" && lang !== "ja") return null;
   return <>{children}</>;
 }
 
