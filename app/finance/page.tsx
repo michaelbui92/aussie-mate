@@ -197,6 +197,14 @@ export default function FinancePage() {
       <RelatedContent
         items={[
           {
+            href: "/cost-of-living",
+            title: { en: "Cost of Living in Sydney", ko: "시드니 생활비" },
+            description: {
+              en: "Rent, food, transport, bills — real prices updated for 2026.",
+              ko: "임대료, 식비, 교통비, 공과금 — 2026년 업데이트된 실제 가격.",
+            },
+          },
+          {
             href: "/apartment",
             title: { en: "Renting in Australia", ko: "호주 부동산과 임대" },
             description: {

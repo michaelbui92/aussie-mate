@@ -9,6 +9,7 @@
 import Link from "next/link";
 import { En, Ko } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
   {
@@ -169,6 +170,26 @@ export default function JourneyPage() {
           </div>
         </div>
       </section>
+
+      <RelatedContent
+        items={[
+          {
+            href: "/visa",
+            title: { en: "Visa Guide", ko: "비자 가이드" },
+            description: { en: "Which visa fits your situation? Student, working holiday, skilled, partner, tourist.", ko: "어떤 비자가 맞을까요? 학생, 워홀, 기술, 파트너, 관광." },
+          },
+          {
+            href: "/finance",
+            title: { en: "Finance & Banking", ko: "금융 & 뱅킹" },
+            description: { en: "Open a bank account, apply for TFN, understand tax and super.", ko: "은행 계좌 개설, TFN 신청, 세금과 슈퍼 이해하기." },
+          },
+          {
+            href: "/transport",
+            title: { en: "Transport Guide", ko: "교통 가이드" },
+            description: { en: "Opal card, trains, buses, ferries — getting around Sydney.", ko: "Opal 카드, 기차, 버스, 페리 — 시드니 교통 완벽 가이드." },
+          },
+        ]}
+      />
     </div>
   );
 }
