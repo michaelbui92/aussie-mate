@@ -1,81 +1,112 @@
 # Video Prompts for AussieGuides Intro — Seamless Scroll Journey
 
-Use these prompts in Venice.ai (or any video generator). Each clip's end frame must visually match the next clip's start frame for seamless scrolling.
+## Style Reference (apply to ALL clips)
+
+```
+Visual style: low-poly 3D, geometric, minimalist, dark atmospheric with warm amber/gold accents. Flat-shaded polygons with subtle edge lighting. No photorealism — stylized illustration aesthetic. Color palette: deep navy (#0B1120), charcoal, warm amber (#D4A574, #E8722A), muted gold highlights. Moonlight/night-time lighting with warm glow accents. 3D depth with subtle parallax, smooth camera movement. No text, no humans visible. 4K, 60fps, moody cinematic atmosphere.
+```
 
 ---
 
-## Clip 1: Harbour Bridge → Opera House (4-6 seconds)
+## Clip 1: Flying Through the Harbour Bridge
 
-**Camera:** Drone shot, slowly moving forward through the Harbour Bridge arch, city skyline visible ahead.
+**Duration:** 5 seconds
+
+**Style reference:** Low-poly geometric night scene. The Harbour Bridge is constructed from dark steel-grey polygons with warm amber light spilling from the bridge deck and city beyond. The water below is a dark navy polygon mesh with subtle golden reflections.
+
+**Start frame:** View from mid-distance, the Harbour Bridge arch fills the upper two-thirds of the frame. The bridge is seen at a slight angle, the arch rising from left and right to meet at the centre. Dark polygon water below. Pinprick city lights visible through the arch.
+
+**Camera movement:** Slow forward push, flying directly through the centre of the arch. The bridge cables pass on either side. The camera is perfectly centred as it passes through.
+
+**End frame:** The camera has passed through the arch. The bridge cables are now behind and to the sides. Ahead, the Opera House appears as a small geometric silhouette in the distance, framed by the city skyline. The water reflects warm amber light.
 
 **Prompt:**
 ```
-Cinematic drone shot, night, slowly flying forward through the steel arch of the Sydney Harbour Bridge. Golden city lights reflect on the dark harbour water below. The bridge cables pass on either side as the camera glides through. Warm amber city glow in the distance. 4K, hyper-realistic, smooth 60fps motion, no camera shake, atmospheric depth.
+Low-poly 3D animation, night scene, flying forward through the geometric polygon arch of the Sydney Harbour Bridge. The bridge is constructed from dark grey faceted polygons with subtle warm amber edge lighting. The camera moves smoothly forward through the centre of the arch — steel cables pass on either side. Below, the harbour is a dark navy polygon mesh with scattered golden light reflections. Ahead through the arch, the distant city skyline glows with tiny warm lights. The Opera House is just visible as a small geometric shape in the distance. Minimalist, atmospheric, moody. Color palette: deep navy (#0B1120), charcoal, amber (#D4A574, #E8722A). 4K, 60fps, smooth noiseless camera movement, no text, no people, dark cinematic mood.
 ```
-
-**End frame:** The view ahead shows the Opera House and Circular Quay coming into view.
 
 ---
 
-## Clip 2: Opera House Reveal (4-6 seconds)
+## Clip 2: Approaching the Opera House
 
-**Start frame:** Same view as the end of Clip 1 — Opera House in the distance, harbour in foreground.
+**Duration:** 5 seconds
 
-**Camera:** Slow forward push toward the Opera House, maintaining the same composition as Clip 1 ended.
+**Style reference:** Same low-poly geometric style. The Opera House is constructed from faceted white/cream polygons with subtle warm rim lighting. The harbour water is a dark polygon mesh.
+
+**Start frame:** EXACTLY matches the end frame of Clip 1. The Opera House is visible in the distance as a small geometric silhouette. The harbour bridge arch is now behind the camera. Same composition, same angle, same lighting.
+
+**Camera movement:** Slow forward push maintaining the same trajectory as Clip 1. The Opera House grows larger as the camera approaches. No cut, no jump — the camera has been moving continuously since Clip 1.
+
+**End frame:** The Opera House fills the centre of the frame. Its geometric sails are clearly visible — faceted cream/white polygons with warm amber glow on the edges facing the city lights. Dark harbour water below with gentle polygon wave reflections.
 
 **Prompt:**
 ```
-Cinematic drone shot, continuing forward from the same position as the previous shot. The Sydney Opera House sails grow larger as the camera glides toward Bennelong Point. Dark blue night sky, harbour water with gentle ripples reflecting city lights. The Opera House shells glow warm white against the dark background. 4K, hyper-realistic, smooth 60fps, consistent lighting with the bridge shot, atmospheric.
+Low-poly 3D animation, continuing directly from the previous shot without any cut. The camera continues its slow forward push toward the Sydney Opera House, which grows larger in frame. The Opera House is built from faceted cream-white geometric polygons with subtle warm amber rim lighting on the edges facing the city. The harbour water below is a dark navy polygon mesh with scattered golden light reflections. The Harbour Bridge arch is now behind the camera, out of frame. Same visual style: minimalist low-poly, flat-shaded polygons, no photorealism. Color palette: cream-white sails, deep navy water (#0B1120), warm amber accents (#D4A574). 4K, 60fps, seamless continuous motion from previous shot, no text, no people, atmospheric.
 ```
-
-**End frame:** Close view of the Opera House sails with the harbour in the foreground.
 
 ---
 
-## Clip 3: Opera House to Bondi Beach (4-6 seconds)
+## Clip 3: Arc to the Coastline
 
-**Start frame:** The Opera House sails fill the frame.
+**Duration:** 5 seconds
 
-**Camera:** Camera pulls back and rotates, revealing the coastline and transitioning to a beach scene. A smooth aerial arc that feels like one continuous movement.
+**Style reference:** Same low-poly geometric style. The camera transitions from the urban harbour to a natural coastline. The Opera House polygons transition to geometric cliff faces and beach shapes.
+
+**Start frame:** EXACTLY matches the end frame of Clip 2. The Opera House sails fill the centre of the frame. Same angle, same distance, same lighting.
+
+**Camera movement:** The camera smoothly pulls back and arcs to the right in a sweeping motion. As it moves, the Opera House shrinks and the frame rotates to reveal the coastline. The transition should feel like a single continuous camera movement — no cut, no jump. The camera then levels out and begins moving forward over a geometric beach and ocean.
+
+**End frame:** Aerial view looking down at a low-poly golden beach. The beach is a faceted amber/gold polygon shape. The ocean is a dark teal polygon mesh with gentle geometric wave patterns. The camera is now facing forward, moving low over the shoreline.
 
 **Prompt:**
 ```
-Cinematic aerial transition shot. The camera starts close to the Opera House sails, then smoothly pulls back and arcs to the right, revealing the Sydney coastline. The shot transitions from the urban harbour to a golden sandy beach with rolling waves. Warm golden hour lighting, sun low on the horizon. 4K, hyper-realistic, smooth 60fps, seamless camera arc, no cuts, continuous motion.
+Low-poly 3D animation, continuing directly from the previous shot. The camera smoothly pulls back and arcs to the right in a sweeping motion, revealing the Sydney coastline. The Opera House geometric sails shrink as the camera rotates. The transition reveals a low-poly golden beach — faceted amber polygons meeting a dark teal geometric ocean with subtle wave patterns. The camera levels out and moves forward over the shoreline. Same minimalist low-poly style throughout. Color palette: golden amber sand (#D4A574), dark teal ocean, dark navy sky (#0B1120). 4K, 60fps, seamless continuous motion from previous shot, no text, no people, atmospheric.
 ```
-
-**End frame:** Aerial view of a golden beach with waves rolling in.
 
 ---
 
-## Clip 4: Bondi Sunrise (4-6 seconds)
+## Clip 4: Sunrise Over the Beach
 
-**Start frame:** Same beach view as the end of Clip 3.
+**Duration:** 5 seconds
 
-**Camera:** Slow push toward the horizon where the sun is rising. The camera descends lower as it approaches the shoreline.
+**Style reference:** Same low-poly geometric style, but the lighting shifts from night/moonlight to warm golden hour. The dark navy sky transitions to warm amber and gold. The geometric beach and ocean shapes are now lit from the horizon.
+
+**Start frame:** EXACTLY matches the end frame of Clip 3. Aerial view of the geometric beach and ocean, same composition, same angle.
+
+**Camera movement:** The camera slowly descends and pushes forward toward the horizon where the sun is rising. The movement is smooth and gentle, as if the camera is floating down to the shoreline.
+
+**End frame:** Wide view of the geometric sunrise over the ocean. The sun is a warm amber/gold polygon sphere rising on the horizon. Its light creates a golden gradient across the faceted ocean surface. The beach is in the foreground as a dark silhouette. This is the final frame — the journey ends here.
 
 **Prompt:**
 ```
-Cinematic golden hour beach shot. The camera slowly moves forward over golden sand toward the water's edge. Gentle waves roll in as the sun rises on the horizon, painting the sky in warm orange, pink, and gold. The silhouette of headlands in the distance. Warm, peaceful, hopeful atmosphere. 4K, hyper-realistic, smooth 60fps, warm golden tones, soft glow on the water.
+Low-poly 3D animation, continuing directly from the previous shot. The camera slowly descends and pushes forward toward the horizon as the sun rises. The geometric ocean surface transitions from dark teal to warm amber and gold as the sunrise light hits it. The sun is a faceted warm amber polygon sphere on the horizon, casting golden light across the scene. The low-poly beach in the foreground becomes a dark silhouette. The sky transitions from deep navy at the top to warm amber at the horizon. Same minimalist low-poly style. Color palette: warm amber gold (#D4A574, #E8722A), dark silhouette foreground, deep navy sky fading to gold. 4K, 60fps, seamless continuous motion from previous shot, no text, no people, hopeful atmospheric mood.
 ```
-
-**End frame:** Wide view of the sunrise over the ocean. This is the final scene — no transition needed.
 
 ---
 
-## Tips for Seamless Transitions
+## Production Notes
 
-1. **Generate Clip 1 first**, then use its last frame as a reference image for Clip 2
-2. **Generate Clip 2 next**, using Clip 1's last frame as a starting composition
-3. **Repeat for Clip 3 and 4** — each clip's start frame should match the previous clip's end frame
-4. **Lighting consistency:** All clips should use the same time of day (dusk/night → golden hour is a natural progression)
-5. **Frame rate:** All clips must be the same FPS (60fps recommended)
-6. **Resolution:** All clips 1080p or higher for consistent quality
+### Critical for Seamless Transitions
 
-## Quick Reference
+1. **Generate in order:** Clip 1 → Clip 2 → Clip 3 → Clip 4
+2. **Use the last frame of each clip as a reference image** for the next clip's first frame
+3. **All clips must be the same resolution and frame rate** (4K, 60fps)
+4. **No fading, no dissolves, no cut transitions** — the camera movement is continuous across clips
+5. **The "seam" between clips** is invisible because:
+   - Clip 1's last frame = Clip 2's first frame (same composition)
+   - Clip 2's last frame = Clip 3's first frame (same composition)
+   - Clip 3's last frame = Clip 4's first frame (same composition)
 
-| Clip | Subject | Duration | Camera Movement | Links to |
-|------|---------|----------|-----------------|----------|
-| 1 | Harbour Bridge | 4-6s | Fly forward through arch | Ends at Opera House view |
-| 2 | Opera House | 4-6s | Push toward sails | Ends at close-up of sails |
-| 3 | Transition to beach | 4-6s | Arc right from Opera House | Ends at beach aerial |
-| 4 | Sunrise | 4-6s | Push toward horizon | Final scene |
+### Style Consistency Checklist
+
+| Element | Specification |
+|---------|---------------|
+| Visual style | Low-poly 3D, geometric, faceted polygons |
+| Rendering | Flat-shaded, non-photorealistic, stylized |
+| Color palette | Deep navy (#0B1120), charcoal, warm amber (#D4A574, #E8722A) |
+| Lighting | Night/dusk with warm amber glow, transitioning to golden hour |
+| Camera | Smooth, noiseless, continuous — no cuts between clips |
+| Frame rate | 60fps |
+| Resolution | 4K (3840×2160) |
+| Content | Architecture and landscape only — no humans, no text, no UI |
+| Mood | Atmospheric, cinematic, contemplative, hopeful |
