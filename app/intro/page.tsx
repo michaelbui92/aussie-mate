@@ -1,140 +1,158 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const SECTIONS = [
+const CHAPTERS = [
   {
-    img: "/images/unsplash-1506973035872-a4ec16b8e8d9.jpg",
-    title: "Welcome to Australia",
-    subtitle: "Your guide to living, working, and thriving Down Under",
-    gradient: "from-[#0B1120]/80 via-[#0B1120]/40 to-transparent",
+    number: "01 / 05",
+    subtitle: "THE DECISION",
+    heading: "A new life on the other side of the world.",
+    body: "You've made the call. Australia. The land of beaches, career opportunities, and a fresh start. The visa applications are in motion, the questions are piling up, and the excitement is real. This is where we start.",
+    image: "/images/unsplash-1506973035872-a4ec16b8e8d9.jpg",
   },
   {
-    img: "/images/unsplash-1507525428034-b723cf961d3e.jpg",
-    title: "Stunning Coastlines",
-    subtitle: "From Bondi to Byron — beaches that take your breath away",
-    gradient: "from-[#0B1120]/70 via-[#0B1120]/30 to-transparent",
+    number: "02 / 05",
+    subtitle: "THE ARRIVAL",
+    heading: "Stepping off the plane. Jet lag, sunshine, and a new address.",
+    body: "The first week is a blur — airport queues, a temporary SIM card, a bed in a shared house you found on Flatmates. You're figuring out Opal cards, Coles self-checkout, and why everyone says \"no worries\" to everything. You're here. Now what?",
+    image: "/images/unsplash-1507525428034-b723cf961d3e.jpg",
   },
   {
-    img: "/images/unsplash-1517048676732-d65bc937f952.jpg",
-    title: "Vibrant Cities",
-    subtitle: "Sydney, Melbourne, Brisbane — find your home",
-    gradient: "from-[#0B1120]/70 via-[#0B1120]/30 to-transparent",
+    number: "03 / 05",
+    subtitle: "THE SETTLE",
+    heading: "Bank account. TFN. Job. Slowly, it starts to feel like home.",
+    body: "You've opened a bank account, applied for your TFN, and maybe landed a job. The city is starting to make sense. You know which train line goes where, your local cafe knows your order, and you've made a friend or two. The chaos of the first month has settled into a rhythm.",
+    image: "/images/unsplash-1517048676732-d65bc937f952.jpg",
   },
   {
-    img: "/images/unsplash-1523059623039-a9ed027e7fad.jpg",
-    title: "Endless Adventures",
-    subtitle: "Outback, rainforest, reef — Australia is waiting",
-    gradient: "from-[#0B1120]/70 via-[#0B1120]/30 to-transparent",
+    number: "04 / 05",
+    subtitle: "THE EXPLORE",
+    heading: "Weekend trips. Hidden gems. The Australia you came to see.",
+    body: "Now that you're settled, it's time to explore. Weekend trips to the Blue Mountains, a road trip down the coast, a flight to Melbourne for the laneways and coffee. You're no longer a tourist — you're living here. And there's so much more to see.",
+    image: "/images/unsplash-1523059623039-a9ed027e7fad.jpg",
   },
   {
-    img: "/images/unsplash-1545324418-cc1a3fa10c00.jpg",
-    title: "New Life, New Beginnings",
-    subtitle: "Visa, work, study, settle — we've got you covered",
-    gradient: "from-[#0B1120]/70 via-[#0B1120]/30 to-transparent",
+    number: "05 / 05",
+    subtitle: "THE HOME",
+    heading: "One day you realise — this is home now.",
+    body: "It happens quietly. You stop comparing everything to back home. You say \"arvo\" without thinking. You have a favourite beach, a regular pub, and a group of friends who feel like family. Australia isn't just where you live anymore. It's where you belong.",
+    image: "/images/unsplash-1545324418-cc1a3fa10c00.jpg",
   },
 ];
 
 export default function IntroPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = sectionRefs.current;
-      const viewportHeight = window.innerHeight;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            if (!isNaN(index)) setActiveIndex(index);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-      sections.forEach((section, i) => {
-        if (!section) return;
-        const rect = section.getBoundingClientRect();
-        const center = rect.top + rect.height / 2;
-        const viewportCenter = viewportHeight / 2;
-        const distance = (center - viewportCenter) / viewportHeight;
+    sectionRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
 
-        // Parallax zoom: scale from 1.0 to 1.15 based on scroll position
-        const scale = 1 + Math.abs(distance) * 0.15;
-        const img = section.querySelector(".parallax-img") as HTMLElement;
-        if (img) {
-          img.style.transform = `scale(${scale}) translateY(${distance * 10}px)`;
-        }
-
-        // Text opacity: fade out when scrolled past
-        const text = section.querySelector(".parallax-text") as HTMLElement;
-        if (text) {
-          const opacity = Math.max(0, 1 - Math.abs(distance) * 1.5);
-          text.style.opacity = String(opacity);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div ref={containerRef} className="bg-black">
-      {SECTIONS.map((section, i) => (
+    <div className="bg-[#0B1120] min-h-screen">
+      {/* Progress bar */}
+      <div className="fixed top-0 left-0 right-0 h-0.5 z-50 bg-white/10">
         <div
-          key={i}
-          ref={(el) => { sectionRefs.current[i] = el; }}
-          className="relative h-screen w-full overflow-hidden flex items-center justify-center"
-        >
-          {/* Background image with parallax zoom */}
-          <div
-            className="parallax-img absolute inset-0 w-full h-[120%] -top-[10%]"
+          className="h-full transition-all duration-500 ease-out"
+          style={{
+            width: `${((activeIndex + 1) / CHAPTERS.length) * 100}%`,
+            background: "linear-gradient(90deg, #E8722A, #D4A574)",
+          }}
+        />
+      </div>
+
+      {/* Section navigation dots */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+        {CHAPTERS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              sectionRefs.current[i]?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="w-2 h-2 rounded-full transition-all duration-300"
             style={{
-              backgroundImage: `url(${section.img})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              willChange: "transform",
+              background: i === activeIndex ? "#D4A574" : "rgba(255,255,255,0.2)",
+              transform: i === activeIndex ? "scale(1.5)" : "scale(1)",
             }}
           />
+        ))}
+      </div>
 
-          {/* Gradient overlay */}
+      {CHAPTERS.map((chapter, i) => (
+        <section
+          key={i}
+          ref={(el) => { sectionRefs.current[i] = el; }}
+          data-index={i}
+          className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        >
+          {/* Background image */}
           <div
-            className={`absolute inset-0 bg-gradient-to-b ${section.gradient}`}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${chapter.image})` }}
           />
 
-          {/* Text content */}
-          <div className="parallax-text relative z-10 text-center px-6 max-w-2xl transition-opacity duration-300">
-            <h1
-              className="text-5xl md:text-7xl font-bold text-white mb-4"
-              style={{ fontFamily: "Fraunces, Georgia, serif" }}
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120]/90 via-[#0B1120]/60 to-[#0B1120]/30" />
+
+          {/* Content */}
+          <div className="relative z-10 max-w-3xl mx-auto px-8 py-20">
+            <div
+              className={`transition-all duration-700 ${
+                i === activeIndex
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-40 translate-y-4"
+              }`}
             >
-              {section.title}
-            </h1>
-            <p className="text-lg md:text-xl text-white/80">
-              {section.subtitle}
-            </p>
-
-            {/* CTA on last section */}
-            {i === SECTIONS.length - 1 && (
-              <Link
-                href="/"
-                className="inline-block mt-8 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 active:scale-95"
-                style={{
-                  background: "linear-gradient(135deg, #E8722A, #D4A574)",
-                  color: "#fff",
-                  boxShadow: "0 0 30px rgba(212, 165, 116, 0.35)",
-                }}
+              <span className="text-[#D4A574] text-sm font-mono tracking-[0.2em]">
+                {chapter.number}
+              </span>
+              <p className="text-white/50 text-xs tracking-[0.3em] uppercase mt-4">
+                {chapter.subtitle}
+              </p>
+              <h2
+                className="text-4xl md:text-6xl font-bold text-white mt-4 leading-tight"
+                style={{ fontFamily: "Fraunces, Georgia, serif" }}
               >
-                Start Exploring →
-              </Link>
-            )}
-          </div>
+                {chapter.heading}
+              </h2>
+              <p className="text-white/70 text-lg mt-6 max-w-xl leading-relaxed">
+                {chapter.body}
+              </p>
 
-          {/* Scroll indicator on first section */}
-          {i === 0 && (
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-bounce">
-              <span className="text-xs tracking-widest uppercase">Scroll</span>
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
+              {/* CTA on last section */}
+              {i === CHAPTERS.length - 1 && (
+                <Link
+                  href="/"
+                  className="inline-block mt-8 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 active:scale-95"
+                  style={{
+                    background: "linear-gradient(135deg, #E8722A, #D4A574)",
+                    color: "#fff",
+                    boxShadow: "0 0 30px rgba(212, 165, 116, 0.35)",
+                  }}
+                >
+                  Start Exploring →
+                </Link>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        </section>
       ))}
     </div>
   );
