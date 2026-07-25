@@ -9,7 +9,7 @@ import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 export const metadata = withSeo(
   {
     ...seoFor("/other-tools"),
-    title: "Other Tools — Driving Lessons, AI Flashcards & More by AussieGuides Creator | AussieGuides",
+    title: "Other Tools — Driving Lessons, AI Flashcards & More | AussieGuides",
     description:
       "Other tools by the AussieGuides creator — Drive with Bui (driving lessons), Study Buddy (AI flashcard app), and more projects for the Korean-Australian community.",
   },

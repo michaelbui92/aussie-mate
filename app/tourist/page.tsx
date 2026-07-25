@@ -14,7 +14,7 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/tourist"),
-  title: "Sydney Travel Guide — Tourist & Visitor Essentials",
+  title: "Sydney Travel Guide — Top Attractions, Transport, Tips & Itineraries",
   description:
     "Sydney travel essentials for international visitors and first-timers — top sights, beach safety, what to budget, bush and park safety, and the apps that make getting around easier. English and 한국어.",
   },

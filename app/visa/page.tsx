@@ -9,7 +9,7 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/visa"),
-  title: "Australian Visa Guide — AussieGuides (English / 한국어)",
+  title: "Australian Visa Guide — Student Visa, WHV, Partner & Skilled Migration 2026",
   description:
     "Bilingual overview of Australia's main visa subclasses for anyone moving to or visiting Australia — 417 Working Holiday, 500 Student, 189/190 Skilled, 820/801 Partner, and 600/601/651 Visitor. English and 한국어 side by side.",
   },

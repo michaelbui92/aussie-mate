@@ -102,8 +102,8 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/experiences/adventure"),
-  title: "Adventure in NSW — AussieGuides",
-  description: "Hiking, mountain biking, and outdoor adventures within reach of Sydney — from coastal walks to Australia's highest peak.",
+  title: "Blue Mountains Hikes & NSW Day Walks — Best Bushwalks from Sydney",
+  description: "Blue Mountains Grand Canyon Track, Wentworth Falls, coastal cliff walks, and Snowy Mountains hikes — day trips and weekend adventures within reach of Sydney.",
   },
   "/experiences/adventure"
 );

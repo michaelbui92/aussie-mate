@@ -15,7 +15,7 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/finance"),
-  title: "Finance & banking in Australia — AussieGuides (English / 한국어)",
+  title: "Australia Banking & Tax Guide — TFN, Super, Tax Returns for Newcomers",
   description:
     "Open a bank account, apply for a TFN, claim superannuation, lodge a tax return — practical money and banking essentials in Australia for anyone new to the country.",
   },

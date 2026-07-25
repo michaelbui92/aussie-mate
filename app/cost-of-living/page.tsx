@@ -6,7 +6,7 @@ export const metadata = withSeo(
   {
     title: "Cost of Living in Sydney 2026 — Rent, Food, Transport, Bills | AussieGuides",
     description:
-      "Complete cost of living guide for Korean newcomers in Sydney 2026. Rent, groceries, transport, utilities, phone, health insurance, eating out — with real AUD prices and weekly/monthly budgets.",
+      "Cost of living in Sydney 2026 — weekly rent, groceries, transport, utilities, phone, health insurance, and eating out. Real AUD prices with weekly and monthly budgets for singles, couples, and families.",
   },
   "cost-of-living"
 );

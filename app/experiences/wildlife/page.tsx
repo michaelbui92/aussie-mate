@@ -215,7 +215,7 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/experiences/wildlife"),
-  title: "Australian Wildlife Guide — AussieGuides",
+  title: "Where to See Australian Wildlife — Taronga Zoo, Koalas, Kangaroos near Sydney",
   description:
     "Practical guide to seeing Australian wildlife around Sydney — Taronga Zoo, Koala Park, Featherdale, national parks, and critical safety advice.",
   },

@@ -12,7 +12,7 @@ export const metadata: Metadata = withSeo(
   {
 
   ...seoFor("/experiences/culture"),
-  title: "Sydney's Multicultural Neighbourhoods — AussieGuides",
+  title: "Cabramatta, Strathfield, Chatswood — Sydney's Multicultural Food Hubs",
   description:
     "Cabramatta, Hurstville, Chatswood, Strathfield, Eastwood — Sydney's Korean, Vietnamese, Chinese and other cultural hubs, with what to eat and do in each.",
   },

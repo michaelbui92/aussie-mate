@@ -10,7 +10,7 @@ import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 export const metadata: Metadata = withSeo(
   {
     ...seoFor("/editorial"),
-    title: "Editorial standards — how this site is written",
+    title: "Editorial Standards — How AussieGuides Researches & Writes Content",
     description:
       "How AussieGuides writes, sources, reviews, and corrects its content — a first-person editorial standard page covering sources, review cadence, and how to report errors.",
   },

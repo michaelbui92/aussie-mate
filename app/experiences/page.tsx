@@ -16,8 +16,8 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/experiences"),
-  title: "Experiences — AussieGuides",
-  description: "Find experiences, not just places — beaches, wildlife, food, adventure, culture, and road trips across Sydney and NSW.",
+  title: "Things to Do in Sydney — Beaches, Food, Wildlife, Hikes & Road Trips",
+  description: "Sydney's best things to do — Bondi Beach swims, Taronga Zoo koalas, Blue Mountains hikes, Hunter Valley wine, and multicultural food in Cabramatta, Strathfield, and Chinatown.",
   },
   "/experiences"
 );

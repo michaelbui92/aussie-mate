@@ -12,7 +12,7 @@ export const metadata: Metadata = withSeo(
   {
 
   ...seoFor("/experiences/road-trips"),
-  title: "Australian Road Trips — AussieGuides",
+  title: "Great Ocean Road to Sydney — Best Australian Road Trips & Routes",
   description:
     "Great Ocean Road, Sydney to Melbourne, Red Centre, Pacific Coast — Australia's iconic drives with route notes, distances, best seasons, and Korean-friendly tips.",
   },

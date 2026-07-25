@@ -16,7 +16,7 @@ export const metadata = withSeo(
   {
 
   ...seoFor("/aussie-english"),
-  title: "Aussie English — Australian Slang & Everyday Phrases (English / 한국어 / 中文 / 日本語)",
+  title: "Aussie Slang & Phrases — Fair Dinkum, Arvo, Mate & Everyday Australian English",
   description:
     "Australian phrases and everyday English you'd hear at the pub, at work, on the footy, and out in the suburbs — explained in plain English for anyone new here, foreigners, learners, and curious locals. Available 한국어 for Korean-speakers, 中文 for Chinese-speakers, and 日本語 for Japanese-speakers. G'day, arvo, brekkie, no worries, she'll be right and more.",
   },
