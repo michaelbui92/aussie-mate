@@ -13,7 +13,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Current state
 
-- **HEAD:** `6660a81` — docs: add AGENTS.md — project state, decisions, gotchas, next steps
+- **HEAD:** `bad5a09` — fix(seo): rewrite 13 page titles + descriptions for CTR — drop language codes, front-load keywords, fix 'Korean newcomers' framing
 - **Dirty files:** 0
 - ✅ Live, serving public traffic
 - ✅ SEO metadata rewritten for CTR (Jul 2026) — 13 page titles + descriptions updated
