@@ -13,7 +13,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Current state
 
-- **HEAD:** `6b98263` — docs: update AGENTS.md — refresh HEAD in Current state
+- **HEAD:** `6660a81` — docs: add AGENTS.md — project state, decisions, gotchas, next steps
 - **Dirty files:** 0
 - ✅ Live, serving public traffic
 - ✅ SEO metadata rewritten for CTR (Jul 2026) — 13 page titles + descriptions updated
