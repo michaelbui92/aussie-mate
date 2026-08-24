@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · AussieGuides",
   },
   description:
-    "A bilingual (English / 한국어) travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — international students, working-holiday makers, expats, English-first travellers, Australians returning home. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW in English and 한국어.",
+    "A travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — international students, working-holiday makers, expats, English-first travellers, Australians returning home. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW.",
   keywords: [
     "Australia travel guide",
     "Sydney travel guide",
@@ -70,14 +70,14 @@ export const metadata: Metadata = {
     siteName: "AussieGuides",
     title: "AussieGuides — Travel & Living Guide for Sydney and NSW (English / 한국어)",
     description:
-      "A bilingual (English / 한국어) guide to Australian daily life — for anyone new here, written by an Australian-born Sydneysider.",
+      "A guide to Australian daily life — for anyone new here, written by an Australian-born Sydneysider.",
     // images is auto-populated by app/opengraph-image.tsx (1200x630 PNG
     // generated at build time). No need to set it explicitly.
   },
   twitter: {
     card: "summary_large_image",
     title: "AussieGuides — Travel & Living Guide for Sydney and NSW",
-    description: "A bilingual (English / 한국어) guide to Australian daily life.",
+    description: "A guide to Australian daily life.",
   },
   robots: {
     index: true,

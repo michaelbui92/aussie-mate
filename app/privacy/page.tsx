@@ -44,7 +44,7 @@ export default function PrivacyPage() {
           </h2>
           <En>
             <p>
-              AussieGuides (youraussieguides.com) is a free bilingual (English / 한국어)
+              AussieGuides (youraussieguides.com) is a free
               information site about Australian daily life — for anyone visiting, studying,
               working, or settling in Australia, regardless of passport or background. We are
               not a business, government body, or educational institution — see our{" "}

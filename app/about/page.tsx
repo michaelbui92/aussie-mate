@@ -106,7 +106,7 @@ export const metadata = withSeo(
   {
     ...seoFor("/about"),
     title: "About AussieGuides — Practical Australia Guide Written by a Local",
-    description: "AussieGuides is a free bilingual guide to Australian daily life — Opal cards, TFN, renting, slang, visas, and more — written by Michael Bui, an Australian-born Sydneysider for anyone new to the country.",
+    description: "AussieGuides is a free guide to Australian daily life — Opal cards, TFN, renting, slang, visas, and more — written by Michael Bui, an Australian-born Sydneysider for anyone new to the country.",
   },
   "/about"
 );

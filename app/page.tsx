@@ -11,7 +11,7 @@ export const metadata: Metadata = withSeo(
     // audience gained in the ab4e873 identity pivot).
     title: "AussieGuides — Australia Travel Guide: Opal, TFN, Visas, Slang & Daily Life",
     description:
-      "Practical Australia travel and living guide for newcomers — Opal cards, TFN, superannuation, renting, Aussie slang, visas, and destinations around Sydney and NSW. Written by a local, bilingual English and 한국어.",
+      "Practical Australia travel and living guide for newcomers — Opal cards, TFN, superannuation, renting, Aussie slang, visas, and destinations around Sydney and NSW. Written by a local.",
   },
   "/"
 );
