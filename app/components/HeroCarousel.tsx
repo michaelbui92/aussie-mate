@@ -8,15 +8,15 @@ const HERO_IMAGES = [
     alt: "Sydney Opera House at dusk",
   },
   {
-    src: "/images/pexels-1261728.jpg",
-    alt: "Blue Mountains Three Sisters lookout",
+    src: "/images/bluemountains_three_sisters.jpg",
+    alt: "The Three Sisters, Blue Mountains",
   },
   {
-    src: "/images/pexels-1450353.jpg",
+    src: "/images/bondi_aerial.jpg",
     alt: "Bondi Beach, Sydney coastline",
   },
   {
-    src: "/images/pexels-442116.jpg",
+    src: "/images/hunter_valley_vineyard.jpg",
     alt: "Hunter Valley vineyards",
   },
 ];

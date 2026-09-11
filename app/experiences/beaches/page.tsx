@@ -148,7 +148,7 @@ export default function BeachesPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <img
-          src="/images/pexels-1450353.jpg"
+          src="/images/bondi_aerial.jpg"
           alt="Bondi Beach, Sydney's most iconic coastline"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -26,7 +26,7 @@ export const experienceThemes: ExperienceTheme[] = [
     koBlurb: "본다이, 맨리, 오션풀, 해안 산책로까지.",
     href: "/experiences/beaches",
     accent: "from-cyan-500 to-sky-600",
-    heroImg: "/images/pexels-1450353.jpg",
+    heroImg: "/images/bondi_aerial.jpg",
   },
   {
     title: "Wildlife",
