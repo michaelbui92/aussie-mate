@@ -25,6 +25,20 @@ export interface Destination {
     time: { en: string; ko: string };
     cost: { en: string; ko: string };
   }[];
+  /** Detailed how to get there — drive, train, tours, parking (expands on gettingThere) */
+  howToGetThere?: { en: string; ko: string };
+  /** Expanded best time to visit — season-by-season breakdown */
+  bestTimeDetailed?: { en: string; ko: string };
+  /** Top 5–10 things to do, each with a short description */
+  topThingsToDo?: {
+    en: { title: string; description: string }[];
+    ko: { title: string; description: string }[];
+  };
+  /** Local pro tips — insider knowledge, money-saving, timing advice */
+  proTips?: {
+    en: { tip: string; detail: string }[];
+    ko: { tip: string; detail: string }[];
+  };
 }
 
 export const destinations: Destination[] = [
@@ -100,7 +114,7 @@ export const destinations: Destination[] = [
     tripLength: "weekend",
     description: {
       en: "Australia's oldest wine region, about 2 hours north of Sydney. Hunter Valley is famous for Semillon and Shiraz, but there's so much more — gourmet restaurants, sake tastings, hot air balloons at sunrise, and boutique breweries. A popular weekend escape that's at its best during vintage (March–April).",
-      ko: "호주에서 가장 오래된 와인 생산지로 시드니에서 북쪽으로 약 2시간. 헌터 밸리는 세미뇽과 시라즈로 유명하지만 그 이상입니다 — 미식 레스토랑, 사케 테이스팅, 일출 핫에어볼론, 그리고 바이크릿 양조장. 빈티지 시즌(3~4월)에 가장 아름다습니다."
+      ko: "호주에서 가장 오래된 와인 생산지로 시드니에서 북쪽으로 약 2시간. 헌터 밸리는 세미뇽과 시라즈로 유명하지만 그 이상입니다 — 미식 레스토랑, 사케 테이스팅, 일출 핫에어볼론, 그리고 바이크릿 양조장. 빈티지 시즌(3~4월)에 가장 아름답습니다."
     },
     highlights: [
       { en: "Wine tasting at boutique wineries", ko: "바이크릿 와이너리 와인 테이스팅", icon: "wine" },
@@ -111,6 +125,48 @@ export const destinations: Destination[] = [
     bestTime: { en: "Mar–Apr (vintage) or May–Jun for cooler escapes", ko: "3~4월 (빈티지) 또는 5~6월 시원한 철에 최적" },
     gettingThere: { en: "Drive (2hrs) or book a guided wine tour from Sydney. Train to Singleton then bus.", ko: "자동차 (2시간) 또는 시드니에서 가이드 와인 투어 예약. 기차로 싱글턴까지 간 후 버스." },
     suggestedDays: { en: "2–3 days (weekend with cellar-door pace)", ko: "2~3일 (주말 셀러 도어 속도로)" },
+    howToGetThere: {
+      en: "**By car:** The most flexible option. Take the M1 north then the Hunter Expressway (M15) toward Branxton/Pokolbin. The drive from Sydney's CBD to the main Pokolbin wine region is about 2 hours. Parking is easy — every cellar door has its own lot. A designated driver is strongly recommended; the wine tastings add up.\n\n**By tour bus:** Dozens of operators run guided wine tours from Sydney ($99–$199 AUD per person). Most visit 4–6 cellar doors, include lunch at a winery restaurant, and handle the driving. A great option if you want to drink freely. Book ahead on weekends.\n\n**By train + shuttle:** Train from Central to Singleton (2.5 hrs, ~$15 AUD Opal), then a local wine shuttle bus to the vineyards. The shuttle runs hourly and costs about $10 AUD one-way. Less convenient than a tour but cheaper.",
+      ko: "**자동차:** 가장 유연한 옵션. M1 북쪽으로 간 후 Hunter Expressway(M15)를 타고 Branxton/Pokolbin 방향. 시드니 CBD에서 주요 와인 지역인 Pokolbin까지 약 2시간. 주차는 쉬움 — 모든 셀러 도어에 자체 주차장 있음. 지정된 운전자 강력 권장 — 와인 테이스팅이 쌓입니다.\n\n**투어 버스:** 수많은 업체가 시드니에서 가이드 와인 투어 운영 ($99~$199 AUD 1인당). 대부분 4~6개 셀러 도어 방문, 와이너리 레스토랑 점심 포함, 운전 대행. 자유롭게 마시고 싶다면 좋은 선택. 주말 예약 필수.\n\n**기차 + 셔틀:** 센트럴에서 싱글턴까지 기차(2.5시간, ~$15 AUD 오팔), 이후 와인 셔틀 버스로 포도원 이동. 셔틀은 1시간 간격, 편도 약 $10 AUD. 투어보다 불편하지만 저렴."
+    },
+    bestTimeDetailed: {
+      en: "**Vintage season (Mar–Apr):** The absolute peak — harvest time. The vines are heavy with grapes, the cellar doors are buzzing, and many wineries run special vintage-release tastings. Warm autumn days, cool nights. Book everything months ahead.\n\n**Winter (Jun–Aug):** The hidden gem season. The Hunter's cellar doors are cosy with open fireplaces, restaurants run winter-menu specials, and accommodation prices drop significantly. The bare vines have their own stark beauty. Perfect for a romantic escape.\n\n**Spring (Sep–Nov):** The vineyards are green and lush, spring flowers are out, and the weather is mild. The Hunter Valley Gardens' Spring Festival (September) draws big crowds. Good balance of pleasant weather and reasonable prices.\n\n**Summer (Dec–Feb):** Hot and busy. The vines are lush, but the heat (30–35°C) can make extended outdoor tasting uncomfortable. Indoor cellar doors with air conditioning are your friend. Early morning hot-air balloon flights are spectacular.",
+      ko: "**빈티지 시즌 (3~4월):** 절정기 — 수확철. 포도나무에 포도가 가득하고 셀러 도어가 활기차며 많은 와이너��에서 빈티지 한정 테이스팅 진행. 따뜻한 가을 날씨와 선선한 밤. 모든 것을 몇 달 전에 예약.\n\n**겨울 (6~8월):** 숨겨진 보석 시즌. 헌터의 셀러 도어는 벽난로가 아늑하고, 레스토랑은 겨울 스페셜 메뉴 운영, 숙소 가격 크게 하락. 앙상한 포도나무의 독특한 아름다움. 로맨틱한 휴가에 완벽.\n\n**봄 (9~11월):** 포도원이 푸르고 무성하며 봄꽃 만발, 날씨 온화. 헌터 밸리 가든의 봄 축제(9월)로 인파가 모임. 쾌적한 날씨와 합리적인 가격의 균형.\n\n**여름 (12~2월):** 덥고 붐빔. 포도나무는 무성하지만 더위(30~35°C)로 장시간 야외 테이스팅이 불편할 수 있음. 에어컨이 있는 실내 셀러 도어가 좋음. 이른 아침 열기구 비행은 장관."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "Wine tasting at a classic cellar door", description: "Start at Audrey Wilkinson (iconic Semillon views) or Brokenwood (renowned Shiraz). Most cellar doors charge $10–$15 AUD for a tasting flight of 4–6 wines, refunded on purchase. The Hunter is one of the few places where you can still taste for free at smaller producers." },
+        { title: "Hot air balloon ride at sunrise", description: "Balloon Aloft and Beyond Ballooning both launch daily over the vineyards at dawn. The 1-hour flight over misty vines with the Brokenback Range in the background is magical. Champagne breakfast included. From $335 AUD." },
+        { title: "Lunch at a winery restaurant", description: "Muse Kitchen, Bistro Molines, and EXP. Restaurant are the standouts — every dish paired with a Hunter wine. Book weeks ahead for weekend lunch. Muse's lamb shoulder for two is legendary." },
+        { title: "Cheese and chocolate tasting", description: "The Hunter Valley Cheese Company and Cocoa Nymph offer paired tasting experiences. The Brie and Semillon pairing at the Cheese Company is a simple pleasure. Cocoa Nymph runs chocolate-and-wine sessions on weekends." },
+        { title: "Sake tasting at the Hunter Distillery", description: "One of Australia's few sake producers, using local rice and Hunter water. The tasting room is inside a historic sandstone building and the sake pairs surprisingly well with the local oysters." },
+        { title: "Horse-drawn carriage ride through the vines", description: "A quiet, romantic way to see the vineyards — Clydesdale Horse Drawn Carriages run 30-minute and 1-hour tours through the Pokolbin vineyards. Book online for sunset slots (they sell out)." },
+        { title: "Stargazing at the Hunter Valley Observatory", description: "Public viewing nights on Saturdays — the darkest skies in the Hunter region. Telescopes set up, expert guides, and a laser-guided tour of the southern constellations. A unique evening activity after a day of wine." },
+      ],
+      ko: [
+        { title: "클래식 셀러 도어 와인 테이스팅", description: "Audrey Wilkinson(아이코닉 Semillon 전망) 또는 Brokenwood(유명 Shiraz)에서 시작. 대부분 셀러 도어는 4~6종 테이스팅 플라이트에 $10~$15 AUD, 구매 시 환불. 헌터는 소규모 생산자에서 무료 테이스팅이 아직 가능한 몇 안 되는 곳." },
+        { title: "일출 열기구 체험", description: "Balloon Aloft와 Beyond Ballooning이 매일 새벽 포도원上空에서 운항. 안개 낀 포도원 위의 1시간 비행, Brokenback 산맥 배경의 마법 같은 경험. 샴페인 조식 포함. $335 AUD부터." },
+        { title: "와이너리 레스토랑 점심", description: "Muse Kitchen, Bistro Molines, EXP. Restaurant가 대표적 — 모든 요리가 헌터 와인과 페어링. 주말 점심은 몇 주 전 예약 필수. Muse의 양고기 숄더 투인원이 전설적." },
+        { title: "치즈와 초콜릿 테이스팅", description: "Hunter Valley Cheese Company와 Cocoa Nymph에서 페어링 테이스팅 제공. Cheese Company의 브리와 Semillon 페어링은 단순한 즐거움. Cocoa Nymph는 주말에 초콜릿-와인 세션 운영." },
+        { title: "Hunter Distillery 사케 테이스팅", description: "호주 몇 안 되는 사케 생산지, 로컬 쌀과 헌터 물 사용. 역사적인 사암 건물 내 테이스팅 룸, 사케가 지역 굴과 놀랍게 잘 어울림." },
+        { title: "포도원 마차 투어", description: "조용하고 로맨틱하게 포도원을 둘러보는 방법 — Clydesdale Horse Drawn Carriages가 Pokolbin 포도원 30분/1시간 투어 운영. 일몰 시간대 온라인 예약(매진됨)." },
+        { title: "Hunter Valley 천문대 별빛 감상", description: "토요일 공개 관측의 밤 — 헌터 지역에서 가장 어두운 하늘. 망원경 설치, 전문 가이드, 남쪽 별자리 레이저 투어. 와인 하루를 마무리하는 독특한 저녁 활동." },
+      ]
+    },
+    proTips: {
+      en: [
+        { tip: "Book a designated driver service or tour", detail: "RBT checkpoints are frequent on the Hunter Expressway on weekends. A designated driver service costs about $50–$80 for the day and is far cheaper than a DUI. Or just book a tour." },
+        { tip: "Don't try to visit more than 5 cellar doors in a day", detail: "Tasting fatigue is real — after the fifth flight, your palate is shot and every wine starts tasting the same. Pick 4–5 producers across different styles (one big, one boutique, one organic, one distillery) and take your time." },
+        { tip: "The Hunter Expressway has tolls", detail: "The M15 Hunter Expressway has a toll of about $7 AUD each way. If you don't have a toll tag, the invoice will be sent to the registered owner within days — factor it in." },
+        { tip: "Stay in Pokolbin, not Cessnock", detail: "Cessnock is the service town 10 minutes away with cheaper accommodation, but staying in Pokolbin means waking up in the vineyards, walking to tastings, and having dinner without driving. The extra cost is worth it." },
+      ],
+      ko: [
+        { tip: "지정 운전자 서비스 또는 투어 예약", detail: "주말 헌터 익스프레스웨이에서 음주 단속 자주 있음. 지정 운전자 서비스는 하루 $50~$80 AUD로 DUI보다 훨씬 저렴. 아니면 투어를 예약하세요." },
+        { tip: "하루 5개 이상 셀러 도어 방문하지 않기", detail: "테이스팅 피로는 현실 — 다섯 번째 플라이트 이후엔 미각이 무뎌져 모든 와인이 똑같이 느껴짐. 다른 스타일의 4~5개 생산자를 골라(대형, 부티크, 유기농, 증류주) 여유 있게 즐기세요." },
+        { tip: "헌터 익스프레스웨이 통행료", detail: "M15 헌터 익스프레스웨이 편도 통행료 약 $7 AUD. 통행 태그가 없으면 며칠 내로 등록 소유자에게 청구서 발송 — 미리 계산하세요." },
+        { tip: "Cessnock 아닌 Pokolbin에 숙박", detail: "Cessnock은 10분 거리의 서비스 타운으로 저렴한 숙소가 있지만, Pokolbin에 머물면 포도원에서 아침을 맞고 도보로 테이스팅하고 운전 없이 저녁 식사 가능. 추가 비용 가치 있음." },
+      ]
+    },
     attractions: [
       {
         name: { en: "Audrey Wilkinson Winery", ko: "오드리 윌킨슨 와이너리" },
@@ -215,6 +271,48 @@ export const destinations: Destination[] = [
     bestTime: { en: "Jun–Sep (ski season); Dec–Feb (summer hiking)", ko: "6월~9월 (스키 시즌); 12월~2월 (여름 트레킹)" },
     gettingThere: { en: "Drive from Sydney (6hrs) or fly to Cooma, then shuttle to Perisher/Thredbo.", ko: "시드니에서 운전 (6시간) 또는 쿠마까지 비행 후 페리셔/스레드보 셔틀." },
     suggestedDays: { en: "3–7 days (weekend for skiing, week for hiking)", ko: "3~7일 (스키는 주말, 트레킹은 일주일)" },
+    howToGetThere: {
+      en: "**By car:** The classic Snowy journey. Take the M5/M7 west out of Sydney, then the Hume Highway (M31) toward Goulburn, then the Snowy Mountains Highway through Cooma to Jindabyne. Total drive time is about 5–6 hours without stops. In ski season (Jun–Sep), snow chains may be required — check the NSW Live Traffic app before departing. The road to Perisher is steep and winding for the last 30km. Parking at the resort is $40–$50 per day in peak season.\n\n**By air:** Fly from Sydney to Cooma Airport (1 hour, Rex Airlines from $200 AUD return). From Cooma, shuttle buses run to Jindabyne, Perisher, and Thredbo (1 hour, ~$40 AUD). Book the shuttle in advance — it fills up during ski season.\n\n**By tour bus:** Overnight coach services run from Sydney to Jindabyne (7–8 hours), departing around 10pm and arriving at 6am. This saves a night's accommodation but you arrive tired. The Snowy Express is the most reliable option.",
+      ko: "**자동차:** 클래식한 스노이 여정. 시드니에서 M5/M7 서쪽으로, Hume Highway(M31)를 타고 Goulburn 방향, Snowy Mountains Highway를 통해 Cooma, Jindabyne까지. 총 5~6시간(정차 제외). 스키 시즌(6~9월)에는 체인 필수 — 출발 전 NSW Live Traffic 앱 확인. Perisher로 가는 마지막 30km는 가파르고 구불구불함. 리조트 주차 성수기 하루 $40~$50.\n\n**항공:** 시드니에서 Cooma 공항까지 (1시간, Rex Airlines 왕복 $200 AUD부터). Cooma에서 Jindabyne, Perisher, Thredbo까지 셔틀버스 (1시간, ~$40 AUD). 사전 예약 필수 — 스키 시즌에 매진.\n\n**투어 버스:** 시드니에서 Jindabyne까지 야간 버스 (7~8시간), 오후 10시 출발 오전 6시 도착. 숙박비는 절약되지만 피곤하게 도착. Snowy Express가 가장 신뢰할 수 있는 옵션."
+    },
+    bestTimeDetailed: {
+      en: "**Winter (Jun–Aug):** Peak ski season. Perisher and Thredbo are in full operation — the best snow conditions are usually July–August. Expect cold temperatures (-5°C to 5°C), busy slopes, and premium accommodation prices. Book lift tickets and lessons online weeks ahead for the best rates.\n\n**Spring (Sep–Oct):** Spring skiing! September can still have excellent snow on the upper slopes, with warmer temps and longer days. The Perisher Blue Cow season often extends through October long weekend. Fewer crowds, cheaper accommodation.\n\n**Summer (Dec–Feb):** The mountains transform into hiking paradise. Mount Kosciuszko summit walk, wildflower hikes, mountain biking at Thredbo, and the Yarrangobilly thermal pools. Warm days (20–30°C) and cool nights. No crowds on the trails.\n\n**Autumn (Mar–May):** The quietest season. The landscape is beautiful with autumn colours, perfect for photography. Many resort facilities are closed or limited between seasons. Best for experienced hikers who want solitude.",
+      ko: "**겨울 (6~8월):** 스키 성수기. Perisher와 Thredbo 완전 운영 — 보통 7~8월이 최상의 적설. 기온 -5°C~5°C, 붐비는 슬로프, 프리미엄 숙소 가격. 리프트와 강습은 몇 주 전 온라인 예약이 가장 저렴.\n\n**봄 (9~10월):** 스프링 스키! 9월 상부 슬로프에 여전히 훌륭한 적설, 따뜻한 기온, 긴 일조량. Perisher Blue Cow 시즌은 10월 긴 주말까지 연장됨. 인파 적고 저렴한 숙소.\n\n**여름 (12~2월):** 산이 트레킹 천국으로 변신. Mount Kosciuszko 정상 산책, 야생화 트레킹, Thredbo 마운틴 바이킹, Yarrangobilly 온천. 따뜻한 날(20~30°C)과 선선한 밤. 트레일 한산.\n\n**가을 (3~5월):** 가장 한산한 계절. 단풍이 아름다운 풍경, 사진 촬영에 완벽. 많은 리조트 시설이 시즌 사이에 문을 닫거나 제한 운영. 고독을 원하는 경험 많은 트레커에게 적합."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "Ski or snowboard at Perisher", description: "Australia's largest ski resort — 1,250 hectares of terrain across four interconnected villages (Perisher Valley, Blue Cow, Smiggin Holes, Guthega). Over 50 lifts and 100+ runs from beginner to expert. The backcountry access via the backcountry gates is world-class." },
+        { title: "Ski or snowboard at Thredbo", description: "A smaller resort with Australia's longest run (5.9km from the top of Karel's T-bar to Friday Flat). The village has a genuine alpine feel with après-ski pubs and restaurants. Better for intermediates and experts." },
+        { title: "Summit Mount Kosciuszko", description: "Australia's highest peak at 2,228m. The easiest route is 13km return from the Thredbo top station via the Kosciuszko Walk — a metal walkway that's accessible to anyone with reasonable fitness. Allow 4–5 hours. The views are life-list material." },
+        { title: "Soak in the Yarrangobilly thermal pools", description: "A natural thermal pool in a limestone canyon — 27°C year-round, surrounded by snow gums. It's a 30-minute walk downhill from the carpark (20 minutes back up — the walk home is the workout). Combine with a picnic and a drive through the Snowy." },
+        { title: "Mountain bike at Thredbo in summer", description: "Thredbo's chairlift-served downhill mountain bike trails are among Australia's best — from flowy green runs to black diamond single-track. Bike hire and armour available on-site. The scenic chairlift ride up is worth it even for non-riders." },
+        { title: "Cross-country ski at Selwyn Snow Resort", description: "Selwyn is the Snowies' best-kept secret for cross-country skiing and snowshoeing — gentle terrain, fewer crowds, and a fraction of the cost of Perisher/Thredbo. About 40 minutes from Jindabyne. Lessons available for beginners." },
+        { title: "Drive the Snowy Mountains Scenic Loop", description: "A full-day road trip loop from Jindabyne through Thredbo, down to Khancoban, across to Cabramurra, and back via Tumut. Alpine scenery, glacial lakes, and historic hydro-electric tunnels. Best in autumn for the poplar colours." },
+      ],
+      ko: [
+        { title: "Perisher 스키 또는 스노보드", description: "호주 최대 스키 리조트 — 4개 연결 빌리지(Perisher Valley, Blue Cow, Smiggin Holes, Guthega)에 1,250헥타르 지형. 50개 이상 리프트, 100개 이상 초급~고급 슬로프. 백컨트리 게이트를 통한 백컨트리 접근은 세계적 수준." },
+        { title: "Thredbo 스키 또는 스노보드", description: "더 작은 리조트, 호주에서 가장 긴 슬로프(5.9km, Karel's T-bar 정상에서 Friday Flat까지). 빌리지는 진정한 알파인 분위기와 애프터스키 펍과 레스토랑. 중급자와 고급자에게 적합." },
+        { title: "Mount Kosciuszko 정상 등정", description: "호주 최고봉 2,228m. 가장 쉬운 코스는 Thredbo 정상역에서 Kosciuszko Walk를 통해 13km 왕복 — 적정 체력이면 누구나 가능한 금속 데크길. 4~5시간 소요. 평생 기억에 남을 전망." },
+        { title: "Yarrangobilly 온천욕", description: "석회암 캐년의 자연 온천 — 연중 27°C, 스노우 검으로 둘러싸임. 주차장에서 내리막 30분(돌아오는 20분이 운동). 피크닉과 스노이 드라이브와 결합." },
+        { title: "여름 Thredbo 마운틴 바이킹", description: "Thredbo의 체어리프트 이용 다운힐 마운틴 바이크 트레일은 호주 최고 — 초급 플로우부터 블랙 다이아몬드 싱글트랙까지. 현장에서 바이크와 장비 대여 가능. 경치 좋은 체어리프트는 라이더가 아니어도 가치 있음." },
+        { title: "Selwyn Snow Resort 크로스컨트리 스키", description: "Selwyn은 스노이즈에서 크로스컨트리 스키와 스노슈잉을 위한 숨겨진 보석 — 완만한 지형, 적은 인파, Perisher/Thredbo 대비 저렴한 가격. Jindabyne에서 약 40분. 초보자 강습 가능." },
+        { title: "Snowy Mountains 경치 루프 드라이브", description: "Jindabyne에서 Thredbo를 거쳐 Khancoban, Cabramurra, Tumut로 돌아오는 종일 로드트립. 고산 풍경, 빙하 호수, 역사적 수력 발전 터널. 가을 포플러 단풍이 가장 아름다움." },
+      ]
+    },
+    proTips: {
+      en: [
+        { tip: "Skip the ski rental at the resort — hire in Jindabyne", detail: "Jindabyne has a dozen ski hire shops that are 30–50% cheaper than resort-side rental counters. Rhyme and Rhythm, Ski'n'Skate, and Sundance are all well-reviewed. You'll save $50–$80 AUD per day for a full kit." },
+        { tip: "Check the weather obsessively", detail: "The Snowy Mountains weather changes fast — a sunny morning can turn into a whiteout by lunch. Check the Bureau of Meteorology (BOM) forecast for the alpine region, not just Jindabyne. The mountain cams on the resort websites are the most reliable real-time view." },
+        { tip: "Pack chains in winter even if you have AWD", detail: "NSW Police can close the road to Perisher to any vehicle not carrying chains, regardless of tyres. Snow chains cost about $60 to buy and can be rented from Jindabyne servo for $30/day. The fine for driving without them when required is $2,300." },
+        { tip: "The best coffee in the Snowies", detail: "Wildbrumby Distillery on the way to Thredbo has a schnapps distillery, a café with excellent coffee, and the best schnapps tasting board in the region. It's the perfect last stop before heading back to Sydney." },
+      ],
+      ko: [
+        { tip: "스키 장비는 리조트 말고 Jindabyne에서 대여", detail: "Jindabyne에는 리조트 대여보다 30~50% 저렴한 수많은 스키 대여점이 있음. Rhyme and Rhythm, Ski'n'Skate, Sundance 모두 평판 좋음. 풀 키트 하루 $50~$80 AUD 절약." },
+        { tip: "날씨 수시 확인", detail: "스노이 마운틴 날씨는 빠르게 변함 — 맑은 아침이 점심에는 화이트아웃으로 변할 수 있음. Jindabyne이 아닌 알파인 지역의 BOM 일기예보 확인. 리조트 웹사이트의 마운틴 캠이 가장 신뢰할 수 있는 실시간 정보." },
+        { tip: "겨울에는 AWD라도 체인 필수", detail: "NSW 경찰은 타이어 종류와 관계없이 체인 미소지 차량의 Perisher 진입로를 통제할 수 있음. 스노우 체인은 구매 약 $60, Jindabyne 주유소에서 하루 $30 대여 가능. 미착용 시 벌금 $2,300." },
+        { tip: "스노이즈 최고의 커피", detail: "Thredbo 가는 길의 Wildbrumby Distillery — 슈냅스 증류소, 훌륭한 커피 카페, 지역 최고의 슈냅스 테이스팅 보드. 시드니로 돌아가기 전 완벽한 마지막 정류장." },
+      ]
+    },
     attractions: [
       {
         name: { en: "Perisher or Thredbo ski day", ko: "페리셔 또는 스레드보 스키 데이" },
@@ -319,6 +417,48 @@ export const destinations: Destination[] = [
     bestTime: { en: "Year-round — autumn for bushwalks, summer for beaches", ko: "년 내내 — 가을에는 숲 산책, 여름에는 해변" },
     gettingThere: { en: "Train on the Central Coast Newcastle Line from Central to Gosford or Wyong (1–1.5hrs, $9 AUD Opal). Drive via the M1.", ko: "센트럴 코스트 뉴캐슬 라인 타고 센트럴에서 고스퍼드/와이옹까지 (1~1.5시간, $9 AUD 오팔). M1 이용 운전." },
     suggestedDays: { en: "1–2 days (day trip or quiet weekend)", ko: "1~2일 (당일치기 또는 조용한 주말)" },
+    howToGetThere: {
+      en: "**By car:** Take the M1 motorway north from Sydney — exit at Gosford (45 min) or Wyong (1 hr). Parking is free and plentiful at most beaches, though the main beach carparks fill by 10am on summer weekends. Aim for an early start or go in the afternoon when the morning crowd thins out.\n\n**By train:** The Central Coast & Newcastle Line runs from Central Station to Gosford (1 hr, $9 AUD Opal) and Wyong (1.5 hrs, $9 AUD). Trains run every 30 minutes on weekdays and hourly on weekends. From the station, local buses connect to the beach towns, or it's a short Uber.\n\n**By tour:** A few small-group tours from Sydney include Central Coast stops — mostly focused on the Australian Reptile Park and the coastal walks. Worth it if you'd rather not drive.",
+      ko: "**자동차:** 시드니에서 M1 고속도로를 타고 북쪽으로 — 고스퍼드(45분) 또는 와이옹(1시간) 하차. 대부분의 해변에 무료 주차가 넉넉하지만, 여름 주말에는 오전 10시면 주요 해변 주차장이 만차됩니다. 일찍 출발하거나 오후 늦게 가는 것을 추천합니다.\n\n**기차:** Central Station에서 Central Coast & Newcastle Line 탑승 — 고스퍼드(1시간, $9 AUD 오팔) 또는 와이옹(1.5��간, $9 AUD). 평일 30분 간격, 주말 1시간 간격. 역에서 지역 버스로 해변 마을까지 연결되며, Uber도 가능합니다.\n\n**투어:** 일부 소규모 투어가 Central Coast를 방문합니다 — 주로 Australian Reptile Park과 해안 산책에 초점. 운전하기 싫다면 고려할 만합니다."
+    },
+    bestTimeDetailed: {
+      en: "**Summer (Dec–Feb):** Peak beach season — expect crowds on weekends at popular spots like Avoca Beach and Terrigal. The water is perfect for swimming (22–25°C), and the outdoor markets are in full swing.\n\n**Autumn (Mar–May):** The sweet spot. Cooler air makes bushwalking in Brisbane Water National Park genuinely pleasant. Fewer crowds, still warm enough for a beach picnic. Best for photography — the light over the coastline is stunning.\n\n**Winter (Jun–Aug):** The quietest season. Great for storm-watching from a pub by the water. The whale migration passes offshore (June–July north, September–October south). Cozy, not cold.\n\n**Spring (Sep–Nov):** Wildflowers bloom along the coastal trails, and the water starts warming up. A lovely transitional period with fewer tourists before the summer rush.",
+      ko: "**여름 (12~2월):** 해변 성수기 — 주말에는 Avoca Beach와 Terrigal 같은 인기 해변에 사람이 많습니다. 수온은 수영에 적합(22~25°C)하며, 야외 마켓이 활성화됩니다.\n\n**가을 (3~5월):** 가장 좋은 계절. 선선한 공기로 브리즈베인 워터 국립공원 산책이 쾌적합니다. 사람이 적고 해변 피크닉에 적당한 온도. 사진 촬영에 최적 — 해안선의 빛이 아름답습니다.\n\n**겨울 (6~8월):** 가장 한산한 계절. 물가 펍에서 폭풍우 구경하기 좋음. 6~7월 북상, 9~10월 남하하는 고래 이동이 해안에서 목격됨. 쾌적하고 춥지 않음.\n\n**봄 (9~11월):** 해안 트레일을 따라 야생화가 만발하고 수온이 올라가기 시작합니다. 여름 성수기 전 관광객이 적은 매력적인 전환기."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "Explore the Ecotourism beaches", description: "The Central Coast has more Ecotourism-certified beaches than any other region in Australia — including Putty Beach, Maitland Bay, and Lobster Beach. These are protected for their water quality, safety, and environmental management. Look for the blue Eco certification flag at the surf club." },
+        { title: "Walk the Bouddi Coastal Walk", description: "An 8km track from Putty Beach to MacMasters Beach with dramatic headland views, secluded coves, and optional detours through ancient rainforest gullies. Allow 3–4 hours one-way; the return shuttle bus runs during daylight saving." },
+        { title: "Visit the Australian Reptile Park", description: "Home to the largest collection of Australian reptiles, plus kangaroos, koalas, and the famous Elvis the crocodile. The Spider Venom Milking Program supplies antivenom nationwide — you can watch the daily 11am milking session." },
+        { title: "Catch a show at The Entrance", description: "Daily 3:30pm pelican feeding is the town's claim to fame, but the waterfront precinct also has a theatre, carnival games for kids, and a long fishing pier. Combine with a walk along the channel to Tuggerah Lakes." },
+        { title: "Go craft beer tasting", description: "Six-String Brewery in Erina, Coastal Brewing in Gosford, and Block 'n' Tackle in Ourimbah are the standout local breweries. Most have tasting paddles and food trucks on weekends." },
+        { title: "Paddle the basins and lakes", description: "Tuggerah Lakes, Wamberal Lagoon, and Avoca Lake are all kayak-friendly — hire from the Central Coast Kayak shop at Terrigal Haven and paddle through the mangrove channels. Calm water, even on windy days." },
+        { title: "Discover the art trail", description: "Over 20 galleries across the region — from Gosford Regional Gallery to smaller studios in pretty country towns like Mangrove Mountain. Pick up a self-guided Art Trail map from any visitor centre." },
+      ],
+      ko: [
+        { title: "생태관광 해변 탐험", description: "센트럴 코스트는 호주에서 가장 많은 생태관광 인증 해변을 보유하고 있습니다 — Putty Beach, Maitland Bay, Lobster Beach 등. 수질, 안전, 환경 관리 측면에서 보호받는 해변들입니다. 서프 클럽에서 파란 Eco 인증 깃발을 찾아보세요." },
+        { title: "Bouddi 해안 산책로", description: "Putty Beach에서 MacMasters Beach까지 8km 트랙, 드라마틱한 곶 전망, 한적한 후미, 고대 우림 계곡으로 이어지는 선택 코스. 편도 3~4시간 소요; 서머타임에는 귀환 셔틀버스 운행." },
+        { title: "Australian Reptile Park 방문", description: "호주 최대 규모의 파충류 컬렉션, 캥거루, 코알라, 유명한 악어 Elvis 보유. 거미 독액 채취 프로그램은 전국에 항독소를 공급합니다 — 매일 오전 11시 채취 과정을 관람할 수 있습니다." },
+        { title: "The Entrance에서 쇼 관람", description: "매일 오후 3시 30분 펠리컨 먹이주기가 유명하지만, 해변가에는 극장, 어린이용 카니발, 긴 낚시 부두도 있습니다. Tuggerah Lakes까지 수로를 따라 산책도 즐기세요." },
+        { title: "수제 맥주 테이스팅", description: "Erina의 Six-String Brewery, Gosford의 Coastal Brewing, Ourimbah의 Block 'n' Tackle이 대표적인 로컬 양조장입니다. 대부분 주말에 테이스팅 패들과 푸드 트럭을 운영합니다." },
+        { title: "호수와 석호에서 패들링", description: "Tuggerah Lakes, Wamberal Lagoon, Avoca Lake는 모두 카약에 적합합니다 — Terrigal Haven의 Central Coast Kayak에서 대여하여 맹그로브 수로를 따라 패들링. 바람이 불어도 잔잔한 수면." },
+        { title: "아트 트레일 발견", description: "지역 전역에 20개 이상의 갤러리 — Gosford Regional Gallery부터 Mangrove Mountain 같은 예쁜 시골 마을의 작은 스튜디오까지. 관광 안내소에서 셀프 가이드 아트 트레일 지도를 받으세요." },
+      ]
+    },
+    proTips: {
+      en: [
+        { tip: "Skip the summer crowds", detail: "Summer weekends at Terrigal and Avoca are packed. Go on a weekday, or head to the less-known beaches like Lobster Beach or Clareville — quieter, just as beautiful, and still Eco-certified." },
+        { tip: "Pack for all seasons in one day", detail: "The Central Coast can be 5–10°C cooler than Sydney CBD, especially near the water. Bring a windproof jacket even in summer — the afternoon sea breeze is reliable and can be brisk." },
+        { tip: "Download the TransportNSW app", detail: "Train delays on the Central Coast line are common. The TripView feature in the app gives real-time departures so you're not stuck waiting on a platform for 45 minutes." },
+        { tip: "Best fish and chips on the coast", detail: "Ettalong Beach's Fisherman's Wharf — order the grilled barramundi with chips and a side of salad. Eat on the deck overlooking the water while the ferries come and go." },
+      ],
+      ko: [
+        { tip: "여름 혼잡 피하기", detail: "주말 Terrigal과 Avoca는 사람이 많습니다. 평일에 가거나 Lobster Beach, Clareville 같은 덜 알려진 해변을 찾아가보세요 — 조용하고 아름답고 생태 인증도 있습니다." },
+        { tip: "하루에 사계절 준비", detail: "센트럴 코스트는 시드니 CBD보다 5~10°C 낮을 수 있습니다, 특히 물가에서. 여름에도 방풍 재킷을 챙기세요 — 오후 해풍이 꾸준하고 쌀쌀할 수 있습니다." },
+        { tip: "TransportNSW 앱 다운로드", detail: "센트럴 코스트 라인의 기차 지연은 흔합니다. 앱의 TripView 기능으로 실시간 출발 정보를 확인하여 플랫폼에서 45분 기다리지 마세요." },
+        { tip: "최고의 피시 앤 칩스", detail: "Ettalong Beach의 Fisherman's Wharf — 그릴드 바라문디와 칩스, 샐러드 사이드를 주문하세요. 페리가 오가는 물가 데크에서 식사 즐기기." },
+      ]
+    },
     attractions: [
       {
         name: { en: "Pearl Beach & Box Head track", ko: "펄 비치 & 박스 헤드 트랙" },
@@ -372,6 +512,48 @@ export const destinations: Destination[] = [
     bestTime: { en: "Sep–Nov (whales + warm, fewer crowds) or Mar–May (warm sea)", ko: "9~11월 (고래 + 따뜻하고 한산) 또는 3~5월 (따뜻한 바다)" },
     gettingThere: { en: "Fly Sydney→Ballina (1hr, $100 AUD–200), then shuttle (30min). Or drive via Pacific Hwy (8–9hrs).", ko: "시드니→발리나 항공 (1시간, $100 AUD~200) 후 셔틀 (30분). 또는 퍼시픽 하이웨이 운전 (8~9시간)." },
     suggestedDays: { en: "4–7 days (weekend minimum, week unlocks the hinterland)", ko: "4~7일 (최소 주말, 일주일이면 내륙까지)" },
+    howToGetThere: {
+      en: "**By air:** The most practical option for most visitors. Fly from Sydney to Ballina Airport (1 hour, from $100 AUD one-way with Jetstar or Rex). From Ballina, a shuttle bus runs to Byron Bay (30 min, ~$25 AUD). Byron Easy Bus and local shuttles meet every flight.\n\n**By car:** Drive via the Pacific Highway (M1) north — it's about 8–9 hours from Sydney without stops. The road is good but long. Break it at Port Macquarie or Coffs Harbour. Parking in Byron is notoriously expensive ($6–$10/hr in the town centre) — many accommodation options include a parking spot.\n\n**By bus:** Greyhound and Premier run daily coaches from Sydney to Byron Bay (12+ hours, ~$80 AUD). An overnight bus saves a night's accommodation but isn't comfortable. Budget option only.\n\n**By train:** The closest station is Casino (2 hrs by connecting bus from Byron), or Brisbane (3 hrs north). Neither is convenient.",
+      ko: "**항공:** 대부분 방문객에게 가장 실용적인 옵션. 시드니에서 발리나 공항까지 (1시간, Jetstar 또는 Rex 편도 $100 AUD부터). 발리나에서 Byron Bay까지 셔틀버스 (30분, ~$25 AUD). Byron Easy Bus와 로컬 셔틀이 모든 항공편에 맞춰 운행.\n\n**자동차:** 퍼시픽 하이웨이(M1) 북쪽으로 — 쉬지 않고 시드니에서 약 8~9시간. 도로 상태는 좋지만 깁니다. Port Macquarie나 Coffs Harbour에서 휴식. Byron 주차는 악명 높게 비쌈(시내 $6~$10/시간) — 많은 숙소에 주차 공간 포함.\n\n**버스:** Greyhound와 Premier가 시드니에서 Byron Bay까지 매일 운행 (12+시간, ~$80 AUD). 야간 버스는 숙박비 절약되지만 편안하지 않음. 예산 옵션.\n\n**기차:** 가장 가까운 역은 Casino(Byron에서 연결 버스 2시간), 또는 브리즈번(북쪽 3시간). 둘 다 편리하지 않음."
+    },
+    bestTimeDetailed: {
+      en: "**Spring (Sep–Nov):** The sweet spot. Warm weather (22–28°C), whale migration peaking in September, and the Byron Bay Bluesfest in October. Fewer crowds than summer, water is warm enough for swimming from mid-October. This is when Byron is at its best.\n\n**Summer (Dec–Feb):** Peak season — hot (28–33°C), humid, and crowded. The town is packed, accommodation is 2–3x normal prices, and you'll need to book months ahead. The beaches are beautiful but busy. The pasar malam (night markets) run weekly.\n\n**Autumn (Mar–May):** A lovely transition. The water is still warm from summer, the crowds drop off after Easter, and the hinterland waterfalls are flowing. Perfect for hiking. The Byron Bay International Film Festival runs in March.\n\n**Winter (Jun–Aug):** The quietest time. Too cold for extended swimming (18–20°C water) but perfect for whale watching, coastal walks, and enjoying the cafes without queues. Accommodation prices drop significantly. The lighthouse walks are crisp and clear.",
+      ko: "**봄 (9~11월):** 최적기. 따뜻한 날씨(22~28°C), 9월 고래 이동 절정, 10월 Byron Bay Bluesfest. 여름보다 인파 적고 10월 중순부터 수영 가능. Byron이 가장 좋은 계절.\n\n**여름 (12~2월):** 성수기 — 덥고(28~33°C), 습하고, 붐빔. 마을은 인파, 숙소는 2~3배 가격, 몇 달 전 예약 필수. 해변은 아름답지만 사람 많음. 파사르 말람(야시장) 매주 운영.\n\n**가을 (3~5월):** 아름다운 전환기. 수온이 여름의 따뜻함 유지, 부활절 이후 인파 감소, 내륙 폭포가 흐름. 트레킹에 완벽. 3월 Byron Bay 국제 영화제.\n\n**겨울 (6~8월):** 가장 한산한 시기. 장시간 수영에는 너무 추움(수온 18~20°C) but 고래 관찰, 해안 산책, 줄 없는 카페에 완벽. 숙소 가격 대폭 하락. 등대 산책로는 맑고 상쾌함."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "Cape Byron Lighthouse walk at sunrise", description: "The 3.7km loop from the Captain Cook lookout to the easternmost point of mainland Australia. Get there for sunrise — the light on the lighthouse, the whales (Jun–Oct), and the resident kangaroos on the headland make it worth the early alarm. Allow 2 hours at a leisurely pace." },
+        { title: "Surf at The Pass or Main Beach", description: "The Pass is Byron's most famous right-hand point break — consistent waves for intermediate surfers. Main Beach is better for beginners. Board hire from the Cape is $25–$40 AUD for 2 hours. Lessons available on both beaches." },
+        { title: "Explore the hinterland waterfalls", description: "Minyon Falls (30-minute drive), Killen Falls (15 min), and Protesters Falls (45 min) are the standouts — each with a swimming hole at the base. Minyon Falls has a 100m drop and a platypus population in the pool below." },
+        { title: "Walk to Wategos Beach", description: "The sheltered cove just below the lighthouse — calm water, soft sand, and a great café. It's a 15-minute walk from the town centre down a steep hill, or park at the lighthouse and walk down. The beach with the million-dollar views." },
+        { title: "Browse the Byron Bay Farmers Market", description: "Every Thursday morning at the Butler Street Reserve — organic produce, artisan bread, local honey, and the famous Byron Bay coffee cart. Get there by 8am for the best selection before the tour buses arrive." },
+        { title: "Visit the Crystal Castle & Shambhala Gardens", description: "A 15-minute drive into the hinterland — giant crystals (some of the largest in the world), a labyrinth, and rainforest gardens. The café serves excellent organic food. Allow half a day. The peace-pole grove is unexpectedly moving." },
+        { title: "Kayak with dolphins in the bay", description: "Go Sea Kayak runs 3-hour guided paddles from the Main Beach — dolphins often swim alongside the kayaks in the bay. The dawn paddle is magical. No experience needed, and they provide all gear." },
+      ],
+      ko: [
+        { title: "일출 케이프 바이런 등대 산책", description: "캡틴 쿡 전망대에서 호주 본토 최동단까지 3.7km 둘레. 일출을 위해 일찍 가세요 — 등대의 빛, 고래(6~10월), 헤드랜드의 캥거루가 일찍 일어난 보답을 합니다. 여유롭게 2시간 소요." },
+        { title: "The Pass 또는 Main Beach 서핑", description: "The Pass는 Byron에서 가장 유명한 오른쪽 포인트 브레이크 — 중급자에게 일관된 파도. Main Beach는 초보자에게 더 좋음. Cape에서 보드 대여 2시간 $25~$40 AUD. 두 해변에서 레슨 가능." },
+        { title: "내륙 폭포 탐험", description: "Minyon Falls(30분 운전), Killen Falls(15분), Protesters Falls(45분)가 대표적 — 각각 수영장이 있음. Minyon Falls는 100m 낙차와 아래 웅덩이의 오리너구리 개체군으로 유명." },
+        { title: "Wategos Beach 산책", description: "등대 아래 보호된 후미 — 잔잔한 바다, 부드러운 모래, 좋은 카페. 시내에서 가파른 언덕을 내려와 15분, 또는 등대에 주차하고 도보. 백만 달러 뷰의 해변." },
+        { title: "Byron Bay 파머스 마켓", description: "매주 목요일 오전 Butler Street Reserve — 유기농 농산물, 수제 빵, 로컬 꿀, 유명한 Byron Bay 커피 카트. 투어 버스 도착 전인 오전 8시까지 방문." },
+        { title: "Crystal Castle & Shambhala Gardens 방문", description: "내륙으로 15분 운전 — 거대 수정(세계 최대급), 미로, 열대우림 정원. 카페는 훌륭한 유기농 음식 제공. 반나절 예정. 평화의 기둥 그로브는 예상외로 감동적." },
+        { title: "만에서 돌고래와 카약", description: "Go Sea Kayak이 Main Beach에서 3시간 가이드 패들 운영 — 돌고래가 종종 카약 옆을 헤엄침. 새벽 패들은 마법 같음. 경험 불필요, 모든 장비 제공." },
+      ]
+    },
+    proTips: {
+      en: [
+        { tip: "Get a Byron Bay Pass for discounts", detail: "The digital pass ($49 AUD) gives you discounts at 30+ local businesses — including board hire, meals, and the lighthouse. If you're doing 2+ paid activities, it pays for itself." },
+        { tip: "Skip the main town centre for food", detail: "The main street restaurants are overpriced tourist traps. Walk 5 minutes to the Industrial Estate (Arts and Industry Estate) for the real Byron — Three Blue Ducks, Combi, and FOLK are the standouts." },
+        { tip: "Bring a jumper even in summer", detail: "Byron's coastal location means it gets cool at night year-round. Even a 33°C day can drop to 16°C by 9pm with the sea breeze. You'll need a layer for dinner." },
+        { tip: "Book accommodation months ahead for events", detail: "Bluesfest (Easter), NYE, and the school holidays book out Byron 3–6 months in advance. If you're flexible, the quiet weeks between seasons offer the best value — May and November are the sweet spot." },
+      ],
+      ko: [
+        { tip: "Byron Bay Pass 할인 받기", detail: "디지털 패스($49 AUD)로 30개 이상 로컬 업체 할인 — 보드 대여, 식사, 등대 포함. 유료 활동 2개 이상 하면 본전 뽑음." },
+        { tip: "음식은 시내 말고 산업단지로", detail: "메인 스트리트 레스토랑은 비싼 관광객 함정. Industrial Estate(Arts and Industry Estate)로 5분만 걸어가면 진짜 Byron — Three Blue Ducks, Combi, FOLK 추천." },
+        { tip: "여름에도 재킷 챙기기", detail: "Byron의 해안 위치는 연중 밤에 서늘해짐. 33°C 낮도 해풍으로 오후 9시면 16°C까지 떨어질 수 있음. 저녁에는 겉옷 필요." },
+        { tip: "이벤트 기간은 몇 달 전 예약", detail: "Bluesfest(부활절), NYE, 방학 시즌은 3~6개월 전에 Byron 만석. 여유 있다면 시즌 사이의 조용한 주가 최고 — 5월과 11월이 최적기." },
+      ]
+    },
     attractions: [
       {
         name: { en: "Cape Byron Lighthouse walk", ko: "케이프 바이론 등대 트레킹" },
@@ -425,6 +607,48 @@ export const destinations: Destination[] = [
     bestTime: { en: "Sep–May (warm water for swimming); dawn/dusk for kangaroos year-round", ko: "9~5월 (수영 따뜻한 바다); 캥거루는 연중 새벽/황혼" },
     gettingThere: { en: "Drive via Princes Hwy south to Huskisson (2.5hrs). No direct train — car or tour bus only.", ko: "프린스 하이웨이 남쪽으로 허스키슨까지 운전 (2.5시간). 직행 기차 없음 — 자동차 또는 투어 버스만." },
     suggestedDays: { en: "2–3 days (weekend works well)", ko: "2~3일 (주말이면 충분)" },
+    howToGetThere: {
+      en: "**By car:** Head south on the Princes Highway (M1) from Sydney, exit at the Jervis Bay turn-off just past Nowra. The drive to Huskisson takes about 2.5 hours without traffic. Add 30 minutes on a Friday afternoon in summer. Parking in Huskisson is paid ($5/hr) during peak season — the free lot is a 10-minute walk from the main beach.\n\n**By tour bus:** Several operators run day trips from Sydney ($99–$149 AUD return) — most include a dolphin cruise, Hyams Beach visit, and Booderee National Park entry. A good option if you don't want to drive, though you'll be on a schedule.\n\n**No train option:** There's no direct train to Jervis Bay. The closest station is Kiama (2 hrs from Central), then it's a 45-minute drive south. A car is really the best option to see the different beaches and Booderee anyway.",
+      ko: "**자동차:** 시드니에서 프린스 하이웨이(M1)를 타고 남쪽으로, Nowra를 지나 Jervis Bay 방향으로 진출. 허스키슨까지 약 2.5시간. 여름 금요일 오후에는 30분 추가. 성수기에는 허스키슨 주차가 유료($5/시간) — 무료 주차장은 메인 비치에서 도보 10분.\n\n**투어 버스:** 여러 업체가 시드니에서 당일치기 운영 ($99~$149 AUD 왕복) — 대부분 돌고래 크루즈, Hyams Beach, Booderee 국립공원 포함. 운전하기 싫다면 좋은 선택이나 일정에 맞춰야 합니다.\n\n**기차 없음:** Jervis Bay로 직행 기차는 없습니다. 가장 가까운 역은 Kiama(시드니 센트럴에서 2시간)에서 남쪽으로 45분 운전. 여러 해변과 Booderee를 보려면 자동차가 가장 좋습니다."
+    },
+    bestTimeDetailed: {
+      en: "**Summer (Dec–Feb):** Peak season — warm water (22–24°C), long daylight hours, and the best conditions for dolphin-swimming. The downside: crowds, higher prices, and holiday traffic on the Princes Highway. Book accommodation months ahead.\n\n**Autumn (Mar–May):** The sweet spot. The water is still warm from summer, the crowds thin out after Easter, and the kangaroos are more active on the beach at dawn. This is when locals say it's at its best.\n\n**Winter (Jun–Aug):** The quietest time. Too cold for extended swimming (14–16°C water), but the whale migration is spectacular — humpbacks pass close to shore Jun–Jul (north) and Sep–Oct (south). The kangaroos come out earlier and stay later.\n\n**Spring (Sep–Nov):** Warming up again. Dolphins are active, the wildflowers are out in Booderee, and the water becomes swimmable by November. Fewer crowds than summer but beautiful conditions.",
+      ko: "**여름 (12~2월):** 성수기 — 따뜻한 바다(22~24°C), 긴 일조량, 돌고래 수영에 최적 조건. 단점: 인파, 높은 가격, 프린스 하이웨이 휴가 교통. 숙소는 몇 달 전에 예약.\n\n**가을 (3~5월):** 최적기. 수온이 여름의 따뜻함 유지, 부활절 이후 인파 감소, 새벽 해변에서 캥거루 활동 증가. 현지인들이 가장 좋은 시기라고 말하는 때.\n\n**겨울 (6~8월):** 가장 한산한 시기. 장시간 수영에는 너무 추움(수온 14~16°C), 하지만 고래 이동이 장관입니다 — 혹등고래가 6~7월(북상), 9~10월(남하)에 해안 가까이를 지나갑니다. 캥거루가 더 일찍 나와 더 늦게까지 활동.\n\n**봄 (9~11월):** 다시 따뜻해지는 시기. 돌고래 활동적, Booderee에 야생화 만발, 11월이면 수영 가능. 여름보다 인파 적고 아름다운 조건."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "Watch sunrise at Hyams Beach", description: "The whitest sand in Australia (Guinness-certified) — get there at dawn with a thermos of coffee. The sand is pure white silica that stays cool underfoot even in summer. The bay glass-out conditions at sunrise are a photographer's dream." },
+        { title: "Swim with wild dolphins", description: "Jervis Bay is home to a resident pod of about 100 bottlenose dolphins. Dolphin Watch Cruises from Huskisson run 2-hour eco-certified tours with a 95%+ sighting rate. In-water swimming (wetsuit provided) is permitted with licensed operators." },
+        { title: "Spot kangaroos on the beach at dawn", description: "The only place in NSW where eastern grey kangaroos regularly hop along the beach. Head to the grassy verges at Jervis Bay Village or Green Patch in Booderee National Park just before sunrise. Keep your distance — they're wild, not zoo animals." },
+        { title: "Explore Booderee National Park", description: "Formerly a navy base, now one of NSW's most beautiful national parks — white-sand beaches (Green Patch, Cave Beach, Murray's Beach), Aboriginal rock art sites, and coastal walking trails. Entry is about $13 per vehicle. The botanical gardens are a hidden gem." },
+        { title: "Walk the White Sands Walk", description: "A 3km coastal trail connecting Huskisson to Hyams Beach through Scribbly Gum forest and coastal heathland. Gentle grade, suitable for all fitness levels. Keep an eye out for lyrebirds and wallabies." },
+        { title: "Snorkel at Murrays Beach or Hole in the Wall", description: "Protected coves inside Booderee with excellent visibility, weedy sea dragons, and colourful reef fish. Bring your own snorkel gear — no hire on-site. Best conditions are on calm, overcast days (less glare on the sand)." },
+        { title: "Oyster tasting at Greenwell Point", description: "Just 15 minutes north of Jervis Bay, the Greenwell Point oyster farms sell freshly shucked Sydney Rock Oysters from the shed — $15–$20 AUD for a dozen. The Jim Wilds Oyster Service is the one to look for. Eat them on the waterfront picnic tables." },
+      ],
+      ko: [
+        { title: "Hyams Beach 일출 감상", description: "호주에서 가장 흰 모래(기네스 인증) — 보온병 커피 들고 새벽에 도착. 여름에도 발 아래 시원한 순백색 실리카 모래. 일출 때 만이 잔잔해지는 순간은 사진작가의 꿈." },
+        { title: "야생 돌고래와 수영", description: "Jervis Bay에는 약 100마리의 병코돌고래 상주. 허스키슨 출발 Dolphin Watch Cruises의 2시간 에코 인증 투어, 95% 이상 관측율. 라이선스 업체를 통해 (잠수복 제공) 인워터 수영 가능." },
+        { title: "새벽 해변 캥거루 관찰", description: "NSW에서 캥거루가 정기적으로 해변을 따라 이동하는 유일한 장소. 일출 직전 Jervis Bay Village 또는 Booderee 국립공원의 Green Patch 잔디 지역으로. 거리 유지 — 야생 동물입니다." },
+        { title: "Booderee 국립공원 탐험", description: "과거 해군 기지였지만 현재 NSW에서 가장 아름다운 국립공원 중 하나 — 하얀 모래 해변(Green Patch, Cave Beach, Murray's Beach), 원주민 암각화 유적지, 해안 산책로. 차량당 약 $13 AUD. 식물원은 숨겨진 보석." },
+        { title: "White Sands Walk 산책", description: "허스키슨에서 Hyams Beach까지 3km 해안 트레일, Scribbly Gum 숲과 해안 관목지를 통과. 완만한 경사로 모든 체력 수준 적합. 거문조와 왈라비 관찰 가능." },
+        { title: "Murrays Beach 또는 Hole in the Wall 스노클링", description: "Booderee 내 보호된 후미, 뛰어난 시야, weedy sea dragon, 다양한 색상의 암초 물고기. 스노클 장비 직접 지참 — 현장 대여 없음. 흐린 날(모래 눈부심 적음)에 최적." },
+        { title: "Greenwell Point에서 굴 시식", description: "Jervis Bay에서 북쪽으로 15분, Greenwell Point 굴 농장에서 직접 깐 시드니 락 오이스터 — 12개에 $15~$20 AUD. Jim Wilds Oyster Service 추천. 해변 피크닉 테이블에서 즐기세요." },
+      ]
+    },
+    proTips: {
+      en: [
+        { tip: "Book the dolphin cruise for the first morning slot", detail: "The 8:30am cruise has calmer water and more active dolphins than later runs. You also beat the sea breeze that picks up around 11am, which can make the bay choppy and spotting harder." },
+        { tip: "Pack mosquito repellent for dusk", detail: "The coastal bushland around Jervis Bay is prime mosquito territory at dawn and dusk. The repellent will also deter the March flies that come out on still summer days." },
+        { tip: "Get lunch supplies in Huskisson before 11am", detail: "The Huskisson General Store bakery sells out of pies and sausage rolls by midday on weekends. The IGA has basic supplies but limited deli options. Stock up on the way in at the Nowra supermarket." },
+        { tip: "Avoid school holidays if you can", detail: "Jervis Bay is a favourite for NSW families — school holiday periods (especially Easter and Christmas) double the crowd density. The difference between term-time and holiday is night and day." },
+      ],
+      ko: [
+        { tip: "돌고래 크루즈 첫 아침 시간대 예약", detail: "오전 8:30 크루즈는 더 잔잔한 바다와 더 활동적인 돌고래를 만날 기회. 오전 11시경 해풍이 불기 전이라 만이 출렁이지 않음." },
+        { tip: "해질녘 모기퇴치제 필수", detail: "Jervis Bay 주변 해안 관목지는 새벽과 해질녘 모기 천국. 모기퇴치제는 여름 날씨에 나타나는 등에도 효과적." },
+        { tip: "오전 11시 전에 허스키슨에서 점심 준비", detail: "허스키슨 제너럴 스토어 베이커리는 주말 정오면 파이와 소시지 롤 매진. IGA에 기본 식품은 있지만 델리 옵션 제한. Nowra 슈퍼마켓에서 미리 준비." },
+        { tip: "방학 기간 피하기", detail: "Jervis Bay는 NSW 가족들에게 인기 — 방학(특히 부활절과 크리스마스)에는 인파가 두 배. 학기 중과 방학의 차이는 극명합니다." },
+      ]
+    },
     attractions: [
       {
         name: { en: "Hyams Beach sunrise", ko: "하임스 비치 일출" },
@@ -531,6 +755,48 @@ export const destinations: Destination[] = [
     bestTime: { en: "Sep–May for warm water; year-round for dolphins", ko: "따뜻한 바다는 9~5월; 돌고래는 연중" },
     gettingThere: { en: "Drive via M1 (2.5hrs). No direct train — coach from Newcastle or car only.", ko: "M1 운전 (2.5시간). 직행 기차 없음 — 뉴캐슬에서 버스 또는 자동차만." },
     suggestedDays: { en: "2–3 days (weekend with dolphin cruise + dunes)", ko: "2~3일 (돌고래 크루즈와 사구를 위한 주말)" },
+    howToGetThere: {
+      en: "**By car:** Take the M1 north from Sydney past Newcastle, then follow the Pacific Highway to the Nelson Bay turn-off (Lemon Tree Passage Road). Total drive time is about 2.5 hours. The last 20 minutes through the Tilligerry Peninsula are scenic but slower — allow extra time. Parking in Nelson Bay is paid during summer ($4/hr, ticket machines accept card).\n\n**By bus:** A coach service runs from Sydney's Central Station to Nelson Bay via Newcastle (3.5 hrs, ~$40 AUD one-way). Port Stephens Coaches also runs daily services. From the Nelson Bay stop, local taxis and Ubers can take you to the main spots.\n\n**No train:** The nearest train station is Newcastle Interchange (2 hrs from Central), then it's a 45-minute car or bus ride east.",
+      ko: "**자동차:** M1 북쪽으로 뉴캐슬을 지나 Nelson Bay 진출로(Lemon Tree Passage Road) 진입. 총 2.5시간 소요. Tilligerry 반도를 지나는 마지막 20분은 경치 ��지만 속도가 느림 — 여유 시간 확보. 여름 넬슨 베이 주차는 유료($4/시간, 카드 결제 가능).\n\n**버스:** 시드니 센트럴 역에서 Nelson Bay까지 뉴캐슬 경유 버스 운행(3.5시간, 편도 ~$40 AUD). Port Stephens Coaches도 매일 운행. Nelson Bay 정류장에서 지역 택시/Uber로 주요 명소 이동.\n\n**기차 없음:** 가장 가까운 역은 뉴캐슬 인터체인지(시드니 센트럴에서 2시간), 이후 동쪽으로 45분 자동차/버스."
+    },
+    bestTimeDetailed: {
+      en: "**Summer (Dec–Feb):** Peak season for swimming, snorkelling, and dolphin cruises. Water hits 23–25°C. The sand dunes are at their most dramatic in the summer light. Book everything — accommodation, cruises, sandboarding tours — well ahead.\n\n**Autumn (Mar–May):** The best compromise. Warm enough for all water activities, but the summer crowds are gone. The dolphins are still active, and the sand dunes are less busy. Great for fishing.\n\n**Winter (Jun–Aug):** The dolphin cruises still run (the pod is resident year-round) and the migrating humpbacks pass through Jun–Aug. Sandboarding still works, though you'll want a windproof jacket. The town is quiet and accommodation is cheap.\n\n**Spring (Sep–Nov):** Warming up fast. The water is still cool in September but the days are long and sunny. Whale watching peaks in September. Sand dunes with spring wildflowers on the edges is a unique sight.",
+      ko: "**여름 (12~2월):** 수영, 스노클링, 돌고래 크루즈 성수기. 수온 23~25°C. 여름 빛에 사구가 가장 드라마틱. 숙소, 크루즈, 샌드보딩 투어 모두 사전 예약 필수.\n\n**가을 (3~5월):** 최상의 타협점. 모든 수상 활동에 충분히 따뜻하지만 여름 인파는 사라짐. 돌고래 활동적, 사구도 덜 붐빔. 낚시에 좋은 시기.\n\n**겨울 (6~8월):** 돌고래 크루즈 계속 운행(돌고래 무리는 연중 서식), 혹등고래 이동 6~8월 통과. 샌드보딩 가능하나 방풍 재킷 필요. 조용한 마을, 저렴한 숙소.\n\n**봄 (9~11월):** 빠르게 따뜻해짐. 9월 수온은 여전히 차갑지만 긴 일조량과 맑은 날씨. 고래 관측은 9월 절정. 사구 가장자리의 봄 야생화가 독특한 풍경."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "Dolphin-watching cruise in Nelson Bay", description: "Over 140 bottlenose dolphins live in the bay year-round — cruises like Moonshadow and Imagine run 1.5–2 hour trips with sighting rates over 95%. Some include a boom net ride to cool off in summer. The 9am cruise is the calmest." },
+        { title: "Sandboard the Stockton Bight dunes", description: "The largest moving coastal sand dunes in the southern hemisphere — some slopes reach 30m high. Tours from Nelson Bay include a 4WD transfer and sandboard hire. The adrenaline rush from flying down a 30m dune on a board is unforgettable." },
+        { title: "Snorkel at Fly Point Aquatic Reserve", description: "A protected marine reserve a 15-minute walk from Nelson Bay marina — crystal-clear shallow water with weedy sea dragons, rays, blue gropers, and schools of bream. Bring your own gear (no hire on-site). Best at high tide on a calm day." },
+        { title: "Walk the Tomaree Headland summit", description: "A steep 30-minute climb to one of the best coastal viewpoints in NSW — 360-degree views of the bay, the dunes, and out to sea. The WWII gun emplacements at the top add a layer of history. Sunrise here is spectacular." },
+        { title: "Fish off the Nelson Bay marina", description: "The breakwall near the marina is a popular fishing spot — flathead, bream, and whiting are common. No licence required for saltwater fishing from the shore. The local tackle shop on Stockton Street sells bait and rods." },
+        { title: "Kayak through the Myall Lakes", description: "Just north of Port Stephens, the Myall Lakes National Park is a maze of clear waterways surrounded by paperbark forest. Paddle through the channel to the Bombah Point ferry and back. Hire from Bombah Point Eco Cottages or bring your own." },
+        { title: "Visit the art galleries at Shoal Bay", description: "A handful of small galleries and studios in this quiet beach town — glassblowing, pottery, and Aboriginal art. The Shoal Bay Country Club also has a great beachfront bistro for lunch." },
+      ],
+      ko: [
+        { title: "Nelson Bay 돌고래 관람 크루즈", description: "140마리 이상의 병코돌고래가 연중 만에 서식 — Moonshadow, Imagine 같은 크루즈가 1.5~2시간 운항, 관측률 95% 이상. 일부는 여름 쿨링 부움 네트 포함. 오전 9시 크루즈가 가장 잔잔함." },
+        { title: "Stockton Bight 사구 샌드보딩", description: "남반구 최대 해안 이동 사구 — 일부 경사면 30m 높이. Nelson Bay 투어에 4WD 환승과 샌드보드 대여 포함. 30m 사구를 보드로 내려오는 스릴은 잊을 수 없는 경험." },
+        { title: "Fly Point 수중보호구역 스노클링", description: "Nelson Bay 마리나에서 도보 15분 — 수정처럼 맑은 얕은 물에 weedy sea dragon, 가오리, blue groper, 도미 떼. 장비 ��접 지참(현장 대여 없음). 잔잔한 날 만조에 최적." },
+        { title: "Tomaree Headland 정상 산책", description: "30분 가파른 등반으로 NSW 최고의 해안 전망대 — 베이, 사구, 바다까지 360도 조망. 정상의 WWII 포대가 역사를 더함. 일출이 장관." },
+        { title: "Nelson Bay 마리나 낚시", description: "마리나 근처 방파제는 인기 낚시 명소 — flathead, 도미, whiting 흔함. 해안 낚시는 면허 불필요. Stockton Street의 낚시 용품점에서 미끼와 낚싯대 판매." },
+        { title: "Myall Lakes 카약", description: "Port Stephens 북쪽, Myall Lakes 국립공원은 페이퍼바크 숲으로 둘러싸인 맑은 수로의 미로. Bombah Point 페리까지 수로를 따라 패들링. Bombah Point Eco Cottages에서 대여 또는 직접 지참." },
+        { title: "Shoal Bay 미술관 방문", description: "조용한 해변 마을의 소규모 갤러리와 스튜디오 — 유리 공예, 도자기, 원주민 미술. Shoal Bay Country Club의 해변 비스트로에서 점심도 추천." },
+      ]
+    },
+    proTips: {
+      en: [
+        { tip: "Do the dunes in the morning", detail: "The sand heats up fast — by midday in summer it's genuinely hot underfoot. The morning light also makes for better photos. Most sandboarding tours run from 8am." },
+        { tip: "Bring reef shoes for Fly Point", detail: "The entry is a mix of sand and small rocky patches. Reef shoes make getting in and out much more comfortable than thongs or bare feet. The marine life is right there — take a waterproof phone pouch for photos." },
+        { tip: "Book the dolphin cruise direct, not through a hotel", detail: "Booking direct with Moonshadow or Imagine saves $10–$15 AUD per person compared to hotel concierge bookings. Check their websites for online discounts." },
+        { tip: "Lunch at the Nelson Bay Fish Market", detail: "Order the grilled swordfish burger with a side of salt-and-pepper squid and eat at the shared tables overlooking the marina. Fresh, reasonably priced, and the outdoor seating is dog-friendly." },
+      ],
+      ko: [
+        { tip: "아침에 사구 가기", detail: "모래가 빨리 뜨거워짐 — 여름 정오면 발바닥이 진짜 뜨겁습니다. 아침 빛이 사진에도 좋음. 대부분 샌드보딩 투어는 오전 8시 시작." },
+        { tip: "Fly Point에 리프 슈즈 필수", detail: "입구가 모래와 작은 바위가 섞여 있음. 리프 슈즈가 플립플롭이나 맨발보다 훨씬 편함. 해양 생물이 가까이 ���으니 방수 폰 파우치도 챙기세요." },
+        { tip: "돌고래 크루즈는 직접 예약", detail: "Moonshadow나 Imagine에 직접 예약하면 호텔 컨시어지 대비 1인당 $10~$15 AUD 절약. 온라인 할인 확인." },
+        { tip: "Nelson Bay 수산시장 점심", detail: "그릴드 황새치 버거와 소금 후추 오징어 사이드 주문, 마리나 전망의 공유 테이블에서 식사. 신선하고 합리적 가격, 반려견 동반 가능 야외 좌석." },
+      ]
+    },
     attractions: [
       {
         name: { en: "Dolphin-watching cruise (Moonshadow TQE)", ko: "돌고래 관람 크루즈 (Moonshadow TQE)" },

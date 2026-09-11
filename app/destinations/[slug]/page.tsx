@@ -197,6 +197,98 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </div>
               </section>
             )}
+            
+            {/* How to get there — detailed. Expands on the sidebar summary. */}
+            {d.howToGetThere && (
+              <section className="reveal">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-3">
+                  <En>How to get there</En>
+                  <Ko>가는 방법</Ko>
+                </p>
+                <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
+                  <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
+                    <En>{d.howToGetThere.en}</En>
+                    <Ko>{d.howToGetThere.ko}</Ko>
+                  </p>
+                </div>
+              </section>
+            )}
+
+            {/* Best time to visit — detailed season breakdown */}
+            {d.bestTimeDetailed && (
+              <section className="reveal">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-3">
+                  <En>Best time to visit</En>
+                  <Ko>방문 최적기</Ko>
+                </p>
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
+                  <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
+                    <En>{d.bestTimeDetailed.en}</En>
+                    <Ko>{d.bestTimeDetailed.ko}</Ko>
+                  </p>
+                </div>
+              </section>
+            )}
+
+            {/* Top things to do — curated 5-10 picks */}
+            {d.topThingsToDo && d.topThingsToDo.en.length > 0 && (() => {
+              const ttd = d.topThingsToDo!;
+              return (
+              <section className="reveal">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+                  <En>Top things to do</En>
+                  <Ko>추천 활동</Ko>
+                </p>
+                <div className="space-y-4">
+                  {ttd.en.map((item, i) => (
+                    <div
+                      key={item.title}
+                      className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
+                    >
+                      <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-2 leading-snug">
+                        <En>{i + 1}. {item.title}</En>
+                        <Ko>{ttd.ko[i]?.title}</Ko>
+                      </h3>
+                      <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+                        <En>{item.description}</En>
+                        <Ko>{ttd.ko[i]?.description}</Ko>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+              );
+            })()}
+
+            {/* Pro tips — insider knowledge */}
+            {d.proTips && d.proTips.en.length > 0 && (() => {
+              const pt = d.proTips!;
+              return (
+              <section className="reveal">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+                  <En>Pro tips</En>
+                  <Ko>전문가 팁</Ko>
+                </p>
+                <div className="space-y-4">
+                  {pt.en.map((item, i) => (
+                    <div
+                      key={item.tip}
+                      className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border`}
+                    >
+                      <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-2 leading-snug">
+                        <En>{item.tip}</En>
+                        <Ko>{pt.ko[i]?.tip}</Ko>
+                      </h3>
+                      <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+                        <En>{item.detail}</En>
+                        <Ko>{pt.ko[i]?.detail}</Ko>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+              );
+            })()}
 
             {/* FAQ — answers the three most-asked visitor questions */}
             <section className="reveal">
