@@ -62,7 +62,7 @@ export const experienceThemes: ExperienceTheme[] = [
     koBlurb: "차이나타운, 카브라마타, 버우드, 스트라스필드 — 다문화 시드니의 영혼.",
     href: "/experiences/culture",
     accent: "from-amber-500 to-yellow-600",
-    heroImg: "/images/pexels-1444442.jpg",
+    heroImg: "/images/culture_lion_dance.jpg",
   },
   {
     title: "Road Trips",

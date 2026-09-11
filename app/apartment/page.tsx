@@ -113,7 +113,7 @@ const sections: ApartmentSectionData[] = [
     id: "costs",
     iconKey: "DollarSign",
     accent: "sunset",
-    img: "/images/unsplash-1517048676732-d65bc937f952.jpg",
+    img: "/images/moving_boxes.jpg",
     title: "Bills & Move-in Costs",
     koTitle: "공과금 및 입주 비용",
     desc: "What to budget for",
