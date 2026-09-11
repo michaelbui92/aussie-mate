@@ -83,7 +83,7 @@ const sections = [
       {
         emoji: "📚",
         name: "Study Buddy (Boba)",
-        url: "https://study-buddy-two-orpin.vercel.app",
+        url: "https://stdybddy.app",
         accent: "bg-sage/10 border-sage/30",
         en: "AI-powered flashcard app with multiple choice questions. Study any topic, anywhere.",
         ko: "AI 플래시카드 앱 — 객관식 문제로 원하는 주제를 학습.",

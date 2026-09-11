@@ -50,10 +50,10 @@ const tools = [
     headline: "A flashcard app for international students, built by one of them",
     koHeadline: "국제 학생이 만든, 국제 학생을 위한 플래시카드 앱",
     desc: "A smart study companion app — flashcard decks, spaced repetition, progress tracking. Coming soon — built to help international students study smarter, not harder.",
-    url: "https://study-buddy-two-orpin.vercel.app",
+    url: "https://stdybddy.app",
     badge: "Live",
     accent: "bg-sage/10 border-sage/30",
-    highlight: "Launching 2026 — get notified when it goes live",
+    highlight: "Study smarter, not harder — live now at stdybddy.app",
     origins: {
       en: "Study Buddy started as a personal tool — a stack of paper flashcards kept getting lost between lectures. Building a replacement in a browser felt obvious. Other international students said the same thing when the first version was shown around, so it's now a small product instead of a private hack.",
       ko: "Study Buddy는 개인 도구로 시작했습니다 — 강의를 옮기다 보면 종이 플래시카드가 자꾸 사라졌습니다. 브라우저에서 대체품을 만드는 건 당연한 일이었고, 첫 버전을 보여주자 다른 국제 학생들도 같은 이야기를 했습니다. 그래서 개인 해킹이 아니라 작은 제품이 되었습니다.",
