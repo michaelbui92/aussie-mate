@@ -13,7 +13,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Current state
 
-- **HEAD:** `ea11bbe` — docs: update AGENTS.md — refresh HEAD and dirty files in Current state
+- **HEAD:** `dbe8a95` — fix: replace 18 mislabelled stock images with verified genuine photos
 - **Dirty files:** 0
 - ✅ Live, serving public traffic
 - ✅ SEO metadata rewritten for CTR (Jul 2026) — 13 page titles + descriptions updated
@@ -36,6 +36,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **adsense disable:** `NEXT_PUBLIC_ADSENSE_ID` empty string vs unset — explicit guard in layout.tsx:148
 - **phrases.ts:** Deduped 209→178 entries. Wicket, Salvos, Coorie Korean glosses fixed.
 - **Korean accuracy:** `scripts/korean-accuracy-audit.sh` catches CJK drift but not ASCII-leak defects (English fragments mid-Korean sentence). Manual review needed.
+- **Images must be vision-verified against their claim.** A 2026-09-11 audit of all 44 images found 18 that did not show what the page claimed (US tax forms for "Australian Banking", Indian curry for "Little China", a Spanish stadium for a NSW road trip, a Maldives resort for "South Coast", a European ski piste for "Snowy Mountains"). The cause: numbered template stock (`pexels-NNNN.jpg` / `unsplash-XXXX.jpg`) assigned to a specific claim without anyone checking contents. Before adding or keeping any photo, confirm with vision that it shows the named place/cuisine/sport, or write alt text that claims nothing it doesn't show. Descriptive Wikimedia filenames have been reliable; numbered stock has not.
+- **WebP files are not actually served.** `public/images/*.webp` exist (from the earlier optimisation pass) but no `.webp` string appears anywhere in `app/`, so the `.jpg` originals are what browsers fetch. Several are very large (e.g. `pexels-1267320.jpg` was 9.8 MB before removal). Worth wiring up `next/image` or a `<picture>` fallback — the current WebP optimisation is dead weight.
 
 ## Next steps
 
