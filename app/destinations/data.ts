@@ -827,6 +827,192 @@ export const destinations: Destination[] = [
       },
     ],
   },
+  {
+    slug: "bondi-beach",
+    name: { en: "Bondi Beach", ko: "본다이 비치" },
+    tagline: { en: "Sydney's iconic beach — surf, coastal walks & Sunday markets", ko: "시드니의 상징적인 해변 — 서핑, 해안 산책, 선데이 마켓" },
+    // Aerial view of Bondi Beach with Sydney CBD behind — Pexels (free license)
+    heroImg: "/images/bondi_aerial.jpg",
+    cardImg: "/images/bondi_aerial.jpg",
+    accentColor: "bg-amber-500",
+    region: "Eastern Suburbs, Sydney",
+    tripLength: "day",
+    description: {
+      en: "Bondi is Sydney's postcard beach — a golden crescent of sand 7km east of the CBD, famous worldwide for its surf lifesaving heritage, the Bondi to Coogee coastal walk, and the Icebergs ocean pool. It's touristy, yes, but even locals still swim here: catch it at 7am on a weekday and it's pure magic. Between the markets, the pavilion, and the coastal walk starting right at the sand, you can fill an entire day within sight of the water.",
+      ko: "본다이는 시드니의 엽서 같은 해변 — CBD 동쪽 7km에 위치한 황금빛 초승달 모래사장으로, 서프 구조대 전통, 본다이~쿠지 해안 산책로, 아이스버그스 오션 풀로 전 세계에 유명합니다. 관광객이 많은 것은 사실이지만, 현지인도 여전히 여기서 수영합니다: 평일 오전 7시에 오면 순수한 마법을 느낄 수 있어요. 마켓, 파빌리온, 해변에서 바로 시작하는 해안 산책로까지, 물이 보이는 곳에서 하루를 가득 채울 수 있습니다."
+    },
+    highlights: [
+      { en: "Bondi to Coogee coastal walk", ko: "본다이~쿠지 해안 산책로", icon: "hiking" },
+      { en: "Icebergs ocean pool", ko: "아이스버그스 오션 풀", icon: "swim" },
+      { en: "Sunday markets & pavilion", ko: "선데이 마켓 & 파빌리온", icon: "utensils" },
+      { en: "Surf lessons for beginners", ko: "초보자 서핑 레슨", icon: "swim" },
+    ],
+    bestTime: { en: "Year-round; Nov–Mar for swimming, dawn for empty sand", ko: "연중; 수영은 11~3월, 한적한 모래사장은 새벽" },
+    gettingThere: { en: "Bus 333 from Circular Quay (~30min) or train to Bondi Junction + bus 380. No direct train.", ko: "서큘러 키에서 333번 버스(~30분) 또는 본다이 정션행 기차 + 380번 버스. 직행 기차 없음." },
+    suggestedDays: { en: "Half to full day (beach morning + coastal walk or markets)", ko: "반나절~하루 (오전 해변 + 해안 산책 또는 마켓)" },
+    howToGetThere: {
+      en: "**By bus:** The 333 runs from Circular Quay via the CBD and Woollahra straight to Bondi Beach ($3.30 Opal, ~30–40 min off-peak). The 380 and 381 run from Bondi Junction station through Bronte. Buses are frequent but can crawl through traffic on summer weekends.\n\n**Train + bus combo:** Train to Bondi Junction (T4 Eastern Suburbs line, ~15 min from Central), then transfer to bus 333 or 380 (~15 min). This is often faster than a direct bus during CBD peak hour.\n\n**By car:** Not recommended in summer — the beachfront car park fills by 9am and rates hit $8+/hr. There are cheaper residential spots 10 minutes' walk away in Bondi, but street parking has time limits.\n\n**From the airport:** Train + airport link to Bondi Junction, then bus 380. About an hour, $20 AUD total including the airport gate fee.",
+      ko: "**버스:** 333번이 서큘러 키에서 CBD와 Woollahra를 지나 본다이 비치로 직행($3.30 오팔, 피크 외 ~30~40분). 380번과 381번은 본다이 정션 역에서 브론티를 경유. 버스는 자주 있지만 여름 주말엔 정체가 심할 수 있음.\n\n**기차 + 버스 조합:** 본다이 정션까지 기차(T4 이스턴 서버스 선, 센트럴에서 ~15분), 이후 333번 또는 380번 버스 환승(~15분). CBD 피크 시간에는 직행 버스보다 보통 더 빠름.\n\n**자동차:** 여름에는 비추천 — 해변 주차장이 오전 9시면 만차, 요금 $8+/시간. 본다이 주거지역에 도보 10분 거리의 더 싼 자리가 있지만 주차 시간 제한 있음.\n\n**공항에서:** 공항 링크 + 본다이 정션행 기차, 이후 380번 버스. 약 1시간, 공항 요금 포함 총 $20 AUD."
+    },
+    bestTimeDetailed: {
+      en: "**Summer (Dec–Feb):** 26–30°C, water ~22°C, everything open, and absolutely packed. Lifeguards patrol 8am–5pm. Arrive before 9am or after 4pm for personal space. This is also when the New Year's Eve street party draws the biggest crowds of the year.\n\n**Autumn (Mar–May):** Locals' secret. Water stays warm into April, crowds evaporate, and the coastal walk is at its best — golden light, no humidity.\n\n**Winter (Jun–Aug):** 8–17°C. Swimming is for wetsuit devotees and polar bear plunge crowds (first Sundays). But the walk is empty, cafes are cozy, and room rates at nearby hotels halve.\n\n**Spring (Sep–Nov):** Water warms by late October, September–October is the sweet spot: long days, wildflowers on the cliff path, moderate crowds. Easter and the Spring Racing carnival weekends spike local populations.",
+      ko: "**여름 (12~2월):** 26~30°C, 수온 ~22°C, 모든 시설 개방, 완전한 인파. 구조원 오전 8시~오후 5시 감시. 개인 공간을 원하면 오전 9시 전 또는 오후 4시 이후 도착. 새해 전야 거리 파티가 연중 최대 인파를 모은다.\n\n**가을 (3~5월):** 현지인의 비밀. 4월까지 바다가 따뜻하고, 인파는 사라지며, 해안 산책로는 최상 — 황금빛, 습기 없음.\n\n**겨울 (6~8월):** 8~17°C. 수영은 웻수트 마니아와 폴라 베어 플런지(매월 첫 일요일) 군중을 위한 것. 하지만 산책로는 한적하고, 카페는 아늑하며, 인근 호텔 요금은 절반.\n\n**봄 (9~11월):** 10월 말부터 수온 상승, 9~10월이 적기: 긴 낮, 절벽 길의 야생화, 적당한 인파. 부활절과 봄 경마 주말에는 인구 급증."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "Walk Bondi to Coogee", description: "The 6km clifftop walk past Tamarama, Bronte, Clovelly and Gordon's Bay is the single best thing to do in Sydney, full stop. Allow 2–2.5 hours one way, start early, and finish at Coogee for a swim and a tram-free bus home." },
+        { title: "Swim at Icebergs", description: "The iconic ocean pool at the south end, filled by the Tasman itself. $9 AUD entry, booked online at peak times. Even if you don't swim, the viewing deck and the restaurant make it worth a stop." },
+        { title: "Take a surf lesson", description: "Bondi's beach break is genuinely beginner-friendly. 2–3 hour group lessons run ~$100–130 AUD including board and wetsuit, morning slots catch the cleanest waves before the wind picks up." },
+        { title: "Browse the Sunday & Tuesday markets", description: "The Bondi Markets on the north end run Sunday 10am–5pm and Tuesday/Wednesday — 200+ stalls of jewellery, art and vintage. Come hungry; the food alley is half the attraction." },
+        { title: "Watch sunrise from the north headland", description: "Walk up the track past the holiday park to the lookout above the north end. At dawn in summer the whole crescent glows orange with the CBD skyline behind you — the photo that explains why Bondi is famous." },
+        { title: "Do the South Bondi rock pools", description: "Follow the coastal walk 15 minutes south to the Tamarama rock pools — smaller, quieter, locals-only feel. Perfect with a coffee from the kiosk afterwards." },
+      ],
+      ko: [
+        { title: "본다이~쿠지 산책", description: "타마라마, 브론티, 클로벌리, 고든스 베이를 지나는 6km 절벽 산책로는 시드니 최고의 활동입니다. 편도 2~2.5시간, 일찍 시작해서 쿠지에서 수영 후 집으로 버스." },
+        { title: "아이스버그스 수영", description: "남쪽 끝의 상징적 오션 풀, 태즈먼 바다가 직접 채움. 입장 $9 AUD, 피크 시간 온라인 예약. 수영 안 해도 전망대와 레스토랑 가치 있음." },
+        { title: "서핑 레슨", description: "본다이 비치는 초보자에게 진정으로 친화적. 2~3시간 그룹 레슨 ~$100~130 AUD(보드+웻수트 포함), 오전 슬롯이 바람 불기 전 가장 깨끗한 파도." },
+        { title: "선데이·화요일 마켓 구경", description: "본다이 마켓은 북쪽 끝에서 일요일 오전 10시~오후 5시, 화/수요일도 운영 — 200+ 부스의 보석, 예술, 빈티지. 배고프게 오세요; 푸드 골목이 절반의 즐길거리." },
+        { title: "북쪽 헤드랜드에서 일출 감상", description: "홀리데이 파크 지나 북쪽 끝 위 전망대까지 도보. 여름 새벽 전체 초승달 해변이 주황빛으로 빛나고 뒤엔 CBD 스카이라인 — 본다이가 왜 유명한지 설명하는 사진." },
+        { title: "남본다이 바위 풀", description: "산책로를 남쪽 15분 따라가면 타마라마 바위 풀 — 더 작고 조용한 현지인 느낌. 이후 키오스크 커피와 완벽." },
+      ],
+    },
+    proTips: {
+      en: [
+        { tip: "Swim between the red and yellow flags", detail: "Non-negotiable at Bondi — the rips here are real and lifeguards close sections when conditions turn. Watch the flags, not the crowd." },
+        { tip: "Bus 380 on the way back beats 333", detail: "The 333 into the CBD gets stuck in rush hour; the 380 to Bondi Junction train is almost always faster after 3pm on weekdays." },
+        { tip: "Showers on the sand cost $2 for 4 minutes", detail: "Bring coins or tap — change rooms are free but the queues in summer are 15+ minutes. A quick rinse on the beach saves time." },
+        { tip: "Kiosk prices are fair, restaurants double them", detail: "The Bondi kiosk at the north end does a $9 burger and great coffee. The promenade restaurants are lovely but expect $25+ mains." },
+      ],
+      ko: [
+        { tip: "빨간색과 노란색 깃발 사이에서 수영", detail: "본다이에서는 협상 불가 — 여기 이안류는 실제이고, 구조원은 조건이 나빠지면 구간을 폐쇄합니다. 인파가 아니라 깃발을 보세요." },
+        { tip: "돌아올 땐 380번이 333번보다 낫다", detail: "333번은 CBD 진입 시 퇴근 정체에 막힘; 평일 오후 3시 이후엔 본다이 정션행 380번이 거의 항상 빠름." },
+        { tip: "모래 위 샤워는 4분에 $2", detail: "동전 또는 태핑 준비 — 탈의실은 무료지만 여름엔 15분+ 대기. 해변에서 빠르게 헹구는 게 시간 절약." },
+        { tip: "키오스크 가격은 합리적, 레스토랑은 두 배", detail: "북쪽 끝 본다이 키오스크는 $9 버거와 훌륭한 커피. 산책로 레스토랑은 좋지만 메인 $25+ 예상." },
+      ],
+    },
+    attractions: [
+      {
+        name: { en: "Icebergs Pool", ko: "아이스버그스 풀" },
+        blurb: {
+          en: "The famous heritage ocean pool at Bondi's south end, built into the rocks and filled by wave action. $9 AUD for adults, open daily except Christmas. The adjacent restaurant and viewing terrace are prime people-watching.",
+          ko: "본다이 남쪽 끝, 바위에 지어져 파도로 채워지는 유명한 헤리티지 오션 풀. 성인 $9 AUD, 크리스마스 제외 매일 운영. 인접 레스토랑과 전망 테라스는 구경의 명당.",
+        },
+        time: { en: "1–2 hrs", ko: "1~2시간" },
+        cost: { en: "$9 AUD adults, $5 children (some days free for locals)", ko: "성인 $9 AUD, 어린이 $5 (일부 날 지역민 무료)" },
+      },
+      {
+        name: { en: "Bondi to Coogee Coastal Walk", ko: "본다이~쿠지 해안 산책로" },
+        blurb: {
+          en: "6km of clifftop path linking five beaches and a dozen lookouts. Start at the south end of Bondi past Icebergs. Best done early morning with the sun behind you.",
+          ko: "5개 해변과 수십 개 전망대를 잇는 6km 절벽 길. 아이스버그스 지나 본다이 남쪽 끝에서 시작. 해를 등지고 하는 이른 아침이 최고.",
+        },
+        time: { en: "2–2.5 hrs one way", ko: "편도 2~2.5시간" },
+        cost: { en: "Free", ko: "무료" },
+      },
+      {
+        name: { en: "Bondi Pavilion", ko: "본다이 파빌리온" },
+        blurb: {
+          en: "The 1929 art-deco community hub behind the beach: café, gallery, theatre, change rooms, and the famous blue-and-green bathing boxes on its roof terrace steps.",
+          ko: "해변 뒤 1929년 아르데코 커뮤니티 허브: 카페, 갤러리, 극장, 탈의실, 그리고 옥상 테라스 계단의 유명한 청록색 화장실 부스.",
+        },
+        time: { en: "30–60 mins", ko: "30~60분" },
+        cost: { en: "Free (café and gallery donations)", ko: "무료 (카페와 갤러리 후원금)" },
+      },
+    ],
+  },
+  {
+    slug: "kiama",
+    name: { en: "Kiama", ko: "키아마" },
+    tagline: { en: "The world's most powerful blowhole & a laid-back south coast town", ko: "세계에서 가장 강력한 블로우홀과 한가로운 사우스 코스트 타운" },
+    // The Kiama Blowhole erupting — Wikimedia Commons (CC BY-SA), January 2025
+    heroImg: "/images/kiama_blowhole.jpg",
+    cardImg: "/images/kiama_blowhole.jpg",
+    accentColor: "bg-teal-500",
+    region: "South Coast, NSW",
+    tripLength: "day",
+    description: {
+      en: "A 2-hour train ride or drive southwest of Sydney, Kiama is the south coast's best day trip: the famous Blowhole — which can erupt 25 metres into the air when the swell is right — plus a lighthouse headland, a patrolled beach, a farmers market, and one of NSW's great short coastal walks to Jamberoo. The town itself is relaxed and genuinely pretty, all sandstone cottages and sea views, with fish-and-chips on the harbour jetty as the official postcard ending.",
+      ko: "시드니에서 남서쪽으로 기차 2시간 또는 운전, 키아마는 사우스 코스트 최고의 당일 여행지: 파도가 맞으면 25미터까지 치솟는 유명한 블로우홀, 등대 헤드랜드, 순찰 해변, 파머스 마켓, 그리고 잼브루오까지 NSW 최고의 짧은 해안 산책로. 타운 자체는 한가롭고 정말 예쁘고, 사암 코티지와 바다 전망에, 항구 제트티에서의 피쉬앤칩스가 공식적인 엽서 같은 마무리."
+    },
+    highlights: [
+      { en: "The Kiama Blowhole", ko: "키아마 블로우홀", icon: "swim" },
+      { en: "Kiama Light & headland walk", ko: "키아마 등대 & 헤드랜드 산책", icon: "museum" },
+      { en: "Kitty's Beach swimming", ko: "키디스 비치 수영", icon: "swim" },
+      { en: "Minnamurra Falls rainforest", ko: "민너머라 폭포 열대우림", icon: "hiking" },
+    ],
+    bestTime: { en: "Year-round; after big swell for blowhole drama", ko: "연중; 블로우홀의 장관은 파도 큰 뒤" },
+    gettingThere: { en: "Direct train from Central (~2hrs, South Coast line) or drive via M1/Hume (~2hrs).", ko: "센트럴에서 직행 기차(~2시간, 사우스 코스트 선) 또는 M1/흄 운전(~2시간)." },
+    suggestedDays: { en: "Full day trip, or a relaxed weekend", ko: "당일 하루, 또는 여유로운 주말" },
+    howToGetThere: {
+      en: "**By train:** Kiama is the terminus of the electrified South Coast line — direct trains from Central run hourly (~2 hours, $18–20 AUD Opal off-peak). The station is a 10-minute walk from the blowhole. This is the easiest way: no driving, and the last 30 minutes of the trip hugs the coastline.\n\n**By car:** Take the M1 (Princes Motorway) south via Helensburgh, then the Old Hume Highway or M1 to Kiama. ~2 hours from Sydney, 120km. Exit at Kiama and follow signs to Blowhole Point — free parking at the headland car park and the foreshore carparks, though the blowhole lot fills on summer weekends.\n\n**As part of a tour:** Day tours from Sydney combine Kiama with the Nan Tien Temple in Wollongong (~$150–190 AUD). Good if you want the blowhole plus the Southern Highlands on one sweep, but independent trains are cheaper.\n\n**On foot/cycle in town:** Everything central — blowhole, lighthouse, library, jetty, shops — is walkable in 15 minutes. The Bombo headland and the coastal walks need a car or a solid bike.",
+      ko: "**기차:** 키아마는 사우스 코스트 전철선의 종점 — 센트럴에서 직행 기차가 매시(~2시간, 피크 외 $18~20 AUD 오팔). 역에서 블로우홀까지 도보 10분. 가장 쉬운 방법: 운전 불필요, 여행 마지막 30분은 해안을 따라감.\n\n**자동차:** M1(프린세스 모터웨이)로 헬렌스버그 지나 구 흄 하이웨이 또는 M1로 키아마. 시드니에서 ~2시간, 120km. 키아마에서 빠져 블로우홀 포인트 표지 따라가면 — 헤드랜드 주차장과 해안 주차장은 무료지만 여름 주말엔 블로우홀 주차장 만차.\n**투어 일부로:** 시드니발 데이가이드는 울렁공의 난전 사원과 키아마를 결합(~$150~190 AUD). 블로우홀과 사우스던 하일랜즈를 한 번에 원하면 좋지만, 기차로 자유롭게 가는 게 더 쌉니다.\n**도보/자전거:** 중심부 모든 것 — 블로우홀, 등대, 도서관, 제트티, 상점 — 15분 안에 도보 가능. 봄보 헤드랜드와 해안 산책로는 차나 탄탄한 자전거 필요."
+    },
+    bestTimeDetailed: {
+      en: "**Any season with a south-southeast swell (check Surf Life Saving forecasts):** The blowhole needs wave energy — calm days produce a dribble, a 2-metre swell produces a 25-metre column and a wet camera. Early morning after a big overnight swell is the money shot.\n\n**Summer (Dec–Feb):** Beach season. Kitty's Beach and Collins Beach are patrolled, the foreshore is alive, and the Blowhole Point café does good ice cream. Add the Tuesday farmers market. Weekends are busy with day-trippers; weekdays feel like a real town.\n\n**Autumn (Mar–May):** The locals' favourite: warm water lingering, humpback whales migrating past the headland (May–July, often visible from Blowhole Point), and the coastal walk colours turning.\n\n**Winter (Jun–Aug):** 8–16°C and grey-blue moody — which is exactly right for the blowhole. Whale watching peaks, the town is quiet, and pub fireplaces get their moment.\n\n**Spring (Sep–Nov):** Wildflowers on Bombo headland, warming water, and the Easter weekend food festival draws a big crowd.",
+      ko: "**남남동 파도가 있는 모든 계절 (서프 라이프 세이빙 예보 확인):** 블로우홀은 파도 에너지 필요 — 잔잔한 날은 조금 뿜고, 2미터 스웰은 25미터 기둥과 젖은 카메라를 만듦. 큰 밤 파도 뒤 이른 아침이 결정적 사진.\n\n**여름 (12~2월):** 해변 계절. 키디스 비치와 콜린스 비치는 순찰되고, 해안은 생기가 돌고, 블로우홀 포인트 카페의 아이스크림이 좋음. 화요일 파머스 마켓 추가. 주말은 당일 방문객으로 붐비고, 평일은 진짜 마을 느낌.\n\n**가을 (3~5월):** 현지인 최애: 남은 바닷물 온도, 혹등고래가 헤드랜드 앞 통과(5~7월, 블로우홀 포인트에서 자주 목격), 해안 산책로의 단풍.\n\n**겨울 (6~8월):** 8~16°C의 회청색 무드 — 블로우홀에 딱 맞음. 고래 관측 절정, 마을은 고요, 펍 벽난로의 순간.\n\n**봄 (9~11월):** 봄보 헤드랜드의 야생화, 오르는 수온, 부활절 주말 푸드 페스티벌은 큰 인파."
+    },
+    topThingsToDo: {
+      en: [
+        { title: "See the Blowhole erupt", description: "The viewing platform at Blowhole Point is free and always impressive, but check a swell forecast first — an hour after a 6–8 second south swell arrives, you'll get the full 25m eruption and you WILL get sprayed. The picnic area on the headland is the spot for lunch with a view." },
+        { title: "Walk the Kiama coastal track to Jamberoo", description: "The Minnamarras to Bombo section of the Sea Cliff Bridge-style track (part of the Kiama Coastal Walk) runs 7.5km of headlands, lookouts and small beaches on well-formed single track. Start at Bombo and finish at Minnamurra Falls for the best version." },
+        { title: "Climb to the Kiama Light", description: "The 1887 lighthouse on Blowhole Point isn't open inside, but the headland circuit around it is a beautiful 30-minute loop with the blowhole, the whale lookout, and the best sunset angle in town." },
+        { title: "Fish-and-chips on the jetty", description: "The Kiama Harbour jetty at the south end of the beach: takeaway from the kiosk, sit on the boards, watch the prawn boats. Under $15 AUD a head and a genuine south-coast ritual." },
+        { title: "Swim at Kitty's Beach", description: "A sheltered patrolled beach 5 minutes south of the blowhole with a natural rock pool at low tide — calmer and cleaner-feeling than Bondi. The Little Blowhole next door is a quieter second act." },
+        { title: "Take the Minnamurra Rainforest walk", description: "15 minutes north, this pocket subtropical rainforest walk (45–60 mins, boardwalked) ends at Minnamurra Falls — a cool, ferny counterpoint to all that salt air, free to enter." },
+      ],
+      ko: [
+        { title: "블로우홀 분수 감상", description: "블로우홀 포인트 전망대는 무료고 늘 인상적이지만, 먼저 스웰 예보 확인 — 6~8초 남쪽 스웰 도착 후 1시간이면 25미터 완전 분수와 물세례. 헤드랜드 피크닉 구역은 전망 좋은 점심 장소." },
+        { title: "키아마 해안 트레일~잼브루오 산책", description: "키아마 해안 워크의 미남라스~봄보 구간은 7.5km의 헤드랜드, 전망대, 작은 해변을 잘 정비된 원 트랙으로 지남. 봄보에서 시작해 민너머라 폭포에서 끝내는 게 최고 버전." },
+        { title: "키아마 등대까지 오르기", description: "블로우홀 포인트의 1887년 등대는 내부는 개방 안 하지만, 둘레의 헤드랜드 서킷은 30분의 아름다운 루프로 블로우홀, 고래 전망대, 타운 최고의 노을 각도를 품음." },
+        { title: "제트티에서 피쉬앤칩스", description: "해변 남쪽 끝 키아마 하버 제트티: 키오스크에서 테이크아웃, 판자 위에 앉아 새우 배를 구경. 1인 $15 AUD 미만이고 진정한 사우스 코스트 의식." },
+        { title: "키디스 비치 수영", description: "블로우홀 남쪽 5분의 순찰되는 보호 해변, 간조 땐 자연 바위 풀 — 본다이보다 잔잔하고 깨끗한 느낌. 바로 옆 리틀 블로우홀은 조용한 두 번째 무대." },
+        { title: "민너머라 열대우림 산책", description: "북쪽 15분, 이 주머니 아열대 우림 산책로(45~60분, 데크)는 민너머라 폭포에서 끝남 — 짠 공기 뒤에 좋은 시원한 고사리 대비, 입장 무료." },
+      ],
+    },
+    proTips: {
+      en: [
+        { tip: "Time your visit to the swell, not the sun", detail: "Check Surf Life Saving NSW or Windy for a south-southeast swell of 2m+. The blowhole on a calm day is a sad puddle; after a swell it's the reason people drive 2 hours." },
+        { tip: "The Little Blowhole is quieter (and still sprays)", detail: "One headland south of the main blowhole — fewer tour buses, a proper geyser, and Bombo Beach below for a swim after." },
+        { tip: "Tuesday is market day", detail: "The Kiama Farmers Market at the showground (9am–1pm) is genuinely good: local oysters, mountain honey, sourdough. Buy pastries before 11am." },
+        { tip: "Train back before the road closes", detail: "The Princes Highway through the escarpment occasionally shuts in storms. The train from Kiama to Central is immune to that and runs till 9pm+. If weather turns, go by rail." },
+      ],
+      ko: [
+        { tip: "해가 아니라 스웰에 맞춰 방문", detail: "NSW 서프 라이프 세이빙 또는 Windy에서 2m+ 남남동 스웰 확인. 잔잔한 날 블로우홀은 처참하지만, 스웰 뒤엔 2시간을 운전하는 이유 그 자체." },
+        { tip: "리틀 블로우홀이 더 한적(그래도 물 튐)", detail: "주 블로우홀 남쪽 헤드랜드 하나 — 관광버스 적고, 진짜 간헐천 있고, 아래 봄보 해변에서 수영 가능." },
+        { tip: "화요일은 마켓 데이", detail: "쇼그라운드의 키아마 파머스 마켓(오전 9시~오후 1시)은 진짜 좋음: 지역 굴, 마운틴 허니, 사워도우. 페이스트리는 오전 11시 전에." },
+        { tip: "도로 폐쇄 전에 기차로 귀가", detail: "절벽을 지나는 프린세스 하이웨이는 폭풍 시 가끔 통제. 키아마~센트럴 기차는 영향 없고 밤 9시+까지 운행. 날씨가 궂으면 기차로." },
+      ],
+    },
+    attractions: [
+      {
+        name: { en: "The Blowhole & Blowhole Point", ko: "블로우홀 & 블로우홀 포인트" },
+        blurb: {
+          en: "A natural basalt cavern in the cliff face that compresses wave energy and erupts a geyser up to 25m high. Free viewing platform, picnic area, and café. Best 1–2 hours after a south swell arrives.",
+          ko: "절벽면의 천연 현무암 동굴이 파도 에너지를 압축해 최대 25m 간헐천을 분출. 무료 전망대, 피크닉 구역, 카페. 남쪽 스웰 도착 후 1~2시간 뒤 최고.",
+        },
+        time: { en: "1 hr", ko: "1시간" },
+        cost: { en: "Free", ko: "무료" },
+      },
+      {
+        name: { en: "Kiama Lighthouse headland circuit", ko: "키아마 등대 헤드랜드 서킷" },
+        blurb: {
+          en: "A 30-minute loop from the blowhole past the 1887 lighthouse to the whale-watching lookout, with Tasman Sea panoramas the whole way. Prime sunset spot.",
+          ko: "블로우홀에서 1887년 등대를 지나 고래 관측 전망대까지 30분 루프, 내내 태즈먼 바다 파노라마. 노을 명당.",
+        },
+        time: { en: "30–45 mins", ko: "30~45분" },
+        cost: { en: "Free", ko: "무료" },
+      },
+      {
+        name: { en: "Minnamurra Rainforest & Falls", ko: "민너머라 열대우림 & 폭포" },
+        blurb: {
+          en: "Pocket subtropical rainforest 15 min north of Kiama with boardwalk loops (20–90 mins) ending at a 12m waterfall. Cool, green, and free.",
+          ko: "키아마 북쪽 15분, 데크 루프(20~90분)가 12m 폭포에서 끝나는 주머니 아열대 우림. 시원하고 푸르고 무료.",
+        },
+        time: { en: "1–1.5 hrs", ko: "1~1.5시간" },
+        cost: { en: "Free", ko: "무료" },
+      },
+    ],
+  },
 ];
 
 export function getDestination(slug: string): Destination | undefined {

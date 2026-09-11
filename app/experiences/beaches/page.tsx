@@ -9,7 +9,7 @@ import { Beach, Sun, MapPin, Shield, Flag, AlertTriangle, Umbrella } from "@/com
 import { seoFor, withSeo } from "@/lib/seo";
 
 type BeachSection = Omit<EditorialSectionData, "items"> & {
-  items: Array<{ label: string; en: string; ko: string }>;
+  items: Array<{ label: string; en: string; ko: string; url?: string }>;
 };
 
 const sections: BeachSection[] = [
@@ -27,6 +27,7 @@ const sections: BeachSection[] = [
       { label: "Facilities", en: "Public toilets, outdoor showers, change rooms, and lockers available. Bondi Pavilion has a café, bar, and community centre. Multiple surf schools operate on the southern end. Lifeguards patrol the flagged area year-round — swim between the red and yellow flags.", ko: "공중 화장실, 야외 샤워실, 탈의실, 사물함이 있습니다. Bondi Pavilion에는 카페, 바, 커뮤니티 센터가 있습니다. 남쪽 끝에서 여러 서핑 스쿨이 운영됩니다. 연중 구조원이 깃발 구역을 감시합니다 — 빨간색과 노란색 깃발 사이에서 수영하세요." },
       { label: "Bondi to Coogee Walk", en: "The famous 6km coastal walk starts at Bondi's southern end (past the Icebergs pool). Takes about 2 hours one way, passing Tamarama, Bronte, and Clovelly beaches. Lots of photo stops, cafes, and rock pools along the way. Do it early morning before it gets too hot.", ko: "유명한 6km 해안 산책로는 Bondi 남쪽 끝(Icebergs 수영장 지나)에서 시작됩니다. 편도 약 2시간, Tamarama, Bronte, Clovelly 해변을 지납니다. 사진 찍기 좋은 곳, 카페, 암석 수영장이 많습니다. 더워지기 전 이른 아침에 가보세요." },
       { label: "Icebergs Pool", en: "The famous ocean pool at Bondi's southern end. Entry is about $9 AUD for adults. The pool is filled by ocean waves — cold but refreshing. Great photo spot overlooking the beach. Open every day except Christmas. The attached restaurant is a great spot for brunch.", ko: "Bondi 남쪽 끝에 있는 유명한 바다 수영장입니다. 입장료는 성인 약 $9 AUD입니다. 파도로 채워지는 수영장 — 차갑지만 상쾌합니다. 해변을 내려다보는 멋진 사진 명소입니다. 크리스마스 외에는 매일 운영합니다." },
+      { label: "Full Bondi Guide", url: "/destinations/bondi-beach", en: "We've put together a complete Bondi destination guide — step-by-step transport from the CBD, the coastal walk, where to eat, and the best time to go. Click here for the full guide.", ko: "본다이 완전 가이드를 준비했습니다 — 시내에서 가는 방법 단계별 안내, 해안 산책로, 맛집, 방문하기 좋은 시기까지. 전체 가이드는 여기를 클릭하세요." },
     ],
   },
   {

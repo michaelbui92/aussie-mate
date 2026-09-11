@@ -189,10 +189,11 @@ export default function EditorialSection({
                 {item.url && (
                   <a
                     href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(item.url.startsWith("/")
+                      ? {}
+                      : { target: "_blank", rel: "noopener noreferrer" })}
                     className="ml-2 text-stone-400 hover:text-sunset text-xs font-normal"
-                    aria-label={`${item.label} (opens in new tab)`}
+                    aria-label={item.url.startsWith("/") ? item.label : `${item.label} (opens in new tab)`}
                   >
                     ↗
                   </a>
