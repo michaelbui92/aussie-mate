@@ -89,11 +89,11 @@ export default function CostOfLivingPage() {
   return (
     <main className="max-w-4xl mx-auto px-5 py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "Fraunces, Georgia, serif", color: "var(--color-text)" }}>
+        <h1 className="font-serif text-4xl font-bold mb-4 text-stone-900 dark:text-stone-100">
           <En>Cost of Living in Sydney — 2026</En>
           <Ko>시드니 생활비 — 2026</Ko>
         </h1>
-        <p className="text-lg text-[var(--color-text)]/70 max-w-2xl mx-auto">
+        <p className="text-lg text-stone-500 dark:text-stone-400 max-w-2xl mx-auto">
           <En>Real prices for rent, food, transport, and bills. All figures in AUD. Updated for 2026.</En>
           <Ko>임대료, 식비, 교통비, 공과금의 실제 가격입니다. 모든 금액은 호주 달러(AUD) 기준입니다.</Ko>
         </p>
@@ -108,15 +108,15 @@ export default function CostOfLivingPage() {
         ].map((item, i) => (
           <div
             key={i}
-            className="rounded-2xl p-5 text-center"
-            style={{ background: "linear-gradient(135deg, rgba(212,165,116,0.1), rgba(232,114,42,0.08))", border: "1px solid rgba(212,165,116,0.2)" }}
+            className="rounded-2xl p-5 text-center border border-sunset/20"
+            style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.08), rgba(212,165,116,0.06))" }}
           >
             <div className="text-3xl mb-2">{item.emoji}</div>
-            <div className="text-sm font-medium text-[var(--color-text)]/70 mb-1">
+            <div className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-1">
               <En>{item.label.en}</En>
               <Ko>{item.label.ko}</Ko>
             </div>
-            <div className="text-xl font-bold" style={{ color: "var(--color-primary)" }}>{item.total}</div>
+            <div className="text-xl font-bold text-sunset">{item.total}</div>
           </div>
         ))}
       </div>
@@ -125,34 +125,29 @@ export default function CostOfLivingPage() {
       {categories.map((cat, i) => (
         <div
           key={i}
-          className="mb-8 rounded-2xl overflow-hidden"
-          style={{ border: "1px solid var(--color-border)" }}
+          className="mb-8 rounded-2xl overflow-hidden border border-stone-200/80 dark:border-dark-border"
         >
           <div
-            className="px-5 py-4 font-bold text-lg flex items-center gap-2"
-            style={{ background: "linear-gradient(135deg, rgba(212,165,116,0.1), rgba(232,114,42,0.06))", borderBottom: "1px solid var(--color-border)" }}
+            className="px-5 py-4 font-bold text-lg flex items-center gap-2 border-b border-stone-200/80 dark:border-dark-border text-stone-900 dark:text-stone-100"
+            style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.06), rgba(212,165,116,0.04))" }}
           >
             <span>{cat.emoji}</span>
             <En>{cat.title}</En>
             <Ko>{cat.title}</Ko>
           </div>
-          <div className="divide-y" style={{ borderColor: "var(--color-border)" }}>
+          <div className="divide-y divide-stone-200/80 dark:divide-dark-border">
             {cat.items.map((item, j) => (
               <div
                 key={j}
                 className="px-5 py-3 flex items-center justify-between gap-4"
-                style={{ borderColor: "var(--color-border)" }}
               >
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-[var(--color-text)]">
+                  <div className="text-sm font-medium text-stone-800 dark:text-stone-200">
                     <En>{item.en}</En>
-                    <Ko><span className="text-[var(--color-text)]/50 text-xs">{item.ko}</span></Ko>
+                    <Ko><span className="text-stone-400 dark:text-stone-500 text-xs">{item.ko}</span></Ko>
                   </div>
                 </div>
-                <div
-                  className="shrink-0 text-sm font-bold px-3 py-1 rounded-lg"
-                  style={{ background: "rgba(212,165,116,0.12)", color: "var(--color-primary)" }}
-                >
+                <div className="shrink-0 text-sm font-bold px-3 py-1 rounded-lg bg-sunset/10 text-sunset">
                   {item.cost}
                 </div>
               </div>
@@ -162,12 +157,14 @@ export default function CostOfLivingPage() {
       ))}
 
       {/* Tips section */}
-      <div className="rounded-2xl p-6 mt-8" style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.08), rgba(212,165,116,0.06))", border: "1px solid rgba(212,165,116,0.2)" }}>
-        <h2 className="text-xl font-bold mb-4" style={{ color: "var(--color-text)" }}>
+      <div className="rounded-2xl p-6 mt-8 border border-sunset/20"
+        style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.06), rgba(212,165,116,0.04))" }}
+      >
+        <h2 className="text-xl font-bold mb-4 text-stone-900 dark:text-stone-100">
           <En>💡 Money-Saving Tips</En>
           <Ko>💡 절약 팁</Ko>
         </h2>
-        <ul className="space-y-2 text-sm text-[var(--color-text)]/80">
+        <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
           <li><En>• Shop at Aldi for groceries — it's 20-30% cheaper than Woolies/Coles</En><Ko>• 장보기는 Aldi에서 — Woolies/Coles보다 20-30% 저렴합니다</Ko></li>
           <li><En>• Use the Opal card weekly cap — after $50, all travel is free for the week</En><Ko>• Opal 카드 주간 상한선 활용 — $50 이후 무료</Ko></li>
           <li><En>• Korean grocery stores (Strathfield, Eastwood, Campsie) have cheaper Asian ingredients</En><Ko>• 한인 마트 (Strathfield, Eastwood, Campsie)에서 아시안 식품이 저렴합니다</Ko></li>

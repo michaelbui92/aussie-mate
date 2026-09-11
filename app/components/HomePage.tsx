@@ -8,6 +8,7 @@ import AdSlot from "@/components/AdSlot";
 import { destinations } from "@/destinations/data";
 import { topHomepageFaqs } from "@/lib/faqs";
 import { topHomepageExperiences } from "@/experiences/data";
+import HeroCarousel from "@/components/HeroCarousel";
 
 // Homepage restructured: persona selector moved to /journey (now a
 // dedicated page with three sub-routes). The homepage is now: hero →
@@ -18,8 +19,6 @@ import { topHomepageExperiences } from "@/experiences/data";
 export default function HomePage() {
   const { openSearch } = useSearch();
 
-  // Editorial palette
-  const heroImg = "/images/unsplash-1506973035872-a4ec16b8e8d9.jpg"; // Sydney Opera House at dusk
   // Six destinations on the home row — spans day/weekend/longer to give
   // a balanced first impression of what the site covers. Sydney Harbour
   // is the must-include (most recognised Sydney thing).
@@ -41,19 +40,8 @@ export default function HomePage() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg">
       {/* ============================ HERO ============================ */}
-      <section className="relative h-[100svh] min-h-[680px] max-h-[1000px] overflow-hidden">
-        <Image
-          src={heroImg}
-          alt="Sydney Opera House at dusk"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          quality={85}
-          className="object-cover object-left md:object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/75" />
-        <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
+      <HeroCarousel>
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-7 max-w-5xl">
             <span className="block">
               <En>Aussie Guides to Sydney and beyond</En>
@@ -96,7 +84,7 @@ export default function HomePage() {
             <kbd className="hidden sm:inline text-[10px] font-medium px-1.5 py-0.5 rounded bg-white/10 text-white/50">⌘K</kbd>
           </button>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* ============================ PRIMARY CTAs (Journey + Aussie English) ============================
           Two cards that surface the site's two highest-value content lanes
@@ -365,8 +353,8 @@ export default function HomePage() {
           </span>
           <span aria-hidden="true">·</span>
           <span>
-            <En>Last reviewed: 28 June 2026</En>
-            <Ko>최종 검토: 2026년 6월 28일</Ko>
+            <En>Last reviewed: 11 September 2026</En>
+            <Ko>최종 검토: 2026년 9월 11일</Ko>
           </span>
           <span aria-hidden="true">·</span>
           <Link href="/editorial" className="text-sunset hover:underline font-medium">
