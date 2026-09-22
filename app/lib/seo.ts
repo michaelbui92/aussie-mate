@@ -95,7 +95,7 @@ function absoluteUrl(path?: string): string {
  * `| AussieGuides`, so the rendered title read "… | AussieGuides · AussieGuides" and ran past 60
  * characters. Only the brand is removed — every keyword the CTR rewrite added is untouched.
  */
-function withoutBrand(title: string): string {
+export function pageTitle(title: string): string {
   return title
     .replace(/(?:\s*[·|\u2013\u2014-]\s*AussieGuides)+\s*$/i, "")
     .trim();
@@ -103,7 +103,7 @@ function withoutBrand(title: string): string {
 
 export function withSeo<T extends Metadata>(base: T, path: string): T {
   const url = absoluteUrl(path);
-  const title = typeof base.title === "string" ? withoutBrand(base.title) : base.title;
+  const title = typeof base.title === "string" ? pageTitle(base.title) : base.title;
   return {
     ...base,
     ...(typeof base.title === "string" ? { title } : {}),

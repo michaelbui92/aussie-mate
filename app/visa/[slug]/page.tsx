@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { En, Ko } from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
-import { seoFor, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
+import { seoFor, pageTitle, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return visas.map((v) => ({ slug: v.slug }));
@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!v) return {};
   return {
     ...seoFor(`/visa/${slug}`),
-    title: `${v.name.en} — AussieGuides`,
+    title: pageTitle(`${v.name.en} | AussieGuides`),
     description: v.tagline.en,
   };
 }

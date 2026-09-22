@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { En, Ko } from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
-import { seoFor, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
+import { seoFor, pageTitle, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 import * as Icons from "@/components/Icons";
 
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     : d.description.en;
   return {
     ...seoFor(`/destinations/${slug}`),
-    title: `${d.name.en}${timePrefix ? `: ${timePrefix}` : " — "}Beaches, Walks & Things to Do | AussieGuides`,
+    title: pageTitle(`${d.name.en}${timePrefix ? `: ${timePrefix}` : " — "}Beaches, Walks & Things to Do | AussieGuides`),
     description: `${d.gettingThere.en.split(".")[0]}. ${d.suggestedDays.en}. ${shortDesc}`,
   };
 }
