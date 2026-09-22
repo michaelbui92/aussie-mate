@@ -104,18 +104,13 @@ export function pageTitle(title: string): string {
 export function withSeo<T extends Metadata>(base: T, path: string): T {
   const url = absoluteUrl(path);
   const title = typeof base.title === "string" ? pageTitle(base.title) : base.title;
+  // `alternates` is deliberately NOT set here: a static metadata export cannot know whether it is
+  // serving /destinations or /ko/destinations, and three hreflang tags pointing at one URL -- which is
+  // what this used to emit -- express nothing. The root layout's generateMetadata supplies them per
+  // request. Next merges per FIELD, so leaving them out here is what lets that survive.
   return {
     ...base,
     ...(typeof base.title === "string" ? { title } : {}),
-    alternates: {
-      ...(base.alternates ?? {}),
-      canonical: url,
-      languages: {
-        en: url,
-        ko: url,
-        "x-default": url,
-      },
-    },
   };
 }
 
@@ -125,27 +120,11 @@ export function withSeo<T extends Metadata>(base: T, path: string): T {
  * @param path  Path WITHOUT leading slash. Empty string = homepage.
  *              E.g. "visa" or "visa/417".
  */
-export function seoFor(path: string): Pick<
-  Metadata,
-  "alternates" | "openGraph" | "twitter"
-> {
+export function seoFor(path: string): Pick<Metadata, "openGraph" | "twitter"> {
   const url = absoluteUrl(path);
 
-  // English and Korean currently share one URL — the page renders both
-  // languages via the En/Ko blocks, and the user's chosen language is
-  // stored client-side. We tell Google about both via hreflang so it
-  // knows the same URL serves both locales.
-  const languages: Record<string, string> = {
-    en: url,
-    ko: url,
-    "x-default": url,
-  };
 
   return {
-    alternates: {
-      canonical: url,
-      languages,
-    },
     openGraph: {
       type: "website",
       url,

@@ -18,17 +18,22 @@ export function useLang() {
 // CJK (Korean / Chinese / Japanese) Unicode ranges
 const cjkRegex = /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF]/;
 
-export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("en");
+export function LangProvider({ children, initial }: { children: ReactNode; initial?: Lang }) {
+  // The server passes the locale when the URL carries one (/ko/...), so the SERVER-RENDERED HTML is
+  // Korean -- which is what a crawler that does not run JavaScript sees, and Naver renders JS less
+  // reliably than Google.
+  const [lang, setLang] = useState<Lang>(initial ?? "en");
 
   // Read from documentElement.lang (already set by blocking init script in <head>)
   // — avoids rendering English first then snapping to Korean (issue #5)
   useEffect(() => {
-    const initial: Lang = document.documentElement.lang === "ko" ? "ko" : document.documentElement.lang === "zh" ? "zh" : document.documentElement.lang === "ja" ? "ja" : "en";
-    setLang(initial);
+    // A URL-carried locale outranks a stored preference: /ko/x is an explicit request for Korean.
+    if (initial) return;
+    const fromHtml: Lang = document.documentElement.lang === "ko" ? "ko" : document.documentElement.lang === "zh" ? "zh" : document.documentElement.lang === "ja" ? "ja" : "en";
+    setLang(fromHtml);
     // Persist auto-detected value so it sticks on next visit
     if (!localStorage.getItem("aussiemate-lang")) {
-      localStorage.setItem("aussiemate-lang", initial);
+      localStorage.setItem("aussiemate-lang", fromHtml);
     }
   }, []);
 

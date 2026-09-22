@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { LangProvider } from "@/components/LangBlocks";
+import { headers } from "next/headers";
+import { LangProvider, type Lang } from "@/components/LangBlocks";
 import { SearchProvider } from "@/components/SearchModal";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -15,7 +16,11 @@ import ScrollAnimations from "@/components/ScrollAnimations";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BackToTop from "@/components/BackToTop";
 
-export const metadata: Metadata = {
+// Site-wide metadata. Deliberately NOT exported as `metadata`: Next refuses to have both `metadata`
+// and `generateMetadata` in one file, and the per-request one below is the one that can state a
+// canonical and hreflang for the URL actually being served. Everything here (title template,
+// metadataBase, OG, Twitter, icons, verification) is folded in and still applies to every page.
+const staticMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   // Title flipped to English-first per the 2026-06-28 audience review:
   // Vercel analytics showed significant American traffic and the prior
@@ -83,7 +88,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  // Per-page canonical URL + hreflang EN/KO alternates are set per page
+  // Canonical URL + hreflang are set below, per request, in generateMetadata
   // (see lib/seo.ts). Bilingual site with content in both languages on
   // the same URL — Google needs explicit signals to serve the right
   // version to the right audience and to consolidate duplicate-URL signals.
@@ -163,9 +168,40 @@ function resolveAdsenseId(): string | undefined {
 }
 const ADSENSE_PUBLISHER_ID = resolveAdsenseId();
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+// Canonical and hreflang, per request.
+//
+// These cannot live in the pages: a page's `metadata` export is static, so it cannot know whether it is
+// serving /destinations or /ko/destinations, and three hreflang tags pointing at one URL express
+// nothing. The middleware supplies the public path and the locale; this turns them into the real thing.
+//
+// Every page has both languages -- the components carry <En> and <Ko> blocks for every string -- so
+// each URL can honestly declare the other, and /ko is reachable for all of them rather than a subset.
+export async function generateMetadata(): Promise<Metadata> {
+  const h = await headers();
+  const locale = h.get("x-am-locale") ?? "en";
+  const path = h.get("x-am-path") ?? "/";
+  const bare = path === "/" ? "" : path;
+  const site = SITE_URL.replace(/\/$/, "");
+
+  return {
+    ...staticMetadata,
+    alternates: {
+      canonical: `${site}${locale === "en" ? "" : `/${locale}`}${bare}`,
+      languages: {
+        en: `${site}${bare}`,
+        ko: `${site}/ko${bare}`,
+        "x-default": `${site}${bare}`,
+      },
+    },
+  };
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // The locale comes from the URL, so the SERVER renders the right language -- which is what a crawler
+  // that does not run JavaScript sees.
+  const locale = (await headers()).get("x-am-locale") ?? "en";
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${fraunces.variable}`}>
+    <html lang={locale} suppressHydrationWarning className={`${geistSans.variable} ${fraunces.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {/* Preload hero image for instant LCP */}
@@ -212,7 +248,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${geistSans.className} bg-stone-50 dark:bg-darkbg text-stone-800 dark:text-stone-200 antialiased`}>
         <ThemeProvider>
-          <LangProvider>
+          <LangProvider initial={locale as Lang}>
             <SearchProvider>
               <div id="content-root" className="flex flex-col min-h-screen">
                 <Nav />

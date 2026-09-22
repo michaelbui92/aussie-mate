@@ -72,5 +72,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticEntries, ...destinationEntries, ...visaEntries];
+  // Korean has its own URL for every page (middleware rewrites /ko/<path> onto the same route, and the
+  // components carry both languages), so each entry is listed twice and each copy names the other.
+  // A sitemap that lists one language while claiming hreflang for two is how a search engine concludes
+  // the Korean does not exist.
+  const bilingual = (entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap =>
+    entries.flatMap((e) => {
+      const bare = e.url.replace(SITE_URL, "");
+      const languages = { en: e.url, ko: `${SITE_URL}/ko${bare}` };
+      return [
+        { ...e, alternates: { languages } },
+        { ...e, url: `${SITE_URL}/ko${bare}`, alternates: { languages } },
+      ];
+    });
+
+  return bilingual([...staticEntries, ...destinationEntries, ...visaEntries]);
 }

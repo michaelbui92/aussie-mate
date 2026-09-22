@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { En, Ko, useLang } from "./LangBlocks";
 import { useTheme } from "./ThemeProvider";
 import { useSearch } from "@/components/SearchModal";
@@ -130,7 +130,17 @@ function isActiveInGroup(pathname: string, group: NavGroup) {
 
 export default function Nav() {
   const pathname = usePathname();
+  const router = useRouter();
   const { lang, toggleLang } = useLang();
+
+  // Switch the URL, not only the preference: a link someone copies has to carry its language, or a
+  // Korean reader receiving /aussie-english is handed English. usePathname is the rewritten path, so
+  // adding or removing the prefix is all this needs to do.
+  const switchLang = () => {
+    toggleLang();
+    const bare = (pathname || "/").replace(/^\/(ko|zh|ja)(?=\/|$)/, "") || "/";
+    router.push(lang === "en" ? (bare === "/" ? "/ko" : `/ko${bare}`) : bare);
+  };
   const { theme, toggle: toggleTheme } = useTheme();
   const { openSearch } = useSearch();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -380,7 +390,7 @@ export default function Nav() {
             </span>
           </NavPill>
 
-          <NavPill onClick={toggleLang} ariaLabel="Toggle language">
+          <NavPill onClick={switchLang} ariaLabel="Toggle language">
             <span key={lang} className="text-xs font-bold tracking-wide">
               {lang === "en" ? "EN" : "한국어"}
             </span>
