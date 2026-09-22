@@ -8,6 +8,11 @@ export async function generateStaticParams() {
   return visas.map((v) => ({ slug: v.slug }));
 }
 
+// Unknown slugs must 404 rather than render a 200 shell with no canonical: with
+// generateStaticParams present, `dynamicParams = false` makes Next return a real 404 for any
+// param it did not generate, instead of streaming a soft-404 that search engines index.
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {

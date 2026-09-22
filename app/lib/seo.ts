@@ -182,6 +182,32 @@ export function seoFor(path: string): Pick<
  * `ko` is optional because some callers (visa pages, tourist EN-only entries)
  * only carry English. The function only serialises `en` — Korean stays in
  * the visible Kaq block, not the JSON-LD payload. */
+/**
+ * WebSite + Organization for the homepage.
+ *
+ * The homepage carried no structured data at all while every inner page carried some, so the one URL
+ * a search engine uses to attribute the site to a publisher was the one without it. `publisherSchema`
+ * already existed for articles; this reuses it under a stable `@id` so the two agree.
+ */
+export function websiteLdJson() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}#website`,
+        url: SITE_URL,
+        name: "AussieGuides",
+        description:
+          "Practical Australia travel and living guide for newcomers — Opal cards, TFN, superannuation, renting, visas, and destinations around Sydney and NSW.",
+        publisher: { "@id": `${SITE_URL}#publisher` },
+        inLanguage: ["en", "ko"],
+      },
+      { ...publisherSchema, "@id": `${SITE_URL}#publisher` },
+    ],
+  };
+}
+
 export function faqLdJson(
   faqs: ReadonlyArray<{ q: { en: string; ko?: string }; a: { en: string; ko?: string } }>,
   pagePath: string
