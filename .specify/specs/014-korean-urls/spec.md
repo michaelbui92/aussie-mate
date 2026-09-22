@@ -1,6 +1,6 @@
 # Spec 014 — Korean URLs (`/ko`), so the Korean half can be indexed
 
-**Base:** `d2c9579` · **Date:** 2026-09-22 · **Status:** planned, not started
+**Base:** `d2c9579` · **Date:** 2026-09-22 · **Status:** SHIPPED 2026-09-22 (commit 0b76270), verified on the built server and on the deployed site
 **Origin:** the SEO audit. Measured on the served HTML: hreflang `en`, `ko` and `x-default` all point at
 **one URL** (`distinct target URLs: 1`), and the served document is identical
 regardless of `Accept-Language` — **3 Hangul characters** in the whole homepage response.

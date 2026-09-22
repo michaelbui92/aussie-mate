@@ -32,6 +32,18 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Known issues / gotchas
 
+- **Canonical and hreflang live in `app/layout.tsx`'s `generateMetadata`, not in the pages.** A page's
+  `metadata` export is static, so it cannot know whether it is serving /destinations or /ko/destinations,
+  and `withSeo`/`seoFor` emitting three hreflang tags on ONE url is what made the Korean half unindexable.
+  If you add a canonical to a page, you are re-introducing that bug.
+- **Next refuses `metadata` and `generateMetadata` in the same file.** The site-wide block is
+  `staticMetadata` in `app/layout.tsx`, folded into the generated one.
+- **Next 16 renamed `middleware.ts` to `proxy.ts`** (function `middleware` -> `proxy`). The build warns
+  loudly if you use the old name.
+- **React renders hreflang as `hrefLang`.** HTML parses it case-insensitively so it is valid, but any check
+  or grep for lowercase `hreflang=` finds nothing and will report a false failure. Use `re.I`.
+
+
 - **A check scoped to `<head>` reported JSON-LD as missing when it was in the body.** Measured
   2026-09-22: grepping `application/ld+json` inside `h.split('</head>')[0]` returned 0 for the homepage, so
   it was recorded as having no structured data and a `WebSite` + `Organization` block was added — duplicating
