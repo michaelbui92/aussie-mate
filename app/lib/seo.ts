@@ -69,12 +69,44 @@ export const publisherSchema = {
  *     "/path"
  *   );
  */
+/**
+ * Absolute URL for a path, with the join collapsed.
+ *
+ * Every caller passes a leading slash even though this module's own docs say not to, so building
+ * `${SITE_URL}/${path}` produced `https://youraussieguides.com//destinations` and the page then
+ * canonicalised to a URL that does not exist. Normalising here rather than at 26 call sites means the
+ * next caller cannot reintroduce it.
+ *
+ * The scheme's `//` is preserved on purpose: a blanket `replace(/\/+/g, "/")` would turn `https://`
+ * into `https:/` and break every canonical on the site.
+ */
+function absoluteUrl(path?: string): string {
+  const trimmed = (path ?? "").trim();
+  if (!trimmed) return SITE_URL;
+  const joined = `${SITE_URL}/${trimmed}`;
+  const scheme = joined.indexOf("://") + 3;
+  return joined.slice(0, scheme) + joined.slice(scheme).replace(/\/{2,}/g, "/").replace(/\/+$/, "");
+}
+
+/**
+ * Strip a trailing brand from a title, because the layout template appends one.
+ *
+ * `app/layout.tsx` sets `template: "%s · AussieGuides"` and 26 page titles already end in
+ * `| AussieGuides`, so the rendered title read "… | AussieGuides · AussieGuides" and ran past 60
+ * characters. Only the brand is removed — every keyword the CTR rewrite added is untouched.
+ */
+function withoutBrand(title: string): string {
+  return title
+    .replace(/(?:\s*[·|\u2013\u2014-]\s*AussieGuides)+\s*$/i, "")
+    .trim();
+}
+
 export function withSeo<T extends Metadata>(base: T, path: string): T {
-  const url = path
-    ? `${SITE_URL}/${path}`.replace(/\/+$/, "")
-    : SITE_URL;
+  const url = absoluteUrl(path);
+  const title = typeof base.title === "string" ? withoutBrand(base.title) : base.title;
   return {
     ...base,
+    ...(typeof base.title === "string" ? { title } : {}),
     alternates: {
       ...(base.alternates ?? {}),
       canonical: url,
@@ -97,9 +129,7 @@ export function seoFor(path: string): Pick<
   Metadata,
   "alternates" | "openGraph" | "twitter"
 > {
-  const url = path
-    ? `${SITE_URL}/${path}`.replace(/\/+$/, "")
-    : SITE_URL;
+  const url = absoluteUrl(path);
 
   // English and Korean currently share one URL — the page renders both
   // languages via the En/Ko blocks, and the user's chosen language is
@@ -157,8 +187,8 @@ export function faqLdJson(
   pagePath: string
 ) {
   const url = pagePath
-    ? `${SITE_URL}/${pagePath}`.replace(/\/+$/, "")
-    : SITE_URL;
+    ? absoluteUrl(pagePath)
+  : SITE_URL;
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -188,9 +218,7 @@ export function breadcrumbLdJson(
       "@type": "ListItem",
       position: i + 1,
       name: c.name,
-      item: c.path
-        ? `${SITE_URL}/${c.path}`.replace(/\/+$/, "")
-        : SITE_URL,
+      item: absoluteUrl(c.path),
     })),
   };
 }
@@ -204,9 +232,7 @@ export function articleLdJson(opts: {
   datePublished?: string;
   dateModified?: string;
 }) {
-  const url = opts.path
-    ? `${SITE_URL}/${opts.path}`.replace(/\/+$/, "")
-    : SITE_URL;
+  const url = absoluteUrl(opts.path);
   return {
     "@context": "https://schema.org",
     "@type": "Article",
