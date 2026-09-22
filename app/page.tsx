@@ -1,6 +1,6 @@
 import HomePage from "@/components/HomePage";
 import type { Metadata } from "next";
-import { withSeo, websiteLdJson } from "@/lib/seo";
+import { withSeo } from "@/lib/seo";
 
 export const metadata: Metadata = withSeo(
   {
@@ -17,14 +17,5 @@ export const metadata: Metadata = withSeo(
 );
 
 export default function Page() {
-  return (
-    <>
-      {/* A real <script>, not metadata.other: a meta tag carrying JSON-LD is parsed by nothing. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLdJson()) }}
-      />
-      <HomePage />
-    </>
-  );
+  return <HomePage />;
 }
