@@ -145,7 +145,7 @@ export const destinations: Destination[] = [
       ],
       ko: [
         { title: "클래식 셀러 도어 와인 테이스팅", description: "Audrey Wilkinson(아이코닉 Semillon 전망) 또는 Brokenwood(유명 Shiraz)에서 시작. 대부분 셀러 도어는 4~6종 테이스팅 플라이트에 $10~$15 AUD, 구매 시 환불. 헌터는 소규모 생산자에서 무료 테이스팅이 아직 가능한 몇 안 되는 곳." },
-        { title: "일출 열기구 체험", description: "Balloon Aloft와 Beyond Ballooning이 매일 새벽 포도원上空에서 운항. 안개 낀 포도원 위의 1시간 비행, Brokenback 산맥 배경의 마법 같은 경험. 샴페인 조식 포함. $335 AUD부터." },
+        { title: "일출 열기구 체험", description: "Balloon Aloft와 Beyond Ballooning이 매일 새벽 포도원 상공에서 운항. 안개 낀 포도원 위의 1시간 비행, Brokenback 산맥 배경의 마법 같은 경험. 샴페인 조식 포함. $335 AUD부터." },
         { title: "와이너리 레스토랑 점심", description: "Muse Kitchen, Bistro Molines, EXP. Restaurant가 대표적 — 모든 요리가 헌터 와인과 페어링. 주말 점심은 몇 주 전 예약 필수. Muse의 양고기 숄더 투인원이 전설적." },
         { title: "치즈와 초콜릿 테이스팅", description: "Hunter Valley Cheese Company와 Cocoa Nymph에서 페어링 테이스팅 제공. Cheese Company의 브리와 Semillon 페어링은 단순한 즐거움. Cocoa Nymph는 주말에 초콜릿-와인 세션 운영." },
         { title: "Hunter Distillery 사케 테이스팅", description: "호주 몇 안 되는 사케 생산지, 로컬 쌀과 헌터 물 사용. 역사적인 사암 건물 내 테이스팅 룸, 사케가 지역 굴과 놀랍게 잘 어울림." },
@@ -518,7 +518,7 @@ export const destinations: Destination[] = [
     },
     bestTimeDetailed: {
       en: "**Spring (Sep–Nov):** The sweet spot. Warm weather (22–28°C), whale migration peaking in September, and the Byron Bay Bluesfest in October. Fewer crowds than summer, water is warm enough for swimming from mid-October. This is when Byron is at its best.\n\n**Summer (Dec–Feb):** Peak season — hot (28–33°C), humid, and crowded. The town is packed, accommodation is 2–3x normal prices, and you'll need to book months ahead. The beaches are beautiful but busy. The pasar malam (night markets) run weekly.\n\n**Autumn (Mar–May):** A lovely transition. The water is still warm from summer, the crowds drop off after Easter, and the hinterland waterfalls are flowing. Perfect for hiking. The Byron Bay International Film Festival runs in March.\n\n**Winter (Jun–Aug):** The quietest time. Too cold for extended swimming (18–20°C water) but perfect for whale watching, coastal walks, and enjoying the cafes without queues. Accommodation prices drop significantly. The lighthouse walks are crisp and clear.",
-      ko: "**봄 (9~11월):** 최적기. 따뜻한 날씨(22~28°C), 9월 고래 이동 절정, 10월 Byron Bay Bluesfest. 여름보다 인파 적고 10월 중순부터 수영 가능. Byron이 가장 좋은 계절.\n\n**여름 (12~2월):** 성수기 — 덥고(28~33°C), 습하고, 붐빔. 마을은 인파, 숙소는 2~3배 가격, 몇 달 전 예약 필수. 해변은 아름답지만 사람 많음. 파사르 말람(야시장) 매주 운영.\n\n**가을 (3~5월):** 아름다운 전환기. 수온이 여름의 따뜻함 유지, 부활절 이후 인파 감소, 내륙 폭포가 흐름. 트레킹에 완벽. 3월 Byron Bay 국제 영화제.\n\n**겨울 (6~8월):** 가장 한산한 시기. 장시간 수영에는 너무 추움(수온 18~20°C) but 고래 관찰, 해안 산책, 줄 없는 카페에 완벽. 숙소 가격 대폭 하락. 등대 산책로는 맑고 상쾌함."
+      ko: "**봄 (9~11월):** 최적기. 따뜻한 날씨(22~28°C), 9월 고래 이동 절정, 10월 Byron Bay Bluesfest. 여름보다 인파 적고 10월 중순부터 수영 가능. Byron이 가장 좋은 계절.\n\n**여름 (12~2월):** 성수기 — 덥고(28~33°C), 습하고, 붐빔. 마을은 인파, 숙소는 2~3배 가격, 몇 달 전 예약 필수. 해변은 아름답지만 사람 많음. 파사르 말람(야시장) 매주 운영.\n\n**가을 (3~5월):** 아름다운 전환기. 수온이 여름의 따뜻함 유지, 부활절 이후 인파 감소, 내륙 폭포가 흐름. 트레킹에 완벽. 3월 Byron Bay 국제 영화제.\n\n**겨울 (6~8월):** 가장 한산한 시기. 장시간 수영에는 너무 추움(수온 18~20°C). 하지만 고래 관찰, 해안 산책, 줄 없는 카페에 완벽. 숙소 가격 대폭 하락. 등대 산책로는 맑고 상쾌함."
     },
     topThingsToDo: {
       en: [

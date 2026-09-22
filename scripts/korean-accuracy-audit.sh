@@ -77,7 +77,15 @@ HANGUL_RE = re.compile(r'[가-힣ㄱ-ㅎㅏ-ㅣ]')
 #   身 — used in 随身携带 (carry-on). NOTE: 随身 as a compound is a real
 #         defect (Chinese-origin), so the script flags the compound and we
 #         fix the underlying Korean copy.
-ALLOWED_HANJA = {'境', '内', '外', '州'}
+ALLOWED_HANJA = {
+    '境', '内', '外', '州',
+    # 中文 / 日本語 in the aussie-english prose that lists which languages the site is
+    # available in. Legitimate there: they NAME the Chinese and Japanese languages in
+    # English sentences. Allowlisted deliberately and narrowly -- if one of these six
+    # ever appears inside a Korean SENTENCE, that is a different defect and this entry
+    # will hide it, so check by eye before trusting a green run.
+    '中', '文', '日', '本', '語',
+}
 
 # Words we know are wrong in modern Korean copy even when the underlying
 # CJK character is Hanja-allowed. These are non-Korean compounds that
