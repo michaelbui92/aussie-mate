@@ -30,6 +30,15 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **Email:** `michaelbui@outlook.com.au` is canonical. `hello@aussiemate.com.au` does not exist.
 - **Audience:** Newcomers to Australia — practical, plain-language, written by a local (Michael Bui, Sydneysider)
 
+- **A check scoped to `<head>` reported JSON-LD as missing when it was in the body.** Measured
+  2026-09-22: grepping `application/ld+json` inside `h.split('</head>')[0]` returned 0 for the homepage, so
+  it was recorded as having no structured data and a `WebSite` + `Organization` block was added — duplicating
+  the `WebSite` and `Organization` the layout already emits in the **body** (with a `SearchAction`). The
+  served page then carried **two** `WebSite` entities, which is worse than the absence being fixed. Reverted.
+  Same class as the "scope a check to the region you changed" lesson, inverted: an unscoped check reports an
+  absence for something that exists elsewhere on the page. **Count structured data across the whole
+  document, never the head alone.**
+
 ## Known issues / gotchas
 
 - **Build cache:** Vercel's "Restored build cache" can mask latent type errors. Invalidate cache if unrelated commits surface typecheck failures.
