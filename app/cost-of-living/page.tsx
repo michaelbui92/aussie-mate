@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
@@ -90,11 +90,15 @@ export default function CostOfLivingPage() {
     <main className="max-w-4xl mx-auto px-5 py-12">
       <div className="text-center mb-12">
         <h1 className="font-serif text-4xl font-bold mb-4 text-stone-900 dark:text-stone-100">
-          <En>Cost of Living in Sydney — 2026</En>
+          <En translated>Cost of Living in Sydney — 2026</En>
+          <Ja>シドニーの生活費 — 2026</Ja>
+          <Zh>悉尼生活成本——2026</Zh>
           <Ko>시드니 생활비 — 2026</Ko>
         </h1>
         <p className="text-lg text-stone-500 dark:text-stone-400 max-w-2xl mx-auto">
-          <En>Real prices for rent, food, transport, and bills. All figures in AUD. Updated for 2026.</En>
+          <En translated>Real prices for rent, food, transport, and bills. All figures in AUD. Updated for 2026.</En>
+          <Ja>家賃、食費、交通費、光熱費の実際の価格。金額はすべてAUD（豪ドル）表示。2026年に更新。</Ja>
+          <Zh>房租、食物、交通和账单的真实价格。所有金额均以澳元（AUD）计。已更新至2026年。</Zh>
           <Ko>임대료, 식비, 교통비, 공과금의 실제 가격입니다. 모든 금액은 호주 달러(AUD) 기준입니다.</Ko>
         </p>
       </div>
@@ -161,15 +165,17 @@ export default function CostOfLivingPage() {
         style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.06), rgba(212,165,116,0.04))" }}
       >
         <h2 className="text-xl font-bold mb-4 text-stone-900 dark:text-stone-100">
-          <En>💡 Money-Saving Tips</En>
+          <En translated>💡 Money-Saving Tips</En>
+          <Ja>💡 節約のヒント</Ja>
+          <Zh>💡 省钱小贴士</Zh>
           <Ko>💡 절약 팁</Ko>
         </h2>
         <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
-          <li><En>• Shop at Aldi for groceries — it's 20-30% cheaper than Woolies/Coles</En><Ko>• 장보기는 Aldi에서 — Woolies/Coles보다 20-30% 저렴합니다</Ko></li>
-          <li><En>• Use the Opal card weekly cap — after $50, all travel is free for the week</En><Ko>• Opal 카드 주간 상한선 활용 — $50 이후 무료</Ko></li>
-          <li><En>• Korean grocery stores (Strathfield, Eastwood, Campsie) have cheaper Asian ingredients</En><Ko>• 한인 마트 (Strathfield, Eastwood, Campsie)에서 아시안 식품이 저렴합니다</Ko></li>
-          <li><En>• Share housing is the biggest cost saver — save $200+/week vs living alone</En><Ko>• 쉐어하우스가 가장 큰 절약 — 혼자 살 때보다 주당 $200+ 절약</Ko></li>
-          <li><En>• Buy second-hand furniture on Facebook Marketplace or Gumtree</En><Ko>• 가구는 Facebook Marketplace나 Gumtree에서 중고로 구매하세요</Ko></li>
+          <li><En translated>• Shop at Aldi for groceries — it's 20-30% cheaper than Woolies/Coles</En><Ja>• 食料品はAldiで — Woolies/Colesより20-30%安い</Ja><Zh>• 在Aldi购买食品杂货——比Woolies/Coles便宜20-30%</Zh><Ko>• 장보기는 Aldi에서 — Woolies/Coles보다 20-30% 저렴합니다</Ko></li>
+          <li><En translated>• Use the Opal card weekly cap — after $50, all travel is free for the week</En><Ja>• Opalカードの週間上限を活用 — $50を超えれば、その週の移動はすべて無料</Ja><Zh>• 善用Opal卡每周上限——超过$50后，当周所有出行免费</Zh><Ko>• Opal 카드 주간 상한선 활용 — $50 이후 무료</Ko></li>
+          <li><En translated>• Korean grocery stores (Strathfield, Eastwood, Campsie) have cheaper Asian ingredients</En><Ja>• 韓国系スーパー（Strathfield、Eastwood、Campsie）ならアジア食材が安い</Ja><Zh>• 韩国超市（Strathfield、Eastwood、Campsie）的亚洲食材更便宜</Zh><Ko>• 한인 마트 (Strathfield, Eastwood, Campsie)에서 아시안 식품이 저렴합니다</Ko></li>
+          <li><En translated>• Share housing is the biggest cost saver — save $200+/week vs living alone</En><Ja>• シェアハウスが最大の節約 — 一人暮らしより週$200以上節約</Ja><Zh>• 合租是最省钱的——比独居每周省$200以上</Zh><Ko>• 쉐어하우스가 가장 큰 절약 — 혼자 살 때보다 주당 $200+ 절약</Ko></li>
+          <li><En translated>• Buy second-hand furniture on Facebook Marketplace or Gumtree</En><Ja>• 家具はFacebook MarketplaceやGumtreeで中古を買う</Ja><Zh>• 在Facebook Marketplace或Gumtree买二手家具</Zh><Ko>• 가구는 Facebook Marketplace나 Gumtree에서 중고로 구매하세요</Ko></li>
         </ul>
       </div>
     </main>

@@ -1,4 +1,4 @@
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { breadcrumbLdJson, faqLdJson, seoFor, withSeo } from "@/lib/seo";
 import { faqs } from "@/lib/faqs";
 
@@ -23,15 +23,21 @@ export default function FAQPage() {
         }}
       />
       <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-        <En>Common questions</En>
+        <En translated>Common questions</En>
+        <Ja>よくある質問</Ja>
+        <Zh>常见问题</Zh>
         <Ko>자주 묻는 질문</Ko>
       </p>
       <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-        <En>FAQ</En>
+        <En translated>FAQ</En>
+        <Ja>よくある質問</Ja>
+        <Zh>常见问题</Zh>
         <Ko>자주 묻는 질문</Ko>
       </h1>
       <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl mb-12">
-        <En>Common questions from Koreans visiting and living in Australia — answered in both languages.</En>
+        <En translated>Common questions from Koreans visiting and living in Australia — answered in both languages.</En>
+        <Ja>オーストラリアを訪れ、暮らす韓国の方々からよくある質問 — 両言語で回答。</Ja>
+        <Zh>来澳大利亚旅游和生活的韩国人常见问题 — 双语解答。</Zh>
         <Ko>호주를 방문하고 거주하는 한국인분들이 자주 묻는 질문 — 두 언어로 답변.</Ko>
       </p>
 
@@ -55,10 +61,14 @@ export default function FAQPage() {
 
       <div className="mt-10 p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white">
         <p className="text-sm text-stone-300 leading-relaxed">
-          <En>Can&apos;t find your question? Email us at </En>
+          <En translated>Can&apos;t find your question? Email us at </En>
+          <Ja>お探しの質問が見つかりませんか？ メールはこちらへ</Ja>
+          <Zh>找不到你的问题？请发邮件至</Zh>
           <Ko>원하는 답변이 없으세요? </Ko>
           <span className="font-medium text-sunset">michaelbui@outlook.com.au</span>
-          <En> and we&apos;ll add it.</En>
+          <En translated> and we&apos;ll add it.</En>
+          <Ja>お送りいただければ、追記いたします。</Ja>
+          <Zh>我们会把它加进去。</Zh>
           <Ko>으로 이메일을 보내주세요.</Ko>
         </p>
       </div>

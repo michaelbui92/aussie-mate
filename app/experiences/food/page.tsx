@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
@@ -117,18 +117,24 @@ export default function SydneyFoodGuide() {
             href="/destinations"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white text-xs uppercase tracking-[0.3em] mb-6 transition-colors"
           >
-            ← <En>Destinations</En><Ko>여행지</Ko>
+            ← <En translated>Destinations</En><Ja>目的地</Ja><Zh>目的地</Zh><Ko>여행지</Ko>
           </Link>
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Food &amp; Drink</En>
+            <En translated>Food &amp; Drink</En>
+            <Ja>フード &amp; ドリンク</Ja>
+            <Zh>美食 &amp; 饮品</Zh>
             <Ko>맛집 &amp; 음료</Ko>
           </p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
-            <En>Sydney Food Guide</En>
+            <En translated>Sydney Food Guide</En>
+            <Ja>シドニー・フードガイド</Ja>
+            <Zh>悉尼美食指南</Zh>
             <Ko>시드니 미식 가이드</Ko>
           </h1>
           <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
-            <En>From Newtown&apos;s Thai joints to Opera House fine dining — a practical guide to eating your way through Australia&apos;s most delicious city.</En>
+            <En translated>From Newtown&apos;s Thai joints to Opera House fine dining — a practical guide to eating your way through Australia&apos;s most delicious city.</En>
+            <Ja>ニュータウンのタイ料理店からオペラハウスのファインダイニングまで — オーストラリアで最もおいしい街を食べ歩くための実用ガイド。</Ja>
+            <Zh>从纽敦的泰式小馆到歌剧院的精致餐饮——一份带你吃遍澳大利亚最美味城市的实用指南。</Zh>
             <Ko>뉴타운의 태국 음식점부터 오페라 하우스 파인 다이닝까지 — 호주에서 가장 매력적인 미식 도시를 즐기는 실전 가이드.</Ko>
           </p>
         </div>
@@ -140,16 +146,22 @@ export default function SydneyFoodGuide() {
         {/* Intro */}
         <section className="max-w-3xl reveal">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Foreword</En>
+            <En translated>Foreword</En>
+            <Ja>はじめに</Ja>
+            <Zh>前言</Zh>
             <Ko>서문</Ko>
           </p>
           <div className="font-serif text-xl md:text-2xl text-stone-800 dark:text-stone-200 leading-relaxed space-y-4">
             <p>
-              <En>Sydney doesn&apos;t just have good restaurants — it has a real food culture. A city shaped by wave after wave of migration, where you can eat Thai on a paper plate in Newtown for $12 AUD, then turn around and book a $250 AUD degustation at a restaurant that&apos;s in a converted chapel.</En>
+              <En translated>Sydney doesn&apos;t just have good restaurants — it has a real food culture. A city shaped by wave after wave of migration, where you can eat Thai on a paper plate in Newtown for $12 AUD, then turn around and book a $250 AUD degustation at a restaurant that&apos;s in a converted chapel.</En>
+              <Ja>シドニーにはただ良いレストランがあるだけでなく — 本物の食文化があります。移民の波が幾重にも重なって形作られた街で、ニュータウンでは$12 AUDで紙皿に盛られたタイ料理を食べ、そのあと振り返れば、改装された礼拝堂のレストランで$250 AUDのデギュスタシオンを予約することもできます。</Ja>
+              <Zh>悉尼不只有好的餐厅 — 它有着真正的美食文化。这是一座由一波又一波移民塑造而成的城市，你可以在纽敦花$12 AUD用纸盘吃泰餐，然后转身就能在一家由礼拜堂改建的餐厅预订$250 AUD的品鉴套餐。</Zh>
               <Ko>시드니에는 그냥 좋은 레스토랑이 있는 게 아니라 — 진정한 음식 문화가 있습니다. 이민의 물결이 만들어낸 도시로, 뉴타운에서 $12 AUD에 종이 접시에 담긴 태국 음식을 먹고, 다시 돌아서 개조된 예배당에서 $250 AUD 디구스테이션을 예약할 수 있는 곳입니다.</Ko>
             </p>
             <p>
-              <En>This guide skips the tourist traps and focuses on the places Sydneysiders actually eat. Warning: you&apos;ll get hungry reading this.</En>
+              <En translated>This guide skips the tourist traps and focuses on the places Sydneysiders actually eat. Warning: you&apos;ll get hungry reading this.</En>
+              <Ja>このガイドは観光客向けの罠を避け、シドニーっ子が実際に食べる場所に焦点を当てています。警告：これを読むとお腹が空きます。</Ja>
+              <Zh>本指南跳过游客陷阱，专注于悉尼本地人真正吃饭的地方。警告：读着读着你会饿的。</Zh>
               <Ko>이 가이드는 관광객용 함정을 건너뛰고 시드니 사람들이 실제로 가는 곳에 집중합니다. 경고: 이 글을 읽다보면 배고파질 겁니다.</Ko>
             </p>
           </div>
@@ -204,7 +216,9 @@ export default function SydneyFoodGuide() {
         {/* BYO Culture */}
         <section className="rounded-2xl bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-950/20 dark:to-orange-950/20 border border-rose-100/60 dark:border-rose-900/30 p-6 md:p-8 reveal">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-rose-600 dark:text-rose-400 mb-3">
-            <En>Pro tip</En>
+            <En translated>Pro tip</En>
+            <Ja>豆知識</Ja>
+            <Zh>小贴士</Zh>
             <Ko>프로 팁</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
@@ -220,11 +234,15 @@ export default function SydneyFoodGuide() {
         {/* Practical tips */}
         <section className="reveal">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-            <En>Essential tips</En>
+            <En translated>Essential tips</En>
+            <Ja>必須のヒント</Ja>
+            <Zh>必备贴士</Zh>
             <Ko>꼭 알아야 할 팁</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-6 leading-tight">
-            <En>How to eat well in Sydney</En>
+            <En translated>How to eat well in Sydney</En>
+            <Ja>シドニーでおいしく食べる方法</Ja>
+            <Zh>如何在悉尼吃得好</Zh>
             <Ko>시드니에서 맛있게 먹는 법</Ko>
           </h2>
           <ul className="space-y-4">
@@ -248,15 +266,21 @@ export default function SydneyFoodGuide() {
         {/* Outro */}
         <section className="rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8 reveal">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Bon appétit</En>
+            <En translated>Bon appétit</En>
+            <Ja>どうぞお召し上がりください</Ja>
+            <Zh>用餐愉快</Zh>
             <Ko>맛있게 드세요</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Sydney is waiting to feed you.</En>
+            <En translated>Sydney is waiting to feed you.</En>
+            <Ja>シドニーはあなたに食事をふるまうのを待っています。</Ja>
+            <Zh>悉尼正等着款待你。</Zh>
             <Ko>시드니가 당신을 먹여줄 준비가 되었습니다.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed max-w-2xl">
-            <En>Whether you&apos;re here for a weekend or a lifetime, Sydney&apos;s food scene will keep surprising you. The best meal you&apos;ll have is probably the one you didn&apos;t plan — a spontaneous bowl of ramen in a Chinatown basement, a Thai green curry on a Newtown street corner, or fish &amp; chips by the harbour at sunset. Get out there, try everything, and eat with your hands when appropriate.</En>
+            <En translated>Whether you&apos;re here for a weekend or a lifetime, Sydney&apos;s food scene will keep surprising you. The best meal you&apos;ll have is probably the one you didn&apos;t plan — a spontaneous bowl of ramen in a Chinatown basement, a Thai green curry on a Newtown street corner, or fish &amp; chips by the harbour at sunset. Get out there, try everything, and eat with your hands when appropriate.</En>
+            <Ja>週末の滞在でも一生住むとしても、シドニーの食シーンはあなたを驚かせ続けるでしょう。最高の一食はおそらく計画していなかったものです — チャイナタウンの地下でふらりと入ったラーメン一杯、ニュータウンの街角のタイ風グリーンカレー、あるいは夕暮れのハーバー沿いのフィッシュ・アンド・チップス。外に出て、何でも試して、ふさわしいときには手で食べましょう。</Ja>
+            <Zh>无论你是来度个周末还是定居一生，悉尼的美食界都会不断给你惊喜。你最难忘的一餐很可能是不在计划之中的 — 在唐人街地下室偶然吃到的拉面、纽敦街角的泰式绿咖喱，或是日落时分海港边的炸鱼薯条。走出去，什么都试试，合适的时候用手抓着吃。</Zh>
             <Ko>주말 여행이든 평생 거주든, 시드니의 미식 현장은 계속 당신을 놀라게 할 것입니다. 가장 기억에 남는 식사는 아마 계획하지 않은 곳일 겁니다 — 차이나타운 지하에서 우연히 발견한 라면 한 그릇, 뉴타운 길모퉁이의 태국 그린커리, 또는 일몰 하버 옆의 피시 앤 칩스. 밖에 나가서, 모든 걸 시도해보고, 상황이 허락한다면 손으로 드십시오.</Ko>
           </p>
         </section>

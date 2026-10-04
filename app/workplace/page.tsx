@@ -3,7 +3,7 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -113,15 +113,21 @@ export default function WorkplacePage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Workplace</En>
+            <En translated>Workplace</En>
+            <Ja>職場</Ja>
+            <Zh>职场</Zh>
             <Ko>직장</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Working in Australia</En>
+            <En translated>Working in Australia</En>
+            <Ja>オーストラリアで働く</Ja>
+            <Zh>在澳大利亚工作</Zh>
             <Ko>호주에서 일하기</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Culture, pay, and your rights — what makes Aussie workplaces work.</En>
+            <En translated>Culture, pay, and your rights — what makes Aussie workplaces work.</En>
+            <Ja>文化、給与、そしてあなたの権利 — オーストラリアの職場を成り立たせているもの。</Ja>
+            <Zh>文化、薪酬和你的权利 — 是什么让澳洲职场运转起来。</Zh>
             <Ko>문화, 급여, 그리고 귀하의 권리 — 호주 직장문화의 모든 것.</Ko>
           </p>
         </div>
@@ -137,14 +143,20 @@ export default function WorkplacePage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Know your workplace rights</En><Ko>직장 권리 알기</Ko>
+            <En translated>Know your workplace rights</En>
+            <Ja>職場での権利を知る</Ja>
+            <Zh>了解你的职场权利</Zh><Ko>직장 권리 알기</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Fair Work is your backstop.</En>
+            <En translated>Fair Work is your backstop.</En>
+            <Ja>Fair Workがあなたの後ろ盾です。</Ja>
+            <Zh>Fair Work 是你的后盾。</Zh>
             <Ko>Fair Work가 당신을 보호합니다.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Fair Work Commission handles workplace disputes — unpaid wages, unfair dismissal, bullying, and Award breaches. Free advice line, multilingual support, and a real ombudsman process.</En>
+            <En translated>Fair Work Commission handles workplace disputes — unpaid wages, unfair dismissal, bullying, and Award breaches. Free advice line, multilingual support, and a real ombudsman process.</En>
+            <Ja>Fair Work Commissionは職場の紛争 — 未払い賃金、不当解雇、いじめ、Award違反 — を処理します。無料相談窓口、多言語サポート、そして本物のオンブズマン手続きを提供しています。</Ja>
+            <Zh>Fair Work Commission 处理职场纠纷 — 未付工资、不公平解雇、欺凌和 Award 违规。提供免费咨询热线、多语言支持和真正的监察员程序。</Zh>
             <Ko>Fair Work Commission은 직장 분쟁을 처리합니다 — 미지급 급여, 부당한 해고, 괴롭힘, Award 위반. 무료 상담 전화, 다국어 지원, 그리고 진정한 옴부즈만 프로세스를 제공합니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

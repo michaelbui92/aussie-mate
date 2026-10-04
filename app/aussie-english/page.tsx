@@ -183,19 +183,19 @@ export default function AussieEnglishPage() {
       {/* Header */}
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-          <En>Phrases</En>
+          <En translated>Phrases</En>
           <Ko>표현</Ko>
           <Zh>短语</Zh>
           <Ja>フレーズ</Ja>
         </p>
         <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          <En>Aussie English</En>
+          <En translated>Aussie English</En>
           <Ko>호주 영어</Ko>
           <Zh>澳洲英语</Zh>
           <Ja>オージー英語</Ja>
         </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>{phrases.length} Australian phrases explained in plain English — sorted by where you&apos;ll actually hear and use them. Also available 한국어 for Korean-speakers, 中文 for Chinese-speakers, and 日本語 for Japanese-speakers.</En>
+          <En translated>{phrases.length} Australian phrases explained in plain English — sorted by where you&apos;ll actually hear and use them. Also available 한국어 for Korean-speakers, 中文 for Chinese-speakers, and 日本語 for Japanese-speakers.</En>
           <Ko>{phrases.length}개의 호주 표현, 영어와 한국어로 해석 — 실제로 쓰게 될 상황별로 정리.</Ko>
           <Zh>{phrases.length}条澳大利亚表达，用简单英语解释 — 按实际使用场景分类。</Zh>
           <Ja>{phrases.length}のオーストラリア英語表現をわかりやすい英語で解説 — 実際に使う場面別に整理。</Ja>
@@ -206,19 +206,19 @@ export default function AussieEnglishPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-14">
         <div className="mb-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-            <En>By situation</En>
+            <En translated>By situation</En>
             <Ko>상황별</Ko>
             <Zh>按场景</Zh>
             <Ja>場面別</Ja>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight mb-2">
-            <En>Where will you actually need this?</En>
+            <En translated>Where will you actually need this?</En>
             <Ko>어디서 실제로 쓰게 될까요?</Ko>
             <Zh>哪些场景你最可能用到？</Zh>
             <Ja>実際にどこで使う？</Ja>
           </h2>
           <p className="text-stone-600 dark:text-stone-400 text-sm md:text-base max-w-2xl">
-            <En>Same phrase, different room. Pick a situation, learn those first — they&apos;ll cover 80% of week one.</En>
+            <En translated>Same phrase, different room. Pick a situation, learn those first — they&apos;ll cover 80% of week one.</En>
             <Ko>같은 표현도 어떤 상황인지에 따라 느낌이 다릅니다. 상황을 골라 먼저 익히세요 — 첫 주 사용의 80%를 커버합니다.</Ko>
             <Zh>同一个短语，不同的场景。选择一个场景，先学这些 — 它们能覆盖你第一周80%的交流。</Zh>
             <Ja>同じフレーズでも場所が違えば意味合いが変わります。場面を選んで先に覚えよう — 最初の1週間の80%をカバーできます。</Ja>
@@ -235,13 +235,13 @@ export default function AussieEnglishPage() {
                 <span className="text-3xl shrink-0 leading-none" aria-hidden="true">{s.emoji}</span>
                 <div className="min-w-0">
                   <h3 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 leading-tight">
-                    <En>{s.title}</En>
+                    <En translated>{s.title}</En>
                     <Ko>{s.koTitle}</Ko>
                     <Zh>{s.zhTitle}</Zh>
                     <Ja>{s.jaTitle}</Ja>
                   </h3>
                   <p className="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
-                    <En>{s.desc}</En>
+                    <En translated>{s.desc}</En>
                     <Ko>{s.koDesc}</Ko>
                     <Zh>{s.zhDesc}</Zh>
                     <Ja>{s.jaDesc}</Ja>
@@ -255,7 +255,7 @@ export default function AussieEnglishPage() {
                       {p.phrase}
                     </span>
                     <span className="text-stone-600 dark:text-stone-400 text-xs leading-snug">
-                      <En>{p.meaning}</En>
+                      <En translated>{p.meaning}</En>
                       <Ko>{p.meaning}</Ko>
                       <Zh>{p.zh}</Zh>
                       <Ja>{p.ja}</Ja>
@@ -272,14 +272,14 @@ export default function AussieEnglishPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
         <div className="mb-6">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-            <En>Full library</En>
+            <En translated>Full library</En>
             <Ko>전체 라이브러리</Ko>
             <Zh>完整词库</Zh>
             <Ja>全フレーズ一覧</Ja>
           </p>
           <div className="flex items-center justify-between">
             <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-              <En>All {phrases.length} phrases</En>
+              <En translated>All {phrases.length} phrases</En>
               <Ko>전체 {phrases.length}개 표현</Ko>
               <Zh>全部 {phrases.length} 条短语</Zh>
               <Ja>全{phrases.length}フレーズ</Ja>
@@ -288,7 +288,7 @@ export default function AussieEnglishPage() {
               href="/aussie-english/culture" 
               className="text-sm text-sunset hover:text-sunset-light font-medium transition-colors"
             >
-              <En>Cultural context →</En>
+              <En translated>Cultural context →</En>
               <Ko>문화적 맥락 →</Ko>
               <Zh>文化背景 →</Zh>
               <Ja>文化的背景 →</Ja>

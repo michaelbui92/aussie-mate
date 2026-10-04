@@ -1,7 +1,7 @@
 // Server component — bilingual Sydney beaches guide.
 // Practical info, safety, and editorial style.
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -155,13 +155,19 @@ export default function BeachesPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Beaches</En><Ko>해변</Ko>
+            <En translated>Beaches</En>
+            <Ja>ビーチ</Ja>
+            <Zh>海滩</Zh><Ko>해변</Ko>
           </p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
-            <En>Sydney&apos;s best beaches</En><Ko>시드니 최고의 해변</Ko>
+            <En translated>Sydney&apos;s best beaches</En>
+            <Ja>シドニー最高のビーチ</Ja>
+            <Zh>悉尼最佳海滩</Zh><Ko>시드니 최고의 해변</Ko>
           </h1>
           <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
-            <En>From Bondi&apos;s iconic waves to Palm Beach&apos;s secluded shores — a practical guide to Sydney&apos;s coastline, with everything you need to stay safe and have fun.</En>
+            <En translated>From Bondi&apos;s iconic waves to Palm Beach&apos;s secluded shores — a practical guide to Sydney&apos;s coastline, with everything you need to stay safe and have fun.</En>
+            <Ja>ボンダイの象徴的な波からパーム・ビーチの静かな海岸まで — シドニーの海岸線をめぐる実用ガイド。安全に楽しむために必要なすべてを。</Ja>
+            <Zh>从邦迪的标志性海浪到棕榈滩僻静的海岸——一份悉尼海岸线的实用指南，涵盖安全畅玩所需的一切。</Zh>
             <Ko>본다이의 상징적인 파도부터 팜 비치의 한적한 해안까지 — 안전하고 즐겁게 보낼 수 있는 시드니 해변 실용 가이드.</Ko>
           </p>
         </div>
@@ -184,15 +190,21 @@ export default function BeachesPage() {
                 <AlertTriangle className="w-4 h-4" />
               </span>
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset">
-                <En>Beach safety</En><Ko>해변 안전 수칙</Ko>
+                <En translated>Beach safety</En>
+                <Ja>ビーチの安全</Ja>
+                <Zh>海滩安全</Zh><Ko>해변 안전 수칙</Ko>
               </p>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-2">
-              <En>Stay safe in the water</En>
+              <En translated>Stay safe in the water</En>
+              <Ja>海で安全に過ごすために</Ja>
+              <Zh>在水中保持安全</Zh>
               <Ko>물에서 안전하게 지내기</Ko>
             </h2>
             <p className="text-sm text-stone-500 dark:text-stone-400 max-w-2xl">
-              <En>Australian beaches are beautiful but can be dangerous. Follow these rules every time.</En>
+              <En translated>Australian beaches are beautiful but can be dangerous. Follow these rules every time.</En>
+              <Ja>オーストラリアのビーチは美しいですが、危険なこともあります。毎回このルールを守ってください。</Ja>
+              <Zh>澳大利亚的海滩很美，但也可能有危险。每次都要遵守这些规则。</Zh>
               <Ko>호주 해변은 아름답지만 위험할 수 있습니다. 매번 이 규칙을 지키세요.</Ko>
             </p>
           </div>
@@ -230,15 +242,21 @@ export default function BeachesPage() {
               <Umbrella className="w-4 h-4" />
             </span>
             <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-coast">
-              <En>Packing list</En><Ko>준비물 체크리스트</Ko>
+              <En translated>Packing list</En>
+              <Ja>持ち物リスト</Ja>
+              <Zh>行李清单</Zh><Ko>준비물 체크리스트</Ko>
             </p>
           </div>
           <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-2">
-            <En>What to bring to the beach</En>
+            <En translated>What to bring to the beach</En>
+            <Ja>ビーチに持って行くもの</Ja>
+            <Zh>去海滩要带什么</Zh>
             <Ko>해변에 가져갈 것</Ko>
           </h2>
           <p className="text-sm text-stone-500 dark:text-stone-400 max-w-2xl mb-6">
-            <En>Tick these off before you head out — the Australian sun waits for no one.</En>
+            <En translated>Tick these off before you head out — the Australian sun waits for no one.</En>
+            <Ja>出かける前にこれらをチェックしましょう — オーストラリアの日差しは誰も待ってくれません。</Ja>
+            <Zh>出发前请逐项打勾——澳大利亚的阳光可不等人。</Zh>
             <Ko>나가기 전에 확인하세요 — 호주의 태양은 기다려주지 않습니다.</Ko>
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -264,14 +282,20 @@ export default function BeachesPage() {
         {/* Emergency callout */}
         <section className="rounded-2xl bg-gradient-to-br from-stone-900 to-stone-800 dark:from-stone-800 dark:to-stone-900 text-white p-6 md:p-8 shadow-lg border border-stone-700/50">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Emergency</En><Ko>비상 연락</Ko>
+            <En translated>Emergency</En>
+            <Ja>緊急時の連絡先</Ja>
+            <Zh>紧急情况</Zh><Ko>비상 연락</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Before you hit the sand.</En>
+            <En translated>Before you hit the sand.</En>
+            <Ja>砂浜に出る前に。</Ja>
+            <Zh>踏上沙滩之前。</Zh>
             <Ko>모래사장에 가기 전에.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Call 000 for police, fire, or ambulance emergencies. For Beachsafe information and patrol status, download the Beachsafe app or check beachsafe.org.au. Surf Life Saving NSW patrols over 300 beaches during summer. Look for the red and yellow flags — if you don&apos;t see them, find a different spot.</En>
+            <En translated>Call 000 for police, fire, or ambulance emergencies. For Beachsafe information and patrol status, download the Beachsafe app or check beachsafe.org.au. Surf Life Saving NSW patrols over 300 beaches during summer. Look for the red and yellow flags — if you don&apos;t see them, find a different spot.</En>
+            <Ja>警察、消防、救急の緊急時は000に電話してください。Beachsafeの情報とパトロール状況は、Beachsafeアプリをダウンロードするかbeachsafe.org.auで確認できます。Surf Life Saving NSWは夏の間300以上のビーチをパトロールしています。赤と黄色の旗を探してください — 見当たらなければ、別の場所を探しましょう。</Ja>
+            <Zh>遇到警察、消防或救护车紧急情况请拨打000。关于Beachsafe的信息和巡逻状态，请下载Beachsafe应用或查看beachsafe.org.au。Surf Life Saving NSW在夏季巡逻300多个海滩。请寻找红黄相间的旗帜——如果看不到，就换一个地方。</Zh>
             <Ko>경찰, 소방, 구급차 응급 상황은 000으로 전화하세요. 해변 안전 정보와 순찰 상태는 Beachsafe 앱을 다운로드하거나 beachsafe.org.au를 확인하세요. Surf Life Saving NSW는 여름 동안 300개 이상의 해변을 순찰합니다. 빨간색과 노란색 깃발을 찾으세요 — 보이지 않으면 다른 장소를 찾으세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

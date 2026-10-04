@@ -1,4 +1,4 @@
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import Accordion, { type AccordionSection } from "@/components/Accordion";
 
 const FLAG_EMOJI = "🇦🇺";
@@ -275,15 +275,21 @@ export default function ResourcesPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Resources</En>
+            <En translated>Resources</En>
+            <Ja>リソース</Ja>
+            <Zh>资源</Zh>
             <Ko>자료</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Official resources</En>
+            <En translated>Official resources</En>
+            <Ja>公式リソース</Ja>
+            <Zh>官方资源</Zh>
             <Ko>공식 자료</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Government services, education, healthcare, and emergency contacts for life in NSW.</En>
+            <En translated>Government services, education, healthcare, and emergency contacts for life in NSW.</En>
+            <Ja>NSWでの暮らしのための政府サービス、教育、医療、緊急連絡先。</Ja>
+            <Zh>为新南威尔士州生活提供的政府服务、教育、医疗和紧急联系方式。</Zh>
             <Ko>NSW 생활을 위한 정부 서비스, 교육, 의료, 비상 연락처.</Ko>
           </p>
         </div>
@@ -296,41 +302,53 @@ export default function ResourcesPage() {
             <span className="text-rose-500 text-lg shrink-0 mt-0.5">🚨</span>
             <div className="flex-1 min-w-0">
               <h2 className="font-bold text-sm text-rose-700 dark:text-rose-400 mb-2">
-                <En>Emergency — save these numbers</En>
+                <En translated>Emergency — save these numbers</En>
+                <Ja>緊急 — これらの番号を保存しましょう</Ja>
+                <Zh>紧急情况 — 请保存这些号码</Zh>
                 <Ko>응급 — 이 번호를 저장하세요</Ko>
               </h2>
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
                   <p className="font-bold text-rose-600 dark:text-rose-500 text-base">000</p>
                   <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
-                    <En>Police, Fire, Ambulance</En>
+                    <En translated>Police, Fire, Ambulance</En>
+                    <Ja>警察、消防、救急</Ja>
+                    <Zh>警察、消防、救护车</Zh>
                     <Ko>경찰, 소방, 구급</Ko>
                   </p>
                 </div>
                 <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
                   <p className="font-bold text-rose-600 dark:text-rose-500 text-base">13 11 26</p>
                   <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
-                    <En>Poisons Info</En>
+                    <En translated>Poisons Info</En>
+                    <Ja>中毒情報</Ja>
+                    <Zh>中毒信息</Zh>
                     <Ko>독극물 정보</Ko>
                   </p>
                 </div>
                 <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
                   <p className="font-bold text-rose-600 dark:text-rose-500 text-base">13 11 14</p>
                   <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
-                    <En>Lifeline 24/7</En>
+                    <En translated>Lifeline 24/7</En>
+                    <Ja>ライフライン 24時間</Ja>
+                    <Zh>生命热线 24小时</Zh>
                     <Ko>라이프라인 24시간</Ko>
                   </p>
                 </div>
                 <div className="bg-white/60 dark:bg-dark-surface/60 rounded-xl p-2.5">
                   <p className="font-bold text-rose-600 dark:text-rose-500 text-base">1300 224 636</p>
                   <p className="text-xs text-eucalypt/70 dark:text-dark-muted/70">
-                    <En>Beyond Blue</En>
+                    <En translated>Beyond Blue</En>
+                    <Ja>Beyond Blue</Ja>
+                    <Zh>Beyond Blue</Zh>
                     <Ko>비욘드 블루</Ko>
                   </p>
                 </div>
               </div>
               <p className="text-xs text-rose-600/70 dark:text-rose-400/60 mt-2">
-                <En>For non-emergencies: <span className="font-semibold">SES 132 500</span> (storms, floods) · <span className="font-semibold">Crime Stoppers 1800 333 000</span></En>
+                <En translated>For non-emergencies: <span className="font-semibold">SES 132 500</span> (storms, floods) · <span className="font-semibold">Crime Stoppers 1800 333 000</span></En>
+                <Ja>緊急でない場合：<span className="font-semibold">SES 132 500</span>（嵐、洪水）· <span className="font-semibold">Crime Stoppers 1800 333 000</span></Ja>
+                <Zh>非紧急情况：<span className="font-semibold">SES 132 500</span>（风暴、洪水）· <span className="font-semibold">Crime Stoppers 1800 333 000</span></Zh>
                 <Ko>비응급: <span className="font-semibold">SES 132 500</span> (폭풍, 홍수) · <span className="font-semibold">Crime Stoppers 1800 333 000</span></Ko>
               </p>
             </div>
@@ -345,7 +363,9 @@ export default function ResourcesPage() {
         {/* Bottom note */}
         <div className="mt-16 bg-sunset/5 border border-sunset/20 rounded-2xl p-5 text-center">
           <p className="text-sm text-eucalypt/60 dark:text-dark-muted/60">
-            <En>Made with {FLAG_EMOJI} for everyone new to Australia</En>
+            <En translated>Made with {FLAG_EMOJI} for everyone new to Australia</En>
+            <Ja>オーストラリアに初めて来るすべての人のために、{FLAG_EMOJI} を込めて作りました</Ja>
+            <Zh>为所有初到澳大利亚的人用心制作 {FLAG_EMOJI}</Zh>
             <Ko>호주에 처음 오시는 모든 분들을 위한 친근한 가이드입니다 {FLAG_EMOJI}</Ko>
           </p>
         </div>

@@ -3,7 +3,7 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -151,15 +151,21 @@ export default function ApartmentPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Renting in NSW</En>
+            <En translated>Renting in NSW</En>
+            <Ja>NSWでの賃貸</Ja>
+            <Zh>新南威尔士州租房</Zh>
             <Ko>NSW 임대</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Apartment guide</En>
+            <En translated>Apartment guide</En>
+            <Ja>賃貸ガイド</Ja>
+            <Zh>租房指南</Zh>
             <Ko>임대 가이드</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Renting in NSW — your rights, your money, your home. A practical guide from search to signature.</En>
+            <En translated>Renting in NSW — your rights, your money, your home. A practical guide from search to signature.</En>
+            <Ja>NSWでの賃貸 — あなたの権利、あなたのお金、あなたの家。物件探しから契約署名までの実践ガイド。</Ja>
+            <Zh>在新南威尔士州租房 — 你的权利、你的钱、你的家。从找房到签约的实用指南。</Zh>
             <Ko>NSW 임대 — 귀하의 권리, 귀하의 돈, 귀하의 집. 검색부터 계약까지의 실용 가이드.</Ko>
           </p>
         </div>
@@ -176,15 +182,21 @@ export default function ApartmentPage() {
         {/* Dark CTA footer */}
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Official resources</En>
+            <En translated>Official resources</En>
+            <Ja>公式リソース</Ja>
+            <Zh>官方资源</Zh>
             <Ko>공식 자료</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Know your rights, in writing.</En>
+            <En translated>Know your rights, in writing.</En>
+            <Ja>あなたの権利を、書面で確認しましょう。</Ja>
+            <Zh>以书面形式了解你的权利。</Zh>
             <Ko>서면으로 권리를 확인하세요.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>NSW Fair Trading is the government body that handles tenancy disputes. If something goes wrong, they&apos;re your first call. Always get a written lease — verbal agreements aren&apos;t enforceable.</En>
+            <En translated>NSW Fair Trading is the government body that handles tenancy disputes. If something goes wrong, they&apos;re your first call. Always get a written lease — verbal agreements aren&apos;t enforceable.</En>
+            <Ja>NSW Fair Tradingは賃貸トラブルを扱う政府機関です。何か問題が起きたら、まずここに相談しましょう。必ず書面の賃貸契約書を受け取りましょう — 口頭の合意は法的効力を持ちません。</Ja>
+            <Zh>NSW Fair Trading是处理租赁纠纷的政府机构。如果出了问题，他们是你首先应该联系的对象。务必取得书面租约 — 口头协议不具法律效力。</Zh>
             <Ko>NSW Fair Trading는 임대차 분쟁을 처리하는 정부 기관입니다. 문제가 생기면 첫 번째로 연락할 곳입니다. 반드시 서면 임대차 계약서를 받으세요 — 구두 합의는 법적 효력이 없습니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

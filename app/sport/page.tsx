@@ -1,7 +1,7 @@
 // Server component — bilingual Australian sports guide.
 // Redesigned in editorial style.
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -107,13 +107,19 @@ export default function SportPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Sport</En><Ko>스포츠</Ko>
+            <En translated>Sport</En>
+            <Ja>スポーツ</Ja>
+            <Zh>体育</Zh><Ko>스포츠</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Sport in Australia</En><Ko>호주 스포츠</Ko>
+            <En translated>Sport in Australia</En>
+            <Ja>オーストラリアのスポーツ</Ja>
+            <Zh>澳大利亚的体育</Zh><Ko>호주 스포츠</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Everything you need to know about following and playing sport — NRL, AFL, cricket, and more.</En>
+            <En translated>Everything you need to know about following and playing sport — NRL, AFL, cricket, and more.</En>
+            <Ja>スポーツを観る・プレーするために知っておきたいすべて — NRL、AFL、クリケットなど。</Ja>
+            <Zh>关于观看和参与体育运动你需要了解的一切 — NRL、AFL、板球等等。</Zh>
             <Ko>호주에서 스포츠를 즐기고 따라가는 데 필요한 모든 것 — NRL, AFL, 크리켓 등.</Ko>
           </p>
         </div>
@@ -128,14 +134,20 @@ export default function SportPage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Find a club</En><Ko>동호회 찾기</Ko>
+            <En translated>Find a club</En>
+            <Ja>クラブを探す</Ja>
+            <Zh>寻找俱乐部</Zh><Ko>동호회 찾기</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>The best way to feel at home.</En>
+            <En translated>The best way to feel at home.</En>
+            <Ja>家のようにくつろぐ一番の方法。</Ja>
+            <Zh>找到归属感的最佳方式。</Zh>
             <Ko>가장 빠르게 정착하는 방법.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Joining a local sports club is the fastest way to meet people, learn the culture, and feel at home. Most clubs welcome beginners and international members. Find a junior soccer club, a cricket team, or a swim squad near you.</En>
+            <En translated>Joining a local sports club is the fastest way to meet people, learn the culture, and feel at home. Most clubs welcome beginners and international members. Find a junior soccer club, a cricket team, or a swim squad near you.</En>
+            <Ja>地元のスポーツクラブに入るのが、人と出会い、文化を学び、居心地よく過ごすための最速の方法です。ほとんどのクラブは初心者や外国人メンバーを歓迎しています。近くのジュニアサッカークラブ、クリケットチーム、水泳チームを探してみましょう。</Ja>
+            <Zh>加入当地的体育俱乐部是结识他人、了解文化、找到归属感最快的方式。大多数俱乐部都欢迎初学者和国际成员。在你附近找一家青少年足球俱乐部、板球队或游泳队吧。</Zh>
             <Ko>지역 스포츠 클럽에 가입하는 것은 사람들을 만나고, 문화를 배우며, 정착하는 가장 빠른 방법입니다. 대부분의 클럽은 초보자와 국제 회원을 환영합니다. 가까운 주니어 축구 클럽, 크리켓 팀, 수영 팀을 찾아보세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

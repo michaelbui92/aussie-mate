@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ko } from "../LangBlocks";
+import { En, Ja, Ko, Zh } from "../LangBlocks";
 
 export default function ArrivedContent() {
   return (
@@ -9,21 +9,35 @@ export default function ArrivedContent() {
           for a first-week checklist. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-600 mb-3">
-          <En>First month</En>
+          <En translated>First month</En>
+          <Ja>最初の1か月</Ja>
+          <Zh>第一个月</Zh>
           <Ko>첫 한 달</Ko>
         </p>
         <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
-          <En>You made it. Take a breath — then read this.</En>
+          <En translated>You made it. Take a breath — then read this.</En>
+          <Ja>到着しましたね。ひと息ついてから、これを読んでください。</Ja>
+          <Zh>你到啦。先喘口气 — 然后读读这个。</Zh>
           <Ko>도착하셨네요. 한숨 돌리시고 — 천천히 읽어보세요.</Ko>
         </h3>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>
+          <En translated>
             The first few weeks in Australia are overwhelming — new city,
             new systems, new accents, all at once. Don&apos;t try to do
             everything. Here&apos;s the order that actually matters, written
             by someone who fumbled most of it the first time. Living in a
             new place can be daunting, but you&apos;ll be fine.
           </En>
+          <Ja>オーストラリアでの最初の数週間は圧倒されます — 新しい街、
+            新しい制度、新しいなまり、すべてが一度に。全部やろうと
+            しないでください。最初はほとんどを手探りでこなした
+            人が書いた、本当に大切な順番をここにまとめました。
+            新しい場所での暮らしは不安かもしれませんが、大丈夫です。</Ja>
+          <Zh>在澳大利亚的头几周会让人不知所措 — 新的城市、
+            新的制度、新的口音，一下子全都涌来。别想着
+            什么都做完。下面是一位当初几乎处处碰壁的人
+            写下的、真正重要的顺序。在一个陌生的地方生活
+            可能让人发怵，但你会没事的。</Zh>
           <Ko>
             호주에서의 첫 몇 주는 압도적입니다 — 낯선 도시, 낯선 시스템,
             낯선 억양, 한꺼번에. 다 하려 하지 마세요. 처음에 대부분 헤맨
@@ -44,38 +58,50 @@ export default function ArrivedContent() {
           </span>
           <div className="flex-1 min-w-0">
             <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-amber-800 dark:text-amber-400 mb-2">
-              <En>Watch out</En>
+              <En translated>Watch out</En>
+              <Ja>注意</Ja>
+              <Zh>当心</Zh>
               <Ko>주의</Ko>
             </p>
             <h4 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
-              <En>Scammers target new arrivals.</En>
+              <En translated>Scammers target new arrivals.</En>
+              <Ja>詐欺師は新しく来た人を狙います。</Ja>
+              <Zh>骗子专挑新来的人下手。</Zh>
               <Ko>사기꾼들은 신참을 노립니다.</Ko>
             </h4>
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed">
               <li className="flex gap-3">
                 <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">01</span>
                 <span>
-                  <En><strong className="text-stone-900 dark:text-stone-100">Fake job ads.</strong> Anyone asking for payment to "process" your application is a scam. Real employers never ask for money upfront.</En>
+                  <En translated><strong className="text-stone-900 dark:text-stone-100">Fake job ads.</strong> Anyone asking for payment to "process" your application is a scam. Real employers never ask for money upfront.</En>
+                  <Ja><strong className="text-stone-900 dark:text-stone-100">偽の求人広告。</strong>応募を「処理」するための支払いを求める人は詐欺です。本当の雇用主は前払いのお金を一切求めません。</Ja>
+                  <Zh><strong className="text-stone-900 dark:text-stone-100">虚假招聘广告。</strong>任何以"处理"你的申请为由索要付款的人都是骗子。真正的雇主绝不会要求预付费用。</Zh>
                   <Ko><strong className="text-stone-900 dark:text-stone-100">가짜 구인 광고.</strong> "처리 수수료"를 요구하면 사기. 진짜 고용주는 upfront 결제를 요구하지 않습니다.</Ko>
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">02</span>
                 <span>
-                  <En><strong className="text-stone-900 dark:text-stone-100">Rental scams.</strong> Never send a deposit on a property you haven&apos;t inspected in person. Photos and addresses can be stolen from other listings.</En>
+                  <En translated><strong className="text-stone-900 dark:text-stone-100">Rental scams.</strong> Never send a deposit on a property you haven&apos;t inspected in person. Photos and addresses can be stolen from other listings.</En>
+                  <Ja><strong className="text-stone-900 dark:text-stone-100">賃貸詐欺。</strong>実際に内見していない物件の保証金は絶対に送らないでください。写真や住所は他の物件情報から盗用されることがあります。</Ja>
+                  <Zh><strong className="text-stone-900 dark:text-stone-100">租房骗局。</strong>绝不要为没有亲自看房的房产支付押金。照片和地址可能是从其他房源盗用的。</Zh>
                   <Ko><strong className="text-stone-900 dark:text-stone-100">부동산 사기.</strong> 직접 보지 않은 집의 보증금을 보내지 마세요. 사진과 주소는 다른 매물에서 훔쳐올 수 있습니다.</Ko>
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">03</span>
                 <span>
-                  <En><strong className="text-stone-900 dark:text-stone-100">ATO &amp; immigration impersonation.</strong> The ATO never asks for payment via gift cards, wire transfer, or cryptocurrency. Real calls end with "you can verify at ato.gov.au" — not urgency.</En>
+                  <En translated><strong className="text-stone-900 dark:text-stone-100">ATO &amp; immigration impersonation.</strong> The ATO never asks for payment via gift cards, wire transfer, or cryptocurrency. Real calls end with "you can verify at ato.gov.au" — not urgency.</En>
+                  <Ja><strong className="text-stone-900 dark:text-stone-100">ATO &amp; 移民局のなりすまし。</strong>ATO がギフトカード、電信送金、暗号資産での支払いを求めることはありません。本物の電話は「ato.gov.au で確認できます」で終わります — 緊急性を煽ることはありません。</Ja>
+                  <Zh><strong className="text-stone-900 dark:text-stone-100">ATO &amp; 移民局冒充诈骗。</strong>ATO 绝不会要求用礼品卡、电汇或加密货币付款。真正的来电会以"您可以在 ato.gov.au 核实"结束 — 而不是制造紧迫感。</Zh>
                   <Ko><strong className="text-stone-900 dark:text-stone-100">ATO·이민사 사칭.</strong> ATO는 gift card, 해외송금, 암호화폐로 결제를 요구하지 않습니다. 진짜 전화는 "ato.gov.au에서 확인하세요"로 끝납니다 — 조급함으로 끝나지 않습니다.</Ko>
                 </span>
               </li>
             </ul>
             <p className="text-xs text-stone-500 dark:text-stone-400 mt-4">
-              <En>If something feels off, report it to <a href="https://www.scamwatch.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700 dark:hover:text-amber-300">ScamWatch</a>. You won&apos;t be the first to report it.</En>
+              <En translated>If something feels off, report it to <a href="https://www.scamwatch.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700 dark:hover:text-amber-300">ScamWatch</a>. You won&apos;t be the first to report it.</En>
+              <Ja>違和感を覚えたら、<a href="https://www.scamwatch.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700 dark:hover:text-amber-300">ScamWatch</a> に通報してください。あなたが最初の通報者ではありません。</Ja>
+              <Zh>如果觉得不对劲，请向 <a href="https://www.scamwatch.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700 dark:hover:text-amber-300">ScamWatch</a> 举报。你不会是第一个举报的人。</Zh>
               <Ko>뭔가 이상하다면 <a href="https://www.scamwatch.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700 dark:hover:text-amber-300">ScamWatch</a>에 신고하세요. 당신이 첫 번째가 아닙니다.</Ko>
             </p>
           </div>
@@ -85,7 +111,9 @@ export default function ArrivedContent() {
       {/* Start here — three things worth doing before the long list. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-600 mb-5">
-          <En>Start here</En>
+          <En translated>Start here</En>
+          <Ja>ここから始める</Ja>
+          <Zh>从这里开始</Zh>
           <Ko>먼저 이것부터</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl">
@@ -152,7 +180,9 @@ export default function ArrivedContent() {
       {/* Week 1 checklist — concrete, scannable action items */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-600 mb-5">
-          <En>Week 1 checklist</En>
+          <En translated>Week 1 checklist</En>
+          <Ja>1週目のチェックリスト</Ja>
+          <Zh>第一周清单</Zh>
           <Ko>첫 주 체크리스트</Ko>
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-3xl">
@@ -181,7 +211,9 @@ export default function ArrivedContent() {
       {/* The order that matters */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-600 mb-5">
-          <En>The order that actually matters</En>
+          <En translated>The order that actually matters</En>
+          <Ja>本当に大切な順番</Ja>
+          <Zh>真正重要的顺序</Zh>
           <Ko>실제로 중요한 순서</Ko>
         </p>
         <ul className="space-y-4 max-w-3xl">
@@ -226,32 +258,42 @@ export default function ArrivedContent() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
         <div className="relative">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-400 mb-3">
-            <En>Pro tip</En>
+            <En translated>Pro tip</En>
+            <Ja>豆知識</Ja>
+            <Zh>小贴士</Zh>
             <Ko>꿀팁</Ko>
           </p>
           <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
-            <En>The three mistakes that cost real money.</En>
+            <En translated>The three mistakes that cost real money.</En>
+            <Ja>本当にお金がかかる3つの失敗。</Ja>
+            <Zh>会让你真金白银受损的三个错误。</Zh>
             <Ko>진짜 돈이 드는 세 가지 실수.</Ko>
           </h4>
           <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>
               <span>
-                <En><strong className="text-white">Not applying for TFN.</strong> You&apos;ll lose 30–40% of your pay to emergency tax until you do.</En>
+                <En translated><strong className="text-white">Not applying for TFN.</strong> You&apos;ll lose 30–40% of your pay to emergency tax until you do.</En>
+                <Ja><strong className="text-white">TFN を申請しない。</strong>申請するまで、給与の 30–40% が緊急税率で引かれます。</Ja>
+                <Zh><strong className="text-white">不申请 TFN。</strong>在申请之前，你的工资会有 30–40% 被按紧急税率扣除。</Zh>
                 <Ko><strong className="text-white">TFN 미신청.</strong> 신청할 때까지 급여의 30–40%가 긴급 세율로 차감됩니다.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">02</span>
               <span>
-                <En><strong className="text-white">Using your home-bank card.</strong> Foreign transaction fees stack up fast. Get a bank account first, then a debit card with no international fees.</En>
+                <En translated><strong className="text-white">Using your home-bank card.</strong> Foreign transaction fees stack up fast. Get a bank account first, then a debit card with no international fees.</En>
+                <Ja><strong className="text-white">母国の銀行カードを使う。</strong>海外取引手数料はあっという間に積み上がります。まず銀行口座を開設し、それから海外手数料のないデビットカードを作りましょう。</Ja>
+                <Zh><strong className="text-white">使用本国银行卡。</strong>境外交易手续费会迅速累积。先开一个银行账户，再办一张没有国际手续费的借记卡。</Zh>
                 <Ko><strong className="text-white">한국 카드로 결제.</strong> 해외 결제 수수료가 빠르게 누적됩니다. 먼저 호주 은행 계좌를 개설하고, 해외 수수료 없는 체크카드를 받으세요.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">03</span>
               <span>
-                <En><strong className="text-white">Renting the first thing you see.</strong> Domain and Realestate are your friends. Inspect 3–5 places before signing. Photos lie.</En>
+                <En translated><strong className="text-white">Renting the first thing you see.</strong> Domain and Realestate are your friends. Inspect 3–5 places before signing. Photos lie.</En>
+                <Ja><strong className="text-white">最初に見た物件をすぐ借りる。</strong>Domain と Realestate を活用しましょう。契約前に 3–5 件は内見してください。写真は嘘をつきます。</Ja>
+                <Zh><strong className="text-white">看到第一套就租下。</strong>Domain 和 Realestate 是你的好帮手。签约前先看 3–5 套房子。照片会骗人。</Zh>
                 <Ko><strong className="text-white">본 즉시 계약.</strong> Domain과 Realestate를 활용하세요. 서명 전에 3–5곳을 직접 봅니다. 사진은 거짓말을 합니다.</Ko>
               </span>
             </li>
@@ -265,7 +307,9 @@ export default function ArrivedContent() {
           luck". Uses the same emerald-themed card style. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-600 mb-5">
-          <En>After this guide</En>
+          <En translated>After this guide</En>
+          <Ja>このガイドの後は</Ja>
+          <Zh>读完这份指南后</Zh>
           <Ko>이 가이드를 마치면</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl">
@@ -325,39 +369,51 @@ export default function ArrivedContent() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
         <div className="relative">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-400 mb-3">
-            <En>Heads up</En>
+            <En translated>Heads up</En>
+            <Ja>ご注意</Ja>
+            <Zh>提个醒</Zh>
             <Ko>주의사항</Ko>
           </p>
           <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
-            <En>Scammers target new arrivals.</En>
+            <En translated>Scammers target new arrivals.</En>
+            <Ja>詐欺師は新しく来た人を狙います。</Ja>
+            <Zh>骗子专挑新来的人下手。</Zh>
             <Ko>사기꾼들은 신참을 노립니다.</Ko>
           </h4>
           <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>
               <span>
-                <En><strong className="text-white">Fake job offers.</strong> &quot;You&apos;re hired, just send $200 AUD for the training kit.&quot; Real employers never ask for upfront fees. If they did, that&apos;s the scam.</En>
+                <En translated><strong className="text-white">Fake job offers.</strong> &quot;You&apos;re hired, just send $200 AUD for the training kit.&quot; Real employers never ask for upfront fees. If they did, that&apos;s the scam.</En>
+                <Ja><strong className="text-white">偽の求人。</strong>&quot;採用です。研修キット代として $200 AUD を送ってください。&quot; 本当の雇用主は前払い費用を求めません。求めてきたら、それが詐欺です。</Ja>
+                <Zh><strong className="text-white">虚假工作机会。</strong>&quot;你被录用了，只需支付 200 澳元购买培训套件。&quot;真正的雇主绝不会要求预付费用。如果对方提了，那就是骗局。</Zh>
                 <Ko><strong className="text-white">가짜 채용.</strong> &quot;채용되셨습니다, 교육 키트 비용 $200 AUD만 보내주세요.&quot; 실제 고용주는 선불 비용을 요구하지 않습니다. 요구한다면 그것이 사기입니다.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">02</span>
               <span>
-                <En><strong className="text-white">Rental scams.</strong> Overseas landlord, can&apos;t show you the place, asks for a deposit via bank transfer. Real landlords don&apos;t take deposits sight-unseen.</En>
+                <En translated><strong className="text-white">Rental scams.</strong> Overseas landlord, can&apos;t show you the place, asks for a deposit via bank transfer. Real landlords don&apos;t take deposits sight-unseen.</En>
+                <Ja><strong className="text-white">賃貸詐欺。</strong>海外にいる大家が物件を見せられないと言い、銀行振込で保証金を要求します。本物の大家は未見のまま保証金を受け取りません。</Ja>
+                <Zh><strong className="text-white">租房骗局。</strong>房东人在海外，无法带你看房，却要求通过银行转账支付押金。真正的房东不会在没看房的情况下收押金。</Zh>
                 <Ko><strong className="text-white">임대 사기.</strong> 해외에 있는 집주인이 직접 보여줄 수 없다며 계좌이체로 보증금을 요청합니다. 진짜 집주인은 보여주지 않은 채로 보증금을 받지 않습니다.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">03</span>
               <span>
-                <En><strong className="text-white">ATO / MyGov phishing.</strong> &quot;You owe $2,847 AUD in tax, click here to pay.&quot; ATO and MyGov never email or text asking for payment. Go directly to the site, never via the link.</En>
+                <En translated><strong className="text-white">ATO / MyGov phishing.</strong> &quot;You owe $2,847 AUD in tax, click here to pay.&quot; ATO and MyGov never email or text asking for payment. Go directly to the site, never via the link.</En>
+                <Ja><strong className="text-white">ATO / MyGov フィッシング。</strong>&quot;税金 $2,847 AUD の未納があります。ここをクリックして支払ってください。&quot; ATO と MyGov が支払いを求めるメールや SMS を送ることはありません。リンク経由ではなく、必ず直接サイトにアクセスしてください。</Ja>
+                <Zh><strong className="text-white">ATO / MyGov 钓鱼诈骗。</strong>&quot;你欠税 2,847 澳元，点击这里付款。&quot;ATO 和 MyGov 绝不会发邮件或短信要求付款。请直接访问官网，千万不要点链接。</Zh>
                 <Ko><strong className="text-white">ATO / MyGov 피싱.</strong> &quot;세금 $2,847 AUD 미납, 여기를 클릭해 결제하세요.&quot; ATO와 MyGov는 결제를 요청하는 이메일이나 문자를 보내지 않습니다. 링크를 통하지 말고 직접 사이트에 접속하세요.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">04</span>
               <span>
-                <En><strong className="text-white">&quot;Korean community&quot; crypto groups.</strong> Get-rich-quick WeChat / KakaoTalk groups targeting Korean-Aussies. If it sounds too good to be true, it is.</En>
+                <En translated><strong className="text-white">&quot;Korean community&quot; crypto groups.</strong> Get-rich-quick WeChat / KakaoTalk groups targeting Korean-Aussies. If it sounds too good to be true, it is.</En>
+                <Ja><strong className="text-white">&quot;韓国コミュニティ&quot;の仮想通貨グループ。</strong>韓国系オーストラリア人を狙う一獲千金の WeChat / KakaoTalk グループ。話がうますぎるなら、それは詐欺です。</Ja>
+                <Zh><strong className="text-white">&quot;韩国社区&quot;加密货币群组。</strong>针对韩裔澳大利亚人的一夜暴富 WeChat / KakaoTalk 群组。听起来好得不真实，那它就不是真的。</Zh>
                 <Ko><strong className="text-white">&quot;한인 커뮤니티&quot; 코인 그룹.</strong> 한인 호주를 노리는 빠르게 부자되기 WeChat / KakaoTalk 그룹. 너무 좋아 보이면 사기입니다.</Ko>
               </span>
             </li>
@@ -372,32 +428,42 @@ export default function ArrivedContent() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
         <div className="relative">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-400 mb-3">
-            <En>Honest take</En>
+            <En translated>Honest take</En>
+            <Ja>正直なところ</Ja>
+            <Zh>实话实说</Zh>
             <Ko>솔직한 이야기</Ko>
           </p>
           <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
-            <En>What travel guides don&apos;t tell you.</En>
+            <En translated>What travel guides don&apos;t tell you.</En>
+            <Ja>旅行ガイドが教えてくれないこと。</Ja>
+            <Zh>旅行指南不会告诉你的事。</Zh>
             <Ko>여행 가이드에는 없는 이야기.</Ko>
           </h4>
           <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>
               <span>
-                <En><strong className="text-white">It&apos;s more expensive than you think.</strong> Coffee $5 AUD, casual lunch $20 AUD, dinner $40+ AUD per person, a pint of beer $12 AUD. A couple&apos;s weekly food budget is realistically $500–$700 AUD. Budget more than the guidebooks say.</En>
+                <En translated><strong className="text-white">It&apos;s more expensive than you think.</strong> Coffee $5 AUD, casual lunch $20 AUD, dinner $40+ AUD per person, a pint of beer $12 AUD. A couple&apos;s weekly food budget is realistically $500–$700 AUD. Budget more than the guidebooks say.</En>
+                <Ja><strong className="text-white">思っているより物価が高いです。</strong>コーヒー $5 AUD、カジュアルなランチ $20 AUD、夕食は一人 $40+ AUD、ビールのパイント $12 AUD。カップルの週の食費は現実的に $500–$700 AUD です。ガイドブックに書かれているより多めに予算を組みましょう。</Ja>
+                <Zh><strong className="text-white">物价比你想象的贵。</strong>咖啡 5 澳元、简餐午餐 20 澳元、晚餐每人 40+ 澳元、一品脱啤酒 12 澳元。一对情侣每周的伙食费实际上要 500–700 澳元。预算要比旅行指南写的高一些。</Zh>
                 <Ko><strong className="text-white">생각보다 비쌉니다.</strong> 커피 $5 AUD, 캐주얼 점심 $20 AUD, 1인당 저녁 $40+ AUD, 맥주 한 파인트 $12 AUD. 커플의 주간 식비 현실은 $500–$700 AUD. 가이드북보다 더 여유 있게 잡으세요.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">02</span>
               <span>
-                <En><strong className="text-white">Public transport stops at midnight.</strong> Trains, buses, ferries all wind down around 12am. Plan a taxi or Uber for the way home after a night out — or you will be walking.</En>
+                <En translated><strong className="text-white">Public transport stops at midnight.</strong> Trains, buses, ferries all wind down around 12am. Plan a taxi or Uber for the way home after a night out — or you will be walking.</En>
+                <Ja><strong className="text-white">公共交通は深夜に止まります。</strong>電車、バス、フェリーはいずれも 0 時前後に運行を終えます。夜遊びのあとの帰りはタクシーか Uber を計画しておきましょう — さもないと歩いて帰ることになります。</Ja>
+                <Zh><strong className="text-white">公共交通午夜停运。</strong>火车、公交车、渡轮都在凌晨 12 点左右收班。夜里出门后回家的路要提前安排出租车或 Uber — 否则你只能走回去。</Zh>
                 <Ko><strong className="text-white">대중교통은 자정 전후로 끊깁니다.</strong> 기차, 버스, 페리 모두 자정 무렵에 운행 종료. 밤에 외출 시 귀가 taxi나 Uber를 미리 계획하세요 — 아니면 걸어가야 합니다.</Ko>
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">03</span>
               <span>
-                <En><strong className="text-white">Wildlife is loud and weird.</strong> Possums fight on your roof at 3am. Cockatoos scream at dawn. Magpies dive-bomb in spring. It is not a horror movie — it is just Australia.</En>
+                <En translated><strong className="text-white">Wildlife is loud and weird.</strong> Possums fight on your roof at 3am. Cockatoos scream at dawn. Magpies dive-bomb in spring. It is not a horror movie — it is just Australia.</En>
+                <Ja><strong className="text-white">野生動物は騒がしくて不思議です。</strong>ポッサムは午前 3 時に屋根の上で喧嘩します。オウムは夜明けに金切り声を上げます。春にはカササギが急降下してきます。ホラー映画ではなく、ただのオーストラリアです。</Ja>
+                <Zh><strong className="text-white">野生动物又吵又怪。</strong>负鼠会在凌晨 3 点在你的屋顶上打架。凤头鹦鹉在黎明时尖叫。春天喜鹊会俯冲袭击。这不是恐怖片 — 这就是澳大利亚。</Zh>
                 <Ko><strong className="text-white">야생동물은 시끄럽고 특이합니다.</strong> 주머니쥐가 새벽 3시에 지붕 위에서 싸웁니다. 앵무새가 동에 소리를 지릅니다. 봄에는 까치가 급습합니다. 공포영화가 아니라 그냥 호주입니다.</Ko>
               </span>
             </li>
@@ -408,28 +474,36 @@ export default function ArrivedContent() {
       {/* Keep reading */}
       <section>
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-emerald-600 mb-5">
-          <En>Guides for your first month</En>
+          <En translated>Guides for your first month</En>
+          <Ja>最初の1か月のためのガイド</Ja>
+          <Zh>为你第一个月准备的指南</Zh>
           <Ko>첫 달을 위한 가이드</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
           <Link href="/workplace" className="reveal reveal-delay-1 group p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/50 dark:border-emerald-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-            <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">💼 <En>Workplace</En><Ko>직장</Ko></div>
+            <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">💼 <En translated>Workplace</En><Ja>職場</Ja><Zh>职场</Zh><Ko>직장</Ko></div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
-              <En>Resumes, interviews, Award wages, your rights</En>
+              <En translated>Resumes, interviews, Award wages, your rights</En>
+              <Ja>履歴書、面接、Award 賃金、あなたの権利</Ja>
+              <Zh>简历、面试、Award 工资标准、你的权利</Zh>
               <Ko>이력서, 면접, 임금등급, 노동자 권리</Ko>
             </div>
           </Link>
           <Link href="/apartment" className="reveal reveal-delay-2 group p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/50 dark:border-amber-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-            <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">🏠 <En>Apartment</En><Ko>부동산</Ko></div>
+            <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">🏠 <En translated>Apartment</En><Ja>賃貸</Ja><Zh>租房</Zh><Ko>부동산</Ko></div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
-              <En>Leases, bonds, flatmates, where to look</En>
+              <En translated>Leases, bonds, flatmates, where to look</En>
+              <Ja>賃貸契約、ボンド（保証金）、ルームメイト、探し方</Ja>
+              <Zh>租约、押金（bond）、合租室友、去哪里找房源</Zh>
               <Ko>임대 계약, 보증금, 쉐어하우스, 검색처</Ko>
             </div>
           </Link>
           <Link href="/finance" className="reveal reveal-delay-3 group p-5 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/50 dark:from-sky-950/30 dark:to-sky-900/20 border border-sky-100/50 dark:border-sky-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-            <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">💰 <En>Finance</En><Ko>금융</Ko></div>
+            <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">💰 <En translated>Finance</En><Ja>金融</Ja><Zh>金融</Zh><Ko>금융</Ko></div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
-              <En>Banking, TFN, super — the boring essentials</En>
+              <En translated>Banking, TFN, super — the boring essentials</En>
+              <Ja>銀行、TFN、スーパー（年金）— 退屈だけど必須の基本</Ja>
+              <Zh>银行、TFN、养老金（super）— 枯燥但必需的基础</Zh>
               <Ko>은행, TFN, 퇴직연금 — 필수 기본기</Ko>
             </div>
           </Link>

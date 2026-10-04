@@ -2,7 +2,7 @@
 // Bilingual EN/KO, editorial style.
 
 import Link from "next/link";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -238,23 +238,33 @@ export default function WildlifePage() {
             href="/destinations"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white text-xs uppercase tracking-[0.3em] mb-6 transition-colors"
           >
-            ← <En>All destinations</En>
+            ← <En translated>All destinations</En><Ja>すべての目的地</Ja><Zh>全部目的地</Zh>
             <Ko>전체 여행지</Ko>
           </Link>
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Practical guide</En>
+            <En translated>Practical guide</En>
+            <Ja>実用ガイド</Ja>
+            <Zh>实用指南</Zh>
             <Ko>실전 가이드</Ko>
           </p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
-            <En>Seeing Australian wildlife</En>
+            <En translated>Seeing Australian wildlife</En>
+            <Ja>オーストラリアの野生動物を見る</Ja>
+            <Zh>观赏澳大利亚野生动物</Zh>
             <Ko>호주 야생동물 가이드</Ko>
           </h1>
           <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
-            <En>
+            <En translated>
               Kangaroos, koalas, wombats, and whales — Australia&apos;s wildlife
               is unlike anywhere else on Earth. Here&apos;s how to see it
               safely and responsibly around Sydney.
             </En>
+            <Ja>カンガルー、コアラ、ウォンバット、そしてクジラ — オーストラリアの野生動物
+              は地球上のどこにもない存在です。シドニー周辺で安全に、そして責任を
+              もって見る方法をご紹介します。</Ja>
+            <Zh>袋鼠、考拉、袋熊和鲸鱼 — 澳大利亚的野生
+              动物与地球上任何地方都不一样。以下是在悉尼周边如何安全而负责任地
+              观赏它们的方法。</Zh>
             <Ko>
               캥거루, 코알라, 웜뱃, 고래 — 호주의 야생동물은 지구상 그 어느 곳과도
               다릅니다. 시드니 근교에서 안전하게 그리고 책임감 있게 만나는 방법을
@@ -268,7 +278,7 @@ export default function WildlifePage() {
         {/* Intro */}
         <section className="mb-12 reveal">
           <p className="font-serif text-xl md:text-2xl text-stone-800 dark:text-stone-200 leading-relaxed">
-            <En>
+            <En translated>
               Australia split from the supercontinent Gondwana about 50 million
               years ago, and its wildlife evolved in near-total isolation.
               That&apos;s why you&apos;ll find marsupials (pouched mammals),
@@ -279,6 +289,24 @@ export default function WildlifePage() {
               to wild national parks — and, most importantly, how to stay safe
               and respect the animals.
             </En>
+            <Ja>オーストラリアは約5千万年前に超大陸ゴンドワナから分離し、その野生
+              動物はほぼ完全な孤立の中で進化しました。だからこそ、
+              有袋類（袋を
+              持つ哺乳類）、単孔類（卵を産む哺乳類）、そして他では見られない
+              鳥たちがいるのです。シドニー周辺だけでも、カンガルー、コアラ、
+              ウォンバット、ハリモグラ、カモノハシ、そして300種以上の在来鳥類を
+              見ることができます。このガイドでは、世界クラスの動物園から
+              手つかずの国立公園まで、それらを見るのに最適な場所と、
+              何より安全を保ち動物を尊重する方法を紹介します。</Ja>
+            <Zh>澳大利亚在大约5000万年前从超大陆冈瓦纳分离，其野生动
+              物在几乎完全隔离的环境中演化。正因如此，
+              你才能看到有袋类（带
+              育儿袋的哺乳动物）、单孔类（卵生哺乳动物），以及别处找不到的
+              鸟类。仅在悉尼周边，你就能看到袋鼠、考拉、袋熊、
+              针鼹、鸭嘴兽以及300多种本土鸟类。本
+              指南介绍观赏它们的最佳去处 — 从世界级动物园
+              到原始的国家公园 — 以及最重要的，如何保持安全和
+              尊重动物。</Zh>
             <Ko>
               호주는 약 5천만 년 전 곤드와나 초대륙에서 분리되었고, 그 후
               야생동물은 거의 완전한 고립 속에서 진화했습니다. 그래서 유대류(주머니
@@ -296,11 +324,15 @@ export default function WildlifePage() {
           {/* Section intro label */}
           <div className="text-center mb-4 reveal">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-              <En>Wildlife parks & zoos</En>
+              <En translated>Wildlife parks & zoos</En>
+              <Ja>野生動物パーク＆動物園</Ja>
+              <Zh>野生动物公园与动物园</Zh>
               <Ko>야생동물 공원 & 동물원</Ko>
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100">
-              <En>Up close, but not too close</En>
+              <En translated>Up close, but not too close</En>
+              <Ja>近くで、でも近すぎず</Ja>
+              <Zh>近距离，但别太近</Zh>
               <Ko>가까이, 하지만 너무 가깝지는 않게</Ko>
             </h2>
           </div>
@@ -312,11 +344,15 @@ export default function WildlifePage() {
           {/* National parks section intro */}
           <div className="text-center mt-16 mb-4 reveal">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-coast mb-2">
-              <En>Wild encounters</En>
+              <En translated>Wild encounters</En>
+              <Ja>野生との出会い</Ja>
+              <Zh>邂逅野生动物</Zh>
               <Ko>야생에서의 만남</Ko>
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100">
-              <En>Where animals roam free</En>
+              <En translated>Where animals roam free</En>
+              <Ja>動物たちが自由に歩く場所</Ja>
+              <Zh>动物自由漫步之地</Zh>
               <Ko>동물들이 자유롭게 사는 곳</Ko>
             </h2>
           </div>
@@ -340,20 +376,30 @@ export default function WildlifePage() {
                   <ShieldCheck className="w-5 h-5" />
                 </span>
                 <p className="text-[13px] font-medium uppercase tracking-[0.3em] text-amber-300">
-                  <En>Wildlife safety — critical</En>
+                  <En translated>Wildlife safety — critical</En>
+                  <Ja>野生動物の安全 — 重要</Ja>
+                  <Zh>野生动物安全 — 至关重要</Zh>
                   <Ko>야생동물 안전 — 필수</Ko>
                 </p>
               </div>
               <h2 className="font-serif text-2xl md:text-3xl mb-2 leading-tight">
-                <En>Respect the wildlife, protect yourself</En>
+                <En translated>Respect the wildlife, protect yourself</En>
+                <Ja>野生動物を尊重し、自分を守る</Ja>
+                <Zh>尊重野生动物，保护好自己</Zh>
                 <Ko>야생동물을 존중하고, 자신을 보호하세요</Ko>
               </h2>
               <p className="text-amber-100/80 text-sm max-w-2xl leading-relaxed">
-                <En>
+                <En translated>
                   Australia&apos;s animals are not tame — even the cute ones.
                   These rules will keep you, the animals, and the ecosystem
                   safe.
                 </En>
+                <Ja>オーストラリアの動物は飼いならされていません — かわいい動物でも
+                  同じです。このルールがあなたと動物、そして生態系の
+                  安全を守ります。</Ja>
+                <Zh>澳大利亚的动物并不温顺 — 连可爱的那些也是。
+                  这些规则能保障你、动物以及生态系统的
+                  安全。</Zh>
                 <Ko>
                   호주의 동물은 길들여지지 않았습니다 — 귀여운 동물들조차도요.
                   이 규칙은 여러분과 동물, 생태계를 안전하게 지켜줍니다.
@@ -376,9 +422,11 @@ export default function WildlifePage() {
                       {item.label}
                     </p>
                     <div className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                      <En>
+                      <En translated>
                         <p>{item.en}</p>
                       </En>
+                      <Ja><p>{item.en}</p></Ja>
+                      <Zh><p>{item.en}</p></Zh>
                       <Ko>
                         <p>{item.ko}</p>
                       </Ko>
@@ -397,11 +445,15 @@ export default function WildlifePage() {
                   </span>
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-0.5">
-                      <En>Emergency contact</En>
+                      <En translated>Emergency contact</En>
+                      <Ja>緊急連絡先</Ja>
+                      <Zh>紧急联系方式</Zh>
                       <Ko>비상 연락처</Ko>
                     </p>
                     <p className="font-serif text-lg text-stone-900 dark:text-stone-100 leading-tight">
-                      <En>WIRES Wildlife Rescue</En>
+                      <En translated>WIRES Wildlife Rescue</En>
+                      <Ja>WIRES 野生動物レスキュー</Ja>
+                      <Zh>WIRES 野生动物救援</Zh>
                       <Ko>WIRES 야생동물 구조</Ko>
                     </p>
                   </div>
@@ -426,12 +478,16 @@ export default function WildlifePage() {
                 <Sunrise className="w-4 h-4 text-sage" />
               </span>
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400">
-                <En>Pro tips</En>
+                <En translated>Pro tips</En>
+                <Ja>プロのヒント</Ja>
+                <Zh>内行贴士</Zh>
                 <Ko>전문가 팁</Ko>
               </p>
             </div>
             <h2 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
-              <En>Make the most of your wildlife adventure</En>
+              <En translated>Make the most of your wildlife adventure</En>
+              <Ja>野生動物アドベンチャーを最大限に楽しむ</Ja>
+              <Zh>充分享受你的野生动物之旅</Zh>
               <Ko>야생동물 모험을 최대한 즐기는 법</Ko>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -457,11 +513,17 @@ export default function WildlifePage() {
                   key={i}
                   className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-xl bg-stone-800/50 dark:bg-stone-700/50 border border-stone-700/50`}
                 >
-                  <En>
+                  <En translated>
                     <p className="text-sm text-stone-300 leading-relaxed">
                       {tip.en}
                     </p>
                   </En>
+                  <Ja><p className="text-sm text-stone-300 leading-relaxed">
+                      {tip.en}
+                    </p></Ja>
+                  <Zh><p className="text-sm text-stone-300 leading-relaxed">
+                      {tip.en}
+                    </p></Zh>
                   <Ko>
                     <p className="text-sm text-stone-300 leading-relaxed">
                       {tip.ko}

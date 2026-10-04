@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { En, Ko } from "./LangBlocks";
+import { En, Ja, Ko, Zh } from "./LangBlocks";
 import * as Icons from "./Icons";
 
 /**
@@ -199,11 +199,17 @@ export default function EditorialSection({
                   </a>
                 )}
               </p>
-              <En>
+              <En translated>
                 <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                   {item.en}
                 </p>
               </En>
+              <Ja><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                  {item.en}
+                </p></Ja>
+              <Zh><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                  {item.en}
+                </p></Zh>
               <Ko>
                 <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                   {item.ko}

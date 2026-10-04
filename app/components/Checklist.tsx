@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { En, Ko } from "./LangBlocks";
+import { En, Ja, Ko, Zh } from "./LangBlocks";
 
 export interface ChecklistItem {
   id: string;
@@ -115,7 +115,9 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
                       href={it.link.href}
                       className="text-xs text-sunset font-semibold mt-1 inline-block hover:underline"
                     >
-                      <En>→ {it.link.en}</En>
+                      <En translated>→ {it.link.en}</En>
+                      <Ja>→ {it.link.en}</Ja>
+                      <Zh>→ {it.link.en}</Zh>
                       <Ko>→ {it.link.ko}</Ko>
                     </a>
                   )}
@@ -131,7 +133,9 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
           onClick={reset}
           className="mt-3 text-xs text-eucalypt/50 dark:text-dark-muted/50 hover:text-sunset transition-colors"
         >
-          <En>Reset checklist</En>
+          <En translated>Reset checklist</En>
+          <Ja>チェックリストをリセット</Ja>
+          <Zh>重置清单</Zh>
           <Ko>초기화</Ko>
         </button>
       )}

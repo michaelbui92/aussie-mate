@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { En, Ko, useLang, type Lang } from "./LangBlocks";
+import { En, Ja, Ko, Zh, useLang, type Lang } from "./LangBlocks";
 import { useTheme } from "./ThemeProvider";
 import { useSearch } from "@/components/SearchModal";
 import { ChevronDown } from "@/components/Icons";
@@ -411,7 +411,9 @@ export default function Nav() {
               />
             </svg>
             <span className="hidden lg:inline text-xs font-semibold">
-              <En>Search</En>
+              <En translated>Search</En>
+              <Ja>検索</Ja>
+              <Zh>搜索</Zh>
               <Ko>검색</Ko>
             </span>
           </NavPill>

@@ -7,7 +7,7 @@
 // the stage's full guide.
 
 import Link from "next/link";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -105,19 +105,29 @@ export default function JourneyPage() {
       <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-6 py-12 md:py-20 text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>The Journey</En>
+            <En translated>The Journey</En>
+            <Ja>ジャーニー</Ja>
+            <Zh>旅程</Zh>
             <Ko>호주 여정</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-stone-900 dark:text-stone-100 leading-tight mb-5">
-            <En>Welcome to Australia. You&apos;ve made a good choice.</En>
+            <En translated>Welcome to Australia. You&apos;ve made a good choice.</En>
+            <Ja>オーストラリアへようこそ。良い選択をしましたね。</Ja>
+            <Zh>欢迎来到澳大利亚。你做了个明智的选择。</Zh>
             <Ko>호주에 오신 것을 환영합니다. 좋은 선택이에요.</Ko>
           </h1>
           <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl mx-auto">
-            <En>
+            <En translated>
               Living in a new country is bold and courageous. Make
               experiences. Make friends. Learn, and ultimately have fun.
               It may not be easy — but I&apos;m here to help.
             </En>
+            <Ja>新しい国で暮らすのは大胆で勇気あることです。経験を
+              積み、友達を作り、学び、そして最終的には楽しみましょう。
+              簡単ではないかもしれません — でも、私がお手伝いします。</Ja>
+            <Zh>在一个新国家生活需要胆识和勇气。去创造
+              经历，结交朋友，学习，最终尽情享受。
+              这也许并不容易 — 但我在这里帮你。</Zh>
             <Ko>
               새로운 나라에서 사는 것은 과감하고 용기 있는 일입니다. 경험을
               만들고, 친구를 사귀고, 배우고, 결국 즐기세요. 쉽지 않을 수 있지만
@@ -160,7 +170,9 @@ export default function JourneyPage() {
                   <div
                     className={`inline-flex items-center gap-1.5 text-sm font-semibold ${c.text}`}
                   >
-                    <En>Read the guide</En>
+                    <En translated>Read the guide</En>
+                    <Ja>ガイドを読む</Ja>
+                    <Zh>阅读指南</Zh>
                     <Ko>가이드 읽기</Ko>
                     <span className="transition-transform group-hover:translate-x-1">→</span>
                   </div>

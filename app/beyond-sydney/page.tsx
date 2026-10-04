@@ -4,7 +4,7 @@
 // interactive list (filter pills + per-destination accordion) to the
 // FilteredAccordion client island.
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { MapPin, Car } from "@/components/Icons";
 import FilteredAccordion, { type BeyondSydneyDestination } from "@/components/FilteredAccordion";
 import { seoFor, withSeo } from "@/lib/seo";
@@ -222,15 +222,21 @@ export default function BeyondSydneyPage() {
       {/* Header */}
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-          <En>Beyond Sydney</En>
+          <En translated>Beyond Sydney</En>
+          <Ja>シドニーの外へ</Ja>
+          <Zh>悉尼之外</Zh>
           <Ko>시드니 밖</Ko>
         </p>
         <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          <En>Beyond Sydney</En>
+          <En translated>Beyond Sydney</En>
+          <Ja>シドニーの外へ</Ja>
+          <Zh>悉尼之外</Zh>
           <Ko>시드니 밖으로</Ko>
         </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>Weekend trips, road trips, and day adventures from Sydney — Australia&apos;s east coast has a lot more to offer.</En>
+          <En translated>Weekend trips, road trips, and day adventures from Sydney — Australia&apos;s east coast has a lot more to offer.</En>
+          <Ja>シドニーからの週末旅行、ロードトリップ、日帰りの冒険 — オーストラリアの東海岸にはもっと多くの魅力があります。</Ja>
+          <Zh>从悉尼出发的周末游、自驾游和一日探险 — 澳大利亚东海岸还有更多精彩。</Zh>
           <Ko>시드니에서의 주말 여행, 드라이브 여행, 당일 모험 — 호주 동해안에는 훨씬 더 많은 것이 있습니다.</Ko>
         </p>
       </header>
@@ -243,10 +249,15 @@ export default function BeyondSydneyPage() {
         vibeOrder={vibeOrder}
         bottomNote={{
           en: (
-            <En>
+            <><En translated>
               Always check road conditions before a long drive. In summer, bushfire season can close roads in NSW — check{" "}
               <span className="text-sunset font-semibold">Live Traffic NSW</span> before you go.
             </En>
+            <Ja>長距離ドライブの前には必ず道路状況を確認してください。夏は、NSW では山火事シーズンに道路が通行止めになることがあります — 出発前に{" "}
+              <span className="text-sunset font-semibold">Live Traffic NSW</span>を確認してください。</Ja>
+            <Zh>长途驾驶前务必检查道路状况。夏季，NSW 的山火季可能导致道路封闭 — 出发前请先查看{" "}
+              <span className="text-sunset font-semibold">Live Traffic NSW</span>。</Zh>
+            </>
           ),
           ko: (
             <Ko>

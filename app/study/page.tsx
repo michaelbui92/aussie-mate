@@ -3,7 +3,7 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -156,15 +156,21 @@ export default function StudyPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Study</En>
+            <En translated>Study</En>
+            <Ja>学習</Ja>
+            <Zh>学习</Zh>
             <Ko>학습</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Study in Australia</En>
+            <En translated>Study in Australia</En>
+            <Ja>オーストラリアで学ぶ</Ja>
+            <Zh>在澳大利亚留学</Zh>
             <Ko>호주에서 공부하기</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>University life, academic culture, and grades in Australia.</En>
+            <En translated>University life, academic culture, and grades in Australia.</En>
+            <Ja>オーストラリアの大学生活、学問文化、成績。</Ja>
+            <Zh>澳大利亚的大学、学术文化和成绩制度。</Zh>
             <Ko>호주의 대학 생활, 학문 문화, 성적 체계.</Ko>
           </p>
         </div>
@@ -180,14 +186,20 @@ export default function StudyPage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Need support?</En><Ko>지원이 필요하신가요?</Ko>
+            <En translated>Need support?</En>
+            <Ja>サポートが必要ですか？</Ja>
+            <Zh>需要帮助吗？</Zh><Ko>지원이 필요하신가요?</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Free help, always available.</En>
+            <En translated>Free help, always available.</En>
+            <Ja>無料のサポートをいつでも利用できます。</Ja>
+            <Zh>免费帮助，随时可用。</Zh>
             <Ko>무료 도움, 항상 제공됩니다.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Student Wellbeing and Academic Skills offices offer free counselling, learning support, and crisis help. International student advisors can help with visa, enrolment, and settling-in questions. Don&apos;t struggle alone.</En>
+            <En translated>Student Wellbeing and Academic Skills offices offer free counselling, learning support, and crisis help. International student advisors can help with visa, enrolment, and settling-in questions. Don&apos;t struggle alone.</En>
+            <Ja>学生福祉・アカデミックスキルオフィスでは、無料のカウンセリング、学習支援、危機サポートを提供しています。留学生アドバイザーは、ビザ、入学手続き、生活の立ち上げに関する質問をサポートします。一人で悩まないでください。</Ja>
+            <Zh>学生福祉与学业技能办公室提供免费咨询、学习支持和危机援助。留学生顾问可以协助解答签证、入学和安顿方面的问题。不要独自苦苦挣扎。</Zh>
             <Ko>학생 복지 및 학업 기술 부서에서 무료 상담, 학습 지원, 위기 지원을 제공합니다. 유학생 상담사는 비자, 등록, 정착 관련 질문에 도움을 줄 수 있습니다. 혼자 고생하지 마세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

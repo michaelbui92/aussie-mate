@@ -3,7 +3,7 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -111,15 +111,21 @@ export default function TransportPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Transport</En>
+            <En translated>Transport</En>
+            <Ja>交通</Ja>
+            <Zh>交通</Zh>
             <Ko>교통</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Getting around</En>
+            <En translated>Getting around</En>
+            <Ja>市内の移動</Ja>
+            <Zh>交通出行</Zh>
             <Ko>시드니 교통</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Opal cards, trains, buses, ferries — Sydney's transport, decoded.</En>
+            <En translated>Opal cards, trains, buses, ferries — Sydney's transport, decoded.</En>
+            <Ja>オパールカード、電車、バス、フェリー — シドニーの交通をわかりやすく解説。</Ja>
+            <Zh>澳宝卡、火车、巴士、渡轮 — 悉尼交通全解析。</Zh>
             <Ko>오팔 카드, 기차, 버스, 페리 — 시드니 교통의 모든 것.</Ko>
           </p>
         </div>
@@ -135,14 +141,20 @@ export default function TransportPage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Trip planner</En><Ko>여행 플래너</Ko>
+            <En translated>Trip planner</En>
+            <Ja>旅行プランナー</Ja>
+            <Zh>行程规划器</Zh><Ko>여행 플래너</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Real-time updates at your fingertips.</En>
+            <En translated>Real-time updates at your fingertips.</En>
+            <Ja>リアルタイム情報をすぐに手元で。</Ja>
+            <Zh>实时信息，触手可及。</Zh>
             <Ko>실시간 업데이트를 손쉽게.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Google Maps and the Trip Planner app both show live train, bus, and ferry times. Tap your destination, choose Transit, and follow the directions. Real-time platform numbers and service alerts are built in.</En>
+            <En translated>Google Maps and the Trip Planner app both show live train, bus, and ferry times. Tap your destination, choose Transit, and follow the directions. Real-time platform numbers and service alerts are built in.</En>
+            <Ja>Google MapsとTrip Plannerアプリはどちらも、電車、バス、フェリーのリアルタイム時刻を表示します。目的地をタップして「交通機関」を選び、案内に従ってください。リアルタイムのホーム番号と運行情報が組み込まれています。</Ja>
+            <Zh>Google Maps 和 Trip Planner 应用都能显示火车、巴士和渡轮的实时时刻。点击目的地，选择“公共交通”，然后按照指引操作。实时站台编号和服务提醒均已内置。</Zh>
             <Ko>Google Maps와 Trip Planner 앱 모두 실시간 기차, 버스, 페리 시간을 보여줍니다. 목적지를 탭하고 대중교통을 선택한 후 안내를 따르세요. 실시간 플랫폼 번호와 운행 알림이 내장되어 있습니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

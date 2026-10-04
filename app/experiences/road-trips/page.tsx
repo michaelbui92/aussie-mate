@@ -2,7 +2,7 @@
 // Editorial style with route cards and trip-planning tips.
 
 import type { Metadata } from "next";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -106,13 +106,17 @@ export default function RoadTripsPage() {
 
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
 
-            <En>Road Trips</En><Ko>로드트립</Ko>
+            <En translated>Road Trips</En>
+            <Ja>ロードトリップ</Ja>
+            <Zh>公路旅行</Zh><Ko>로드트립</Ko>
 
           </p>
 
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
 
-            <En>Hit the road</En>
+            <En translated>Hit the road</En>
+            <Ja>さあ、旅に出よう</Ja>
+            <Zh>上路吧</Zh>
 
             <Ko>길을 떠나자</Ko>
 
@@ -120,7 +124,9 @@ export default function RoadTripsPage() {
 
           <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
 
-            <En>The best weekend getaways and day trips from Sydney — south to Kiama, north to Port Stephens, west to the Blue Mountains, and everything in between.</En>
+            <En translated>The best weekend getaways and day trips from Sydney — south to Kiama, north to Port Stephens, west to the Blue Mountains, and everything in between.</En>
+            <Ja>シドニー発の最高の週末旅行と日帰り旅行 — 南はカイアマ、北はポート・スティーブンス、西はブルー・マウンテンズ、そしてその間のすべて。</Ja>
+            <Zh>从悉尼出发的最佳周末度假和一日游 — 南到凯马，北到史蒂芬斯港，西到蓝山，以及其间的一切。</Zh>
             <Ko>시드니에서 떠나는 최고의 주말 여행과 당일 여행 — 남쪽 카이아마, 북쪽 포트스테판, 서쪽 블루마운틴까지.</Ko>
 
           </p>
@@ -138,14 +144,20 @@ export default function RoadTripsPage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Trip planner</En><Ko>여행 플래너</Ko>
+            <En translated>Trip planner</En>
+            <Ja>旅行プランナー</Ja>
+            <Zh>行程规划器</Zh><Ko>여행 플래너</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Plan your next adventure.</En>
+            <En translated>Plan your next adventure.</En>
+            <Ja>次の冒険を計画しましょう。</Ja>
+            <Zh>规划你的下一次冒险。</Zh>
             <Ko>다음 모험을 계획하세요.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>The secret to a great Australian road trip is planning ahead. Check the weather, fuel up in the last major town, pack snacks and water, and always tell someone where you're going. Take breaks every two hours — driver fatigue is a major cause of regional accidents. A road trip is not about speed. It's about the stops along the way.</En>
+            <En translated>The secret to a great Australian road trip is planning ahead. Check the weather, fuel up in the last major town, pack snacks and water, and always tell someone where you're going. Take breaks every two hours — driver fatigue is a major cause of regional accidents. A road trip is not about speed. It's about the stops along the way.</En>
+            <Ja>素晴らしいオーストラリアのロードトリップの秘訣は事前の計画です。天気を確認し、最後の主要な町で給油し、軽食と水を用意し、必ず行き先を誰かに伝えましょう。2時間ごとに休憩を取りましょう — ドライバーの疲労は地方での事故の主な原因です。ロードトリップは速度ではありません。道中の停車にこそ意味があります。</Ja>
+            <Zh>一趟精彩的澳大利亚公路旅行的秘诀就是提前规划。查看天气，在最后一个大城镇加满油，备好零食和水，并且一定要告诉别人你要去哪里。每两小时休息一次 — 司机疲劳是偏远地区事故的主要原因。公路旅行不在于速度，而在于沿途的停靠。</Zh>
             <Ko>훌륭한 호주 로드트립의 비결은 사전 계획입니다. 날씨를 확인하고, 마지막 주요 도시에서 주유하고, 간식과 물을 챙기고, 항상 누군가에게 행선지를 알리세요. 2시간마다 휴식을 취하세요 — 운전자 피로는 지역 사고의 주요 원인입니다. 로드트립은 속도에 관한 것이 아닙니다. 길을 따라 멈추는 정거장들에 관한 것입니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

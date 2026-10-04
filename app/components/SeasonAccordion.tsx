@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
-import { En, Ko } from "./LangBlocks";
+import { En, Ja, Ko, Zh } from "./LangBlocks";
 
 type SeasonKey = "summer" | "autumn" | "winter" | "spring";
 
@@ -191,7 +191,9 @@ function SeasonCard({
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
             </svg>
-            <En>Tap to explore</En>
+            <En translated>Tap to explore</En>
+            <Ja>タップして見る</Ja>
+            <Zh>点击探索</Zh>
             <Ko>눌러서 살펴보기</Ko>
           </span>
         )}
@@ -204,7 +206,9 @@ function SeasonCard({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div>
                 <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
-                  <En>What to do</En><Ko>추천 활동</Ko>
+                  <En translated>What to do</En>
+                  <Ja>おすすめの過ごし方</Ja>
+                  <Zh>可以做些什么</Zh><Ko>추천 활동</Ko>
                 </p>
                 <ul className="space-y-1.5">
                   {detail.whatToDo.map((item, j) => (
@@ -217,7 +221,9 @@ function SeasonCard({
               </div>
               <div>
                 <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
-                  <En>What to pack</En><Ko>준비물</Ko>
+                  <En translated>What to pack</En>
+                  <Ja>持ち物</Ja>
+                  <Zh>该带什么</Zh><Ko>준비물</Ko>
                 </p>
                 <ul className="space-y-1.5">
                   {detail.whatToPack.map((item, j) => (
@@ -230,7 +236,9 @@ function SeasonCard({
               </div>
               <div>
                 <p className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-2 ${cornerAccent}`}>
-                  <En>Heads up</En><Ko>주의사항</Ko>
+                  <En translated>Heads up</En>
+                  <Ja>ご注意</Ja>
+                  <Zh>提个醒</Zh><Ko>주의사항</Ko>
                 </p>
                 <ul className="space-y-1.5">
                   {detail.warnings.map((item, j) => (
@@ -243,7 +251,9 @@ function SeasonCard({
               </div>
             </div>
             <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
-              <En>Tap again to collapse</En><Ko>다시 탭하여 접기</Ko>
+              <En translated>Tap again to collapse</En>
+              <Ja>もう一度タップして閉じる</Ja>
+              <Zh>再次点击收起</Zh><Ko>다시 탭하여 접기</Ko>
             </p>
           </div>
         )}

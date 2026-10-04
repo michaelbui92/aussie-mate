@@ -3,7 +3,7 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -130,13 +130,19 @@ export default function FinancePage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Money</En><Ko>금융</Ko>
+            <En translated>Money</En>
+            <Ja>お金</Ja>
+            <Zh>金钱</Zh><Ko>금융</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Finance &amp; banking</En><Ko>금융과 은행</Ko>
+            <En translated>Finance &amp; banking</En>
+            <Ja>ファイナンス＆銀行</Ja>
+            <Zh>金融与银行</Zh><Ko>금융과 은행</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Everything about money in Australia — banking, tax, super, and budgeting.</En>
+            <En translated>Everything about money in Australia — banking, tax, super, and budgeting.</En>
+            <Ja>オーストラリアのお金に関するすべて — 銀行、税金、スーパーアニュエーション、家計管理。</Ja>
+            <Zh>关于在澳大利亚理财的一切 — 银行、税务、养老金和预算管理。</Zh>
             <Ko>호주에서의 돈에 관한 모든 것 — 은행, 세금, 퇴직연금, 예산 관리.</Ko>
           </p>
         </div>
@@ -152,14 +158,20 @@ export default function FinancePage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Official resources</En><Ko>공식 자료</Ko>
+            <En translated>Official resources</En>
+            <Ja>公式リソース</Ja>
+            <Zh>官方资源</Zh><Ko>공식 자료</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>For official tax and super info.</En>
+            <En translated>For official tax and super info.</En>
+            <Ja>税金とスーパーアニュエーションの公式情報はこちら。</Ja>
+            <Zh>获取官方税务和养老金信息。</Zh>
             <Ko>공식 세금 및 퇴직연금 정보.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>ATO (Australian Taxation Office) and Services Australia are the two official sources. Their websites have plain-English guides, downloadable forms, and calculators. Most questions can be answered by a 5-minute site search.</En>
+            <En translated>ATO (Australian Taxation Office) and Services Australia are the two official sources. Their websites have plain-English guides, downloadable forms, and calculators. Most questions can be answered by a 5-minute site search.</En>
+            <Ja>ATO（オーストラリア国税庁）とServices Australiaが2つの公式情報源です。それぞれのウェブサイトにはわかりやすい英語のガイド、ダウンロードできる書式、計算ツールがあります。ほとんどの疑問は5分ほどのサイト内検索で解決できます。</Ja>
+            <Zh>ATO（澳大利亚税务局）和Services Australia是两个官方来源。它们的网站提供通俗易懂的英文指南、可下载的表格和计算器。大多数问题只需花5分钟搜索网站就能找到答案。</Zh>
             <Ko>ATO(호주 세무서)와 Services Australia는 두 가지 공식 자료입니다. 웹사이트에는 쉬운 영어 가이드, 다운로드 가능한 양식, 계산기가 있습니다. 대부분의 질문은 5분 정도의 사이트 검색으로 답할 수 있습니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

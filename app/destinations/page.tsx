@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { destinations } from "./data";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 import TripLengthFilter from "@/components/TripLengthFilter";
@@ -35,15 +35,21 @@ export default function DestinationsPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Destinations</En>
+            <En translated>Destinations</En>
+            <Ja>目的地</Ja>
+            <Zh>目的地</Zh>
             <Ko>주요 여행지</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Places to go</En>
+            <En translated>Places to go</En>
+            <Ja>行くべき場所</Ja>
+            <Zh>值得去的地方</Zh>
             <Ko>가볼 만한 곳</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>From white-sand beaches two hours south to world-class wine country and ancient mountains. Every destination here is reachable from Sydney — pick one that fits your trip.</En>
+            <En translated>From white-sand beaches two hours south to world-class wine country and ancient mountains. Every destination here is reachable from Sydney — pick one that fits your trip.</En>
+            <Ja>南へ2時間の白砂のビーチから、世界級のワイン産地、古き山々まで。ここにあるすべての目的地はシドニーから行けます — 旅程に合う場所を選びましょう。</Ja>
+            <Zh>从南边两小时车程的白沙滩，到世界级葡萄酒产区和古老山脉。这里的每个目的地都能从悉尼到达——挑一个适合你行程的吧。</Zh>
             <Ko>남쪽 2시간 거리의 하얀 모래 해변부터 세계적 와인 산지와 고산맥까지. 이곳의 모든 여행지는 시드니에서 갈 수 있습니다 — 일정에 맞는 곳을 골라보세요.</Ko>
           </p>
         </div>
@@ -53,7 +59,9 @@ export default function DestinationsPage() {
           scroll time ahead. */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-2">
         <p className="text-xs text-stone-500 dark:text-stone-400">
-          <En>{destinations.length} places to explore — scroll or use the filter above.</En>
+          <En translated>{destinations.length} places to explore — scroll or use the filter above.</En>
+          <Ja>{destinations.length} か所の見どころ — スクロールするか、上のフィルターをご利用ください。</Ja>
+          <Zh>{destinations.length} 个目的地 — 滚动浏览或使用上方的筛选器。</Zh>
           <Ko>{destinations.length}곳의 여행지 — 스크롤하거나 위 필터를 사용하세요.</Ko>
         </p>
       </div>

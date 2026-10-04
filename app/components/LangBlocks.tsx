@@ -57,32 +57,23 @@ export function LangProvider({ children, initial }: { children: ReactNode; initi
   );
 }
 
-// Which languages a SUBTREE has actually been translated into.
-//
-// Why this exists: <En> falls back to English for zh/ja, because most pages have
-// no Chinese or Japanese content yet. Once a page IS fully translated that
-// fallback has to switch off for it, or the visitor sees the English block and
-// the translated block side by side. Declaring coverage is how a page says "my
-// translations are complete" without changing behaviour anywhere else.
-//
-// Default is [] -- no zh/ja coverage -- which preserves the English fallback.
-const CoverageContext = createContext<Lang[]>([]);
-
-export function LangCoverage({ langs, children }: { langs: Lang[]; children: ReactNode }) {
-  return <CoverageContext.Provider value={langs}>{children}</CoverageContext.Provider>;
-}
-
 // Inline component so we can use the lang context
-export function En({ children }: { children: ReactNode }) {
+//
+// `translated` marks a block that has sibling <Ja>/<Zh> blocks carrying the
+// translation (the inserter at cache/scratch/insert_tx.py adds both together, so
+// the flag and the siblings can never disagree). Without it, an English block is
+// the fallback for zh/ja -- which is what keeps data-driven blocks like
+// <En>{item.en}</En> showing English rather than rendering nothing. With it, the
+// block steps aside for zh/ja so the translated sibling is the only text shown.
+export function En({ children, translated }: { children: ReactNode; translated?: boolean }) {
   const { lang } = useLang();
-  const covered = useContext(CoverageContext);
   if (lang === "en") return <>{children}</>;
   // Korean copy is always written as a sibling <Ko> block, so English never
   // renders for a Korean reader.
   if (lang === "ko") return null;
-  // Chinese/Japanese: show this subtree's translation where one exists, and fall
-  // back to English where it does not, rather than rendering nothing at all.
-  if (covered.includes(lang)) return null;
+  // Chinese/Japanese: step aside where a translation exists, fall back to
+  // English where one does not.
+  if (translated) return null;
   return <>{children}</>;
 }
 

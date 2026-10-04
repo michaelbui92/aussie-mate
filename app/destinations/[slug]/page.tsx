@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
 import { seoFor, pageTitle, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
@@ -96,7 +96,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             href="/destinations"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white text-xs uppercase tracking-[0.3em] mb-6 transition-colors"
           >
-            ← <En>All destinations</En><Ko>전체 여행지</Ko>
+            ← <En translated>All destinations</En><Ja>すべての目的地</Ja><Zh>全部目的地</Zh><Ko>전체 여행지</Ko>
           </Link>
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
             {d.region}
@@ -121,12 +121,16 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             <section className="reveal">
               <div className="flex items-center justify-between mb-3">
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500">
-                  <En>About this place</En>
+                  <En translated>About this place</En>
+                  <Ja>この場所について</Ja>
+                  <Zh>关于这个地方</Zh>
                   <Ko>이곳에 대해</Ko>
                 </p>
                 {d && d.lastUpdated && (
                   <p className="text-[10px] text-stone-500 dark:text-stone-400">
-                    <En>Last updated: {new Date(d.lastUpdated).toLocaleDateString('en-AU')}</En>
+                    <En translated>Last updated: {new Date(d.lastUpdated).toLocaleDateString('en-AU')}</En>
+                    <Ja>最終更新日：{new Date(d.lastUpdated).toLocaleDateString('en-AU')}</Ja>
+                    <Zh>最后更新：{new Date(d.lastUpdated).toLocaleDateString('en-AU')}</Zh>
                     <Ko>최종 업데이트: {new Date(d.lastUpdated).toLocaleDateString('ko-KR')}</Ko>
                   </p>
                 )}
@@ -140,7 +144,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* Highlights */}
             <section className="reveal">
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-                <En>Highlights</En>
+                <En translated>Highlights</En>
+                <Ja>ハイライト</Ja>
+                <Zh>亮点</Zh>
                 <Ko>하이라이트</Ko>
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -172,11 +178,15 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {d.attractions && d.attractions.length > 0 && (
               <section className="reveal">
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-                  <En>Attractions</En>
+                  <En translated>Attractions</En>
+                  <Ja>見どころ</Ja>
+                  <Zh>景点</Zh>
                   <Ko>주요 명소</Ko>
                 </p>
                 <p className="text-sm text-stone-500 dark:text-stone-400 mb-5 max-w-2xl">
-                  <En>What to see, how long to spend, and roughly what it costs.</En>
+                  <En translated>What to see, how long to spend, and roughly what it costs.</En>
+                  <Ja>何を見るか、どのくらい滞在するか、おおよその費用。</Ja>
+                  <Zh>看什么、待多久，以及大致的花费。</Zh>
                   <Ko>볼 거리, 머무를 시간, 대략적인 비용.</Ko>
                 </p>
                 <div className="space-y-3">
@@ -215,7 +225,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {d.howToGetThere && (
               <section className="reveal">
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-3">
-                  <En>How to get there</En>
+                  <En translated>How to get there</En>
+                  <Ja>行き方</Ja>
+                  <Zh>如何到达</Zh>
                   <Ko>가는 방법</Ko>
                 </p>
                 <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
@@ -231,7 +243,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {d.bestTimeDetailed && (
               <section className="reveal">
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-3">
-                  <En>Best time to visit</En>
+                  <En translated>Best time to visit</En>
+                  <Ja>訪れるのに最適な時期</Ja>
+                  <Zh>最佳游览时间</Zh>
                   <Ko>방문 최적기</Ko>
                 </p>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
@@ -249,7 +263,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               return (
               <section className="reveal">
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-                  <En>Top things to do</En>
+                  <En translated>Top things to do</En>
+                  <Ja>おすすめのアクティビティ</Ja>
+                  <Zh>必做之事</Zh>
                   <Ko>추천 활동</Ko>
                 </p>
                 <div className="space-y-4">
@@ -279,7 +295,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               return (
               <section className="reveal">
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-                  <En>Pro tips</En>
+                  <En translated>Pro tips</En>
+                  <Ja>プロのヒント</Ja>
+                  <Zh>内行贴士</Zh>
                   <Ko>전문가 팁</Ko>
                 </p>
                 <div className="space-y-4">
@@ -306,7 +324,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* FAQ — answers the three most-asked visitor questions */}
             <section className="reveal">
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-                <En>Plan your trip</En>
+                <En translated>Plan your trip</En>
+                <Ja>旅の計画</Ja>
+                <Zh>规划你的行程</Zh>
                 <Ko>여행 계획</Ko>
               </p>
               <div className="space-y-4">
@@ -335,7 +355,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           <div className="space-y-5">
             <div className="reveal p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-2">
-                <En>Getting there</En>
+                <En translated>Getting there</En>
+                <Ja>アクセス</Ja>
+                <Zh>如何前往</Zh>
                 <Ko>가는 방법</Ko>
               </p>
               <p className="text-stone-200 text-sm leading-relaxed">
@@ -346,7 +368,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
             <div className="reveal p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-2">
-                <En>Best time to visit</En>
+                <En translated>Best time to visit</En>
+                <Ja>訪れるのに最適な時期</Ja>
+                <Zh>最佳游览时间</Zh>
                 <Ko>방문 최적기</Ko>
               </p>
               <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
@@ -357,7 +381,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
             <div className="reveal p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/60 dark:border-emerald-900/30">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-emerald-700 dark:text-emerald-400 mb-2">
-                <En>Suggested stay</En>
+                <En translated>Suggested stay</En>
+                <Ja>おすすめの滞在期間</Ja>
+                <Zh>建议停留时间</Zh>
                 <Ko>권장 일정</Ko>
               </p>
               <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
@@ -371,7 +397,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         {/* Other destinations */}
         <section className="mt-16 pt-12 border-t border-stone-200/60 dark:border-dark-border">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
-            <En>More places to explore</En>
+            <En translated>More places to explore</En>
+            <Ja>もっと探せる場所</Ja>
+            <Zh>更多值得探索的地方</Zh>
             <Ko>더 많은 여행지</Ko>
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ko } from "../LangBlocks";
+import { En, Ja, Ko, Zh } from "../LangBlocks";
 
 // /journey/before-you-come — "Are you ready?" pre-arrival checklist.
 // The persona content component for the first stage of The Journey.
@@ -119,20 +119,32 @@ export default function BeforeContent() {
           making the move is itself the bold part. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sky-600 mb-3">
-          <En>Pre-arrival</En>
+          <En translated>Pre-arrival</En>
+          <Ja>出発前</Ja>
+          <Zh>抵达前</Zh>
           <Ko>출발 전</Ko>
         </p>
         <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
-          <En>You&apos;re moving to a new country. That&apos;s a big deal.</En>
+          <En translated>You&apos;re moving to a new country. That&apos;s a big deal.</En>
+          <Ja>新しい国へ引っ越すんですね。大したことです。</Ja>
+          <Zh>你要搬去一个新国家了。这可是件大事。</Zh>
           <Ko>새로운 나라로 떠나시는 거네요. 대단한 일이에요.</Ko>
         </h3>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>
+          <En translated>
             Most of the expensive mistakes happen in the 4–6 weeks before
             you fly — the boring admin, the things nobody tells you about.
             Run this list and you&apos;ll touch down with a clear head,
             ready for the exciting part.
           </En>
+          <Ja>高くつく失敗のほとんどは、飛び立つ前の4〜6週間に起こります — 退屈な事務手続き、
+            誰も教えてくれないこと。このリストをこなせば、
+            頭をすっきりさせて到着し、わくわくする部分を
+            楽しむ準備ができます。</Ja>
+          <Zh>很多代价高昂的错误都发生在你出发前的 4–6 周 — 那些枯燥的行政手续、
+            那些没人会告诉你的事。把这份清单走一遍，
+            你落地时就能头脑清醒，
+            准备好迎接精彩的部分。</Zh>
           <Ko>
             가장 큰 실수는 비행 전 4-6주에 일어납니다 — 지루한 행정,
             아무도 알려주지 않는 것들. 이 리스트를 따라가면 도착할 때
@@ -188,18 +200,26 @@ export default function BeforeContent() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <div className="relative">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-white/80 mb-3">
-            <En>Next step</En>
+            <En translated>Next step</En>
+            <Ja>次のステップ</Ja>
+            <Zh>下一步</Zh>
             <Ko>다음 단계</Ko>
           </p>
           <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
-            <En>Once you&apos;ve landed.</En>
+            <En translated>Once you&apos;ve landed.</En>
+            <Ja>到着したら。</Ja>
+            <Zh>落地之后。</Zh>
             <Ko>도착 후에는.</Ko>
           </h4>
           <p className="text-white/85 text-sm md:text-base leading-relaxed mb-6 max-w-2xl">
-            <En>
+            <En translated>
               The first-week checklist (SIM, bank, TFN, Opal, GP) lives on the
               next page. It assumes you&apos;ve already done the prep above.
             </En>
+            <Ja>1週目のチェックリスト（SIM、銀行、TFN、オパール、GP）は次の
+              ページにあります。上の準備が済んでいる前提です。</Ja>
+            <Zh>第一周清单（SIM 卡、银行、TFN、Opal 卡、GP）在
+              下一页。它假定你已经完成了上面的准备工作。</Zh>
             <Ko>
               첫 주 체크리스트(SIM, 은행, TFN, 오팔, GP)는 다음 페이지에
               있습니다. 위의 준비가 끝났다는 전제로 작성되었습니다.
@@ -209,7 +229,9 @@ export default function BeforeContent() {
             href="/journey/arrived"
             className="inline-flex items-center gap-2 bg-white text-sky-600 hover:bg-stone-50 px-6 py-3 rounded-full text-sm font-semibold transition-colors"
           >
-            <En>I&apos;ve landed — what now?</En>
+            <En translated>I&apos;ve landed — what now?</En>
+            <Ja>到着しました — 次はどうする？</Ja>
+            <Zh>我已经落地了 — 接下来呢？</Zh>
             <Ko>도착했어요 — 이제 어떻게?</Ko>
             <span>→</span>
           </Link>

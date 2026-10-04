@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
 import { seoFor, pageTitle, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
 
@@ -66,7 +66,7 @@ export default async function VisaPage({
             href="/visa"
             className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-sunset text-xs uppercase tracking-[0.3em] mb-6 transition-colors"
           >
-            ← <En>All visas</En>
+            ← <En translated>All visas</En><Ja>すべてのビザ</Ja><Zh>所有签证</Zh>
             <Ko>전체 비자</Ko>
           </Link>
           <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-sunset mb-3">
@@ -150,7 +150,9 @@ export default async function VisaPage({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100/60 dark:border-emerald-900/30">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-emerald-700 dark:text-emerald-400 mb-3">
-                    <En>Pros</En>
+                    <En translated>Pros</En>
+                    <Ja>メリット</Ja>
+                    <Zh>优点</Zh>
                     <Ko>장점</Ko>
                   </p>
                   <ul className="space-y-2">
@@ -172,7 +174,9 @@ export default async function VisaPage({
                 </div>
                 <div className="p-5 rounded-2xl bg-rose-50 dark:bg-rose-950/20 border border-rose-100/60 dark:border-rose-900/30">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-rose-700 dark:text-rose-400 mb-3">
-                    <En>Cons</En>
+                    <En translated>Cons</En>
+                    <Ja>デメリット</Ja>
+                    <Zh>缺点</Zh>
                     <Ko>단점</Ko>
                   </p>
                   <ul className="space-y-2">
@@ -200,7 +204,9 @@ export default async function VisaPage({
           <div className="space-y-4">
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-                <En>Duration</En>
+                <En translated>Duration</En>
+                <Ja>滞在期間</Ja>
+                <Zh>停留期限</Zh>
                 <Ko>체류 기간</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
@@ -210,7 +216,9 @@ export default async function VisaPage({
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-                <En>Work rights</En>
+                <En translated>Work rights</En>
+                <Ja>就労権</Ja>
+                <Zh>工作权利</Zh>
                 <Ko>근무 권한</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
@@ -220,7 +228,9 @@ export default async function VisaPage({
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-                <En>Study rights</En>
+                <En translated>Study rights</En>
+                <Ja>就学権</Ja>
+                <Zh>学习权利</Zh>
                 <Ko>수학 권한</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
@@ -230,7 +240,9 @@ export default async function VisaPage({
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-                <En>Cost</En>
+                <En translated>Cost</En>
+                <Ja>費用</Ja>
+                <Zh>费用</Zh>
                 <Ko>비용</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
@@ -240,7 +252,9 @@ export default async function VisaPage({
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-                <En>Processing time</En>
+                <En translated>Processing time</En>
+                <Ja>処理期間</Ja>
+                <Zh>处理时间</Zh>
                 <Ko>처리 기간</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
@@ -251,7 +265,9 @@ export default async function VisaPage({
 
             <div className="p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-                <En>Next steps</En>
+                <En translated>Next steps</En>
+                <Ja>次のステップ</Ja>
+                <Zh>下一步</Zh>
                 <Ko>다음 단계</Ko>
               </p>
               <p className="text-sm text-stone-200 leading-relaxed mb-4">
@@ -267,7 +283,9 @@ export default async function VisaPage({
                       rel="noopener noreferrer"
                       className="text-xs text-sunset hover:underline"
                     >
-                      <En>{l.label.en} →</En>
+                      <En translated>{l.label.en} →</En>
+                      <Ja>{l.label.en} →</Ja>
+                      <Zh>{l.label.en} →</Zh>
                       <Ko>{l.label.ko} →</Ko>
                     </a>
                   </li>
@@ -280,7 +298,9 @@ export default async function VisaPage({
         {/* Other visas */}
         <section className="mt-16 pt-12 border-t border-stone-200/60 dark:border-dark-border">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
-            <En>Compare other visas</En>
+            <En translated>Compare other visas</En>
+            <Ja>他のビザを比較</Ja>
+            <Zh>比较其他签证</Zh>
             <Ko>다른 비자 비교</Ko>
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">

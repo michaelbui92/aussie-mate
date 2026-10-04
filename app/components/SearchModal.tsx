@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo, ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import type { SearchResult } from "@/lib/searchIndex";
 
 // --- Context ---
@@ -172,7 +172,9 @@ export function SearchModal() {
               {!query && (
                 <div className="px-4 py-8 text-center">
                   <p className="text-sm text-eucalypt/40 dark:text-dark-muted/40">
-                    <En>Try &quot;visa&quot;, &quot;bond&quot;, &quot;medicare&quot;, &quot;group work&quot;</En>
+                    <En translated>Try &quot;visa&quot;, &quot;bond&quot;, &quot;medicare&quot;, &quot;group work&quot;</En>
+                    <Ja>&quot;visa&quot;、&quot;bond&quot;、&quot;medicare&quot;、&quot;group work&quot; を試す</Ja>
+                    <Zh>试试 &quot;visa&quot;、&quot;bond&quot;、&quot;medicare&quot;、&quot;group work&quot;</Zh>
                     <Ko>&quot;비자&quot;, &quot;보증금&quot;, &quot;메디케어&quot;, &quot;그룹&quot; 검색</Ko>
                   </p>
                 </div>
@@ -181,7 +183,9 @@ export function SearchModal() {
               {query && flat.length === 0 && (
                 <div className="px-4 py-8 text-center">
                   <p className="text-sm text-eucalypt/40 dark:text-dark-muted/40">
-                    <En>No results for &quot;{query}&quot;</En>
+                    <En translated>No results for &quot;{query}&quot;</En>
+                    <Ja>&quot;{query}&quot;に一致する結果はありません</Ja>
+                    <Zh>没有找到与&quot;{query}&quot;相关的结果</Zh>
                     <Ko>&quot;{query}&quot;에 대한 결과가 없습니다</Ko>
                   </p>
                 </div>
@@ -217,7 +221,9 @@ export function SearchModal() {
                           </p>
                           {item.section && (
                             <p className="text-xs text-eucalypt/40 dark:text-dark-muted/40 mt-0.5 italic line-clamp-1">
-                              <En>in {page}</En>
+                              <En translated>in {page}</En>
+                              <Ja>{page} 内</Ja>
+                              <Zh>在{page}中</Zh>
                               <Ko>{item.pageKo}</Ko>
                             </p>
                           )}

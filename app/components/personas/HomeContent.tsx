@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ko } from "../LangBlocks";
+import { En, Ja, Ko, Zh } from "../LangBlocks";
 
 // /journey/home — Stage 03 of The Journey.
 // Long-term Australian guide. Pivoted from practical admin (super,
@@ -14,17 +14,23 @@ export default function HomeContent() {
       {/* Intro */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-3">
-          <En>Long-term</En>
+          <En translated>Long-term</En>
+          <Ja>長期滞在</Ja>
+          <Zh>长期停留</Zh>
           <Ko>장기 체류</Ko>
         </p>
         <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
-          <En>You&apos;re past the hard part. Make the most of this.</En>
+          <En translated>You&apos;re past the hard part. Make the most of this.</En>
+          <Ja>一番大変な時期は過ぎました。ここからを存分に楽しみましょう。</Ja>
+          <Zh>最难的阶段已经过去了。好好把握接下来的时光吧。</Zh>
           <Ko>제일 어려운 시기는 지났어요. 이제 진짜 즐겨볼 시간입니다.</Ko>
         </h3>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          <En>
+          <En translated>
             You&apos;ve got a flat, a job, an Opal card that actually works. The question shifts — not how to survive, but how to actually live here. Travel the country, push your English, find your people. The years go faster than you think.
           </En>
+          <Ja>住まいも仕事も、ちゃんと使えるオパールカードも手に入れました。問いは変わります — どう生き残るかではなく、ここでどう本当に暮らすか。国内を旅して、英語を伸ばして、仲間を見つけましょう。数年は思うよりずっと速く過ぎます。</Ja>
+          <Zh>你已经有住处、工作，还有一张真正能用的Opal卡。问题变了——不再是如何生存，而是如何在这里真正地生活。去全国各地旅行，提升英语，找到属于自己的人。时光流逝得比你想象中更快。</Zh>
           <Ko>
             이제 집도 구하고, 직장도 갖고, 제대로 작동하는 오팔 카드도 있습니다. 질문이 바뀌어요 — 어떻게 살아남을지가 아니라, 어떻게 여기서 진짜 삶을 즐길 것인가. 호주를 여행하고, 영어를 늘리고, 사람들을 사귀세요. 생각보다 시간이 빨리 갑니다.
           </Ko>
@@ -34,7 +40,9 @@ export default function HomeContent() {
       {/* Start here — four things worth doing before the long list. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-5">
-          <En>Start here</En>
+          <En translated>Start here</En>
+          <Ja>ここから始める</Ja>
+          <Zh>从这里开始</Zh>
           <Ko>먼저 이것부터</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl">
@@ -120,7 +128,9 @@ export default function HomeContent() {
           and a second visa if they want to stay long-term. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-5">
-          <En>Worth doing while you&apos;re here</En>
+          <En translated>Worth doing while you&apos;re here</En>
+          <Ja>ここにいる間にやっておきたいこと</Ja>
+          <Zh>在这里期间值得做的事</Zh>
           <Ko>여기 있는 동안 해볼 만한 것</Ko>
         </p>
         <ul className="space-y-4 max-w-3xl">
@@ -209,23 +219,31 @@ export default function HomeContent() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl" />
         <div className="relative">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-400 mb-3">
-            <En>Honest take</En>
+            <En translated>Honest take</En>
+            <Ja>正直なところ</Ja>
+            <Zh>实话实说</Zh>
             <Ko>솔직한 이야기</Ko>
           </p>
           <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
-            <En>There&apos;s no single timeline for belonging.</En>
+            <En translated>There&apos;s no single timeline for belonging.</En>
+            <Ja>帰属感に決まった時間軸はありません。</Ja>
+            <Zh>归属感没有统一的时间表。</Zh>
             <Ko>소속감의 시간표는 사람마다 다릅니다.</Ko>
           </h4>
           <p className="text-white/80 text-sm md:text-base leading-relaxed mb-4">
-            <En>
+            <En translated>
               Some people feel at home in weeks. Others take years. Both are normal. The first year is when most people consider leaving — the novelty wears off, homesickness spikes, and the friends you made in the first month turn out to be passing through. The ones who stay are usually the ones who stop measuring their life here against where they came from, and start measuring it on its own terms.
             </En>
+            <Ja>数週間でここを我が家のように感じる人もいれば、数年かかる人もいます。どちらも普通のことです。最初の1年は、多くの人が離れることを考える時期です — 新鮮さは薄れ、ホームシックは高まり、最初の1か月にできた友人は通り過ぎるだけの人だったと気づきます。残る人はたいてい、ここでの暮らしを出身地と比べるのをやめ、それ自体の基準で測り始めた人たちです。</Ja>
+            <Zh>有些人几周就有了家的感觉，有些人则需要几年。两者都很正常。第一年往往是大多数人考虑离开的时候——新鲜感消退，思乡情绪达到顶峰，而你第一个月交到的朋友，结果只是匆匆过客。留下来的人，通常是那些不再拿这里的生活与出身地比较、而是开始以它自身的标准来衡量的人。</Zh>
             <Ko>
               어떤 사람은 몇 주 만에 집처럼 느낍니다. 어떤 사람은 몇 년이 걸립니다. 둘 다 정상입니다. 첫 1년은 대부분 떠날까 고민하는 시기 — 새로움은 식고, 향수병은 극에 달하고, 첫 달에 사귄 친구들이 다 지나가는 사람이었다는 걸 알게 됩니다. 남는 사람들은 보통 출신지와 비교하는 것을 멈추고, 여기서의 삶을 자체 기준으로 재기 시작하는 사람들입니다.
             </Ko>
           </p>
           <p className="text-white/60 text-sm leading-relaxed">
-            <En>There is no shortcut. There is also no deadline.</En>
+            <En translated>There is no shortcut. There is also no deadline.</En>
+            <Ja>近道はありません。締め切りもありません。</Ja>
+            <Zh>没有捷径，也没有截止日期。</Zh>
             <Ko>지름길은 없습니다. 마감일도 없습니다.</Ko>
           </p>
         </div>
@@ -236,7 +254,9 @@ export default function HomeContent() {
           a second visa if they want to stay. */}
       <section className="mb-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-5">
-          <En>After this guide</En>
+          <En translated>After this guide</En>
+          <Ja>このガイドの後は</Ja>
+          <Zh>读完这份指南后</Zh>
           <Ko>이 가이드를 마치면</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl">
@@ -300,7 +320,9 @@ export default function HomeContent() {
           Aussie English (the new pivot toward language immersion). */}
       <section>
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-teal-600 mb-5">
-          <En>Keep reading</En>
+          <En translated>Keep reading</En>
+          <Ja>続きを読む</Ja>
+          <Zh>继续阅读</Zh>
           <Ko>더 알아보기</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
@@ -309,11 +331,13 @@ export default function HomeContent() {
             className="reveal reveal-delay-1 group p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-teal-900/20 border border-teal-100/50 dark:border-teal-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
             <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
-              🚗 <En>Weekend trips</En>
+              🚗 <En translated>Weekend trips</En><Ja>週末の旅</Ja><Zh>周末短途游</Zh>
               <Ko>주말 여행</Ko>
             </div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
-              <En>Blue Mountains, South Coast, Hunter Valley</En>
+              <En translated>Blue Mountains, South Coast, Hunter Valley</En>
+              <Ja>ブルー・マウンテンズ、サウス・コースト、ハンター・バレー</Ja>
+              <Zh>蓝山、南海岸、猎人谷</Zh>
               <Ko>블루마운틴, 사우스 코스트, 헌터 밸리</Ko>
             </div>
           </Link>
@@ -322,11 +346,13 @@ export default function HomeContent() {
             className="reveal reveal-delay-2 group p-5 rounded-2xl bg-gradient-to-br from-sunset/10 to-sunset/5 dark:from-sunset/20 dark:to-sunset/10 border border-sunset/20 dark:border-sunset/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
             <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
-              🗣️ <En>Aussie English</En>
+              🗣️ <En translated>Aussie English</En><Ja>オーストラリア英語</Ja><Zh>澳洲英语</Zh>
               <Ko>호주 영어</Ko>
             </div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
-              <En>Slang, idioms, the words you missed</En>
+              <En translated>Slang, idioms, the words you missed</En>
+              <Ja>スラング、慣用句、聞き逃した言葉</Ja>
+              <Zh>俚语、习语，还有你没听懂的那些词</Zh>
               <Ko>슬랭, 관용구, 놓친 표현들</Ko>
             </div>
           </Link>
@@ -335,11 +361,13 @@ export default function HomeContent() {
             className="reveal reveal-delay-3 group p-5 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/50 dark:from-sky-950/30 dark:to-sky-900/20 border border-sky-100/50 dark:border-sky-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
             <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
-              🤝 <En>Community</En>
+              🤝 <En translated>Community</En><Ja>コミュニティ</Ja><Zh>社区</Zh>
               <Ko>커뮤니티</Ko>
             </div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
-              <En>Churches, sports clubs, meetups</En>
+              <En translated>Churches, sports clubs, meetups</En>
+              <Ja>教会、スポーツクラブ、ミートアップ</Ja>
+              <Zh>教会、体育俱乐部、聚会</Zh>
               <Ko>한인 교회, 동호회, 모임</Ko>
             </div>
           </Link>

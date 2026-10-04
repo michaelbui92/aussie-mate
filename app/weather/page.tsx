@@ -1,4 +1,4 @@
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import SeasonAccordion from "@/components/SeasonAccordion";
 import { seoFor, withSeo } from "@/lib/seo";
 
@@ -79,15 +79,21 @@ export default function WeatherPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Weather</En>
+            <En translated>Weather</En>
+            <Ja>天気</Ja>
+            <Zh>天气</Zh>
             <Ko>날씨</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Weather in Australia</En>
+            <En translated>Weather in Australia</En>
+            <Ja>オーストラリアの天気</Ja>
+            <Zh>澳大利亚的天气</Zh>
             <Ko>호주의 날씨</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>What to expect, season by season — plan when to visit, what to pack, and how to make the most of each season.</En>
+            <En translated>What to expect, season by season — plan when to visit, what to pack, and how to make the most of each season.</En>
+            <Ja>季節ごとの見どころ — いつ訪れるか、何を持っていくか、各季節を最大限に楽しむ方法を計画しましょう。</Ja>
+            <Zh>逐季了解天气 — 规划何时到访、带什么行李，以及如何充分利用每个季节。</Zh>
             <Ko>계절별 날씨 가이드 — 언제 방문할지, 무엇을 챙길지, 각 계절을 최대한 즐기는 방법.</Ko>
           </p>
         </div>
@@ -96,7 +102,9 @@ export default function WeatherPage() {
       {/* Season cards */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-          <En>Four seasons</En>
+          <En translated>Four seasons</En>
+          <Ja>四季</Ja>
+          <Zh>四季</Zh>
           <Ko>네 계절</Ko>
         </p>
         <SeasonAccordion seasons={seasons} />
@@ -104,15 +112,21 @@ export default function WeatherPage() {
         {/* UV section */}
         <section className="mb-10 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30 p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-3">
-            <En>UV &amp; sun safety</En>
+            <En translated>UV &amp; sun safety</En>
+            <Ja>UV &amp; 日焼け対策</Ja>
+            <Zh>紫外线 &amp; 防晒安全</Zh>
             <Ko>자외선 &amp; 안전</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
-            <En>The sun here is different.</En>
+            <En translated>The sun here is different.</En>
+            <Ja>ここの太陽は特別です。</Ja>
+            <Zh>这里的阳光与众不同。</Zh>
             <Ko>호주의 태양은 다릅니다.</Ko>
           </h2>
           <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Australia has the highest UV radiation in the world. Even on cloudy days, UV can be extreme. Slip, slop, slap:</En>
+            <En translated>Australia has the highest UV radiation in the world. Even on cloudy days, UV can be extreme. Slip, slop, slap:</En>
+            <Ja>オーストラリアは世界で最も紫外線が強い国です。曇りの日でも紫外線が極端に強くなることがあります。Slip, slop, slap:</Ja>
+            <Zh>澳大利亚拥有世界上最强的紫外线辐射。即使在阴天，紫外线也可能极强。Slip, slop, slap:</Zh>
             <Ko>호주는 세계 최고 자외선 지수를 보유한 나라입니다. 흐린 날에도 자외선이 강할 수 있습니다. Slip, slop, slap:</Ko>
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -133,7 +147,9 @@ export default function WeatherPage() {
         {/* Weather quirks */}
         <section className="mb-10">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
-            <En>Aussie weather quirks</En>
+            <En translated>Aussie weather quirks</En>
+            <Ja>オーストラリアの天気の不思議</Ja>
+            <Zh>澳洲天气的奇特之处</Zh>
             <Ko>호주 날씨의 특이점</Ko>
           </p>
           <ul className="space-y-3">
@@ -163,11 +179,15 @@ export default function WeatherPage() {
         {/* Sydney specifics */}
         <section className="rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Sydney climate</En>
+            <En translated>Sydney climate</En>
+            <Ja>シドニーの気候</Ja>
+            <Zh>悉尼的气候</Zh>
             <Ko>시드니 기후</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-5 leading-tight">
-            <En>The numbers behind the experience.</En>
+            <En translated>The numbers behind the experience.</En>
+            <Ja>その体験を裏付ける数字。</Ja>
+            <Zh>体验背后的数据。</Zh>
             <Ko>경험의 이면의 숫자들.</Ko>
           </h2>
           <div className="grid grid-cols-2 gap-3 mb-5">
@@ -185,7 +205,9 @@ export default function WeatherPage() {
             ))}
           </div>
           <p className="text-xs text-stone-400">
-            <En>Source: Bureau of Meteorology (bom.gov.au) — download the app for real-time forecasts.</En>
+            <En translated>Source: Bureau of Meteorology (bom.gov.au) — download the app for real-time forecasts.</En>
+            <Ja>出典：気象局（bom.gov.au）— リアルタイムの予報はアプリをダウンロードしてご覧ください。</Ja>
+            <Zh>来源：气象局（bom.gov.au）— 下载应用以获取实时预报。</Zh>
             <Ko>출처: 기상청 (bom.gov.au) — 실시간 예보를 보려면 앱을 다운로드하세요.</Ko>
           </p>
         </section>

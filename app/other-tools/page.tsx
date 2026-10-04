@@ -3,7 +3,7 @@ import Link from "next/link";
 // Bilingual (English / 한국어) to match the rest of the site.
 // Expanded with origin/philosophy prose (E-E-A-T: real human, real reasons).
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
@@ -82,24 +82,38 @@ export default function OtherToolsPage() {
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-          <En>Side projects</En>
+          <En translated>Side projects</En>
+          <Ja>サイドプロジェクト</Ja>
+          <Zh>副业项目</Zh>
           <Ko>다른 프로젝트</Ko>
         </p>
         <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          <En>My Projects</En>
+          <En translated>My Projects</En>
+          <Ja>私のプロジェクト</Ja>
+          <Zh>我的项目</Zh>
           <Ko>내 프로젝트</Ko>
         </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl mb-4">
-          <En>Other things I&apos;ve built to help people navigate life in Australia.</En>
+          <En translated>Other things I&apos;ve built to help people navigate life in Australia.</En>
+          <Ja>オーストラリアでの生活をよりよく送るために私が作った他のもの。</Ja>
+          <Zh>我为了帮助人们在澳大利亚生活而做的其他东西。</Zh>
           <Ko>호주 생활에 도움이 되는 다른 프로젝트들.</Ko>
         </p>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-base max-w-2xl">
-          <En>
+          <En translated>
             Each tool below started with a specific frustration of mine or
             someone I know. They&apos;re personal projects, not businesses —
             I&apos;m sharing them because they overlap with the audience
             here, not because they&apos;re products I want to sell you on.
           </En>
+          <Ja>以下の各ツールは、私自身、あるいは知り合いの具体的な
+            もどかしさから始まりました。ビジネスではなく個人プロジェクトです —
+            ここに集まる読者と重なるから共有しているのであって、
+            あなたに売り込みたい製品だからではありません。</Ja>
+          <Zh>下面每个工具都源于我自己或我认识的人
+            的一个具体困扰。它们是个人项目，不是生意 —
+            我分享它们，是因为它们与这里的读者群体有重合，
+            而不是因为我想向你推销这些产品。</Zh>
           <Ko>
             아래 도구들은 모두 제 자신의 혹은 제가 아는 사람의 구체적인
             답답함에서 시작되었습니다. 사업이 아닌 개인 프로젝트입니다 — 판매
@@ -157,7 +171,9 @@ export default function OtherToolsPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full bg-sunset text-white hover:bg-sunset-light transition-colors shadow-sm"
             >
-              <En>Visit {tool.title}</En>
+              <En translated>Visit {tool.title}</En>
+              <Ja>{tool.title} を見る</Ja>
+              <Zh>查看{tool.title}</Zh>
               <Ko>{tool.title} 방문</Ko>
               <span>→</span>
             </a>
@@ -181,7 +197,9 @@ export default function OtherToolsPage() {
 
         <div className="text-center pt-4">
           <Link href="/" className="text-sm text-sunset hover:underline">
-            <En>← Back to AussieGuides home</En>
+            <En translated>← Back to AussieGuides home</En>
+            <Ja>← AussieGuides ホームへ戻る</Ja>
+            <Zh>← 返回 AussieGuides 首页</Zh>
             <Ko>← AussieGuides 홈으로</Ko>
           </Link>
         </div>

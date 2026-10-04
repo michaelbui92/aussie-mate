@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { useSearch } from "@/components/SearchModal";
 import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
@@ -44,12 +44,16 @@ export default function HomePage() {
       <div className="relative h-full flex flex-col items-center text-center px-6 pt-6 sm:pt-8 md:pt-10 pb-12 sm:pb-14 md:pb-16">
           <h1 className="hero-text-shadow font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-6 max-w-4xl">
             <span className="block">
-              <En>Aussie Guides to Sydney and beyond</En>
+              <En translated>Aussie Guides to Sydney and beyond</En>
+              <Ja>シドニーとその先の Aussie Guides</Ja>
+              <Zh>悉尼及更远处 Aussie Guides</Zh>
               <Ko>시드니와 그 너머의 Aussie Guides</Ko>
             </span>
           </h1>
           <p className="hero-text-shadow text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed font-normal">
-            <En>Hi, I&apos;m Michael. I built this guide for anyone planning time in Sydney — first-time visitors, students, working-holiday makers, and anyone curious about how Australia actually works. Pick a destination below, or jump into the topics that matter most to you.</En>
+            <En translated>Hi, I&apos;m Michael. I built this guide for anyone planning time in Sydney — first-time visitors, students, working-holiday makers, and anyone curious about how Australia actually works. Pick a destination below, or jump into the topics that matter most to you.</En>
+            <Ja>こんにちは、マイケルです。シドニーで過ごす時間を計画しているすべての方のために、このガイドを作りました — 初めて訪れる旅行者、学生、ワーキングホリデーの方、そしてオーストラリアが実際にどう動いているのか知りたいすべての方。下から行き先を選ぶか、あなたにとって最も大切なトピックに飛び込んでください。</Ja>
+            <Zh>你好，我是 Michael。我为任何计划在悉尼停留一段时间的人制作了这份指南 — 初次到访的游客、学生、打工度假者，以及任何对澳大利亚实际运作方式感到好奇的人。在下方选择一个目的地，或者直接进入对你最重要的主题。</Zh>
             <Ko>안녕하세요, 마이클입니다. 시드니에서 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드리는 bilingual 가이드를 직접 만들었습니다.</Ko>
           </p>
           {/* mt-auto pins the CTAs and the search bar to the BOTTOM of the hero,
@@ -62,7 +66,9 @@ export default function HomePage() {
               href="/destinations"
               className="group inline-flex items-center justify-center gap-2 bg-sunset hover:bg-sunset-light text-white px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full shadow-lg shadow-sunset/30 hover:shadow-xl hover:shadow-sunset/40"
             >
-              <En>Explore Destinations</En>
+              <En translated>Explore Destinations</En>
+              <Ja>目的地を探す</Ja>
+              <Zh>探索目的地</Zh>
               <Ko>여행지 둘러보기</Ko>
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
@@ -70,7 +76,9 @@ export default function HomePage() {
               href="/tourist"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full"
             >
-              <En>Plan Your Trip</En>
+              <En translated>Plan Your Trip</En>
+              <Ja>旅行を計画する</Ja>
+              <Zh>规划你的行程</Zh>
               <Ko>여행 계획 세우기</Ko>
             </Link>
           </div>
@@ -83,7 +91,9 @@ export default function HomePage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <span className="flex-1 text-left">
-              <En>Search guides, destinations, topics...</En>
+              <En translated>Search guides, destinations, topics...</En>
+              <Ja>ガイド、目的地、トピックを検索...</Ja>
+              <Zh>搜索指南、目的地、主题...</Zh>
               <Ko>가이드, 여행지, 주제 검색...</Ko>
             </span>
             <kbd className="hidden sm:inline text-[10px] font-medium px-1.5 py-0.5 rounded bg-white/10 text-white/50">⌘K</kbd>
@@ -111,11 +121,15 @@ export default function HomePage() {
               </span>
               <div className="flex-1 min-w-0">
                 <p className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
-                  <En>New to Australia?</En>
+                  <En translated>New to Australia?</En>
+                  <Ja>オーストラリアは初めてですか？</Ja>
+                  <Zh>初来澳大利亚？</Zh>
                   <Ko>호주에 처음 오셨나요?</Ko>
                 </p>
                 <p className="text-sm font-semibold text-sunset">
-                  <En>Start here →</En>
+                  <En translated>Start here →</En>
+                  <Ja>ここから始める →</Ja>
+                  <Zh>从这里开始 →</Zh>
                   <Ko>여기서 시작 →</Ko>
                 </p>
               </div>
@@ -134,11 +148,15 @@ export default function HomePage() {
               </span>
               <div className="flex-1 min-w-0">
                 <p className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-tight mb-1">
-                  <En>Stuck with English slang?</En>
+                  <En translated>Stuck with English slang?</En>
+                  <Ja>英語のスラングで困っていませんか？</Ja>
+                  <Zh>听不懂英语俚语？</Zh>
                   <Ko>호주식 영어가 안 통하나요?</Ko>
                 </p>
                 <p className="text-sm font-semibold text-sky-600 dark:text-sky-400">
-                  <En>Check here →</En>
+                  <En translated>Check here →</En>
+                  <Ja>こちらを確認 →</Ja>
+                  <Zh>点这里查看 →</Zh>
                   <Ko>여기 확인 →</Ko>
                 </p>
               </div>
@@ -156,11 +174,15 @@ export default function HomePage() {
           <div className="flex items-end justify-between mb-8 reveal">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-                <En>Destinations</En>
+                <En translated>Destinations</En>
+                <Ja>目的地</Ja>
+                <Zh>目的地</Zh>
                 <Ko>여행지</Ko>
               </p>
               <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
-                <En>Where to go next</En>
+                <En translated>Where to go next</En>
+                <Ja>次はどこへ</Ja>
+                <Zh>下一站去哪儿</Zh>
                 <Ko>다음 여행지는?</Ko>
               </h2>
             </div>
@@ -168,7 +190,9 @@ export default function HomePage() {
               href="/destinations"
               className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
-              <En>View all</En>
+              <En translated>View all</En>
+              <Ja>すべて見る</Ja>
+              <Zh>查看全部</Zh>
               <Ko>전체 보기</Ko>
               <span>→</span>
             </Link>
@@ -211,7 +235,9 @@ export default function HomePage() {
               href="/destinations"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
-              <En>See more destinations</En>
+              <En translated>See more destinations</En>
+              <Ja>他の目的地を見る</Ja>
+              <Zh>查看更多目的地</Zh>
               <Ko>더 많은 여행지 보기</Ko>
               <span>→</span>
             </Link>
@@ -225,11 +251,15 @@ export default function HomePage() {
           <div className="flex items-end justify-between mb-8 reveal">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-                <En>Experiences</En>
+                <En translated>Experiences</En>
+                <Ja>体験</Ja>
+                <Zh>体验</Zh>
                 <Ko>경험</Ko>
               </p>
               <h2 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100">
-                <En>Top experiences</En>
+                <En translated>Top experiences</En>
+                <Ja>おすすめの体験</Ja>
+                <Zh>热门体验</Zh>
                 <Ko>추천 경험</Ko>
               </h2>
             </div>
@@ -237,7 +267,9 @@ export default function HomePage() {
               href="/experiences"
               className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
-              <En>View all</En>
+              <En translated>View all</En>
+              <Ja>すべて見る</Ja>
+              <Zh>查看全部</Zh>
               <Ko>전체 보기</Ko>
               <span>→</span>
             </Link>
@@ -260,7 +292,9 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
                   <p className="text-[10px] font-medium uppercase tracking-widest text-white/60 mb-1.5">
-                    <En>Experience</En>
+                    <En translated>Experience</En>
+                    <Ja>体験</Ja>
+                    <Zh>体验</Zh>
                     <Ko>경험</Ko>
                   </p>
                   <h3 className="font-serif text-2xl mb-1 leading-tight">
@@ -280,7 +314,9 @@ export default function HomePage() {
               href="/experiences"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
-              <En>See more experiences</En>
+              <En translated>See more experiences</En>
+              <Ja>他の体験を見る</Ja>
+              <Zh>查看更多体验</Zh>
               <Ko>더 많은 경험 보기</Ko>
               <span>→</span>
             </Link>
@@ -299,11 +335,15 @@ export default function HomePage() {
           <div className="flex items-end justify-between mb-8 reveal">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
-                <En>Common questions</En>
+                <En translated>Common questions</En>
+                <Ja>よくある質問</Ja>
+                <Zh>常见问题</Zh>
                 <Ko>자주 묻는 질문</Ko>
               </p>
               <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100">
-                <En>Before you book</En>
+                <En translated>Before you book</En>
+                <Ja>予約の前に</Ja>
+                <Zh>预订前须知</Zh>
                 <Ko>예약 전에</Ko>
               </h2>
             </div>
@@ -311,7 +351,9 @@ export default function HomePage() {
               href="/faq"
               className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
-              <En>See all questions</En>
+              <En translated>See all questions</En>
+              <Ja>すべての質問を見る</Ja>
+              <Zh>查看所有问题</Zh>
               <Ko>전체 질문 보기</Ko>
               <span>→</span>
             </Link>
@@ -339,7 +381,9 @@ export default function HomePage() {
               href="/faq"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
-              <En>Read more FAQs</En>
+              <En translated>Read more FAQs</En>
+              <Ja>よくある質問をもっと見る</Ja>
+              <Zh>阅读更多常见问题</Zh>
               <Ko>더 많은 질문 보기</Ko>
               <span>→</span>
             </Link>
@@ -354,17 +398,23 @@ export default function HomePage() {
       <section className="bg-white dark:bg-dark-surface border-t border-stone-200/60 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap items-center justify-center gap-3 text-xs text-stone-500 dark:text-stone-400">
           <span>
-            <En>Written and reviewed by Michael Bui</En>
+            <En translated>Written and reviewed by Michael Bui</En>
+            <Ja>執筆・監修：Michael Bui</Ja>
+            <Zh>撰写与审核：Michael Bui</Zh>
             <Ko>작성·검토: Michael Bui</Ko>
           </span>
           <span aria-hidden="true">·</span>
           <span>
-            <En>Last reviewed: 11 September 2026</En>
+            <En translated>Last reviewed: 11 September 2026</En>
+            <Ja>最終更新：2026年9月11日</Ja>
+            <Zh>最近审核：2026年9月11日</Zh>
             <Ko>최종 검토: 2026년 9월 11일</Ko>
           </span>
           <span aria-hidden="true">·</span>
           <Link href="/editorial" className="text-sunset hover:underline font-medium">
-            <En>Editorial standards</En>
+            <En translated>Editorial standards</En>
+            <Ja>編集方針</Ja>
+            <Zh>编辑标准</Zh>
             <Ko>편집 기준</Ko>
           </Link>
         </div>

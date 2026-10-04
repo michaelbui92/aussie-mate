@@ -3,7 +3,7 @@
 // Content intentionally brief so the team can flesh it out with the
 // real data per-adventure (Blue Mountains, Snowies, coastal walks etc).
 
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -137,13 +137,19 @@ export default function AdventurePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Adventure</En><Ko>어드벤처</Ko>
+            <En translated>Adventure</En>
+            <Ja>アドベンチャー</Ja>
+            <Zh>探险</Zh><Ko>어드벤처</Ko>
           </p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
-            <En>Get out and go</En><Ko>밖으로 나가서</Ko>
+            <En translated>Get out and go</En>
+            <Ja>外へ出かけよう</Ja>
+            <Zh>走出去，出发吧</Zh><Ko>밖으로 나가서</Ko>
           </h1>
           <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
-            <En>From coastal cliff walks two hours from Sydney to Australia&apos;s highest peak in the Snowies. Hiking, mountain biking, ocean swims, and the kind of outdoors that makes the harbour city feel bigger than its bridges.</En>
+            <En translated>From coastal cliff walks two hours from Sydney to Australia&apos;s highest peak in the Snowies. Hiking, mountain biking, ocean swims, and the kind of outdoors that makes the harbour city feel bigger than its bridges.</En>
+            <Ja>シドニーから2時間の海岸の崖歩きから、スノーウィー山脈にあるオーストラリア最高峰まで。ハイキング、マウンテンバイク、海での泳ぎ、そして港町を橋よりも大きく感じさせるようなアウトドア。</Ja>
+            <Zh>从距悉尼两小时的海岸悬崖步道，到雪山地区澳大利亚的最高峰。徒步、山地骑行、海中畅泳，还有那种让这座海港城市显得比它的桥梁更辽阔的户外天地。</Zh>
             <Ko>시드니에서 2시간 거리의 해안 절벽 산책부터 스노위 마운틴의 호주 최고봉까지. 하이킹, 산악자전거, 바다 수영, 항구 도시를 다리보다 더 크게 만드는 야외 활동들.</Ko>
           </p>
         </div>
@@ -165,15 +171,21 @@ export default function AdventurePage() {
                 <AlertTriangle className="w-4 h-4" />
               </span>
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset">
-                <En>Adventure safety</En><Ko>야외 활동 안전</Ko>
+                <En translated>Adventure safety</En>
+                <Ja>アウトドアの安全</Ja>
+                <Zh>户外安全</Zh><Ko>야외 활동 안전</Ko>
               </p>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-2">
-              <En>Come back in one piece</En>
+              <En translated>Come back in one piece</En>
+              <Ja>無事に帰ってくるために</Ja>
+              <Zh>平安归来</Zh>
               <Ko>무사히 돌아오기</Ko>
             </h2>
             <p className="text-sm text-stone-500 dark:text-stone-400 max-w-2xl">
-              <En>Australia&apos;s outdoors is beautiful and dangerous in equal measure. Take these seriously.</En>
+              <En translated>Australia&apos;s outdoors is beautiful and dangerous in equal measure. Take these seriously.</En>
+              <Ja>オーストラリアのアウトドアは美しさと危険が同じくらいあります。以下を真剣に受け止めてください。</Ja>
+              <Zh>澳大利亚的户外之美与危险并存，程度相当。请认真对待以下内容。</Zh>
               <Ko>호주의 야외는 아름답고 동시에 위험합니다. 다음 사항을 진지하게 받아들이세요.</Ko>
             </p>
           </div>
@@ -211,15 +223,21 @@ export default function AdventurePage() {
               <MapPin className="w-4 h-4" />
             </span>
             <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sky">
-              <En>Packing list</En><Ko>준비물 체크리스트</Ko>
+              <En translated>Packing list</En>
+              <Ja>持ち物リスト</Ja>
+              <Zh>行李清单</Zh><Ko>준비물 체크리스트</Ko>
             </p>
           </div>
           <h2 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-2">
-            <En>What to bring on a day hike</En>
+            <En translated>What to bring on a day hike</En>
+            <Ja>日帰りハイキングの持ち物</Ja>
+            <Zh>一日徒步要带什么</Zh>
             <Ko>당일 하이킹 준비물</Ko>
           </h2>
           <p className="text-sm text-stone-500 dark:text-stone-400 max-w-2xl mb-6">
-            <En>Skip the heavy backpack — most day walks in NSW need less than you think, but the essentials matter.</En>
+            <En translated>Skip the heavy backpack — most day walks in NSW need less than you think, but the essentials matter.</En>
+            <Ja>重いバックパックはやめましょう — NSWの日帰り散策のほとんどは思うより少なくて済みますが、必需品は大切です。</Ja>
+            <Zh>别背沉重的背包——新南威尔士州大多数一日步道需要的比你想象的少，但必需品很重要。</Zh>
             <Ko>무거운 배낭은 잊으세요 — NSW의 대부분의 당일 산책은 생각보다 적게 필요하지만, 필수품은 중요합니다.</Ko>
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -245,14 +263,20 @@ export default function AdventurePage() {
         {/* Emergency callout */}
         <section className="rounded-2xl bg-gradient-to-br from-stone-900 to-stone-800 dark:from-stone-800 dark:to-stone-900 text-white p-6 md:p-8 shadow-lg border border-stone-700/50">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Emergency</En><Ko>비상 연락</Ko>
+            <En translated>Emergency</En>
+            <Ja>緊急時の連絡先</Ja>
+            <Zh>紧急情况</Zh><Ko>비상 연락</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>If something goes wrong.</En>
+            <En translated>If something goes wrong.</En>
+            <Ja>もしものことがあったら。</Ja>
+            <Zh>万一出了问题时。</Zh>
             <Ko>문제가 생기면.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Call 000 for police, fire, or ambulance. For bushwalkers, NSW Police Rescue and SES (State Emergency Service) handle land searches. Download the Emergency+ app before you go — it shares your exact GPS location with 000 dispatchers. For non-urgent help, contact the relevant NSW National Parks office.</En>
+            <En translated>Call 000 for police, fire, or ambulance. For bushwalkers, NSW Police Rescue and SES (State Emergency Service) handle land searches. Download the Emergency+ app before you go — it shares your exact GPS location with 000 dispatchers. For non-urgent help, contact the relevant NSW National Parks office.</En>
+            <Ja>警察、消防、救急には000に電話してください。ブッシュウォーカーの場合、NSW警察救助隊とSES（州緊急サービス）が陸上捜索を担当します。出発前にEmergency+アプリをダウンロードしましょう — 000のオペレーターに正確なGPS位置を共有します。緊急でない相談は、該当するNSW国立公園事務所に連絡してください。</Ja>
+            <Zh>报警、火警或救护车请拨打000。对于丛林徒步者，新南威尔士州警察救援队和SES（州紧急服务）负责陆地搜救。出发前请下载Emergency+应用——它会与000调度员共享你的精确GPS位置。非紧急求助请联系相关的新南威尔士州国家公园办事处。</Zh>
             <Ko>경찰, 소방, 구급차는 000으로 전화하세요. bushwalker의 경우 NSW 경찰 구조대와 SES(州 응급 서비스)가 육상 수색을 담당합니다. 가기 전에 Emergency+ 앱을 다운로드하세요 — 000 디스패처와 정확한 GPS 위치를 공유합니다. 긴급하지 않은 도움은 관련 NSW 국립공원 사무실에 연락하세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

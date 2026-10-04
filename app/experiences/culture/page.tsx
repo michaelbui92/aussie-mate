@@ -2,7 +2,7 @@
 // Editorial style — where to go for authentic cultural experiences.
 
 import type { Metadata } from "next";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -90,14 +90,20 @@ export default function CulturePage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Culture</En><Ko>문화</Ko>
+            <En translated>Culture</En>
+            <Ja>文化</Ja>
+            <Zh>文化</Zh><Ko>문화</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Many cultures, one Sydney</En>
+            <En translated>Many cultures, one Sydney</En>
+            <Ja>多くの文化、ひとつのシドニー</Ja>
+            <Zh>多元文化，同一个悉尼</Zh>
             <Ko>많은 문화, 하나의 시드니</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>Sydney is one of the most multicultural cities in the world. Every neighbourhood has its own food, language, and traditions. Here's where to go to experience them firsthand.</En>
+            <En translated>Sydney is one of the most multicultural cities in the world. Every neighbourhood has its own food, language, and traditions. Here's where to go to experience them firsthand.</En>
+            <Ja>シドニーは世界で最も多文化な都市のひとつです。どの地区にも独自の料理、言語、伝統があります。それを直接体験できる場所を紹介します。</Ja>
+            <Zh>悉尼是世界上最多元文化的城市之一。每个街区都有自己的美食、语言和传统。以下就是亲身体验它们的好去处。</Zh>
             <Ko>시드니는 세계에서 가장 다문화적인 도시 중 하나입니다. 모든 동네에는 고유한 음식, 언어, 전통이 있습니다. 직접 경험할 수 있는 곳을 소개합니다.</Ko>
           </p>
         </div>
@@ -112,14 +118,20 @@ export default function CulturePage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Resources</En><Ko>리소스</Ko>
+            <En translated>Resources</En>
+            <Ja>リソース</Ja>
+            <Zh>资源</Zh><Ko>리소스</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Keep exploring.</En>
+            <En translated>Keep exploring.</En>
+            <Ja>探検を続けましょう。</Ja>
+            <Zh>继续探索吧。</Zh>
             <Ko>계속 탐험하세요.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>Sydney's cultural richness is one of its greatest strengths. Take the train to a neighbourhood you've never been to. Try food you've never eaten. Talk to people. The best way to understand Australia is to experience its multicultural soul.</En>
+            <En translated>Sydney's cultural richness is one of its greatest strengths. Take the train to a neighbourhood you've never been to. Try food you've never eaten. Talk to people. The best way to understand Australia is to experience its multicultural soul.</En>
+            <Ja>シドニーの文化的な豊かさは、最大の強みのひとつです。行ったことのない地区へ電車で出かけてみましょう。食べたことのない料理を試してみましょう。人と話しましょう。オーストラリアを理解する最良の方法は、その多文化な魂を体験することです。</Ja>
+            <Zh>悉尼的文化丰富性是其最大的优势之一。坐火车去一个你从未去过的街区。尝一尝你从未吃过的食物。与人交谈。理解澳大利亚的最佳方式，就是体验它多元文化的灵魂。</Zh>
             <Ko>시드니의 문화적 풍요로움은 가장 큰 강점 중 하나입니다. 가보지 않은 동네로 기차를 타보세요. 먹어보지 않은 음식을 먹어보세요. 사람들과 대화하세요. 호주를 이해하는 가장 좋은 방법은 그 다문화적 영혼을 경험하는 것입니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

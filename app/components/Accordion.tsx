@@ -9,7 +9,7 @@
 
 import { useState, ReactNode, ComponentType } from "react";
 import { ChevronDown, Icons } from "./Icons";
-import { En, Ko } from "./LangBlocks";
+import { En, Ja, Ko, Zh } from "./LangBlocks";
 
 export interface AccordionItem {
   label: ReactNode;
@@ -105,11 +105,17 @@ export default function Accordion({
                 {section.items.map((item, ii) => (
                   <div key={ii} className="px-5 md:px-6 py-4">
                     <p className={`font-medium text-sm ${accentText} mb-1.5`}>{item.label}</p>
-                    <En>
+                    <En translated>
                       <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
                         {item.en}
                       </p>
                     </En>
+                    <Ja><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
+                        {item.en}
+                      </p></Ja>
+                    <Zh><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
+                        {item.en}
+                      </p></Zh>
                     <Ko>
                       <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                         {item.ko}

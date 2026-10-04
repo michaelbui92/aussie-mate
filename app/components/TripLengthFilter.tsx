@@ -4,7 +4,7 @@
 // driven by a lightweight IntersectionObserver that also handles the
 // sticky-top behavior of the existing parent <nav>.
 import { useEffect, useState } from "react";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 
 export type FilterKey = "day" | "weekend" | "longer" | "far";
 
@@ -54,7 +54,9 @@ export default function TripLengthFilter() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-2 overflow-x-auto">
       <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 shrink-0 mr-1">
-        <En>Trip</En>
+        <En translated>Trip</En>
+        <Ja>旅行</Ja>
+        <Zh>行程</Zh>
         <Ko>일정</Ko>
       </span>
       {ORDER.map((key) => {

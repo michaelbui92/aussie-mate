@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 
 export type RelatedItem = {
   href: string;
@@ -28,11 +28,15 @@ export default function RelatedContent({ items }: { items: RelatedItem[] }) {
     <section className="border-t border-stone-200 dark:border-dark-border bg-stone-50 dark:bg-darkbg">
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
         <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-          <En>Keep reading</En>
+          <En translated>Keep reading</En>
+          <Ja>続きを読む</Ja>
+          <Zh>继续阅读</Zh>
           <Ko>더 알아보기</Ko>
         </p>
         <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-6">
-          <En>Related guides</En>
+          <En translated>Related guides</En>
+          <Ja>関連ガイド</Ja>
+          <Zh>相关指南</Zh>
           <Ko>관련 가이드</Ko>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -51,7 +55,9 @@ export default function RelatedContent({ items }: { items: RelatedItem[] }) {
                 <Ko>{item.description.ko}</Ko>
               </p>
               <span className="mt-3 text-xs font-medium text-sunset group-hover:text-white transition-colors">
-                <En>Read guide →</En>
+                <En translated>Read guide →</En>
+                <Ja>ガイドを読む →</Ja>
+                <Zh>阅读指南 →</Zh>
                 <Ko>가이드 보기 →</Ko>
               </span>
             </Link>

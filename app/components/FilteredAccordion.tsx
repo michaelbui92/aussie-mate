@@ -9,7 +9,7 @@
 
 import { useState, ReactNode, ComponentType } from "react";
 import { Icons } from "./Icons";
-import { En, Ko } from "./LangBlocks";
+import { En, Ja, Ko, Zh } from "./LangBlocks";
 
 export interface BeyondSydneyDestination {
   id: string;
@@ -71,7 +71,7 @@ export default function FilteredAccordion({
           {vibeOrder.map((vibe) => {
             const isActive = filter === vibe;
             const label: ReactNode = vibe === "all" ? (
-              <><En>All</En><Ko>전체</Ko></>
+              <><En translated>All</En><Ja>すべて</Ja><Zh>全部</Zh><Ko>전체</Ko></>
             ) : (
               <><En>{vibeLabels[vibe].en}</En><Ko>{vibeLabels[vibe].ko}</Ko></>
             );
@@ -152,7 +152,9 @@ export default function FilteredAccordion({
 
                   <div>
                     <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
-                      <En>Highlights</En><Ko>주요 포인트</Ko>
+                      <En translated>Highlights</En>
+                      <Ja>ハイライト</Ja>
+                      <Zh>亮点</Zh><Ko>주요 포인트</Ko>
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {dest.highlights.map((h, i) => (
@@ -169,7 +171,9 @@ export default function FilteredAccordion({
                   <div className="grid sm:grid-cols-2 gap-3">
                     <div className="rounded-xl bg-stone-50 dark:bg-darkbg p-4">
                       <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
-                        <En>Getting there</En><Ko>가는 방법</Ko>
+                        <En translated>Getting there</En>
+                        <Ja>アクセス</Ja>
+                        <Zh>如何前往</Zh><Ko>가는 방법</Ko>
                       </p>
                       <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
                         <En>{dest.transport}</En>
@@ -178,7 +182,9 @@ export default function FilteredAccordion({
                     </div>
                     <div className="rounded-xl bg-stone-50 dark:bg-darkbg p-4">
                       <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
-                        <En>Best time to visit</En><Ko>방문 최적기</Ko>
+                        <En translated>Best time to visit</En>
+                        <Ja>訪れるのに最適な時期</Ja>
+                        <Zh>最佳游览时间</Zh><Ko>방문 최적기</Ko>
                       </p>
                       <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
                         <En>{dest.bestTime}</En>
@@ -196,7 +202,9 @@ export default function FilteredAccordion({
           <div className="text-center py-16">
             <div className="text-5xl mb-3">🔍</div>
             <p className="text-stone-500 dark:text-stone-400 font-medium">
-              <En>No destinations match that filter</En>
+              <En translated>No destinations match that filter</En>
+              <Ja>そのフィルターに一致する目的地はありません</Ja>
+              <Zh>没有符合该筛选条件的目的地</Zh>
               <Ko>해당 필터에 맞는 목적지가 없습니다</Ko>
             </p>
           </div>

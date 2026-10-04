@@ -2,7 +2,7 @@
 // Redesigned in editorial style.
 
 import Link from "next/link";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -120,13 +120,19 @@ export default function TouristPage() {
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Tourist</En><Ko>관광</Ko>
+            <En translated>Tourist</En>
+            <Ja>観光</Ja>
+            <Zh>旅游</Zh><Ko>관광</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-[0.95] mb-4">
-            <En>Sydney tourist guide</En><Ko>시드니 관광 가이드</Ko>
+            <En translated>Sydney tourist guide</En>
+            <Ja>シドニー観光ガイド</Ja>
+            <Zh>悉尼旅游指南</Zh><Ko>시드니 관광 가이드</Ko>
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
-            <En>All the know-how you need for visiting Sydney as a Korean traveller.</En>
+            <En translated>All the know-how you need for visiting Sydney as a Korean traveller.</En>
+            <Ja>韓国の旅行者がシドニーを訪れる際に必要なノウハウをすべて。</Ja>
+            <Zh>作为韩国旅客游览悉尼所需的全部实用知识。</Zh>
             <Ko>한국 여행자가 시드니를 방문할 때 필요한 모든 정보입니다.</Ko>
           </p>
         </div>
@@ -136,13 +142,23 @@ export default function TouristPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
           <section className="p-5 rounded-2xl bg-sunset/5 border border-sunset/20 dark:bg-sunset/10">
             <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
-              <En>
+              <En translated>
                 For transport in depth — Opal cards, peak vs off-peak fares, how to complain — see the{" "}
                 <Link href="/transport" className="text-sunset font-medium hover:underline">
                   Transport page
                 </Link>
                 .
               </En>
+              <Ja>交通について詳しく — オパールカード、ピーク時とオフピーク時の運賃、苦情の出し方 — は{" "}
+                <Link href="/transport" className="text-sunset font-medium hover:underline">
+                  交通ページ
+                </Link>
+                をご覧ください。</Ja>
+              <Zh>想深入了解交通 — Opal 卡、高峰与非高峰票价、如何投诉 — 请见{" "}
+                <Link href="/transport" className="text-sunset font-medium hover:underline">
+                  交通页面
+                </Link>
+                。</Zh>
               <Ko>
                 오팔 카드, 피크/오프피크 요금, 민원 제기 등 자세한 교통 정보는{" "}
                 <Link href="/transport" className="text-sunset font-medium hover:underline">
@@ -154,13 +170,23 @@ export default function TouristPage() {
           </section>
           <section className="p-5 rounded-2xl bg-sage/5 border border-sage/20 dark:bg-sage/10">
             <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
-              <En>
+              <En translated>
                 Looking for day trips or weekend getaways beyond Sydney? See{" "}
                 <Link href="/destinations" className="text-sunset font-medium hover:underline">
                   Destinations
                 </Link>
                 .
               </En>
+              <Ja>シドニーを離れて日帰り旅行や週末の小旅行をお探しですか？{" "}
+                <Link href="/destinations" className="text-sunset font-medium hover:underline">
+                  目的地
+                </Link>
+                をご覧ください。</Ja>
+              <Zh>想找悉尼以外的日游或周末短途旅行？请见{" "}
+                <Link href="/destinations" className="text-sunset font-medium hover:underline">
+                  目的地
+                </Link>
+                。</Zh>
               <Ko>
                 시드니 밖 당일 여행이나 주말 여행지는{" "}
                 <Link href="/destinations" className="text-sunset font-medium hover:underline">
@@ -182,20 +208,30 @@ export default function TouristPage() {
         {/* FAQ — short visitor questions, mirrored as JSON-LD below for Google rich results */}
         <section className="mt-16">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            <En>Common questions</En><Ko>자주 묻는 질문</Ko>
+            <En translated>Common questions</En>
+            <Ja>よくある質問</Ja>
+            <Zh>常见问题</Zh><Ko>자주 묻는 질문</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 mb-6 leading-tight">
-            <En>Before you go.</En><Ko>가기 전에.</Ko>
+            <En translated>Before you go.</En>
+            <Ja>出発前に。</Ja>
+            <Zh>出发之前。</Zh><Ko>가기 전에.</Ko>
           </h2>
           <div className="space-y-5">
             <div>
               <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
-                <En>Do I need a visa?</En><Ko>비자가 필요한가요?</Ko>
+                <En translated>Do I need a visa?</En>
+                <Ja>ビザは必要ですか？</Ja>
+                <Zh>我需要签证吗？</Zh><Ko>비자가 필요한가요?</Ko>
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                <En>Most passport holders need an ETA, eVisitor, or visitor visa before flying. Apply online before you book flights — see the{" "}
+                <En translated>Most passport holders need an ETA, eVisitor, or visitor visa before flying. Apply online before you book flights — see the{" "}
                   <Link href="/visa" className="text-sunset font-medium hover:underline">Visa Guide</Link> for the full breakdown by trip length.
                 </En>
+                <Ja>多くのパスポート保持者は、搭乗前に ETA、eVisitor、または観光ビザが必要です。航空券を予約する前にオンラインで申請してください — 旅行期間別の詳しい内訳は{" "}
+                  <Link href="/visa" className="text-sunset font-medium hover:underline">ビザガイド</Link>をご覧ください。</Ja>
+                <Zh>大多数护照持有者在登机前需要 ETA、eVisitor 或访客签证。请在预订机票之前在线申请 — 按行程时长划分的完整说明请见{" "}
+                  <Link href="/visa" className="text-sunset font-medium hover:underline">签证指南</Link>。</Zh>
                 <Ko>한국 여행자는 비행기 탑승 전 ETA, eVisitor 또는 방문 비자가 필요합니다. 항공권 예약 전에 온라인으로 신청하세요. 자세한 내용은{" "}
                   <Link href="/visa" className="text-sunset font-medium hover:underline">비자 가이드</Link>에서 확인하세요.
                 </Ko>
@@ -203,28 +239,40 @@ export default function TouristPage() {
             </div>
             <div>
               <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
-                <En>Is tipping expected?</En><Ko>팁을 줘야 하나요?</Ko>
+                <En translated>Is tipping expected?</En>
+                <Ja>チップは必要ですか？</Ja>
+                <Zh>需要给小费吗？</Zh><Ko>팁을 줘야 하나요?</Ko>
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                <En>No. Australian service workers earn Award wages and tipping is not part of the culture. See <Link href="/finance" className="text-sunset font-medium hover:underline">Finance</Link> for the full tipping and money guide.</En>
+                <En translated>No. Australian service workers earn Award wages and tipping is not part of the culture. See <Link href="/finance" className="text-sunset font-medium hover:underline">Finance</Link> for the full tipping and money guide.</En>
+                <Ja>いいえ。オーストラリアのサービス業従事者は Award 賃金を得ており、チップは文化の一部ではありません。チップとお金についての完全ガイドは <Link href="/finance" className="text-sunset font-medium hover:underline">金融</Link> をご覧ください。</Ja>
+                <Zh>不。澳大利亚的服务业从业者领取 Award 工资，小费并不是当地文化的一部分。完整的小费与金钱指南请见 <Link href="/finance" className="text-sunset font-medium hover:underline">金融</Link>。</Zh>
                 <Ko>아니요. 호주 서비스 직원은 법정 최저 임금을 받으며 팁 문화가 없습니다. 자세한 내용은 <Link href="/finance" className="text-sunset font-medium hover:underline">금융 가이드</Link>에서 확인하세요.</Ko>
               </p>
             </div>
             <div>
               <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
-                <En>How safe is Sydney at night?</En><Ko>시드니 밤에 안전한가요?</Ko>
+                <En translated>How safe is Sydney at night?</En>
+                <Ja>シドニーの夜はどのくらい安全ですか？</Ja>
+                <Zh>悉尼晚上有多安全？</Zh><Ko>시드니 밤에 안전한가요?</Ko>
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                <En>The CBD, Darling Harbour, The Rocks, and inner suburbs like Newtown and Surry Hills are safe to walk at night. Stick to lit streets and use common sense — Sydney is calmer than most big cities, but standard precautions apply. Trains stop around midnight, so plan a taxi or rideshare for late nights.</En>
+                <En translated>The CBD, Darling Harbour, The Rocks, and inner suburbs like Newtown and Surry Hills are safe to walk at night. Stick to lit streets and use common sense — Sydney is calmer than most big cities, but standard precautions apply. Trains stop around midnight, so plan a taxi or rideshare for late nights.</En>
+                <Ja>CBD、ダーリング・ハーバー、ザ・ロックス、そしてニュータウンやサリー・ヒルズのような市内近郊は、夜でも歩いて安全です。明るい通りを歩き、常識的な判断を心がけてください — シドニーはほとんどの大都市より落ち着いていますが、標準的な注意は必要です。電車は真夜中ごろに運転を終えるので、深夜はタクシーや配車サービスの利用を計画しましょう。</Ja>
+                <Zh>中央商务区、达令港、岩石区，以及纽敦和萨里山等内城郊区，夜间步行都很安全。尽量走灯光明亮的街道并保持常识 — 悉尼比大多数大城市更平静，但仍需采取常规防范措施。火车在午夜前后停止运营，深夜出行请提前安排出租车或网约车。</Zh>
                 <Ko>CBD, 달라 항구, 더 록스, 뉴타운과 서리힐스 같은 시내 교외는 밤에도 걸어다니기 안전합니다. 밝은 거리로 다니고 상식적인 주의를 기울이세요 — 시드니는 대부분의 대도시보다 조용하지만 기본적인 주의는 필요합니다. 기차는 자정 무렵에 끊기므로 늦은 밤에는 택시나 차량 호출 앱을 이용하세요.</Ko>
               </p>
             </div>
             <div>
               <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1.5">
-                <En>How do I get from the airport to the city?</En><Ko>공항에서 시내로 어떻게 가나요?</Ko>
+                <En translated>How do I get from the airport to the city?</En>
+                <Ja>空港から市内へはどう行けばいいですか？</Ja>
+                <Zh>从机场到市区怎么走？</Zh><Ko>공항에서 시내로 어떻게 가나요?</Ko>
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                <En>The airport train (T8) is fast but pricey ($20 AUD–25). The 400 bus from the airport terminals runs to Bondi Junction via the CBD for about $3 AUD with Opal — best value. Rideshare apps (Uber/Ola/DiDi) sit between the two in price and convenience. See <Link href="/transport" className="text-sunset font-medium hover:underline">Transport</Link> for the full breakdown.</En>
+                <En translated>The airport train (T8) is fast but pricey ($20 AUD–25). The 400 bus from the airport terminals runs to Bondi Junction via the CBD for about $3 AUD with Opal — best value. Rideshare apps (Uber/Ola/DiDi) sit between the two in price and convenience. See <Link href="/transport" className="text-sunset font-medium hover:underline">Transport</Link> for the full breakdown.</En>
+                <Ja>空港列車（T8）は速いですが割高です（$20 AUD–25）。空港ターミナル発の 400 番バスは CBD を経由してボンダイ・ジャンクションまで行き、Opal で約 $3 AUD — いちばんお得です。ライドシェアアプリ（Uber/Ola/DiDi）は価格と便利さの中間です。詳しい内訳は <Link href="/transport" className="text-sunset font-medium hover:underline">交通</Link> をご覧ください。</Ja>
+                <Zh>机场火车（T8）很快但价格偏高（$20 AUD–25）。从机场航站楼出发的 400 路公交经 CBD 前往邦迪枢纽，用 Opal 约 $3 AUD — 最划算。网约车应用（Uber/Ola/DiDi）的价格和便利度介于两者之间。完整说明请见 <Link href="/transport" className="text-sunset font-medium hover:underline">交通</Link>。</Zh>
                 <Ko>공항 기차(T8)는 빠르지만 비쌉니다($20 AUD–25). 공항 터미널에서 출발하는 400번 버스는 CBD를 경유해 본다이 정션까지 가며 오팔로 약 $3 AUD입니다 — 가성비 최고. 차량 호출 앱(Uber/Ola/DiDi)은 가격과 편의성 면에서 그 중간입니다. 자세한 내용은 <Link href="/transport" className="text-sunset font-medium hover:underline">교통 가이드</Link>에서 확인하세요.</Ko>
               </p>
             </div>
@@ -233,14 +281,20 @@ export default function TouristPage() {
 
         <section className="mt-16 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 md:p-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
-            <En>Emergency contacts</En><Ko>비상 연락처</Ko>
+            <En translated>Emergency contacts</En>
+            <Ja>緊急連絡先</Ja>
+            <Zh>紧急联系方式</Zh><Ko>비상 연락처</Ko>
           </p>
           <h2 className="font-serif text-2xl md:text-3xl mb-3 leading-tight">
-            <En>Save these before you arrive.</En>
+            <En translated>Save these before you arrive.</En>
+            <Ja>到着前に保存しておきましょう。</Ja>
+            <Zh>抵达前请先保存这些号码。</Zh>
             <Ko>도착 전에 저장해 두세요.</Ko>
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>000 is the main emergency number (police, fire, ambulance). For non-urgent police matters call 131 444. For consular help, the Korean Consulate in Sydney is open weekdays.</En>
+            <En translated>000 is the main emergency number (police, fire, ambulance). For non-urgent police matters call 131 444. For consular help, the Korean Consulate in Sydney is open weekdays.</En>
+            <Ja>000は主要な緊急番号です（警察、消防、救急）。緊急性のない警察案件は131 444にお電話ください。領事に関する支援については、シドニーの韓国領事館が平日に開いています。</Ja>
+            <Zh>000是主要紧急电话（警察、消防、救护）。非紧急的警务事项请拨打131 444。如需领事协助，悉尼的韩国领事馆在工作日开放。</Zh>
             <Ko>000은 주요 응급 번호입니다(경찰, 소방, 구급). 비응급 경찰 사항은 131 444로 전화하세요. 영사관 도움이 필요하면 시드니 주한 한국 영사관에 평일 동안 연락하세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">

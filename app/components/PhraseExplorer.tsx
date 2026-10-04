@@ -9,7 +9,7 @@
 
 import { useState, useMemo, useCallback } from "react";
 import type { Phrase } from "@/lib/phrases";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 
 export interface PhraseCategory {
   value: Phrase["category"] | "all";
@@ -83,7 +83,9 @@ export default function PhraseExplorer({
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 md:py-16">
           <div className="flex items-center justify-between mb-6">
             <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500">
-              <En>Flashcard review</En>
+              <En translated>Flashcard review</En>
+              <Ja>フラッシュカード復習</Ja>
+              <Zh>闪卡复习</Zh>
               <Ko>플래시카드 복습</Ko>
             </p>
             <p className="text-xs text-stone-500 dark:text-stone-400 tabular-nums">
@@ -109,7 +111,9 @@ export default function PhraseExplorer({
                   {card.phrase}
                 </p>
                 <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mt-4">
-                  <En>Tap to reveal</En>
+                  <En translated>Tap to reveal</En>
+                  <Ja>タップして表示</Ja>
+                  <Zh>点击查看释义</Zh>
                   <Ko>탭하여 뜻 보기</Ko>
                 </p>
               </>
@@ -141,7 +145,9 @@ export default function PhraseExplorer({
               disabled={reviewIndex === 0}
               className="px-5 py-2.5 rounded-full text-sm font-medium border border-stone-200 dark:border-dark-border text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
-              <En>← Previous</En>
+              <En translated>← Previous</En>
+              <Ja>← 前へ</Ja>
+              <Zh>← 上一个</Zh>
               <Ko>← 이전</Ko>
             </button>
             <button type="button"
@@ -149,9 +155,9 @@ export default function PhraseExplorer({
               className="px-5 py-2.5 rounded-full text-sm font-medium bg-sunset text-white hover:bg-sunset-light transition-all shadow-sm"
             >
               {reviewIndex < reviewCards.length - 1 ? (
-                <><En>Next →</En><Ko>다음 →</Ko></>
+                <><En translated>Next →</En><Ja>次へ →</Ja><Zh>下一个 →</Zh><Ko>다음 →</Ko></>
               ) : (
-                <><En>Finish ✓</En><Ko>완료 ✓</Ko></>
+                <><En translated>Finish ✓</En><Ja>完了 ✓</Ja><Zh>完成 ✓</Zh><Ko>완료 ✓</Ko></>
               )}
             </button>
           </div>
@@ -161,7 +167,9 @@ export default function PhraseExplorer({
               onClick={() => setReviewMode(false)}
               className="text-xs text-stone-400 dark:text-stone-500 hover:text-sunset transition-colors"
             >
-              <En>Exit review</En>
+              <En translated>Exit review</En>
+              <Ja>復習を終了</Ja>
+              <Zh>退出复习</Zh>
               <Ko>복습 나가기</Ko>
             </button>
           </div>
@@ -211,7 +219,9 @@ export default function PhraseExplorer({
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          <En>Review flashcards</En>
+          <En translated>Review flashcards</En>
+          <Ja>フラッシュカードを復習</Ja>
+          <Zh>复习闪卡</Zh>
           <Ko>플래시카드 복습</Ko>
         </button>
       </div>
@@ -242,7 +252,9 @@ export default function PhraseExplorer({
         <Ko>{filtered.length}개 표현</Ko>
         {search && (
           <>
-            <En> for &ldquo;{search}&rdquo;</En>
+            <En translated> for &ldquo;{search}&rdquo;</En>
+            <Ja>&ldquo;{search}&rdquo;の結果</Ja>
+            <Zh>&ldquo;{search}&rdquo;的结果</Zh>
             <Ko> (&ldquo;{search}&rdquo; 검색)</Ko>
           </>
         )}
@@ -253,11 +265,15 @@ export default function PhraseExplorer({
         <div className="text-center py-16 px-4">
           <div className="text-5xl mb-4" aria-hidden="true">🔎</div>
           <p className="font-serif text-xl text-stone-700 dark:text-stone-200 mb-1">
-            <En>No matches</En>
+            <En translated>No matches</En>
+            <Ja>該当なし</Ja>
+            <Zh>没有匹配结果</Zh>
             <Ko>검색 결과 없음</Ko>
           </p>
           <p className="text-sm text-stone-500 dark:text-stone-400 mb-5">
-            <En>Try a different word or clear the filters.</En>
+            <En translated>Try a different word or clear the filters.</En>
+            <Ja>別の単語を試すか、フィルターを解除してください。</Ja>
+            <Zh>试试别的词，或清除筛选条件。</Zh>
             <Ko>다른 단어를 입력하거나 필터를 해제해 보세요.</Ko>
           </p>
           <button type="button"
@@ -267,7 +283,9 @@ export default function PhraseExplorer({
             }}
             className="text-sm text-sunset hover:text-sunset-light font-medium underline underline-offset-4"
           >
-            <En>Reset filters</En>
+            <En translated>Reset filters</En>
+            <Ja>フィルターをリセット</Ja>
+            <Zh>重置筛选</Zh>
             <Ko>필터 초기화</Ko>
           </button>
         </div>

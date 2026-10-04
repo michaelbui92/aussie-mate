@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ko } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { visas } from "./data";
 import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import AdSlot from "@/components/AdSlot";
@@ -47,15 +47,19 @@ export default function VisaHub() {
       <section className="bg-gradient-to-br from-sunset/15 via-stone-50 to-amber-50 dark:from-sunset/20 dark:via-darkbg dark:to-amber-950/20 border-b border-stone-200/60 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-24">
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-4">
-            <En>Visa Guide</En>
+            <En translated>Visa Guide</En>
+            <Ja>ビザガイド</Ja>
+            <Zh>签证指南</Zh>
             <Ko>비자 가이드</Ko>
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[1.05] mb-6">
-            <En>Australian visas, explained simply</En>
+            <En translated>Australian visas, explained simply</En>
+            <Ja>オーストラリアのビザをわかりやすく解説</Ja>
+            <Zh>澳大利亚签证，简明解读</Zh>
             <Ko>호주 비자, 쉽게 설명해 드립니다</Ko>
           </h1>
           <p className="font-serif text-lg md:text-xl text-stone-700 dark:text-stone-300 max-w-2xl leading-relaxed mb-8">
-            <En>
+            <En translated>
               The five visa subclasses most visitors, students, workers, and
               partners encounter when planning time in Australia — from a
               short trip to permanent residency. Every visa below is valid
@@ -63,6 +67,18 @@ export default function VisaHub() {
               specific passport, confirm your eligibility on the Home Affairs
               tool linked below. Plain English and 한국어 side by side.
             </En>
+            <Ja>オーストラリアでの滞在を計画する際に、訪問者、留学生、就労者、パートナーが
+              最もよく遭遇する5つのビザサブクラス — 短期旅行から
+              永住権まで。以下すべてのビザは多くの国籍で有効です。
+              特定のパスポートについて確認する場合は、
+              下記リンクのHome Affairsのツールで
+              資格を確認してください。平易な英語と韓国語を並記しています。</Ja>
+            <Zh>在规划赴澳时间时，大多数访客、学生、工作者和伴侣
+              会遇到的五种签证子类 — 从短期旅行到
+              永久居留。以下每种签证对许多国籍都适用；
+              如果你是针对某一特定护照查询，
+              请通过下方链接的内政部工具
+              确认你的资格。简明英语与韩语并排对照。</Zh>
             <Ko>
               한국인 방문자, 유학생, 직장인, 파트너가 가장 자주 접하는 다섯 가지
               비자 서브클래스를 정리했습니다. 영어와 한국어를 나란히 제공합니다.
@@ -71,7 +87,9 @@ export default function VisaHub() {
 
           <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200/60 dark:border-amber-900/40 rounded-2xl p-5 text-sm text-stone-700 dark:text-stone-300">
             <p className="font-semibold text-sunset mb-2">
-              <En>Important</En>
+              <En translated>Important</En>
+              <Ja>重要</Ja>
+              <Zh>重要提示</Zh>
               <Ko>주의사항</Ko>
             </p>
             <ul className="space-y-1.5 leading-relaxed">
@@ -86,7 +104,7 @@ export default function VisaHub() {
               ))}
             </ul>
             <p className="mt-3 text-xs text-stone-500 dark:text-stone-400">
-              <En>
+              <En translated>
                 Official source:{" "}
                 <a
                   className="underline hover:text-sunset"
@@ -106,6 +124,42 @@ export default function VisaHub() {
                   Find a MARA agent
                 </a>
               </En>
+              <Ja>公式情報源：{" "}
+                <a
+                  className="underline hover:text-sunset"
+                  href="https://immi.homeaffairs.gov.au/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  immi.homeaffairs.gov.au
+                </a>
+                {" · "}
+                <a
+                  className="underline hover:text-sunset"
+                  href="https://www.mara.gov.au/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MARA 登録エージェントを探す
+                </a></Ja>
+              <Zh>官方来源：{" "}
+                <a
+                  className="underline hover:text-sunset"
+                  href="https://immi.homeaffairs.gov.au/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  immi.homeaffairs.gov.au
+                </a>
+                {" · "}
+                <a
+                  className="underline hover:text-sunset"
+                  href="https://www.mara.gov.au/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  查找 MARA 代理
+                </a></Zh>
               <Ko>
                 공식 출처:{" "}
                 <a
@@ -134,7 +188,9 @@ export default function VisaHub() {
       {/* Comparison table */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
-          <En>At a glance</En>
+          <En translated>At a glance</En>
+          <Ja>一目でわかる</Ja>
+          <Zh>一览</Zh>
           <Ko>한눈에 보기</Ko>
         </p>
 
@@ -143,23 +199,33 @@ export default function VisaHub() {
             <thead className="bg-stone-100 dark:bg-stone-800/50 text-stone-600 dark:text-stone-300">
               <tr>
                 <th className="text-left px-4 py-3 font-medium">
-                  <En>Visa</En>
+                  <En translated>Visa</En>
+                  <Ja>ビザ</Ja>
+                  <Zh>签证</Zh>
                   <Ko>비자</Ko>
                 </th>
                 <th className="text-left px-4 py-3 font-medium">
-                  <En>Best for</En>
+                  <En translated>Best for</En>
+                  <Ja>おすすめの対象</Ja>
+                  <Zh>最适合</Zh>
                   <Ko>추천 대상</Ko>
                 </th>
                 <th className="text-left px-4 py-3 font-medium">
-                  <En>Stay</En>
+                  <En translated>Stay</En>
+                  <Ja>滞在</Ja>
+                  <Zh>停留</Zh>
                   <Ko>체류</Ko>
                 </th>
                 <th className="text-left px-4 py-3 font-medium">
-                  <En>Work</En>
+                  <En translated>Work</En>
+                  <Ja>就労</Ja>
+                  <Zh>工作</Zh>
                   <Ko>근무</Ko>
                 </th>
                 <th className="text-left px-4 py-3 font-medium">
-                  <En>From</En>
+                  <En translated>From</En>
+                  <Ja>申請費用</Ja>
+                  <Zh>申请费用</Zh>
                   <Ko>신청비</Ko>
                 </th>
               </tr>
@@ -208,7 +274,9 @@ export default function VisaHub() {
       {/* Visa cards */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
-          <En>Pick a visa</En>
+          <En translated>Pick a visa</En>
+          <Ja>ビザを選ぶ</Ja>
+          <Zh>选择签证</Zh>
           <Ko>비자 선택</Ko>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -230,7 +298,9 @@ export default function VisaHub() {
                 <Ko>{v.tagline.ko}</Ko>
               </p>
               <p className="text-xs text-sunset font-medium">
-                <En>Read more →</En>
+                <En translated>Read more →</En>
+                <Ja>もっと読む →</Ja>
+                <Zh>阅读更多 →</Zh>
                 <Ko>자세히 보기 →</Ko>
               </p>
             </Link>
