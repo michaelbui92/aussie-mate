@@ -226,6 +226,44 @@ const sections: AccordionSection[] = [
       },
     ],
   },
+  {
+    id: "printable",
+    iconKey: "Book",
+    title: "Printable Travel Resources",
+    koTitle: "인쇄 가능한 여행 자료",
+    desc: "Downloadable itineraries, packing lists, and travel guides",
+    koDesc: "다운로드 가능한 여행 일정표, 짐챙김 목록, 여행 가이드",
+    items: [
+      {
+        label: "Sydney Weekend Itinerary (시드니 주말 일정표)",
+        en: "A printable 2-day itinerary covering Sydney's top attractions: Opera House, Harbour Bridge, Bondi Beach, The Rocks, and more. Includes transport options, estimated costs, and restaurant recommendations.",
+        ko: "시드니의 주요 명소를 둘러보는 2일차 일정표: 오페라하우스, 하버브리지, 본디비치, 더 록스 등. 교통 수단, 예상 비용, 레스토랑 추천이 포함되어 있습니다.",
+        url: "/downloads/sydney-weekend-itinerary.html",
+        urlLabel: "Download HTML",
+      },
+      {
+        label: "NSW Road Trip Planner (NSW 자동차 여행 계획표)",
+        en: "A comprehensive guide for planning a road trip through NSW, including route suggestions, accommodation options, fuel stops, and scenic viewpoints. Covers routes from Sydney to Blue Mountains, Hunter Valley, and Byron Bay.",
+        ko: "NSW 자동차 여행을 계획하기 위한 종합 가이드로, 추천 경로, 숙소 선택, 주유소, 경치 좋은 전망대가 포함되어 있습니다. 시드니에서 블루마운틴, 헌터밸리, 바이런베이까지의 경로를 다룹니다.",
+        url: "/downloads/nsw-roadtrip-planner.html",
+        urlLabel: "Download HTML",
+      },
+      {
+        label: "Australia Packing Checklist (호주 여행 짐챙김 체크리스트)",
+        en: "Essential items to pack for different seasons and regions in Australia. Includes clothing, electronics, travel documents, and region-specific gear (beach, hiking, city).",
+        ko: "호주의 다양한 계절과 지역에 맞는 필수 짐챙김 항목입니다. 의류, 전자기기, 여행 서류, 지역 특화 장비(해변, 등산, 도시)가 포함되어 있습니다.",
+        url: "/downloads/australia-packing-checklist.html",
+        urlLabel: "Download HTML",
+      },
+      {
+        label: "Australian Wildlife Guide (호주 야생동물 가이드)",
+        en: "A pocket guide to Australia's unique wildlife, including safety tips for encounters with snakes, spiders, jellyfish, and other creatures. Includes identification charts and what to do if you encounter wildlife.",
+        ko: "호주의 독특한 야생동물을 위한 포켓 가이드로, 뱀, 거미, 해파리 등의 동물과 만났을 때의 안전 팁이 포함되어 있습니다. 식별 차트와 야생동물과 만났을 때 해야 할 일이 포함되어 있습니다.",
+        url: "/downloads/australian-wildlife-guide.html",
+        urlLabel: "Download HTML",
+      },
+    ],
+  },
 ];
 
 const iconKeys = ["AlertTriangle", "Ambulance", "Book", "Building2"];

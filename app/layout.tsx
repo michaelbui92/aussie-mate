@@ -119,6 +119,8 @@ export const viewport: Viewport = {
 // the primary language. Anyone else (EN-first visitors, Americans,
 // Europeans, expats) lands on English immediately. The lang blocks then
 // render that language without a flash on hydration.
+//
+// Updated to support Japanese language detection
 const themeInitScript = `
 (function() {
   try {
@@ -136,8 +138,8 @@ const themeInitScript = `
       var detected = 'en';
       for (var i = 0; i < langs.length; i++) {
         if (langs[i] && langs[i].indexOf('ko') === 0) { detected = 'ko'; break; }
-        if (langs[i] && langs[i].indexOf('zh') === 0) { detected = 'zh'; break; }
         if (langs[i] && langs[i].indexOf('ja') === 0) { detected = 'ja'; break; }
+        if (langs[i] && langs[i].indexOf('zh') === 0) { detected = 'zh'; break; }
       }
       l = detected;
       localStorage.setItem('aussiemate-lang', l);
@@ -190,6 +192,7 @@ export async function generateMetadata(): Promise<Metadata> {
       languages: {
         en: `${site}${bare}`,
         ko: `${site}/ko${bare}`,
+        ja: `${site}/ja${bare}`,
         "x-default": `${site}${bare}`,
       },
     },
@@ -229,7 +232,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   "@type": "WebSite",
                   name: "AussieGuides",
                   url: SITE_URL,
-                  inLanguage: ["en", "ko"],
+                  inLanguage: ["en", "ko", "ja"],
                   potentialAction: {
                     "@type": "SearchAction",
                     target: `${SITE_URL}/search?q={search_term_string}`,

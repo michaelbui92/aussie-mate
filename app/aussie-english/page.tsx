@@ -11,6 +11,7 @@ import { phrases, type Phrase } from "@/lib/phrases";
 import { En, Ko, Zh, Ja } from "@/components/LangBlocks";
 import PhraseExplorer, { type PhraseCategory } from "@/components/PhraseExplorer";
 import { seoFor, withSeo } from "@/lib/seo";
+import Link from "next/link";
 
 export const metadata = withSeo(
   {
@@ -276,12 +277,23 @@ export default function AussieEnglishPage() {
             <Zh>完整词库</Zh>
             <Ja>全フレーズ一覧</Ja>
           </p>
-          <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-            <En>All {phrases.length} phrases</En>
-            <Ko>전체 {phrases.length}개 표현</Ko>
-            <Zh>全部 {phrases.length} 条短语</Zh>
-            <Ja>全{phrases.length}フレーズ</Ja>
-          </h2>
+          <div className="flex items-center justify-between">
+            <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
+              <En>All {phrases.length} phrases</En>
+              <Ko>전체 {phrases.length}개 표현</Ko>
+              <Zh>全部 {phrases.length} 条短语</Zh>
+              <Ja>全{phrases.length}フレーズ</Ja>
+            </h2>
+            <Link 
+              href="/aussie-english/culture" 
+              className="text-sm text-sunset hover:text-sunset-light font-medium transition-colors"
+            >
+              <En>Cultural context →</En>
+              <Ko>문화적 맥락 →</Ko>
+              <Zh>文化背景 →</Zh>
+              <Ja>文化的背景 →</Ja>
+            </Link>
+          </div>
         </div>
         <PhraseExplorer phrases={phrases} categories={categories} />
       </section>

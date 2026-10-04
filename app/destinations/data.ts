@@ -17,6 +17,10 @@ export interface Destination {
   gettingThere: { en: string; ko: string };
   /** Suggested stay length for trip planning */
   suggestedDays: { en: string; ko: string };
+  /** Last updated timestamp for content freshness */
+  lastUpdated?: string;
+  /** Related destinations for internal linking */
+  relatedDestinations?: string[];
   /** Deeper dive into the top sights — name, 1-2 sentence blurb, time on site,
    *  rough cost. Optional: destinations without this field skip the section. */
   attractions?: {
@@ -51,6 +55,8 @@ export const destinations: Destination[] = [
     accentColor: "bg-emerald-500",
     region: "New South Wales",
     tripLength: "day",
+    lastUpdated: "2026-09-15",
+    relatedDestinations: ["sydney-harbour", "hunter-valley"],
     description: {
       en: "Just 90 minutes from Sydney by train, the Blue Mountains are one of NSW's most spectacular natural wonders. Ancient eucalyptus forests, dramatic sandstone cliffs, and cascading waterfalls make this a must-visit. The Three Sisters at Echo Point are the most famous sight — best viewed at sunrise or sunset when the rock faces glow orange and pink.",
       ko: "시드니에서 기차로 단 90분, 블루마운틴은 NSW에서 가장 황홀한 자연경관입니다. 고대 유칼립투스 숲, 장엄한 사암 절벽, 준폭포가 어우러진 이 곳은 반드시 방문해야 할 명소입니다. 에코 포인트의 'Three Sisters'가 가장 유명한데, 일출이나 일몰 때 바위가 주황빛과 분홍빛으로 빛나는 모습을 보는 것이 가장 좋습니다."
@@ -112,6 +118,8 @@ export const destinations: Destination[] = [
     accentColor: "bg-rose-500",
     region: "New South Wales",
     tripLength: "weekend",
+    lastUpdated: "2026-09-10",
+    relatedDestinations: ["blue-mountains", "sydney-harbour"],
     description: {
       en: "Australia's oldest wine region, about 2 hours north of Sydney. Hunter Valley is famous for Semillon and Shiraz, but there's so much more — gourmet restaurants, sake tastings, hot air balloons at sunrise, and boutique breweries. A popular weekend escape that's at its best during vintage (March–April).",
       ko: "호주에서 가장 오래된 와인 생산지로 시드니에서 북쪽으로 약 2시간. 헌터 밸리는 세미뇽과 시라즈로 유명하지만 그 이상입니다 — 미식 레스토랑, 사케 테이스팅, 일출 핫에어볼론, 그리고 바이크릿 양조장. 빈티지 시즌(3~4월)에 가장 아름답습니다."

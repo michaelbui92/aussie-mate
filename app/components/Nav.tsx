@@ -137,9 +137,16 @@ export default function Nav() {
   // Korean reader receiving /aussie-english is handed English. usePathname is the rewritten path, so
   // adding or removing the prefix is all this needs to do.
   const switchLang = () => {
+    // Cycle through languages: en -> ko -> ja -> zh -> en
+    let nextLang;
+    if (lang === "en") nextLang = "ko";
+    else if (lang === "ko") nextLang = "ja";
+    else if (lang === "ja") nextLang = "zh";
+    else nextLang = "en";
+    
     toggleLang();
     const bare = (pathname || "/").replace(/^\/(ko|zh|ja)(?=\/|$)/, "") || "/";
-    router.push(lang === "en" ? (bare === "/" ? "/ko" : `/ko${bare}`) : bare);
+    router.push(nextLang === "en" ? bare : `/${nextLang}${bare}`);
   };
   const { theme, toggle: toggleTheme } = useTheme();
   const { openSearch } = useSearch();
@@ -392,7 +399,7 @@ export default function Nav() {
 
           <NavPill onClick={switchLang} ariaLabel="Toggle language">
             <span key={lang} className="text-xs font-bold tracking-wide">
-              {lang === "en" ? "EN" : "한국어"}
+              {lang === "en" ? "EN" : lang === "ko" ? "한국어" : lang === "ja" ? "日本語" : "中文"}
             </span>
           </NavPill>
 

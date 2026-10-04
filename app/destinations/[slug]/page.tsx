@@ -119,10 +119,18 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           <div className="lg:col-span-2 space-y-10">
             {/* Description */}
             <section className="reveal">
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-3">
-                <En>About this place</En>
-                <Ko>이곳에 대해</Ko>
-              </p>
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500">
+                  <En>About this place</En>
+                  <Ko>이곳에 대해</Ko>
+                </p>
+                {d && d.lastUpdated && (
+                  <p className="text-[10px] text-stone-500 dark:text-stone-400">
+                    <En>Last updated: {new Date(d.lastUpdated).toLocaleDateString('en-AU')}</En>
+                    <Ko>최종 업데이트: {new Date(d.lastUpdated).toLocaleDateString('ko-KR')}</Ko>
+                  </p>
+                )}
+              </div>
               <p className="font-serif text-xl md:text-2xl text-stone-800 dark:text-stone-200 leading-relaxed">
                 <En>{d.description.en}</En>
                 <Ko>{d.description.ko}</Ko>
@@ -367,28 +375,33 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             <Ko>더 많은 여행지</Ko>
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-            {destinations.filter(x => x.slug !== d.slug).map((other, i) => (
-              <Link
-                key={other.slug}
-                href={`/destinations/${other.slug}`}
-                className={`reveal reveal-delay-${(i % 5) + 1} group block`}
-              >
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 shadow-sm group-hover:shadow-xl transition-shadow">
-                  <img
-                    src={other.cardImg}
-                    alt={other.name.en}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
-                    <p className="font-serif text-sm leading-tight">
-                      <En>{other.name.en}</En>
-                      <Ko>{other.name.ko}</Ko>
-                    </p>
+            {(d && d.relatedDestinations 
+              ? d.relatedDestinations.map(slug => destinations.find(dest => dest.slug === slug)).filter(Boolean)
+              : destinations.filter(x => x.slug !== d?.slug).slice(0, 5)
+            ).map((other, i) => (
+              other && (
+                <Link
+                  key={other.slug}
+                  href={`/destinations/${other.slug}`}
+                  className={`reveal reveal-delay-${(i % 5) + 1} group block`}
+                >
+                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 shadow-sm group-hover:shadow-xl transition-shadow">
+                    <img
+                      src={other.cardImg}
+                      alt={other.name.en}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                      <p className="font-serif text-sm leading-tight">
+                        <En>{other.name.en}</En>
+                        <Ko>{other.name.ko}</Ko>
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              )
             ))}
           </div>
         </section>
