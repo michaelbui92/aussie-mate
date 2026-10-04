@@ -51,7 +51,7 @@ export default function HeroCarousel({ children }: { children: React.ReactNode }
         />
       ))}
       
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/75" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/45 to-black/75" />
       
       {/* Content overlay — headings, CTAs, search */}
       {children}

@@ -533,6 +533,21 @@
               0 0 0 1px rgba(232, 114, 42, 0.15);
 }
 
+/* === HERO TEXT LEGIBILITY === */
+/* Crisp dark outline for white hero copy over photos -- no blur, per the
+   2026-10-04 request ("just add darker outline"). Four 1px strokes give the
+   glyph edges definition; there is deliberately NO blurred ring here, because
+   a blurred halo reads as a muddy smudge over a light, hazy photo. Contrast
+   over busy areas comes from the hero's own gradient scrim (HeroCarousel),
+   not from softening the text. */
+.hero-text-shadow {
+  text-shadow:
+    1px 1px 0 rgba(0, 0, 0, 0.9),
+    -1px -1px 0 rgba(0, 0, 0, 0.9),
+    1px -1px 0 rgba(0, 0, 0, 0.9),
+    -1px 1px 0 rgba(0, 0, 0, 0.9);
+}
+
 /* === REDUCED MOTION === */
 @media (prefers-reduced-motion: reduce) {
   .hero-orb,
