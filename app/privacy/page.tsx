@@ -116,7 +116,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>
                 <strong>ローカルにのみ保存される設定</strong> — テーマ（ライト/ダーク）と
-                言語（English/한국어）はブラウザの<code> localStorage</code>に保存されます。当方がこれらを見ることはなく、
+                言語（English/한국어/日本語/中文）はブラウザの<code> localStorage</code>に保存されます。当方がこれらを見ることはなく、
                 端末から外に出ることもありません。
               </li>
               <li>
@@ -135,7 +135,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>
                 <strong>仅存于本地的偏好设置</strong> — 你的主题（浅色/深色）和
-                语言（English/한국어）保存在浏览器的<code> localStorage</code>中。我们永远看不到这些信息，
+                语言（English/한국어/日本語/中文）保存在浏览器的<code> localStorage</code>中。我们永远看不到这些信息，
                 它们也永远不会离开你的设备。
               </li>
               <li>
