@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 
 export type RelatedItem = {
   href: string;
-  title: { en: string; ko: string };
-  description: { en: string; ko: string };
+  title: { en: string; ko: string; ja?: string; zh?: string };
+  description: { en: string; ko: string; ja?: string; zh?: string };
 };
 
 /**
@@ -18,7 +18,7 @@ export type RelatedItem = {
  *
  * Usage at the bottom of a page (before the closing </div>):
  *   <RelatedContent items={[
- *     { href: "/apartment", title: { en: "Apartment", ko: "부동산" }, description: { en: "...", ko: "..." } },
+ *     { href: "/apartment", title: { en: "Apartment", ja: "アパート", zh: "公寓", ko: "부동산" }, description: { en: "...", ko: "..." } },
  *   ]} />
  */
 export default function RelatedContent({ items }: { items: RelatedItem[] }) {
@@ -47,11 +47,15 @@ export default function RelatedContent({ items }: { items: RelatedItem[] }) {
               className="group flex flex-col bg-white dark:bg-dark-surface hover:bg-sunset hover:text-white p-5 rounded-2xl border border-stone-200 dark:border-dark-border transition-all duration-300 hover:border-sunset hover:shadow-xl"
             >
               <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 group-hover:text-white transition-colors mb-1.5">
-                <En>{item.title.en}</En>
+                <En translated>{item.title.en}</En>
+                <Ja>{pickLocale("ja", item.title)}</Ja>
+                <Zh>{pickLocale("zh", item.title)}</Zh>
                 <Ko>{item.title.ko}</Ko>
               </h3>
               <p className="text-sm text-stone-500 dark:text-stone-400 group-hover:text-white/80 leading-relaxed transition-colors">
-                <En>{item.description.en}</En>
+                <En translated>{item.description.en}</En>
+                <Ja>{pickLocale("ja", item.description)}</Ja>
+                <Zh>{pickLocale("zh", item.description)}</Zh>
                 <Ko>{item.description.ko}</Ko>
               </p>
               <span className="mt-3 text-xs font-medium text-sunset group-hover:text-white transition-colors">

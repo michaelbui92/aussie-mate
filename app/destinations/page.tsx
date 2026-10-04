@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { destinations } from "./data";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 import TripLengthFilter from "@/components/TripLengthFilter";
@@ -9,11 +9,11 @@ import TripLengthFilter from "@/components/TripLengthFilter";
 // Mirrors the order used by the new TripLengthFilter client component
 // (which highlights the active pill as the user scrolls).
 type TripLength = "weekend" | "day" | "longer" | "far";
-const TRIP_LABELS: Record<TripLength, { en: string; ko: string; hint: { en: string; ko: string } }> = {
-  weekend: { en: "Weekend trip", ko: "주말 여행", hint: { en: "2–3 hours from Sydney", ko: "시드니에서 2~3시간" } },
-  day:     { en: "Day trip",     ko: "당일치기",   hint: { en: "Under 2 hours from Sydney", ko: "시드니에서 2시간 이내" } },
-  longer:  { en: "3+ days",      ko: "3일 이상",   hint: { en: "Worth a longer stay", ko: "여유 있는 일정 추천" } },
-  far:     { en: "Big trip",     ko: "장거리",     hint: { en: "5+ hours or fly", ko: "5시간 이상 또는 항공" } },
+const TRIP_LABELS: Record<TripLength, { en: string; ko: string; ja?: string; zh?: string; hint: { en: string; ko: string; ja?: string; zh?: string } }> = {
+  weekend: { en: "Weekend trip", ko: "주말 여행", hint: { en: "2–3 hours from Sydney", ja: "シドニーから2–3時間", zh: "距悉尼2–3小时", ko: "시드니에서 2~3시간" } },
+  day:     { en: "Day trip",     ko: "당일치기",   hint: { en: "Under 2 hours from Sydney", ja: "シドニーから2時間以内", zh: "距悉尼2小时以内", ko: "시드니에서 2시간 이내" } },
+  longer:  { en: "3+ days",      ko: "3일 이상",   hint: { en: "Worth a longer stay", ja: "ゆっくり滞在する価値あり", zh: "值得多住几天", ko: "여유 있는 일정 추천" } },
+  far:     { en: "Big trip",     ko: "장거리",     hint: { en: "5+ hours or fly", ja: "5時間以上または飛行機", zh: "5小时以上或乘飞机", ko: "5시간 이상 또는 항공" } },
 };
 
 const TRIP_ORDER: TripLength[] = ["day", "weekend", "longer", "far"];
@@ -84,11 +84,15 @@ export default function DestinationsPage() {
             <section key={len} id={len} className="scroll-mt-20">
               <div className="mb-5 md:mb-7 reveal">
                 <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100">
-                  <En>{TRIP_LABELS[len].en}</En>
+                  <En translated>{TRIP_LABELS[len].en}</En>
+                  <Ja>{pickLocale("ja", TRIP_LABELS[len])}</Ja>
+                  <Zh>{pickLocale("zh", TRIP_LABELS[len])}</Zh>
                   <Ko>{TRIP_LABELS[len].ko}</Ko>
                 </h2>
                 <p className="text-sm text-stone-500 dark:text-stone-400 mt-1">
-                  <En>{TRIP_LABELS[len].hint.en}</En>
+                  <En translated>{TRIP_LABELS[len].hint.en}</En>
+                  <Ja>{pickLocale("ja", TRIP_LABELS[len].hint)}</Ja>
+                  <Zh>{pickLocale("zh", TRIP_LABELS[len].hint)}</Zh>
                   <Ko>{TRIP_LABELS[len].hint.ko}</Ko>
                 </p>
               </div>
@@ -112,11 +116,15 @@ export default function DestinationsPage() {
                         {d.region}
                       </p>
                       <h3 className="font-serif text-2xl mb-1.5 leading-tight">
-                        <En>{d.name.en}</En>
+                        <En translated>{d.name.en}</En>
+                        <Ja>{pickLocale("ja", d.name)}</Ja>
+                        <Zh>{pickLocale("zh", d.name)}</Zh>
                         <Ko>{d.name.ko}</Ko>
                       </h3>
                       <p className="text-white/75 text-xs leading-relaxed">
-                        <En>{d.tagline.en}</En>
+                        <En translated>{d.tagline.en}</En>
+                        <Ja>{pickLocale("ja", d.tagline)}</Ja>
+                        <Zh>{pickLocale("zh", d.tagline)}</Zh>
                         <Ko>{d.tagline.ko}</Ko>
                       </p>
                     </div>
@@ -133,25 +141,25 @@ export default function DestinationsPage() {
         items={[
           {
             href: "/tourist",
-            title: { en: "Plan your trip", ko: "여행 계획" },
+            title: { en: "Plan your trip", ja: "旅行を計画する", zh: "规划你的行程", ko: "여행 계획" },
             description: {
-              en: "Itineraries, transport passes, and the best weeks to visit.",
+              en: "Itineraries, transport passes, and the best weeks to visit.", ja: "旅程、交通パス、そして訪れるのに最適な週。", zh: "行程安排、交通通票，以及最佳到访周次。",
               ko: "여행 일정, 교통 패스, 그리고 방문 최적 주간.",
             },
           },
           {
             href: "/transport",
-            title: { en: "Getting around", ko: "이동 수단" },
+            title: { en: "Getting around", ja: "移動手段", zh: "出行交通", ko: "이동 수단" },
             description: {
-              en: "Opal cards, train tickets, and how to reach each destination cheaply.",
+              en: "Opal cards, train tickets, and how to reach each destination cheaply.", ja: "オパールカード、電車の切符、そして各目的地へ安く行く方法。", zh: "澳宝卡、火车票，以及如何省钱地抵达各个目的地。",
               ko: "오팔 카드, 기차표, 그리고 각 여행지까지 저렴하게 가는 법.",
             },
           },
           {
             href: "/finance",
-            title: { en: "Budgeting", ko: "예산" },
+            title: { en: "Budgeting", ja: "予算", zh: "预算", ko: "예산" },
             description: {
-              en: "Daily costs, weekend trip totals, and where to splurge vs save.",
+              en: "Daily costs, weekend trip totals, and where to splurge vs save.", ja: "1日の費用、週末旅行の総額、そして贅沢すべきところと節約すべきところ。", zh: "每日开销、周末旅行总花费，以及在哪些地方值得花钱、哪些地方可以省。",
               ko: "일일 비용, 주말 여행 총액, 그리고 어디에 쓰고 어디에 아낄지.",
             },
           },

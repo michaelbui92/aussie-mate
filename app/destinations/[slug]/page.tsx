@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
 import { seoFor, pageTitle, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
@@ -102,11 +102,15 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {d.region}
           </p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
-            <En>{d.name.en}</En>
+            <En translated>{d.name.en}</En>
+            <Ja>{pickLocale("ja", d.name)}</Ja>
+            <Zh>{pickLocale("zh", d.name)}</Zh>
             <Ko>{d.name.ko}</Ko>
           </h1>
           <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
-            <En>{d.tagline.en}</En>
+            <En translated>{d.tagline.en}</En>
+            <Ja>{pickLocale("ja", d.tagline)}</Ja>
+            <Zh>{pickLocale("zh", d.tagline)}</Zh>
             <Ko>{d.tagline.ko}</Ko>
           </p>
         </div>
@@ -136,7 +140,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 )}
               </div>
               <p className="font-serif text-xl md:text-2xl text-stone-800 dark:text-stone-200 leading-relaxed">
-                <En>{d.description.en}</En>
+                <En translated>{d.description.en}</En>
+                <Ja>{pickLocale("ja", d.description)}</Ja>
+                <Zh>{pickLocale("zh", d.description)}</Zh>
                 <Ko>{d.description.ko}</Ko>
               </p>
             </section>
@@ -163,7 +169,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                         <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-sunset mt-2.5" />
                       )}
                       <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
-                        <En>{h.en}</En>
+                        <En translated>{h.en}</En>
+                        <Ja>{pickLocale("ja", h)}</Ja>
+                        <Zh>{pickLocale("zh", h)}</Zh>
                         <Ko>{h.ko}</Ko>
                       </p>
                     </div>
@@ -197,22 +205,30 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     >
                       <div className="flex items-start justify-between gap-4 mb-2">
                         <h3 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 leading-snug">
-                          <En>{a.name.en}</En>
+                          <En translated>{a.name.en}</En>
+                          <Ja>{pickLocale("ja", a.name)}</Ja>
+                          <Zh>{pickLocale("zh", a.name)}</Zh>
                           <Ko>{a.name.ko}</Ko>
                         </h3>
                         <div className="shrink-0 flex flex-col items-end gap-0.5 text-[11px] uppercase tracking-wider">
                           <span className="text-sunset font-semibold">
-                            <En>{a.time.en}</En>
+                            <En translated>{a.time.en}</En>
+                            <Ja>{pickLocale("ja", a.time)}</Ja>
+                            <Zh>{pickLocale("zh", a.time)}</Zh>
                             <Ko>{a.time.ko}</Ko>
                           </span>
                           <span className="text-stone-500 dark:text-stone-400 font-medium">
-                            <En>{a.cost.en}</En>
+                            <En translated>{a.cost.en}</En>
+                            <Ja>{pickLocale("ja", a.cost)}</Ja>
+                            <Zh>{pickLocale("zh", a.cost)}</Zh>
                             <Ko>{a.cost.ko}</Ko>
                           </span>
                         </div>
                       </div>
                       <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                        <En>{a.blurb.en}</En>
+                        <En translated>{a.blurb.en}</En>
+                        <Ja>{pickLocale("ja", a.blurb)}</Ja>
+                        <Zh>{pickLocale("zh", a.blurb)}</Zh>
                         <Ko>{a.blurb.ko}</Ko>
                       </p>
                     </div>
@@ -232,7 +248,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </p>
                 <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
                   <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                    <En>{d.howToGetThere.en}</En>
+                    <En translated>{d.howToGetThere.en}</En>
+                    <Ja>{pickLocale("ja", d.howToGetThere)}</Ja>
+                    <Zh>{pickLocale("zh", d.howToGetThere)}</Zh>
                     <Ko>{d.howToGetThere.ko}</Ko>
                   </p>
                 </div>
@@ -250,7 +268,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </p>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
                   <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                    <En>{d.bestTimeDetailed.en}</En>
+                    <En translated>{d.bestTimeDetailed.en}</En>
+                    <Ja>{pickLocale("ja", d.bestTimeDetailed)}</Ja>
+                    <Zh>{pickLocale("zh", d.bestTimeDetailed)}</Zh>
                     <Ko>{d.bestTimeDetailed.ko}</Ko>
                   </p>
                 </div>
@@ -336,11 +356,15 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border`}
                   >
                     <h2 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-2 leading-snug">
-                      <En>{faq.q.en}</En>
+                      <En translated>{faq.q.en}</En>
+                      <Ja>{pickLocale("ja", faq.q)}</Ja>
+                      <Zh>{pickLocale("zh", faq.q)}</Zh>
                       <Ko>{faq.q.ko}</Ko>
                     </h2>
                     <p className="text-stone-600 dark:text-stone-400 text-sm md:text-base leading-relaxed">
-                      <En>{faq.a.en}</En>
+                      <En translated>{faq.a.en}</En>
+                      <Ja>{pickLocale("ja", faq.a)}</Ja>
+                      <Zh>{pickLocale("zh", faq.a)}</Zh>
                       <Ko>{faq.a.ko}</Ko>
                     </p>
                   </div>
@@ -361,7 +385,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 <Ko>가는 방법</Ko>
               </p>
               <p className="text-stone-200 text-sm leading-relaxed">
-                <En>{d.gettingThere.en}</En>
+                <En translated>{d.gettingThere.en}</En>
+                <Ja>{pickLocale("ja", d.gettingThere)}</Ja>
+                <Zh>{pickLocale("zh", d.gettingThere)}</Zh>
                 <Ko>{d.gettingThere.ko}</Ko>
               </p>
             </div>
@@ -374,7 +400,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 <Ko>방문 최적기</Ko>
               </p>
               <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                <En>{d.bestTime.en}</En>
+                <En translated>{d.bestTime.en}</En>
+                <Ja>{pickLocale("ja", d.bestTime)}</Ja>
+                <Zh>{pickLocale("zh", d.bestTime)}</Zh>
                 <Ko>{d.bestTime.ko}</Ko>
               </p>
             </div>
@@ -387,7 +415,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 <Ko>권장 일정</Ko>
               </p>
               <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                <En>{d.suggestedDays.en}</En>
+                <En translated>{d.suggestedDays.en}</En>
+                <Ja>{pickLocale("ja", d.suggestedDays)}</Ja>
+                <Zh>{pickLocale("zh", d.suggestedDays)}</Zh>
                 <Ko>{d.suggestedDays.ko}</Ko>
               </p>
             </div>
@@ -423,7 +453,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
                       <p className="font-serif text-sm leading-tight">
-                        <En>{other.name.en}</En>
+                        <En translated>{other.name.en}</En>
+                        <Ja>{pickLocale("ja", other.name)}</Ja>
+                        <Zh>{pickLocale("zh", other.name)}</Zh>
                         <Ko>{other.name.ko}</Ko>
                       </p>
                     </div>
@@ -440,7 +472,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         items={[
           {
             href: "/tourist",
-            title: { en: "Plan your Sydney trip", ko: "시드니 여행 계획" },
+            title: { en: "Plan your Sydney trip", ja: "シドニー旅行を計画する", zh: "规划你的悉尼之行", ko: "시드니 여행 계획" },
             // Personalise by trip length: day/weekend copy reads as a
             // specific invitation, not a generic "use X as a trip".
             // Korean copy mirrors the same intent.
@@ -473,17 +505,17 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           },
           {
             href: "/transport",
-            title: { en: "Getting around", ko: "이동 수단" },
+            title: { en: "Getting around", ja: "移動手段", zh: "出行交通", ko: "이동 수단" },
             description: {
-              en: "Opal cards, train timetables, and car-hire tips for regional trips.",
+              en: "Opal cards, train timetables, and car-hire tips for regional trips.", ja: "Opalカード、電車の時刻表、地方旅行のためのレンタカーのヒント。", zh: "Opal卡、火车时刻表，以及地区旅行的租车建议。",
               ko: "오팔 카드, 기차 시간표, 지방 여행을 위한 자동차 렌탈 팁.",
             },
           },
           {
             href: "/finance",
-            title: { en: "Budget for the trip", ko: "여행 예산" },
+            title: { en: "Budget for the trip", ja: "旅行の予算", zh: "旅行预算", ko: "여행 예산" },
             description: {
-              en: "Daily costs for couples, solo travellers, and families across NSW.",
+              en: "Daily costs for couples, solo travellers, and families across NSW.", ja: "カップル、単身旅行者、家族のNSW各地での1日あたりの費用。", zh: "情侣、独行旅客和家庭在新南威尔士州各地的每日开销。",
               ko: "커플, 1인 여행자, 가족의 NSW 일일 비용.",
             },
           },

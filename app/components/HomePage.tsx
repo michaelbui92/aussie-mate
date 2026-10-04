@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { useSearch } from "@/components/SearchModal";
 import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
@@ -219,11 +219,15 @@ export default function HomePage() {
                     {d.region}
                   </p>
                   <h3 className="font-serif text-2xl mb-1 leading-tight">
-                    <En>{d.name.en}</En>
+                    <En translated>{d.name.en}</En>
+                    <Ja>{pickLocale("ja", d.name)}</Ja>
+                    <Zh>{pickLocale("zh", d.name)}</Zh>
                     <Ko>{d.name.ko}</Ko>
                   </h3>
                   <p className="text-white/70 text-xs leading-relaxed">
-                    <En>{d.tagline.en}</En>
+                    <En translated>{d.tagline.en}</En>
+                    <Ja>{pickLocale("ja", d.tagline)}</Ja>
+                    <Zh>{pickLocale("zh", d.tagline)}</Zh>
                     <Ko>{d.tagline.ko}</Ko>
                   </p>
                 </div>
@@ -366,11 +370,15 @@ export default function HomePage() {
                 className={`reveal reveal-delay-${(i % 5) + 1} block p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all h-full`}
               >
                 <p className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-2 leading-snug">
-                  <En>{faq.q.en}</En>
+                  <En translated>{faq.q.en}</En>
+                  <Ja>{pickLocale("ja", faq.q)}</Ja>
+                  <Zh>{pickLocale("zh", faq.q)}</Zh>
                   <Ko>{faq.q.ko}</Ko>
                 </p>
                 <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                  <En>{faq.a.en}</En>
+                  <En translated>{faq.a.en}</En>
+                  <Ja>{pickLocale("ja", faq.a)}</Ja>
+                  <Zh>{pickLocale("zh", faq.a)}</Zh>
                   <Ko>{faq.a.ko}</Ko>
                 </p>
               </Link>

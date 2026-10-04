@@ -193,12 +193,12 @@ const vibeColors: Record<string, string> = {
   mountain: "bg-sand dark:bg-dark-surface border-sand dark:border-dark-border",
 };
 
-const vibeLabels: Record<string, { en: string; ko: string }> = {
-  beach: { en: "Beach", ko: "해변" },
-  city: { en: "City", ko: "도시" },
-  nature: { en: "Nature", ko: "자연" },
-  food: { en: "Food & Wine", ko: "음식과 와인" },
-  mountain: { en: "Mountain", ko: "산" },
+const vibeLabels: Record<string, { en: string; ko: string; ja?: string; zh?: string }> = {
+  beach: { en: "Beach", ja: "ビーチ", zh: "海滩", ko: "해변" },
+  city: { en: "City", ja: "都市", zh: "城市", ko: "도시" },
+  nature: { en: "Nature", ja: "自然", zh: "自然", ko: "자연" },
+  food: { en: "Food & Wine", ja: "食事とワイン", zh: "美食与葡萄酒", ko: "음식과 와인" },
+  mountain: { en: "Mountain", ja: "山", zh: "山", ko: "산" },
 };
 
 const vibeOrder = ["all", "beach", "city", "nature", "food", "mountain"];

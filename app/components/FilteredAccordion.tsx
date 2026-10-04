@@ -9,7 +9,7 @@
 
 import { useState, ReactNode, ComponentType } from "react";
 import { Icons } from "./Icons";
-import { En, Ja, Ko, Zh } from "./LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "./LangBlocks";
 
 export interface BeyondSydneyDestination {
   id: string;
@@ -30,7 +30,7 @@ export interface BeyondSydneyDestination {
 
 export interface VibeLabel {
   en: string;
-  ko: string;
+  ko: string; ja?: string; zh?: string
 }
 
 interface FilteredAccordionProps {
@@ -73,7 +73,7 @@ export default function FilteredAccordion({
             const label: ReactNode = vibe === "all" ? (
               <><En translated>All</En><Ja>すべて</Ja><Zh>全部</Zh><Ko>전체</Ko></>
             ) : (
-              <><En>{vibeLabels[vibe].en}</En><Ko>{vibeLabels[vibe].ko}</Ko></>
+              <><En translated>{vibeLabels[vibe].en}</En><Ja>{pickLocale("ja", vibeLabels[vibe])}</Ja><Zh>{pickLocale("zh", vibeLabels[vibe])}</Zh><Ko>{vibeLabels[vibe].ko}</Ko></>
             );
             return (
               <button type="button"
@@ -126,7 +126,9 @@ export default function FilteredAccordion({
                     <h2 className="font-serif text-lg text-stone-900 dark:text-stone-100">{dest.name}</h2>
                     <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500">{dest.state}</span>
                     <span className={`shrink-0 text-[10px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-full font-medium ${vibePill}`}>
-                      <En>{vibeLabels[dest.vibe]?.en}</En>
+                      <En translated>{vibeLabels[dest.vibe]?.en}</En>
+                      <Ja>{vibeLabels[dest.vibe]?.ja ?? vibeLabels[dest.vibe]?.en}</Ja>
+                      <Zh>{vibeLabels[dest.vibe]?.zh ?? vibeLabels[dest.vibe]?.en}</Zh>
                       <Ko>{vibeLabels[dest.vibe]?.ko}</Ko>
                     </span>
                   </div>

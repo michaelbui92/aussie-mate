@@ -187,18 +187,18 @@ export default function JourneyPage() {
         items={[
           {
             href: "/visa",
-            title: { en: "Visa Guide", ko: "비자 가이드" },
-            description: { en: "Which visa fits your situation? Student, working holiday, skilled, partner, tourist.", ko: "어떤 비자가 맞을까요? 학생, 워홀, 기술, 파트너, 관광." },
+            title: { en: "Visa Guide", ja: "ビザガイド", zh: "签证指南", ko: "비자 가이드" },
+            description: { en: "Which visa fits your situation? Student, working holiday, skilled, partner, tourist.", ja: "どのビザがあなたの状況に合いますか？学生、ワーキングホリデー、技術、パートナー、観光。", zh: "哪种签证适合你的情况？学生、打工度假、技术、伴侣、旅游。", ko: "어떤 비자가 맞을까요? 학생, 워홀, 기술, 파트너, 관광." },
           },
           {
             href: "/finance",
-            title: { en: "Finance & Banking", ko: "금융 & 뱅킹" },
-            description: { en: "Open a bank account, apply for TFN, understand tax and super.", ko: "은행 계좌 개설, TFN 신청, 세금과 슈퍼 이해하기." },
+            title: { en: "Finance & Banking", ja: "ファイナンス＆バンキング", zh: "金融与银行", ko: "금융 & 뱅킹" },
+            description: { en: "Open a bank account, apply for TFN, understand tax and super.", ja: "銀行口座を開設し、TFNを申請し、税金とスーパーを理解しましょう。", zh: "开银行账户、申请TFN、了解税务和养老金。", ko: "은행 계좌 개설, TFN 신청, 세금과 슈퍼 이해하기." },
           },
           {
             href: "/transport",
-            title: { en: "Transport Guide", ko: "교통 가이드" },
-            description: { en: "Opal card, trains, buses, ferries — getting around Sydney.", ko: "Opal 카드, 기차, 버스, 페리 — 시드니 교통 완벽 가이드." },
+            title: { en: "Transport Guide", ja: "交通ガイド", zh: "交通指南", ko: "교통 가이드" },
+            description: { en: "Opal card, trains, buses, ferries — getting around Sydney.", ja: "オパールカード、電車、バス、フェリー — シドニーでの移動。", zh: "Opal卡、火车、公交、渡轮——在悉尼出行。", ko: "Opal 카드, 기차, 버스, 페리 — 시드니 교통 완벽 가이드." },
           },
         ]}
       />

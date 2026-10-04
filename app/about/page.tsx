@@ -77,7 +77,7 @@ const sections = [
         name: "Drive with Bui",
         url: "https://drivewithbui.com",
         accent: "bg-sunset/10 border-sunset/30",
-        en: "Sydney driving lessons for new and international drivers. Note: full NSW driving instructor licensing is in progress; lessons are currently offered on a supervised practice basis. Book online.",
+        en: "Sydney driving lessons for new and international drivers. Note: full NSW driving instructor licensing is in progress; lessons are currently offered on a supervised practice basis. Book online.", ja: "新規ドライバーおよび国際ドライバーの方向けのシドニー運転レッスン。ご注意：NSWの正式な運転インストラクター資格は取得手続き中で、現在は監督付き練習の形でレッスンを提供しています。オンラインで予約できます。", zh: "面向新手和国际驾驶员的悉尼驾驶课程。请注意：新南威尔士州正式驾驶教练执照正在办理中；目前课程以有监督的练习形式提供。可在线预约。",
         ko: "시드니에서 신입 및 국제 운전자를 위한 운전 레슨. 참고: NSW 운전 강사 정식 자격증 취득 절차가 진행 중이며, 현재는 동반 실습 형태로 레슨이 제공됩니다. 온라인 예약 가능.",
       },
       {
@@ -85,7 +85,7 @@ const sections = [
         name: "Study Buddy (Boba)",
         url: "https://stdybddy.app",
         accent: "bg-sage/10 border-sage/30",
-        en: "AI-powered flashcard app with multiple choice questions. Study any topic, anywhere.",
+        en: "AI-powered flashcard app with multiple choice questions. Study any topic, anywhere.", ja: "多肢選択式問題を備えたAI搭載のフラッシュカードアプリ。どこでもどんなトピックでも学習できます。", zh: "搭载AI的闪卡应用，配有多项选择题。随时随地学习任何主题。",
         ko: "AI 플래시카드 앱 — 객관식 문제로 원하는 주제를 학습.",
       },
     ],

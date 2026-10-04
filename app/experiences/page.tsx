@@ -95,25 +95,25 @@ export default function ExperiencesPage() {
         items={[
           {
             href: "/destinations",
-            title: { en: "Pick a destination", ko: "여행지 선택" },
+            title: { en: "Pick a destination", ja: "目的地を選ぶ", zh: "选择目的地", ko: "여행지 선택" },
             description: {
-              en: "From white-sand beaches to world-class wine country — every spot in our destinations guide is reachable from Sydney.",
+              en: "From white-sand beaches to world-class wine country — every spot in our destinations guide is reachable from Sydney.", ja: "白い砂浜から世界的なワイン産地まで — 私たちの目的地ガイドのすべてのスポットはシドニーから行けます。", zh: "从白沙滩到世界级葡萄酒产区 — 我们目的地指南中的每个地方都能从悉尼前往。",
               ko: "하얀 모래 해변부터 세계적 와인 산지까지 — 시드니에서 갈 수 있는 모든 여행지.",
             },
           },
           {
             href: "/tourist",
-            title: { en: "Plan your trip", ko: "여행 계획" },
+            title: { en: "Plan your trip", ja: "旅行を計画する", zh: "规划你的行程", ko: "여행 계획" },
             description: {
-              en: "Itineraries, transport passes, and the best weeks to visit.",
+              en: "Itineraries, transport passes, and the best weeks to visit.", ja: "旅程、交通パス、そして訪れるのに最適な週。", zh: "行程安排、交通通票，以及最佳到访周次。",
               ko: "여행 일정, 교통 패스, 그리고 방문 최적 주간.",
             },
           },
           {
             href: "/finance",
-            title: { en: "Budgeting", ko: "예산" },
+            title: { en: "Budgeting", ja: "予算", zh: "预算", ko: "예산" },
             description: {
-              en: "Daily costs, weekend trip totals, and where to splurge vs save.",
+              en: "Daily costs, weekend trip totals, and where to splurge vs save.", ja: "1日の費用、週末旅行の総額、そして贅沢すべきところと節約すべきところ。", zh: "每日开销、周末旅行总花费，以及在哪些地方值得花钱、哪些地方可以省。",
               ko: "일일 비용, 주말 여행 총액, 그리고 어디에 쓰고 어디에 아낄지.",
             },
           },

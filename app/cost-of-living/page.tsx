@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
@@ -16,71 +16,71 @@ const categories = [
     emoji: "🏠",
     title: "Rent & Housing",
     items: [
-      { en: "Shared house (room, inner Sydney)", ko: "쉐어하우스 (방 1개, 시드니 시내 근접)", cost: "$280–$450/week" },
-      { en: "Studio / 1-bedroom apartment (inner Sydney)", ko: "원룸 / 1베드룸 아파트 (시드니 시내)", cost: "$550–$800/week" },
-      { en: "2-bedroom apartment (inner Sydney)", ko: "2베드룸 아파트 (시드니 시내)", cost: "$700–$1,200/week" },
-      { en: "2-bedroom apartment (outer suburbs)", ko: "2베드룸 아파트 (외곽)", cost: "$450–$700/week" },
-      { en: "Bond (4 weeks rent)", ko: "보증금 (월세의 4주)", cost: "4 weeks rent" },
-      { en: "Rental bond fee (NSW Fair Trading)", ko: "임대 보증금 등록비", cost: "~$50" },
+      { en: "Shared house (room, inner Sydney)", ja: "シェアハウス（1部屋、シドニー市内）", zh: "合租房（单间，悉尼内城）", ko: "쉐어하우스 (방 1개, 시드니 시내 근접)", cost: "$280–$450/week" },
+      { en: "Studio / 1-bedroom apartment (inner Sydney)", ja: "ワンルーム / 1ベッドルームのアパート（シドニー市内）", zh: "单间公寓 / 一居室公寓（悉尼内城）", ko: "원룸 / 1베드룸 아파트 (시드니 시내)", cost: "$550–$800/week" },
+      { en: "2-bedroom apartment (inner Sydney)", ja: "2ベッドルームのアパート（シドニー市内）", zh: "两居室公寓（悉尼内城）", ko: "2베드룸 아파트 (시드니 시내)", cost: "$700–$1,200/week" },
+      { en: "2-bedroom apartment (outer suburbs)", ja: "2ベッドルームのアパート（郊外）", zh: "两居室公寓（远郊）", ko: "2베드룸 아파트 (외곽)", cost: "$450–$700/week" },
+      { en: "Bond (4 weeks rent)", ja: "保証金（家賃4週間分）", zh: "押金（4周租金）", ko: "보증금 (월세의 4주)", cost: "4 weeks rent" },
+      { en: "Rental bond fee (NSW Fair Trading)", ja: "賃貸保証金の登録手数料（NSW Fair Trading）", zh: "租赁押金登记费（NSW Fair Trading）", ko: "임대 보증금 등록비", cost: "~$50" },
     ],
   },
   {
     emoji: "🚇",
     title: "Transport",
     items: [
-      { en: "Opal card weekly cap (adult)", ko: "Opal 카드 주간 상한선 (성인)", cost: "$50" },
-      { en: "Single train trip (CBD to Parramatta)", ko: "기차 1회 (CBD → Parramatta)", cost: "$5.60" },
-      { en: "Single bus trip (inner city)", ko: "버스 1회 (시내)", cost: "$2.40–$4.80" },
-      { en: "Light rail trip", ko: "경전철 1회", cost: "$2.40–$4.80" },
-      { en: "Uber (CBD to Airport)", ko: "Uber (CBD → 공항)", cost: "$45–$65" },
-      { en: "Petrol (per litre)", ko: "휘발유 (리터당)", cost: "~$1.90" },
+      { en: "Opal card weekly cap (adult)", ja: "Opalカードの週上限（大人）", zh: "Opal卡每周上限（成人）", ko: "Opal 카드 주간 상한선 (성인)", cost: "$50" },
+      { en: "Single train trip (CBD to Parramatta)", ja: "電車1回（CBD〜Parramatta）", zh: "单程火车（CBD到Parramatta）", ko: "기차 1회 (CBD → Parramatta)", cost: "$5.60" },
+      { en: "Single bus trip (inner city)", ja: "バス1回（市内）", zh: "单程公交（市中心）", ko: "버스 1회 (시내)", cost: "$2.40–$4.80" },
+      { en: "Light rail trip", ja: "ライトレール1回", zh: "轻轨单程", ko: "경전철 1회", cost: "$2.40–$4.80" },
+      { en: "Uber (CBD to Airport)", ja: "Uber（CBD〜空港）", zh: "Uber（CBD到机场）", ko: "Uber (CBD → 공항)", cost: "$45–$65" },
+      { en: "Petrol (per litre)", ja: "ガソリン（1リットルあたり）", zh: "汽油（每升）", ko: "휘발유 (리터당)", cost: "~$1.90" },
     ],
   },
   {
     emoji: "🛒",
     title: "Groceries & Food",
     items: [
-      { en: "Weekly grocery shop (1 person, Woolies/Coles)", ko: "주간 식료품 (1인, Woolies/Coles)", cost: "$80–$120" },
-      { en: "Milk (1L)", ko: "우유 (1L)", cost: "$2.50" },
-      { en: "Bread (loaf)", ko: "식빵", cost: "$4.50" },
-      { en: "Eggs (12 pack)", ko: "달걀 (12개)", cost: "$6.50" },
-      { en: "Chicken breast (1kg)", ko: "닭가슴살 (1kg)", cost: "$12–$16" },
-      { en: "Rice (2kg)", ko: "쌀 (2kg)", cost: "$6–$10" },
-      { en: "Dining out (cafe brunch)", ko: "카페 브런치", cost: "$20–$30" },
-      { en: "Dining out (restaurant dinner)", ko: "레스토랑 저녁", cost: "$35–$65" },
-      { en: "Korean restaurant (bibimbap)", ko: "한식당 (비빔밥)", cost: "$18–$25" },
-      { en: "Takeaway coffee", ko: "테이크아웃 커피", cost: "$4.50–$6" },
+      { en: "Weekly grocery shop (1 person, Woolies/Coles)", ja: "毎週の食料品（1人分、Woolies/Coles）", zh: "每周食品杂货（1人，Woolies/Coles）", ko: "주간 식료품 (1인, Woolies/Coles)", cost: "$80–$120" },
+      { en: "Milk (1L)", ja: "牛乳（1L）", zh: "牛奶（1升）", ko: "우유 (1L)", cost: "$2.50" },
+      { en: "Bread (loaf)", ja: "パン（1斤）", zh: "面包（一条）", ko: "식빵", cost: "$4.50" },
+      { en: "Eggs (12 pack)", ja: "卵（12個入り）", zh: "鸡蛋（12个装）", ko: "달걀 (12개)", cost: "$6.50" },
+      { en: "Chicken breast (1kg)", ja: "鶏むね肉（1kg）", zh: "鸡胸肉（1公斤）", ko: "닭가슴살 (1kg)", cost: "$12–$16" },
+      { en: "Rice (2kg)", ja: "米（2kg）", zh: "大米（2公斤）", ko: "쌀 (2kg)", cost: "$6–$10" },
+      { en: "Dining out (cafe brunch)", ja: "外食（カフェのブランチ）", zh: "外出就餐（咖啡馆早午餐）", ko: "카페 브런치", cost: "$20–$30" },
+      { en: "Dining out (restaurant dinner)", ja: "外食（レストランのディナー）", zh: "外出就餐（餐厅晚餐）", ko: "레스토랑 저녁", cost: "$35–$65" },
+      { en: "Korean restaurant (bibimbap)", ja: "韓国料理店（ビビンバ）", zh: "韩式餐厅（石锅拌饭）", ko: "한식당 (비빔밥)", cost: "$18–$25" },
+      { en: "Takeaway coffee", ja: "テイクアウトのコーヒー", zh: "外带咖啡", ko: "테이크아웃 커피", cost: "$4.50–$6" },
     ],
   },
   {
     emoji: "📱",
     title: "Phone & Internet",
     items: [
-      { en: "Prepaid SIM (Amaysim / Boost / Aldi)", ko: "선불 SIM (Amaysim / Boost / Aldi)", cost: "$15–$30/month" },
-      { en: "Postpaid plan (20GB+)", ko: "후불 요금제 (20GB+)", cost: "$30–$50/month" },
-      { en: "Home NBN internet (50Mbps)", ko: "가정용 NBN 인터넷 (50Mbps)", cost: "$70–$90/month" },
-      { en: "Home NBN internet (100Mbps)", ko: "가정용 NBN 인터넷 (100Mbps)", cost: "$90–$110/month" },
+      { en: "Prepaid SIM (Amaysim / Boost / Aldi)", ja: "プリペイドSIM（Amaysim / Boost / Aldi）", zh: "预付费SIM卡（Amaysim / Boost / Aldi）", ko: "선불 SIM (Amaysim / Boost / Aldi)", cost: "$15–$30/month" },
+      { en: "Postpaid plan (20GB+)", ja: "ポストペイドプラン（20GB+）", zh: "后付费套餐（20GB+）", ko: "후불 요금제 (20GB+)", cost: "$30–$50/month" },
+      { en: "Home NBN internet (50Mbps)", ja: "自宅のNBNインターネット（50Mbps）", zh: "家庭NBN宽带（50Mbps）", ko: "가정용 NBN 인터넷 (50Mbps)", cost: "$70–$90/month" },
+      { en: "Home NBN internet (100Mbps)", ja: "自宅のNBNインターネット（100Mbps）", zh: "家庭NBN宽带（100Mbps）", ko: "가정용 NBN 인터넷 (100Mbps)", cost: "$90–$110/month" },
     ],
   },
   {
     emoji: "💡",
     title: "Utilities & Bills",
     items: [
-      { en: "Electricity (1 person, apartment)", ko: "전기세 (1인, 아파트)", cost: "$80–$150/quarter" },
-      { en: "Gas (cooking + hot water)", ko: "가스세 (요리 + 온수)", cost: "$50–$100/quarter" },
-      { en: "Water (apartment, billed quarterly)", ko: "수도세 (아파트, 분기별)", cost: "$80–$180/quarter" },
-      { en: "Contents insurance (renters)", ko: "가재도구 보험 (세입자)", cost: "$20–$40/month" },
+      { en: "Electricity (1 person, apartment)", ja: "電気代（1人、アパート）", zh: "电费（1人，公寓）", ko: "전기세 (1인, 아파트)", cost: "$80–$150/quarter" },
+      { en: "Gas (cooking + hot water)", ja: "ガス代（調理 + 給湯）", zh: "燃气费（做饭 + 热水）", ko: "가스세 (요리 + 온수)", cost: "$50–$100/quarter" },
+      { en: "Water (apartment, billed quarterly)", ja: "水道代（アパート、四半期ごとの請求）", zh: "水费（公寓，按季度计费）", ko: "수도세 (아파트, 분기별)", cost: "$80–$180/quarter" },
+      { en: "Contents insurance (renters)", ja: "家財保険（賃貸居住者）", zh: "家庭财产保险（租客）", ko: "가재도구 보험 (세입자)", cost: "$20–$40/month" },
     ],
   },
   {
     emoji: "🏥",
     title: "Health Insurance",
     items: [
-      { en: "OSHC (student, single, per year)", ko: "OSHC (유학생, 1인, 연간)", cost: "~$600/year" },
-      { en: "OVHC (working holiday, per year)", ko: "OVHC (워홀, 연간)", cost: "~$500–$900/year" },
-      { en: "GP visit (bulk billed)", ko: "GP 방문 (벌크 빌)", cost: "Free" },
-      { en: "GP visit (private, no Medicare)", ko: "GP 방문 (개인, 메디케어 없음)", cost: "$50–$80" },
-      { en: "Ambulance cover (annual)", ko: "구급차 보험 (연간)", cost: "~$60/year" },
+      { en: "OSHC (student, single, per year)", ja: "OSHC（学生、単身、年間）", zh: "OSHC（学生，单人，每年）", ko: "OSHC (유학생, 1인, 연간)", cost: "~$600/year" },
+      { en: "OVHC (working holiday, per year)", ja: "OVHC（ワーホリ、年間）", zh: "OVHC（打工度假，每年）", ko: "OVHC (워홀, 연간)", cost: "~$500–$900/year" },
+      { en: "GP visit (bulk billed)", ja: "GP受診（バルクビリング）", zh: "全科医生就诊（统一报销）", ko: "GP 방문 (벌크 빌)", cost: "Free" },
+      { en: "GP visit (private, no Medicare)", ja: "GP受診（自費、Medicareなし）", zh: "全科医生就诊（自费，无Medicare）", ko: "GP 방문 (개인, 메디케어 없음)", cost: "$50–$80" },
+      { en: "Ambulance cover (annual)", ja: "救急車カバー（年間）", zh: "救护车保险（每年）", ko: "구급차 보험 (연간)", cost: "~$60/year" },
     ],
   },
 ];
@@ -106,9 +106,9 @@ export default function CostOfLivingPage() {
       {/* Quick summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
         {[
-          { emoji: "💰", label: { en: "Single person (shared)", ko: "1인 (쉐어하우스)" }, total: "$700–$1,200/month" },
-          { emoji: "🏠", label: { en: "Single person (own apartment)", ko: "1인 (단독 아파트)" }, total: "$1,200–$2,000/month" },
-          { emoji: "👫", label: { en: "Couple (sharing)", ko: "커플 (함께 사는 경우)" }, total: "$1,800–$2,800/month" },
+          { emoji: "💰", label: { en: "Single person (shared)", ja: "単身（シェアハウス）", zh: "单人（合租）", ko: "1인 (쉐어하우스)" }, total: "$700–$1,200/month" },
+          { emoji: "🏠", label: { en: "Single person (own apartment)", ja: "単身（単独アパート）", zh: "单人（独立公寓）", ko: "1인 (단독 아파트)" }, total: "$1,200–$2,000/month" },
+          { emoji: "👫", label: { en: "Couple (sharing)", ja: "カップル（同居）", zh: "情侣（合住）", ko: "커플 (함께 사는 경우)" }, total: "$1,800–$2,800/month" },
         ].map((item, i) => (
           <div
             key={i}
@@ -117,7 +117,9 @@ export default function CostOfLivingPage() {
           >
             <div className="text-3xl mb-2">{item.emoji}</div>
             <div className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-1">
-              <En>{item.label.en}</En>
+              <En translated>{item.label.en}</En>
+              <Ja>{pickLocale("ja", item.label)}</Ja>
+              <Zh>{pickLocale("zh", item.label)}</Zh>
               <Ko>{item.label.ko}</Ko>
             </div>
             <div className="text-xl font-bold text-sunset">{item.total}</div>

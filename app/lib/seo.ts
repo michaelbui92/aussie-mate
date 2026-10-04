@@ -162,7 +162,7 @@ export function seoFor(path: string): Pick<Metadata, "openGraph" | "twitter"> {
  * only carry English. The function only serialises `en` — Korean stays in
  * the visible Kaq block, not the JSON-LD payload. */
 export function faqLdJson(
-  faqs: ReadonlyArray<{ q: { en: string; ko?: string }; a: { en: string; ko?: string } }>,
+  faqs: ReadonlyArray<{ q: { en: string; ko?: string; ja?: string; zh?: string }; a: { en: string; ko?: string; ja?: string; zh?: string } }>,
   pagePath: string
 ) {
   const url = pagePath

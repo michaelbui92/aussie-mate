@@ -1,18 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
-import { En, Ja, Ko, Zh } from "./LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "./LangBlocks";
 
 export interface ChecklistItem {
   id: string;
   en: string;
-  ko: string;
-  hint?: { en: string; ko: string };
-  link?: { href: string; en: string; ko: string };
+  ko: string; ja?: string; zh?: string; hint?: { en: string; ko: string; ja?: string; zh?: string };
+  link?: { href: string; en: string; ko: string; ja?: string; zh?: string };
 }
 
 export interface ChecklistProps {
   storageKey: string;
-  title?: { en: string; ko: string };
+  title?: { en: string; ko: string; ja?: string; zh?: string };
   items: ChecklistItem[];
 }
 
@@ -51,7 +50,9 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
       {title && (
         <div className="flex items-baseline justify-between mb-3">
           <h3 className="font-bold text-eucalypt dark:text-white">
-            <En>{title.en}</En>
+            <En translated>{title.en}</En>
+            <Ja>{pickLocale("ja", title)}</Ja>
+            <Zh>{pickLocale("zh", title)}</Zh>
             <Ko>{title.ko}</Ko>
           </h3>
           <span className="text-xs text-eucalypt/60 dark:text-dark-muted/60 tabular-nums">
@@ -101,12 +102,16 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
                         : "text-eucalypt dark:text-white"
                     }`}
                   >
-                    <En>{it.en}</En>
+                    <En translated>{it.en}</En>
+                    <Ja>{pickLocale("ja", it)}</Ja>
+                    <Zh>{pickLocale("zh", it)}</Zh>
                     <Ko>{it.ko}</Ko>
                   </div>
                   {it.hint && (
                     <div className="text-xs text-eucalypt/60 dark:text-dark-muted/60 mt-0.5">
-                      <En>{it.hint.en}</En>
+                      <En translated>{it.hint.en}</En>
+                      <Ja>{pickLocale("ja", it.hint)}</Ja>
+                      <Zh>{pickLocale("zh", it.hint)}</Zh>
                       <Ko>{it.hint.ko}</Ko>
                     </div>
                   )}

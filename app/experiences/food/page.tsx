@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
@@ -22,10 +22,10 @@ const neighbourhoods = [
     descEn: "King Street is one of Sydney's best food streets — and it keeps going for over two kilometres. Expect Thai restaurants every few doors (Thai Pothong and Chat Thai are the standouts), gourmet burger joints like Mary's that smash it out of the park, legendary gelato at Cow & the Moon (winner of national gelato awards), and dozens of hole-in-the-wall cafes. It's casual, affordable, and incredibly diverse. If you're a food traveller, start here.",
     descKo: "킹 스트리트는 시드니 최고의 미식 거리 중 하나 — 2킬로미터 이상 이어집니다. 몇 걸음마다 태국 레스토랑(Thai Pothong과 Chat Thai가 단연 돋보임), Mary's 같은 수제 버거 맛집, 전국 아이스크림 대회 수상자인 Cow & the Moon의 전설적인 젤라또, 그리고 수많은 카페가 줄지어 있습니다. 캐주얼하고 합리적인 가격에 엄청나게 다양한 음식을 즐길 수 있습니다. 미식 여행자라면 여기서 시작하세요.",
     spots: [
-      { en: "Thai Pothong — classic Thai, great value", ko: "Thai Pothong — 클래식 태국 요리, 훌륭한 가성비" },
-      { en: "Mary's — legendary burger, no-frills vibe", ko: "Mary's — 전설적인 버거, 허세 없는 분위기" },
-      { en: "Cow & the Moon — award-winning gelato", ko: "Cow & the Moon — 수상 경력의 젤라또" },
-      { en: "Chat Thai — authentic, always busy", ko: "Chat Thai — 정통, 항상 북적이는" },
+      { en: "Thai Pothong — classic Thai, great value", ja: "Thai Pothong — 定番タイ料理、コスパ抜群", zh: "Thai Pothong——经典泰国菜，超值", ko: "Thai Pothong — 클래식 태국 요리, 훌륭한 가성비" },
+      { en: "Mary's — legendary burger, no-frills vibe", ja: "Mary's — 伝説のバーガー、飾らない雰囲気", zh: "Mary's——传奇汉堡，随性氛围", ko: "Mary's — 전설적인 버거, 허세 없는 분위기" },
+      { en: "Cow & the Moon — award-winning gelato", ja: "Cow & the Moon — 受賞歴のあるジェラート", zh: "Cow & the Moon——获奖意式冰淇淋", ko: "Cow & the Moon — 수상 경력의 젤라또" },
+      { en: "Chat Thai — authentic, always busy", ja: "Chat Thai — 本格的、いつも賑わう", zh: "Chat Thai——地道，总是顾客盈门", ko: "Chat Thai — 정통, 항상 북적이는" },
     ],
   },
   {
@@ -36,10 +36,10 @@ const neighbourhoods = [
     descEn: "Sydney's Chinatown is compact but punchy. Din Tai Fung is the most famous stop — their xiao long bao (soup dumplings) draw queues every night. But don't stop there: Emperor's Garden BBQ does incredible roast duck and pork hanging in the window, the Dixon Street food court is a budget paradise ($10 AUD–15 feeds you well), and little bakeries sell egg tarts and pork buns fresh from the oven. The weekend Paddy's Market food stalls are a bonus — try the banh mi and fresh juice combos.",
     descKo: "시드니 차이나타운은 작지만 강력합니다. Din Tai Fung이 가장 유명한 곳 — 샤오룽바오(만두)는 매일 밤 줄을 잇게 만듭니다. 하지만 거기서 멈추지 마세요: Emperor's Garden BBQ는 창문에 걸린 로스트 덕과 돼지고기가 환상적이고, 딕슨 스트리트 푸드코트는 가성비 천국($10 AUD–15면 푸짐하게 먹음), 작은 빵집에서는 갓 구운 에그타르트와 찐빵을 팝니다. 주말 패디스 마켓의 포장마차도 보너스 — 반미와 신선한 주스를 꼭 드셔보세요.",
     spots: [
-      { en: "Din Tai Fung — world-famous soup dumplings", ko: "Din Tai Fung — 세계적으로 유명한 만두" },
-      { en: "Emperor's Garden BBQ — roast duck & pork", ko: "Emperor's Garden BBQ — 오리 구이 & 돼지고기" },
-      { en: "Dixon Street food court — budget eats", ko: "딕슨 스트리트 푸드코트 — 저렴한 먹거리" },
-      { en: "Paddy's Markets weekend stalls", ko: "패디스 마켓 주말 포장마차" },
+      { en: "Din Tai Fung — world-famous soup dumplings", ja: "Din Tai Fung — 世界的に有名な小籠包", zh: "鼎泰丰——闻名世界的小笼包", ko: "Din Tai Fung — 세계적으로 유명한 만두" },
+      { en: "Emperor's Garden BBQ — roast duck & pork", ja: "Emperor's Garden BBQ — ローストダック＆ポーク", zh: "Emperor's Garden BBQ——烧鸭和烧肉", ko: "Emperor's Garden BBQ — 오리 구이 & 돼지고기" },
+      { en: "Dixon Street food court — budget eats", ja: "ディクソン・ストリート・フードコート — 安く食べられる", zh: "Dixon Street美食广场——平价美食", ko: "딕슨 스트리트 푸드코트 — 저렴한 먹거리" },
+      { en: "Paddy's Markets weekend stalls", ja: "パディーズ・マーケットの週末屋台", zh: "帕迪市场周末摊位", ko: "패디스 마켓 주말 포장마차" },
     ],
   },
   {
@@ -50,10 +50,10 @@ const neighbourhoods = [
     descEn: "Sydney's CBD has a thriving Korean and Japanese dining scene centred around Pitt Street and Liverpool Street. Korean BBQ spots like 678 Korean BBQ (a chain from Seoul) pack in crowds with premium marinated meats grilled at your table — budget around $40 AUD–60 per person for the full experience. Mappen, a casual udon chain, is the go-to for a fast, satisfying lunch under $15 AUD. There's also Jap's Table, Yebisu, and an expanding network of Korean fried chicken joints (try Picnic or Seoul Chicken).",
     descKo: "시드니 시티에는 Pitt Street와 Liverpool Street를 중심으로 활기찬 한식 및 일식 레스토랑이 자리잡고 있습니다. 678 Korean BBQ(서울에서 온 체인) 같은 고깃집은 테이블에서 직접 구워 먹는 프리미엄 양념 고기로 인파를 모읍니다 — 풀코스로 1인당 $40 AUD–60 정도 예산. Mappen은 캐주얼 우동 체인으로 $15 AUD 이하에 빠르고 든든한 점심을 해결할 수 있습니다. Jap's Table, Yebisu 그리고 계속 늘어나는 치킨 전문점(Picnic이나 Seoul Chicken 추천)도 있습니다.",
     spots: [
-      { en: "678 Korean BBQ — authentic tabletop BBQ", ko: "678 Korean BBQ — 정통 테이블 바베큐" },
-      { en: "Mappen — fast, cheap udon bowls", ko: "Mappen — 빠르고 저렴한 우동" },
-      { en: "Seoul Chicken — KFC (Korean Fried Chicken)", ko: "Seoul Chicken — K-치킨" },
-      { en: "Jap's Table — izakaya-style Japanese", ko: "Jap's Table — 이자카야 스타일 일식" },
+      { en: "678 Korean BBQ — authentic tabletop BBQ", ja: "678 Korean BBQ — 本格的なテーブル焼肉", zh: "678韩式烤肉——正宗桌边烤肉", ko: "678 Korean BBQ — 정통 테이블 바베큐" },
+      { en: "Mappen — fast, cheap udon bowls", ja: "Mappen — 早くて安いうどん", zh: "Mappen——快速实惠的乌冬面", ko: "Mappen — 빠르고 저렴한 우동" },
+      { en: "Seoul Chicken — KFC (Korean Fried Chicken)", ja: "Seoul Chicken — KFC（韓国フライドチキン）", zh: "Seoul Chicken——韩式炸鸡（KFC）", ko: "Seoul Chicken — K-치킨" },
+      { en: "Jap's Table — izakaya-style Japanese", ja: "Jap's Table — 居酒屋スタイルの和食", zh: "Jap's Table——居酒屋风格的日料", ko: "Jap's Table — 이자카야 스타일 일식" },
     ],
   },
   {
@@ -64,10 +64,10 @@ const neighbourhoods = [
     descEn: "Sydney is home to some of the world's best restaurants. Tetsuya's — a Japanese-French degustation institution — is housed in a converted chapel and offers a multi-course journey for around $250 AUD per person. Quay, with its stunning harbour view and Peter Gilmore's iconic Snow Egg dessert, has topped many 'best in Australia' lists. Other heavyweights: Aria (Opera House views), Bennelong (inside the Opera House itself), and Sixpenny in Stanmore. Book weeks — sometimes months — in advance.",
     descKo: "시드니에는 세계 최고의 레스토랑들이 있습니다. Tetsuya's — 일식과 프렌치의 융합 디구스테이션 — 개조된 예배당에 자리잡고 있으며 1인당 약 $250 AUD의 멀티코스 코스를 제공합니다. Quay는 환상적인 하버 뷰와 Peter Gilmore의 상징적인 Snow Egg 디저트로 수많은 '호주 최고' 리스트에 올랐습니다. 다른 강자들: Aria(오페라 하우스 뷰), Bennelong(오페라 하우스 내부), Sixpenny(스탠모어). 몇 주 — 때로는 몇 달 — 전에 예약해야 합니다.",
     spots: [
-      { en: "Tetsuya's — legendary Japanese-French degustation", ko: "Tetsuya's — 전설적인 일식-프렌치 디구스테이션" },
-      { en: "Quay — harbour views + Snow Egg dessert", ko: "Quay — 하버 뷰 + Snow Egg 디저트" },
-      { en: "Bennelong — dining inside the Opera House", ko: "Bennelong — 오페라 하우스 안에서의 식사" },
-      { en: "Aria — Opera House views, special occasions", ko: "Aria — 오페라 하우스 뷰, 특별한 날" },
+      { en: "Tetsuya's — legendary Japanese-French degustation", ja: "Tetsuya's — 伝説の日仏デギュスタシオン", zh: "Tetsuya's——传奇的日法品鉴套餐", ko: "Tetsuya's — 전설적인 일식-프렌치 디구스테이션" },
+      { en: "Quay — harbour views + Snow Egg dessert", ja: "Quay — ハーバービュー＋Snow Eggデザート", zh: "Quay——海港景观＋雪蛋甜品", ko: "Quay — 하버 뷰 + Snow Egg 디저트" },
+      { en: "Bennelong — dining inside the Opera House", ja: "Bennelong — オペラハウス内でのダイニング", zh: "Bennelong——在歌剧院内用餐", ko: "Bennelong — 오페라 하우스 안에서의 식사" },
+      { en: "Aria — Opera House views, special occasions", ja: "Aria — オペラハウスの眺め、特別な日に", zh: "Aria——歌剧院景观，适合特殊场合", ko: "Aria — 오페라 하우스 뷰, 특별한 날" },
     ],
   },
   {
@@ -78,10 +78,10 @@ const neighbourhoods = [
     descEn: "Sydney's markets are where the city's food culture really shines. Carriageworks Farmers Market (Saturdays, 8am–1pm) is a food lover's paradise: artisan cheeses, fresh-baked sourdough, seasonal fruit, ethical meats, and hot food stalls serving everything from wood-fired pizza to raw oysters. The Sydney Fish Market in Pyrmont is the largest of its kind in the Southern Hemisphere — grab a platter of fresh sashimi, grilled lobster, or fish & chips and eat by the water. Arrive before 11am for the best selection.",
     descKo: "시드니의 마켓은 이 도시의 음식 문화가 가장 빛나는 곳입니다. Carriageworks Farmers Market(토요일, 오전 8시~오후 1시)은 미식가의 천국: 수제 치즈, 갓 구운 사워도우, 제철 과일, 윤리적 육류, 그리고 장작 화덕 피자부터 생굴까지 다양한 핫푸드가 준비되어 있습니다. Pyrmont의 시드니 피시 마켓은 남반구 최대 규모 — 신선한 회, 구운 랍스터, 피시 앤 칩스를 물가에서 즐겨보세요. 오전 11시 이전에 방문해야 가장 좋은 선택을 할 수 있습니다.",
     spots: [
-      { en: "Carriageworks Farmers Market — Sat 8am–1pm", ko: "Carriageworks Farmers Market — 토요일 오전 8시~오후 1시" },
-      { en: "Sydney Fish Market — oysters, sashimi, lobster", ko: "시드니 피시 마켓 — 굴, 회, 랍스터" },
-      { en: "Paddy's Market — budget produce & food stalls", ko: "패디스 마켓 — 저렴한 식재료 & 푸드 스탠드" },
-      { en: "Orange Grove Market — Sunday organic market", ko: "오렌지 그로브 마켓 — 일요일 유기농 마켓" },
+      { en: "Carriageworks Farmers Market — Sat 8am–1pm", ja: "Carriageworks Farmers Market — 土曜 午前8時〜午後1時", zh: "Carriageworks农夫市集——周六上午8点至下午1点", ko: "Carriageworks Farmers Market — 토요일 오전 8시~오후 1시" },
+      { en: "Sydney Fish Market — oysters, sashimi, lobster", ja: "シドニー・フィッシュ・マーケット — 牡蠣、刺身、ロブスター", zh: "悉尼鱼市场——生蚝、刺身、龙虾", ko: "시드니 피시 마켓 — 굴, 회, 랍스터" },
+      { en: "Paddy's Market — budget produce & food stalls", ja: "パディーズ・マーケット — 安い食材＆フードスタンド", zh: "帕迪市场——平价食材和美食摊位", ko: "패디스 마켓 — 저렴한 식재료 & 푸드 스탠드" },
+      { en: "Orange Grove Market — Sunday organic market", ja: "Orange Grove Market — 日曜のオーガニックマーケット", zh: "Orange Grove Market——周日有机市集", ko: "오렌지 그로브 마켓 — 일요일 유기농 마켓" },
     ],
   },
 ];
@@ -94,11 +94,11 @@ const byoInfo = {
 };
 
 const tips = [
-  { en: "Book for dinner — most good restaurants fill up by Wednesday", ko: "저녁 예약은 필수 — 좋은 레스토랑은 수요일이면 자리 차있음" },
-  { en: "Lunch specials are real — $15 AUD–20 gets you the same dinner meal for half price", ko: "런치 스페셜 활용 — $15 AUD–20으로 저녁 메뉴를 반값에" },
-  { en: "Tipping is not required in Australia — it's not a cultural expectation", ko: "호주는 팁 문화가 아님 — 팁은 의무가 아닙니다" },
-  { en: "Tapping = paying — tap your card or phone everywhere, cash is rare", ko: "카드/폰 결제 — 현금 거의 안 씀" },
-  { en: "Water is free — ask for tap water, it's perfectly safe and drinkable", ko: "물은 무료 — 수돗물 요청 가능, 완전히 안전하고 마시기에 좋음" },
+  { en: "Book for dinner — most good restaurants fill up by Wednesday", ja: "ディナーは予約を — 良いレストランの多くは水曜日までに満席になります", zh: "晚餐请预订——大多数好餐厅到周三就订满了", ko: "저녁 예약은 필수 — 좋은 레스토랑은 수요일이면 자리 차있음" },
+  { en: "Lunch specials are real — $15 AUD–20 gets you the same dinner meal for half price", ja: "ランチスペシャルは本当にお得 — $15 AUD–20でディナーの同じ料理が半額に", zh: "午餐特价是真实存在的 — 花 $15 AUD–20 就能以半价吃到同样的晚餐菜品", ko: "런치 스페셜 활용 — $15 AUD–20으로 저녁 메뉴를 반값에" },
+  { en: "Tipping is not required in Australia — it's not a cultural expectation", ja: "オーストラリアではチップは不要 — 文化的な習慣ではありません", zh: "在澳大利亚不需要给小费 — 这不是文化上的期待", ko: "호주는 팁 문화가 아님 — 팁은 의무가 아닙니다" },
+  { en: "Tapping = paying — tap your card or phone everywhere, cash is rare", ja: "タッチ決済＝支払い — どこでもカードやスマホをタッチするだけ、現金はほとんど使われません", zh: "拍卡即付款 — 到处都能用卡或手机感应支付，现金很少用", ko: "카드/폰 결제 — 현금 거의 안 씀" },
+  { en: "Water is free — ask for tap water, it's perfectly safe and drinkable", ja: "水は無料 — 水道水を頼みましょう、完全に安全で飲めます", zh: "水是免费的 — 要自来水就行，完全安全，可以直接饮用", ko: "물은 무료 — 수돗물 요청 가능, 완전히 안전하고 마시기에 좋음" },
 ];
 
 export default function SydneyFoodGuide() {
@@ -202,7 +202,9 @@ export default function SydneyFoodGuide() {
                     >
                       <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-sunset mt-2" />
                       <p className="text-sm font-medium text-stone-900 dark:text-stone-100 leading-snug">
-                        <En>{spot.en}</En>
+                        <En translated>{spot.en}</En>
+                        <Ja>{pickLocale("ja", spot)}</Ja>
+                        <Zh>{pickLocale("zh", spot)}</Zh>
                         <Ko>{spot.ko}</Ko>
                       </p>
                     </div>
@@ -255,7 +257,9 @@ export default function SydneyFoodGuide() {
                   {i + 1}
                 </span>
                 <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed pt-0.5">
-                  <En>{tip.en}</En>
+                  <En translated>{tip.en}</En>
+                  <Ja>{pickLocale("ja", tip)}</Ja>
+                  <Zh>{pickLocale("zh", tip)}</Zh>
                   <Ko>{tip.ko}</Ko>
                 </p>
               </li>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh } from "../LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "../LangBlocks";
 
 export default function ArrivedContent() {
   return (
@@ -120,21 +120,21 @@ export default function ArrivedContent() {
           {[
             {
               icon: "📱",
-              en: "Get your Australian number",
+              en: "Get your Australian number", ja: "オーストラリアの番号を取得", zh: "办理澳大利亚手机号",
               ko: "호주 전화번호 받기",
               blurbEn: "Woolworths, Coles, or any 7-Eleven sets you up in 10 minutes with your passport. eSIM works too if you bought one before you flew.",
               blurbKo: "Woolworths, Coles, 7-Eleven 어느 곳이든 여권으로 10분이면 개통됩니다. 출발 전 eSIM을 사왔다면 그것도 됩니다.",
             },
             {
               icon: "🏦",
-              en: "Visit your bank",
+              en: "Visit your bank", ja: "銀行を訪ねる", zh: "前往银行",
               ko: "은행 방문",
               blurbEn: "Open an Australian account online with a passport — about 20 minutes. Your employer needs an Australian account to pay you. Skip the branch queues.",
               blurbKo: "여권으로 온라인 개설 — 약 20분. 고용주가 급여를 입금하려면 호주 계좌가 필요합니다. 지점 줄을 서지 마세요.",
             },
             {
               icon: "🏠",
-              en: "Find a permanent place to live",
+              en: "Find a permanent place to live", ja: "定住先の住まいを探す", zh: "找到长期住所",
               ko: "정착할 집 구하기",
               blurbEn: "Flatmates.com.au is where most newcomers find their first share house. Naver and Hojunara are the Korean-community listings channels. Inspect 3–5 places before signing. Photos lie. Most newcomers spend 2–4 weeks house hunting before settling.",
               blurbKo: "대부분의 신참은 flatmates.com.au에서 첫 쉐어하우스를 구합니다. 네이버 부동산과 호주나라는 한인 커뮤니티 매물 채널입니다. 서명 전에 3-5곳을 직접 봅니다. 사진은 거짓말을 합니다. 대부분 2-4주 집을 보고 정착합니다.",
@@ -144,7 +144,7 @@ export default function ArrivedContent() {
             },
             {
               icon: "📋",
-              en: "Apply for a TFN",
+              en: "Apply for a TFN", ja: "TFNを申請", zh: "申请TFN",
               ko: "TFN 신청",
               blurbEn: "Free from ato.gov.au. Without it your employer withholds tax at the emergency rate — you lose 30–40% of your take-home pay until you do.",
               blurbKo: "ato.gov.au에서 무료 신청. 신청하지 않으면 고용주가 긴급 세율로 원천징수 — 신청할 때까지 실수령액의 30–40%를 잃습니다.",
@@ -156,7 +156,9 @@ export default function ArrivedContent() {
             >
               <div className="text-2xl mb-2">{w.icon}</div>
               <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
-                <En>{w.en}</En>
+                <En translated>{w.en}</En>
+                <Ja>{pickLocale("ja", w)}</Ja>
+                <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
               </h4>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
@@ -187,10 +189,10 @@ export default function ArrivedContent() {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-3xl">
           {[
-            { en: "Phone active", ko: "전화 개통" },
-            { en: "Bank account open", ko: "은행 계좌" },
-            { en: "Permanent place secured", ko: "정착할 집 확보" },
-            { en: "TFN applied for", ko: "TFN 신청" },
+            { en: "Phone active", ja: "電話開通済み", zh: "手机已开通", ko: "전화 개통" },
+            { en: "Bank account open", ja: "銀行口座開設済み", zh: "银行账户已开设", ko: "은행 계좌" },
+            { en: "Permanent place secured", ja: "定住先の住まい確保済み", zh: "长期住所已落实", ko: "정착할 집 확보" },
+            { en: "TFN applied for", ja: "TFN申請済み", zh: "TFN已申请", ko: "TFN 신청" },
           ].map((step, i) => (
             <div
               key={step.en}
@@ -200,7 +202,9 @@ export default function ArrivedContent() {
                 ✓
               </span>
               <span className="text-sm font-medium text-stone-700 dark:text-stone-300">
-                <En>{step.en}</En>
+                <En translated>{step.en}</En>
+                <Ja>{pickLocale("ja", step)}</Ja>
+                <Zh>{pickLocale("zh", step)}</Zh>
                 <Ko>{step.ko}</Ko>
               </span>
             </div>
@@ -218,12 +222,12 @@ export default function ArrivedContent() {
         </p>
         <ul className="space-y-4 max-w-3xl">
           {[
-            { icon: "📱", en: "Get a SIM card on day one", ko: "첫날 SIM 카드 구매", descEn: "You can't navigate, message, or call anyone without a phone. Woolworths, Coles, or any 7-Eleven will set you up. Bring your passport. Cost: $10–$30 AUD for a prepaid starter. Telstra has the best coverage.", descKo: "스마트폰 없이는 길 찾기, 메시지, 전화가 모두 불가합니다. Woolworths, Coles, 7-Eleven에서 모두 가능합니다. 여권을 지참하세요. 선불 SIM 비용: $10–$30 AUD. Telstra가 가장 넓은 커버리지." },
-            { icon: "💳", en: "Open a bank account within the week", ko: "일주일 안에 은행 계좌 개설", descEn: "Commonwealth, ANZ, Westpac, NAB all let you open online with a passport — about 20 minutes. Your employer needs an Australian account to pay you. Skip the queues.", descKo: "Commonwealth, ANZ, Westpac, NAB 모두 여권으로 온라인 개설 가능 — 약 20분. 고용주가 월급을 입금하려면 호주 계좌가 필요합니다. 줄 서지 마세요.", href: "/finance", hrefLabelEn: "Banking in Australia →", hrefLabelKo: "호주 은행 계좌 가이드 →" },
-            { icon: "🚆", en: "Get an Opal card before you ride", ko: "탑승 전 오팔 카드 준비", descEn: "Sydney's public transport runs on Opal — trains, buses, ferries, light rail. Grab one at any train station or convenience store. Tap on, tap off. No card, no ride.", descKo: "시드니 대중교통은 오팔로 운영 — 기차, 버스, 페리, 경전철. 기차역이나 편의점에서 구매하세요. 탭 온, 탭 오프. 카드 없이는 탑승 불가.", href: "/transport", hrefLabelEn: "How to get and use Opal →", hrefLabelKo: "오팔 얻고 사용하기 →" },
-            { icon: "📋", en: "Apply for your TFN (tax number)", ko: "TFN(세금번호) 신청", descEn: "Free from ato.gov.au. Without it, your employer withholds tax at the emergency rate — which means a lot less take-home pay. Do it in your first week if you're job hunting.", descKo: "ato.gov.au에서 무료 신청. 없으면 고용주가 긴급 세율로 원천징수 — 실수령액이 크게 줄어듭니다. 구직 중이라면 첫 주에 신청하세요." },
-            { icon: "🏥", en: "Sort Medicare and private health", ko: "Medicare 및 민간 보험 정리", descEn: "If you're on a reciprocal visa (UK, NZ, some EU), Medicare covers you. Everyone else needs private cover from day one — it's not optional. Compare at iSelect or choose a fund directly.", descKo: "상호주의 비자(영국, 뉴질랜드, 일부 EU)라면 Medicare 적용. 그 외는 첫날부터 민간 보험 필수 — 선택이 아닙니다. iSelect에서 비교하거나 펀드를 직접 선택하세요." },
-            { icon: "🔗", en: "Link MyGov to ATO and Services Australia", ko: "MyGov에 ATO/Services Australia 연동", descEn: "MyGov is the single sign-on for tax, Medicare, Centrelink and more. Set it up once in your first month with two forms of ID — saves you hours later when you actually need it.", descKo: "MyGov는 세금, Medicare, Centrelink 등을 위한 통합 로그인입니다. 첫 달 안에 신분증 두 개로 한 번 설정해두세요 — 나중에 진짜 필요할 때 시간을 크게 절약합니다." },
+            { icon: "📱", en: "Get a SIM card on day one", ja: "初日にSIMカードを入手", zh: "第一天就办SIM卡", ko: "첫날 SIM 카드 구매", descEn: "You can't navigate, message, or call anyone without a phone. Woolworths, Coles, or any 7-Eleven will set you up. Bring your passport. Cost: $10–$30 AUD for a prepaid starter. Telstra has the best coverage.", descKo: "스마트폰 없이는 길 찾기, 메시지, 전화가 모두 불가합니다. Woolworths, Coles, 7-Eleven에서 모두 가능합니다. 여권을 지참하세요. 선불 SIM 비용: $10–$30 AUD. Telstra가 가장 넓은 커버리지." },
+            { icon: "💳", en: "Open a bank account within the week", ja: "1週間以内に銀行口座を開設", zh: "一周内开设银行账户", ko: "일주일 안에 은행 계좌 개설", descEn: "Commonwealth, ANZ, Westpac, NAB all let you open online with a passport — about 20 minutes. Your employer needs an Australian account to pay you. Skip the queues.", descKo: "Commonwealth, ANZ, Westpac, NAB 모두 여권으로 온라인 개설 가능 — 약 20분. 고용주가 월급을 입금하려면 호주 계좌가 필요합니다. 줄 서지 마세요.", href: "/finance", hrefLabelEn: "Banking in Australia →", hrefLabelKo: "호주 은행 계좌 가이드 →" },
+            { icon: "🚆", en: "Get an Opal card before you ride", ja: "乗車前にオパールカードを用意", zh: "乘车前先办Opal卡", ko: "탑승 전 오팔 카드 준비", descEn: "Sydney's public transport runs on Opal — trains, buses, ferries, light rail. Grab one at any train station or convenience store. Tap on, tap off. No card, no ride.", descKo: "시드니 대중교통은 오팔로 운영 — 기차, 버스, 페리, 경전철. 기차역이나 편의점에서 구매하세요. 탭 온, 탭 오프. 카드 없이는 탑승 불가.", href: "/transport", hrefLabelEn: "How to get and use Opal →", hrefLabelKo: "오팔 얻고 사용하기 →" },
+            { icon: "📋", en: "Apply for your TFN (tax number)", ja: "TFN（税務番号）を申請", zh: "申请TFN（税号）", ko: "TFN(세금번호) 신청", descEn: "Free from ato.gov.au. Without it, your employer withholds tax at the emergency rate — which means a lot less take-home pay. Do it in your first week if you're job hunting.", descKo: "ato.gov.au에서 무료 신청. 없으면 고용주가 긴급 세율로 원천징수 — 실수령액이 크게 줄어듭니다. 구직 중이라면 첫 주에 신청하세요." },
+            { icon: "🏥", en: "Sort Medicare and private health", ja: "Medicareと民間医療保険を整える", zh: "办理Medicare和私人医疗保险", ko: "Medicare 및 민간 보험 정리", descEn: "If you're on a reciprocal visa (UK, NZ, some EU), Medicare covers you. Everyone else needs private cover from day one — it's not optional. Compare at iSelect or choose a fund directly.", descKo: "상호주의 비자(영국, 뉴질랜드, 일부 EU)라면 Medicare 적용. 그 외는 첫날부터 민간 보험 필수 — 선택이 아닙니다. iSelect에서 비교하거나 펀드를 직접 선택하세요." },
+            { icon: "🔗", en: "Link MyGov to ATO and Services Australia", ja: "MyGovをATOとServices Australiaに連携", zh: "将MyGov关联ATO和Services Australia", ko: "MyGov에 ATO/Services Australia 연동", descEn: "MyGov is the single sign-on for tax, Medicare, Centrelink and more. Set it up once in your first month with two forms of ID — saves you hours later when you actually need it.", descKo: "MyGov는 세금, Medicare, Centrelink 등을 위한 통합 로그인입니다. 첫 달 안에 신분증 두 개로 한 번 설정해두세요 — 나중에 진짜 필요할 때 시간을 크게 절약합니다." },
           ].map((item, i) => (
             <li key={item.en} className={`reveal reveal-delay-${(i % 5) + 1} flex gap-4 group`}>
               <span className="shrink-0 w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-950/50 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
@@ -231,7 +235,9 @@ export default function ArrivedContent() {
               </span>
               <div className="flex-1 min-w-0">
                 <h4 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 mb-1">
-                  <En>{item.en}</En>
+                  <En translated>{item.en}</En>
+                  <Ja>{pickLocale("ja", item)}</Ja>
+                  <Zh>{pickLocale("zh", item)}</Zh>
                   <Ko>{item.ko}</Ko>
                 </h4>
                 <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
@@ -316,28 +322,28 @@ export default function ArrivedContent() {
           {[
             {
               icon: "📱",
-              en: "SIM, bank, Opal — done",
+              en: "SIM, bank, Opal — done", ja: "SIM、銀行、オパール — 完了", zh: "SIM卡、银行、Opal卡——完成",
               ko: "SIM, 은행, 오팔 — 완료",
               blurbEn: "The three unblockers set up. Your phone works, your employer can pay you, you can get around Sydney.",
               blurbKo: "세 가지 필수 준비 완료. 통화가 되고, 고용주가 급여를 입금할 수 있으며, 시드니 어디든 이동할 수 있습니다.",
             },
             {
               icon: "📋",
-              en: "TFN applied for",
+              en: "TFN applied for", ja: "TFN申請済み", zh: "TFN已申请",
               ko: "TFN 신청 완료",
               blurbEn: "No emergency tax on your first pay. The 30–40% hit is the most common newcomer mistake — you've avoided it.",
               blurbKo: "첫 월급부터 긴급 세율 적용 없음. 30–40% 차감은 신참이 가장 자주 하는 실수 — 피하게 됩니다.",
             },
             {
               icon: "🏥",
-              en: "Health sorted",
+              en: "Health sorted", ja: "医療の手続き完了", zh: "医疗已办妥",
               ko: "의료 정리",
               blurbEn: "Medicare or private cover in place. You can sort a GP when you actually need one — most people wait until they're sick, and that's fine too.",
               blurbKo: "Medicare 또는 민간 보험 정리. GP는 진짜 필요할 때 등록해도 됩니다 — 대부분은 아플 때까지 기다리고, 그것도 괜찮습니다.",
             },
             {
               icon: "🔗",
-              en: "MyGov linked and ready",
+              en: "MyGov linked and ready", ja: "MyGov連携完了", zh: "MyGov已关联并可使用",
               ko: "MyGov 연동 완료",
               blurbEn: "ATO, Medicare, Centrelink reachable from one login. Tax time becomes a one-click task, not a panic.",
               blurbKo: "ATO, Medicare, Centrelink을 한 번의 로그인으로. 연말 세금 신고가 패닉이 아니라 원 클릭 작업이 됩니다.",
@@ -349,7 +355,9 @@ export default function ArrivedContent() {
             >
               <div className="text-2xl mb-2">{w.icon}</div>
               <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
-                <En>{w.en}</En>
+                <En translated>{w.en}</En>
+                <Ja>{pickLocale("ja", w)}</Ja>
+                <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
               </h4>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">

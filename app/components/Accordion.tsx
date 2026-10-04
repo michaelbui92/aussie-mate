@@ -14,7 +14,7 @@ import { En, Ja, Ko, Zh } from "./LangBlocks";
 export interface AccordionItem {
   label: ReactNode;
   en: string;
-  ko: string;
+  ko: string; ja?: string; zh?: string
   // Optional metadata preserved from source pages; not rendered by default.
   url?: string;
   urlLabel?: string;

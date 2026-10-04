@@ -1,4 +1,4 @@
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import SeasonAccordion from "@/components/SeasonAccordion";
 import { seoFor, withSeo } from "@/lib/seo";
 
@@ -16,53 +16,53 @@ export const metadata = withSeo(
 const seasons = [
   {
     key: "summer",
-    title: { en: "Summer", ko: "여름" },
+    title: { en: "Summer", ja: "夏", zh: "夏季", ko: "여름" },
     months: "Dec · Jan · Feb",
     img: "/images/pexels-457882.jpg",
     accent: "from-orange-400 to-amber-500",
-    en: "Hot, humid, beach season. 25–40°C. Australian summer runs December to February — Christmas at the beach is completely normal.",
+    en: "Hot, humid, beach season. 25–40°C. Australian summer runs December to February — Christmas at the beach is completely normal.", ja: "暑く湿気の多いビーチの季節。25–40°C。オーストラリアの夏は12月から2月まで——ビーチでクリスマスを過ごすのはごく普通のことです。", zh: "炎热潮湿的海滩季节。25–40°C。澳大利亚的夏季从12月持续到2月——在海滩过圣诞节完全正常。",
     ko: "더움과 습기, 해변 시즌. 25–40°C. 호주의 여름은 12월부터 2월까지 — 해변에서 크리스마스는 완전히 정상입니다.",
   },
   {
     key: "autumn",
-    title: { en: "Autumn", ko: "가을" },
+    title: { en: "Autumn", ja: "秋", zh: "秋季", ko: "가을" },
     months: "Mar · Apr · May",
     img: "/images/pexels-34907670.jpg",
     accent: "from-amber-500 to-yellow-600",
-    en: "Mild and pleasant. 15–25°C. The leaves in the Blue Mountains turn gold and red. Prime walking weather.",
+    en: "Mild and pleasant. 15–25°C. The leaves in the Blue Mountains turn gold and red. Prime walking weather.", ja: "温暖で心地よい気候。15–25°C。ブルー・マウンテンズの葉が金色や赤色に染まります。散策に最適な季節です。", zh: "温和宜人。15–25°C。蓝山的树叶变成金黄和红色。是徒步的最佳天气。",
     ko: "온화하고 쾌적함. 15–25°C. 블루마운틴 단풍이 노랑과 빨강으로 물듭. 산책 최적기.",
   },
   {
     key: "winter",
-    title: { en: "Winter", ko: "겨울" },
+    title: { en: "Winter", ja: "冬", zh: "冬季", ko: "겨울" },
     months: "Jun · Jul · Aug",
     img: "/images/pexels-21660236.jpg",
     accent: "from-sky-400 to-blue-500",
-    en: "Cool but rarely cold. 8–18°C in Sydney. Snow falls in the Alps and Tasmania — but not in Sydney. Frost at night in regional areas.",
+    en: "Cool but rarely cold. 8–18°C in Sydney. Snow falls in the Alps and Tasmania — but not in Sydney. Frost at night in regional areas.", ja: "涼しいですが、寒くなることはほとんどありません。シドニーでは8–18°C。雪はアルプス地方とタスマニアに降りますが、シドニーには降りません。地方では夜間に霜が降ります。", zh: "凉爽但很少寒冷。悉尼为8–18°C。阿尔卑斯山区和塔斯马尼亚会下雪——但悉尼不会。偏远地区夜间有霜冻。",
     ko: "선선하지만 거의 추운 편 아님. 시드니는 8–18°C. 눈은 알프스 지방과 태즈먼니아에 내림 — 시드니엔 안 냄. 지역에 따라 밤에 서리.",
   },
   {
     key: "spring",
-    title: { en: "Spring", ko: "봄" },
+    title: { en: "Spring", ja: "春", zh: "春季", ko: "봄" },
     months: "Sep · Oct · Nov",
     img: "/images/pexels-33329755.jpg",
     accent: "from-emerald-400 to-green-500",
-    en: "Wildflowers, baby animals, warmth returning. 15–28°C. Windy in some areas. The best time to visit the outback.",
+    en: "Wildflowers, baby animals, warmth returning. 15–28°C. Windy in some areas. The best time to visit the outback.", ja: "野の花、動物の赤ちゃん、戻りつつある暖かさ。15–28°C。一部の地域では風が強くなります。アウトバックを訪れるのに最適な時期です。", zh: "野花盛开、幼小动物、暖意回归。15–28°C。部分地区多风。是游览内陆地区的最佳时节。",
     ko: "야생화, 새끼 동물들, 따뜻함 복귀. 15–28°C. 일부 지역엔 바람이 많음. 아웃백 방문 최적기.",
   },
 ] as const;
 
 const slipSlop = [
-  { en: "Slip on a shirt", ko: "Slip: 셔츠 입기" },
-  { en: "Slop on sunscreen (SPF 50+)", ko: "Slop: 선크림 (SPF 50+)" },
-  { en: "Slap on a hat", ko: "Slap: 모자 쓰기" },
+  { en: "Slip on a shirt", ja: "Slip：シャツを着る", zh: "Slip：穿上衬衫", ko: "Slip: 셔츠 입기" },
+  { en: "Slop on sunscreen (SPF 50+)", ja: "Slop：日焼け止めを塗る（SPF 50+）", zh: "Slop：涂抹防晒霜（SPF 50+）", ko: "Slop: 선크림 (SPF 50+)" },
+  { en: "Slap on a hat", ja: "Slap：帽子をかぶる", zh: "Slap：戴上帽子", ko: "Slap: 모자 쓰기" },
 ] as const;
 
 const quirks = [
   { en: '"Four seasons in one day"', ko: '"하루에 네 계절"', descEn: "Sydney and Melbourne especially can shift from sunny to rain to wind in hours. Always bring a light jacket.", descKo: "시드니와 멜버른은 특히 몇 시간 만에 맑음에서 비, 바람으로 바뀔 수 있습니다. 항상 가벼운 재킷을 가지고 다니세요." },
-  { en: "Summer storms", ko: "여름 뇌우", descEn: "Afternoon thunderstorms are common in summer — especially in the east. They pass quickly.", descKo: "여름철 오후 천둥번개가 흔함 — 특히 동부. 빠르게 지나갑니다." },
-  { en: "Bushfire season", ko: "산불 시즌", descEn: "Summer (Dec–Feb) brings high fire danger, especially in regional NSW. Check the RFS website before regional travel.", descKo: "여름(12–2월)에는 산불 위험이 높음, 특히 NSW 지역. 지역 여행 전 RFS 웹사이트를 확인하세요." },
-  { en: "El Niño years", ko: "엘니뇨 해", descEn: "Drought conditions are more common in El Niño years. Water restrictions can apply. Check your local council website.", descKo: "엘니뇨 해에는 가뭄이 더 흔합니다. 상수도 사용 제한이 적용될 수 있습니다." },
+  { en: "Summer storms", ja: "夏の嵐", zh: "夏季雷暴", ko: "여름 뇌우", descEn: "Afternoon thunderstorms are common in summer — especially in the east. They pass quickly.", descKo: "여름철 오후 천둥번개가 흔함 — 특히 동부. 빠르게 지나갑니다." },
+  { en: "Bushfire season", ja: "森林火災の季節", zh: "丛林大火季节", ko: "산불 시즌", descEn: "Summer (Dec–Feb) brings high fire danger, especially in regional NSW. Check the RFS website before regional travel.", descKo: "여름(12–2월)에는 산불 위험이 높음, 특히 NSW 지역. 지역 여행 전 RFS 웹사이트를 확인하세요." },
+  { en: "El Niño years", ja: "エルニーニョの年", zh: "厄尔尼诺年份", ko: "엘니뇨 해", descEn: "Drought conditions are more common in El Niño years. Water restrictions can apply. Check your local council website.", descKo: "엘니뇨 해에는 가뭄이 더 흔합니다. 상수도 사용 제한이 적용될 수 있습니다." },
 ] as const;
 
 const sydneyStats = [
@@ -136,7 +136,9 @@ export default function WeatherPage() {
                 className={`reveal reveal-delay-${(i % 5) + 1} p-4 rounded-2xl bg-white/80 dark:bg-dark-surface/80 backdrop-blur-sm border border-amber-200/40 dark:border-amber-900/30`}
               >
                 <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
-                  <En>{item.en}</En>
+                  <En translated>{item.en}</En>
+                  <Ja>{pickLocale("ja", item)}</Ja>
+                  <Zh>{pickLocale("zh", item)}</Zh>
                   <Ko>{item.ko}</Ko>
                 </p>
               </div>
@@ -163,7 +165,9 @@ export default function WeatherPage() {
                 </span>
                 <div>
                   <h3 className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
-                    <En>{item.en}</En>
+                    <En translated>{item.en}</En>
+                    <Ja>{pickLocale("ja", item)}</Ja>
+                    <Zh>{pickLocale("zh", item)}</Zh>
                     <Ko>{item.ko}</Ko>
                   </h3>
                   <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">

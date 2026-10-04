@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
 import { seoFor, pageTitle, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
 
@@ -73,11 +73,15 @@ export default async function VisaPage({
             {v.code}
           </p>
           <h1 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100 leading-[1.05] mb-4">
-            <En>{v.name.en}</En>
+            <En translated>{v.name.en}</En>
+            <Ja>{pickLocale("ja", v.name)}</Ja>
+            <Zh>{pickLocale("zh", v.name)}</Zh>
             <Ko>{v.name.ko}</Ko>
           </h1>
           <p className="font-serif text-lg md:text-xl text-stone-700 dark:text-stone-300 max-w-2xl leading-relaxed">
-            <En>{v.tagline.en}</En>
+            <En translated>{v.tagline.en}</En>
+            <Ja>{pickLocale("ja", v.tagline)}</Ja>
+            <Zh>{pickLocale("zh", v.tagline)}</Zh>
             <Ko>{v.tagline.ko}</Ko>
           </p>
         </div>
@@ -89,7 +93,9 @@ export default async function VisaPage({
           <div className="lg:col-span-2 space-y-10">
             <Section eyebrowEn="Overview" eyebrowKo="개요">
               <p className="font-serif text-lg text-stone-800 dark:text-stone-200 leading-relaxed">
-                <En>{v.audience.en}</En>
+                <En translated>{v.audience.en}</En>
+                <Ja>{pickLocale("ja", v.audience)}</Ja>
+                <Zh>{pickLocale("zh", v.audience)}</Zh>
                 <Ko>{v.audience.ko}</Ko>
               </p>
             </Section>
@@ -103,7 +109,9 @@ export default async function VisaPage({
                   >
                     <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-sunset mt-2.5" />
                     <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
-                      <En>{r.en}</En>
+                      <En translated>{r.en}</En>
+                      <Ja>{pickLocale("ja", r)}</Ja>
+                      <Zh>{pickLocale("zh", r)}</Zh>
                       <Ko>{r.ko}</Ko>
                     </p>
                   </li>
@@ -122,7 +130,9 @@ export default async function VisaPage({
                       {i + 1}
                     </span>
                     <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
-                      <En>{s.en}</En>
+                      <En translated>{s.en}</En>
+                      <Ja>{pickLocale("ja", s)}</Ja>
+                      <Zh>{pickLocale("zh", s)}</Zh>
                       <Ko>{s.ko}</Ko>
                     </p>
                   </li>
@@ -138,7 +148,9 @@ export default async function VisaPage({
                     className="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/20 border border-amber-100/60 dark:border-amber-900/30"
                   >
                     <p className="font-serif text-base text-stone-800 dark:text-stone-200 leading-snug">
-                      <En>{t.en}</En>
+                      <En translated>{t.en}</En>
+                      <Ja>{pickLocale("ja", t)}</Ja>
+                      <Zh>{pickLocale("zh", t)}</Zh>
                       <Ko>{t.ko}</Ko>
                     </p>
                   </div>
@@ -165,7 +177,9 @@ export default async function VisaPage({
                           +
                         </span>
                         <span>
-                          <En>{p.en}</En>
+                          <En translated>{p.en}</En>
+                          <Ja>{pickLocale("ja", p)}</Ja>
+                          <Zh>{pickLocale("zh", p)}</Zh>
                           <Ko>{p.ko}</Ko>
                         </span>
                       </li>
@@ -189,7 +203,9 @@ export default async function VisaPage({
                           −
                         </span>
                         <span>
-                          <En>{c.en}</En>
+                          <En translated>{c.en}</En>
+                          <Ja>{pickLocale("ja", c)}</Ja>
+                          <Zh>{pickLocale("zh", c)}</Zh>
                           <Ko>{c.ko}</Ko>
                         </span>
                       </li>
@@ -210,7 +226,9 @@ export default async function VisaPage({
                 <Ko>체류 기간</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
-                <En>{v.duration.en}</En>
+                <En translated>{v.duration.en}</En>
+                <Ja>{pickLocale("ja", v.duration)}</Ja>
+                <Zh>{pickLocale("zh", v.duration)}</Zh>
                 <Ko>{v.duration.ko}</Ko>
               </p>
             </div>
@@ -222,7 +240,9 @@ export default async function VisaPage({
                 <Ko>근무 권한</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
-                <En>{v.workRights.en}</En>
+                <En translated>{v.workRights.en}</En>
+                <Ja>{pickLocale("ja", v.workRights)}</Ja>
+                <Zh>{pickLocale("zh", v.workRights)}</Zh>
                 <Ko>{v.workRights.ko}</Ko>
               </p>
             </div>
@@ -234,7 +254,9 @@ export default async function VisaPage({
                 <Ko>수학 권한</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
-                <En>{v.studyRights.en}</En>
+                <En translated>{v.studyRights.en}</En>
+                <Ja>{pickLocale("ja", v.studyRights)}</Ja>
+                <Zh>{pickLocale("zh", v.studyRights)}</Zh>
                 <Ko>{v.studyRights.ko}</Ko>
               </p>
             </div>
@@ -246,7 +268,9 @@ export default async function VisaPage({
                 <Ko>비용</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
-                <En>{v.cost.en}</En>
+                <En translated>{v.cost.en}</En>
+                <Ja>{pickLocale("ja", v.cost)}</Ja>
+                <Zh>{pickLocale("zh", v.cost)}</Zh>
                 <Ko>{v.cost.ko}</Ko>
               </p>
             </div>
@@ -258,7 +282,9 @@ export default async function VisaPage({
                 <Ko>처리 기간</Ko>
               </p>
               <p className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">
-                <En>{v.processingTime.en}</En>
+                <En translated>{v.processingTime.en}</En>
+                <Ja>{pickLocale("ja", v.processingTime)}</Ja>
+                <Zh>{pickLocale("zh", v.processingTime)}</Zh>
                 <Ko>{v.processingTime.ko}</Ko>
               </p>
             </div>
@@ -271,7 +297,9 @@ export default async function VisaPage({
                 <Ko>다음 단계</Ko>
               </p>
               <p className="text-sm text-stone-200 leading-relaxed mb-4">
-                <En>{v.nextSteps.en}</En>
+                <En translated>{v.nextSteps.en}</En>
+                <Ja>{pickLocale("ja", v.nextSteps)}</Ja>
+                <Zh>{pickLocale("zh", v.nextSteps)}</Zh>
                 <Ko>{v.nextSteps.ko}</Ko>
               </p>
               <ul className="space-y-2">
@@ -316,7 +344,9 @@ export default async function VisaPage({
                     {other.code}
                   </p>
                   <p className="font-serif text-sm text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors leading-tight">
-                    <En>{other.name.en}</En>
+                    <En translated>{other.name.en}</En>
+                    <Ja>{pickLocale("ja", other.name)}</Ja>
+                    <Zh>{pickLocale("zh", other.name)}</Zh>
                     <Ko>{other.name.ko}</Ko>
                   </p>
                 </Link>

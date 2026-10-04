@@ -19,8 +19,7 @@ import * as Icons from "./Icons";
 export type EditorialItem = {
   label: string;
   en: string;
-  ko: string;
-  url?: string;
+  ko: string; ja?: string; zh?: string; url?: string;
 };
 
 export type EditorialSectionData = {

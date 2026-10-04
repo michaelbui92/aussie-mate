@@ -1,4 +1,4 @@
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { breadcrumbLdJson, faqLdJson, seoFor, withSeo } from "@/lib/seo";
 import { faqs } from "@/lib/faqs";
 
@@ -48,11 +48,15 @@ export default function FAQPage() {
             className={`reveal reveal-delay-${(i % 5) + 1} p-5 md:p-6 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
           >
             <h2 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 mb-2.5 leading-snug">
-              <En>{faq.q.en}</En>
+              <En translated>{faq.q.en}</En>
+              <Ja>{pickLocale("ja", faq.q)}</Ja>
+              <Zh>{pickLocale("zh", faq.q)}</Zh>
               <Ko>{faq.q.ko}</Ko>
             </h2>
             <p className="text-stone-600 dark:text-stone-400 text-sm md:text-base leading-relaxed">
-              <En>{faq.a.en}</En>
+              <En translated>{faq.a.en}</En>
+              <Ja>{pickLocale("ja", faq.a)}</Ja>
+              <Zh>{pickLocale("zh", faq.a)}</Zh>
               <Ko>{faq.a.ko}</Ko>
             </p>
           </div>

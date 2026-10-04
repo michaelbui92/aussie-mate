@@ -9,13 +9,35 @@
 
 import { useState, useMemo, useCallback } from "react";
 import type { Phrase } from "@/lib/phrases";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, useLang, type Lang } from "@/components/LangBlocks";
+
+/** Which copy a card's meaning line shows.
+ *
+ *  Every locale used to render the stored Korean field, so /ja and /zh showed
+ *  Korean. Each language now shows its own, falling back to English only when a
+ *  translation is missing. */
+function meaningFor(lang: Lang, p: Phrase): { code: string; text: string } {
+  if (lang === "ko") return { code: "KO", text: p.korean };
+  if (lang === "ja") return { code: "JA", text: p.ja ?? p.meaning };
+  if (lang === "zh") return { code: "ZH", text: p.zh ?? p.meaning };
+  return { code: "EN", text: p.meaning };
+}
+
+/** Category label for the active language, falling back to English. */
+function labelFor(lang: Lang, cat: PhraseCategory): string {
+  if (lang === "ko") return cat.koLabel ?? cat.enLabel ?? cat.label;
+  if (lang === "ja") return cat.jaLabel ?? cat.enLabel ?? cat.label;
+  if (lang === "zh") return cat.zhLabel ?? cat.enLabel ?? cat.label;
+  return cat.enLabel ?? cat.label;
+}
 
 export interface PhraseCategory {
   value: Phrase["category"] | "all";
   label: string;
   enLabel?: string;
   koLabel?: string;
+  jaLabel?: string;
+  zhLabel?: string;
 }
 
 interface PhraseExplorerProps {
@@ -30,6 +52,7 @@ export default function PhraseExplorer({
   categories,
   reviewSize = 20,
 }: PhraseExplorerProps) {
+  const { lang } = useLang();
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<Phrase["category"] | "all">("all");
   const [reviewMode, setReviewMode] = useState(false);
@@ -44,8 +67,9 @@ export default function PhraseExplorer({
       const matchesSearch =
         !q ||
         p.phrase.toLowerCase().includes(q) ||
-        p.meaning.toLowerCase().includes(q) ||
-        p.korean.includes(q);
+        [p.meaning, p.korean, p.ja ?? "", p.zh ?? ""].some((v) =>
+          v.toLowerCase().includes(q),
+        );
       return matchesCategory && matchesSearch;
     });
   }, [search, activeCategory, phrases]);
@@ -77,6 +101,7 @@ export default function PhraseExplorer({
   // --- Review mode (fullscreen flashcard) ---
   if (reviewMode && reviewCards.length > 0) {
     const card = reviewCards[reviewIndex];
+    const cardMeaning = meaningFor(lang, card);
     const progress = ((reviewIndex + 1) / reviewCards.length) * 100;
     return (
       <div className="min-h-screen bg-stone-50 dark:bg-darkbg">
@@ -124,12 +149,8 @@ export default function PhraseExplorer({
                 </p>
                 <div className="space-y-2 max-w-md w-full">
                   <div className="flex items-baseline gap-2 text-left">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0 mt-0.5">EN</span>
-                    <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{card.meaning}</span>
-                  </div>
-                  <div className="flex items-baseline gap-2 text-left">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0 mt-0.5">KO</span>
-                    <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{card.korean}</span>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0 mt-0.5">{cardMeaning.code}</span>
+                    <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{cardMeaning.text}</span>
                   </div>
                 </div>
                 <blockquote className="mt-4 border-l-2 border-sunset/60 pl-3 text-sm italic text-stone-500 dark:text-stone-400 max-w-md text-left">
@@ -240,7 +261,7 @@ export default function PhraseExplorer({
                   : "bg-stone-100 dark:bg-dark-surface text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-dark-border hover:text-sunset dark:hover:text-sunset"
               }`}
             >
-              {cat.label}
+              {labelFor(lang, cat)}
             </button>
           );
         })}
@@ -292,7 +313,9 @@ export default function PhraseExplorer({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {filtered.map((p, i) => {
-            const catLabel = categories.find((c) => c.value === p.category)?.label ?? "";
+            const catEntry = categories.find((c) => c.value === p.category);
+            const catLabel = catEntry ? labelFor(lang, catEntry) : "";
+            const pMeaning = meaningFor(lang, p);
             return (
               <article
                 key={p.phrase}
@@ -309,12 +332,8 @@ export default function PhraseExplorer({
                 </div>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0">EN</span>
-                    <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{p.meaning}</span>
-                  </div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0">KO</span>
-                    <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{p.korean}</span>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0">{pMeaning.code}</span>
+                    <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{pMeaning.text}</span>
                   </div>
                 </div>
                 <blockquote className="border-l-2 border-sunset/60 pl-3 text-sm italic text-stone-500 dark:text-stone-400 leading-relaxed">

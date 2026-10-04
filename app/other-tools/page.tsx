@@ -3,7 +3,7 @@ import Link from "next/link";
 // Bilingual (English / 한국어) to match the rest of the site.
 // Expanded with origin/philosophy prose (E-E-A-T: real human, real reasons).
 
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
@@ -32,7 +32,7 @@ const tools = [
     accent: "bg-sunset/10 border-sunset/30",
     highlight: "Based in Sydney — book your first lesson today",
     origins: {
-      en: "Drive with Bui started because Korean newcomers kept asking the same question: who teaches driving in Sydney without making assumptions about whether you've ever sat in a car? Existing schools assumed everyone had prior experience and skipped the basics. Drive with Bui was built the other way around — assume nothing, teach from first principles, and let the student's questions set the pace.",
+      en: "Drive with Bui started because Korean newcomers kept asking the same question: who teaches driving in Sydney without making assumptions about whether you've ever sat in a car? Existing schools assumed everyone had prior experience and skipped the basics. Drive with Bui was built the other way around — assume nothing, teach from first principles, and let the student's questions set the pace.", ja: "Drive with Buiは、韓国からの新規移住者が同じ質問を繰り返し尋ねたことから始まりました。シドニーで、車に乗ったことがあるかどうかを前提とせずに運転を教えてくれるのはどこか、という質問です。既存の教習所は、誰もが運転経験があると決めてかかり、基礎を飛ばしていました。Drive with Buiはその逆に作られました — 何も前提とせず、基本原理から教え、生徒の質問が進度を決めるようにしています。", zh: "Drive with Bui 的起点是，来自韩国的新移民不断提出同一个问题：在悉尼，有哪家驾校教你开车时，不会先假定你是否坐过驾驶座？现有驾校都假定人人都有驾驶经验，因而跳过了基础。Drive with Bui 则反其道而行 — 不预设任何前提，从基本原理教起，让学生的问题决定节奏。",
       ko: "Drive with Bui는 한국인 신입자들이 같은 질문을 반복해서 받은 데서 시작했습니다. '운전석에 앉아 본 적이 있는지'를 가정하지 않고 가르치는 시드니 운전 학원이 어디냐는 질문이었습니다. 기존 학원들은 모두 운전자 경험이 있다고 가정하고 기초를 건너뛰었습니다. Drive with Bui는 반대로 만들었습니다 — 아무것도 가정하지 않고, 기본부터 가르치며, 학생의 질문이 진도를 정하게 합니다.",
     },
     features: [
@@ -55,7 +55,7 @@ const tools = [
     accent: "bg-sage/10 border-sage/30",
     highlight: "Study smarter, not harder — live now at stdybddy.app",
     origins: {
-      en: "Study Buddy started as a personal tool — a stack of paper flashcards kept getting lost between lectures. Building a replacement in a browser felt obvious. Other international students said the same thing when the first version was shown around, so it's now a small product instead of a private hack.",
+      en: "Study Buddy started as a personal tool — a stack of paper flashcards kept getting lost between lectures. Building a replacement in a browser felt obvious. Other international students said the same thing when the first version was shown around, so it's now a small product instead of a private hack.", ja: "Study Buddyは個人的なツールとして始まりました — 講義の合間に紙の単語カードの束を何度もなくしてしまったのです。ブラウザでその代わりを作るのは当然のことでした。最初のバージョンを見せたとき、他の留学生も同じことを言いました。だから今では、個人的なハックではなく小さな製品になっています。", zh: "Study Buddy 最初只是个人工具 — 一叠纸质单词卡在讲座之间总是弄丢。在浏览器里做个替代品显得理所当然。当第一版展示给其他人时，其他留学生也这么说，于是它就从一个私人小工具变成了一个小产品。",
       ko: "Study Buddy는 개인 도구로 시작했습니다 — 강의를 옮기다 보면 종이 플래시카드가 자꾸 사라졌습니다. 브라우저에서 대체품을 만드는 건 당연한 일이었고, 첫 버전을 보여주자 다른 국제 학생들도 같은 이야기를 했습니다. 그래서 개인 해킹이 아니라 작은 제품이 되었습니다.",
     },
     features: [
@@ -147,7 +147,9 @@ export default function OtherToolsPage() {
                 {/* Origin paragraph — gives Google the "real human, real
                     reason" E-E-A-T signal at the per-tool level. */}
                 <p className="text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed mb-3">
-                  <En>{tool.origins.en}</En>
+                  <En translated>{tool.origins.en}</En>
+                  <Ja>{pickLocale("ja", tool.origins)}</Ja>
+                  <Zh>{pickLocale("zh", tool.origins)}</Zh>
                   <Ko>{tool.origins.ko}</Ko>
                 </p>
                 <p className="text-xs font-medium text-sunset">

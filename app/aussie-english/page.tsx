@@ -25,13 +25,13 @@ export const metadata = withSeo(
 );
 
 const categories: PhraseCategory[] = [
-  { value: "all", label: "All" },
-  { value: "daily-life", label: "Daily Life", enLabel: "Daily Life", koLabel: "일상" },
-  { value: "work", label: "Work", enLabel: "Work", koLabel: "직장" },
-  { value: "food", label: "Food & Drinks", enLabel: "Food & Drinks", koLabel: "음식" },
-  { value: "sports", label: "Sports", enLabel: "Sports", koLabel: "스포츠" },
-  { value: "social", label: "Social", enLabel: "Social", koLabel: "사교" },
-  { value: "media", label: "Media", enLabel: "Media", koLabel: "미디어" },
+  { value: "all", label: "All", enLabel: "All", koLabel: "전체", jaLabel: "すべて", zhLabel: "全部" },
+  { value: "daily-life", label: "Daily Life", enLabel: "Daily Life", koLabel: "일상", jaLabel: "日常生活", zhLabel: "日常生活" },
+  { value: "work", label: "Work", enLabel: "Work", koLabel: "직장", jaLabel: "仕事", zhLabel: "工作" },
+  { value: "food", label: "Food & Drinks", enLabel: "Food & Drinks", koLabel: "음식", jaLabel: "食べ物・飲み物", zhLabel: "美食与饮品" },
+  { value: "sports", label: "Sports", enLabel: "Sports", koLabel: "스포츠", jaLabel: "スポーツ", zhLabel: "体育" },
+  { value: "social", label: "Social", enLabel: "Social", koLabel: "사교", jaLabel: "社交", zhLabel: "社交" },
+  { value: "media", label: "Media", enLabel: "Media", koLabel: "미디어", jaLabel: "メディア", zhLabel: "媒体" },
 ];
 
 type ScenarioPhrase = { phrase: string; meaning: string; zh?: string; ja?: string };

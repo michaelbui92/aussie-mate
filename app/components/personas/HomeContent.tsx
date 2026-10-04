@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh } from "../LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "../LangBlocks";
 
 // /journey/home — Stage 03 of The Journey.
 // Long-term Australian guide. Pivoted from practical admin (super,
@@ -49,7 +49,7 @@ export default function HomeContent() {
           {[
             {
               icon: "✈️",
-              en: "Travel more of Australia",
+              en: "Travel more of Australia", ja: "オーストラリアをもっと旅する", zh: "多游历澳大利亚",
               ko: "호주 더 여행하기",
               blurbEn:
                 "Sydney's a base, not a destination. Weekend trips, regional NSW, the Red Centre, Tassie, the Reef. Your WHV or student visa is the only one that lets you do this cheaply — use it.",
@@ -61,7 +61,7 @@ export default function HomeContent() {
             },
             {
               icon: "🎓",
-              en: "Lock in your next visa",
+              en: "Lock in your next visa", ja: "次のビザを確保する", zh: "敲定你的下一个签证",
               ko: "다음 비자 잡기",
               blurbEn:
                 "If your student visa is going well, look at the 485. If you loved the WHV year, second WHV or regional sponsorship. Partner, PR, citizenship — these all take years. Start the conversation now.",
@@ -73,7 +73,7 @@ export default function HomeContent() {
             },
             {
               icon: "🤝",
-              en: "Make Aussie friends",
+              en: "Make Aussie friends", ja: "オーストラリア人の友達を作る", zh: "结交澳大利亚朋友",
               ko: "호주인 친구 만들기",
               blurbEn:
                 "Friendships here take longer than back home. Sports clubs, climbing gyms, language exchanges, volunteer groups — pick one and commit for six months. That's how it works.",
@@ -85,7 +85,7 @@ export default function HomeContent() {
             },
             {
               icon: "🗣️",
-              en: "Learn Aussie English properly",
+              en: "Learn Aussie English properly", ja: "オーストラリア英語をしっかり学ぶ", zh: "认真学习澳式英语",
               ko: "호주식 영어 제대로 배우기",
               blurbEn:
                 "Beyond ordering coffee — jokes, subtext, workplace banter. A daily podcast, a book, and one real conversation a day. Six months and you'll feel the difference in every interaction.",
@@ -102,7 +102,9 @@ export default function HomeContent() {
             >
               <div className="text-2xl mb-2">{w.icon}</div>
               <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
-                <En>{w.en}</En>
+                <En translated>{w.en}</En>
+                <Ja>{pickLocale("ja", w)}</Ja>
+                <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
               </h4>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
@@ -137,7 +139,7 @@ export default function HomeContent() {
           {[
             {
               icon: "✈️",
-              en: "Travel the country, not just Sydney",
+              en: "Travel the country, not just Sydney", ja: "シドニーだけでなく、国全体を旅する", zh: "游历全国，而不只是悉尼",
               ko: "시드니만 보지 말고 호주를 여행하세요",
               descEn:
                 "A WHV year is the only time you'll fly domestically for $50 AUD. The Red Centre, Tassie, the Reef, the Whitsundays, Kakadu — most people leave Australia having seen three suburbs of Sydney. Don't be most people.",
@@ -146,7 +148,7 @@ export default function HomeContent() {
             },
             {
               icon: "🗣️",
-              en: "Push your English past transaction-level",
+              en: "Push your English past transaction-level", ja: "やり取りレベルを超えて英語を伸ばす", zh: "让你的英语超越交易式水平",
               ko: "거래 수준 넘어서 영어 늘리기",
               descEn:
                 "Survival English gets you through week one. The next level — jokes, subtext, workplace banter — is what makes you feel like you belong. Podcasts, books, one Australian friend you text daily. Six months, you'll notice.",
@@ -155,7 +157,7 @@ export default function HomeContent() {
             },
             {
               icon: "🤝",
-              en: "Build one community anchor",
+              en: "Build one community anchor", ja: "コミュニティの拠点を一つ作る", zh: "建立一个社区据点",
               ko: "하나의 커뮤니티 거점 만들기",
               descEn:
                 "Korean churches, sports clubs, climbing gyms, language exchanges, volunteer groups — pick one. Showing up weekly for six months is what turns acquaintances into friends. Friendships here take time.",
@@ -164,7 +166,7 @@ export default function HomeContent() {
             },
             {
               icon: "🎓",
-              en: "Plan your next visa early",
+              en: "Plan your next visa early", ja: "次のビザは早めに計画する", zh: "提早规划下一个签证",
               ko: "다음 비자 미리 계획",
               descEn:
                 "If your student visa is going well, look at the 485. If you loved the WHV year, the second WHV or a regional sponsorship. Partner visa, PR, citizenship — these all take years. Start understanding the process now, not in year four.",
@@ -173,7 +175,7 @@ export default function HomeContent() {
             },
             {
               icon: "🎉",
-              en: "Get into Aussie life, not just Korean-Sydney",
+              en: "Get into Aussie life, not just Korean-Sydney", ja: "韓国人社会のシドニーだけでなく、オーストラリアの生活に入り込む", zh: "融入澳大利亚生活，而不只是韩裔悉尼圈",
               ko: "한인 시드니가 아닌 호주 생활에 들어가기",
               descEn:
                 "AFL, farmers' markets, the footy at the pub on a Saturday, Australia Day, Anzac Day, Christmas in summer. The small things you do in year two and three are what make you feel like you live here, not just stay here.",
@@ -182,7 +184,7 @@ export default function HomeContent() {
             },
             {
               icon: "📸",
-              en: "Make it memorable on purpose",
+              en: "Make it memorable on purpose", ja: "意識して思い出深いものにする", zh: "有意识地让它变得难忘",
               ko: "일부러 기억에 남게 만들기",
               descEn:
                 "Five years from now you won't remember the year you stayed in Surry Hills and saved money. You'll remember the road trip to Uluru, the year you played rugby, the friends from that language exchange. Spend the time on the memories.",
@@ -199,7 +201,9 @@ export default function HomeContent() {
               </span>
               <div>
                 <h4 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 mb-1">
-                  <En>{item.en}</En>
+                  <En translated>{item.en}</En>
+                  <Ja>{pickLocale("ja", item)}</Ja>
+                  <Zh>{pickLocale("zh", item)}</Zh>
                   <Ko>{item.ko}</Ko>
                 </h4>
                 <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
@@ -263,7 +267,7 @@ export default function HomeContent() {
           {[
             {
               icon: "✈️",
-              en: "A travel list you'll actually have ticked off",
+              en: "A travel list you'll actually have ticked off", ja: "実際にすべて達成できる旅のリスト", zh: "一份你真能全部打勾的旅行清单",
               ko: "실제로 체크한 여행 리스트",
               blurbEn:
                 "Not 'Australia' as a stamp in your passport — actual places you went, routes you drove, the night you saw the Milky Way from the middle of nowhere.",
@@ -272,7 +276,7 @@ export default function HomeContent() {
             },
             {
               icon: "🗣️",
-              en: "English that doesn't need translating in your head",
+              en: "English that doesn't need translating in your head", ja: "頭の中で翻訳しなくていい英語", zh: "无需在脑中翻译的英语",
               ko: "머릿속 번역이 필요 없는 영어",
               blurbEn:
                 "Conversations where you react, not translate. Jokes you get before they're explained. Workplace banter that doesn't feel like a foreign language.",
@@ -281,7 +285,7 @@ export default function HomeContent() {
             },
             {
               icon: "🤝",
-              en: "A community anchor that shows up",
+              en: "A community anchor that shows up", ja: "実際に通えるコミュニティの拠点", zh: "一个你真正会去的社区据点",
               ko: "참여할 이유가 있는 커뮤니티",
               blurbEn:
                 "One group, one routine, one reason to leave the house on a Tuesday. Friendships here take longer than you think — but they're worth it.",
@@ -290,7 +294,7 @@ export default function HomeContent() {
             },
             {
               icon: "🎓",
-              en: "A visa plan, if you want to stay",
+              en: "A visa plan, if you want to stay", ja: "滞在したいなら、ビザの計画", zh: "如果你想留下，一份签证计划",
               ko: "머물고 싶다면 비자 계획",
               blurbEn:
                 "485, second WHV, partner visa, PR, citizenship. A realistic timeline, not a panic at year four.",
@@ -304,7 +308,9 @@ export default function HomeContent() {
             >
               <div className="text-2xl mb-2">{w.icon}</div>
               <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
-                <En>{w.en}</En>
+                <En translated>{w.en}</En>
+                <Ja>{pickLocale("ja", w)}</Ja>
+                <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
               </h4>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">

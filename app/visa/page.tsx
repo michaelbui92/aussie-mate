@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
 import { visas } from "./data";
 import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 import AdSlot from "@/components/AdSlot";
@@ -18,15 +18,15 @@ export const metadata = withSeo(
 
 const quickFacts = [
   {
-    en: "General information only — not immigration advice.",
+    en: "General information only — not immigration advice.", ja: "一般的な情報であり、移民に関する助言ではありません。", zh: "仅为一般信息——不构成移民建议。",
     ko: "일반 정보이며, 이민 자문이 아닙니다.",
   },
   {
-    en: "Always verify current rules on the Department of Home Affairs website.",
+    en: "Always verify current rules on the Department of Home Affairs website.", ja: "最新の規則は、必ず内務省のウェブサイトで確認してください。", zh: "请务必在内政部网站上核实最新规定。",
     ko: "최신 규정은 반드시 호주 이민국 웹사이트에서 확인하세요.",
   },
   {
-    en: "For complex cases, consider a registered MARA agent.",
+    en: "For complex cases, consider a registered MARA agent.", ja: "複雑なケースでは、登録MARAエージェントの利用を検討してください。", zh: "对于复杂个案，可考虑聘请注册MARA移民代理。",
     ko: "복잡한 사례는 MARA 등록 대행인 이용을 권장합니다.",
   },
 ];
@@ -97,7 +97,9 @@ export default function VisaHub() {
                 <li key={f.en} className="flex items-start gap-2">
                   <span className="shrink-0 w-1 h-1 rounded-full bg-sunset mt-2.5" />
                   <span>
-                    <En>{f.en}</En>
+                    <En translated>{f.en}</En>
+                    <Ja>{pickLocale("ja", f)}</Ja>
+                    <Zh>{pickLocale("zh", f)}</Zh>
                     <Ko>{f.ko}</Ko>
                   </span>
                 </li>
@@ -241,7 +243,9 @@ export default function VisaHub() {
                       href={`/visa/${v.slug}`}
                       className="font-serif text-base text-stone-900 dark:text-stone-100 hover:text-sunset"
                     >
-                      <En>{v.name.en}</En>
+                      <En translated>{v.name.en}</En>
+                      <Ja>{pickLocale("ja", v.name)}</Ja>
+                      <Zh>{pickLocale("zh", v.name)}</Zh>
                       <Ko>{v.name.ko}</Ko>
                     </Link>
                     <p className="text-[11px] text-stone-400 dark:text-stone-500 mt-0.5">
@@ -249,19 +253,27 @@ export default function VisaHub() {
                     </p>
                   </td>
                   <td className="px-4 py-3 align-top text-stone-700 dark:text-stone-300">
-                    <En>{v.audience.en}</En>
+                    <En translated>{v.audience.en}</En>
+                    <Ja>{pickLocale("ja", v.audience)}</Ja>
+                    <Zh>{pickLocale("zh", v.audience)}</Zh>
                     <Ko>{v.audience.ko}</Ko>
                   </td>
                   <td className="px-4 py-3 align-top text-stone-700 dark:text-stone-300">
-                    <En>{v.duration.en}</En>
+                    <En translated>{v.duration.en}</En>
+                    <Ja>{pickLocale("ja", v.duration)}</Ja>
+                    <Zh>{pickLocale("zh", v.duration)}</Zh>
                     <Ko>{v.duration.ko}</Ko>
                   </td>
                   <td className="px-4 py-3 align-top text-stone-700 dark:text-stone-300">
-                    <En>{v.workRights.en}</En>
+                    <En translated>{v.workRights.en}</En>
+                    <Ja>{pickLocale("ja", v.workRights)}</Ja>
+                    <Zh>{pickLocale("zh", v.workRights)}</Zh>
                     <Ko>{v.workRights.ko}</Ko>
                   </td>
                   <td className="px-4 py-3 align-top text-stone-700 dark:text-stone-300 whitespace-nowrap">
-                    <En>{v.cost.en}</En>
+                    <En translated>{v.cost.en}</En>
+                    <Ja>{pickLocale("ja", v.cost)}</Ja>
+                    <Zh>{pickLocale("zh", v.cost)}</Zh>
                     <Ko>{v.cost.ko}</Ko>
                   </td>
                 </tr>
@@ -290,11 +302,15 @@ export default function VisaHub() {
                 {v.code}
               </p>
               <h2 className="font-serif text-2xl text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors mb-2">
-                <En>{v.name.en}</En>
+                <En translated>{v.name.en}</En>
+                <Ja>{pickLocale("ja", v.name)}</Ja>
+                <Zh>{pickLocale("zh", v.name)}</Zh>
                 <Ko>{v.name.ko}</Ko>
               </h2>
               <p className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
-                <En>{v.tagline.en}</En>
+                <En translated>{v.tagline.en}</En>
+                <Ja>{pickLocale("ja", v.tagline)}</Ja>
+                <Zh>{pickLocale("zh", v.tagline)}</Zh>
                 <Ko>{v.tagline.ko}</Ko>
               </p>
               <p className="text-xs text-sunset font-medium">
@@ -328,25 +344,25 @@ export default function VisaHub() {
         items={[
           {
             href: "/finance",
-            title: { en: "Tax & TFN", ko: "세금과 TFN" },
+            title: { en: "Tax & TFN", ja: "税金とTFN", zh: "税务与TFN", ko: "세금과 TFN" },
             description: {
-              en: "Your visa subclass determines tax residency. Apply for TFN within 28 days.",
+              en: "Your visa subclass determines tax residency. Apply for TFN within 28 days.", ja: "税務上の居住者区分はビザのサブクラスによって決まります。TFNは28日以内に申請してください。", zh: "您的签证类别决定税务居民身份。请在28天内申请TFN。",
               ko: "비자 종류에 따라 세법상 거주자 신분이 결정됩니다. 28일 내 TFN 신청.",
             },
           },
           {
             href: "/workplace",
-            title: { en: "Workplace rights", ko: "직장 권리" },
+            title: { en: "Workplace rights", ja: "職場の権利", zh: "职场权利", ko: "직장 권리" },
             description: {
-              en: "Award wages, super, leave — different protections for different visas.",
+              en: "Award wages, super, leave — different protections for different visas.", ja: "最低賃金、退職年金（スーパー）、休暇——ビザによって保護が異なります。", zh: "法定工资、养老金（super）、休假——不同签证享有不同保障。",
               ko: "임금, 퇴직연금, 휴가 — 비자별 보호 수준이 다릅니다.",
             },
           },
           {
             href: "/apartment",
-            title: { en: "Renting in Australia", ko: "호주 부동산" },
+            title: { en: "Renting in Australia", ja: "オーストラリアでの賃貸", zh: "在澳大利亚租房", ko: "호주 부동산" },
             description: {
-              en: "Lease length, bond, what landlords need (and can't ask).",
+              en: "Lease length, bond, what landlords need (and can't ask).", ja: "賃貸期間、保証金、大家が必要とするもの（そして尋ねてはいけないこと）。", zh: "租期、押金，房东需要什么（以及不能问什么）。",
               ko: "임차 기간, 보증금, 집주인이 요구할 수 있는 것과 없는 것.",
             },
           },
