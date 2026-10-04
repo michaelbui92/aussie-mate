@@ -1,7 +1,8 @@
 // Server component — bilingual Sydney beaches guide.
 // Practical info, safety, and editorial style.
 
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";

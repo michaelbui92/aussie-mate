@@ -5,8 +5,9 @@
 // "Destinations › <Destination Name>" using the destinations data).
 
 import Link from "next/link";
+import { pickLocale } from "@/lib/locale";
 import { usePathname } from "next/navigation";
-import { pickLocale, useLang, type Lang, type Localized } from "./LangBlocks";
+import {useLang, type Lang, type Localized} from "./LangBlocks";
 import { getDestination } from "@/destinations/data";
 
 // Crumb labels per route. ja/zh reuse the wording already used for the matching

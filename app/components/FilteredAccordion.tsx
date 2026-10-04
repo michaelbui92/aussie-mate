@@ -8,8 +8,9 @@
 // destination names, sunset accent for filter pills and labels.
 
 import { useState, ReactNode, ComponentType } from "react";
+import { pickLocale } from "@/lib/locale";
 import { Icons } from "./Icons";
-import { En, Ja, Ko, Zh, pickLocale} from "./LangBlocks";
+import {En, Ja, Ko, Zh} from "./LangBlocks";
 
 export interface BeyondSydneyDestination {
   id: string;

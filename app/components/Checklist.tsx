@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { En, Ja, Ko, Zh, pickLocale} from "./LangBlocks";
+import { pickLocale } from "@/lib/locale";
+import {En, Ja, Ko, Zh} from "./LangBlocks";
 
 export interface ChecklistItem {
   id: string;

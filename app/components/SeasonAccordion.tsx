@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
-import { En, Ja, Ko, Zh, pickLocale} from "./LangBlocks";
+import { pickLocale } from "@/lib/locale";
+import {En, Ja, Ko, Zh} from "./LangBlocks";
 
 type SeasonKey = "summer" | "autumn" | "winter" | "spring";
 

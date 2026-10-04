@@ -3,7 +3,8 @@
 // Content intentionally brief so the team can flesh it out with the
 // real data per-adventure (Blue Mountains, Snowies, coastal walks etc).
 
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";

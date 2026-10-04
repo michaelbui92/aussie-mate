@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh, pickLocale} from "../LangBlocks";
+import { pickLocale } from "@/lib/locale";
+import {En, Ja, Ko, Zh} from "../LangBlocks";
 
 // /journey/home — Stage 03 of The Journey.
 // Long-term Australian guide. Pivoted from practical admin (super,

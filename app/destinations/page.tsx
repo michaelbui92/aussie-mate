@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { pickLocale } from "@/lib/locale";
 import { destinations } from "./data";
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 import TripLengthFilter from "@/components/TripLengthFilter";

@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { pickLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
 import { seoFor, pageTitle, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
 

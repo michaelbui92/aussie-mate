@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh, pickLocale} from "../LangBlocks";
+import { pickLocale } from "@/lib/locale";
+import {En, Ja, Ko, Zh} from "../LangBlocks";
 
 // /journey/before-you-come — "Are you ready?" pre-arrival checklist.
 // The persona content component for the first stage of The Journey.

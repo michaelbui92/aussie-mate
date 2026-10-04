@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(

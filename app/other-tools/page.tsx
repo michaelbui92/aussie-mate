@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { pickLocale } from "@/lib/locale";
 // /other-tools — the operator's other projects.
 // Bilingual (English / 한국어) to match the rest of the site.
 // Expanded with origin/philosophy prose (E-E-A-T: real human, real reasons).
 
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(

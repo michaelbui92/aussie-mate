@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { pickLocale, useLang, type Localized } from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
+import {useLang, type Localized} from "@/components/LangBlocks";
 
 const FLAG_EMOJI = "🇦🇺";
 

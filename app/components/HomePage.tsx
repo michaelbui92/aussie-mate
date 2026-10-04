@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
+import { pickLocale } from "@/lib/locale";
 import Image from "next/image";
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { useSearch } from "@/components/SearchModal";
 import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";

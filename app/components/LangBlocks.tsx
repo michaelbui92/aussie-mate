@@ -1,7 +1,11 @@
 "use client";
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-export type Lang = "en" | "ko" | "zh" | "ja";
+import type { Lang, Localized } from "@/lib/locale";
+
+// Re-exported for existing importers; the definitions live in lib/locale.ts,
+// which is not a client module, so server components can call its helpers.
+export type { Lang, Localized };
 
 interface LangContextValue {
   lang: Lang;
@@ -93,17 +97,4 @@ export function Ja({ children }: { children: ReactNode }) {
   const { lang } = useLang();
   if (lang !== "ja") return null;
   return <>{children}</>;
-}
-
-/** A data object that carries one field per language. */
-export type Localized = { en: string; ko?: string; ja?: string; zh?: string };
-
-/** Pick the field for the active language, falling back to English.
- *
- *  For data-driven copy (destinations, visa routes, the phrase library) where a
- *  component reads a field directly rather than rendering <En>/<Ko> blocks. A
- *  missing translation renders the English field rather than an empty string, so
- *  ja/zh can be adopted before every row has one. */
-export function pickLocale(lang: Lang, fields: Localized): string {
-  return fields[lang] ?? fields.en;
 }

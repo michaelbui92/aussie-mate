@@ -1,4 +1,5 @@
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
 import SeasonAccordion from "@/components/SeasonAccordion";
 import { seoFor, withSeo } from "@/lib/seo";
 

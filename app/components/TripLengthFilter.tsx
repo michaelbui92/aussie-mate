@@ -4,7 +4,8 @@
 // driven by a lightweight IntersectionObserver that also handles the
 // sticky-top behavior of the existing parent <nav>.
 import { useEffect, useState } from "react";
-import { En, Ja, Ko, Zh, pickLocale} from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
+import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 
 export type FilterKey = "day" | "weekend" | "longer" | "far";
 
