@@ -96,15 +96,27 @@ const navGroups: NavGroup[] = [
   },
 ];
 
+// Language options, in dropdown order. Single source of truth: the trigger
+// label, the menu items and the URL prefix all read from this list, so a
+// language can never appear in one place and not the others.
+const LANGS: { code: Lang; native: string; short: string }[] = [
+  { code: "en", native: "English", short: "EN" },
+  { code: "ko", native: "한국어", short: "한국어" },
+  { code: "ja", native: "日本語", short: "日本語" },
+  { code: "zh", native: "中文", short: "中文" },
+];
+
 function NavPill({
   children,
   onClick,
   ariaLabel,
+  ariaExpanded,
   className = "",
 }: {
   children: React.ReactNode;
   onClick?: () => void;
   ariaLabel: string;
+  ariaExpanded?: boolean;
   className?: string;
 }) {
   return (
@@ -112,6 +124,8 @@ function NavPill({
       type="button"
       onClick={onClick}
       aria-label={ariaLabel}
+      aria-expanded={ariaExpanded}
+      aria-haspopup={ariaExpanded === undefined ? undefined : "menu"}
       className={`h-11 px-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-stone-100 dark:bg-dark-surface text-stone-700 dark:text-stone-200 hover:bg-sunset hover:text-white transition-all duration-200 ease-out active:scale-95 ${className}`}
     >
       {children}
@@ -139,16 +153,21 @@ export default function Nav() {
   // Korean reader receiving /aussie-english is handed English. usePathname is the rewritten path, so
   // adding or removing the prefix is all this needs to do.
   //
-  // Cycles en -> ko -> ja -> zh -> en. Uses setLang, NOT toggleLang: toggleLang is en<->ko only, so it
-  // would write "en" into the state and localStorage while the URL was being pushed to /ja -- the pill
-  // and <html lang> then read English on a Japanese page. Language order here is the single source of
-  // truth for the cycle.
-  const LANG_CYCLE: Lang[] = ["en", "ko", "ja", "zh"];
-  const switchLang = () => {
-    const nextLang = LANG_CYCLE[(LANG_CYCLE.indexOf(lang) + 1) % LANG_CYCLE.length];
+  // Go straight to a chosen language -- no cycling.
+  //
+  // The URL is switched, not only the preference: a link someone copies has to
+  // carry its language, or a Korean reader receiving /aussie-english is handed
+  // English. usePathname is the rewritten path, so adding or removing the prefix
+  // is all this needs to do.
+  //
+  // Uses setLang, NOT toggleLang: toggleLang is en<->ko only, so it would write
+  // "en" into the state and localStorage while the URL was being pushed to /ja --
+  // the pill and <html lang> then read English on a Japanese page.
+  const chooseLang = (nextLang: Lang) => {
     setLang(nextLang);
     const bare = (pathname || "/").replace(/^\/(ko|zh|ja)(?=\/|$)/, "") || "/";
     router.push(nextLang === "en" ? bare : `/${nextLang}${bare}`);
+    setOpenDropdown(null);
   };
   const [menuOpen, setMenuOpen] = useState(false);
   // Single source of truth for which dropdown is open. null = none.
@@ -397,11 +416,74 @@ export default function Nav() {
             </span>
           </NavPill>
 
-          <NavPill onClick={switchLang} ariaLabel="Toggle language">
-            <span key={lang} className="text-xs font-bold tracking-wide">
-              {lang === "en" ? "EN" : lang === "ko" ? "한국어" : lang === "ja" ? "日本語" : "中文"}
-            </span>
-          </NavPill>
+          {/* Language picker — a dropdown, not a cycling pill. Cycling hid the
+              options and forced a visitor to step through languages they did not
+              want; it also made it impossible to see which languages are on
+              offer. Reuses the nav's existing dropdown state so hover, the
+              leave-grace timer, ESC, outside click and route change all behave
+              like every other menu in the header. */}
+          <div
+            className="relative"
+            onMouseEnter={() => openGroup("lang")}
+            onMouseLeave={scheduleClose}
+          >
+            <NavPill
+              onClick={() => (openDropdown === "lang" ? setOpenDropdown(null) : openGroup("lang"))}
+              ariaLabel="Choose language"
+              ariaExpanded={openDropdown === "lang"}
+            >
+              <span className="text-xs font-bold tracking-wide">
+                {LANGS.find((l) => l.code === lang)?.short ?? "EN"}
+              </span>
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${openDropdown === "lang" ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+              </svg>
+            </NavPill>
+
+            <div
+              role="menu"
+              aria-label="Language"
+              onMouseEnter={() => openGroup("lang")}
+              onMouseLeave={scheduleClose}
+              className={`absolute top-full right-0 mt-2 min-w-[170px] bg-white dark:bg-darkbg border border-stone-200/60 dark:border-dark-border rounded-xl shadow-lg py-1.5 z-50 origin-top-right transition-all duration-200 ease-out ${
+                openDropdown === "lang"
+                  ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+                  : "opacity-0 -translate-y-1 scale-[0.98] pointer-events-none"
+              }`}
+            >
+              {LANGS.map((l) => {
+                const active = lang === l.code;
+                return (
+                  <button
+                    key={l.code}
+                    type="button"
+                    role="menuitem"
+                    tabIndex={openDropdown === "lang" ? 0 : -1}
+                    onClick={() => chooseLang(l.code)}
+                    className={`w-full flex items-center gap-2.5 px-4 py-1.5 text-sm text-left transition-all duration-200 ${
+                      active
+                        ? "text-sunset font-medium"
+                        : "text-stone-600 dark:text-stone-300 hover:text-sunset"
+                    }`}
+                  >
+                    <span className="w-3 text-center" aria-hidden="true">
+                      {active ? "•" : ""}
+                    </span>
+                    <span>{l.native}</span>
+                    <span className="ml-auto text-[10px] uppercase tracking-widest opacity-40">
+                      {l.code}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           <NavPill
             onClick={toggleTheme}
