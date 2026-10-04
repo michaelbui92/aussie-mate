@@ -57,7 +57,7 @@ export default function HeroCarousel({ children }: { children: React.ReactNode }
       {children}
       
       {/* Image indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div className="hero-dots absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {HERO_IMAGES.map((_, i) => (
           <button
             key={i}

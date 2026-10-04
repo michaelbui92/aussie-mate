@@ -163,6 +163,18 @@
   section { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
 }
 
+/* Carousel indicator dots: decorative 8px indicators, NOT accordion tap targets.
+   The blanket `button { min-height: 52px !important }` rule in the max-width:640
+   block above inflated each dot to a 52px box, which then sat on top of the hero
+   copy pinned to the bottom of the frame on touch devices. Exempt them so the
+   dots stay the 8px they are designed as (higher specificity beats the blanket
+   rule; this also neutralises the 44px floor from the coarse-pointer block). */
+.hero-dots button {
+  min-height: 0 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+
 /* Touch-friendly tap targets (minimum 44px per Apple HIG) */
 @media (pointer: coarse) {
   button,
