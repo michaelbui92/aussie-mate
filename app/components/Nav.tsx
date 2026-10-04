@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { En, Ko, useLang } from "./LangBlocks";
+import { En, Ko, useLang, type Lang } from "./LangBlocks";
 import { useTheme } from "./ThemeProvider";
 import { useSearch } from "@/components/SearchModal";
 import { ChevronDown } from "@/components/Icons";
@@ -131,25 +131,25 @@ function isActiveInGroup(pathname: string, group: NavGroup) {
 export default function Nav() {
   const pathname = usePathname();
   const router = useRouter();
-  const { lang, toggleLang } = useLang();
+  const { lang, setLang } = useLang();
+  const { theme, toggle: toggleTheme } = useTheme();
+  const { openSearch } = useSearch();
 
   // Switch the URL, not only the preference: a link someone copies has to carry its language, or a
   // Korean reader receiving /aussie-english is handed English. usePathname is the rewritten path, so
   // adding or removing the prefix is all this needs to do.
+  //
+  // Cycles en -> ko -> ja -> zh -> en. Uses setLang, NOT toggleLang: toggleLang is en<->ko only, so it
+  // would write "en" into the state and localStorage while the URL was being pushed to /ja -- the pill
+  // and <html lang> then read English on a Japanese page. Language order here is the single source of
+  // truth for the cycle.
+  const LANG_CYCLE: Lang[] = ["en", "ko", "ja", "zh"];
   const switchLang = () => {
-    // Cycle through languages: en -> ko -> ja -> zh -> en
-    let nextLang;
-    if (lang === "en") nextLang = "ko";
-    else if (lang === "ko") nextLang = "ja";
-    else if (lang === "ja") nextLang = "zh";
-    else nextLang = "en";
-    
-    toggleLang();
+    const nextLang = LANG_CYCLE[(LANG_CYCLE.indexOf(lang) + 1) % LANG_CYCLE.length];
+    setLang(nextLang);
     const bare = (pathname || "/").replace(/^\/(ko|zh|ja)(?=\/|$)/, "") || "/";
     router.push(nextLang === "en" ? bare : `/${nextLang}${bare}`);
   };
-  const { theme, toggle: toggleTheme } = useTheme();
-  const { openSearch } = useSearch();
   const [menuOpen, setMenuOpen] = useState(false);
   // Single source of truth for which dropdown is open. null = none.
   // Set by hover or click; cleared by leave-with-grace, ESC, route change, outside click.
