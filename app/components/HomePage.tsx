@@ -41,7 +41,7 @@ export default function HomePage() {
     <div className="bg-stone-50 dark:bg-darkbg">
       {/* ============================ HERO ============================ */}
       <HeroCarousel>
-      <div className="relative h-full flex flex-col items-center justify-start text-center px-6 pt-6 sm:pt-8 md:pt-10">
+      <div className="relative h-full flex flex-col items-center text-center px-6 pt-6 sm:pt-8 md:pt-10 pb-12 sm:pb-14 md:pb-16">
           <h1 className="hero-text-shadow font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-6 max-w-4xl">
             <span className="block">
               <En>Aussie Guides to Sydney and beyond</En>
@@ -52,7 +52,12 @@ export default function HomePage() {
             <En>Hi, I&apos;m Michael. I built this guide for anyone planning time in Sydney — first-time visitors, students, working-holiday makers, and anyone curious about how Australia actually works. Pick a destination below, or jump into the topics that matter most to you.</En>
             <Ko>안녕하세요, 마이클입니다. 시드니에서 가장 아름다운 곳, 최고의 경험, 그리고 가장 현명한 여행법을 알려드리는 bilingual 가이드를 직접 만들었습니다.</Ko>
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 mb-8">
+          {/* mt-auto pins the CTAs and the search bar to the BOTTOM of the hero,
+              leaving the middle of the frame open so the carousel scenery is
+              what the visitor sees. pb on the parent clears the carousel dots
+              (HeroCarousel places them at bottom-6). */}
+          <div className="mt-auto flex flex-col items-center w-full gap-4">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/destinations"
               className="group inline-flex items-center justify-center gap-2 bg-sunset hover:bg-sunset-light text-white px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full shadow-lg shadow-sunset/30 hover:shadow-xl hover:shadow-sunset/40"
@@ -83,6 +88,7 @@ export default function HomePage() {
             </span>
             <kbd className="hidden sm:inline text-[10px] font-medium px-1.5 py-0.5 rounded bg-white/10 text-white/50">⌘K</kbd>
           </button>
+          </div>
         </div>
       </HeroCarousel>
 

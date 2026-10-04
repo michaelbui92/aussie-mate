@@ -534,18 +534,17 @@
 }
 
 /* === HERO TEXT LEGIBILITY === */
-/* Crisp dark outline for white hero copy over photos -- no blur, per the
-   2026-10-04 request ("just add darker outline"). Four 1px strokes give the
-   glyph edges definition; there is deliberately NO blurred ring here, because
-   a blurred halo reads as a muddy smudge over a light, hazy photo. Contrast
-   over busy areas comes from the hero's own gradient scrim (HeroCarousel),
-   not from softening the text. */
+/* Soft shadow for white hero copy over photos -- no outline, no blur panel.
+   Superseded the crisp-outline version on 2026-10-04: four 1px strokes read
+   as a hard, dated edge over a soft photograph. This is a layered shadow
+   instead -- tight contact shadow, mid diffusion, wide ambient -- so the text
+   sits ON the image rather than being pasted over it. Contrast is carried by
+   the hero's own gradient scrim (HeroCarousel), not by the text treatment. */
 .hero-text-shadow {
   text-shadow:
-    1px 1px 0 rgba(0, 0, 0, 0.9),
-    -1px -1px 0 rgba(0, 0, 0, 0.9),
-    1px -1px 0 rgba(0, 0, 0, 0.9),
-    -1px 1px 0 rgba(0, 0, 0, 0.9);
+    0 1px 2px rgba(0, 0, 0, 0.6),
+    0 4px 14px rgba(0, 0, 0, 0.55),
+    0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
 /* === REDUCED MOTION === */
