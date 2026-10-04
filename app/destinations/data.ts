@@ -139,7 +139,7 @@ export const destinations: Destination[] = [
     },
     bestTimeDetailed: {
       en: "**Vintage season (Mar–Apr):** The absolute peak — harvest time. The vines are heavy with grapes, the cellar doors are buzzing, and many wineries run special vintage-release tastings. Warm autumn days, cool nights. Book everything months ahead.\n\n**Winter (Jun–Aug):** The hidden gem season. The Hunter's cellar doors are cosy with open fireplaces, restaurants run winter-menu specials, and accommodation prices drop significantly. The bare vines have their own stark beauty. Perfect for a romantic escape.\n\n**Spring (Sep–Nov):** The vineyards are green and lush, spring flowers are out, and the weather is mild. The Hunter Valley Gardens' Spring Festival (September) draws big crowds. Good balance of pleasant weather and reasonable prices.\n\n**Summer (Dec–Feb):** Hot and busy. The vines are lush, but the heat (30–35°C) can make extended outdoor tasting uncomfortable. Indoor cellar doors with air conditioning are your friend. Early morning hot-air balloon flights are spectacular.",
-      ko: "**빈티지 시즌 (3~4월):** 절정기 — 수확철. 포도나무에 포도가 가득하고 셀러 도어가 활기차며 많은 와이너��에서 빈티지 한정 테이스팅 진행. 따뜻한 가을 날씨와 선선한 밤. 모든 것을 몇 달 전에 예약.\n\n**겨울 (6~8월):** 숨겨진 보석 시즌. 헌터의 셀러 도어는 벽난로가 아늑하고, 레스토랑은 겨울 스페셜 메뉴 운영, 숙소 가격 크게 하락. 앙상한 포도나무의 독특한 아름다움. 로맨틱한 휴가에 완벽.\n\n**봄 (9~11월):** 포도원이 푸르고 무성하며 봄꽃 만발, 날씨 온화. 헌터 밸리 가든의 봄 축제(9월)로 인파가 모임. 쾌적한 날씨와 합리적인 가격의 균형.\n\n**여름 (12~2월):** 덥고 붐빔. 포도나무는 무성하지만 더위(30~35°C)로 장시간 야외 테이스팅이 불편할 수 있음. 에어컨이 있는 실내 셀러 도어가 좋음. 이른 아침 열기구 비행은 장관."
+      ko: "**빈티지 시즌 (3~4월):** 절정기 — 수확철. 포도나무에 포도가 가득하고 셀러 도어가 활기차며 많은 와이너리에서 빈티지 한정 테이스팅 진행. 따뜻한 가을 날씨와 선선한 밤. 모든 것을 몇 달 전에 예약.\n\n**겨울 (6~8월):** 숨겨진 보석 시즌. 헌터의 셀러 도어는 벽난로가 아늑하고, 레스토랑은 겨울 스페셜 메뉴 운영, 숙소 가격 크게 하락. 앙상한 포도나무의 독특한 아름다움. 로맨틱한 휴가에 완벽.\n\n**봄 (9~11월):** 포도원이 푸르고 무성하며 봄꽃 만발, 날씨 온화. 헌터 밸리 가든의 봄 축제(9월)로 인파가 모임. 쾌적한 날씨와 합리적인 가격의 균형.\n\n**여름 (12~2월):** 덥고 붐빔. 포도나무는 무성하지만 더위(30~35°C)로 장시간 야외 테이스팅이 불편할 수 있음. 에어컨이 있는 실내 셀러 도어가 좋음. 이른 아침 열기구 비행은 장관."
     },
     topThingsToDo: {
       en: [
@@ -427,7 +427,7 @@ export const destinations: Destination[] = [
     suggestedDays: { en: "1–2 days (day trip or quiet weekend)", ko: "1~2일 (당일치기 또는 조용한 주말)" },
     howToGetThere: {
       en: "**By car:** Take the M1 motorway north from Sydney — exit at Gosford (45 min) or Wyong (1 hr). Parking is free and plentiful at most beaches, though the main beach carparks fill by 10am on summer weekends. Aim for an early start or go in the afternoon when the morning crowd thins out.\n\n**By train:** The Central Coast & Newcastle Line runs from Central Station to Gosford (1 hr, $9 AUD Opal) and Wyong (1.5 hrs, $9 AUD). Trains run every 30 minutes on weekdays and hourly on weekends. From the station, local buses connect to the beach towns, or it's a short Uber.\n\n**By tour:** A few small-group tours from Sydney include Central Coast stops — mostly focused on the Australian Reptile Park and the coastal walks. Worth it if you'd rather not drive.",
-      ko: "**자동차:** 시드니에서 M1 고속도로를 타고 북쪽으로 — 고스퍼드(45분) 또는 와이옹(1시간) 하차. 대부분의 해변에 무료 주차가 넉넉하지만, 여름 주말에는 오전 10시면 주요 해변 주차장이 만차됩니다. 일찍 출발하거나 오후 늦게 가는 것을 추천합니다.\n\n**기차:** Central Station에서 Central Coast & Newcastle Line 탑승 — 고스퍼드(1시간, $9 AUD 오팔) 또는 와이옹(1.5��간, $9 AUD). 평일 30분 간격, 주말 1시간 간격. 역에서 지역 버스로 해변 마을까지 연결되며, Uber도 가능합니다.\n\n**투어:** 일부 소규모 투어가 Central Coast를 방문합니다 — 주로 Australian Reptile Park과 해안 산책에 초점. 운전하기 싫다면 고려할 만합니다."
+      ko: "**자동차:** 시드니에서 M1 고속도로를 타고 북쪽으로 — 고스퍼드(45분) 또는 와이옹(1시간) 하차. 대부분의 해변에 무료 주차가 넉넉하지만, 여름 주말에는 오전 10시면 주요 해변 주차장이 만차됩니다. 일찍 출발하거나 오후 늦게 가는 것을 추천합니다.\n\n**기차:** Central Station에서 Central Coast & Newcastle Line 탑승 — 고스퍼드(1시간, $9 AUD 오팔) 또는 와이옹(1.5시간, $9 AUD). 평일 30분 간격, 주말 1시간 간격. 역에서 지역 버스로 해변 마을까지 연결되며, Uber도 가능합니다.\n\n**투어:** 일부 소규모 투어가 Central Coast를 방문합니다 — 주로 Australian Reptile Park과 해안 산책에 초점. 운전하기 싫다면 고려할 만합니다."
     },
     bestTimeDetailed: {
       en: "**Summer (Dec–Feb):** Peak beach season — expect crowds on weekends at popular spots like Avoca Beach and Terrigal. The water is perfect for swimming (22–25°C), and the outdoor markets are in full swing.\n\n**Autumn (Mar–May):** The sweet spot. Cooler air makes bushwalking in Brisbane Water National Park genuinely pleasant. Fewer crowds, still warm enough for a beach picnic. Best for photography — the light over the coastline is stunning.\n\n**Winter (Jun–Aug):** The quietest season. Great for storm-watching from a pub by the water. The whale migration passes offshore (June–July north, September–October south). Cozy, not cold.\n\n**Spring (Sep–Nov):** Wildflowers bloom along the coastal trails, and the water starts warming up. A lovely transitional period with fewer tourists before the summer rush.",
@@ -604,7 +604,7 @@ export const destinations: Destination[] = [
     tripLength: "weekend",
     description: {
       en: "About 2.5 hours south of Sydney, Jervis Bay is famous for three things: the whitest sand in Australia (Hyams Beach, technically a separate bay), resident dolphins you can swim with, and the only place in NSW where kangaroos regularly hop along the beach at dawn and dusk. Add Booderee National Park's white-sand beaches, the white-cliff Green Patch, and stunning bushwalks, and you have one of the most unique coastal experiences in Australia.",
-      ko: "시드니에서 남쪽으로 약 2.5시간, 저비스 베이에는 세 가지가 유명합니다: 호주에서 가장 흰 모래 (하임스 비치, 엄밀히는 별도 만), 함께 수영할 수 있는 상주 돌고래, 그리고 NSW에서 캥거루가 새벽과 황혼에 해변을 따라 이동하는 유일한 장소. 부디리 내셔널 파크의 하얀 모래 해변, 하얀 절벽 그린 패치, 환상적인 숲 산책을 더하면 호주에서 가장 독특한 해안 ���험 중 하나가 됩니다."
+      ko: "시드니에서 남쪽으로 약 2.5시간, 저비스 베이에는 세 가지가 유명합니다: 호주에서 가장 흰 모래 (하임스 비치, 엄밀히는 별도 만), 함께 수영할 수 있는 상주 돌고래, 그리고 NSW에서 캥거루가 새벽과 황혼에 해변을 따라 이동하는 유일한 장소. 부디리 내셔널 파크의 하얀 모래 해변, 하얀 절벽 그린 패치, 환상적인 숲 산책을 더하면 호주에서 가장 독특한 해안 체험 중 하나가 됩니다."
     },
     highlights: [
       { en: "Hyams Beach (whitest sand in Australia)", ko: "하임스 비치 (호주에서 가장 흰 모래)", icon: "beach" },
@@ -765,7 +765,7 @@ export const destinations: Destination[] = [
     suggestedDays: { en: "2–3 days (weekend with dolphin cruise + dunes)", ko: "2~3일 (돌고래 크루즈와 사구를 위한 주말)" },
     howToGetThere: {
       en: "**By car:** Take the M1 north from Sydney past Newcastle, then follow the Pacific Highway to the Nelson Bay turn-off (Lemon Tree Passage Road). Total drive time is about 2.5 hours. The last 20 minutes through the Tilligerry Peninsula are scenic but slower — allow extra time. Parking in Nelson Bay is paid during summer ($4/hr, ticket machines accept card).\n\n**By bus:** A coach service runs from Sydney's Central Station to Nelson Bay via Newcastle (3.5 hrs, ~$40 AUD one-way). Port Stephens Coaches also runs daily services. From the Nelson Bay stop, local taxis and Ubers can take you to the main spots.\n\n**No train:** The nearest train station is Newcastle Interchange (2 hrs from Central), then it's a 45-minute car or bus ride east.",
-      ko: "**자동차:** M1 북쪽으로 뉴캐슬을 지나 Nelson Bay 진출로(Lemon Tree Passage Road) 진입. 총 2.5시간 소요. Tilligerry 반도를 지나는 마지막 20분은 경치 ��지만 속도가 느림 — 여유 시간 확보. 여름 넬슨 베이 주차는 유료($4/시간, 카드 결제 가능).\n\n**버스:** 시드니 센트럴 역에서 Nelson Bay까지 뉴캐슬 경유 버스 운행(3.5시간, 편도 ~$40 AUD). Port Stephens Coaches도 매일 운행. Nelson Bay 정류장에서 지역 택시/Uber로 주요 명소 이동.\n\n**기차 없음:** 가장 가까운 역은 뉴캐슬 인터체인지(시드니 센트럴에서 2시간), 이후 동쪽으로 45분 자동차/버스."
+      ko: "**자동차:** M1 북쪽으로 뉴캐슬을 지나 Nelson Bay 진출로(Lemon Tree Passage Road) 진입. 총 2.5시간 소요. Tilligerry 반도를 지나는 마지막 20분은 경치 좋지만 속도가 느림 — 여유 시간 확보. 여름 넬슨 베이 주차는 유료($4/시간, 카드 결제 가능).\n\n**버스:** 시드니 센트럴 역에서 Nelson Bay까지 뉴캐슬 경유 버스 운행(3.5시간, 편도 ~$40 AUD). Port Stephens Coaches도 매일 운행. Nelson Bay 정류장에서 지역 택시/Uber로 주요 명소 이동.\n\n**기차 없음:** 가장 가까운 역은 뉴캐슬 인터체인지(시드니 센트럴에서 2시간), 이후 동쪽으로 45분 자동차/버스."
     },
     bestTimeDetailed: {
       en: "**Summer (Dec–Feb):** Peak season for swimming, snorkelling, and dolphin cruises. Water hits 23–25°C. The sand dunes are at their most dramatic in the summer light. Book everything — accommodation, cruises, sandboarding tours — well ahead.\n\n**Autumn (Mar–May):** The best compromise. Warm enough for all water activities, but the summer crowds are gone. The dolphins are still active, and the sand dunes are less busy. Great for fishing.\n\n**Winter (Jun–Aug):** The dolphin cruises still run (the pod is resident year-round) and the migrating humpbacks pass through Jun–Aug. Sandboarding still works, though you'll want a windproof jacket. The town is quiet and accommodation is cheap.\n\n**Spring (Sep–Nov):** Warming up fast. The water is still cool in September but the days are long and sunny. Whale watching peaks in September. Sand dunes with spring wildflowers on the edges is a unique sight.",
@@ -784,7 +784,7 @@ export const destinations: Destination[] = [
       ko: [
         { title: "Nelson Bay 돌고래 관람 크루즈", description: "140마리 이상의 병코돌고래가 연중 만에 서식 — Moonshadow, Imagine 같은 크루즈가 1.5~2시간 운항, 관측률 95% 이상. 일부는 여름 쿨링 부움 네트 포함. 오전 9시 크루즈가 가장 잔잔함." },
         { title: "Stockton Bight 사구 샌드보딩", description: "남반구 최대 해안 이동 사구 — 일부 경사면 30m 높이. Nelson Bay 투어에 4WD 환승과 샌드보드 대여 포함. 30m 사구를 보드로 내려오는 스릴은 잊을 수 없는 경험." },
-        { title: "Fly Point 수중보호구역 스노클링", description: "Nelson Bay 마리나에서 도보 15분 — 수정처럼 맑은 얕은 물에 weedy sea dragon, 가오리, blue groper, 도미 떼. 장비 ��접 지참(현장 대여 없음). 잔잔한 날 만조에 최적." },
+        { title: "Fly Point 수중보호구역 스노클링", description: "Nelson Bay 마리나에서 도보 15분 — 수정처럼 맑은 얕은 물에 weedy sea dragon, 가오리, blue groper, 도미 떼. 장비 직접 지참(현장 대여 없음). 잔잔한 날 만조에 최적." },
         { title: "Tomaree Headland 정상 산책", description: "30분 가파른 등반으로 NSW 최고의 해안 전망대 — 베이, 사구, 바다까지 360도 조망. 정상의 WWII 포대가 역사를 더함. 일출이 장관." },
         { title: "Nelson Bay 마리나 낚시", description: "마리나 근처 방파제는 인기 낚시 명소 — flathead, 도미, whiting 흔함. 해안 낚시는 면허 불필요. Stockton Street의 낚시 용품점에서 미끼와 낚싯대 판매." },
         { title: "Myall Lakes 카약", description: "Port Stephens 북쪽, Myall Lakes 국립공원은 페이퍼바크 숲으로 둘러싸인 맑은 수로의 미로. Bombah Point 페리까지 수로를 따라 패들링. Bombah Point Eco Cottages에서 대여 또는 직접 지참." },
@@ -800,7 +800,7 @@ export const destinations: Destination[] = [
       ],
       ko: [
         { tip: "아침에 사구 가기", detail: "모래가 빨리 뜨거워짐 — 여름 정오면 발바닥이 진짜 뜨겁습니다. 아침 빛이 사진에도 좋음. 대부분 샌드보딩 투어는 오전 8시 시작." },
-        { tip: "Fly Point에 리프 슈즈 필수", detail: "입구가 모래와 작은 바위가 섞여 있음. 리프 슈즈가 플립플롭이나 맨발보다 훨씬 편함. 해양 생물이 가까이 ���으니 방수 폰 파우치도 챙기세요." },
+        { tip: "Fly Point에 리프 슈즈 필수", detail: "입구가 모래와 작은 바위가 섞여 있음. 리프 슈즈가 플립플롭이나 맨발보다 훨씬 편함. 해양 생물이 가까이 있으니 방수 폰 파우치도 챙기세요." },
         { tip: "돌고래 크루즈는 직접 예약", detail: "Moonshadow나 Imagine에 직접 예약하면 호텔 컨시어지 대비 1인당 $10~$15 AUD 절약. 온라인 할인 확인." },
         { tip: "Nelson Bay 수산시장 점심", detail: "그릴드 황새치 버거와 소금 후추 오징어 사이드 주문, 마리나 전망의 공유 테이블에서 식사. 신선하고 합리적 가격, 반려견 동반 가능 야외 좌석." },
       ]
