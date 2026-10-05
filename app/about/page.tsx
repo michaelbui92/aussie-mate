@@ -1,71 +1,11 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { seoFor, withSeo } from "@/lib/seo";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
-import { pickLocale } from "@/lib/locale";
+import { pickLocale, type Lang } from "@/lib/locale";
+import { ABOUT_SECTIONS, ABOUT_HERO, ABOUT_META } from "./data";
 
 const sections = [
-  {
-    id: "what",
-    emoji: "📍",
-    title: "What AussieGuides is",
-    desc: "And what it isn't",
-    en: [
-      "AussieGuides is a free guide to Australian daily life — written for anyone new here, regardless of where they're coming from or what passport they hold. Practical, honest, and in plain language.",
-      "AussieGuides is NOT an official source. It is not affiliated with any university, government, or organisation. Always check official websites for legal and up-to-date information.",
-    ],
-  },
-  {
-    id: "origin",
-    emoji: "📖",
-    title: "Why this site exists",
-    desc: "The story behind AussieGuides",
-    en: [
-      "I started AussieGuides in 2026 after watching too many of my friends — students, working-holiday makers, new migrants — get stuck on day-to-day things that official sites don't explain well: how to actually open a bank account, what 'tips and tricks' means in a job ad, how Opal cards work, where to find a GP that speaks their language.",
-      "The information was almost always there somewhere — buried in a government PDF, or split across three different forums. What was missing was a single, plain-language landing point that said: here's how this works in real life, in Australia, as of the year you're reading it.",
-      "AussieGuides is that landing point. Written from the perspective of someone who's actually been through it.",
-    ],
-  },
-  {
-    id: "founder",
-    emoji: "👤",
-    title: "Who runs this",
-    desc: "About the operator",
-    en: [
-      "AussieGuides is run by Michael Bui — an Australian-born Sydneysider who's lived here long enough to have made every mistake the site warns against. I run it as a personal project, not a business.",
-      "I also built a few other tools that overlap with this audience: Drive with Bui (Sydney driving lessons) and Study Buddy (a flashcard app). You can find them on the My Projects page if any of them are useful to you.",
-      "I'm one person. There is no editorial team, no advisory board, no funding. If I get something wrong, you can reach me at michaelbui@outlook.com.au — corrections always welcome.",
-    ],
-  },
-  {
-    id: "who",
-    emoji: "🙋",
-    title: "Who it's for",
-    desc: "The audience",
-    en: [
-      "This site is for anyone planning time in Sydney — first-time visitors, international students, working-holiday makers, new migrants, and Australians returning after time overseas.",
-      "If you're tired of dry official sites and want the practical, in-real-life version of how things work here, this site is for you.",
-    ],
-  },
-  {
-    id: "process",
-    emoji: "✍️",
-    title: "How I write",
-    desc: "Sources, review, corrections",
-    en: [
-      "Every page on this site is written by me — there is no auto-generated content, no AI-written articles, no scraped text from anywhere else.",
-      "I check prices, transit routes, and visa rules against the official source before publishing. Every page notes when it was last reviewed. If something changes and you spot it before I do, please contact me.",
-    ],
-  },
-  {
-    id: "not",
-    emoji: "🚫",
-    title: "What this site won't do",
-    desc: "Honest about limits",
-    en: [
-      "I won't run ads that track you across other sites. No personalised advertising, no affiliate links disguised as recommendations.",
-      "I won't accept payment in exchange for ranking a destination, visa, or product. Every recommendation here is based on what I'd actually tell a friend arriving in Sydney this week.",
-      "I won't pretend to be more authoritative than I am. Where an official source exists, I'll link to it instead of restating it. Where I'm uncertain, I'll say so.",
-    ],
-  },
   {
     id: "projects",
     emoji: "🛠️",
@@ -104,16 +44,21 @@ const sections = [
   },
 ];
 
-export const metadata = withSeo(
-  {
-    ...seoFor("/about"),
-    title: "About AussieGuides — Practical Australia Guide Written by a Local",
-    description: "AussieGuides is a free guide to Australian daily life — Opal cards, TFN, renting, slang, visas, and more — written by Michael Bui, an Australian-born Sydneysider for anyone new to the country.",
-  },
-  "/about"
-);
+// Per request, so a Japanese reader searching for this site does not meet an English title.
+// The canonical and hreflang come from the root layout, which reads the same header.
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
+  return withSeo(
+    {
+      ...seoFor("/about"),
+      title: pickLocale(locale, ABOUT_META.title),
+      description: pickLocale(locale, ABOUT_META.description),
+    },
+    "/about"
+  );
+}
 
-const bodySections = sections.filter((s) => s.id !== "projects" && s.id !== "contact");
+const bodySections = ABOUT_SECTIONS;
 const projectsSection = sections.find((s) => s.id === "projects")!;
 const contactSection = sections.find((s) => s.id === "contact")!;
 
@@ -122,13 +67,22 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-          About
+          <En translated>{ABOUT_HERO.eyebrow.en}</En>
+          <Ja>{ABOUT_HERO.eyebrow.ja}</Ja>
+          <Zh>{ABOUT_HERO.eyebrow.zh}</Zh>
+          <Ko>{ABOUT_HERO.eyebrow.ko}</Ko>
         </p>
         <h1 className="font-serif text-4xl md:text-6xl text-stone-900 dark:text-stone-100 leading-[0.95] mb-4">
-          About AussieGuides
+          <En translated>{ABOUT_HERO.h1.en}</En>
+          <Ja>{ABOUT_HERO.h1.ja}</Ja>
+          <Zh>{ABOUT_HERO.h1.zh}</Zh>
+          <Ko>{ABOUT_HERO.h1.ko}</Ko>
         </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
-          What this site is, who it&apos;s for, and how it&apos;s written — from one person&apos;s perspective.
+          <En translated>{ABOUT_HERO.subtitle.en}</En>
+          <Ja>{ABOUT_HERO.subtitle.ja}</Ja>
+          <Zh>{ABOUT_HERO.subtitle.zh}</Zh>
+          <Ko>{ABOUT_HERO.subtitle.ko}</Ko>
         </p>
       </header>
 
@@ -139,15 +93,28 @@ export default function AboutPage() {
               <span className="text-2xl shrink-0">{s.emoji}</span>
               <div>
                 <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-                  {s.title}
+                  <En translated>{s.title.en}</En>
+                  <Ja>{s.title.ja}</Ja>
+                  <Zh>{s.title.zh}</Zh>
+                  <Ko>{s.title.ko}</Ko>
                 </h2>
                 <p className="text-sm text-stone-500 dark:text-stone-400 mt-0.5">
-                  {s.desc}
+                  <En translated>{s.desc.en}</En>
+                  <Ja>{s.desc.ja}</Ja>
+                  <Zh>{s.desc.zh}</Zh>
+                  <Ko>{s.desc.ko}</Ko>
                 </p>
               </div>
             </div>
             <div className="text-stone-600 dark:text-stone-400 leading-relaxed text-base md:text-lg space-y-3">
-                {s.en?.map((p, j) => <p key={j}>{p}</p>)}
+                {s.body.map((p, j) => (
+                  <p key={j}>
+                    <En translated>{p.en}</En>
+                    <Ja>{p.ja}</Ja>
+                    <Zh>{p.zh}</Zh>
+                    <Ko>{p.ko}</Ko>
+                  </p>
+                ))}
             </div>
           </section>
         ))}
