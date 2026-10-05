@@ -34,7 +34,7 @@ const sections: AccordionSection[] = [
     items: [
       {
         label: "Medicare (메디케어)",
-        en: "Australia's public healthcare system. Temporary residents from countries with Reciprocal Healthcare Agreements (UK, NZ, Italy, Belgium, etc.) may be eligible for limited Medicare cover. Even if you're not eligible, everyone in Australia has access to free emergency treatment at public hospital emergency departments.", ja: "オーストラリアの公的医療制度です。相互医療協定を結んでいる国（英国、ニュージーランド、イタリア、ベルギーなど）からの一時滞在者は、限定的なメディケアの適用を受けられる場合があります。適用資格がなくても、オーストラリアにいる誰もが公立病院の救急外来で無料の緊急治療を受けられます。", zh: "澳大利亚的公共医疗体系。来自签有互惠医疗协议国家（英国、新西兰、意大利、比利时等）的临时居民，可能有资格享受有限的 Medicare 保障。即使不符合资格，在澳大利亚的每个人都可以在公立医院急诊科获得免费紧急治疗。",
+        en: "Australia's public healthcare system. Temporary residents from countries with Reciprocal Healthcare Agreements (UK, NZ, Italy, Belgium, etc.) may be eligible for limited Medicare cover. Even if you're not eligible, everyone in Australia has access to free emergency treatment at public hospital emergency departments.", ja: "オーストラリアの公的医療制度です。相互医療協定を結んでいる国（英国、ニュージーランド、イタリア、ベルギーなど）からの一時滞在者は、限定的なMedicareの適用を受けられる場合があります。適用資格がなくても、オーストラリアにいる誰もが公立病院の救急外来で無料の緊急治療を受けられます。", zh: "澳大利亚的公共医疗体系。来自签有互惠医疗协议国家（英国、新西兰、意大利、比利时等）的临时居民，可能有资格享受有限的 Medicare 保障。即使不符合资格，在澳大利亚的每个人都可以在公立医院急诊科获得免费紧急治疗。",
         ko: "호주의 공공 의료 시스템입니다. 상호 의료 협정 체결국(영국, 뉴질랜드, 이탈리아, 벨기에 등)의 임시 거주자는 제한된 메디케어 혜택을 받을 수 있습니다. 자격이 없더라도 호주에 있는 모든 사람은 공립 병원 응급실에서 무료 응급 치료를 받을 수 있습니다.",
         url: "https://www.servicesaustralia.gov.au/sites/managing-access-to-medicare-for-temporary-residents",
         urlLabel: "servicesaustralia.gov.au",
@@ -48,7 +48,7 @@ const sections: AccordionSection[] = [
       },
       {
         label: "myGov (마이갓)",
-        en: "One login for multiple government services. Link your Medicare, ATO, Centrelink, NDIS, and My Health Record all in one place. Set this up as soon as you arrive — you'll need it for tax returns, healthcare, and more. Get it at my.gov.au.", ja: "複数の政府サービスに1つのログインでアクセスできます。メディケア、ATO、センタリンク、NDIS、My Health Recordを一か所で連携できます。到着したらすぐに設定しましょう — 確定申告や医療などで必要になります。my.gov.auで取得できます。", zh: "一个账号登录多项政府服务。将你的 Medicare、ATO、Centrelink、NDIS 和 My Health Record 全部关联到一个地方。抵达后尽快设置 — 报税、医疗等都会用到。可在 my.gov.au 获取。",
+        en: "One login for multiple government services. Link your Medicare, ATO, Centrelink, NDIS, and My Health Record all in one place. Set this up as soon as you arrive — you'll need it for tax returns, healthcare, and more. Get it at my.gov.au.", ja: "複数の政府サービスに1つのログインでアクセスできます。Medicare、ATO、センタリンク、NDIS、My Health Recordを一か所で連携できます。到着したらすぐに設定しましょう — 確定申告や医療などで必要になります。my.gov.auで取得できます。", zh: "一个账号登录多项政府服务。将你的 Medicare、ATO、Centrelink、NDIS 和 My Health Record 全部关联到一个地方。抵达后尽快设置 — 报税、医疗等都会用到。可在 my.gov.au 获取。",
         ko: "여러 정부 서비스를 하나의 로그인으로 이용할 수 있습니다. 메디케어, ATO, 센터링크, NDIS, My Health Record를 한곳에서 연결하세요. 도착하자마자 설정하세요 — 세금 신고, 의료 등에 필요합니다. my.gov.au에서 가입하세요.",
         url: "https://my.gov.au",
         urlLabel: "my.gov.au",
@@ -69,7 +69,7 @@ const sections: AccordionSection[] = [
       },
       {
         label: "ATO (호주 국세청)",
-        en: "The Australian Taxation Office handles: income tax, GST, superannuation, business registrations, and tax returns. Everyone who earns income in Australia (including international students on working visas) must lodge a tax return each financial year (July 1 to June 30). Lodgement is usually open from July to October.", ja: "オーストラリア国税庁は、所得税、GST、退職年金（スーパーアニュエーション）、事業登録、確定申告を担当しています。オーストラリアで所得があるすべての人（就労ビザの留学生を含む）は、各会計年度（7月1日〜6月30日）ごとに確定申告をしなければなりません。申告期間は通常、7月から10月までです。", zh: "澳大利亚税务局负责：所得税、GST、养老金、企业注册和纳税申报。所有在澳大利亚取得收入的人（包括持工作签证的留学生）都必须在每个财政年度（7 月 1 日至 6 月 30 日）报税。申报期通常从 7 月开放至 10 月。",
+        en: "The Australian Taxation Office handles: income tax, GST, superannuation, business registrations, and tax returns. Everyone who earns income in Australia (including international students on working visas) must lodge a tax return each financial year (July 1 to June 30). Lodgement is usually open from July to October.", ja: "オーストラリア国税庁は、所得税、GST、super（スーパー）、事業登録、確定申告を担当しています。オーストラリアで所得があるすべての人（就労ビザの留学生を含む）は、各会計年度（7月1日〜6月30日）ごとに確定申告をしなければなりません。申告期間は通常、7月から10月までです。", zh: "澳大利亚税务局负责：所得税、GST、养老金、企业注册和纳税申报。所有在澳大利亚取得收入的人（包括持工作签证的留学生）都必须在每个财政年度（7 月 1 日至 6 月 30 日）报税。申报期通常从 7 月开放至 10 月。",
         ko: "호주 국세청은 소득세, GST, 슈퍼안내이션, 사업자 등록, 세금 환급을 담당합니다. 호주에서 소득이 있는 모든 사람(취업 비자 유학생 포함)은 매 회계연도(7월 1일~6월 30일)마다 세금 신고를 해야 합니다. 신고 기간은 보통 7월부터 10월까지입니다.",
         url: "https://www.ato.gov.au",
         urlLabel: "ato.gov.au",
@@ -152,14 +152,14 @@ const sections: AccordionSection[] = [
     items: [
       {
         label: "Medicare in Korean (한국어 메디케어 정보)",
-        en: "Services Australia provides Medicare information translated into Korean. Covers eligibility, how to enrol, what's covered, and how to use Medicare. Check the website or call the multilingual phone service (131 202) and ask for a Korean interpreter.", ja: "Services Australiaは、韓国語に翻訳されたメディケア情報を提供しています。適用資格、登録方法、保障内容、メディケアの使い方を網羅しています。ウェブサイトを確認するか、多言語電話サービス（131 202）に電話して韓国語通訳を依頼してください。", zh: "Services Australia 提供翻译成韩语的 Medicare 信息。涵盖资格、如何注册、保障范围以及如何使用 Medicare。请查看网站，或拨打多语种电话服务（131 202）并要求韩语口译员。",
+        en: "Services Australia provides Medicare information translated into Korean. Covers eligibility, how to enrol, what's covered, and how to use Medicare. Check the website or call the multilingual phone service (131 202) and ask for a Korean interpreter.", ja: "Services Australiaは、韓国語に翻訳されたMedicare情報を提供しています。適用資格、登録方法、保障内容、Medicareの使い方を網羅しています。ウェブサイトを確認するか、多言語電話サービス（131 202）に電話して韓国語通訳を依頼してください。", zh: "Services Australia 提供翻译成韩语的 Medicare 信息。涵盖资格、如何注册、保障范围以及如何使用 Medicare。请查看网站，或拨打多语种电话服务（131 202）并要求韩语口译员。",
         ko: "Services Australia는 한국어로 번역된 메디케어 정보를 제공합니다. 자격 요건, 등록 방법, 적용 범위, 사용 방법을 다룹니다. 웹사이트를 확인하거나 다국어 전화 서비스(131 202)에 전화해 한국어 통역사를 요청하세요.",
         url: "https://www.servicesaustralia.gov.au/medicare",
         urlLabel: "servicesaustralia.gov.au/medicare",
       },
       {
         label: "Bulk Billing Clinics (벌크 빌링 의원)",
-        en: "A 'bulk billing' clinic means the doctor bills Medicare directly and you pay nothing out of pocket. You must have a valid Medicare card to use bulk billing. Search 'bulk billing GP near me' to find clinics. Many large branches in Sydney have multilingual staff — Strathfield, Campsie, and Lidcombe are well-known pockets for Korean-speaking doctors, while suburbs like Hurstville and Parramatta have Mandarin- and Cantonese-speaking staff.", ja: "「バルクビリング」のクリニックとは、医師がメディケアに直接請求し、自己負担が一切ないことを意味します。バルクビリングを利用するには有効なメディケアカードが必要です。「bulk billing GP near me」で検索してクリニックを探しましょう。シドニーの多くの大型医院には多言語のスタッフがいます — Strathfield、Campsie、Lidcombeは韓国語を話す医師でよく知られた地区で、HurstvilleやParramattaなどの郊外には北京語や広東語を話すスタッフがいます。", zh: "“全额报销”（bulk billing）诊所是指医生直接向 Medicare 收费，你无需自付任何费用。必须持有有效的 Medicare 卡才能使用全额报销。搜索“bulk billing GP near me”即可找到诊所。悉尼许多大型诊所都配备多语种员工 — Strathfield、Campsie 和 Lidcombe 是韩语医生的知名聚集区，而 Hurstville 和 Parramatta 等郊区则有讲普通话和粤语的员工。",
+        en: "A 'bulk billing' clinic means the doctor bills Medicare directly and you pay nothing out of pocket. You must have a valid Medicare card to use bulk billing. Search 'bulk billing GP near me' to find clinics. Many large branches in Sydney have multilingual staff — Strathfield, Campsie, and Lidcombe are well-known pockets for Korean-speaking doctors, while suburbs like Hurstville and Parramatta have Mandarin- and Cantonese-speaking staff.", ja: "「バルクビリング」のクリニックとは、医師がMedicareに直接請求し、自己負担が一切ないことを意味します。バルクビリングを利用するには有効なMedicare カードが必要です。「bulk billing GP near me」で検索してクリニックを探しましょう。シドニーの多くの大型医院には多言語のスタッフがいます — Strathfield、Campsie、Lidcombeは韓国語を話す医師でよく知られた地区で、HurstvilleやParramattaなどの郊外には北京語や広東語を話すスタッフがいます。", zh: "“全额报销”（bulk billing）诊所是指医生直接向 Medicare 收费，你无需自付任何费用。必须持有有效的 Medicare 卡才能使用全额报销。搜索“bulk billing GP near me”即可找到诊所。悉尼许多大型诊所都配备多语种员工 — Strathfield、Campsie 和 Lidcombe 是韩语医生的知名聚集区，而 Hurstville 和 Parramatta 等郊区则有讲普通话和粤语的员工。",
         ko: "'벌크 빌링' 의원은 의사가 메디케어에 직접 청구하므로 본인 부담금이 없습니다. 벌크 빌링을 이용하려면 유효한 메디케어 카드가 있어야 합니다. 'bulk billing GP near me'를 검색해 의원을 찾으세요. 한인 밀집 지역(Strathfield, Campsie, Lidcombe)의 많은 의원에는 한국어 구사 의사가 있습니다.",
         url: "https://www.healthdirect.gov.au/bulk-billing",
         urlLabel: "healthdirect.gov.au",
@@ -180,7 +180,7 @@ const sections: AccordionSection[] = [
       },
       {
         label: "Lifeline (라이프라인)",
-        en: "24/7 crisis support service. Anyone can call — no Medicare or appointment needed. If you're feeling overwhelmed, lonely, suicidal, or just need someone to talk to, call 13 11 14. Also offers online chat (7pm-midnight) and text support. Completely confidential.", ja: "24時間365日の危機サポートサービスです。誰でも電話できます — メディケアや予約は不要です。圧倒されている、孤独、自殺を考えている、あるいはただ話し相手が必要なときは、13 11 14に電話してください。オンラインチャット（午後7時〜深夜）とテキストサポートも提供しています。完全に秘密が守られます。", zh: "24 小时危机支持服务。任何人都可以拨打 — 无需 Medicare 或预约。如果你感到不堪重负、孤独、有自杀念头，或只是需要有人聊聊，请拨打 13 11 14。还提供在线聊天（晚 7 点至午夜）和短信支持。完全保密。",
+        en: "24/7 crisis support service. Anyone can call — no Medicare or appointment needed. If you're feeling overwhelmed, lonely, suicidal, or just need someone to talk to, call 13 11 14. Also offers online chat (7pm-midnight) and text support. Completely confidential.", ja: "24時間365日の危機サポートサービスです。誰でも電話できます — Medicareや予約は不要です。圧倒されている、孤独、自殺を考えている、あるいはただ話し相手が必要なときは、13 11 14に電話してください。オンラインチャット（午後7時〜深夜）とテキストサポートも提供しています。完全に秘密が守られます。", zh: "24 小时危机支持服务。任何人都可以拨打 — 无需 Medicare 或预约。如果你感到不堪重负、孤独、有自杀念头，或只是需要有人聊聊，请拨打 13 11 14。还提供在线聊天（晚 7 点至午夜）和短信支持。完全保密。",
         ko: "24시간 위기 지원 서비스입니다. 누구나 전화할 수 있습니다 — 메디케어나 예약이 필요 없습니다. 압도감, 외로움, 자살 충동을 느끼거나 그냥 이야기할 사람이 필요하면 13 11 14로 전화하세요. 온라인 채팅(오후 7시~자정)과 문자 지원도 제공됩니다. 완전히 비밀이 보장됩니다.",
         url: "https://www.lifeline.org.au",
         urlLabel: "lifeline.org.au",

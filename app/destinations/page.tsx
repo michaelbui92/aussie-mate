@@ -152,7 +152,7 @@ export default function DestinationsPage() {
             href: "/transport",
             title: { en: "Getting around", ja: "移動手段", zh: "出行交通", ko: "이동 수단" },
             description: {
-              en: "Opal cards, train tickets, and how to reach each destination cheaply.", ja: "オパールカード、電車の切符、そして各目的地へ安く行く方法。", zh: "澳宝卡、火车票，以及如何省钱地抵达各个目的地。",
+              en: "Opal cards, train tickets, and how to reach each destination cheaply.", ja: "Opal カード、電車の切符、そして各目的地へ安く行く方法。", zh: "Opal、火车票，以及如何省钱地抵达各个目的地。",
               ko: "오팔 카드, 기차표, 그리고 각 여행지까지 저렴하게 가는 법.",
             },
           },

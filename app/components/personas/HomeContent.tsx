@@ -30,7 +30,7 @@ export default function HomeContent() {
           <En translated>
             You&apos;ve got a flat, a job, an Opal card that actually works. The question shifts — not how to survive, but how to actually live here. Travel the country, push your English, find your people. The years go faster than you think.
           </En>
-          <Ja>住まいも仕事も、ちゃんと使えるオパールカードも手に入れました。問いは変わります — どう生き残るかではなく、ここでどう本当に暮らすか。国内を旅して、英語を伸ばして、仲間を見つけましょう。数年は思うよりずっと速く過ぎます。</Ja>
+          <Ja>住まいも仕事も、ちゃんと使えるOpal カードも手に入れました。問いは変わります — どう生き残るかではなく、ここでどう本当に暮らすか。国内を旅して、英語を伸ばして、仲間を見つけましょう。数年は思うよりずっと速く過ぎます。</Ja>
           <Zh>你已经有住处、工作，还有一张真正能用的Opal卡。问题变了——不再是如何生存，而是如何在这里真正地生活。去全国各地旅行，提升英语，找到属于自己的人。时光流逝得比你想象中更快。</Zh>
           <Ko>
             이제 집도 구하고, 직장도 갖고, 제대로 작동하는 오팔 카드도 있습니다. 질문이 바뀌어요 — 어떻게 살아남을지가 아니라, 어떻게 여기서 진짜 삶을 즐길 것인가. 호주를 여행하고, 영어를 늘리고, 사람들을 사귀세요. 생각보다 시간이 빨리 갑니다.

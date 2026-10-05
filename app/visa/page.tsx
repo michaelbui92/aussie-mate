@@ -355,7 +355,7 @@ export default function VisaHub() {
             href: "/workplace",
             title: { en: "Workplace rights", ja: "職場の権利", zh: "职场权利", ko: "직장 권리" },
             description: {
-              en: "Award wages, super, leave — different protections for different visas.", ja: "最低賃金、退職年金（スーパー）、休暇——ビザによって保護が異なります。", zh: "法定工资、养老金（super）、休假——不同签证享有不同保障。",
+              en: "Award wages, super, leave — different protections for different visas.", ja: "最低賃金、super（スーパー）、休暇——ビザによって保護が異なります。", zh: "法定工资、养老金（super）、休假——不同签证享有不同保障。",
               ko: "임금, 퇴직연금, 휴가 — 비자별 보호 수준이 다릅니다.",
             },
           },

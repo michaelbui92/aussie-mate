@@ -38,7 +38,7 @@ const sections: WildlifeSection[] = [
     items: [
       {
         label: "Getting there",
-        en: "Take the F2 ferry from Circular Quay to Taronga Zoo ($7 AUD–8 Opal, 12 min). The ferry itself is one of the best harbour experiences — you'll sail past the Opera House and under the Harbour Bridge. A zoo entry ticket includes the Sky Safari cable car from the wharf up to the main entrance.", ja: "サーキュラー・キーから F2 フェリーに乗ってタロンガ動物園へ（$7 AUD〜8 オパール、12 分）。フェリー自体が最高のハーバー体験のひとつです — オペラハウスの横を通り、ハーバーブリッジの下をくぐります。動物園の入場券には、船着き場から正面入口までのスカイ・サファリ・ケーブルカーが含まれています。", zh: "从环形码头乘坐 F2 渡轮到塔龙加动物园（$7 AUD–8 澳宝卡，12 分钟）。渡轮本身就是最棒的港湾体验之一 — 你会经过歌剧院，并从海港大桥下方穿过。动物园门票包含从码头到正门的天空 Safari 缆车。",
+        en: "Take the F2 ferry from Circular Quay to Taronga Zoo ($7 AUD–8 Opal, 12 min). The ferry itself is one of the best harbour experiences — you'll sail past the Opera House and under the Harbour Bridge. A zoo entry ticket includes the Sky Safari cable car from the wharf up to the main entrance.", ja: "サーキュラー・キーから F2 フェリーに乗ってタロンガ動物園へ（$7 AUD〜8 Opal、12 分）。フェリー自体が最高のハーバー体験のひとつです — オペラハウスの横を通り、ハーバーブリッジの下をくぐります。動物園の入場券には、船着き場から正面入口までのスカイ・サファリ・ケーブルカーが含まれています。", zh: "从环形码头乘坐 F2 渡轮到塔龙加动物园（$7 AUD–8 Opal，12 分钟）。渡轮本身就是最棒的港湾体验之一 — 你会经过歌剧院，并从海港大桥下方穿过。动物园门票包含从码头到正门的天空 Safari 缆车。",
         ko: "서큘러 키에서 F2 페리를 타고 타롱가 동물원까지 ($7 AUD–8 오팔, 12분). 페리 자체가 최고의 하버 경험 중 하나 — 오페라 하우스를 지나 하버 브리지 아래로 항해합니다. 동물원 입장권에는 선착장에서 정문까지 가는 스카이 사파리 케이블카가 포함됩니다.",
       },
       {
@@ -79,7 +79,7 @@ const sections: WildlifeSection[] = [
       },
       {
         label: "Getting there",
-        en: "Drive (free parking available) or take a train from Central to Pennant Hills station (~35 min, ~$5 AUD Opal), then a 10-minute taxi or Uber. Buses run hourly from the station — check the Transport NSW app for route 651 or 632.", ja: "車（無料駐車場あり）か、セントラルから Pennant Hills 駅まで電車（約 35 分、約 $5 AUD オパール）、その後タクシーか Uber で 10 分。駅からは 651 番か 632 番のバスが 1 時間に 1 本運行しています — Transport NSW アプリで確認しましょう。", zh: "自驾（有免费停车）或从中央车站乘火车到 Pennant Hills 站（约 35 分钟，约 $5 AUD 澳宝卡），再打车或坐 Uber 约 10 分钟。从车站出发的 651 路或 632 路巴士每小时一班 — 请查看 Transport NSW 应用。",
+        en: "Drive (free parking available) or take a train from Central to Pennant Hills station (~35 min, ~$5 AUD Opal), then a 10-minute taxi or Uber. Buses run hourly from the station — check the Transport NSW app for route 651 or 632.", ja: "車（無料駐車場あり）か、セントラルから Pennant Hills 駅まで電車（約 35 分、約 $5 AUD Opal）、その後タクシーか Uber で 10 分。駅からは 651 番か 632 番のバスが 1 時間に 1 本運行しています — Transport NSW アプリで確認しましょう。", zh: "自驾（有免费停车）或从中央车站乘火车到 Pennant Hills 站（约 35 分钟，约 $5 AUD Opal），再打车或坐 Uber 约 10 分钟。从车站出发的 651 路或 632 路巴士每小时一班 — 请查看 Transport NSW 应用。",
         ko: "자동차 이용 (무료 주차 가능) 또는 센트럴에서 Pennant Hills 역까지 기차 (~35분, ~$5 AUD 오팔), 이후 택시나 Uber로 10분. 역에서 651번 또는 632번 버스가 시간당 1회 운행 — Transport NSW 앱 확인.",
       },
       {
@@ -110,7 +110,7 @@ const sections: WildlifeSection[] = [
       },
       {
         label: "Getting there",
-        en: "Train from Central to Doonside station (~45 min, ~$6 AUD Opal), then a 5-minute taxi. By car: take the M4 motorway west, exit at Doonside Road. Free parking on-site. Consider combining Featherdale with a day trip to the Blue Mountains — they're on the same train line.", ja: "セントラルから Doonside 駅まで電車（約 45 分、約 $6 AUD オパール）、その後タクシーで 5 分。車の場合：M4 高速道路を西へ、Doonside Road で降ります。敷地内に無料駐車場あり。フェザーデールとブルー・マウンテンズの日帰り旅行を組み合わせるのもおすすめ — 同じ電車の路線沿いにあります。", zh: "从中央车站乘火车到 Doonside 站（约 45 分钟，约 $6 AUD 澳宝卡），再打车 5 分钟。自驾：走 M4 高速公路向西，从 Doonside Road 出口下。园区内有免费停车。可以考虑把 Featherdale 和蓝山一日游结合起来 — 它们在同一条火车线路上。",
+        en: "Train from Central to Doonside station (~45 min, ~$6 AUD Opal), then a 5-minute taxi. By car: take the M4 motorway west, exit at Doonside Road. Free parking on-site. Consider combining Featherdale with a day trip to the Blue Mountains — they're on the same train line.", ja: "セントラルから Doonside 駅まで電車（約 45 分、約 $6 AUD Opal）、その後タクシーで 5 分。車の場合：M4 高速道路を西へ、Doonside Road で降ります。敷地内に無料駐車場あり。フェザーデールとブルー・マウンテンズの日帰り旅行を組み合わせるのもおすすめ — 同じ電車の路線沿いにあります。", zh: "从中央车站乘火车到 Doonside 站（约 45 分钟，约 $6 AUD Opal），再打车 5 分钟。自驾：走 M4 高速公路向西，从 Doonside Road 出口下。园区内有免费停车。可以考虑把 Featherdale 和蓝山一日游结合起来 — 它们在同一条火车线路上。",
         ko: "센트럴에서 Doonside 역까지 기차 (~45분, ~$6 AUD 오팔), 이후 택시 5분. 자동차: M4 고속도로 서쪽, Doonside Road 출구. 현장 무료 주차. 블루마운틴 당일 여행과 페더데일을 결합하는 것도 고려 — 같은 기차 노선상에 있습니다.",
       },
       {

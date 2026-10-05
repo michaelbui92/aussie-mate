@@ -124,8 +124,8 @@ export default function TransportPage() {
           </h1>
           <p className="text-stone-300 max-w-lg leading-relaxed">
             <En translated>Opal cards, trains, buses, ferries — Sydney's transport, decoded.</En>
-            <Ja>オパールカード、電車、バス、フェリー — シドニーの交通をわかりやすく解説。</Ja>
-            <Zh>澳宝卡、火车、巴士、渡轮 — 悉尼交通全解析。</Zh>
+            <Ja>Opal カード、電車、バス、フェリー — シドニーの交通をわかりやすく解説。</Ja>
+            <Zh>Opal、火车、巴士、渡轮 — 悉尼交通全解析。</Zh>
             <Ko>오팔 카드, 기차, 버스, 페리 — 시드니 교통의 모든 것.</Ko>
           </p>
         </div>

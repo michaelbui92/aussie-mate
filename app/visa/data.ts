@@ -324,7 +324,7 @@ export const visas: Visa[] = [
       ko: "영주권 (5년 여행 시설, 갱신 가능).",
     },
     workRights: {
-      en: "Unrestricted work and study rights; live anywhere in Australia; access to Medicare.", ja: "就労・学習の制限なし。オーストラリア国内どこにでも居住可能。メディケアを利用可能。", zh: "不受限制的工作和学习权利；可在澳大利亚任何地方居住；可使用Medicare。",
+      en: "Unrestricted work and study rights; live anywhere in Australia; access to Medicare.", ja: "就労・学習の制限なし。オーストラリア国内どこにでも居住可能。Medicareを利用可能。", zh: "不受限制的工作和学习权利；可在澳大利亚任何地方居住；可使用Medicare。",
       ko: "근무·수학 제한 없음. 호주 내 어디든 거주 가능. 메디케어 이용 가능.",
     },
     studyRights: {
@@ -407,7 +407,7 @@ export const visas: Visa[] = [
     ],
     pros: [
       {
-        en: "Permanent residency with full rights and Medicare.", ja: "完全な権利とメディケアを伴う永住権。", zh: "享有完整权利和Medicare的永久居留权。",
+        en: "Permanent residency with full rights and Medicare.", ja: "完全な権利とMedicareを伴う永住権。", zh: "享有完整权利和Medicare的永久居留权。",
         ko: "메디케어 포함 완전한 영주권.",
       },
       {

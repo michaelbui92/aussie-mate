@@ -149,7 +149,7 @@ export default function TouristPage() {
                 </Link>
                 .
               </En>
-              <Ja>交通について詳しく — オパールカード、ピーク時とオフピーク時の運賃、苦情の出し方 — は{" "}
+              <Ja>交通について詳しく — Opal カード、ピーク時とオフピーク時の運賃、苦情の出し方 — は{" "}
                 <Link href="/transport" className="text-sunset font-medium hover:underline">
                   交通ページ
                 </Link>
@@ -369,7 +369,7 @@ export default function TouristPage() {
             href: "/transport",
             title: { en: "Getting around", ja: "移動手段", zh: "出行交通", ko: "교통과 이동" },
             description: {
-              en: "Opal cards, airport transfers, rideshare apps, and ferry routes.", ja: "オパールカード、空港送迎、配車アプリ、フェリー路線。", zh: "Opal卡、机场接送、网约车应用和渡轮航线。",
+              en: "Opal cards, airport transfers, rideshare apps, and ferry routes.", ja: "Opal カード、空港送迎、配車アプリ、フェリー路線。", zh: "Opal卡、机场接送、网约车应用和渡轮航线。",
               ko: "오팔 카드, 공항 이동, 차량 호출 앱, 페리 노선.",
             },
           },

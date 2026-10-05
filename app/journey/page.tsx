@@ -193,12 +193,12 @@ export default function JourneyPage() {
           {
             href: "/finance",
             title: { en: "Finance & Banking", ja: "ファイナンス＆バンキング", zh: "金融与银行", ko: "금융 & 뱅킹" },
-            description: { en: "Open a bank account, apply for TFN, understand tax and super.", ja: "銀行口座を開設し、TFNを申請し、税金とスーパーを理解しましょう。", zh: "开银行账户、申请TFN、了解税务和养老金。", ko: "은행 계좌 개설, TFN 신청, 세금과 슈퍼 이해하기." },
+            description: { en: "Open a bank account, apply for TFN, understand tax and super.", ja: "銀行口座を開設し、TFNを申請し、税金とsuperを理解しましょう。", zh: "开银行账户、申请TFN、了解税务和养老金。", ko: "은행 계좌 개설, TFN 신청, 세금과 슈퍼 이해하기." },
           },
           {
             href: "/transport",
             title: { en: "Transport Guide", ja: "交通ガイド", zh: "交通指南", ko: "교통 가이드" },
-            description: { en: "Opal card, trains, buses, ferries — getting around Sydney.", ja: "オパールカード、電車、バス、フェリー — シドニーでの移動。", zh: "Opal卡、火车、公交、渡轮——在悉尼出行。", ko: "Opal 카드, 기차, 버스, 페리 — 시드니 교통 완벽 가이드." },
+            description: { en: "Opal card, trains, buses, ferries — getting around Sydney.", ja: "Opal カード、電車、バス、フェリー — シドニーでの移動。", zh: "Opal卡、火车、公交、渡轮——在悉尼出行。", ko: "Opal 카드, 기차, 버스, 페리 — 시드니 교통 완벽 가이드." },
           },
         ]}
       />

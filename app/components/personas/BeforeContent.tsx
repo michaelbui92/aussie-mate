@@ -219,7 +219,7 @@ export default function BeforeContent() {
               The first-week checklist (SIM, bank, TFN, Opal, GP) lives on the
               next page. It assumes you&apos;ve already done the prep above.
             </En>
-            <Ja>1週目のチェックリスト（SIM、銀行、TFN、オパール、GP）は次の
+            <Ja>1週目のチェックリスト（SIM、銀行、TFN、Opal、GP）は次の
               ページにあります。上の準備が済んでいる前提です。</Ja>
             <Zh>第一周清单（SIM 卡、银行、TFN、Opal 卡、GP）在
               下一页。它假定你已经完成了上面的准备工作。</Zh>

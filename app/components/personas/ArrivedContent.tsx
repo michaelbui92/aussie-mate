@@ -225,7 +225,7 @@ export default function ArrivedContent() {
           {[
             { icon: "📱", en: "Get a SIM card on day one", ja: "初日にSIMカードを入手", zh: "第一天就办SIM卡", ko: "첫날 SIM 카드 구매", descEn: "You can't navigate, message, or call anyone without a phone. Woolworths, Coles, or any 7-Eleven will set you up. Bring your passport. Cost: $10–$30 AUD for a prepaid starter. Telstra has the best coverage.", descKo: "스마트폰 없이는 길 찾기, 메시지, 전화가 모두 불가합니다. Woolworths, Coles, 7-Eleven에서 모두 가능합니다. 여권을 지참하세요. 선불 SIM 비용: $10–$30 AUD. Telstra가 가장 넓은 커버리지." },
             { icon: "💳", en: "Open a bank account within the week", ja: "1週間以内に銀行口座を開設", zh: "一周内开设银行账户", ko: "일주일 안에 은행 계좌 개설", descEn: "Commonwealth, ANZ, Westpac, NAB all let you open online with a passport — about 20 minutes. Your employer needs an Australian account to pay you. Skip the queues.", descKo: "Commonwealth, ANZ, Westpac, NAB 모두 여권으로 온라인 개설 가능 — 약 20분. 고용주가 월급을 입금하려면 호주 계좌가 필요합니다. 줄 서지 마세요.", href: "/finance", hrefLabelEn: "Banking in Australia →", hrefLabelKo: "호주 은행 계좌 가이드 →" },
-            { icon: "🚆", en: "Get an Opal card before you ride", ja: "乗車前にオパールカードを用意", zh: "乘车前先办Opal卡", ko: "탑승 전 오팔 카드 준비", descEn: "Sydney's public transport runs on Opal — trains, buses, ferries, light rail. Grab one at any train station or convenience store. Tap on, tap off. No card, no ride.", descKo: "시드니 대중교통은 오팔로 운영 — 기차, 버스, 페리, 경전철. 기차역이나 편의점에서 구매하세요. 탭 온, 탭 오프. 카드 없이는 탑승 불가.", href: "/transport", hrefLabelEn: "How to get and use Opal →", hrefLabelKo: "오팔 얻고 사용하기 →" },
+            { icon: "🚆", en: "Get an Opal card before you ride", ja: "乗車前にOpal カードを用意", zh: "乘车前先办Opal卡", ko: "탑승 전 오팔 카드 준비", descEn: "Sydney's public transport runs on Opal — trains, buses, ferries, light rail. Grab one at any train station or convenience store. Tap on, tap off. No card, no ride.", descKo: "시드니 대중교통은 오팔로 운영 — 기차, 버스, 페리, 경전철. 기차역이나 편의점에서 구매하세요. 탭 온, 탭 오프. 카드 없이는 탑승 불가.", href: "/transport", hrefLabelEn: "How to get and use Opal →", hrefLabelKo: "오팔 얻고 사용하기 →" },
             { icon: "📋", en: "Apply for your TFN (tax number)", ja: "TFN（税務番号）を申請", zh: "申请TFN（税号）", ko: "TFN(세금번호) 신청", descEn: "Free from ato.gov.au. Without it, your employer withholds tax at the emergency rate — which means a lot less take-home pay. Do it in your first week if you're job hunting.", descKo: "ato.gov.au에서 무료 신청. 없으면 고용주가 긴급 세율로 원천징수 — 실수령액이 크게 줄어듭니다. 구직 중이라면 첫 주에 신청하세요." },
             { icon: "🏥", en: "Sort Medicare and private health", ja: "Medicareと民間医療保険を整える", zh: "办理Medicare和私人医疗保险", ko: "Medicare 및 민간 보험 정리", descEn: "If you're on a reciprocal visa (UK, NZ, some EU), Medicare covers you. Everyone else needs private cover from day one — it's not optional. Compare at iSelect or choose a fund directly.", descKo: "상호주의 비자(영국, 뉴질랜드, 일부 EU)라면 Medicare 적용. 그 외는 첫날부터 민간 보험 필수 — 선택이 아닙니다. iSelect에서 비교하거나 펀드를 직접 선택하세요." },
             { icon: "🔗", en: "Link MyGov to ATO and Services Australia", ja: "MyGovをATOとServices Australiaに連携", zh: "将MyGov关联ATO和Services Australia", ko: "MyGov에 ATO/Services Australia 연동", descEn: "MyGov is the single sign-on for tax, Medicare, Centrelink and more. Set it up once in your first month with two forms of ID — saves you hours later when you actually need it.", descKo: "MyGov는 세금, Medicare, Centrelink 등을 위한 통합 로그인입니다. 첫 달 안에 신분증 두 개로 한 번 설정해두세요 — 나중에 진짜 필요할 때 시간을 크게 절약합니다." },
@@ -323,7 +323,7 @@ export default function ArrivedContent() {
           {[
             {
               icon: "📱",
-              en: "SIM, bank, Opal — done", ja: "SIM、銀行、オパール — 完了", zh: "SIM卡、银行、Opal卡——完成",
+              en: "SIM, bank, Opal — done", ja: "SIM、銀行、Opal — 完了", zh: "SIM卡、银行、Opal卡——完成",
               ko: "SIM, 은행, 오팔 — 완료",
               blurbEn: "The three unblockers set up. Your phone works, your employer can pay you, you can get around Sydney.",
               blurbKo: "세 가지 필수 준비 완료. 통화가 되고, 고용주가 급여를 입금할 수 있으며, 시드니 어디든 이동할 수 있습니다.",
@@ -511,7 +511,7 @@ export default function ArrivedContent() {
             <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">💰 <En translated>Finance</En><Ja>金融</Ja><Zh>金融</Zh><Ko>금융</Ko></div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
               <En translated>Banking, TFN, super — the boring essentials</En>
-              <Ja>銀行、TFN、スーパー（年金）— 退屈だけど必須の基本</Ja>
+              <Ja>銀行、TFN、super（スーパー）— 退屈だけど必須の基本</Ja>
               <Zh>银行、TFN、养老金（super）— 枯燥但必需的基础</Zh>
               <Ko>은행, TFN, 퇴직연금 — 필수 기본기</Ko>
             </div>

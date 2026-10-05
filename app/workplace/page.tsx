@@ -85,8 +85,8 @@ const sections: WorkplaceSection[] = [
     items: [
       { label: "What is an Award?", en: "An Award is a legal document that sets minimum pay and conditions for specific industries or jobs. If you're in a job covered by an Award, you must be paid at least the Award rate — not less.", ja: "Award（労働裁定）は、特定の業界や職種の最低賃金と労働条件を定めた法的文書です。Awardの対象となる仕事に就いている場合、少なくともAwardの賃率以上を支払われなければなりません。", zh: "Award（劳资裁定）是一份法律文件，规定了特定行业或工作的最低薪酬和条件。如果你的工作受Award覆盖，你必须至少按Award标准获得薪酬——不能更低。", ko: "Award는 특정 업종이나 직종에 대한 최저 임금과 근무 조건을 정한 법적 문서입니다. Award 적용 대상 직종에 있다면 최소한 Award 임금률을 받아야 합니다." },
       { label: "Minimum Wage", en: "Australia has a national minimum wage. As of 2024, it's approximately $23 AUD per hour for adult employees. This applies if no Award covers your job.", ja: "オーストラリアには全国最低賃金があります。2024年時点で、成人従業員は1時間あたり約$23 AUDです。これはあなたの仕事がAwardの対象でない場合に適用されます。", zh: "澳大利亚有全国最低工资。截至2024年，成年员工约为每小时$23 AUD。如果你的工作不受Award覆盖，则适用此标准。", ko: "호주에는 전국 최저 임금이 있습니다. 2024년 기준 성인 직원 기준 시간당 약 $23 AUD입니다. Award 적용 대상이 아닌 경우 이 임금이 적용됩니다." },
-      { label: "Superannuation", en: "Superannuation (super) is money your employer must pay into your super fund — currently 11.5% of your wages. It goes into your nominated super fund and is accessible when you retire.", ja: "退職年金（スーパー）は、雇用主があなたのスーパーファンドに支払わなければならないお金で、現在は賃金の11.5%です。指定したスーパーファンドに積み立てられ、退職時に引き出すことができます。", zh: "养老金（super）是雇主必须支付到你的养老金账户的钱——目前为工资的11.5%。它会存入你指定的养老金账户，退休时可以取用。", ko: "퇴직연금(super)은 고용주가 당신의 퇴직연금 계좌에 납부해야 하는 금액으로, 현재 임금의 11.5%입니다. 지정한 퇴직연금 계좌에 납부되며 퇴직 시 인출 가능합니다." },
-      { label: "Payslips", en: "You must receive a payslip within 1 day of being paid. It must show: your hours, pay rate, any overtime, deductions, and super contributions. You can check your pay against the Award or minimum wage online.", ja: "賃金を受け取ってから1日以内に給与明細を受け取らなければなりません。労働時間、賃率、残業代、控除、スーパー拠出金が記載されている必要があります。オンラインでAwardまたは最低賃金と照らし合わせて賃金を確認できます。", zh: "你必须在收到工资后的1天内收到工资单。工资单必须显示：你的工时、薪酬标准、任何加班费、扣款和养老金缴款。你可以在网上对照Award或最低工资核查你的薪酬。", ko: "급여를 받은 후 1일 이내에 급여 명세서를 받아야 합니다. 근무 시간, 임금률, 야근 수당, 공제, 퇴직연금 기여금을 표시해야 합니다. Award 또는 최저 임금에 맞게 급여를 확인할 수 있습니다." },
+      { label: "Superannuation", en: "Superannuation (super) is money your employer must pay into your super fund — currently 11.5% of your wages. It goes into your nominated super fund and is accessible when you retire.", ja: "super（スーパー）は、雇用主があなたのsuper ファンドに支払わなければならないお金で、現在は賃金の11.5%です。指定したsuper ファンドに積み立てられ、退職時に引き出すことができます。", zh: "养老金（super）是雇主必须支付到你的养老金账户的钱——目前为工资的11.5%。它会存入你指定的养老金账户，退休时可以取用。", ko: "퇴직연금(super)은 고용주가 당신의 퇴직연금 계좌에 납부해야 하는 금액으로, 현재 임금의 11.5%입니다. 지정한 퇴직연금 계좌에 납부되며 퇴직 시 인출 가능합니다." },
+      { label: "Payslips", en: "You must receive a payslip within 1 day of being paid. It must show: your hours, pay rate, any overtime, deductions, and super contributions. You can check your pay against the Award or minimum wage online.", ja: "賃金を受け取ってから1日以内に給与明細を受け取らなければなりません。労働時間、賃率、残業代、控除、super 拠出金が記載されている必要があります。オンラインでAwardまたは最低賃金と照らし合わせて賃金を確認できます。", zh: "你必须在收到工资后的1天内收到工资单。工资单必须显示：你的工时、薪酬标准、任何加班费、扣款和养老金缴款。你可以在网上对照Award或最低工资核查你的薪酬。", ko: "급여를 받은 후 1일 이내에 급여 명세서를 받아야 합니다. 근무 시간, 임금률, 야근 수당, 공제, 퇴직연금 기여금을 표시해야 합니다. Award 또는 최저 임금에 맞게 급여를 확인할 수 있습니다." },
     ],
   },
   {
@@ -172,7 +172,7 @@ export default function WorkplacePage() {
             href: "/finance",
             title: { en: "Finance & banking", ja: "金融と銀行", zh: "金融与银行", ko: "금융과 은행" },
             description: {
-              en: "Payslip deductions, super contributions, and how to read your tax summary.", ja: "給与明細の控除、スーパー拠出金、そして納税概要の読み方。", zh: "工资单扣款、养老金缴款，以及如何读懂你的税务汇总。",
+              en: "Payslip deductions, super contributions, and how to read your tax summary.", ja: "給与明細の控除、super 拠出金、そして納税概要の読み方。", zh: "工资单扣款、养老金缴款，以及如何读懂你的税务汇总。",
               ko: "급여명세서 공제, 퇴직연금 납입, 그리고 연말정산 읽는 법.",
             },
           },
