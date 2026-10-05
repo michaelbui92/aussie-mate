@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { pickLocale } from "@/lib/locale";
+import { pickLocale, type Lang } from "@/lib/locale";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
@@ -22,12 +23,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const v = getVisa(slug);
   if (!v) return {};
+  // The page body is localised, but the tab title and the search-result headline read .en --
+  // an English headline in front of a page that reads in Japanese.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
   return {
     ...seoFor(`/visa/${slug}`),
-    title: fitTitle(`${v.name.en} | AussieGuides`),
+    title: fitTitle(`${pickLocale(locale, v.name)} | AussieGuides`),
     // A tagline is written for a card, not a result: one ran to 228 characters, so it is
     // capped to the length a search result actually shows.
-    description: fitDescription(v.tagline.en),
+    description: fitDescription(pickLocale(locale, v.tagline)),
   };
 }
 

@@ -130,6 +130,10 @@ export function clip(text: string, max: number): string {
 /** The title as a result should show it: descriptive first, brand only if it fits. */
 export function fitTitle(title: string): string {
   const base = pageTitle(title);
+  // A title that already names the brand keeps it exactly once. The Chinese and Korean
+  // homepages lead with it, and appending the suffix produced
+  // "AussieGuides — … · AussieGuides" in a search result.
+  if (base.includes(BRAND)) return clip(base, TITLE_MAX);
   const withBrand = `${base} · ${BRAND}`;
   return withBrand.length <= TITLE_MAX ? withBrand : clip(base, TITLE_MAX);
 }

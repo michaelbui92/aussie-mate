@@ -1,18 +1,27 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/experiences/food"),
-  title: "Traditional Food in Sydney — Best Restaurants, Markets & BYO Guide | AussieGuides",
-  description:
-    "Where to find traditional food in Sydney — from Newtown Thai and Chinatown dumplings to authentic Vietnamese, Korean BBQ, and the city's famous BYO culture. Practical guide with neighbourhoods, markets, and price ranges.",
+  title: pageMeta("/experiences/food", locale).title,
+  description: pageMeta("/experiences/food", locale).description,
   },
   "/experiences/food"
 );
+}
+
 
 const neighbourhoods = [
   {

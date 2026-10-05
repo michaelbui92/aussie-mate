@@ -3,19 +3,27 @@
 // Bilingual (English / 한국어) to match the rest of the site.
 // First-person: every commitment here is made by one person and is verifiable.
 
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata: Metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
     ...seoFor("/editorial"),
-    title: "Editorial Standards — How AussieGuides Researches & Writes Content",
-    description:
-      "How AussieGuides writes, sources, reviews, and corrects its content — a first-person editorial standard page covering sources, review cadence, and how to report errors.",
+    title: pageMeta("/editorial", locale).title,
+    description: pageMeta("/editorial", locale).description,
   },
   "/editorial"
 );
+}
+
 
 const lastUpdated = "26 June 2026";
 

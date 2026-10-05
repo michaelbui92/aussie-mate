@@ -3,6 +3,9 @@
 // All 6 theme pages (beaches, wildlife, food, culture, road-trips, adventure)
 // live at /experiences/{theme}. /destinations/{theme} 301s here for SEO.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
@@ -12,15 +15,22 @@ import { experienceThemes as themes } from "./data";
 // Single source of truth for the experiments hub — fetched from
 // app/experiences/data.ts which also feeds the homepage top-3 row.
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/experiences"),
-  title: "Things to Do in Sydney — Beaches, Food, Wildlife, Hikes & Road Trips",
-  description: "Sydney's best things to do — Bondi Beach swims, Taronga Zoo koalas, Blue Mountains hikes, Hunter Valley wine, and multicultural food in Cabramatta, Strathfield, and Chinatown.",
+  title: pageMeta("/experiences", locale).title,
+  description: pageMeta("/experiences", locale).description,
   },
   "/experiences"
 );
+}
+
 
 export default function ExperiencesPage() {
   return (

@@ -1,17 +1,26 @@
 // /journey/arrived — re-uses the existing ArrivedContent component.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 import ArrivedContent from "@/components/personas/ArrivedContent";
 
-export const metadata = withSeo(
-  {
-    title: "Just Arrived in Australia? First Month Setup Guide — SIM, Bank, TFN, Medicare | AussieGuides",
-    description:
-      "Just arrived in Australia? Your first month checklist — SIM card, bank account, Opal card, TFN, Medicare, MyGov. What to do in your first week and common mistakes to avoid.",
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
+    title: pageMeta("journey/arrived", locale).title,
+    description: pageMeta("journey/arrived", locale).description,
   },
   "journey/arrived"
 );
+}
+
 
 export default function ArrivedPage() {
   return (

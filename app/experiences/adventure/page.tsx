@@ -3,6 +3,9 @@
 // Content intentionally brief so the team can flesh it out with the
 // real data per-adventure (Blue Mountains, Snowies, coastal walks etc).
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { pickLocale } from "@/lib/locale";
 import EditorialSection, {
@@ -170,15 +173,22 @@ const packingList = [
   { en: "Headlamp (in case you're out late)", ja: "ヘッドランプ（夜遅くまで外出する場合に備えて）", zh: "头灯（以防你晚归）", ko: "헤드램프 (늦게까지 밖에 있을 경우)" },
 ];
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/experiences/adventure"),
-  title: "Blue Mountains Hikes & NSW Day Walks — Best Bushwalks from Sydney",
-  description: "Blue Mountains Grand Canyon Track, Wentworth Falls, Royal National Park Coast Track, coastal cliff walks, and Snowy Mountains hikes — day trips and weekend adventures within reach of Sydney.",
+  title: pageMeta("/experiences/adventure", locale).title,
+  description: pageMeta("/experiences/adventure", locale).description,
   },
   "/experiences/adventure"
 );
+}
+
 
 export default function AdventurePage() {
   return (

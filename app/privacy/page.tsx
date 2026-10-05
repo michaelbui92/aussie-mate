@@ -1,19 +1,27 @@
 // Privacy Policy page — required for Google AdSense and other ad networks.
 // Bilingual (English / 한국어) to match the rest of the site.
 
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata: Metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
     ...seoFor("/privacy"),
-    title: "Privacy Policy",
-    description:
-      "AussieGuides privacy policy — what data we collect, how we use it, cookies, advertising (Google AdSense), and your rights.",
+    title: pageMeta("/privacy", locale).title,
+    description: pageMeta("/privacy", locale).description,
   },
   "/privacy"
 );
+}
+
 
 const lastUpdated = "17 June 2026";
 

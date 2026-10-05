@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
@@ -6,16 +9,22 @@ import { seoFor, withSeo } from "@/lib/seo";
 import AdSlot from "@/components/AdSlot";
 import RelatedContent from "@/components/RelatedContent";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/visa"),
-  title: "Australian Visa Guide — Student Visa, WHV, Partner & Skilled Migration 2026",
-  description:
-    "Bilingual overview of Australia's main visa subclasses for anyone moving to or visiting Australia — 417 Working Holiday, 500 Student, 189/190 Skilled, 820/801 Partner, and 600/601/651 Visitor. English and 한국어 side by side.",
+  title: pageMeta("/visa", locale).title,
+  description: pageMeta("/visa", locale).description,
   },
   "/visa"
 );
+}
+
 
 const quickFacts = [
   {

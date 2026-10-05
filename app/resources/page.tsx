@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import Accordion, { type AccordionSection } from "@/components/Accordion";
 
@@ -5,16 +8,22 @@ const FLAG_EMOJI = "🇦🇺";
 import { AlertTriangle, Ambulance, Book, Building2 } from "@/components/Icons";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/resources"),
-  title: "Australia Resources — Government Services, Emergency Contacts & Essential Links | AussieGuides",
-  description:
-    "Essential Australia resources for newcomers — ATO (tax), Services Australia (Centrelink), Fair Work, NSW Fair Trading, emergency 000,翻译 services, and more. Practical links with explanations.",
+  title: pageMeta("/resources", locale).title,
+  description: pageMeta("/resources", locale).description,
   },
   "/resources"
 );
+}
+
 
 interface ResourceItem {
   label: string;

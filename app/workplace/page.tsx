@@ -3,6 +3,9 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
@@ -11,16 +14,22 @@ import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/workplace"),
-  title: "Australian Workplace Guide — Culture, Worker Rights, Minimum Wage & Super | AussieGuides",
-  description:
-    "Australian workplace culture explained — flat hierarchies, direct communication, casual vs permanent employment, minimum wage (Awards), superannuation (Super) 11.5%, casual worker rights, and unfair dismissal protection.",
+  title: pageMeta("/workplace", locale).title,
+  description: pageMeta("/workplace", locale).description,
   },
   "/workplace"
 );
+}
+
 
 type WorkplaceSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; koLabel?: string; jaLabel?: string; zhLabel?: string; en: string; ko: string; ja?: string; zh?: string }>;

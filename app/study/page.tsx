@@ -3,6 +3,9 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
@@ -11,16 +14,22 @@ import { Book, Clipboard, Edit, Graduation, PersonBoard, PersonGroup, Target } f
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/study"),
-  title: "Study in Australia — PTE, IELTS, University Culture & Student Guide | AussieGuides",
-  description:
-    "Complete guide to studying in Australia — PTE vs IELTS scores, costs, and strategies, Australian university culture, communicating with professors, group assignments, and academic integrity (Turnitin, plagiarism, AI use).",
+  title: pageMeta("/study", locale).title,
+  description: pageMeta("/study", locale).description,
   },
   "/study"
 );
+}
+
 
 type StudySection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; koLabel?: string; jaLabel?: string; zhLabel?: string; en: string; ko: string; ja?: string; zh?: string }>;

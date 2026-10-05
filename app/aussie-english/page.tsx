@@ -7,22 +7,31 @@
 //
 // Now available in English, 한국어, 中文, and 日本語.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { phrases, type Phrase } from "@/lib/phrases";
 import { En, Ko, Zh, Ja } from "@/components/LangBlocks";
 import PhraseExplorer, { type PhraseCategory } from "@/components/PhraseExplorer";
 import { seoFor, withSeo } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/aussie-english"),
-  title: "Aussie Slang & Phrases — Fair Dinkum, Arvo, Mate & Everyday Australian English",
-  description:
-    "Australian phrases and everyday English you'd hear at the pub, at work, on the footy, and out in the suburbs — explained in plain English for anyone new here, foreigners, learners, and curious locals. Available 한국어 for Korean-speakers, 中文 for Chinese-speakers, and 日本語 for Japanese-speakers. G'day, arvo, brekkie, no worries, she'll be right and more.",
+  title: pageMeta("/aussie-english", locale).title,
+  description: pageMeta("/aussie-english", locale).description,
   },
   "/aussie-english"
 );
+}
+
 
 const categories: PhraseCategory[] = [
   { value: "all", label: "All", enLabel: "All", koLabel: "전체", jaLabel: "すべて", zhLabel: "全部" },

@@ -6,18 +6,27 @@
 // (BeforeContent) inside a card. The persona component supplies all
 // the structure; the page just provides layout + metadata.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 import BeforeContent from "@/components/personas/BeforeContent";
 
-export const metadata = withSeo(
-  {
-    title: "Before You Come to Australia — 4-6 Week Prep Checklist: Visa, Banking, Packing | AussieGuides",
-    description:
-      "Preparing to move to Australia? 4-6 week checklist — visa, banking, money, phone, apps, packing, accommodation, health insurance, and airport transport. Everything you need before you arrive.",
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
+    title: pageMeta("journey/before-you-come", locale).title,
+    description: pageMeta("journey/before-you-come", locale).description,
   },
   "journey/before-you-come"
 );
+}
+
 
 export default function BeforeYouComePage() {
   return (

@@ -1,6 +1,8 @@
 // Server component — bilingual Australian road trips guide.
 // Editorial style with route cards and trip-planning tips.
 
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
@@ -8,16 +10,22 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata: Metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/experiences/road-trips"),
-  title: "Great Ocean Road to Sydney — Best Australian Road Trips & Routes",
-  description:
-    "Great Ocean Road, Sydney to Melbourne, Red Centre, Pacific Coast — Australia's iconic drives with route notes, distances, best seasons, and Korean-friendly tips.",
+  title: pageMeta("/experiences/road-trips", locale).title,
+  description: pageMeta("/experiences/road-trips", locale).description,
   },
   "/experiences/road-trips"
 );
+}
+
 
 type RoadTripSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; koLabel?: string; jaLabel?: string; zhLabel?: string; en: string; ko: string; url?: string; ja?: string; zh?: string }>;

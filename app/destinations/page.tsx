@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 import { destinations } from "./data";
@@ -19,15 +22,22 @@ const TRIP_LABELS: Record<TripLength, { en: string; ko: string; ja?: string; zh?
 
 const TRIP_ORDER: TripLength[] = ["day", "weekend", "longer", "far"];
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/destinations"),
-  title: "Places to Go in NSW — Best Destinations, Beaches, Mountains & Wine Country | AussieGuides",
-  description: "Discover the best places to visit in NSW — from Sydney Harbour to the Blue Mountains, Hunter Valley wine country, Jervis Bay beaches, and Byron Bay. Travel tips, drive times, and day trip guides.",
+  title: pageMeta("/destinations", locale).title,
+  description: pageMeta("/destinations", locale).description,
   },
   "/destinations"
 );
+}
+
 
 export default function DestinationsPage() {
   return (

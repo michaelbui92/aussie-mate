@@ -1,20 +1,28 @@
 // Terms of Service page — sets the no-affiliation, no-liability, and use-at-own-risk
 // disclaimers that protect the project from misuse of the information.
 
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata: Metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/terms"),
-  title: "Terms of Service",
-  description:
-    "AussieGuides terms of service — no affiliation with government, no professional advice, use at your own risk, content may be outdated.",
+  title: pageMeta("/terms", locale).title,
+  description: pageMeta("/terms", locale).description,
   },
   "/terms"
 );
+}
+
 
 const lastUpdated = "17 June 2026";
 

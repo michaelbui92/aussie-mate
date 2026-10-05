@@ -4,21 +4,30 @@
 // interactive list (filter pills + per-destination accordion) to the
 // FilteredAccordion client island.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { MapPin, Car } from "@/components/Icons";
 import FilteredAccordion, { type BeyondSydneyDestination } from "@/components/FilteredAccordion";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/beyond-sydney"),
-  title: "Beyond Sydney — Best Places to Visit in NSW: Blue Mountains, Hunter Valley, Wollongong & More | AussieGuides",
-  description:
-    "Best places to visit beyond Sydney — Blue Mountains, Hunter Valley, Wollongong, Newcastle, South Coast, and further afield to Melbourne, Brisbane, and Perth. Transport tips, highlights, and recommended itineraries.",
+  title: pageMeta("/beyond-sydney", locale).title,
+  description: pageMeta("/beyond-sydney", locale).description,
   },
   "/beyond-sydney"
 );
+}
+
 
 const destinations: BeyondSydneyDestination[] = [
   {

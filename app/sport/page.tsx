@@ -1,6 +1,9 @@
 // Server component — bilingual Australian sports guide.
 // Redesigned in editorial style.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
@@ -8,16 +11,22 @@ import EditorialSection, {
 import { Flag, Star, Trophy, Users } from "@/components/Icons";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/sport"),
-  title: "Australian Sports Guide — NRL, AFL, Cricket & Sporting Culture Explained | AussieGuides",
-  description:
-    "Australian sports explained for newcomers — NRL rugby league, AFL footy, cricket, State of Origin, and the unique culture of Aussie sport. What to watch, when, and how to follow along.",
+  title: pageMeta("/sport", locale).title,
+  description: pageMeta("/sport", locale).description,
   },
   "/sport"
 );
+}
+
 
 type SportSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; koLabel?: string; jaLabel?: string; zhLabel?: string; en: string; ko: string; ja?: string; zh?: string }>;

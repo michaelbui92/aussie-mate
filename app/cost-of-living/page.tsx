@@ -1,16 +1,25 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 
-export const metadata = withSeo(
-  {
-    title: "Cost of Living in Sydney 2026 — Rent, Food, Transport, Bills | AussieGuides",
-    description:
-      "Cost of living in Sydney 2026 — weekly rent, groceries, transport, utilities, phone, health insurance, and eating out. Real AUD prices with weekly and monthly budgets for singles, couples, and families.",
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
+    title: pageMeta("cost-of-living", locale).title,
+    description: pageMeta("cost-of-living", locale).description,
   },
   "cost-of-living"
 );
+}
+
 
 const categories = [
   {

@@ -1,6 +1,9 @@
 // Server component — practical guide to seeing Australian wildlife.
 // Bilingual EN/KO, editorial style.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { pickLocale } from "@/lib/locale";
@@ -295,16 +298,22 @@ const safetyItems = [
   },
 ];
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/experiences/wildlife"),
-  title: "Where to See Australian Wildlife — Taronga Zoo, Koalas, Kangaroos near Sydney",
-  description:
-    "Practical guide to seeing Australian wildlife around Sydney — Taronga Zoo, Koala Park, Featherdale, national parks, and critical safety advice.",
+  title: pageMeta("/experiences/wildlife", locale).title,
+  description: pageMeta("/experiences/wildlife", locale).description,
   },
   "/experiences/wildlife"
 );
+}
+
 
 export default function WildlifePage() {
   return (

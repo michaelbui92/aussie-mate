@@ -3,6 +3,9 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
@@ -11,16 +14,22 @@ import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } fr
 import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/finance"),
-  title: "Australia Banking & Tax Guide — TFN, Super, Tax Returns for Newcomers",
-  description:
-    "Open a bank account, apply for a TFN, claim superannuation, lodge a tax return — practical money and banking essentials in Australia for anyone new to the country.",
+  title: pageMeta("/finance", locale).title,
+  description: pageMeta("/finance", locale).description,
   },
   "/finance"
 );
+}
+
 
 type FinanceSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{

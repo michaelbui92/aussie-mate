@@ -3,6 +3,9 @@
 // (matches the homepage vocabulary), persona chips, then a vertical
 // sequence of EditorialSection cards (some with image banners).
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
@@ -10,16 +13,22 @@ import EditorialSection, {
 import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/apartment"),
-  title: "Renting in Sydney — Apartments, Bonds, Tenants Rights & Rental Guide | AussieGuides",
-  description:
-    "How to rent an apartment in Sydney — Flatmates, Domain, Realestate search tips, rental application documents, NSW tenant rights, bonds, and common scams to avoid. Complete guide for newcomers.",
+  title: pageMeta("/apartment", locale).title,
+  description: pageMeta("/apartment", locale).description,
   },
   "/apartment"
 );
+}
+
 
 type ApartmentItem = { label: string; koLabel?: string; jaLabel?: string; zhLabel?: string; en: string; ko: string; ja?: string; zh?: string; url?: string };
 type ApartmentSectionData = Omit<EditorialSectionData, "items"> & {

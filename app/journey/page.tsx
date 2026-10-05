@@ -6,19 +6,28 @@
 // no "Start here" preview — just the welcome message and a link into
 // the stage's full guide.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
-export const metadata = withSeo(
-  {
-    title: "The Journey — Australia Guide by Stage: Before You Arrive, First Month, Long-Term | AussieGuides",
-    description:
-      "Your Australia journey in three stages — before you arrive, just landed, and long-term settling. Visa, banking, SIM, TFN, finding housing, PR, culture shock, and making friends.",
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
+    title: pageMeta("journey", locale).title,
+    description: pageMeta("journey", locale).description,
   },
   "journey"
 );
+}
+
 
 type Stage = {
   href: string;

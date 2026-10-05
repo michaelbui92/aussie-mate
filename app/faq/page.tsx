@@ -1,17 +1,26 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { pickLocale } from "@/lib/locale";
 import { faqLdJson, seoFor, withSeo } from "@/lib/seo";
 import { faqs } from "@/lib/faqs";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
     ...seoFor("/faq"),
-    title: "Australia FAQ — Visa, Banking, Tax, Jobs & Living Questions Answered | AussieGuides",
-    description:
-      "Frequently asked questions about living in Australia — visas, banking, tax, jobs, renting, healthcare, and everyday life. Practical answers for newcomers, students, and working holiday makers.",
+    title: pageMeta("/faq", locale).title,
+    description: pageMeta("/faq", locale).description,
   },
   "/faq"
 );
+}
+
 
 export default function FAQPage() {
   return (

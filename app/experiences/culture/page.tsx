@@ -1,6 +1,8 @@
 // Server component — bilingual guide to Sydney's multicultural neighbourhoods.
 // Editorial style — where to go for authentic cultural experiences.
 
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
@@ -8,16 +10,22 @@ import EditorialSection, {
 } from "@/components/EditorialSection";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata: Metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/experiences/culture"),
-  title: "Cabramatta, Strathfield, Chatswood — Sydney's Multicultural Food Hubs",
-  description:
-    "Cabramatta, Hurstville, Chatswood, Strathfield, Eastwood — Sydney's Korean, Vietnamese, Chinese and other cultural hubs, with what to eat and do in each.",
+  title: pageMeta("/experiences/culture", locale).title,
+  description: pageMeta("/experiences/culture", locale).description,
   },
   "/experiences/culture"
 );
+}
+
 
 type CultureSection = Omit<EditorialSectionData, "items"> & {
   items: Array<{ label: string; koLabel?: string; jaLabel?: string; zhLabel?: string; en: string; ko: string; ja?: string; zh?: string }>;

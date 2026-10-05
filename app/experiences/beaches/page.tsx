@@ -1,6 +1,9 @@
 // Server component — bilingual Sydney beaches guide.
 // Practical info, safety, and editorial style.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { pickLocale } from "@/lib/locale";
 import EditorialSection, {
@@ -208,16 +211,22 @@ const packingList = [
   { en: "Light beach shelter or umbrella", ja: "軽量ビーチテントまたはパラソル", zh: "轻便沙滩帐篷或遮阳伞", ko: "경량 비치 텐트 또는 파라솔" },
 ];
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
 
   ...seoFor("/experiences/beaches"),
-  title: "Sydney Beaches Guide — Best Beaches, Safety Tips & Things to Do | AussieGuides",
-  description:
-    "Australia's best Sydney beaches — Bondi, Manly, Palm Beach, Bronte, Coogee. Complete guide with swimming conditions, transport, parking, and coastal walks.",
+  title: pageMeta("/experiences/beaches", locale).title,
+  description: pageMeta("/experiences/beaches", locale).description,
   },
   "/experiences/beaches"
 );
+}
+
 
 export default function BeachesPage() {
   return (

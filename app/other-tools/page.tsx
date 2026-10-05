@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 // /other-tools — the operator's other projects.
@@ -7,15 +10,21 @@ import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
     ...seoFor("/other-tools"),
-    title: "Other Tools — Driving Lessons, AI Flashcards & More | AussieGuides",
-    description:
-      "Other tools by the AussieGuides creator — Drive with Bui (driving lessons), Study Buddy (AI flashcard app), and more projects for the Korean-Australian community.",
+    title: pageMeta("/other-tools", locale).title,
+    description: pageMeta("/other-tools", locale).description,
   },
   "/other-tools"
 );
+}
+
 
 // Each tool gets an editorial paragraph (not just feature bullets). This page
 // was identified by Google's helpful-content review as doorway-thin before;

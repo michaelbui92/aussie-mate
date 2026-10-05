@@ -1,17 +1,26 @@
 // /journey/home — re-uses the existing HomeContent component.
 
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 import HomeContent from "@/components/personas/HomeContent";
 
-export const metadata = withSeo(
-  {
-    title: "Long-Term Australia Guide — Super, Tenancy Rights, PR, Citizenship & Settling In | AussieGuides",
-    description:
-      "Long-term Australia guide for established residents — superannuation, tenancy rights, permanent residency, citizenship, credit scores, and building a sense of belonging.",
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
+    title: pageMeta("journey/home", locale).title,
+    description: pageMeta("journey/home", locale).description,
   },
   "journey/home"
 );
+}
+
 
 export default function HomePage() {
   return (

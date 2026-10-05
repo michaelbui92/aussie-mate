@@ -1,14 +1,24 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { pageMeta } from "@/lib/page-meta";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 
-export const metadata = withSeo(
-  {
+export async function generateMetadata(): Promise<Metadata> {
+  // Per request, so the tab title and the search-result headline are in the reader's
+  // language. The canonical and hreflang come from the root layout, which reads the same
+  // header. `Metadata` is imported by every page that uses withSeo.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
+  return withSeo({
     ...seoFor("/aussie-english/culture"),
-    title: "The Culture Behind Aussie Slang — History, Origins & Meaning | AussieGuides",
-    description: "Understand the cultural context behind Australian slang terms. Learn the history, origins, and social meanings of iconic Aussie expressions.",
+    title: pageMeta("/aussie-english/culture", locale).title,
+    description: pageMeta("/aussie-english/culture", locale).description,
   },
   "/aussie-english/culture"
 );
+}
+
 
 export default function AussieSlangCulturePage() {
   return (
