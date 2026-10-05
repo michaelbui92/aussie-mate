@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { pickLocale } from "@/lib/locale";
+import { headers } from "next/headers";
+import { pickLocale, type Lang } from "@/lib/locale";
+import { DEST_TEMPLATES } from "../i18n";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
@@ -40,22 +42,34 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const d = getDestination(slug);
   if (!d) return {};
-  // Extract drive time from gettingThere for the title
-  const driveTime = d.gettingThere.en.match(/(\d+(?:[–-]\d+)?\s*(?:hrs?|hours?|min))/i);
-  const timePrefix = driveTime ? `${driveTime[0]} from Sydney — ` : "";
+  // The locale the root layout already resolved, so the title and description match the page
+  // the reader actually gets. Until now these were built from .en on every locale.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
+  const t = DEST_TEMPLATES[locale];
+  const name = pickLocale(locale, d.name);
+  const gettingThere = pickLocale(locale, d.gettingThere);
+  // Extract the drive time for the title. The Japanese and Chinese values write it as 時間
+  // and 小时 rather than hrs, so those alternatives are matched too.
+  const driveTime = gettingThere.match(/(\d+(?:[–-]\d+)?\s*(?:hrs?|hours?|min|時間|小时))/i);
+  const title = driveTime
+    ? t.title_time.replace("{name}", name).replace("{time}", driveTime[0])
+    : t.title_plain.replace("{name}", name);
   // Build a search-friendly description that front-loads the answer, then cap it: the
   // three parts together ran to 428 characters on Kiama, and Google shows about 155.
-  // Split on a full stop followed by a space or the end, so "1–1.5 days" and "~2.5hrs"
-  // are not cut at the decimal point -- the old split(".") produced "(1–1." live.
-  const firstSentence = (s: string) =>
-    s.replace(/\s+/g, " ").trim().split(/\.(?=\s|$)/)[0].replace(/\.$/, "");
-  const shortDesc =
-    d.description.en.length > 160 ? firstSentence(d.description.en) + "." : d.description.en;
+  // Split on a sentence end — a full stop followed by a space or the end, or a Japanese or
+  // Chinese full stop which has no space after it — so "1–1.5 days" and "~2.5hrs" are not
+  // cut at the decimal point. The old split(".") produced "(1–1." live.
+  const firstSentence = (s: string) => {
+    const clean = s.replace(/\s+/g, " ").trim();
+    const at = clean.search(/。|\.(?=\s|$)/);
+    return at === -1 ? clean : clean.slice(0, at);
+  };
+  const shortDesc = firstSentence(pickLocale(locale, d.description));
   return {
     ...seoFor(`/destinations/${slug}`),
-    title: fitTitle(`${d.name.en}${timePrefix ? `: ${timePrefix}` : " — "}Beaches, Walks & Things to Do`),
+    title: fitTitle(title),
     description: fitDescription(
-      `${firstSentence(d.gettingThere.en)}. ${firstSentence(d.suggestedDays.en)}. ${shortDesc}`
+      `${firstSentence(gettingThere)}. ${firstSentence(pickLocale(locale, d.suggestedDays))}. ${shortDesc}`
     ),
   };
 }
@@ -65,20 +79,36 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 // the page for users who scroll that far.
 function buildFaqs(d: ReturnType<typeof getDestination> & {}) {
   if (!d) return [];
+  // Questions are templates per locale; answers come from the destination's own localised
+  // fields. Both were English (or Korean) only, so the FAQ block and its schema showed
+  // English text on the Japanese and Chinese pages.
+  const question = (key: "faq_days" | "faq_besttime" | "faq_gettingthere") =>
+    (["en", "ko", "ja", "zh"] as const).reduce<Record<string, string>>((acc, l) => {
+      acc[l] = DEST_TEMPLATES[l][key].replace("{name}", pickLocale(l, d.name));
+      return acc;
+    }, {}) as { en: string; ko: string; ja: string; zh: string };
+  const answer = (field: "suggestedDays" | "bestTime" | "gettingThere") => ({
+    en: d[field].en,
+    ko: d[field].ko,
+    ja: pickLocale("ja", d[field]),
+    zh: pickLocale("zh", d[field]),
+  });
   return [
-    {
-      q: { en: `How many days do I need in ${d.name.en}?`, ko: `${d.name.ko}에는 며칠이 필요한가요?` },
-      a: { en: d.suggestedDays.en, ko: d.suggestedDays.ko },
-    },
-    {
-      q: { en: `When is the best time to visit ${d.name.en}?`, ko: `${d.name.ko}의 최적 방문 시기는 언제인가요?` },
-      a: { en: d.bestTime.en, ko: d.bestTime.ko },
-    },
-    {
-      q: { en: `How do I get to ${d.name.en} from Sydney?`, ko: `시드니에서 ${d.name.ko}까지 어떻게 가나요?` },
-      a: { en: d.gettingThere.en, ko: d.gettingThere.ko },
-    },
+    { q: question("faq_days"), a: answer("suggestedDays") },
+    { q: question("faq_besttime"), a: answer("bestTime") },
+    { q: question("faq_gettingthere"), a: answer("gettingThere") },
   ];
+}
+
+// The per-language arrays run parallel to the English one, so an item is found by index.
+// These two sections previously rendered an English block and a Korean block only, and the
+// English block was not marked translated, so Japanese and Chinese readers got the English text.
+function itemAt<T>(
+  list: { en: T[]; ko?: T[]; ja?: T[]; zh?: T[] },
+  lang: Lang,
+  i: number
+): T | undefined {
+  return (list[lang] ?? list.en)[i];
 }
 
 export default async function DestinationPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -302,12 +332,16 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                       className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
                     >
                       <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-2 leading-snug">
-                        <En>{i + 1}. {item.title}</En>
-                        <Ko>{ttd.ko[i]?.title}</Ko>
+                        <En translated>{i + 1}. {item.title}</En>
+                        <Ja>{i + 1}. {itemAt(ttd, "ja", i)?.title}</Ja>
+                        <Zh>{i + 1}. {itemAt(ttd, "zh", i)?.title}</Zh>
+                        <Ko>{i + 1}. {itemAt(ttd, "ko", i)?.title}</Ko>
                       </h3>
                       <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                        <En>{item.description}</En>
-                        <Ko>{ttd.ko[i]?.description}</Ko>
+                        <En translated>{item.description}</En>
+                        <Ja>{itemAt(ttd, "ja", i)?.description}</Ja>
+                        <Zh>{itemAt(ttd, "zh", i)?.description}</Zh>
+                        <Ko>{itemAt(ttd, "ko", i)?.description}</Ko>
                       </p>
                     </div>
                   ))}
@@ -334,12 +368,16 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                       className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border`}
                     >
                       <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-2 leading-snug">
-                        <En>{item.tip}</En>
-                        <Ko>{pt.ko[i]?.tip}</Ko>
+                        <En translated>{item.tip}</En>
+                        <Ja>{itemAt(pt, "ja", i)?.tip}</Ja>
+                        <Zh>{itemAt(pt, "zh", i)?.tip}</Zh>
+                        <Ko>{itemAt(pt, "ko", i)?.tip}</Ko>
                       </h3>
                       <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                        <En>{item.detail}</En>
-                        <Ko>{pt.ko[i]?.detail}</Ko>
+                        <En translated>{item.detail}</En>
+                        <Ja>{itemAt(pt, "ja", i)?.detail}</Ja>
+                        <Zh>{itemAt(pt, "zh", i)?.detail}</Zh>
+                        <Ko>{itemAt(pt, "ko", i)?.detail}</Ko>
                       </p>
                     </div>
                   ))}
