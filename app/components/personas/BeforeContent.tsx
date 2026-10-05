@@ -125,12 +125,12 @@ export default function BeforeContent() {
           <Zh>抵达前</Zh>
           <Ko>출발 전</Ko>
         </p>
-        <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
+        <h1 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
           <En translated>You&apos;re moving to a new country. That&apos;s a big deal.</En>
           <Ja>新しい国へ引っ越すんですね。大したことです。</Ja>
           <Zh>你要搬去一个新国家了。这可是件大事。</Zh>
           <Ko>새로운 나라로 떠나시는 거네요. 대단한 일이에요.</Ko>
-        </h3>
+        </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En translated>
             Most of the expensive mistakes happen in the 4–6 weeks before
@@ -161,10 +161,10 @@ export default function BeforeContent() {
             <span className="font-mono text-xs text-stone-400 dark:text-stone-500">
               0{sIdx + 1}
             </span>
-            <h4 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
+            <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
               <En>{section.titleEn}</En>
               <Ko>{section.titleKo}</Ko>
-            </h4>
+            </h2>
           </div>
           <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed mb-5 max-w-2xl">
             <En>{section.subtitleEn}</En>
@@ -208,12 +208,12 @@ export default function BeforeContent() {
             <Zh>下一步</Zh>
             <Ko>다음 단계</Ko>
           </p>
-          <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
+          <h2 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
             <En translated>Once you&apos;ve landed.</En>
             <Ja>到着したら。</Ja>
             <Zh>落地之后。</Zh>
             <Ko>도착 후에는.</Ko>
-          </h4>
+          </h2>
           <p className="text-white/85 text-sm md:text-base leading-relaxed mb-6 max-w-2xl">
             <En translated>
               The first-week checklist (SIM, bank, TFN, Opal, GP) lives on the

@@ -15,12 +15,12 @@ export default function ArrivedContent() {
           <Zh>第一个月</Zh>
           <Ko>첫 한 달</Ko>
         </p>
-        <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
+        <h1 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
           <En translated>You made it. Take a breath — then read this.</En>
           <Ja>到着しましたね。ひと息ついてから、これを読んでください。</Ja>
           <Zh>你到啦。先喘口气 — 然后读读这个。</Zh>
           <Ko>도착하셨네요. 한숨 돌리시고 — 천천히 읽어보세요.</Ko>
-        </h3>
+        </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En translated>
             The first few weeks in Australia are overwhelming — new city,
@@ -64,12 +64,12 @@ export default function ArrivedContent() {
               <Zh>当心</Zh>
               <Ko>주의</Ko>
             </p>
-            <h4 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
+            <h2 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
               <En translated>Scammers target new arrivals.</En>
               <Ja>詐欺師は新しく来た人を狙います。</Ja>
               <Zh>骗子专挑新来的人下手。</Zh>
               <Ko>사기꾼들은 신참을 노립니다.</Ko>
-            </h4>
+            </h2>
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed">
               <li className="flex gap-3">
                 <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">01</span>
@@ -156,12 +156,12 @@ export default function ArrivedContent() {
               className={`reveal reveal-delay-${i + 1} p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/50 dark:border-emerald-900/30 flex flex-col`}
             >
               <div className="text-2xl mb-2">{w.icon}</div>
-              <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
+              <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
                 <En translated>{w.en}</En>
                 <Ja>{pickLocale("ja", w)}</Ja>
                 <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
-              </h4>
+              </h3>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
                 <En>{w.blurbEn}</En>
                 <Ko>{w.blurbKo}</Ko>
@@ -235,12 +235,12 @@ export default function ArrivedContent() {
                 {item.icon}
               </span>
               <div className="flex-1 min-w-0">
-                <h4 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 mb-1">
+                <h3 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 mb-1">
                   <En translated>{item.en}</En>
                   <Ja>{pickLocale("ja", item)}</Ja>
                   <Zh>{pickLocale("zh", item)}</Zh>
                   <Ko>{item.ko}</Ko>
-                </h4>
+                </h3>
                 <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
                   <En>{item.descEn}</En>
                   <Ko>{item.descKo}</Ko>
@@ -270,12 +270,12 @@ export default function ArrivedContent() {
             <Zh>小贴士</Zh>
             <Ko>꿀팁</Ko>
           </p>
-          <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
+          <h2 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
             <En translated>The three mistakes that cost real money.</En>
             <Ja>本当にお金がかかる3つの失敗。</Ja>
             <Zh>会让你真金白银受损的三个错误。</Zh>
             <Ko>진짜 돈이 드는 세 가지 실수.</Ko>
-          </h4>
+          </h2>
           <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>
@@ -355,12 +355,12 @@ export default function ArrivedContent() {
               className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/50 dark:border-emerald-900/30`}
             >
               <div className="text-2xl mb-2">{w.icon}</div>
-              <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
+              <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
                 <En translated>{w.en}</En>
                 <Ja>{pickLocale("ja", w)}</Ja>
                 <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
-              </h4>
+              </h3>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
                 <En>{w.blurbEn}</En>
                 <Ko>{w.blurbKo}</Ko>
@@ -383,12 +383,12 @@ export default function ArrivedContent() {
             <Zh>提个醒</Zh>
             <Ko>주의사항</Ko>
           </p>
-          <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
+          <h2 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
             <En translated>Scammers target new arrivals.</En>
             <Ja>詐欺師は新しく来た人を狙います。</Ja>
             <Zh>骗子专挑新来的人下手。</Zh>
             <Ko>사기꾼들은 신참을 노립니다.</Ko>
-          </h4>
+          </h2>
           <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>
@@ -442,12 +442,12 @@ export default function ArrivedContent() {
             <Zh>实话实说</Zh>
             <Ko>솔직한 이야기</Ko>
           </p>
-          <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
+          <h2 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
             <En translated>What travel guides don&apos;t tell you.</En>
             <Ja>旅行ガイドが教えてくれないこと。</Ja>
             <Zh>旅行指南不会告诉你的事。</Zh>
             <Ko>여행 가이드에는 없는 이야기.</Ko>
-          </h4>
+          </h2>
           <ul className="space-y-3 text-white/80 text-sm md:text-base leading-relaxed">
             <li className="flex gap-3">
               <span className="text-emerald-400 font-mono shrink-0">01</span>

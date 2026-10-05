@@ -20,12 +20,12 @@ export default function HomeContent() {
           <Zh>长期停留</Zh>
           <Ko>장기 체류</Ko>
         </p>
-        <h3 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
+        <h1 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4 leading-tight">
           <En translated>You&apos;re past the hard part. Make the most of this.</En>
           <Ja>一番大変な時期は過ぎました。ここからを存分に楽しみましょう。</Ja>
           <Zh>最难的阶段已经过去了。好好把握接下来的时光吧。</Zh>
           <Ko>제일 어려운 시기는 지났어요. 이제 진짜 즐겨볼 시간입니다.</Ko>
-        </h3>
+        </h1>
         <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-2xl">
           <En translated>
             You&apos;ve got a flat, a job, an Opal card that actually works. The question shifts — not how to survive, but how to actually live here. Travel the country, push your English, find your people. The years go faster than you think.
@@ -102,12 +102,12 @@ export default function HomeContent() {
               className={`reveal reveal-delay-${i + 1} p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-teal-900/20 border border-teal-100/50 dark:border-teal-900/30 flex flex-col`}
             >
               <div className="text-2xl mb-2">{w.icon}</div>
-              <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
+              <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
                 <En translated>{w.en}</En>
                 <Ja>{pickLocale("ja", w)}</Ja>
                 <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
-              </h4>
+              </h3>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
                 <En>{w.blurbEn}</En>
                 <Ko>{w.blurbKo}</Ko>
@@ -201,12 +201,12 @@ export default function HomeContent() {
                 {item.icon}
               </span>
               <div>
-                <h4 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 mb-1">
+                <h3 className="font-serif text-lg md:text-xl text-stone-900 dark:text-stone-100 mb-1">
                   <En translated>{item.en}</En>
                   <Ja>{pickLocale("ja", item)}</Ja>
                   <Zh>{pickLocale("zh", item)}</Zh>
                   <Ko>{item.ko}</Ko>
-                </h4>
+                </h3>
                 <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
                   <En>{item.descEn}</En>
                   <Ko>{item.descKo}</Ko>
@@ -229,12 +229,12 @@ export default function HomeContent() {
             <Zh>实话实说</Zh>
             <Ko>솔직한 이야기</Ko>
           </p>
-          <h4 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
+          <h2 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">
             <En translated>There&apos;s no single timeline for belonging.</En>
             <Ja>帰属感に決まった時間軸はありません。</Ja>
             <Zh>归属感没有统一的时间表。</Zh>
             <Ko>소속감의 시간표는 사람마다 다릅니다.</Ko>
-          </h4>
+          </h2>
           <p className="text-white/80 text-sm md:text-base leading-relaxed mb-4">
             <En translated>
               Some people feel at home in weeks. Others take years. Both are normal. The first year is when most people consider leaving — the novelty wears off, homesickness spikes, and the friends you made in the first month turn out to be passing through. The ones who stay are usually the ones who stop measuring their life here against where they came from, and start measuring it on its own terms.
@@ -308,12 +308,12 @@ export default function HomeContent() {
               className={`reveal reveal-delay-${(i % 5) + 1} p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-darkbg border border-teal-100/50 dark:border-teal-900/30`}
             >
               <div className="text-2xl mb-2">{w.icon}</div>
-              <h4 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
+              <h3 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 mb-1.5 leading-snug">
                 <En translated>{w.en}</En>
                 <Ja>{pickLocale("ja", w)}</Ja>
                 <Zh>{pickLocale("zh", w)}</Zh>
                 <Ko>{w.ko}</Ko>
-              </h4>
+              </h3>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
                 <En>{w.blurbEn}</En>
                 <Ko>{w.blurbKo}</Ko>
