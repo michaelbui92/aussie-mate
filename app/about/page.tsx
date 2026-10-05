@@ -138,18 +138,25 @@ export default function AboutPage() {
         {/* Editorial standards */}
         <section className="reveal p-6 md:p-7 rounded-2xl bg-amber-50 dark:bg-amber-950/20 border border-amber-100/60 dark:border-amber-900/30">
           <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-3">
-            Editorial standards
+            <En translated>Editorial standards</En>
+            <Ja>編集方針</Ja>
+            <Zh>编辑规范</Zh>
+            <Ko>편집 기준</Ko>
           </p>
           <p className="text-stone-700 dark:text-stone-300 text-base md:text-lg leading-relaxed mb-3">
-            The content on this site follows a documented editorial process — how
-            sources are checked, how outdated information is reviewed, and how to
-            report an error.
+            <En translated>The content on this site follows a documented editorial process — how sources are checked, how outdated information is reviewed, and how to report an error.</En>
+            <Ja>このサイトのコンテンツは、明文化された編集プロセス — 情報源の確認方法、古くなった情報の見直し方法、誤りの報告方法 — に従っています。</Ja>
+            <Zh>本站的内容遵循一套成文的编辑流程 — 来源如何核实、过时信息如何复核，以及如何报告错误。</Zh>
+            <Ko>이 사이트의 콘텐츠는 문서화된 편집 절차 — 출처를 어떻게 확인하고, 오래된 정보를 어떻게 검토하며, 오류를 어떻게 제보하는지 — 를 따릅니다.</Ko>
           </p>
           <a
             href="/editorial"
             className="inline-flex items-center gap-1 font-medium text-sm text-sunset hover:underline"
           >
-            Read our editorial standards →
+            <En translated>Read our editorial standards →</En>
+            <Ja>編集方針を読む →</Ja>
+            <Zh>阅读我们的编辑规范 →</Zh>
+            <Ko>편집 기준 읽기 →</Ko>
           </a>
         </section>
 
