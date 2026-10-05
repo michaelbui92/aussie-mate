@@ -1,4 +1,6 @@
 import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
 
 const sections = [
   {
@@ -194,7 +196,10 @@ export default function AboutPage() {
                   {p.emoji} {p.name}
                 </p>
                 <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                  {p.en}
+                  <En translated>{p.en}</En>
+                  <Ja>{pickLocale("ja", p)}</Ja>
+                  <Zh>{pickLocale("zh", p)}</Zh>
+                  <Ko>{pickLocale("ko", p)}</Ko>
                 </p>
               </a>
             ))}

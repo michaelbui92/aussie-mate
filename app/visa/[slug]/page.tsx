@@ -313,8 +313,8 @@ export default async function VisaPage({
                       className="text-xs text-sunset hover:underline"
                     >
                       <En translated>{l.label.en} →</En>
-                      <Ja>{l.label.en} →</Ja>
-                      <Zh>{l.label.en} →</Zh>
+                      <Ja>{pickLocale("ja", l.label)} →</Ja>
+                      <Zh>{pickLocale("zh", l.label)} →</Zh>
                       <Ko>{l.label.ko} →</Ko>
                     </a>
                   </li>

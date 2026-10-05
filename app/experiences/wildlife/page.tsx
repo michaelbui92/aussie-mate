@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { pickLocale } from "@/lib/locale";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
@@ -425,8 +426,8 @@ export default function WildlifePage() {
                       <En translated>
                         <p>{item.en}</p>
                       </En>
-                      <Ja><p>{item.en}</p></Ja>
-                      <Zh><p>{item.en}</p></Zh>
+                      <Ja><p>{pickLocale("ja", item)}</p></Ja>
+                      <Zh><p>{pickLocale("zh", item)}</p></Zh>
                       <Ko>
                         <p>{item.ko}</p>
                       </Ko>

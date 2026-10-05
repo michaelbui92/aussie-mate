@@ -43,7 +43,7 @@ interface FilteredAccordionProps {
   /** Display order for the filter pills (must include "all" first if wanted). */
   vibeOrder: string[];
   /** Optional CTA shown below the list. Pass null to omit. */
-  bottomNote?: { en: ReactNode; ko: ReactNode } | null;
+  bottomNote?: { en: ReactNode; ko: ReactNode; ja?: ReactNode; zh?: ReactNode } | null;
 }
 
 export default function FilteredAccordion({
@@ -218,8 +218,10 @@ export default function FilteredAccordion({
         <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
           <div className="rounded-2xl bg-stone-900 dark:bg-stone-800 text-white p-6 text-center">
             <p className="text-sm text-stone-300 leading-relaxed">
-              {bottomNote.en}
-              {bottomNote.ko}
+              <En translated>{bottomNote.en}</En>
+              <Ja>{bottomNote.ja ?? bottomNote.en}</Ja>
+              <Zh>{bottomNote.zh ?? bottomNote.en}</Zh>
+              <Ko>{bottomNote.ko}</Ko>
             </p>
           </div>
         </div>

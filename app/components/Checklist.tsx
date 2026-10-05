@@ -122,8 +122,8 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
                       className="text-xs text-sunset font-semibold mt-1 inline-block hover:underline"
                     >
                       <En translated>→ {it.link.en}</En>
-                      <Ja>→ {it.link.en}</Ja>
-                      <Zh>→ {it.link.en}</Zh>
+                      <Ja>→ {pickLocale("ja", it.link)}</Ja>
+                      <Zh>→ {pickLocale("zh", it.link)}</Zh>
                       <Ko>→ {it.link.ko}</Ko>
                     </a>
                   )}
