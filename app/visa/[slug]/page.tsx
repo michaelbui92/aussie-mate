@@ -3,7 +3,7 @@ import { pickLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
-import { seoFor, pageTitle, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
+import { seoFor, fitTitle, fitDescription, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return visas.map((v) => ({ slug: v.slug }));
@@ -24,8 +24,10 @@ export async function generateMetadata({
   if (!v) return {};
   return {
     ...seoFor(`/visa/${slug}`),
-    title: pageTitle(`${v.name.en} | AussieGuides`),
-    description: v.tagline.en,
+    title: fitTitle(`${v.name.en} | AussieGuides`),
+    // A tagline is written for a card, not a result: one ran to 228 characters, so it is
+    // capped to the length a search result actually shows.
+    description: fitDescription(v.tagline.en),
   };
 }
 

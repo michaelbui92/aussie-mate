@@ -3,7 +3,7 @@ import { pickLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
-import { seoFor, pageTitle, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
+import { seoFor, fitTitle, fitDescription, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 import * as Icons from "@/components/Icons";
 
@@ -43,14 +43,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Extract drive time from gettingThere for the title
   const driveTime = d.gettingThere.en.match(/(\d+(?:[–-]\d+)?\s*(?:hrs?|hours?|min))/i);
   const timePrefix = driveTime ? `${driveTime[0]} from Sydney — ` : "";
-  // Build a search-friendly description that front-loads the answer
-  const shortDesc = d.description.en.length > 160
-    ? d.description.en.split(".")[0] + "."
-    : d.description.en;
+  // Build a search-friendly description that front-loads the answer, then cap it: the
+  // three parts together ran to 428 characters on Kiama, and Google shows about 155.
+  // Split on a full stop followed by a space or the end, so "1–1.5 days" and "~2.5hrs"
+  // are not cut at the decimal point -- the old split(".") produced "(1–1." live.
+  const firstSentence = (s: string) =>
+    s.replace(/\s+/g, " ").trim().split(/\.(?=\s|$)/)[0].replace(/\.$/, "");
+  const shortDesc =
+    d.description.en.length > 160 ? firstSentence(d.description.en) + "." : d.description.en;
   return {
     ...seoFor(`/destinations/${slug}`),
-    title: pageTitle(`${d.name.en}${timePrefix ? `: ${timePrefix}` : " — "}Beaches, Walks & Things to Do | AussieGuides`),
-    description: `${d.gettingThere.en.split(".")[0]}. ${d.suggestedDays.en}. ${shortDesc}`,
+    title: fitTitle(`${d.name.en}${timePrefix ? `: ${timePrefix}` : " — "}Beaches, Walks & Things to Do`),
+    description: fitDescription(
+      `${firstSentence(d.gettingThere.en)}. ${firstSentence(d.suggestedDays.en)}. ${shortDesc}`
+    ),
   };
 }
 

@@ -101,17 +101,62 @@ export function pageTitle(title: string): string {
     .trim();
 }
 
-export function withSeo<T extends Metadata>(base: T, path: string): T {
+// ── length discipline ────────────────────────────────────────────────────────
+// A search result shows roughly 60 characters of title and 155 of description; past
+// that it is cut mid-sentence and reads as noise. Both limits are enforced here
+// rather than at 49 call sites, so a page cannot be authored past them by accident.
+//
+// The brand is added to a title only when it fits, and dropped rather than allowed to
+// push the descriptive part over the limit: the keywords are what earn the click, and
+// a title that ends in an ellipsis loses them anyway.
+export const TITLE_MAX = 60;
+export const DESC_MAX = 155;
+const BRAND = "AussieGuides";
+
+/** Cut text to `max` characters at a boundary a person would have chosen. */
+export function clip(text: string, max: number): string {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const window = t.slice(0, max);
+  // Prefer a sentence end, so the result reads as a whole thought...
+  let cut = -1;
+  for (const ch of [".", "!", "?", "。"]) cut = Math.max(cut, window.lastIndexOf(ch));
+  if (cut >= 40) return window.slice(0, cut + 1).trim();
+  // ...then a word boundary, with any trailing punctuation removed.
+  const space = window.lastIndexOf(" ");
+  return (space > 0 ? window.slice(0, space) : window).replace(/[\s,;:—–-]+$/, "").trim();
+}
+
+/** The title as a result should show it: descriptive first, brand only if it fits. */
+export function fitTitle(title: string): string {
+  const base = pageTitle(title);
+  const withBrand = `${base} · ${BRAND}`;
+  return withBrand.length <= TITLE_MAX ? withBrand : clip(base, TITLE_MAX);
+}
+
+/** A description that will not be truncated mid-sentence in a result. */
+export function fitDescription(text: string): string {
+  return clip(text, DESC_MAX);
+}
+
+export function withSeo<T extends Metadata>(base: T, path: string): Metadata {
   const url = absoluteUrl(path);
-  const title = typeof base.title === "string" ? pageTitle(base.title) : base.title;
+  void url;
   // `alternates` is deliberately NOT set here: a static metadata export cannot know whether it is
   // serving /destinations or /ko/destinations, and three hreflang tags pointing at one URL -- which is
   // what this used to emit -- express nothing. The root layout's generateMetadata supplies them per
   // request. Next merges per FIELD, so leaving them out here is what lets that survive.
-  return {
-    ...base,
-    ...(typeof base.title === "string" ? { title } : {}),
-  };
+  //
+  // `title` is emitted as an absolute object: the root layout's "%s · AussieGuides" template would
+  // otherwise append the brand on top of a title that already carries it, and the length cap has to
+  // see the final string to know whether the brand fits.
+  const title =
+    typeof base.title === "string"
+      ? { absolute: fitTitle(base.title) }
+      : base.title;
+  const description =
+    typeof base.description === "string" ? fitDescription(base.description) : base.description;
+  return { ...base, ...(title ? { title } : {}), ...(description ? { description } : {}) };
 }
 
 /**

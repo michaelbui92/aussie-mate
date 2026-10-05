@@ -8,7 +8,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans, fraunces } from "@/lib/fonts";
 import { SITE_URL, SITE_AUTHOR } from "@/lib/site";
-import { authorSchema, publisherSchema } from "@/lib/seo";
+import { authorSchema, fitDescription, publisherSchema } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/react";
 import PageTransition from "@/components/PageTransition";
 import { SearchModal } from "@/components/SearchModal";
@@ -25,13 +25,16 @@ const staticMetadata: Metadata = {
   // Title flipped to English-first per the 2026-06-28 audience review:
   // Vercel analytics showed significant American traffic and the prior
   // Korean-led title was a soft signal to Google that the page was for
-  // Korean readers only. English-first here, with 한국어 as the alt.
-  title: {
-    default: "AussieGuides — Travel & Living Guide for Sydney and NSW (English / 한국어)",
-    template: "%s · AussieGuides",
-  },
-  description:
-    "A travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — international students, working-holiday makers, expats, English-first travellers, Australians returning home. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW.",
+  // Korean readers only. English-first here, with the language signal carried by
+  // hreflang and the on-page switcher rather than by the title.
+  //
+  // No template: pages emit their own absolute titles through withSeo(), which appends
+  // the brand only when the result still fits in 60 characters. A template here would
+  // append it regardless and push already-long titles past the truncation point.
+  title: "AussieGuides — Travel & Living Guide for Sydney and NSW",
+  description: fitDescription(
+    "A travel and living guide for anyone visiting, studying, working, or starting fresh in Australia — international students, working-holiday makers, expats, English-first travellers, Australians returning home. Opal cards, TFN, super, apartments, Aussie slang, and destinations around Sydney and NSW."
+  ),
   keywords: [
     "Australia travel guide",
     "Sydney travel guide",
@@ -73,9 +76,10 @@ const staticMetadata: Metadata = {
     locale: "en_AU",
     url: SITE_URL,
     siteName: "AussieGuides",
-    title: "AussieGuides — Travel & Living Guide for Sydney and NSW (English / 한국어)",
-    description:
-      "A guide to Australian daily life — for anyone new here, written by an Australian-born Sydneysider.",
+    title: "AussieGuides — Travel & Living Guide for Sydney and NSW",
+    description: fitDescription(
+      "A guide to Australian daily life — for anyone new here, written by an Australian-born Sydneysider."
+    ),
     // images is auto-populated by app/opengraph-image.tsx (1200x630 PNG
     // generated at build time). No need to set it explicitly.
   },
