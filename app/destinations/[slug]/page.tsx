@@ -3,7 +3,7 @@ import { pickLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
-import { seoFor, fitTitle, fitDescription, breadcrumbLdJson, faqLdJson, articleLdJson } from "@/lib/seo";
+import { seoFor, fitTitle, fitDescription, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 import * as Icons from "@/components/Icons";
 
@@ -548,18 +548,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           __html: JSON.stringify(faqLdJson(faqs.map(f => ({ q: f.q, a: f.a })), `destinations/${d.slug}`)),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([
-              { name: "Home", path: "" },
-              { name: "Destinations", path: "destinations" },
-              { name: d.name.en, path: `destinations/${d.slug}` },
-            ])
-          ),
-        }}
-      />
+
     </div>
   );
 }

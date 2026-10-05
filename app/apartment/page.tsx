@@ -7,7 +7,7 @@ import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
-import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
@@ -234,14 +234,7 @@ export default function ApartmentPage() {
           ),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Apartment", path: "apartment" }])
-          ),
-        }}
-      />
+
 
       <RelatedContent
         items={[

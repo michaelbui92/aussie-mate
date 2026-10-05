@@ -3,7 +3,7 @@ import { pickLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { visas, getVisa } from "../data";
-import { seoFor, fitTitle, fitDescription, faqLdJson, breadcrumbLdJson } from "@/lib/seo";
+import { seoFor, fitTitle, fitDescription, faqLdJson } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return visas.map((v) => ({ slug: v.slug }));
@@ -400,18 +400,7 @@ export default async function VisaPage({
           ),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([
-              { name: "Home", path: "" },
-              { name: "Visa Guide", path: "visa" },
-              { name: v.name.en, path: `visa/${slug}` },
-            ])
-          ),
-        }}
-      />
+
     </div>
   );
 }

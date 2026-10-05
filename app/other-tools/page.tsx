@@ -5,7 +5,7 @@ import { pickLocale } from "@/lib/locale";
 // Expanded with origin/philosophy prose (E-E-A-T: real human, real reasons).
 
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
-import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo(
   {
@@ -70,8 +70,8 @@ const tools = [
 ];
 
 // Files exported but tool-rendered below; ESLint complains about an unused
-// import if I don't reference articleLdJson+breadcrumbLdJson here. Use them
-// for the page-level JSON-LD so every project card gets article attribution.
+// import if I don't reference articleLdJson here. The page-level BreadcrumbList is
+// emitted once from the root layout, from lib/breadcrumb-trail.ts.
 const toolsForSchema = tools.map((t) => ({
   path: `other-tools#${t.id}`,
   headline: t.headline,
@@ -207,19 +207,6 @@ export default function OtherToolsPage() {
           </Link>
         </div>
       </div>
-
-      {/* JSON-LD: BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([
-              { name: "Home", path: "" },
-              { name: "Other tools", path: "other-tools" },
-            ])
-          ),
-        }}
-      />
     </div>
   );
 }

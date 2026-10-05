@@ -5,7 +5,7 @@
 
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
-import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { seoFor, withSeo } from "@/lib/seo";
 
 export const metadata: Metadata = withSeo(
   {
@@ -479,17 +479,7 @@ export default function EditorialPage() {
         </article>
 
         {/* JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              breadcrumbLdJson([
-                { name: "Home", path: "" },
-                { name: "Editorial standards", path: "editorial" },
-              ])
-            ),
-          }}
-        />
+
       </div>
     </div>
   );

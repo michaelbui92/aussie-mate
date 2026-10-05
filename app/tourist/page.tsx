@@ -7,7 +7,7 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Beach, Building2, Coin, Smartphone, Tree } from "@/components/Icons";
-import { articleLdJson, breadcrumbLdJson, faqLdJson, seoFor, withSeo } from "@/lib/seo";
+import { articleLdJson, faqLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
@@ -354,14 +354,7 @@ export default function TouristPage() {
           ),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Tourist", path: "tourist" }])
-          ),
-        }}
-      />
+
 
       <RelatedContent
         items={[

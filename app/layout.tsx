@@ -8,7 +8,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans, fraunces } from "@/lib/fonts";
 import { SITE_URL, SITE_AUTHOR } from "@/lib/site";
-import { authorSchema, fitDescription, publisherSchema } from "@/lib/seo";
+import { authorSchema, breadcrumbLdJson, fitDescription, publisherSchema } from "@/lib/seo";
+import { breadcrumbTrail } from "@/lib/breadcrumb-trail";
 import { Analytics } from "@vercel/analytics/react";
 import PageTransition from "@/components/PageTransition";
 import { SearchModal } from "@/components/SearchModal";
@@ -216,7 +217,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // The locale comes from the URL, so the SERVER renders the right language -- which is what a crawler
   // that does not run JavaScript sees.
-  const locale = (await headers()).get("x-am-locale") ?? "en";
+  const h = await headers();
+  const locale = h.get("x-am-locale") ?? "en";
+  const path = h.get("x-am-path") ?? "/";
+  // One trail, rendered twice: visibly by <Breadcrumbs /> and as BreadcrumbList markup here.
+  // Emitted from the layout rather than per page so the two cannot disagree, and so a page
+  // added later is marked up without anyone remembering to do it.
+  const trail = breadcrumbTrail(path, locale as Lang);
   return (
     <html lang={locale} suppressHydrationWarning className={`${geistSans.variable} ${fraunces.variable}`}>
       <head>
@@ -270,6 +277,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <div id="content-root" className="flex flex-col min-h-screen">
                 <Nav />
                 <main className="flex-1">
+                  {trail.length > 0 && (
+                    <script
+                      type="application/ld+json"
+                      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLdJson(trail)) }}
+                    />
+                  )}
                   <Breadcrumbs />
                   <PageTransition>{children}</PageTransition>
                   <SearchModal />

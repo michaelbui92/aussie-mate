@@ -8,7 +8,7 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } from "@/components/Icons";
-import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
@@ -196,14 +196,7 @@ export default function FinancePage() {
           ),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Finance", path: "finance" }])
-          ),
-        }}
-      />
+
 
       {/* Contextual next-steps — internal link graph fix */}
       <RelatedContent

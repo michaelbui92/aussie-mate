@@ -1,4 +1,4 @@
-import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { seoFor, withSeo } from "@/lib/seo";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { pickLocale } from "@/lib/locale";
 
@@ -239,17 +239,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([
-              { name: "Home", path: "" },
-              { name: "About", path: "about" },
-            ])
-          ),
-        }}
-      />
+
     </div>
   );
 }

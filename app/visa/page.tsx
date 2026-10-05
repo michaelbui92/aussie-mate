@@ -2,7 +2,7 @@ import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { visas } from "./data";
-import { breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { seoFor, withSeo } from "@/lib/seo";
 import AdSlot from "@/components/AdSlot";
 import RelatedContent from "@/components/RelatedContent";
 
@@ -36,14 +36,7 @@ export default function VisaHub() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* BreadcrumbList JSON-LD — shows the path under the page title in Google */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Visa Guide", path: "visa" }])
-          ),
-        }}
-      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-sunset/15 via-stone-50 to-amber-50 dark:from-sunset/20 dark:via-darkbg dark:to-amber-950/20 border-b border-stone-200/60 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-24">
@@ -329,17 +322,7 @@ export default function VisaHub() {
       <AdSlot format="horizontal" />
 
       {/* BreadcrumbList — shows "Home › Visa Guide" path in SERP. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([
-              { name: "Home", path: "" },
-              { name: "Visa Guide", path: "visa" },
-            ])
-          ),
-        }}
-      />
+
 
       <RelatedContent
         items={[

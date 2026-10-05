@@ -8,7 +8,7 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Bus, Car, Coin, Plane, Train, Tree } from "@/components/Icons";
-import { articleLdJson, breadcrumbLdJson, seoFor, withSeo } from "@/lib/seo";
+import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
 export const metadata = withSeo(
@@ -178,14 +178,7 @@ export default function TransportPage() {
           ),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "Transport", path: "transport" }])
-          ),
-        }}
-      />
+
 
       <RelatedContent
         items={[

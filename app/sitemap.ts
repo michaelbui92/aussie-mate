@@ -8,10 +8,12 @@ import type { MetadataRoute } from "next";
 import { destinations } from "@/destinations/data";
 import { visas } from "@/visa/data";
 import { SITE_URL } from "@/lib/site";
+import { CONTENT_DATES, CONTENT_DATE_FALLBACK } from "@/lib/content-dates";
+
+/** The page's own content date, so <lastmod> means something. */
+const lastmod = (path: string) => new Date(CONTENT_DATES[path || "/"] ?? CONTENT_DATE_FALLBACK);
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   const staticPages: Array<{
     path: string;
     priority: number;
@@ -53,21 +55,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map(({ path, priority, changeFrequency }) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: now,
+    lastModified: lastmod(path),
     changeFrequency,
     priority,
   }));
 
   const destinationEntries: MetadataRoute.Sitemap = destinations.map((d) => ({
     url: `${SITE_URL}/destinations/${d.slug}`,
-    lastModified: now,
+    lastModified: lastmod(`/destinations/${d.slug}`),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
   const visaEntries: MetadataRoute.Sitemap = visas.map((v) => ({
     url: `${SITE_URL}/visa/${v.slug}`,
-    lastModified: now,
+    lastModified: lastmod(`/visa/${v.slug}`),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));

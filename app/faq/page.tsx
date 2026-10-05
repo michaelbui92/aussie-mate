@@ -1,6 +1,6 @@
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { pickLocale } from "@/lib/locale";
-import { breadcrumbLdJson, faqLdJson, seoFor, withSeo } from "@/lib/seo";
+import { faqLdJson, seoFor, withSeo } from "@/lib/seo";
 import { faqs } from "@/lib/faqs";
 
 export const metadata = withSeo(
@@ -83,14 +83,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLdJson(faqs, "faq")) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([{ name: "Home", path: "" }, { name: "FAQ", path: "faq" }])
-          ),
-        }}
-      />
+
     </div>
   );
 }
