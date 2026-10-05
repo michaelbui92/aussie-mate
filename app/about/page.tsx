@@ -11,8 +11,12 @@ const sections = [
     emoji: "🛠️",
     title: "Other things I've built",
     koTitle: "다른 만든 것들",
+    jaTitle: "\u307b\u304b\u306b\u3082\u4f5c\u3063\u305f\u3082\u306e",
+    zhTitle: "\u6211\u505a\u7684\u5176\u4ed6\u4e1c\u897f",
     desc: "More tools to help you settle in",
     koDesc: "호주 적응을 돕는 다른 도구들",
+    jaDesc: "\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u751f\u6d3b\u3092\u52a9\u3051\u308b\u307b\u304b\u306e\u30c4\u30fc\u30eb",
+    zhDesc: "\u5e2e\u4f60\u5b89\u987f\u4e0b\u6765\u7684\u66f4\u591a\u5de5\u5177",
     projects: [
       {
         emoji: "🚗",
@@ -37,9 +41,15 @@ const sections = [
     emoji: "✉️",
     title: "Get in touch",
     koTitle: "문의",
+    jaTitle: "\u304a\u554f\u3044\u5408\u308f\u305b",
+    zhTitle: "\u8054\u7cfb\u6211",
     desc: "Found something wrong or have a suggestion?",
     koDesc: "잘못된 곳을 발견했거나 제안이 있으신가요?",
+    jaDesc: "\u8aa4\u308a\u3084\u63d0\u6848\u304c\u3042\u308c\u3070\u6559\u3048\u3066\u304f\u3060\u3055\u3044",
+    zhDesc: "\u53d1\u73b0\u4e86\u9519\u8bef\uff0c\u6216\u8005\u6709\u5efa\u8bae\uff1f",
     en: ["Corrections and suggestions are always welcome — thank you for helping improve this resource. Email michaelbui@outlook.com.au."],
+    ja: ["\u8a02\u6b63\u3084\u3054\u63d0\u6848\u306f\u3044\u3064\u3067\u3082\u6b53\u8fce\u3057\u307e\u3059 \u2014 \u3053\u306e\u8cc7\u6599\u3092\u3088\u308a\u826f\u304f\u3059\u308b\u305f\u3081\u306b\u3054\u5354\u529b\u3044\u305f\u3060\u304d\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002michaelbui@outlook.com.au \u307e\u3067\u30e1\u30fc\u30eb\u3067\u3054\u9023\u7d61\u304f\u3060\u3055\u3044\u3002"],
+    zh: ["\u6b22\u8fce\u968f\u65f6\u63d0\u51fa\u66f4\u6b63\u548c\u5efa\u8bae \u2014 \u611f\u8c22\u4f60\u5e2e\u52a9\u6539\u8fdb\u8fd9\u4efd\u8d44\u6599\u3002\u8bf7\u53d1\u90ae\u4ef6\u81f3 michaelbui@outlook.com.au\u3002"],
     ko: ["수정 제안과 의견은 언제든 환영합니다 — 이 자료를 더 좋게 만드는 데 도움을 주셔서 감사합니다. michaelbui@outlook.com.au 로 연락 주세요."],
   },
 ];
@@ -61,6 +71,12 @@ export async function generateMetadata(): Promise<Metadata> {
 const bodySections = ABOUT_SECTIONS;
 const projectsSection = sections.find((s) => s.id === "projects")!;
 const contactSection = sections.find((s) => s.id === "contact")!;
+
+// The contact paragraph is a one-item array per language, and pickLocale is typed for
+// strings, so the array is read directly here.
+const contactText = (lang: "en" | "ko" | "ja" | "zh") =>
+  ((contactSection as unknown as Record<string, string[] | undefined>)[lang] ??
+    contactSection.en!)[0];
 
 export default function AboutPage() {
   return (
@@ -143,10 +159,16 @@ export default function AboutPage() {
             <span className="text-2xl shrink-0">{projectsSection.emoji}</span>
             <div>
               <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-                {projectsSection.title}
+                <En translated>{projectsSection.title}</En>
+                <Ja>{projectsSection.jaTitle ?? projectsSection.title}</Ja>
+                <Zh>{projectsSection.zhTitle ?? projectsSection.title}</Zh>
+                <Ko>{projectsSection.koTitle ?? projectsSection.title}</Ko>
               </h2>
               <p className="text-sm text-stone-500 dark:text-stone-400 mt-0.5">
-                {projectsSection.desc}
+                <En translated>{projectsSection.desc}</En>
+                <Ja>{projectsSection.jaDesc ?? projectsSection.desc}</Ja>
+                <Zh>{projectsSection.zhDesc ?? projectsSection.desc}</Zh>
+                <Ko>{projectsSection.koDesc ?? projectsSection.desc}</Ko>
               </p>
             </div>
           </div>
@@ -179,15 +201,24 @@ export default function AboutPage() {
             <span className="text-2xl shrink-0">{contactSection.emoji}</span>
             <div>
               <h2 className="font-serif text-2xl md:text-3xl leading-tight">
-                {contactSection.title}
+                <En translated>{contactSection.title}</En>
+                <Ja>{contactSection.jaTitle ?? contactSection.title}</Ja>
+                <Zh>{contactSection.zhTitle ?? contactSection.title}</Zh>
+                <Ko>{contactSection.koTitle ?? contactSection.title}</Ko>
               </h2>
               <p className="text-sm text-stone-400 mt-0.5">
-                {contactSection.desc}
+                <En translated>{contactSection.desc}</En>
+                <Ja>{contactSection.jaDesc ?? contactSection.desc}</Ja>
+                <Zh>{contactSection.zhDesc ?? contactSection.desc}</Zh>
+                <Ko>{contactSection.koDesc ?? contactSection.desc}</Ko>
               </p>
             </div>
           </div>
           <p className="text-stone-200 text-sm md:text-base leading-relaxed">
-            {contactSection.en![0]}
+            <En translated>{contactText("en")}</En>
+            <Ja>{contactText("ja")}</Ja>
+            <Zh>{contactText("zh")}</Zh>
+            <Ko>{contactText("ko")}</Ko>
           </p>
           <p className="mt-3">
             <a
