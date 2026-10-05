@@ -277,7 +277,9 @@ export default function AdventurePage() {
                      <Shield className="w-4 h-4" />}
                   </span>
                   <p className="font-serif text-lg leading-tight">
-                    <En>{tip.title}</En>
+                    <En translated>{tip.title}</En>
+                    <Ja>{tip.jaTitle ?? tip.title}</Ja>
+                    <Zh>{tip.zhTitle ?? tip.title}</Zh>
                     <Ko>{tip.title}</Ko>
                   </p>
                 </div>
