@@ -8,7 +8,7 @@
 // no glass effects, soft borders that warm to sunset on hover.
 
 import { useState, ReactNode, ComponentType } from "react";
-import { pickLocale } from "@/lib/locale";
+import { pickLocale, stripGloss } from "@/lib/locale";
 import { ChevronDown, Icons } from "./Icons";
 import { En, Ja, Ko, Zh } from "./LangBlocks";
 
@@ -105,7 +105,12 @@ export default function Accordion({
               <div className="divide-y divide-stone-200/60 dark:divide-dark-border/60 border-t border-stone-200/60 dark:border-dark-border/60">
                 {section.items.map((item, ii) => (
                   <div key={ii} className="px-5 md:px-6 py-4">
-                    <p className={`font-medium text-sm ${accentText} mb-1.5`}>{item.label}</p>
+                    <p className={`font-medium text-sm ${accentText} mb-1.5`}>
+                      <En translated>{stripGloss(item.label)}</En>
+                      <Ja>{stripGloss(item.label)}</Ja>
+                      <Zh>{stripGloss(item.label)}</Zh>
+                      <Ko>{item.label}</Ko>
+                    </p>
                     <En translated>
                       <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
                         {item.en}

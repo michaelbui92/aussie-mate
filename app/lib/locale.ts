@@ -19,3 +19,17 @@ export type Localized = { en: string; ko?: string; ja?: string; zh?: string };
 export function pickLocale(lang: Lang, fields: Localized): string {
   return fields[lang] ?? fields.en;
 }
+
+/** Drop a trailing bracketed gloss from a curated label.
+ *
+ *  Some labels carry a Korean gloss in brackets ("Medicare (메디케어)"). It helps a
+ *  Korean reader and is noise — a foreign script — on every other locale, so the
+ *  Korean page keeps it and the rest drop it. Server-safe: used inside <En>/<Ja>/
+ *  <Zh> blocks, which resolve the language on the client.
+ *
+ *  Labels are typed as ReactNode in places, so anything that is not a plain string
+ *  passes through untouched. */
+export function stripGloss<T>(label: T): T | string {
+  if (typeof label !== "string") return label;
+  return label.replace(/\s*\([^()]*\)\s*$/, "").trim();
+}
