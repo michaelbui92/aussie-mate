@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
     Parameters<typeof pageMeta>[1];
   return withSeo({
 
-  ...seoFor("/transport"),
+  ...seoFor("/transport", locale),
   title: pageMeta("/transport", locale).title,
   description: pageMeta("/transport", locale).description,
   },

@@ -8,7 +8,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { geistSans, fraunces } from "@/lib/fonts";
 import { SITE_URL, SITE_AUTHOR } from "@/lib/site";
-import { authorSchema, breadcrumbLdJson, fitDescription, publisherSchema } from "@/lib/seo";
+import { authorSchema, breadcrumbLdJson, fitDescription, publisherSchema , OG_LOCALE, type Locale } from "@/lib/seo";
 import { breadcrumbTrail } from "@/lib/breadcrumb-trail";
 import { Analytics } from "@vercel/analytics/react";
 import PageTransition from "@/components/PageTransition";
@@ -188,10 +188,9 @@ const ADSENSE_PUBLISHER_ID = resolveAdsenseId();
 // zh-Hans rather than zh: the Chinese copy is Simplified, and the bare tag leaves the script
 // unresolved for a search engine.
 //
-// NOT set here: og:locale. Each page's static `metadata` spreads seoFor(), which carries
-// openGraph.locale = en_AU, and a page's openGraph replaces the layout's object rather than merging
-// into it. So og:locale stays en_AU on every language until the pages can state their own locale
-// per request -- a per-page change, not one line here.
+// og:locale and og:url ARE set here, per request. Pages that build their own openGraph override
+// both (Next merges metadata per field, so a page's value wins); the pages that do not -- the
+// homepage and the journey routes -- inherit these instead. seoFor() does the same per page.
 export async function generateMetadata(): Promise<Metadata> {
   const h = await headers();
   const locale = h.get("x-am-locale") ?? "en";
@@ -201,6 +200,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...staticMetadata,
+    openGraph: {
+      ...staticMetadata.openGraph,
+      locale: OG_LOCALE[locale as Locale],
+      url: `${site}${locale === "en" ? "" : `/${locale}`}${bare}` || SITE_URL,
+    },
     alternates: {
       canonical: `${site}${locale === "en" ? "" : `/${locale}`}${bare}`,
       languages: {
@@ -253,7 +257,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   "@type": "WebSite",
                   name: "AussieGuides",
                   url: SITE_URL,
-                  inLanguage: ["en", "ko", "ja"],
+                  inLanguage: ["en", "ko", "ja", "zh-Hans"],
                   potentialAction: {
                     "@type": "SearchAction",
                     target: `${SITE_URL}/search?q={search_term_string}`,

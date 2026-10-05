@@ -24,6 +24,30 @@ import { SITE_URL, SITE_AUTHOR } from "./site";
  * human + organisation (E-E-A-T signal). Used by the `author` field of
  * articleLdJson and by the layout-level metadata block.
  */
+/** The locales the site serves, and the tags each maps to. */
+export type Locale = "en" | "ko" | "ja" | "zh";
+
+/** Open Graph locale tags. Australia for English, the standard region for the others. */
+export const OG_LOCALE: Record<Locale, string> = {
+  en: "en_AU",
+  ko: "ko_KR",
+  ja: "ja_JP",
+  zh: "zh_CN",
+};
+
+/** hreflang values. Simplified Chinese must be zh-Hans; a bare "zh" leaves the script unresolved. */
+export const HREFLANG: Record<Locale, string> = {
+  en: "en",
+  ko: "ko",
+  ja: "ja",
+  zh: "zh-Hans",
+};
+
+/** The URL prefix a locale's pages live under. */
+export function localePrefix(locale: Locale): string {
+  return locale === "en" ? "" : `/${locale}`;
+}
+
 export const authorSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -54,9 +78,9 @@ export const publisherSchema = {
     name: SITE_AUTHOR.name,
     url: SITE_AUTHOR.url,
   },
-  inLanguage: ["en", "ko"],
+  inLanguage: ["en", "ko", "ja", "zh-Hans"],
   description:
-    "Bilingual (English / 한국어) Australian-life guide written by a single named editor.",
+    "Australian-life guide in four languages (English, \uD55C\uAD6D\uC5B4, \u65E5\u672C\u8A9E, \u7B80\u4F53\u4E2D\u6587), written by a single named editor.",
 } as const;
 
 /**
@@ -169,8 +193,13 @@ export function withSeo<T extends Metadata>(base: T, path: string): Metadata {
  * @param path  Path WITHOUT leading slash. Empty string = homepage.
  *              E.g. "visa" or "visa/417".
  */
-export function seoFor(path: string): Pick<Metadata, "openGraph" | "twitter"> {
-  const url = absoluteUrl(path);
+export function seoFor(
+  path: string,
+  locale: Locale = "en"
+): Pick<Metadata, "openGraph" | "twitter"> {
+  // The path carries no locale prefix, so it has to be added for the social URL: without it every
+  // translated page advertises its English twin.
+  const url = absoluteUrl(`${localePrefix(locale)}/${path}`.replace(/\/+$/, ""));
 
 
   return {
@@ -178,7 +207,7 @@ export function seoFor(path: string): Pick<Metadata, "openGraph" | "twitter"> {
       type: "website",
       url,
       siteName: "AussieGuides",
-      locale: "en_AU",
+      locale: OG_LOCALE[locale],
       // Per-page title/description are filled in by the page's own metadata.
       // We provide a fallback image here so social previews always work.
       images: [
@@ -186,7 +215,7 @@ export function seoFor(path: string): Pick<Metadata, "openGraph" | "twitter"> {
           url: `${SITE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: "AussieGuides — 호주 생활 가이드 (한국어 / English)",
+          alt: "AussieGuides \u2014 practical guides to living and travelling in Australia",
         },
       ],
     },
@@ -212,24 +241,25 @@ export function seoFor(path: string): Pick<Metadata, "openGraph" | "twitter"> {
  * the visible Kaq block, not the JSON-LD payload. */
 export function faqLdJson(
   faqs: ReadonlyArray<{ q: { en: string; ko?: string; ja?: string; zh?: string }; a: { en: string; ko?: string; ja?: string; zh?: string } }>,
-  pagePath: string
+  pagePath: string,
+  locale: Locale = "en"
 ) {
   const url = pagePath
-    ? absoluteUrl(pagePath)
-  : SITE_URL;
+    ? absoluteUrl(`${localePrefix(locale)}/${pagePath}`.replace(/\/+$/, ""))
+    : absoluteUrl(localePrefix(locale));
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${url}#faq`,
     url,
-    inLanguage: ["en", "ko"],
+    inLanguage: [HREFLANG[locale]],
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
-      name: f.q.en,
+      name: f.q[locale] ?? f.q.en,
       acceptedAnswer: {
         "@type": "Answer",
-        text: f.a.en,
-        inLanguage: "en",
+        text: f.a[locale] ?? f.a.en,
+        inLanguage: HREFLANG[locale],
       },
     })),
   };
@@ -259,8 +289,9 @@ export function articleLdJson(opts: {
   imagePath?: string;
   datePublished?: string;
   dateModified?: string;
+  locale?: Locale;
 }) {
-  const url = absoluteUrl(opts.path);
+  const url = absoluteUrl(`${localePrefix(opts.locale ?? "en")}/${opts.path}`.replace(/\/+$/, ""));
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -268,7 +299,7 @@ export function articleLdJson(opts: {
     url,
     headline: opts.headline,
     description: opts.description,
-    inLanguage: ["en", "ko"],
+    inLanguage: [HREFLANG[opts.locale ?? "en"]],
     image: `${SITE_URL}${opts.imagePath ?? "/opengraph-image"}`,
     datePublished: opts.datePublished ?? "2026-01-01",
     dateModified: opts.dateModified ?? new Date().toISOString().slice(0, 10),

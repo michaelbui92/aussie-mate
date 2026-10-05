@@ -306,7 +306,7 @@ export async function generateMetadata(): Promise<Metadata> {
     Parameters<typeof pageMeta>[1];
   return withSeo({
 
-  ...seoFor("/experiences/wildlife"),
+  ...seoFor("/experiences/wildlife", locale),
   title: pageMeta("/experiences/wildlife", locale).title,
   description: pageMeta("/experiences/wildlife", locale).description,
   },

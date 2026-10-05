@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
     Parameters<typeof pageMeta>[1];
   return withSeo({
 
-  ...seoFor("/finance"),
+  ...seoFor("/finance", locale),
   title: pageMeta("/finance", locale).title,
   description: pageMeta("/finance", locale).description,
   },

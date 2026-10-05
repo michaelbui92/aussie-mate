@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     Parameters<typeof pageMeta>[1];
   return withSeo({
 
-  ...seoFor("/tourist"),
+  ...seoFor("/tourist", locale),
   title: pageMeta("/tourist", locale).title,
   description: pageMeta("/tourist", locale).description,
   },

@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = ((await headers()).get("x-am-locale") ?? "en") as
     Parameters<typeof pageMeta>[1];
   return withSeo({
-    ...seoFor("/aussie-english/culture"),
+    ...seoFor("/aussie-english/culture", locale),
     title: pageMeta("/aussie-english/culture", locale).title,
     description: pageMeta("/aussie-english/culture", locale).description,
   },

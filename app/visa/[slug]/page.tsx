@@ -27,7 +27,7 @@ export async function generateMetadata({
   // an English headline in front of a page that reads in Japanese.
   const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
   return {
-    ...seoFor(`/visa/${slug}`),
+    ...seoFor(`/visa/${slug}`, locale),
     title: fitTitle(`${pickLocale(locale, v.name)} | AussieGuides`),
     // A tagline is written for a card, not a result: one ran to 228 characters, so it is
     // capped to the length a search result actually shows.

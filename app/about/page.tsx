@@ -60,7 +60,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
   return withSeo(
     {
-      ...seoFor("/about"),
+      ...seoFor("/about", locale),
       title: pickLocale(locale, ABOUT_META.title),
       description: pickLocale(locale, ABOUT_META.description),
     },

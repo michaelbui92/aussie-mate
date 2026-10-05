@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
   const shortDesc = firstSentence(pickLocale(locale, d.description));
   return {
-    ...seoFor(`/destinations/${slug}`),
+    ...seoFor(`/destinations/${slug}`, locale),
     title: fitTitle(title),
     description: fitDescription(
       `${firstSentence(gettingThere)}. ${firstSentence(pickLocale(locale, d.suggestedDays))}. ${shortDesc}`
