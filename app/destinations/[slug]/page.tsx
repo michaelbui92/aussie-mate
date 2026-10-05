@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import { pickLocale, type Lang } from "@/lib/locale";
-import { DEST_TEMPLATES } from "../i18n";
+import { DEST_TEMPLATES, RELATE_TEMPLATES } from "../i18n";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { destinations, getDestination } from "../data";
@@ -522,18 +522,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             // specific invitation, not a generic "use X as a trip".
             // Korean copy mirrors the same intent.
             description: {
-              en: (() => {
-                if (d.tripLength === "day") {
-                  return `Build a ${d.name.en} day trip out of a Sydney base — pick the train, pick the morning, pick the lookout.`;
-                }
-                if (d.tripLength === "weekend") {
-                  return `Plan a ${d.name.en} weekend from Sydney — overnight, two meals, the main thing you came for, and a Sunday-morning walk back.`;
-                }
-                if (d.tripLength === "longer") {
-                  return `${d.name.en} is worth 3+ days — a longer stay lets you catch the second-day-favourite spots that day-trippers miss.`;
-                }
-                return `${d.name.en} is a real trip — fly or drive, give it a week, and slow down enough to actually enjoy the place.`;
-              })(),
+              // English, Japanese and Chinese come from the generated template set; the Korean
+              // copy stays here. One sentence per trip length, personalised with the place name.
+              en: RELATE_TEMPLATES.en[d.tripLength].replace("{name}", d.name.en),
+              ja: RELATE_TEMPLATES.ja[d.tripLength].replace("{name}", pickLocale("ja", d.name)),
+              zh: RELATE_TEMPLATES.zh[d.tripLength].replace("{name}", pickLocale("zh", d.name)),
               ko: (() => {
                 if (d.tripLength === "day") {
                   return `시드니 베이스에서 ${d.name.ko} 당일치기 — 기차, 아침 일정, 주요 전망대까지 짜보세요.`;
