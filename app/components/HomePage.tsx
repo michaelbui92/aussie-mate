@@ -303,11 +303,13 @@ export default function HomePage() {
                     <Ko>경험</Ko>
                   </p>
                   <h3 className="font-serif text-2xl mb-1 leading-tight">
-                    <En>{e.title}</En>
+                    <Ja>{e.jaTitle ?? e.title}</Ja>
+                    <Zh>{e.zhTitle ?? e.title}</Zh>
                     <Ko>{e.koTitle}</Ko>
                   </h3>
                   <p className="text-white/70 text-xs leading-relaxed">
-                    <En>{e.blurb}</En>
+                    <Ja>{e.jaBlurb ?? e.blurb}</Ja>
+                    <Zh>{e.zhBlurb ?? e.blurb}</Zh>
                     <Ko>{e.koBlurb}</Ko>
                   </p>
                 </div>

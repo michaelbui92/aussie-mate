@@ -181,7 +181,8 @@ export default function WeatherPage() {
                     <Ko>{item.ko}</Ko>
                   </h3>
                   <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                    <En>{item.descEn}</En>
+                    <Ja>{item.descJa ?? item.descEn}</Ja>
+                    <Zh>{item.descZh ?? item.descEn}</Zh>
                     <Ko>{item.descKo}</Ko>
                   </p>
                 </div>
@@ -211,7 +212,8 @@ export default function WeatherPage() {
                 className={`reveal reveal-delay-${(i % 5) + 1} p-3.5 rounded-xl bg-stone-800 dark:bg-stone-900 border border-stone-700/50`}
               >
                 <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-1">
-                  <En>{item.labelEn}</En>
+                  <Ja>{item.labelJa ?? item.labelEn}</Ja>
+                  <Zh>{item.labelZh ?? item.labelEn}</Zh>
                   <Ko>{item.labelKo}</Ko>
                 </p>
                 <p className="font-serif text-lg text-white">{item.val}</p>

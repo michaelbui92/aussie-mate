@@ -25,8 +25,8 @@ export interface AccordionItem {
 export interface AccordionSection {
   id: string;
   iconKey: string;
-  title: string;
-  koTitle?: string;
+  title: string; jaTitle?: string; zhTitle?: string;
+ jaDesc?: string; zhDesc?: string;  koTitle?: string;
   desc?: string;
   koDesc?: string;
   items: AccordionItem[];
@@ -83,12 +83,14 @@ export default function Accordion({
               )}
               <div className="flex-1 min-w-0 pr-2">
                 <h2 className="font-serif text-base md:text-lg text-stone-900 dark:text-stone-100 leading-snug">
-                  <En>{section.title}</En>
+                  <Ja>{section.jaTitle || section.title}</Ja>
+                  <Zh>{section.zhTitle || section.title}</Zh>
                   <Ko>{section.koTitle || section.title}</Ko>
                 </h2>
                 {section.desc && (
                   <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">
-                    <En>{section.desc}</En>
+                    <Ja>{section.jaDesc || section.desc}</Ja>
+                    <Zh>{section.zhDesc || section.desc}</Zh>
                     <Ko>{section.koDesc || section.desc}</Ko>
                   </p>
                 )}

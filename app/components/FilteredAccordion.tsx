@@ -18,8 +18,11 @@ export interface BeyondSydneyDestination {
   name: string;
   state: string;
   distance: string;
-  desc: string;
+  desc: string; jaDesc?: string; zhDesc?: string;
   koDesc: string;
+  jaHighlights?: string[]; zhHighlights?: string[];
+  jaTransport?: string; zhTransport?: string;
+  jaBestTime?: string; zhBestTime?: string;
   highlights: string[];
   koHighlights: string[];
   transport: string;
@@ -149,7 +152,8 @@ export default function FilteredAccordion({
               {isOpen && (
                 <div className="px-5 md:px-6 pb-5 border-t border-stone-200/60 dark:border-dark-border pt-5 space-y-4">
                   <p className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed">
-                    <En>{dest.desc}</En>
+                    <Ja>{dest.jaDesc ?? dest.desc}</Ja>
+                    <Zh>{dest.zhDesc ?? dest.desc}</Zh>
                     <Ko>{dest.koDesc}</Ko>
                   </p>
 
@@ -165,7 +169,8 @@ export default function FilteredAccordion({
                           key={i}
                           className="inline-flex items-center text-xs bg-stone-100 dark:bg-darkbg text-stone-700 dark:text-stone-300 px-3 py-1.5 rounded-full"
                         >
-                          <En>{h}</En><Ko>{dest.koHighlights[i]}</Ko>
+                          <Ja>{dest.jaHighlights[i]}</Ja>
+                          <Zh>{dest.zhHighlights?.[i] ?? dest.highlights[i]}</Zh>
                         </span>
                       ))}
                     </div>
@@ -179,7 +184,8 @@ export default function FilteredAccordion({
                         <Zh>如何前往</Zh><Ko>가는 방법</Ko>
                       </p>
                       <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
-                        <En>{dest.transport}</En>
+                        <Ja>{dest.jaTransport ?? dest.transport}</Ja>
+                        <Zh>{dest.zhTransport ?? dest.transport}</Zh>
                         <Ko>{dest.koTransport}</Ko>
                       </p>
                     </div>
@@ -190,7 +196,8 @@ export default function FilteredAccordion({
                         <Zh>最佳游览时间</Zh><Ko>방문 최적기</Ko>
                       </p>
                       <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
-                        <En>{dest.bestTime}</En>
+                        <Ja>{dest.jaBestTime ?? dest.bestTime}</Ja>
+                        <Zh>{dest.zhBestTime ?? dest.bestTime}</Zh>
                         <Ko>{dest.koBestTime}</Ko>
                       </p>
                     </div>

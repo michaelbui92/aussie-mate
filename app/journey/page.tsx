@@ -51,6 +51,8 @@ const stages: Stage[] = [
     emoji: "✈️",
     accent: "sky",
     titleEn: "Before you come",
+    titleJa: "\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u306b\u6765\u308b\u524d\u306b",
+    titleZh: "\u51fa\u53d1\u524d",
     titleKo: "호주에 오기 전에",
     messageEn:
       "If you have not visited Australia, please access Before you come. There are tips to get you ready. Learn some essential Aussie slang.",
@@ -63,6 +65,8 @@ const stages: Stage[] = [
     emoji: "📦",
     accent: "emerald",
     titleEn: "I arrived",
+    titleJa: "\u5230\u7740\u3057\u305f",
+    titleZh: "\u6211\u5230\u4e86",
     titleKo: "방금 도착했어요",
     messageEn:
       "If you have arrived, visit here, get yourself ready, look for a job, apply. It can be daunting living in a new place but don't stress. Be wary of scammers, etc.",
@@ -75,6 +79,8 @@ const stages: Stage[] = [
     emoji: "🏡",
     accent: "teal",
     titleEn: "I call this home",
+    titleJa: "\u3053\u3053\u304c\u6211\u304c\u5bb6",
+    titleZh: "\u6211\u628a\u8fd9\u91cc\u5f53\u4f5c\u5bb6",
     titleKo: "여기가 내 집이에요",
     messageEn:
       "If you have been here for a while and you love it here and want to continue living as long as you can, think about your next steps.",
@@ -166,13 +172,15 @@ export default function JourneyPage() {
                   </div>
 
                   <h2 className={`font-serif text-2xl md:text-3xl ${c.text} leading-tight mb-4`}>
-                    <En>{s.titleEn}</En>
+                    <Ja>{s.titleJa ?? s.titleEn}</Ja>
+                    <Zh>{s.titleZh ?? s.titleEn}</Zh>
                     <Ko>{s.titleKo}</Ko>
                   </h2>
                   <p
                     className={`${c.sub} text-sm md:text-base leading-relaxed mb-6 flex-1`}
                   >
-                    <En>{s.messageEn}</En>
+                    <Ja>{s.messageJa ?? s.messageEn}</Ja>
+                    <Zh>{s.messageZh ?? s.messageEn}</Zh>
                     <Ko>{s.messageKo}</Ko>
                   </p>
 

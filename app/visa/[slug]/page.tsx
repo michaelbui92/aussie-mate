@@ -47,7 +47,8 @@ function Section({
   return (
     <section className="reveal">
       <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
-        <En>{eyebrowEn}</En>
+        <Ja>{eyebrowJa}</Ja>
+        <Zh>{eyebrowZh}</Zh>
         <Ko>{eyebrowKo}</Ko>
       </p>
       {children}

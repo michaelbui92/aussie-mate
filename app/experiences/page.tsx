@@ -81,11 +81,13 @@ export default function ExperiencesPage() {
                   <Zh>体验</Zh><Ko>경험</Ko>
                 </p>
                 <h2 className="font-serif text-3xl md:text-4xl mb-2 leading-tight">
-                  <En>{t.title}</En>
+                  <Ja>{t.jaTitle ?? t.title}</Ja>
+                  <Zh>{t.zhTitle ?? t.title}</Zh>
                   <Ko>{t.koTitle}</Ko>
                 </h2>
                 <p className="text-white/80 text-sm leading-relaxed max-w-md">
-                  <En>{t.blurb}</En>
+                  <Ja>{t.jaBlurb ?? t.blurb}</Ja>
+                  <Zh>{t.zhBlurb ?? t.blurb}</Zh>
                   <Ko>{t.koBlurb}</Ko>
                 </p>
                 <span className="mt-4 text-white/80 text-xs font-medium uppercase tracking-widest group-hover:text-white transition-colors">

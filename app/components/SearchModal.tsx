@@ -195,7 +195,8 @@ export function SearchModal() {
                 <div key={page}>
                   <div className="px-4 py-2 bg-sand/30 dark:bg-dark-surface/80 border-b border-sand dark:border-dark-border">
                     <p className="text-xs font-semibold text-eucalypt/50 dark:text-dark-muted/50 uppercase tracking-wider">
-                      <En>{page}</En>
+                      <Ja>{items[0].pageJa}</Ja>
+                      <Zh>{items[0].pageZh}</Zh>
                       <Ko>{items[0].pageKo}</Ko>
                     </p>
                   </div>
@@ -216,7 +217,8 @@ export function SearchModal() {
                         </svg>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-eucalypt dark:text-dark-muted leading-snug">
-                            <En>{item.section || page}</En>
+                            <Ja>{item.section ? item.sectionJa : item.pageJa}</Ja>
+                            <Zh>{item.section ? (item.sectionZh ?? item.section) : (item.pageZh ?? item.page)}</Zh>
                             <Ko>{item.section ? item.sectionKo : item.pageKo}</Ko>
                           </p>
                           {item.section && (

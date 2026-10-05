@@ -3,6 +3,9 @@
 // Edit this file to add new entries (one per page/section, matching en/ko keywords).
 
 export interface SearchResult {
+  // The index carries English page and section names; these mirror them for the other
+  // locales so the modal can fall back rather than render blank.
+  pageJa?: string; pageZh?: string; sectionJa?: string; sectionZh?: string;
   page: string;
   pageKo: string;
   href: string;

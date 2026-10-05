@@ -58,6 +58,8 @@ export default function HomeContent() {
                 "시드니는 거점이지 목적지가 아닙니다. 주말 여행, NSW 지방, 레드 센터, 태즈메이니아, 그레이트 베리어 리프. 워홀이나 학생 비자만이 이렇게 싸게 할 수 있는 시기를 줍니다 — 활용하세요.",
               href: "/destinations",
               hrefLabelEn: "See destinations →",
+              hrefLabelJa: "\u76ee\u7684\u5730\u3092\u898b\u308b \u2192",
+              hrefLabelZh: "\u67e5\u770b\u76ee\u7684\u5730 \u2192",
               hrefLabelKo: "여행지 보러 가기 →",
             },
             {
@@ -70,6 +72,8 @@ export default function HomeContent() {
                 "학생 비자가 잘 풀리고 있다면 485 비자를 살펴보세요. 워홀 1년이 좋았다면 두 번째 워홀이나 지방 sponsorship. 파트너 비자, 영주권, 시민권 — 모두 수년이 걸립니다. 지금부터 대화를 시작하세요.",
               href: "/visa",
               hrefLabelEn: "See visa options →",
+              hrefLabelJa: "\u30d3\u30b6\u306e\u9078\u629e\u80a2\u3092\u898b\u308b \u2192",
+              hrefLabelZh: "\u67e5\u770b\u7b7e\u8bc1\u9009\u9879 \u2192",
               hrefLabelKo: "비자 옵션 보기 →",
             },
             {
@@ -82,6 +86,8 @@ export default function HomeContent() {
                 "여기서 우정은 고국보다 오래 걸립니다. 동호회, 클라이밍 짐, 언어교환, 자원봉사 — 하나를 골라 6개월은 꾸준히. 그래야 됩니다.",
               href: "/resources",
               hrefLabelEn: "Find your community →",
+              hrefLabelJa: "\u30b3\u30df\u30e5\u30cb\u30c6\u30a3\u3092\u898b\u3064\u3051\u308b \u2192",
+              hrefLabelZh: "\u627e\u5230\u4f60\u7684\u793e\u533a \u2192",
               hrefLabelKo: "커뮤니티 찾기 →",
             },
             {
@@ -94,6 +100,8 @@ export default function HomeContent() {
                 "커피 주문에서 한 단계 더 — 농담, 함의, 직장 농담. 매일 팟캐스트, 책, 하루 한 번 진짜 대화. 6개월이면 모든 대화가 달라집니다.",
               href: "/aussie-english",
               hrefLabelEn: "Open the slang library →",
+              hrefLabelJa: "\u30b9\u30e9\u30f3\u30b0\u96c6\u3092\u958b\u304f \u2192",
+              hrefLabelZh: "\u6253\u5f00\u4fda\u8bed\u5e93 \u2192",
               hrefLabelKo: "호주 슬랭 라이브러리 열기 →",
             },
           ].map((w, i) => (
@@ -109,7 +117,8 @@ export default function HomeContent() {
                 <Ko>{w.ko}</Ko>
               </h3>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
-                <En>{w.blurbEn}</En>
+                <Ja>{w.blurbJa ?? w.blurbEn}</Ja>
+                <Zh>{w.blurbZh ?? w.blurbEn}</Zh>
                 <Ko>{w.blurbKo}</Ko>
               </p>
               {w.href && (
@@ -117,7 +126,8 @@ export default function HomeContent() {
                   href={w.href}
                   className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300 transition-colors"
                 >
-                  <En>{w.hrefLabelEn}</En>
+                  <Ja>{w.hrefLabelJa ?? w.hrefLabelEn}</Ja>
+                  <Zh>{w.hrefLabelZh ?? w.hrefLabelEn}</Zh>
                   <Ko>{w.hrefLabelKo}</Ko>
                 </Link>
               )}
@@ -208,7 +218,8 @@ export default function HomeContent() {
                   <Ko>{item.ko}</Ko>
                 </h3>
                 <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                  <En>{item.descEn}</En>
+                  <Ja>{item.descJa ?? item.descEn}</Ja>
+                  <Zh>{item.descZh ?? item.descEn}</Zh>
                   <Ko>{item.descKo}</Ko>
                 </p>
               </div>
@@ -315,7 +326,8 @@ export default function HomeContent() {
                 <Ko>{w.ko}</Ko>
               </h3>
               <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">
-                <En>{w.blurbEn}</En>
+                <Ja>{w.blurbJa ?? w.blurbEn}</Ja>
+                <Zh>{w.blurbZh ?? w.blurbEn}</Zh>
                 <Ko>{w.blurbKo}</Ko>
               </p>
             </div>

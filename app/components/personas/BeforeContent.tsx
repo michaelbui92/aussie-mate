@@ -28,6 +28,8 @@ const checklists: Checklist[] = [
   {
     id: "documents",
     titleEn: "Documents & visa",
+    titleJa: "\u66f8\u985e\u3068\u30d3\u30b6",
+    titleZh: "\u8bc1\u4ef6\u4e0e\u7b7e\u8bc1",
     titleKo: "비자와 서류",
     subtitleEn:
       "Get these right first — everything else depends on having a valid visa grant.",
@@ -45,6 +47,8 @@ const checklists: Checklist[] = [
   {
     id: "money",
     titleEn: "Money & banking",
+    titleJa: "\u304a\u91d1\u3068\u9280\u884c",
+    titleZh: "\u91d1\u94b1\u4e0e\u94f6\u884c",
     titleKo: "돈과 은행",
     subtitleEn:
       "Get an Australian bank account open before you fly — it takes 20 minutes and saves weeks of friction.",
@@ -60,6 +64,8 @@ const checklists: Checklist[] = [
   {
     id: "connectivity",
     titleEn: "Connectivity & apps",
+    titleJa: "\u901a\u4fe1\u3068\u30a2\u30d7\u30ea",
+    titleZh: "\u901a\u4fe1\u4e0e App",
     titleKo: "통신과 앱",
     subtitleEn:
       "Have a working phone number and the right apps the moment you land.",
@@ -74,12 +80,16 @@ const checklists: Checklist[] = [
     link: {
       href: "/transport",
       labelEn: "See how to get around Sydney once you land →",
+      labelJa: "\u5230\u7740\u3057\u305f\u3089\u3001\u30b7\u30c9\u30cb\u30fc\u3067\u306e\u79fb\u52d5\u65b9\u6cd5\u3092\u898b\u308b \u2192",
+      labelZh: "\u770b\u770b\u843d\u5730\u6089\u5c3c\u540e\u600e\u4e48\u51fa\u884c \u2192",
       labelKo: "시드니에서 이동하는 법 보기 →",
     },
   },
   {
     id: "pack",
     titleEn: "What to pack",
+    titleJa: "\u6301\u3061\u7269",
+    titleZh: "\u884c\u674e\u51c6\u5907",
     titleKo: "준비물",
     subtitleEn:
       "Small list — most things you can buy here once you've landed.",
@@ -96,6 +106,8 @@ const checklists: Checklist[] = [
   {
     id: "booked",
     titleEn: "Booked & confirmed",
+    titleJa: "\u4e88\u7d04\u3068\u78ba\u8a8d",
+    titleZh: "\u5df2\u9884\u8ba2\u5e76\u786e\u8ba4",
     titleKo: "예약과 확인",
     subtitleEn:
       "First-week logistics. Don't leave these to the day you land.",
@@ -162,12 +174,14 @@ export default function BeforeContent() {
               0{sIdx + 1}
             </span>
             <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-              <En>{section.titleEn}</En>
+              <Ja>{section.titleJa ?? section.titleEn}</Ja>
+              <Zh>{section.titleZh ?? section.titleEn}</Zh>
               <Ko>{section.titleKo}</Ko>
             </h2>
           </div>
           <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>{section.subtitleEn}</En>
+            <Ja>{section.subtitleJa ?? section.subtitleEn}</Ja>
+            <Zh>{section.subtitleZh ?? section.subtitleEn}</Zh>
             <Ko>{section.subtitleKo}</Ko>
           </p>
 
@@ -191,7 +205,8 @@ export default function BeforeContent() {
               href={section.link.href}
               className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-300 transition-colors"
             >
-              <En>{section.link.labelEn}</En>
+              <Ja>{section.link.labelJa ?? section.link.labelEn}</Ja>
+              <Zh>{section.link.labelZh ?? section.link.labelEn}</Zh>
               <Ko>{section.link.labelKo}</Ko>
             </Link>
           )}
