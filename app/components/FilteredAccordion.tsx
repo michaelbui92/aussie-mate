@@ -18,6 +18,7 @@ export interface BeyondSydneyDestination {
   name: string;
   state: string;
   distance: string;
+  jaDistance?: string; zhDistance?: string;
   desc: string; jaDesc?: string; zhDesc?: string;
   koDesc: string;
   jaHighlights?: string[]; zhHighlights?: string[];
@@ -138,6 +139,8 @@ export default function FilteredAccordion({
                   </div>
                   <p className="text-xs text-stone-500 dark:text-stone-400">
                     <En>{dest.distance}</En>
+                    <Ja>{dest.jaDistance ?? dest.distance}</Ja>
+                    <Zh>{dest.zhDistance ?? dest.distance}</Zh>
                     <Ko>{dest.distance}</Ko>
                   </p>
                 </div>

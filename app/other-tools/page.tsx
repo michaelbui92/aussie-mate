@@ -58,6 +58,20 @@ const tools = [
       "Patient, experienced instructor",
       "Pass your P-plate test with confidence",
     ],
+    featuresJa: [
+      "\u30b7\u30c9\u30cb\u30fc\u306e\u3059\u3079\u3066\u306e\u8a66\u9a13\u30eb\u30fc\u30c8\u3092\u30ab\u30d0\u30fc",
+      "\u5b89\u5168\u306e\u305f\u3081\u306e\u30c7\u30e5\u30a2\u30eb\u30b3\u30f3\u30c8\u30ed\u30fc\u30eb\u8eca",
+      "\u67d4\u8edf\u306a\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb \u2014 \u65e9\u671d\u304b\u3089\u591c\u307e\u3067",
+      "\u5fcd\u8010\u5f37\u304f\u7d4c\u9a13\u8c4a\u304b\u306a\u30a4\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u30fc",
+      "\u81ea\u4fe1\u3092\u6301\u3063\u3066P-plate\u8a66\u9a13\u306b\u5408\u683c\u3057\u307e\u3057\u3087\u3046",
+    ],
+    featuresZh: [
+      "\u8986\u76d6\u6089\u5c3c\u6240\u6709\u8003\u8bd5\u8def\u7ebf",
+      "\u53cc\u63a7\u6559\u7ec3\u8f66\uff0c\u4fdd\u969c\u4f60\u7684\u5b89\u5168",
+      "\u7075\u6d3b\u7684\u65f6\u95f4\u5b89\u6392\u2014\u2014\u4ece\u6e05\u6668\u5230\u665a\u4e0a",
+      "\u8010\u5fc3\u3001\u7ecf\u9a8c\u4e30\u5bcc\u7684\u6559\u7ec3",
+      "\u81ea\u4fe1\u901a\u8fc7 P-plate \u8003\u8bd5",
+    ],
   },
   {
     id: "study-buddy",
@@ -86,6 +100,20 @@ const tools = [
       "Progress tracking and streaks",
       "Korean and English language support",
       "Designed for international students",
+    ],
+    featuresJa: [
+      "AI\u642d\u8f09\u306e\u5358\u8a9e\u30ab\u30fc\u30c9\u30c7\u30c3\u30ad",
+      "\u9577\u671f\u8a18\u61b6\u306e\u305f\u3081\u306e\u9593\u9694\u53cd\u5fa9",
+      "\u9032\u6357\u306e\u8a18\u9332\u3068\u9023\u7d9a\u5b66\u7fd2\u65e5\u6570",
+      "\u97d3\u56fd\u8a9e\u3068\u82f1\u8a9e\u306e\u30b5\u30dd\u30fc\u30c8",
+      "\u7559\u5b66\u751f\u306e\u305f\u3081\u306b\u8a2d\u8a08",
+    ],
+    featuresZh: [
+      "AI \u9a71\u52a8\u7684\u5355\u8bcd\u5361\u724c\u7ec4",
+      "\u95f4\u9694\u91cd\u590d\uff0c\u5e2e\u52a9\u5f62\u6210\u957f\u671f\u8bb0\u5fc6",
+      "\u8fdb\u5ea6\u8ffd\u8e2a\u4e0e\u8fde\u7eed\u6253\u5361",
+      "\u652f\u6301\u97e9\u8bed\u548c\u82f1\u8bed",
+      "\u4e13\u4e3a\u7559\u5b66\u751f\u6253\u9020",
     ],
   },
 ];
@@ -185,7 +213,9 @@ export default function OtherToolsPage() {
               {tool.features.map((f, fi) => (
                 <li key={fi} className="flex items-start gap-2 text-sm text-stone-600 dark:text-stone-400">
                   <span className="text-sage shrink-0 mt-0.5">✓</span>
-                  {f}
+                  <En translated>{f}</En>
+                  <Ja>{tool.featuresJa?.[fi] ?? f}</Ja>
+                  <Zh>{tool.featuresZh?.[fi] ?? f}</Zh>
                 </li>
               ))}
             </ul>

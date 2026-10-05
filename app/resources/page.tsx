@@ -37,8 +37,12 @@ const sections: AccordionSection[] = [
     id: "government",
     iconKey: "Building2",
     title: "Government Services",
+    jaTitle: "\u653f\u5e9c\u30b5\u30fc\u30d3\u30b9",
+    zhTitle: "\u653f\u5e9c\u670d\u52a1",
     koTitle: "정부 서비스",
     desc: "Essential services for healthcare, tax, employment, and more",
+    jaDesc: "\u533b\u7642\u3001\u7a0e\u91d1\u3001\u96c7\u7528\u306a\u3069\u306e\u5fc5\u9808\u30b5\u30fc\u30d3\u30b9",
+    zhDesc: "\u533b\u7597\u3001\u7a0e\u52a1\u3001\u5c31\u4e1a\u7b49\u5fc5\u5907\u670d\u52a1",
     koDesc: "의료, 세금, 취업 등을 위한 필수 서비스",
     items: [
       {
@@ -96,8 +100,12 @@ const sections: AccordionSection[] = [
     id: "education",
     iconKey: "Book",
     title: "Education",
+    jaTitle: "\u6559\u80b2",
+    zhTitle: "\u6559\u80b2",
     koTitle: "교육",
     desc: "Universities, TAFE, and study resources in NSW",
+    jaDesc: "NSW\u306e\u5927\u5b66\u3001TAFE\u3001\u5b66\u7fd2\u30ea\u30bd\u30fc\u30b9",
+    zhDesc: "\u65b0\u5357\u5a01\u5c14\u58eb\u5dde\u7684\u5927\u5b66\u3001TAFE \u4e0e\u5b66\u4e60\u8d44\u6e90",
     koDesc: "NSW의 대학, TAFE, 학습 자료",
     items: [
       {
@@ -137,6 +145,8 @@ const sections: AccordionSection[] = [
       },
       {
         label: "University of Technology Sydney (UTS)",
+        jaLabel: "University of Technology Sydney (UTS)",
+        zhLabel: "\u6089\u5c3c\u79d1\u6280\u5927\u5b66\uff08UTS\uff09",
         en: "A young, dynamic university focused on industry-relevant education. Strong in IT, design, communication, business, and nursing. Ultimo campus is right in the city centre — walking distance to Central Station and Chinatown. Known for its distinctive 'brown paper bag' building.", ja: "産業に直結した教育に力を入れる、若く活力のある大学です。IT、デザイン、コミュニケーション、ビジネス、看護に強いです。Ultimoキャンパスは市の中心部にあり、Central駅やチャイナタウンまで徒歩圏内です。独特な「茶色い紙袋」の建物で知られています。", zh: "一所年轻而充满活力、注重行业相关教育的大学。在 IT、设计、传播、商科和护理方面实力较强。Ultimo 校区就在市中心 — 步行即可到达中央车站和唐人街。以其独特的“牛皮纸袋”式建筑而闻名。",
         ko: "산업 맞춤형 교육에 중점을 둔 젊고 역동적인 대학교입니다. IT, 디자인, 커뮤니케이션, 경영, 간호 분야에 강점이 있습니다. Ultimo 캠퍼스는 도심 한복판에 있어 Central Station과 차이나타운에서 도보 거리입니다. 독특한 '갈색 종이 가방' 건물로 유명합니다.",
         url: "https://www.uts.edu.au",
@@ -155,8 +165,12 @@ const sections: AccordionSection[] = [
     id: "healthcare",
     iconKey: "Ambulance",
     title: "Healthcare",
+    jaTitle: "\u533b\u7642",
+    zhTitle: "\u533b\u7597\u4fdd\u5065",
     koTitle: "의료",
     desc: "Medical services, mental health support, and urgent care",
+    jaDesc: "\u533b\u7642\u30b5\u30fc\u30d3\u30b9\u3001\u30e1\u30f3\u30bf\u30eb\u30d8\u30eb\u30b9\u652f\u63f4\u3001\u7dca\u6025\u8a3a\u7642",
+    zhDesc: "\u533b\u7597\u670d\u52a1\u3001\u5fc3\u7406\u5065\u5eb7\u652f\u6301\u4e0e\u7d27\u6025\u62a4\u7406",
     koDesc: "의료 서비스, 정신 건강 지원, 응급 진료",
     items: [
       {
@@ -200,8 +214,12 @@ const sections: AccordionSection[] = [
     id: "emergency",
     iconKey: "AlertTriangle",
     title: "Emergency Contacts",
+    jaTitle: "\u7dca\u6025\u9023\u7d61\u5148",
+    zhTitle: "\u7d27\u6025\u8054\u7cfb\u65b9\u5f0f",
     koTitle: "비상 연락처",
     desc: "Who to call in an emergency — keep these numbers saved",
+    jaDesc: "\u7dca\u6025\u6642\u306b\u3069\u3053\u3078\u96fb\u8a71\u3059\u308b\u304b \u2014 \u3053\u306e\u756a\u53f7\u3092\u4fdd\u5b58\u3057\u3066\u304a\u304d\u307e\u3057\u3087\u3046",
+    zhDesc: "\u7d27\u6025\u60c5\u51b5\u4e0b\u8be5\u6253\u7ed9\u8c01\u2014\u2014\u628a\u8fd9\u4e9b\u53f7\u7801\u5b58\u597d",
     koDesc: "응급 시 연락할 곳 — 이 번호를 저장해두세요",
     items: [
       {
@@ -238,8 +256,12 @@ const sections: AccordionSection[] = [
     id: "printable",
     iconKey: "Book",
     title: "Printable Travel Resources",
+    jaTitle: "\u5370\u5237\u3067\u304d\u308b\u65c5\u884c\u8cc7\u6599",
+    zhTitle: "\u53ef\u6253\u5370\u65c5\u884c\u8d44\u6e90",
     koTitle: "인쇄 가능한 여행 자료",
     desc: "Downloadable itineraries, packing lists, and travel guides",
+    jaDesc: "\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3067\u304d\u308b\u65c5\u7a0b\u3001\u6301\u3061\u7269\u30ea\u30b9\u30c8\u3001\u65c5\u884c\u30ac\u30a4\u30c9",
+    zhDesc: "\u53ef\u4e0b\u8f7d\u7684\u884c\u7a0b\u3001\u884c\u674e\u6e05\u5355\u4e0e\u65c5\u884c\u6307\u5357",
     koDesc: "다운로드 가능한 여행 일정표, 짐챙김 목록, 여행 가이드",
     items: [
       {
