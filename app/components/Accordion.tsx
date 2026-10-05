@@ -8,6 +8,7 @@
 // no glass effects, soft borders that warm to sunset on hover.
 
 import { useState, ReactNode, ComponentType } from "react";
+import { pickLocale } from "@/lib/locale";
 import { ChevronDown, Icons } from "./Icons";
 import { En, Ja, Ko, Zh } from "./LangBlocks";
 
@@ -111,10 +112,10 @@ export default function Accordion({
                       </p>
                     </En>
                     <Ja><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
-                        {item.en}
+                        {pickLocale("ja", item)}
                       </p></Ja>
                     <Zh><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-2">
-                        {item.en}
+                        {pickLocale("zh", item)}
                       </p></Zh>
                     <Ko>
                       <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { pickLocale } from "@/lib/locale";
 import { En, Ja, Ko, Zh } from "./LangBlocks";
 import * as Icons from "./Icons";
 
@@ -204,10 +205,10 @@ export default function EditorialSection({
                 </p>
               </En>
               <Ja><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                  {item.en}
+                  {pickLocale("ja", item)}
                 </p></Ja>
               <Zh><p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                  {item.en}
+                  {pickLocale("zh", item)}
                 </p></Zh>
               <Ko>
                 <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">

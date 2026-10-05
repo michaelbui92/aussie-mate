@@ -520,10 +520,10 @@ export default function WildlifePage() {
                     </p>
                   </En>
                   <Ja><p className="text-sm text-stone-300 leading-relaxed">
-                      {tip.en}
+                      {pickLocale("ja", tip)}
                     </p></Ja>
                   <Zh><p className="text-sm text-stone-300 leading-relaxed">
-                      {tip.en}
+                      {pickLocale("zh", tip)}
                     </p></Zh>
                   <Ko>
                     <p className="text-sm text-stone-300 leading-relaxed">
