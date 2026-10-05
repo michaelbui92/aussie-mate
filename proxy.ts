@@ -3,12 +3,13 @@ import { NextRequest, NextResponse } from "next/server";
 // Next 16 renamed this convention: proxy.ts, exporting proxy(). Verified against the build output,
 // which warned "The middleware file convention is deprecated. Please use proxy instead."
 //
-// Korean (and the not-yet-written zh/ja) get a URL prefix of their own, and every request -- with or
+// Korean, Japanese and Chinese each get a URL prefix of their own, and every request -- with or
 // without a prefix -- carries its public path so the root layout can state the correct canonical.
 //
-// Why the rewrite: the copy for every language already lives in the page components as <En>/<Ko>
-// blocks, so there is no /ko version of a page to render -- only a locale to render the same page in.
-// Rewriting means /ko/destinations renders app/destinations/page.tsx, so no existing route changes.
+// Why the rewrite: the copy for every language already lives in the page components as <En>/<Ko>/
+// <Ja>/<Zh> blocks, so there is no /ko version of a page to render -- only a locale to render the
+// same page in. Rewriting means /ko/destinations renders app/destinations/page.tsx, so no existing
+// route changes.
 //
 // Why the headers: a Server Component cannot read the browser's language, and a page's `metadata`
 // export is static, so neither the locale nor the canonical can come from the page. x-am-locale says

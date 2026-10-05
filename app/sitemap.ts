@@ -72,19 +72,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Korean has its own URL for every page (middleware rewrites /ko/<path> onto the same route, and the
-  // components carry both languages), so each entry is listed twice and each copy names the other.
-  // A sitemap that lists one language while claiming hreflang for two is how a search engine concludes
-  // the Korean does not exist.
-  const bilingual = (entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap =>
+  // Every page is one route carrying all four languages, and proxy.ts gives each language a URL
+  // prefix of its own. So a page is listed once per language, and every copy names the whole set.
+  // A sitemap that lists one language while claiming hreflang for another is how a search engine
+  // concludes the missing language does not exist -- which is what happened to Japanese and Chinese:
+  // translated, reachable, and undeclared, so nothing pointed a Japanese or Chinese reader at them.
+  const LOCALES = [
+    { prefix: "", hreflang: "en" },
+    { prefix: "/ko", hreflang: "ko" },
+    { prefix: "/ja", hreflang: "ja" },
+    { prefix: "/zh", hreflang: "zh-Hans" },
+  ] as const;
+
+  const localised = (entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap =>
     entries.flatMap((e) => {
       const bare = e.url.replace(SITE_URL, "");
-      const languages = { en: e.url, ko: `${SITE_URL}/ko${bare}` };
-      return [
-        { ...e, alternates: { languages } },
-        { ...e, url: `${SITE_URL}/ko${bare}`, alternates: { languages } },
-      ];
+      const languages: Record<string, string> = { "x-default": e.url };
+      for (const l of LOCALES) languages[l.hreflang] = `${SITE_URL}${l.prefix}${bare}`;
+      return LOCALES.map((l) => ({
+        ...e,
+        url: `${SITE_URL}${l.prefix}${bare}`,
+        alternates: { languages },
+      }));
     });
 
-  return bilingual([...staticEntries, ...destinationEntries, ...visaEntries]);
+  return localised([...staticEntries, ...destinationEntries, ...visaEntries]);
 }

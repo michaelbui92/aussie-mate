@@ -176,8 +176,17 @@ const ADSENSE_PUBLISHER_ID = resolveAdsenseId();
 // serving /destinations or /ko/destinations, and three hreflang tags pointing at one URL express
 // nothing. The middleware supplies the public path and the locale; this turns them into the real thing.
 //
-// Every page has both languages -- the components carry <En> and <Ko> blocks for every string -- so
-// each URL can honestly declare the other, and /ko is reachable for all of them rather than a subset.
+// Every page carries all four languages -- the components hold <En>, <Ko>, <Ja> and <Zh> blocks for
+// every string -- so each URL can honestly declare the other three, and the translated URLs exist
+// for all of them rather than a subset.
+//
+// zh-Hans rather than zh: the Chinese copy is Simplified, and the bare tag leaves the script
+// unresolved for a search engine.
+//
+// NOT set here: og:locale. Each page's static `metadata` spreads seoFor(), which carries
+// openGraph.locale = en_AU, and a page's openGraph replaces the layout's object rather than merging
+// into it. So og:locale stays en_AU on every language until the pages can state their own locale
+// per request -- a per-page change, not one line here.
 export async function generateMetadata(): Promise<Metadata> {
   const h = await headers();
   const locale = h.get("x-am-locale") ?? "en";
@@ -193,6 +202,7 @@ export async function generateMetadata(): Promise<Metadata> {
         en: `${site}${bare}`,
         ko: `${site}/ko${bare}`,
         ja: `${site}/ja${bare}`,
+        "zh-Hans": `${site}/zh${bare}`,
         "x-default": `${site}${bare}`,
       },
     },
