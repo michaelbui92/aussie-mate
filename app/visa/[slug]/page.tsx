@@ -37,17 +37,22 @@ export async function generateMetadata({
 
 function Section({
   eyebrowEn,
+  eyebrowJa,
+  eyebrowZh,
   eyebrowKo,
   children,
 }: {
   eyebrowEn: string;
+  eyebrowJa?: string;
+  eyebrowZh?: string;
   eyebrowKo: string;
   children: React.ReactNode;
 }) {
   return (
     <section className="reveal">
       <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
-        <En>{eyebrowEn}</En>
+        <Ja>{eyebrowJa ?? eyebrowEn}</Ja>
+        <Zh>{eyebrowZh ?? eyebrowEn}</Zh>
         <Ko>{eyebrowKo}</Ko>
       </p>
       {children}

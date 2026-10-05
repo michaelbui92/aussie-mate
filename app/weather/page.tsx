@@ -69,17 +69,25 @@ const slipSlop = [
 ] as const;
 
 const quirks = [
-  { en: '"Four seasons in one day"', ko: '"하루에 네 계절"', descEn: "Sydney and Melbourne especially can shift from sunny to rain to wind in hours. Always bring a light jacket.", descKo: "시드니와 멜버른은 특히 몇 시간 만에 맑음에서 비, 바람으로 바뀔 수 있습니다. 항상 가벼운 재킷을 가지고 다니세요." },
-  { en: "Summer storms", ja: "夏の嵐", zh: "夏季雷暴", ko: "여름 뇌우", descEn: "Afternoon thunderstorms are common in summer — especially in the east. They pass quickly.", descKo: "여름철 오후 천둥번개가 흔함 — 특히 동부. 빠르게 지나갑니다." },
-  { en: "Bushfire season", ja: "森林火災の季節", zh: "丛林大火季节", ko: "산불 시즌", descEn: "Summer (Dec–Feb) brings high fire danger, especially in regional NSW. Check the RFS website before regional travel.", descKo: "여름(12–2월)에는 산불 위험이 높음, 특히 NSW 지역. 지역 여행 전 RFS 웹사이트를 확인하세요." },
-  { en: "El Niño years", ja: "エルニーニョの年", zh: "厄尔尼诺年份", ko: "엘니뇨 해", descEn: "Drought conditions are more common in El Niño years. Water restrictions can apply. Check your local council website.", descKo: "엘니뇨 해에는 가뭄이 더 흔합니다. 상수도 사용 제한이 적용될 수 있습니다." },
+  { en: '"Four seasons in one day"', ko: '"하루에 네 계절"', descEn: "Sydney and Melbourne especially can shift from sunny to rain to wind in hours. Always bring a light jacket.",
+  descJa: "\u7279\u306b\u30b7\u30c9\u30cb\u30fc\u3068\u30e1\u30eb\u30dc\u30eb\u30f3\u306f\u3001\u6570\u6642\u9593\u3067\u6674\u308c\u304b\u3089\u96e8\u3001\u305d\u3057\u3066\u98a8\u3078\u3068\u5909\u308f\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u5e38\u306b\u8584\u624b\u306e\u30b8\u30e3\u30b1\u30c3\u30c8\u3092\u6301\u3061\u6b69\u304d\u307e\u3057\u3087\u3046\u3002",
+  descZh: "\u6089\u5c3c\u548c\u58a8\u5c14\u672c\u5c24\u5176\u5982\u6b64\uff0c\u51e0\u4e2a\u5c0f\u65f6\u5185\u5c31\u80fd\u4ece\u6674\u5929\u53d8\u6210\u4e0b\u96e8\uff0c\u518d\u53d8\u6210\u522e\u98ce\u3002\u968f\u8eab\u5e26\u4e00\u4ef6\u8584\u5916\u5957\u3002", descKo: "시드니와 멜버른은 특히 몇 시간 만에 맑음에서 비, 바람으로 바뀔 수 있습니다. 항상 가벼운 재킷을 가지고 다니세요." },
+  { en: "Summer storms", ja: "夏の嵐", zh: "夏季雷暴", ko: "여름 뇌우", descEn: "Afternoon thunderstorms are common in summer — especially in the east. They pass quickly.", descKo: "여름철 오후 천둥번개가 흔함 — 특히 동부. 빠르게 지나갑니다.", descJa: "\u590f\u306f\u5348\u5f8c\u306e\u96f7\u96e8\u304c\u3088\u304f\u3042\u308a\u307e\u3059 \u2014 \u7279\u306b\u6771\u90e8\u3067\u3002\u3059\u3050\u306b\u901a\u308a\u904e\u304e\u307e\u3059\u3002", descZh: "\u590f\u5b63\u5348\u540e\u5e38\u6709\u96f7\u66b4\u2014\u2014\u5c24\u5176\u662f\u5728\u4e1c\u90e8\u3002\u6765\u5f97\u5feb\uff0c\u53bb\u5f97\u4e5f\u5feb\u3002" },
+  { en: "Bushfire season", ja: "森林火災の季節", zh: "丛林大火季节", ko: "산불 시즌", descEn: "Summer (Dec–Feb) brings high fire danger, especially in regional NSW. Check the RFS website before regional travel.",
+  descJa: "\u590f\uff0812\u301c2\u6708\uff09\u306f\u7279\u306bNSW\u306e\u5730\u65b9\u3067\u68ee\u6797\u706b\u707d\u306e\u5371\u967a\u304c\u9ad8\u307e\u308a\u307e\u3059\u3002\u5730\u65b9\u3078\u51fa\u304b\u3051\u308b\u524d\u306bRFS\u306e\u30a6\u30a7\u30d6\u30b5\u30a4\u30c8\u3092\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002",
+  descZh: "\u590f\u5b63\uff0812 \u6708\u20132 \u6708\uff09\u5c71\u706b\u98ce\u9669\u5f88\u9ad8\uff0c\u5c24\u5176\u662f\u5728\u65b0\u5357\u5a01\u5c14\u58eb\u5dde\u4e61\u9547\u5730\u533a\u3002\u53bb\u4e61\u9547\u65c5\u884c\u524d\u5148\u67e5\u770b RFS \u7f51\u7ad9\u3002", descKo: "여름(12–2월)에는 산불 위험이 높음, 특히 NSW 지역. 지역 여행 전 RFS 웹사이트를 확인하세요." },
+  { en: "El Niño years", ja: "エルニーニョの年", zh: "厄尔尼诺年份", ko: "엘니뇨 해", descEn: "Drought conditions are more common in El Niño years. Water restrictions can apply. Check your local council website.",
+  descJa: "\u5e72\u3070\u3064\u306f\u30a8\u30eb\u30cb\u30fc\u30cb\u30e7\u306e\u5e74\u306b\u8d77\u3053\u308a\u3084\u3059\u304f\u306a\u308a\u307e\u3059\u3002\u7d66\u6c34\u5236\u9650\u304c\u304b\u304b\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u5730\u5143\u306e\u30ab\u30a6\u30f3\u30b7\u30eb\u306e\u30a6\u30a7\u30d6\u30b5\u30a4\u30c8\u3092\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002",
+  descZh: "\u5384\u5c14\u5c3c\u8bfa\u5e74\u66f4\u5bb9\u6613\u51fa\u73b0\u5e72\u65f1\u3002\u53ef\u80fd\u4f1a\u5b9e\u65bd\u9650\u6c34\u63aa\u65bd\u3002\u8bf7\u67e5\u770b\u4f60\u6240\u5728\u5730\u65b9\u8bae\u4f1a\u7684\u7f51\u7ad9\u3002", descKo: "엘니뇨 해에는 가뭄이 더 흔합니다. 상수도 사용 제한이 적용될 수 있습니다." },
 ] as const;
 
 const sydneyStats = [
-  { labelEn: "Avg Summer", labelKo: "여름 평균", val: "24°C / 19°C" },
-  { labelEn: "Avg Winter", labelKo: "겨울 평균", val: "17°C / 9°C" },
-  { labelEn: "Sea temp (summer)", labelKo: "해수 온도 (여름)", val: "23–26°C" },
-  { labelEn: "Rainiest month", labelKo: "강수량이 가장 많은 월", val: "June (130mm)" },
+  { labelEn: "Avg Summer", labelKo: "여름 평균", val: "24°C / 19°C", labelJa: "\u590f\u306e\u5e73\u5747", labelZh: "\u590f\u5b63\u5e73\u5747", },
+  { labelEn: "Avg Winter", labelKo: "겨울 평균", val: "17°C / 9°C", labelJa: "\u51ac\u306e\u5e73\u5747", labelZh: "\u51ac\u5b63\u5e73\u5747", },
+  { labelEn: "Sea temp (summer)", labelKo: "해수 온도 (여름)", val: "23–26°C", labelJa: "\u6d77\u6c34\u6e29\uff08\u590f\uff09", labelZh: "\u6d77\u6c34\u6e29\u5ea6\uff08\u590f\u5b63\uff09" },
+  { labelEn: "Rainiest month",
+  labelJa: "\u6700\u3082\u96e8\u306e\u591a\u3044\u6708",
+  labelZh: "\u6700\u591a\u96e8\u7684\u6708\u4efd", labelKo: "강수량이 가장 많은 월", val: "June (130mm)" },
 ] as const;
 
 export default function WeatherPage() {
@@ -181,7 +189,8 @@ export default function WeatherPage() {
                     <Ko>{item.ko}</Ko>
                   </h3>
                   <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                    <En>{item.descEn}</En>
+                    <Ja>{item.descJa}</Ja>
+                    <Zh>{item.descZh}</Zh>
                     <Ko>{item.descKo}</Ko>
                   </p>
                 </div>
@@ -211,7 +220,8 @@ export default function WeatherPage() {
                 className={`reveal reveal-delay-${(i % 5) + 1} p-3.5 rounded-xl bg-stone-800 dark:bg-stone-900 border border-stone-700/50`}
               >
                 <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-1">
-                  <En>{item.labelEn}</En>
+                  <Ja>{item.labelJa}</Ja>
+                  <Zh>{item.labelZh}</Zh>
                   <Ko>{item.labelKo}</Ko>
                 </p>
                 <p className="font-serif text-lg text-white">{item.val}</p>

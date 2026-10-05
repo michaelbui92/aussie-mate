@@ -25,6 +25,8 @@ const categories = [
   {
     emoji: "🏠",
     title: "Rent & Housing",
+    jaTitle: "\u5bb6\u8cc3\u3068\u4f4f\u307e\u3044",
+    zhTitle: "\u623f\u79df\u4e0e\u4f4f\u623f",
     items: [
       { en: "Shared house (room, inner Sydney)", ja: "シェアハウス（1部屋、シドニー市内）", zh: "合租房（单间，悉尼内城）", ko: "쉐어하우스 (방 1개, 시드니 시내 근접)", cost: "$280–$450/week" },
       { en: "Studio / 1-bedroom apartment (inner Sydney)", ja: "ワンルーム / 1ベッドルームのアパート（シドニー市内）", zh: "单间公寓 / 一居室公寓（悉尼内城）", ko: "원룸 / 1베드룸 아파트 (시드니 시내)", cost: "$550–$800/week" },
@@ -37,6 +39,8 @@ const categories = [
   {
     emoji: "🚇",
     title: "Transport",
+    jaTitle: "\u4ea4\u901a",
+    zhTitle: "\u4ea4\u901a",
     items: [
       { en: "Opal card weekly cap (adult)", ja: "Opalカードの週上限（大人）", zh: "Opal卡每周上限（成人）", ko: "Opal 카드 주간 상한선 (성인)", cost: "$50" },
       { en: "Single train trip (CBD to Parramatta)", ja: "電車1回（CBD〜Parramatta）", zh: "单程火车（CBD到Parramatta）", ko: "기차 1회 (CBD → Parramatta)", cost: "$5.60" },
@@ -49,6 +53,8 @@ const categories = [
   {
     emoji: "🛒",
     title: "Groceries & Food",
+    jaTitle: "\u98df\u6599\u54c1\u3068\u98df\u4e8b",
+    zhTitle: "\u98df\u54c1\u6742\u8d27\u4e0e\u996e\u98df",
     items: [
       { en: "Weekly grocery shop (1 person, Woolies/Coles)", ja: "毎週の食料品（1人分、Woolies/Coles）", zh: "每周食品杂货（1人，Woolies/Coles）", ko: "주간 식료품 (1인, Woolies/Coles)", cost: "$80–$120" },
       { en: "Milk (1L)", ja: "牛乳（1L）", zh: "牛奶（1升）", ko: "우유 (1L)", cost: "$2.50" },
@@ -65,6 +71,8 @@ const categories = [
   {
     emoji: "📱",
     title: "Phone & Internet",
+    jaTitle: "\u30b9\u30de\u30db\u3068\u30a4\u30f3\u30bf\u30fc\u30cd\u30c3\u30c8",
+    zhTitle: "\u624b\u673a\u4e0e\u7f51\u7edc",
     items: [
       { en: "Prepaid SIM (Amaysim / Boost / Aldi)", ja: "プリペイドSIM（Amaysim / Boost / Aldi）", zh: "预付费SIM卡（Amaysim / Boost / Aldi）", ko: "선불 SIM (Amaysim / Boost / Aldi)", cost: "$15–$30/month" },
       { en: "Postpaid plan (20GB+)", ja: "ポストペイドプラン（20GB+）", zh: "后付费套餐（20GB+）", ko: "후불 요금제 (20GB+)", cost: "$30–$50/month" },
@@ -75,6 +83,8 @@ const categories = [
   {
     emoji: "💡",
     title: "Utilities & Bills",
+    jaTitle: "\u516c\u5171\u6599\u91d1\u3068\u8acb\u6c42",
+    zhTitle: "\u6c34\u7535\u4e0e\u8d26\u5355",
     items: [
       { en: "Electricity (1 person, apartment)", ja: "電気代（1人、アパート）", zh: "电费（1人，公寓）", ko: "전기세 (1인, 아파트)", cost: "$80–$150/quarter" },
       { en: "Gas (cooking + hot water)", ja: "ガス代（調理 + 給湯）", zh: "燃气费（做饭 + 热水）", ko: "가스세 (요리 + 온수)", cost: "$50–$100/quarter" },
@@ -85,6 +95,8 @@ const categories = [
   {
     emoji: "🏥",
     title: "Health Insurance",
+    jaTitle: "\u533b\u7642\u4fdd\u967a",
+    zhTitle: "\u5065\u5eb7\u4fdd\u9669",
     items: [
       { en: "OSHC (student, single, per year)", ja: "OSHC（学生、単身、年間）", zh: "OSHC（学生，单人，每年）", ko: "OSHC (유학생, 1인, 연간)", cost: "~$600/year" },
       { en: "OVHC (working holiday, per year)", ja: "OVHC（ワーホリ、年間）", zh: "OVHC（打工度假，每年）", ko: "OVHC (워홀, 연간)", cost: "~$500–$900/year" },

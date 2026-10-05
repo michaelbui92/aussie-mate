@@ -37,10 +37,14 @@ type Stage = {
   // sub-page content (which uses the same accents) reads as one design.
   accent: "sky" | "emerald" | "teal";
   titleEn: string;
+  titleJa?: string;
+  titleZh?: string;
   titleKo: string;
   // The "letter" — a personal message to a visitor in this stage. No
   // bullets, no checklist. The card body IS the preview.
   messageEn: string;
+  messageJa?: string;
+  messageZh?: string;
   messageKo: string;
 };
 
@@ -51,9 +55,13 @@ const stages: Stage[] = [
     emoji: "✈️",
     accent: "sky",
     titleEn: "Before you come",
+    titleJa: "\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u306b\u6765\u308b\u524d\u306b",
+    titleZh: "\u51fa\u53d1\u524d",
     titleKo: "호주에 오기 전에",
     messageEn:
       "If you have not visited Australia, please access Before you come. There are tips to get you ready. Learn some essential Aussie slang.",
+    messageJa: "\u307e\u3060\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u3092\u8a2a\u308c\u305f\u3053\u3068\u304c\u306a\u3044\u65b9\u306f\u3001\u300c\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u306b\u6765\u308b\u524d\u306b\u300d\u3092\u3054\u89a7\u304f\u3060\u3055\u3044\u3002\u6e96\u5099\u306b\u5f79\u7acb\u3064\u30d2\u30f3\u30c8\u304c\u3042\u308a\u307e\u3059\u3002\u5fc5\u9808\u306e\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u30fb\u30b9\u30e9\u30f3\u30b0\u3082\u899a\u3048\u307e\u3057\u3087\u3046\u3002",
+    messageZh: "\u5982\u679c\u4f60\u8fd8\u6ca1\u6765\u8fc7\u6fb3\u5927\u5229\u4e9a\uff0c\u8bf7\u770b\u770b\u300c\u51fa\u53d1\u524d\u300d\u90a3\u4e00\u9875\u3002\u90a3\u91cc\u6709\u5e2e\u4f60\u505a\u597d\u51c6\u5907\u7684\u5efa\u8bae\u3002\u4e5f\u5b66\u51e0\u53e5\u5fc5\u5907\u7684\u6fb3\u6d32\u4fda\u8bed\u3002",
     messageKo:
       "아직 호주를 방문하지 않으셨다면, Before you come을 확인해 주세요. 출발 준비를 위한 팁이 있습니다. 필수 호주 슬랭도 함께 배워보세요.",
   },
@@ -63,9 +71,13 @@ const stages: Stage[] = [
     emoji: "📦",
     accent: "emerald",
     titleEn: "I arrived",
+    titleJa: "\u5230\u7740\u3057\u305f",
+    titleZh: "\u6211\u5230\u4e86",
     titleKo: "방금 도착했어요",
     messageEn:
       "If you have arrived, visit here, get yourself ready, look for a job, apply. It can be daunting living in a new place but don't stress. Be wary of scammers, etc.",
+    messageJa: "\u5230\u7740\u3057\u305f\u3089\u3001\u3053\u3053\u3092\u898b\u3066\u3001\u6e96\u5099\u3092\u6574\u3048\u3001\u4ed5\u4e8b\u3092\u63a2\u3057\u3066\u5fdc\u52df\u3057\u307e\u3057\u3087\u3046\u3002\u65b0\u3057\u3044\u571f\u5730\u3067\u306e\u66ae\u3089\u3057\u306f\u4e0d\u5b89\u304b\u3082\u3057\u308c\u307e\u305b\u3093\u304c\u3001\u7126\u3089\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002\u8a50\u6b3a\u5e2b\u306a\u3069\u306b\u306f\u6ce8\u610f\u3057\u307e\u3057\u3087\u3046\u3002",
+    messageZh: "\u5982\u679c\u4f60\u521a\u5230\uff0c\u5c31\u770b\u770b\u8fd9\u91cc\uff0c\u505a\u597d\u51c6\u5907\uff0c\u627e\u5de5\u4f5c\u3001\u6295\u7b80\u5386\u3002\u5728\u4e00\u4e2a\u65b0\u5730\u65b9\u751f\u6d3b\u53ef\u80fd\u8ba9\u4eba\u53d1\u6035\uff0c\u4f46\u522b\u7d27\u5f20\u3002\u5f53\u5fc3\u9a97\u5b50\u4e4b\u7c7b\u7684\u3002",
     messageKo:
       "방금 도착하셨다면, 이 페이지를 확인하고 준비하세요. 구직도 시작하세요. 낯선 곳에서의 생활이 쉽지 않을 수 있지만 너무 스트레스 받지 마세요. 사기꾼도 주의하시고요.",
   },
@@ -75,9 +87,13 @@ const stages: Stage[] = [
     emoji: "🏡",
     accent: "teal",
     titleEn: "I call this home",
+    titleJa: "\u3053\u3053\u304c\u6211\u304c\u5bb6",
+    titleZh: "\u6211\u628a\u8fd9\u91cc\u5f53\u4f5c\u5bb6",
     titleKo: "여기가 내 집이에요",
     messageEn:
       "If you have been here for a while and you love it here and want to continue living as long as you can, think about your next steps.",
+    messageJa: "\u3057\u3070\u3089\u304f\u3053\u3053\u306b\u3044\u3066\u3001\u3053\u306e\u5834\u6240\u304c\u597d\u304d\u3067\u3001\u3067\u304d\u308b\u3060\u3051\u9577\u304f\u66ae\u3089\u3057\u7d9a\u3051\u305f\u3044\u306a\u3089\u3001\u6b21\u306e\u30b9\u30c6\u30c3\u30d7\u3092\u8003\u3048\u307e\u3057\u3087\u3046\u3002",
+    messageZh: "\u5982\u679c\u4f60\u5df2\u7ecf\u5728\u8fd9\u91cc\u5f85\u4e86\u4e00\u9635\u5b50\uff0c\u5f88\u559c\u6b22\u8fd9\u91cc\uff0c\u60f3\u5c3d\u53ef\u80fd\u957f\u4e45\u5730\u751f\u6d3b\u4e0b\u53bb\uff0c\u5c31\u60f3\u60f3\u63a5\u4e0b\u6765\u7684\u8def\u600e\u4e48\u8d70\u3002",
     messageKo:
       "이미 오래 사셨고, 이곳이 좋아서 가능한 한 계속 살고 싶으시다면, 다음 단계를 생각해 보세요.",
   },
@@ -166,13 +182,15 @@ export default function JourneyPage() {
                   </div>
 
                   <h2 className={`font-serif text-2xl md:text-3xl ${c.text} leading-tight mb-4`}>
-                    <En>{s.titleEn}</En>
+                    <Ja>{s.titleJa ?? s.titleEn}</Ja>
+                    <Zh>{s.titleZh ?? s.titleEn}</Zh>
                     <Ko>{s.titleKo}</Ko>
                   </h2>
                   <p
                     className={`${c.sub} text-sm md:text-base leading-relaxed mb-6 flex-1`}
                   >
-                    <En>{s.messageEn}</En>
+                    <Ja>{s.messageJa ?? s.messageEn}</Ja>
+                    <Zh>{s.messageZh ?? s.messageEn}</Zh>
                     <Ko>{s.messageKo}</Ko>
                   </p>
 

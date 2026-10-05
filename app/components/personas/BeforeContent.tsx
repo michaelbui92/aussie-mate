@@ -15,22 +15,30 @@ import {En, Ja, Ko, Zh} from "../LangBlocks";
 type Checklist = {
   id: string;
   titleEn: string;
+  titleJa?: string;
+  titleZh?: string;
   titleKo: string;
   subtitleEn: string;
+  subtitleJa?: string;
+  subtitleZh?: string;
   subtitleKo: string;
   items: { en: string; ko: string; ja?: string; zh?: string }[];
   // Optional "read more" link below the items. Used for sections where
   // a related site page goes deeper than a checklist can cover.
-  link?: { href: string; labelEn: string; labelKo: string };
+  link?: { href: string; labelEn: string; labelJa?: string; labelZh?: string; labelKo: string };
 };
 
 const checklists: Checklist[] = [
   {
     id: "documents",
     titleEn: "Documents & visa",
+    titleJa: "\u66f8\u985e\u3068\u30d3\u30b6",
+    titleZh: "\u8bc1\u4ef6\u4e0e\u7b7e\u8bc1",
     titleKo: "비자와 서류",
     subtitleEn:
       "Get these right first — everything else depends on having a valid visa grant.",
+    subtitleJa: "\u307e\u305a\u3053\u308c\u3092\u6b63\u3057\u304f \u2014 \u307b\u304b\u306e\u3059\u3079\u3066\u306f\u3001\u6709\u52b9\u306a\u30d3\u30b6\u306e\u8a31\u53ef\u304c\u3042\u3063\u3066\u3053\u305d\u3067\u3059\u3002",
+    subtitleZh: "\u5148\u628a\u8fd9\u4e9b\u529e\u59a5\u2014\u2014\u5176\u4ed6\u4e00\u5207\u90fd\u53d6\u51b3\u4e8e\u4f60\u7684\u7b7e\u8bc1\u662f\u5426\u6709\u6548\u83b7\u6279\u3002",
     subtitleKo:
       "먼저 이것부터 — 유효한 비자 승인을 받으면 나머지가 모두 가능합니다.",
     items: [
@@ -45,9 +53,13 @@ const checklists: Checklist[] = [
   {
     id: "money",
     titleEn: "Money & banking",
+    titleJa: "\u304a\u91d1\u3068\u9280\u884c",
+    titleZh: "\u91d1\u94b1\u4e0e\u94f6\u884c",
     titleKo: "돈과 은행",
     subtitleEn:
       "Get an Australian bank account open before you fly — it takes 20 minutes and saves weeks of friction.",
+    subtitleJa: "\u51fa\u767a\u524d\u306b\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u306e\u9280\u884c\u53e3\u5ea7\u3092\u958b\u8a2d\u3057\u307e\u3057\u3087\u3046 \u2014 20\u5206\u3067\u6e08\u307f\u3001\u4f55\u9031\u9593\u3082\u306e\u624b\u9593\u3092\u7701\u3051\u307e\u3059\u3002",
+    subtitleZh: "\u51fa\u53d1\u524d\u5c31\u628a\u6fb3\u5927\u5229\u4e9a\u94f6\u884c\u8d26\u6237\u5f00\u597d\u2014\u2014\u53ea\u8981 20 \u5206\u949f\uff0c\u80fd\u7701\u4e0b\u597d\u51e0\u5468\u7684\u9ebb\u70e6\u3002",
     subtitleKo:
       "출발 전 호주 은행 계좌 개설 — 20분이면 끝나고, 며칠간의 번거로움을 줄여줍니다.",
     items: [
@@ -60,9 +72,13 @@ const checklists: Checklist[] = [
   {
     id: "connectivity",
     titleEn: "Connectivity & apps",
+    titleJa: "\u901a\u4fe1\u3068\u30a2\u30d7\u30ea",
+    titleZh: "\u901a\u4fe1\u4e0e App",
     titleKo: "통신과 앱",
     subtitleEn:
       "Have a working phone number and the right apps the moment you land.",
+    subtitleJa: "\u5230\u7740\u3057\u305f\u77ac\u9593\u304b\u3089\u4f7f\u3048\u308b\u96fb\u8a71\u756a\u53f7\u3068\u5fc5\u8981\u306a\u30a2\u30d7\u30ea\u3092\u7528\u610f\u3057\u307e\u3057\u3087\u3046\u3002",
+    subtitleZh: "\u843d\u5730\u90a3\u4e00\u523b\u5c31\u6709\u80fd\u7528\u7684\u624b\u673a\u53f7\u548c\u8be5\u88c5\u7684 App\u3002",
     subtitleKo:
       "도착 즉시 쓸 수 있는 전화번호와 앱을 미리 준비하세요.",
     items: [
@@ -74,15 +90,21 @@ const checklists: Checklist[] = [
     link: {
       href: "/transport",
       labelEn: "See how to get around Sydney once you land →",
+      labelJa: "\u5230\u7740\u3057\u305f\u3089\u3001\u30b7\u30c9\u30cb\u30fc\u3067\u306e\u79fb\u52d5\u65b9\u6cd5\u3092\u898b\u308b \u2192",
+      labelZh: "\u770b\u770b\u843d\u5730\u6089\u5c3c\u540e\u600e\u4e48\u51fa\u884c \u2192",
       labelKo: "시드니에서 이동하는 법 보기 →",
     },
   },
   {
     id: "pack",
     titleEn: "What to pack",
+    titleJa: "\u6301\u3061\u7269",
+    titleZh: "\u884c\u674e\u51c6\u5907",
     titleKo: "준비물",
     subtitleEn:
       "Small list — most things you can buy here once you've landed.",
+    subtitleJa: "\u77ed\u3044\u30ea\u30b9\u30c8 \u2014 \u307b\u3068\u3093\u3069\u306f\u5230\u7740\u5f8c\u306b\u3053\u3053\u3067\u8cb7\u3048\u307e\u3059\u3002",
+    subtitleZh: "\u6e05\u5355\u5f88\u77ed\u2014\u2014\u5927\u591a\u6570\u4e1c\u897f\u843d\u5730\u540e\u90fd\u80fd\u5728\u8fd9\u91cc\u4e70\u5230\u3002",
     subtitleKo:
       "짧은 리스트 — 대부분은 도착 후 현지에서 살 수 있습니다.",
     items: [
@@ -96,9 +118,13 @@ const checklists: Checklist[] = [
   {
     id: "booked",
     titleEn: "Booked & confirmed",
+    titleJa: "\u4e88\u7d04\u3068\u78ba\u8a8d",
+    titleZh: "\u5df2\u9884\u8ba2\u5e76\u786e\u8ba4",
     titleKo: "예약과 확인",
     subtitleEn:
       "First-week logistics. Don't leave these to the day you land.",
+    subtitleJa: "\u6700\u521d\u306e1\u9031\u9593\u306e\u6bb5\u53d6\u308a\u3002\u5230\u7740\u5f53\u65e5\u307e\u3067\u6b8b\u3055\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002",
+    subtitleZh: "\u7b2c\u4e00\u5468\u7684\u4e8b\u52a1\u3002\u522b\u62d6\u5230\u843d\u5730\u90a3\u5929\u624d\u5904\u7406\u3002",
     subtitleKo:
       "첫 주를 위한 준비. 도착 당일에 하지 마세요.",
     items: [
@@ -162,12 +188,14 @@ export default function BeforeContent() {
               0{sIdx + 1}
             </span>
             <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-              <En>{section.titleEn}</En>
+              <Ja>{section.titleJa ?? section.titleEn}</Ja>
+              <Zh>{section.titleZh ?? section.titleEn}</Zh>
               <Ko>{section.titleKo}</Ko>
             </h2>
           </div>
           <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed mb-5 max-w-2xl">
-            <En>{section.subtitleEn}</En>
+            <Ja>{section.subtitleJa ?? section.subtitleEn}</Ja>
+            <Zh>{section.subtitleZh ?? section.subtitleEn}</Zh>
             <Ko>{section.subtitleKo}</Ko>
           </p>
 
@@ -191,7 +219,8 @@ export default function BeforeContent() {
               href={section.link.href}
               className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-300 transition-colors"
             >
-              <En>{section.link.labelEn}</En>
+              <Ja>{section.link.labelJa ?? section.link.labelEn}</Ja>
+              <Zh>{section.link.labelZh ?? section.link.labelEn}</Zh>
               <Ko>{section.link.labelKo}</Ko>
             </Link>
           )}

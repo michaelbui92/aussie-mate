@@ -34,9 +34,15 @@ const tools = [
     id: "drive-with-bui",
     emoji: "🚗",
     title: "Drive with Bui",
+    jaTitle: "Drive with Bui",
+    zhTitle: "Drive with Bui",
     headline: "An Australian driving school that doesn't pretend to be more than it is",
+    jaHeadline: "\u80cc\u4f38\u3073\u3092\u3057\u306a\u3044\u3001\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u306e\u904b\u8ee2\u6559\u7fd2\u6240",
+    zhHeadline: "\u4e00\u5bb6\u4e0d\u88c5\u8154\u4f5c\u52bf\u7684\u6fb3\u5927\u5229\u4e9a\u9a7e\u6821",
     koHeadline: "있는 그대로를 말하는 호주 운전 학원",
     desc: "Sydney's friendliest driving school. Learn to pass your driving test with patient, experienced instruction covering all Sydney test routes and requirements.",
+    jaDesc: "\u30b7\u30c9\u30cb\u30fc\u3067\u6700\u3082\u89aa\u3057\u307f\u3084\u3059\u3044\u904b\u8ee2\u6559\u7fd2\u6240\u3002\u30b7\u30c9\u30cb\u30fc\u306e\u3059\u3079\u3066\u306e\u8a66\u9a13\u30eb\u30fc\u30c8\u3068\u8981\u4ef6\u3092\u30ab\u30d0\u30fc\u3059\u308b\u3001\u5fcd\u8010\u5f37\u304f\u7d4c\u9a13\u8c4a\u304b\u306a\u6307\u5c0e\u3067\u3001\u904b\u8ee2\u8a66\u9a13\u306e\u5408\u683c\u3092\u76ee\u6307\u305b\u307e\u3059\u3002",
+    zhDesc: "\u6089\u5c3c\u6700\u53cb\u5584\u7684\u9a7e\u6821\u3002\u8010\u5fc3\u3001\u7ecf\u9a8c\u4e30\u5bcc\u7684\u6559\u7ec3\u5e26\u4f60\u901a\u8fc7\u9a7e\u7167\u8003\u8bd5\uff0c\u8986\u76d6\u6089\u5c3c\u6240\u6709\u8003\u8bd5\u8def\u7ebf\u548c\u8981\u6c42\u3002",
     url: "https://drivewithbui.com",
     badge: "Driving School",
     accent: "bg-sunset/10 border-sunset/30",
@@ -57,9 +63,15 @@ const tools = [
     id: "study-buddy",
     emoji: "📚",
     title: "Study Buddy",
+    jaTitle: "Study Buddy",
+    zhTitle: "Study Buddy",
     headline: "A flashcard app for international students, built by one of them",
+    jaHeadline: "\u7559\u5b66\u751f\u306e\u4e00\u4eba\u304c\u4f5c\u3063\u305f\u3001\u7559\u5b66\u751f\u306e\u305f\u3081\u306e\u5358\u8a9e\u30ab\u30fc\u30c9\u30a2\u30d7\u30ea",
+    zhHeadline: "\u4e00\u6b3e\u4e3a\u7559\u5b66\u751f\u6253\u9020\u7684\u5355\u8bcd\u5361\u5e94\u7528\uff0c\u7531\u7559\u5b66\u751f\u81ea\u5df1\u5f00\u53d1",
     koHeadline: "국제 학생이 만든, 국제 학생을 위한 플래시카드 앱",
     desc: "A smart study companion app — flashcard decks, spaced repetition, progress tracking. Coming soon — built to help international students study smarter, not harder.",
+    jaDesc: "\u8ce2\u3044\u5b66\u7fd2\u30d1\u30fc\u30c8\u30ca\u30fc\u30a2\u30d7\u30ea \u2014 \u5358\u8a9e\u30ab\u30fc\u30c9\u306e\u30c7\u30c3\u30ad\u3001\u9593\u9694\u53cd\u5fa9\u3001\u9032\u6357\u306e\u8a18\u9332\u3002\u8fd1\u65e5\u516c\u958b \u2014 \u7559\u5b66\u751f\u304c\u3088\u308a\u8ce2\u304f\u3001\u7121\u7406\u306a\u304f\u5b66\u3079\u308b\u3088\u3046\u306b\u4f5c\u3089\u308c\u3066\u3044\u307e\u3059\u3002",
+    zhDesc: "\u4e00\u6b3e\u667a\u80fd\u5b66\u4e60\u4f34\u4fa3\u5e94\u7528\u2014\u2014\u5355\u8bcd\u5361\u724c\u7ec4\u3001\u95f4\u9694\u91cd\u590d\u3001\u8fdb\u5ea6\u8ffd\u8e2a\u3002\u5373\u5c06\u63a8\u51fa\u2014\u2014\u4e13\u4e3a\u5e2e\u52a9\u7559\u5b66\u751f\u66f4\u806a\u660e\u5730\u5b66\u4e60\uff0c\u800c\u4e0d\u662f\u66f4\u8f9b\u82e6\u3002",
     url: "https://stdybddy.app",
     badge: "Live",
     accent: "bg-sage/10 border-sage/30",
@@ -148,7 +160,8 @@ export default function OtherToolsPage() {
                   </span>
                 </div>
                 <p className="font-serif text-base text-stone-700 dark:text-stone-300 italic mb-2">
-                  <En>{tool.headline}</En>
+                  <Ja>{tool.jaHeadline ?? tool.headline}</Ja>
+                  <Zh>{tool.zhHeadline ?? tool.headline}</Zh>
                   <Ko>{tool.koHeadline}</Ko>
                 </p>
                 <p className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-3">

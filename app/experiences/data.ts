@@ -9,7 +9,7 @@
 import type { Destination } from "@/destinations/data";
 
 export interface ExperienceTheme {
-  title: string;
+  title: string; jaTitle?: string; zhTitle?: string; jaBlurb?: string; zhBlurb?: string;
   koTitle: string;
   blurb: string;
   koBlurb: string;
