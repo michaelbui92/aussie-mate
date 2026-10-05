@@ -19,6 +19,9 @@ import * as Icons from "./Icons";
 
 export type EditorialItem = {
   label: string;
+  koLabel?: string;
+  jaLabel?: string;
+  zhLabel?: string;
   en: string;
   ko: string; ja?: string; zh?: string; url?: string;
 };
@@ -29,8 +32,12 @@ export type EditorialSectionData = {
   accent: "sunset" | "sage" | "coast" | "amber" | "rose" | "sky" | "stone";
   title: string;
   koTitle?: string;
+  jaTitle?: string;
+  zhTitle?: string;
   desc: string;
   koDesc?: string;
+  jaDesc?: string;
+  zhDesc?: string;
   items: EditorialItem[];
   /** Optional override: render the items body yourself (e.g. for a stat grid). */
   customBody?: ReactNode;
@@ -142,12 +149,16 @@ export default function EditorialSection({
                 <IconComp className="w-4 h-4" />
               </span>
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-white/80">
-                <En>{data.title}</En>
+                <En translated>{data.title}</En>
+                <Ja>{data.jaTitle || data.title}</Ja>
+                <Zh>{data.zhTitle || data.title}</Zh>
                 <Ko>{data.koTitle || data.title}</Ko>
               </p>
             </div>
             <p className="text-sm text-white/85 max-w-2xl leading-relaxed">
-              <En>{data.desc}</En>
+              <En translated>{data.desc}</En>
+              <Ja>{data.jaDesc || data.desc}</Ja>
+              <Zh>{data.zhDesc || data.desc}</Zh>
               <Ko>{data.koDesc || data.desc}</Ko>
             </p>
           </div>
@@ -163,12 +174,16 @@ export default function EditorialSection({
             <p
               className={`text-[11px] font-medium uppercase tracking-[0.3em] ${accent.eyebrow}`}
             >
-              <En>{data.title}</En>
+              <En translated>{data.title}</En>
+              <Ja>{data.jaTitle || data.title}</Ja>
+              <Zh>{data.zhTitle || data.title}</Zh>
               <Ko>{data.koTitle || data.title}</Ko>
             </p>
           </div>
           <p className="text-sm text-stone-500 dark:text-stone-400 pl-11 max-w-2xl">
-            <En>{data.desc}</En>
+            <En translated>{data.desc}</En>
+            <Ja>{data.jaDesc || data.desc}</Ja>
+            <Zh>{data.zhDesc || data.desc}</Zh>
             <Ko>{data.koDesc || data.desc}</Ko>
           </p>
         </div>
@@ -185,7 +200,10 @@ export default function EditorialSection({
               className={`reveal reveal-delay-${((index + i) % 5) + 1} p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border ${accent.ring} hover:shadow-md transition-all`}
             >
               <p className={`font-medium text-sm ${accent.eyebrow} mb-1.5 leading-snug`}>
-                {item.label}
+                <En translated>{item.label}</En>
+                <Ja>{item.jaLabel || item.label}</Ja>
+                <Zh>{item.zhLabel || item.label}</Zh>
+                <Ko>{item.koLabel || item.label}</Ko>
                 {item.url && (
                   <a
                     href={item.url}
