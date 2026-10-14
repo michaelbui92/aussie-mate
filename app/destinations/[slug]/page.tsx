@@ -139,7 +139,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <img
           src={d.heroImg}
-          alt={d.name.en}
+          alt={pickLocale(locale, d.name)}
           className="absolute inset-0 w-full h-full object-cover"
           fetchPriority="high"
         />
@@ -510,7 +510,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 shadow-sm group-hover:shadow-xl transition-shadow">
                     <img
                       src={other.cardImg}
-                      alt={other.name.en}
+                      alt={pickLocale(locale, other.name)}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
                     />

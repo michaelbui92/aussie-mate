@@ -3,7 +3,7 @@ import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import { regionLabel } from "@/lib/region-i18n";
 import Image from "next/image";
-import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
+import {En, Ja, Ko, Zh, useLang} from "@/components/LangBlocks";
 import { useSearch } from "@/components/SearchModal";
 import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
@@ -20,6 +20,10 @@ import HeroCarousel from "@/components/HeroCarousel";
 
 export default function HomePage() {
   const { openSearch } = useSearch();
+  // The reader's locale, from the provider the root layout seeds with the URL's locale. Alt
+  // text is a single string, so unlike the <En>/<Ja>/<Zh>/<Ko> blocks it cannot render all
+  // languages at once and let CSS choose -- it has to be picked here.
+  const { lang } = useLang();
 
   // Six destinations on the home row — spans day/weekend/longer to give
   // a balanced first impression of what the site covers. Sydney Harbour
@@ -208,7 +212,7 @@ export default function HomePage() {
               >
                 <Image
                   src={d.cardImg}
-                  alt={d.name.en}
+                  alt={pickLocale(lang, d.name)}
                   fill
                   priority={i < 3}
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -292,7 +296,7 @@ export default function HomePage() {
               >
                 <Image
                   src={e.heroImg}
-                  alt={e.title}
+                  alt={pickLocale(lang, { en: e.title, ko: e.koTitle, ja: e.jaTitle, zh: e.zhTitle })}
                   fill
                   priority={i < 3}
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import LocaleLink from "@/components/LocaleLink";
-import { pickLocale } from "@/lib/locale";
+import { pickLocale, type Lang } from "@/lib/locale";
 import { regionLabel } from "@/lib/region-i18n";
 import { destinations } from "./data";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
@@ -40,7 +40,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
-export default function DestinationsPage() {
+export default async function DestinationsPage() {
+  // The reader's locale, resolved by the root layout from the URL prefix. Used for the
+  // alt text so a Japanese or Korean screen reader is not handed an English place name.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Header */}
@@ -117,7 +120,7 @@ export default function DestinationsPage() {
                   >
                     <img
                       src={d.cardImg}
-                      alt={d.name.en}
+                      alt={pickLocale(locale, d.name)}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
                     />
