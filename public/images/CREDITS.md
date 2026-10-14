@@ -112,3 +112,22 @@ Almost every third-party photo on this site is CC BY or CC BY-SA, which means
 credits page (or a credits line in the footer) is still outstanding and is
 required for compliance. The CC BY-SA images (marked above) additionally
 require derivative works to be licensed the same way.
+
+---
+
+## Added 2026-10-14 (Palm Beach destination)
+
+The `palm-beach` destination page shipped with this image but the file itself was
+never committed, so the live page served a broken image until now. The licence
+was resolved from the Wikimedia Commons API and is not in doubt.
+
+| File | Shows | Author | Licence |
+|---|---|---|---|
+| `palm_beach.jpg` | Palm Beach and Barrenjoey Headland, Sydney NSW | Paul Anthony Stewart (Flickr user paulhypnos) | CC BY-SA 4.0 |
+
+Own work by the author. Source is the original file page on Wikimedia Commons
+(artist Paul Anthony Stewart, own work, CC BY-SA 4.0), as returned by the
+Commons API when the licence was checked. Shipped at 1920x1440.
+
+As a CC BY-SA 4.0 image this is covered by the attribution obligation below, and
+derivative works must carry the same licence.
