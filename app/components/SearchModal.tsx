@@ -1,7 +1,8 @@
 "use client";
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo, ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { En, Ja, Ko, Zh, useLang } from "@/components/LangBlocks";
+import { localeHref } from "@/lib/locale-href";
 import type { SearchResult } from "@/lib/searchIndex";
 
 // --- Context ---
@@ -38,6 +39,7 @@ export function SearchModal() {
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  const { lang } = useLang();
 
   // Focus input when opened + lazy-load the search index on first open
   const [index, setIndex] = useState<SearchResult[] | null>(null);
@@ -80,10 +82,10 @@ export function SearchModal() {
       const selected = flat[activeIndex];
       if (selected) {
         closeSearch();
-        router.push(selected.href);
+        router.push(localeHref(lang, selected.href));
       }
     }
-  }, [flat, activeIndex, router, closeSearch]);
+  }, [flat, activeIndex, router, closeSearch, lang]);
 
   // Global keyboard shortcut — Ctrl+K only
   useEffect(() => {
@@ -206,7 +208,7 @@ export function SearchModal() {
                     return (
                       <button type="button"
                         key={`${item.page}-${item.section || "page"}`}
-                        onClick={() => { closeSearch(); router.push(item.href); }}
+                        onClick={() => { closeSearch(); router.push(localeHref(lang, item.href)); }}
                         onMouseEnter={() => setActiveIndex(globalIdx)}
                         className={`w-full text-left px-4 py-3 flex items-start gap-3 border-b border-sand/50 dark:border-dark-border/50 last:border-0 transition-colors ${
                           isActive ? "bg-sunset/5 dark:bg-sunset/10" : "hover:bg-sand/30 dark:hover:bg-dark-surface/50"
