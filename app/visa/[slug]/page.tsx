@@ -106,7 +106,7 @@ export default async function VisaPage({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10">
           {/* Main content */}
           <div className="lg:col-span-2 space-y-10">
-            <Section eyebrowEn="Overview" eyebrowKo="개요">
+            <Section eyebrowJa="概要" eyebrowZh="概述" eyebrowEn="Overview" eyebrowKo="개요">
               <p className="font-serif text-lg text-stone-800 dark:text-stone-200 leading-relaxed">
                 <En translated>{v.audience.en}</En>
                 <Ja>{pickLocale("ja", v.audience)}</Ja>
@@ -115,7 +115,7 @@ export default async function VisaPage({
               </p>
             </Section>
 
-            <Section eyebrowEn="Key requirements" eyebrowKo="주요 요건">
+            <Section eyebrowJa="主な要件" eyebrowZh="主要要求" eyebrowEn="Key requirements" eyebrowKo="주요 요건">
               <ul className="space-y-3">
                 {v.keyRequirements.map((r) => (
                   <li
@@ -134,7 +134,7 @@ export default async function VisaPage({
               </ul>
             </Section>
 
-            <Section eyebrowEn="Step by step" eyebrowKo="단계별 안내">
+            <Section eyebrowJa="手順" eyebrowZh="分步指南" eyebrowEn="Step by step" eyebrowKo="단계별 안내">
               <ol className="space-y-3">
                 {v.steps.map((s, i) => (
                   <li
@@ -155,7 +155,7 @@ export default async function VisaPage({
               </ol>
             </Section>
 
-            <Section eyebrowEn="Tips from experience" eyebrowKo="경험에서 나온 팁">
+            <Section eyebrowJa="経験からのヒント" eyebrowZh="经验提示" eyebrowEn="Tips from experience" eyebrowKo="경험에서 나온 팁">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {v.tips.map((t) => (
                   <div
@@ -173,7 +173,7 @@ export default async function VisaPage({
               </div>
             </Section>
 
-            <Section eyebrowEn="Pros & cons" eyebrowKo="장단점">
+            <Section eyebrowJa="メリット・デメリット" eyebrowZh="优缺点" eyebrowEn="Pros & cons" eyebrowKo="장단점">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100/60 dark:border-emerald-900/30">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-emerald-700 dark:text-emerald-400 mb-3">

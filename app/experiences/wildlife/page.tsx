@@ -278,21 +278,29 @@ const sections: WildlifeSection[] = [
 const safetyItems = [
   {
     label: "Never feed or touch wild animals",
+    jaLabel: "野生動物に餌をやったり触ったりしないでください",
+    zhLabel: "不要喂食或触摸野生动物",
     en: "It's illegal in NSW to feed native animals without a licence. Human food harms them — kangaroos get 'lumpy jaw' from bread, birds develop nutritional deficiencies. It also makes them lose their natural fear of humans, leading to dangerous encounters. Observe quietly from a distance.", ja: "NSW では、許可なく在来の動物に餌を与えることは違法です。人間の食べ物は彼らに有害です — カンガルーはパンで「ランピー・ジョー」になり、鳥は栄養不足になります。また、人間に対する本能的な恐怖を失わせ、危険な遭遇につながります。遠くから静かに観察しましょう。", zh: "在新南威尔士州，未经许可喂食本土动物是违法的。人类的食物会伤害它们 — 袋鼠会因吃面包患上「肿块颌病」，鸟类会出现营养缺乏。这也会让它们失去对人类的本能恐惧，导致危险的遭遇。请从远处安静地观察。",
     ko: "NSW에서는 허가 없이 야생동물에게 먹이를 주는 것이 불법입니다. 사람 음식은 해롭습니다 — 캥거루는 빵으로 'lumpy jaw'에 걸리고, 새는 영양 결핍이 생깁니다. 또한 사람에 대한 본능적 두려움을 잃게 하여 위험한 조우로 이어집니다. 멀리서 조용히 관찰하세요.",
   },
   {
     label: "Snakes — back away slowly",
+    jaLabel: "ヘビ — ゆっくり後退してください",
+    zhLabel: "蛇类 — 缓慢后退",
     en: "If you encounter a snake, stop moving, identify where it is, and slowly back away. Do not run — sudden movements can provoke a strike. Most Australian snakes are venomous but they will not chase you. They want to escape, not attack. Keep dogs on a lead in snake-prone areas. If bitten, call 000 immediately.", ja: "ヘビに遭遇したら、動きを止め、どこにいるかを確認し、ゆっくり後ずさりしましょう。走らないでください — 急な動きは攻撃を誘発することがあります。オーストラリアのヘビのほとんどは毒がありますが、追いかけてくることはありません。彼らは攻撃ではなく逃げたがっています。ヘビの多い地域では犬をリードにつなぎましょう。咬まれたらすぐに 000 に電話してください。", zh: "如果遇到蛇，请停下动作，确认它的位置，然后慢慢后退。不要跑 — 突然的动作可能引发攻击。澳大利亚的大多数蛇有毒，但它们不会追你。它们想逃跑，而不是攻击。在蛇多的地区，请给狗系上牵引绳。如果被咬，请立即拨打 000。",
     ko: "뱀을 만나면 움직임을 멈추고, 위치를 확인한 후 천천히 뒤로 물러나세요. 뛰지 마세요 — 갑작스러운 움직임이 공격을 유발할 수 있습니다. 대부분의 호주 뱀은 독이 있지만 쫓아오지 않습니다. 그들은 공격보다 도망을 원합니다. 뱀이 많은 지역에서는 개를 목줄에 매세요. 물렸다면 즉시 000에 전화하세요.",
   },
   {
     label: "Magpie swooping season (Aug–Oct)",
+    jaLabel: "カササギ急降下シーズン（8月〜10月）",
+    zhLabel: "喜鹊俯冲季节（8月至10月）",
     en: "Magpies build nests from August to October and will swoop to protect their young. They usually target cyclists and runners. Wear a broad-brimmed hat or sunglasses, and dismount your bike and walk through swoop zones. Most swooping areas are marked on community maps. Never harm a magpie — they're a protected species and the swooping stops once the chicks fledge.", ja: "カササギは 8 月から 10 月にかけて巣を作り、ヒナを守るために急襲してきます。標的にするのは主にサイクリストとランナーです。つばの広い帽子かサングラスを着用し、急襲ゾーンでは自転車を降りて歩きましょう。ほとんどの急襲エリアはコミュニティの地図に表示されています。カササギを決して傷つけないでください — 保護種であり、ヒナが巣立つと急襲は止まります。", zh: "喜鹊在 8 月到 10 月筑巢，会俯冲保护幼鸟。它们通常针对骑行者和跑步者。请戴宽檐帽或太阳镜，在俯冲区域下车推行。大多数俯冲区域都标在社区地图上。绝不要伤害喜鹊 — 它们是受保护的物种，幼鸟离巢后俯冲就会停止。",
     ko: "까치는 8월부터 10월까지 둥지를 짓고 새끼를 보호하기 위해 급습합니다. 주로 자전거 타는 사람과 달리는 사람을 대상으로 합니다. 챙이 넓은 모자나 선글라스를 착용하고, 급습 구역에서는 자전거에서 내려 걸으세요. 대부분의 급습 지역은 커뮤니티 지도에 표시됩니다. 까치를 해치지 마세요 — 보호종이며 새끼가 둥지를 떠나면 급습이 멈춥니다.",
   },
   {
     label: "WIRES — wildlife rescue",
+    jaLabel: "WIRES — 野生動物レスキュー",
+    zhLabel: "WIRES — 野生动物救助",
     en: "If you find an injured or orphaned native animal, call WIRES (NSW Wildlife Information, Rescue and Education Service) at 1300 094 737. They operate 365 days a year and have trained volunteers across the state. Don't attempt to rescue the animal yourself — keep pets away, note the location, and wait for a rescuer.", ja: "傷ついたり孤児になった在来の動物を見つけたら、WIRES（NSW 野生動物情報・救助・教育サービス）の 1300 094 737 に電話してください。年中無休 365 日運営され、州全域に訓練されたボランティアがいます。自分で動物を救助しようとしないでください — ペットを遠ざけ、場所を記録し、救助者を待ちましょう。", zh: "如果你发现受伤或成为孤儿的本土动物，请拨打 WIRES（新南威尔士州野生动物信息、救援与教育服务）电话 1300 094 737。他们全年 365 天运作，全州都有受过培训的志愿者。不要自己尝试救援动物 — 让宠物远离，记下位置，等待救援人员。",
     ko: "부상당하거나 고아가 된 야생동물을 발견하면 WIRES(NSW 야생동물 정보, 구조, 교육 서비스) 1300 094 737로 전화하세요. 연중 365일 운영되며 주 전역에 훈련된 자원봉사자가 있습니다. 직접 구조를 시도하지 마세요 — 반려동물을 멀리하고, 위치를 기록한 후 구조자를 기다리세요.",
   },
@@ -512,7 +520,10 @@ export default function WildlifePage() {
                   </span>
                   <div>
                     <p className="font-semibold text-sm text-stone-900 dark:text-stone-100 mb-1">
-                      {item.label}
+                      <En translated>{item.label}</En>
+                      <Ja>{item.jaLabel ?? item.label}</Ja>
+                      <Zh>{item.zhLabel ?? item.label}</Zh>
+                      <Ko>{item.koLabel ?? item.label}</Ko>
                     </p>
                     <div className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                       <En translated>

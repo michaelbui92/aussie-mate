@@ -13,10 +13,10 @@ type Label = { en: string; ko: string; ja?: string; zh?: string; hint: { en: str
 
 const ORDER: FilterKey[] = ["day", "weekend", "longer", "far"];
 const LABELS: Record<FilterKey, Label> = {
-  weekend: { en: "Weekend trip", ko: "주말 여행", hint: { en: "2–3 hours from Sydney", ja: "シドニーから2–3時間", zh: "距悉尼2–3小时", ko: "시드니에서 2~3시간" } },
-  day:     { en: "Day trip",     ko: "당일치기",   hint: { en: "Under 2 hours from Sydney", ja: "シドニーから2時間以内", zh: "距悉尼2小时以内", ko: "시드니에서 2시간 이내" } },
-  longer:  { en: "3+ days",      ko: "3일 이상",   hint: { en: "Worth a longer stay", ja: "ゆっくり滞在する価値あり", zh: "值得多住几天", ko: "여유 있는 일정 추천" } },
-  far:     { en: "Big trip",     ko: "장거리",     hint: { en: "5+ hours or fly", ja: "5時間以上または飛行機", zh: "5小时以上或乘飞机", ko: "5시간 이상 또는 항공" } },
+  weekend: { en: "Weekend trip", ja: "週末旅行", zh: "周末游", ko: "주말 여행", hint: { en: "2–3 hours from Sydney", ja: "シドニーから2–3時間", zh: "距悉尼2–3小时", ko: "시드니에서 2~3시간" } },
+  day:     { en: "Day trip", ja: "日帰り旅行", zh: "一日游",     ko: "당일치기",   hint: { en: "Under 2 hours from Sydney", ja: "シドニーから2時間以内", zh: "距悉尼2小时以内", ko: "시드니에서 2시간 이내" } },
+  longer:  { en: "3+ days", ja: "3日以上", zh: "3天以上",      ko: "3일 이상",   hint: { en: "Worth a longer stay", ja: "ゆっくり滞在する価値あり", zh: "值得多住几天", ko: "여유 있는 일정 추천" } },
+  far:     { en: "Big trip", ja: "大旅行", zh: "大型旅行",     ko: "장거리",     hint: { en: "5+ hours or fly", ja: "5時間以上または飛行機", zh: "5小时以上或乘飞机", ko: "5시간 이상 또는 항공" } },
 };
 
 export default function TripLengthFilter() {
