@@ -81,6 +81,30 @@ season illustrations on `/weather` (Summer and Autumn). Pexels License.
 
 ---
 
+## Added 2026-10-14 (Manly and Royal National Park destinations)
+
+These two arrived with their destination pages and were missed out of this file
+at the time, because the sourcing runs recorded the provenance somewhere else.
+Each is the 1920px Commons render of the file named in "Shows", at the same
+aspect ratio as the Commons original.
+
+| File | Shows | Author | Licence |
+|---|---|---|---|
+| `manly_beach.jpg` | Manly Beach, Sydney (Commons `Manly_Beach_001.jpg`) | Photoscenic | CC BY-SA 4.0 |
+| `royal_coast_track.jpg` | Royal National Park Coast Track (Commons `Royal_National_Park_Coast_Track_-_panoramio.jpg`) | Maurice van Creij | CC BY 3.0 |
+
+The Commons file pages are the sources:
+`https://commons.wikimedia.org/wiki/File:Manly_Beach_001.jpg` and
+`https://commons.wikimedia.org/wiki/File:Royal_National_Park_Coast_Track_-_panoramio.jpg`.
+The `manly_beach.jpg` file carries EXIF author "Thomas Joannes", which is the
+Commons uploader Photoscenic, and its dimensions match that file's 1920px render.
+
+Both are CC BY / CC BY-SA and so are covered by the attribution obligation below.
+`manly_beach.jpg` is the CC BY-SA 4.0 one and additionally requires derivative
+works to carry the same licence.
+
+---
+
 ## Attribution obligation
 
 Almost every third-party photo on this site is CC BY or CC BY-SA, which means
