@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import { destinations } from "./data";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
@@ -109,7 +109,7 @@ export default function DestinationsPage() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
                 {items.map((d, i) => (
-                  <Link
+                  <LocaleLink
                     key={d.slug}
                     href={`/destinations/${d.slug}`}
                     className={`reveal reveal-delay-${(i % 5) + 1} group block relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
@@ -139,7 +139,7 @@ export default function DestinationsPage() {
                         <Ko>{d.tagline.ko}</Ko>
                       </p>
                     </div>
-                  </Link>
+                  </LocaleLink>
                 ))}
               </div>
             </section>

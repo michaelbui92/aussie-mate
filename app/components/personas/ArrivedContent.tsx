@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "../LangBlocks";
 
@@ -178,14 +178,14 @@ export default function ArrivedContent() {
                 <Ko>{w.blurbKo}</Ko>
               </p>
               {w.href && (
-                <Link
+                <LocaleLink
                   href={w.href}
                   className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
                 >
                   <Ja>{w.hrefLabelJa}</Ja>
                   <Zh>{w.hrefLabelZh}</Zh>
                   <Ko>{w.hrefLabelKo}</Ko>
-                </Link>
+                </LocaleLink>
               )}
             </div>
           ))}
@@ -275,14 +275,14 @@ export default function ArrivedContent() {
                   <Ko>{item.descKo}</Ko>
                 </p>
                 {item.href && (
-                  <Link
+                  <LocaleLink
                     href={item.href}
                     className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
                   >
                     <Ja>{item.hrefLabelJa}</Ja>
                     <Zh>{item.hrefLabelZh}</Zh>
                     <Ko>{item.hrefLabelKo}</Ko>
-                  </Link>
+                  </LocaleLink>
                 )}
               </div>
             </li>
@@ -528,7 +528,7 @@ export default function ArrivedContent() {
           <Ko>첫 달을 위한 가이드</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
-          <Link href="/workplace" className="reveal reveal-delay-1 group p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/50 dark:border-emerald-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <LocaleLink href="/workplace" className="reveal reveal-delay-1 group p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20 border border-emerald-100/50 dark:border-emerald-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
             <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">💼 <En translated>Workplace</En><Ja>職場</Ja><Zh>职场</Zh><Ko>직장</Ko></div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
               <En translated>Resumes, interviews, Award wages, your rights</En>
@@ -536,8 +536,8 @@ export default function ArrivedContent() {
               <Zh>简历、面试、Award 工资标准、你的权利</Zh>
               <Ko>이력서, 면접, 임금등급, 노동자 권리</Ko>
             </div>
-          </Link>
-          <Link href="/apartment" className="reveal reveal-delay-2 group p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/50 dark:border-amber-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          </LocaleLink>
+          <LocaleLink href="/apartment" className="reveal reveal-delay-2 group p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/50 dark:border-amber-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
             <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">🏠 <En translated>Apartment</En><Ja>賃貸</Ja><Zh>租房</Zh><Ko>부동산</Ko></div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
               <En translated>Leases, bonds, flatmates, where to look</En>
@@ -545,8 +545,8 @@ export default function ArrivedContent() {
               <Zh>租约、押金（bond）、合租室友、去哪里找房源</Zh>
               <Ko>임대 계약, 보증금, 쉐어하우스, 검색처</Ko>
             </div>
-          </Link>
-          <Link href="/finance" className="reveal reveal-delay-3 group p-5 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/50 dark:from-sky-950/30 dark:to-sky-900/20 border border-sky-100/50 dark:border-sky-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          </LocaleLink>
+          <LocaleLink href="/finance" className="reveal reveal-delay-3 group p-5 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/50 dark:from-sky-950/30 dark:to-sky-900/20 border border-sky-100/50 dark:border-sky-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all">
             <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">💰 <En translated>Finance</En><Ja>金融</Ja><Zh>金融</Zh><Ko>금융</Ko></div>
             <div className="text-sm text-stone-600 dark:text-stone-400">
               <En translated>Banking, TFN, super — the boring essentials</En>
@@ -554,7 +554,7 @@ export default function ArrivedContent() {
               <Zh>银行、TFN、养老金（super）— 枯燥但必需的基础</Zh>
               <Ko>은행, TFN, 퇴직연금 — 필수 기본기</Ko>
             </div>
-          </Link>
+          </LocaleLink>
         </div>
       </section>
     </>

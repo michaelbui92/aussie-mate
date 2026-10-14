@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import Image from "next/image";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
@@ -63,7 +63,7 @@ export default function HomePage() {
               (HeroCarousel places them at bottom-6). */}
           <div className="mt-auto flex flex-col items-center w-full gap-4">
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link
+            <LocaleLink
               href="/destinations"
               className="group inline-flex items-center justify-center gap-2 bg-sunset hover:bg-sunset-light text-white px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full shadow-lg shadow-sunset/30 hover:shadow-xl hover:shadow-sunset/40"
             >
@@ -72,8 +72,8 @@ export default function HomePage() {
               <Zh>探索目的地</Zh>
               <Ko>여행지 둘러보기</Ko>
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
-            </Link>
-            <Link
+            </LocaleLink>
+            <LocaleLink
               href="/tourist"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full"
             >
@@ -81,7 +81,7 @@ export default function HomePage() {
               <Ja>旅行を計画する</Ja>
               <Zh>规划你的行程</Zh>
               <Ko>여행 계획 세우기</Ko>
-            </Link>
+            </LocaleLink>
           </div>
           {/* Search bar */}
           <button
@@ -113,7 +113,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-10 md:py-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {/* Card 1: Journey */}
-            <Link
+            <LocaleLink
               href="/journey"
               className="reveal reveal-delay-1 group flex items-center gap-4 p-5 md:p-6 rounded-2xl border border-stone-200 dark:border-dark-border bg-gradient-to-br from-sunset/5 via-sunset/5 to-sunset/10 dark:from-sunset/10 dark:via-sunset/5 dark:to-transparent hover:border-sunset/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
@@ -137,10 +137,10 @@ export default function HomePage() {
               <span className="shrink-0 text-stone-300 dark:text-stone-600 group-hover:text-sunset transition-colors text-2xl">
                 →
               </span>
-            </Link>
+            </LocaleLink>
 
             {/* Card 2: Aussie English */}
-            <Link
+            <LocaleLink
               href="/aussie-english"
               className="reveal reveal-delay-2 group flex items-center gap-4 p-5 md:p-6 rounded-2xl border border-stone-200 dark:border-dark-border bg-gradient-to-br from-sky-500/5 via-sky-500/5 to-sky-500/10 dark:from-sky-500/10 dark:via-sky-500/5 dark:to-transparent hover:border-sky-500/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
@@ -164,7 +164,7 @@ export default function HomePage() {
               <span className="shrink-0 text-stone-300 dark:text-stone-600 group-hover:text-sky-500 transition-colors text-2xl">
                 →
               </span>
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function HomePage() {
                 <Ko>다음 여행지는?</Ko>
               </h2>
             </div>
-            <Link
+            <LocaleLink
               href="/destinations"
               className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
@@ -196,11 +196,11 @@ export default function HomePage() {
               <Zh>查看全部</Zh>
               <Ko>전체 보기</Ko>
               <span>→</span>
-            </Link>
+            </LocaleLink>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {remainingDestinations.map((d, i) => (
-              <Link
+              <LocaleLink
                 key={d.slug}
                 href={`/destinations/${d.slug}`}
                 className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow card-glow`}
@@ -232,11 +232,11 @@ export default function HomePage() {
                     <Ko>{d.tagline.ko}</Ko>
                   </p>
                 </div>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link
+            <LocaleLink
               href="/destinations"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
@@ -245,7 +245,7 @@ export default function HomePage() {
               <Zh>查看更多目的地</Zh>
               <Ko>더 많은 여행지 보기</Ko>
               <span>→</span>
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </section>
@@ -268,7 +268,7 @@ export default function HomePage() {
                 <Ko>추천 경험</Ko>
               </h2>
             </div>
-            <Link
+            <LocaleLink
               href="/experiences"
               className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
@@ -277,11 +277,11 @@ export default function HomePage() {
               <Zh>查看全部</Zh>
               <Ko>전체 보기</Ko>
               <span>→</span>
-            </Link>
+            </LocaleLink>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {topExperiences.map((e, i) => (
-              <Link
+              <LocaleLink
                 key={e.href}
                 href={e.href}
                 className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow card-glow`}
@@ -313,11 +313,11 @@ export default function HomePage() {
                     <Ko>{e.koBlurb}</Ko>
                   </p>
                 </div>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link
+            <LocaleLink
               href="/experiences"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
@@ -326,7 +326,7 @@ export default function HomePage() {
               <Zh>查看更多体验</Zh>
               <Ko>더 많은 경험 보기</Ko>
               <span>→</span>
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </section>
@@ -354,7 +354,7 @@ export default function HomePage() {
                 <Ko>예약 전에</Ko>
               </h2>
             </div>
-            <Link
+            <LocaleLink
               href="/faq"
               className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
@@ -363,11 +363,11 @@ export default function HomePage() {
               <Zh>查看所有问题</Zh>
               <Ko>전체 질문 보기</Ko>
               <span>→</span>
-            </Link>
+            </LocaleLink>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
             {topHomepageFaqs.map((faq, i) => (
-              <Link
+              <LocaleLink
                 key={i}
                 href="/faq"
                 className={`reveal reveal-delay-${(i % 5) + 1} block p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all h-full`}
@@ -384,11 +384,11 @@ export default function HomePage() {
                   <Zh>{pickLocale("zh", faq.a)}</Zh>
                   <Ko>{faq.a.ko}</Ko>
                 </p>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link
+            <LocaleLink
               href="/faq"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
             >
@@ -397,7 +397,7 @@ export default function HomePage() {
               <Zh>阅读更多常见问题</Zh>
               <Ko>더 많은 질문 보기</Ko>
               <span>→</span>
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </section>
@@ -422,12 +422,12 @@ export default function HomePage() {
             <Ko>최종 검토: 2026년 9월 11일</Ko>
           </span>
           <span aria-hidden="true">·</span>
-          <Link href="/editorial" className="text-sunset hover:underline font-medium">
+          <LocaleLink href="/editorial" className="text-sunset hover:underline font-medium">
             <En translated>Editorial standards</En>
             <Ja>編集方針</Ja>
             <Zh>编辑标准</Zh>
             <Ko>편집 기준</Ko>
-          </Link>
+          </LocaleLink>
         </div>
       </section>
 

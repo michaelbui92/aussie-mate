@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "../LangBlocks";
 
@@ -215,14 +215,14 @@ export default function BeforeContent() {
             ))}
           </ul>
           {section.link && (
-            <Link
+            <LocaleLink
               href={section.link.href}
               className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-300 transition-colors"
             >
               <Ja>{section.link.labelJa ?? section.link.labelEn}</Ja>
               <Zh>{section.link.labelZh ?? section.link.labelEn}</Zh>
               <Ko>{section.link.labelKo}</Ko>
-            </Link>
+            </LocaleLink>
           )}
         </section>
       ))}
@@ -257,7 +257,7 @@ export default function BeforeContent() {
               있습니다. 위의 준비가 끝났다는 전제로 작성되었습니다.
             </Ko>
           </p>
-          <Link
+          <LocaleLink
             href="/journey/arrived"
             className="inline-flex items-center gap-2 bg-white text-sky-600 hover:bg-stone-50 px-6 py-3 rounded-full text-sm font-semibold transition-colors"
           >
@@ -266,7 +266,7 @@ export default function BeforeContent() {
             <Zh>我已经落地了 — 接下来呢？</Zh>
             <Ko>도착했어요 — 이제 어떻게?</Ko>
             <span>→</span>
-          </Link>
+          </LocaleLink>
         </div>
       </section>
     </>

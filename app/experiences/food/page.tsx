@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
@@ -147,12 +147,12 @@ export default function SydneyFoodGuide() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/30" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
-          <Link
+          <LocaleLink
             href="/destinations"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white text-xs uppercase tracking-[0.3em] mb-6 transition-colors"
           >
             ← <En translated>Destinations</En><Ja>目的地</Ja><Zh>目的地</Zh><Ko>여행지</Ko>
-          </Link>
+          </LocaleLink>
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
             <En translated>Food &amp; Drink</En>
             <Ja>フード &amp; ドリンク</Ja>

@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import {useLang, type Localized} from "@/components/LangBlocks";
 
@@ -45,13 +45,13 @@ export default function NotFound() {
       <p className="text-stone-500 dark:text-stone-400 max-w-md mb-8">
         {pickLocale(lang, T.body)}
       </p>
-      <Link
+      <LocaleLink
         href="/"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sunset text-white text-sm font-medium hover:bg-sunset-light transition-colors shadow-md hover:shadow-lg"
       >
         {pickLocale(lang, T.home)}
         <span>→</span>
-      </Link>
+      </LocaleLink>
     </main>
   );
 }

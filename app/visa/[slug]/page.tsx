@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale, type Lang } from "@/lib/locale";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
@@ -77,13 +77,13 @@ export default async function VisaPage({
       {/* Hero */}
       <section className="bg-gradient-to-br from-sunset/15 via-stone-50 to-amber-50 dark:from-sunset/20 dark:via-darkbg dark:to-amber-950/20 border-b border-stone-200/60 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-          <Link
+          <LocaleLink
             href="/visa"
             className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-sunset text-xs uppercase tracking-[0.3em] mb-6 transition-colors"
           >
             ← <En translated>All visas</En><Ja>すべてのビザ</Ja><Zh>所有签证</Zh>
             <Ko>전체 비자</Ko>
-          </Link>
+          </LocaleLink>
           <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-sunset mb-3">
             {v.code}
           </p>
@@ -350,7 +350,7 @@ export default async function VisaPage({
             {visas
               .filter((x) => x.slug !== v.slug)
               .map((other) => (
-                <Link
+                <LocaleLink
                   key={other.slug}
                   href={`/visa/${other.slug}`}
                   className="group block p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all"
@@ -364,7 +364,7 @@ export default async function VisaPage({
                     <Zh>{pickLocale("zh", other.name)}</Zh>
                     <Ko>{other.name.ko}</Ko>
                   </p>
-                </Link>
+                </LocaleLink>
               ))}
           </div>
         </section>

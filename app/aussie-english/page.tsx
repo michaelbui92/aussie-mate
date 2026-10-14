@@ -14,7 +14,7 @@ import { phrases, type Phrase } from "@/lib/phrases";
 import { En, Ko, Zh, Ja } from "@/components/LangBlocks";
 import PhraseExplorer, { type PhraseCategory } from "@/components/PhraseExplorer";
 import { seoFor, withSeo } from "@/lib/seo";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 
 export async function generateMetadata(): Promise<Metadata> {
   // Per request, so the tab title and the search-result headline are in the reader's
@@ -293,7 +293,7 @@ export default function AussieEnglishPage() {
               <Zh>全部 {phrases.length} 条短语</Zh>
               <Ja>全{phrases.length}フレーズ</Ja>
             </h2>
-            <Link 
+            <LocaleLink 
               href="/aussie-english/culture" 
               className="text-sm text-sunset hover:text-sunset-light font-medium transition-colors"
             >
@@ -301,7 +301,7 @@ export default function AussieEnglishPage() {
               <Ko>문화적 맥락 →</Ko>
               <Zh>文化背景 →</Zh>
               <Ja>文化的背景 →</Ja>
-            </Link>
+            </LocaleLink>
           </div>
         </div>
         <PhraseExplorer phrases={phrases} categories={categories} />

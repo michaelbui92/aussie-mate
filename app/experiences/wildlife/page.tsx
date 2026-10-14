@@ -4,7 +4,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { pickLocale } from "@/lib/locale";
 import EditorialSection, {
@@ -335,13 +335,13 @@ export default function WildlifePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
-          <Link
+          <LocaleLink
             href="/destinations"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white text-xs uppercase tracking-[0.3em] mb-6 transition-colors"
           >
             ← <En translated>All destinations</En><Ja>すべての目的地</Ja><Zh>全部目的地</Zh>
             <Ko>전체 여행지</Ko>
-          </Link>
+          </LocaleLink>
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
             <En translated>Practical guide</En>
             <Ja>実用ガイド</Ja>

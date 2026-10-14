@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
@@ -62,7 +62,7 @@ export default function ExperiencesPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
           {themes.map((t, i) => (
-            <Link
+            <LocaleLink
               key={t.title}
               href={t.href}
               className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
@@ -97,7 +97,7 @@ export default function ExperiencesPage() {
                   <span className="ml-2 transition-transform group-hover:translate-x-1 inline-block">→</span>
                 </span>
               </div>
-            </Link>
+            </LocaleLink>
           ))}
         </div>
       </div>

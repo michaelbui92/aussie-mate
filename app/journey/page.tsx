@@ -9,7 +9,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
@@ -169,7 +169,7 @@ export default function JourneyPage() {
             {stages.map((s, i) => {
               const c = accentClasses[s.accent];
               return (
-                <Link
+                <LocaleLink
                   key={s.href}
                   href={s.href}
                   className={`reveal reveal-delay-${i + 1} group ${c.bg} ${c.ring} rounded-3xl p-6 md:p-8 ring-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col min-h-[300px]`}
@@ -203,7 +203,7 @@ export default function JourneyPage() {
                     <Ko>가이드 읽기</Ko>
                     <span className="transition-transform group-hover:translate-x-1">→</span>
                   </div>
-                </Link>
+                </LocaleLink>
               );
             })}
           </div>

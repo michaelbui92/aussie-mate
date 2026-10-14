@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 // /other-tools — the operator's other projects.
 // Bilingual (English / 한국어) to match the rest of the site.
@@ -270,12 +270,12 @@ export default async function OtherToolsPage() {
         ))}
 
         <div className="text-center pt-4">
-          <Link href="/" className="text-sm text-sunset hover:underline">
+          <LocaleLink href="/" className="text-sm text-sunset hover:underline">
             <En translated>← Back to AussieGuides home</En>
             <Ja>← AussieGuides ホームへ戻る</Ja>
             <Zh>← 返回 AussieGuides 首页</Zh>
             <Ko>← AussieGuides 홈으로</Ko>
-          </Link>
+          </LocaleLink>
         </div>
       </div>
     </div>

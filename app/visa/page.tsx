@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { visas } from "./data";
@@ -242,7 +242,7 @@ export default function VisaHub() {
                   className="hover:bg-sunset/5 transition-colors"
                 >
                   <td className="px-4 py-3 align-top">
-                    <Link
+                    <LocaleLink
                       href={`/visa/${v.slug}`}
                       className="font-serif text-base text-stone-900 dark:text-stone-100 hover:text-sunset"
                     >
@@ -250,7 +250,7 @@ export default function VisaHub() {
                       <Ja>{pickLocale("ja", v.name)}</Ja>
                       <Zh>{pickLocale("zh", v.name)}</Zh>
                       <Ko>{v.name.ko}</Ko>
-                    </Link>
+                    </LocaleLink>
                     <p className="text-[11px] text-stone-400 dark:text-stone-500 mt-0.5">
                       {v.code}
                     </p>
@@ -296,7 +296,7 @@ export default function VisaHub() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {visas.map((v) => (
-            <Link
+            <LocaleLink
               key={v.slug}
               href={`/visa/${v.slug}`}
               className="group block p-6 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-lg transition-all"
@@ -322,7 +322,7 @@ export default function VisaHub() {
                 <Zh>阅读更多 →</Zh>
                 <Ko>자세히 보기 →</Ko>
               </p>
-            </Link>
+            </LocaleLink>
           ))}
         </div>
       </section>

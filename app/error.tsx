@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 
 export default function Error({
   error,
@@ -29,12 +29,12 @@ export default function Error({
           >
             Try again
           </button>
-          <Link
+          <LocaleLink
             href="/"
             className="inline-flex items-center gap-2 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"
           >
             Go home →
-          </Link>
+          </LocaleLink>
         </div>
         {error.digest && (
           <p className="mt-8 text-[10px] text-stone-400 dark:text-stone-500 font-mono">

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "../LangBlocks";
 
@@ -130,14 +130,14 @@ export default function HomeContent() {
                 <Ko>{w.blurbKo}</Ko>
               </p>
               {w.href && (
-                <Link
+                <LocaleLink
                   href={w.href}
                   className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300 transition-colors"
                 >
                   <Ja>{w.hrefLabelJa ?? w.hrefLabelEn}</Ja>
                   <Zh>{w.hrefLabelZh ?? w.hrefLabelEn}</Zh>
                   <Ko>{w.hrefLabelKo}</Ko>
-                </Link>
+                </LocaleLink>
               )}
             </div>
           ))}
@@ -373,7 +373,7 @@ export default function HomeContent() {
           <Ko>더 알아보기</Ko>
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
-          <Link
+          <LocaleLink
             href="/beyond-sydney"
             className="reveal reveal-delay-1 group p-5 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100/50 dark:from-teal-950/30 dark:to-teal-900/20 border border-teal-100/50 dark:border-teal-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
@@ -387,8 +387,8 @@ export default function HomeContent() {
               <Zh>蓝山、南海岸、猎人谷</Zh>
               <Ko>블루마운틴, 사우스 코스트, 헌터 밸리</Ko>
             </div>
-          </Link>
-          <Link
+          </LocaleLink>
+          <LocaleLink
             href="/aussie-english"
             className="reveal reveal-delay-2 group p-5 rounded-2xl bg-gradient-to-br from-sunset/10 to-sunset/5 dark:from-sunset/20 dark:to-sunset/10 border border-sunset/20 dark:border-sunset/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
@@ -402,8 +402,8 @@ export default function HomeContent() {
               <Zh>俚语、习语，还有你没听懂的那些词</Zh>
               <Ko>슬랭, 관용구, 놓친 표현들</Ko>
             </div>
-          </Link>
-          <Link
+          </LocaleLink>
+          <LocaleLink
             href="/resources"
             className="reveal reveal-delay-3 group p-5 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/50 dark:from-sky-950/30 dark:to-sky-900/20 border border-sky-100/50 dark:border-sky-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
@@ -417,7 +417,7 @@ export default function HomeContent() {
               <Zh>教会、体育俱乐部、聚会</Zh>
               <Ko>한인 교회, 동호회, 모임</Ko>
             </div>
-          </Link>
+          </LocaleLink>
         </div>
       </section>
     </>
