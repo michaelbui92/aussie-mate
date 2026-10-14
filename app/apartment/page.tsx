@@ -268,7 +268,11 @@ const sections: ApartmentSectionData[] = [
   },
 ];
 
-export default function ApartmentPage() {
+export default async function ApartmentPage() {
+  // Per request, so the Article schema declares the reader's language. Previously every
+  // locale emitted inLanguage ["en"].
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Hero — minimal text header, matches weather page style */}
@@ -354,6 +358,7 @@ export default function ApartmentPage() {
               headline: "Renting an apartment in Sydney — a bilingual newcomer's guide",
               description:
                 "시드니에서 부동산 구하기 — 입주 가능한 지역, 부동산 사이트, 보증금(bond), 집주인 협상, 입주 시 주의사항까지 한국어로 정리.",
+              locale,
             })
           ),
         }}

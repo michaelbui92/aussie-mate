@@ -22,14 +22,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
-export default function FAQPage() {
+export default async function FAQPage() {
+  // Per request, so the FAQPage schema carries the reader's language: without this the
+  // Japanese and Chinese pages emitted inLanguage ["en"] with English questions.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      {/* FAQPage JSON-LD — surfaces Q&A in Google search as rich results */}
+      {/* FAQPage JSON-LD — surfaces Q&A in Google search as rich results.
+          Emitted once: the page previously carried two identical blocks. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqLdJson(faqs, "/faq")),
+          __html: JSON.stringify(faqLdJson(faqs, "/faq", locale)),
         }}
       />
       <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
@@ -86,12 +91,6 @@ export default function FAQPage() {
           <Ko>으로 이메일을 보내주세요.</Ko>
         </p>
       </div>
-
-      {/* FAQPage schema — Google rich result (expandable Q&A in SERP). */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLdJson(faqs, "faq")) }}
-      />
 
     </div>
   );

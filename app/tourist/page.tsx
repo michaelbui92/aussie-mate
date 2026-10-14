@@ -143,7 +143,11 @@ const sections: TouristSection[] = [
   },
 ];
 
-export default function TouristPage() {
+export default async function TouristPage() {
+  // Per request, so the Article and FAQPage schema carry the reader's language: without
+  // this the Japanese and Chinese pages emitted inLanguage ["en"].
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       <header className="bg-stone-900 dark:bg-stone-950">
@@ -342,6 +346,7 @@ export default function TouristPage() {
               headline: "Sydney tourist guide — top sights, safety, apps and first-timer essentials",
               description:
                 "시드니 관광 가이드 — 블루마운틴, 본다이, 오페라 하우스, 페리, 와이프, 식당, 교통패스, 숙소, 예산까지 한국인이 시드니를 처음 방문할 때 알아야 할 모든 것.",
+              locale,
             })
           ),
         }}
@@ -378,7 +383,8 @@ export default function TouristPage() {
                   },
                 },
               ],
-              "tourist"
+              "tourist",
+              locale
             )
           ),
         }}

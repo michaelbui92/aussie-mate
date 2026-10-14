@@ -127,7 +127,11 @@ const toolsForSchema = tools.map((t) => ({
   description: t.desc,
 }));
 
-export default function OtherToolsPage() {
+export default async function OtherToolsPage() {
+  // Per request, so each tool's Article schema declares the reader's language. Previously
+  // every locale emitted inLanguage ["en"].
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
   return (
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
@@ -243,6 +247,7 @@ export default function OtherToolsPage() {
                     path: toolsForSchema[i].path,
                     headline: toolsForSchema[i].headline,
                     description: toolsForSchema[i].description,
+                    locale,
                   })
                 ),
               }}

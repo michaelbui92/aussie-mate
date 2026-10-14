@@ -68,6 +68,9 @@ export default async function VisaPage({
   const { slug } = await params;
   const v = getVisa(slug);
   if (!v) notFound();
+  // The locale the root layout resolved, so the FAQPage schema's inLanguage matches the
+  // page. Previously this always declared ["en"] on the Japanese and Chinese routes.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
 
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
@@ -404,7 +407,8 @@ export default async function VisaPage({
                   a: { en: v.audience.en },
                 },
               ],
-              `visa/${slug}`
+              `visa/${slug}`,
+              locale
             )
           ),
         }}

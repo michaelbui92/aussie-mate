@@ -133,7 +133,11 @@ const sections: TransportSection[] = [
   },
 ];
 
-export default function TransportPage() {
+export default async function TransportPage() {
+  // Per request, so the Article schema declares the reader's language. Previously every
+  // locale emitted inLanguage ["en"].
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Hero — minimal text header, matches weather page style */}
@@ -203,6 +207,7 @@ export default function TransportPage() {
               headline: "Getting around Sydney — transport, Opal, and driving in NSW",
               description:
                 "시드니 교통 가이드 — 오팔 카드, 기차/버스/페리, 우버, 시드니에서 운전하기, 지방 여행 교통편까지 한국어로 정리.",
+              locale,
             })
           ),
         }}

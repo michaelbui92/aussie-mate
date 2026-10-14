@@ -116,6 +116,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
   const d = getDestination(slug);
   if (!d) notFound();
   const faqs = buildFaqs(d);
+  // The locale the root layout resolved, so the FAQPage and Article schema render in the
+  // reader's language. Both blocks previously hard-coded English.
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
 
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
@@ -567,8 +570,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           __html: JSON.stringify(
             articleLdJson({
               path: `destinations/${d.slug}`,
-              headline: `${d.name.en} — ${d.tagline.en}`,
-              description: d.description.en,
+              headline: `${pickLocale(locale, d.name)} — ${pickLocale(locale, d.tagline)}`,
+              description: pickLocale(locale, d.description),
+              locale,
             })
           ),
         }}
@@ -576,7 +580,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqLdJson(faqs.map(f => ({ q: f.q, a: f.a })), `destinations/${d.slug}`)),
+          __html: JSON.stringify(faqLdJson(faqs.map(f => ({ q: f.q, a: f.a })), `destinations/${d.slug}`, locale)),
         }}
       />
 

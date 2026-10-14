@@ -165,7 +165,11 @@ const sections: FinanceSection[] = [
   },
 ];
 
-export default function FinancePage() {
+export default async function FinancePage() {
+  // Per request, so the Article schema declares the reader's language. Previously every
+  // locale emitted inLanguage ["en"].
+  const locale = ((await headers()).get("x-am-locale") ?? "en") as
+    Parameters<typeof pageMeta>[1];
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Hero — minimal text header, matches weather page style */}
@@ -234,6 +238,7 @@ export default function FinancePage() {
               headline: "Finance & banking in Australia for newcomers",
               description:
                 "Open a bank account, apply for a TFN, claim superannuation, lodge a tax return — practical money and banking essentials in Australia.",
+              locale,
             })
           ),
         }}
