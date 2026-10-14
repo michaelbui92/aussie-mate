@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "./LangBlocks";
+import LocaleLink from "./LocaleLink";
 
 export interface ChecklistItem {
   id: string;
@@ -117,7 +118,7 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
                     </div>
                   )}
                   {it.link && (
-                    <a
+                    <LocaleLink
                       href={it.link.href}
                       className="text-xs text-sunset font-semibold mt-1 inline-block hover:underline"
                     >
@@ -125,7 +126,7 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
                       <Ja>→ {pickLocale("ja", it.link)}</Ja>
                       <Zh>→ {pickLocale("zh", it.link)}</Zh>
                       <Ko>→ {it.link.ko}</Ko>
-                    </a>
+                    </LocaleLink>
                   )}
                 </div>
               </label>

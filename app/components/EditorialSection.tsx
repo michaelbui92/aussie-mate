@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { pickLocale } from "@/lib/locale";
 import { En, Ja, Ko, Zh } from "./LangBlocks";
+import LocaleLink from "./LocaleLink";
 import * as Icons from "./Icons";
 
 /**
@@ -205,7 +206,7 @@ export default function EditorialSection({
                 <Zh>{item.zhLabel || item.label}</Zh>
                 <Ko>{item.koLabel || item.label}</Ko>
                 {item.url && (
-                  <a
+                  <LocaleLink
                     href={item.url}
                     {...(item.url.startsWith("/")
                       ? {}
@@ -214,7 +215,7 @@ export default function EditorialSection({
                     aria-label={item.url.startsWith("/") ? item.label : `${item.label} (opens in new tab)`}
                   >
                     ↗
-                  </a>
+                  </LocaleLink>
                 )}
               </p>
               <En translated>
