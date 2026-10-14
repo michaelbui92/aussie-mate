@@ -44,6 +44,10 @@ const tools = [
     jaDesc: "\u30b7\u30c9\u30cb\u30fc\u3067\u6700\u3082\u89aa\u3057\u307f\u3084\u3059\u3044\u904b\u8ee2\u6559\u7fd2\u6240\u3002\u30b7\u30c9\u30cb\u30fc\u306e\u3059\u3079\u3066\u306e\u8a66\u9a13\u30eb\u30fc\u30c8\u3068\u8981\u4ef6\u3092\u30ab\u30d0\u30fc\u3059\u308b\u3001\u5fcd\u8010\u5f37\u304f\u7d4c\u9a13\u8c4a\u304b\u306a\u6307\u5c0e\u3067\u3001\u904b\u8ee2\u8a66\u9a13\u306e\u5408\u683c\u3092\u76ee\u6307\u305b\u307e\u3059\u3002",
     zhDesc: "\u6089\u5c3c\u6700\u53cb\u5584\u7684\u9a7e\u6821\u3002\u8010\u5fc3\u3001\u7ecf\u9a8c\u4e30\u5bcc\u7684\u6559\u7ec3\u5e26\u4f60\u901a\u8fc7\u9a7e\u7167\u8003\u8bd5\uff0c\u8986\u76d6\u6089\u5c3c\u6240\u6709\u8003\u8bd5\u8def\u7ebf\u548c\u8981\u6c42\u3002",
     url: "https://drivewithbui.com",
+    koDesc: "Sydney에서 가장 친근한 운전학원. 인내심 있고 경험 많은 강사의 지도로 Sydney 전역의 시험 경로와 요구사항을 배우고 운전면허 시험을 통과하세요.",
+    jaHighlight: "Sydney拠点 — 初回レッスンを予約する",
+    zhHighlight: "位于Sydney — 立即预约您的首次课程",
+    koHighlight: "Sydney 기반 — 첫 레슨 예약하기",
     badge: "Driving School",
     accent: "bg-sunset/10 border-sunset/30",
     highlight: "Based in Sydney — book your first lesson today",
@@ -87,6 +91,10 @@ const tools = [
     jaDesc: "\u8ce2\u3044\u5b66\u7fd2\u30d1\u30fc\u30c8\u30ca\u30fc\u30a2\u30d7\u30ea \u2014 \u5358\u8a9e\u30ab\u30fc\u30c9\u306e\u30c7\u30c3\u30ad\u3001\u9593\u9694\u53cd\u5fa9\u3001\u9032\u6357\u306e\u8a18\u9332\u3002\u8fd1\u65e5\u516c\u958b \u2014 \u7559\u5b66\u751f\u304c\u3088\u308a\u8ce2\u304f\u3001\u7121\u7406\u306a\u304f\u5b66\u3079\u308b\u3088\u3046\u306b\u4f5c\u3089\u308c\u3066\u3044\u307e\u3059\u3002",
     zhDesc: "\u4e00\u6b3e\u667a\u80fd\u5b66\u4e60\u4f34\u4fa3\u5e94\u7528\u2014\u2014\u5355\u8bcd\u5361\u724c\u7ec4\u3001\u95f4\u9694\u91cd\u590d\u3001\u8fdb\u5ea6\u8ffd\u8e2a\u3002\u5373\u5c06\u63a8\u51fa\u2014\u2014\u4e13\u4e3a\u5e2e\u52a9\u7559\u5b66\u751f\u66f4\u806a\u660e\u5730\u5b66\u4e60\uff0c\u800c\u4e0d\u662f\u66f4\u8f9b\u82e6\u3002",
     url: "https://stdybddy.app",
+    koDesc: "스마트 학습 도우미 앱 — 플래시카드, 간격 반복, 진도 추적. 곧 출시 — 유학생들이 더 효율적으로 공부할 수 있도록 제작되었습니다.",
+    jaHighlight: "効率的に学ぶ — stdybddy.appで公開中",
+    zhHighlight: "更聪明地学习，而非更辛苦 — 现已在stdybddy.app上线",
+    koHighlight: "효율적으로 공부하세요 — stdybddy.app에서 지금 이용 가능",
     badge: "Live",
     accent: "bg-sage/10 border-sage/30",
     highlight: "Study smarter, not harder — live now at stdybddy.app",
@@ -197,7 +205,10 @@ export default async function OtherToolsPage() {
                   <Ko>{tool.koHeadline}</Ko>
                 </p>
                 <p className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-3">
-                  {tool.desc}
+                  <En translated>{tool.desc}</En>
+                  <Ja>{tool.jaDesc ?? tool.desc}</Ja>
+                  <Zh>{tool.zhDesc ?? tool.desc}</Zh>
+                  <Ko>{tool.koDesc ?? tool.desc}</Ko>
                 </p>
                 {/* Origin paragraph — gives Google the "real human, real
                     reason" E-E-A-T signal at the per-tool level. */}
@@ -208,7 +219,10 @@ export default async function OtherToolsPage() {
                   <Ko>{tool.origins.ko}</Ko>
                 </p>
                 <p className="text-xs font-medium text-sunset">
-                  ✦ {tool.highlight}
+                  ✦ <En translated>{tool.highlight}</En>
+                  <Ja>{tool.jaHighlight ?? tool.highlight}</Ja>
+                  <Zh>{tool.zhHighlight ?? tool.highlight}</Zh>
+                  <Ko>{tool.koHighlight ?? tool.highlight}</Ko>
                 </p>
               </div>
             </div>

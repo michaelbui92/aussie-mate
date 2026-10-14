@@ -14,6 +14,7 @@ import { En, Ja, Ko, Zh } from "./LangBlocks";
 
 export interface AccordionItem {
   label: ReactNode;
+  jaLabel?: string; zhLabel?: string; koLabel?: string;
   en: string;
   ko: string; ja?: string; zh?: string
   // Optional metadata preserved from source pages; not rendered by default.
@@ -109,8 +110,8 @@ export default function Accordion({
                   <div key={ii} className="px-5 md:px-6 py-4">
                     <p className={`font-medium text-sm ${accentText} mb-1.5`}>
                       <En translated>{stripGloss(item.label)}</En>
-                      <Ja>{stripGloss(item.label)}</Ja>
-                      <Zh>{stripGloss(item.label)}</Zh>
+                      <Ja>{item.jaLabel ?? stripGloss(item.label)}</Ja>
+                      <Zh>{item.zhLabel ?? stripGloss(item.label)}</Zh>
                       <Ko>{item.label}</Ko>
                     </p>
                     <En translated>

@@ -383,27 +383,27 @@ export default async function VisaPage({
             faqLdJson(
               [
                 {
-                  q: { en: `How long is the ${v.name.en} valid?` },
+                  q: { en: `How long is the ${v.name.en} valid?`, ja: `${v.name.ja ?? v.name.en}の有効期間は？`, zh: `${v.name.zh ?? v.name.en}的有效期是多久？`, ko: `${v.name.ko ?? v.name.en}의 유효 기간은 얼마나 되나요?` },
                   a: { en: v.duration.en },
                 },
                 {
-                  q: { en: `Can I work on the ${v.name.en}?` },
+                  q: { en: `Can I work on the ${v.name.en}?`, ja: `${v.name.ja ?? v.name.en}で働けますか？`, zh: `我可以用${v.name.zh ?? v.name.en}工作吗？`, ko: `${v.name.ko ?? v.name.en}으로 일할 수 있나요?` },
                   a: { en: v.workRights.en },
                 },
                 {
-                  q: { en: `Can I study on the ${v.name.en}?` },
+                  q: { en: `Can I study on the ${v.name.en}?`, ja: `${v.name.ja ?? v.name.en}で勉強できますか？`, zh: `我可以用${v.name.zh ?? v.name.en}学习吗？`, ko: `${v.name.ko ?? v.name.en}으로 공부할 수 있나요?` },
                   a: { en: v.studyRights.en },
                 },
                 {
-                  q: { en: `How much does the ${v.name.en} cost?` },
+                  q: { en: `How much does the ${v.name.en} cost?`, ja: `${v.name.ja ?? v.name.en}の費用はいくらですか？`, zh: `${v.name.zh ?? v.name.en}需要多少钱？`, ko: `${v.name.ko ?? v.name.en} 비용은 얼마인가요?` },
                   a: { en: v.cost.en },
                 },
                 {
-                  q: { en: `How long does ${v.name.en} processing take?` },
+                  q: { en: `How long does ${v.name.en} processing take?`, ja: `${v.name.ja ?? v.name.en}の審査にどのくらいかかりますか？`, zh: `${v.name.zh ?? v.name.en}的审理需要多长时间？`, ko: `${v.name.ko ?? v.name.en} 처리는 얼마나 걸리나요?` },
                   a: { en: v.processingTime.en },
                 },
                 {
-                  q: { en: `Who is the ${v.name.en} for?` },
+                  q: { en: `Who is the ${v.name.en} for?`, ja: `${v.name.ja ?? v.name.en}は誰のためですか？`, zh: `${v.name.zh ?? v.name.en}适合谁？`, ko: `${v.name.ko ?? v.name.en}은 누구를 위한 건가요?` },
                   a: { en: v.audience.en },
                 },
               ],
