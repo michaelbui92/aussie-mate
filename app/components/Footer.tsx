@@ -1,5 +1,8 @@
-import Link from "next/link";
 import { En, Ja, Ko, Zh } from "./LangBlocks";
+// Every internal link goes through LocaleLink so a /ja reader stays on /ja. The
+// anchors are written once and rendered in all four languages, so a bare
+// <LocaleLink href="/apartment"> used to hand a Japanese reader the English page.
+import LocaleLink from "./LocaleLink";
 
 const FLAG_EMOJI = "🇦🇺";
 
@@ -10,12 +13,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-flex items-center gap-2 group mb-3">
+            <LocaleLink href="/" className="inline-flex items-center gap-2 group mb-3">
               <span className="w-9 h-9 rounded-full bg-stone-100 dark:bg-dark-surface flex items-center justify-center text-xl ring-1 ring-stone-200/60 dark:ring-dark-border transition-transform group-hover:scale-105">
                 {FLAG_EMOJI}
               </span>
               <span className="font-serif text-lg text-stone-900 dark:text-stone-100">AussieGuides</span>
-            </Link>
+            </LocaleLink>
             <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed max-w-xs">
               <En translated>A guide to Australian daily life — for anyone new here, regardless of where you&apos;re coming from. (Available in English and 한국어)</En>
               <Ja>オーストラリアの日常生活ガイド — どこから来た方でも、ここでの生活が初めての方のために。（英語と韓国語で利用可能）</Ja>
@@ -33,12 +36,12 @@ export default function Footer() {
               <Ko>생활</Ko>
             </p>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/apartment" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Apartment</En><Ja>賃貸</Ja><Zh>租房</Zh><Ko>부동산</Ko></Link></li>
-              <li><Link href="/finance" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Finance</En><Ja>金融</Ja><Zh>金融</Zh><Ko>금융</Ko></Link></li>
-              <li><Link href="/transport" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Transport</En><Ja>交通</Ja><Zh>交通</Zh><Ko>교통</Ko></Link></li>
-              <li><Link href="/workplace" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Workplace</En><Ja>職場</Ja><Zh>职场</Zh><Ko>직장</Ko></Link></li>
-              <li><Link href="/study" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Study</En><Ja>学習</Ja><Zh>学习</Zh><Ko>학습</Ko></Link></li>
-              <li><Link href="/weather" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Weather</En><Ja>天気</Ja><Zh>天气</Zh><Ko>날씨</Ko></Link></li>
+              <li><LocaleLink href="/apartment" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Apartment</En><Ja>賃貸</Ja><Zh>租房</Zh><Ko>부동산</Ko></LocaleLink></li>
+              <li><LocaleLink href="/finance" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Finance</En><Ja>金融</Ja><Zh>金融</Zh><Ko>금융</Ko></LocaleLink></li>
+              <li><LocaleLink href="/transport" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Transport</En><Ja>交通</Ja><Zh>交通</Zh><Ko>교통</Ko></LocaleLink></li>
+              <li><LocaleLink href="/workplace" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Workplace</En><Ja>職場</Ja><Zh>职场</Zh><Ko>직장</Ko></LocaleLink></li>
+              <li><LocaleLink href="/study" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Study</En><Ja>学習</Ja><Zh>学习</Zh><Ko>학습</Ko></LocaleLink></li>
+              <li><LocaleLink href="/weather" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Weather</En><Ja>天気</Ja><Zh>天气</Zh><Ko>날씨</Ko></LocaleLink></li>
             </ul>
           </div>
 
@@ -51,13 +54,13 @@ export default function Footer() {
               <Ko>둘러보기</Ko>
             </p>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/destinations" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Destinations</En><Ja>目的地</Ja><Zh>目的地</Zh><Ko>여행지</Ko></Link></li>
-              <li><Link href="/tourist" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Tourist</En><Ja>観光</Ja><Zh>旅游</Zh><Ko>관광</Ko></Link></li>
-              <li><Link href="/sport" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Sport</En><Ja>スポーツ</Ja><Zh>体育</Zh><Ko>스포츠</Ko></Link></li>
-              <li><Link href="/beyond-sydney" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Beyond Sydney</En><Ja>シドニーの外へ</Ja><Zh>悉尼之外</Zh><Ko>시드니 밖으로</Ko></Link></li>
-              <li><Link href="/aussie-english" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Aussie English</En><Ja>オーストラリア英語</Ja><Zh>澳洲英语</Zh><Ko>호주 영어</Ko></Link></li>
-              <li><Link href="/visa" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Visa Guide</En><Ja>ビザガイド</Ja><Zh>签证指南</Zh><Ko>비자 가이드</Ko></Link></li>
-              <li><Link href="/faq" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>FAQ</En><Ja>よくある質問</Ja><Zh>常见问题</Zh><Ko>자주 묻는 질문</Ko></Link></li>
+              <li><LocaleLink href="/destinations" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Destinations</En><Ja>目的地</Ja><Zh>目的地</Zh><Ko>여행지</Ko></LocaleLink></li>
+              <li><LocaleLink href="/tourist" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Tourist</En><Ja>観光</Ja><Zh>旅游</Zh><Ko>관광</Ko></LocaleLink></li>
+              <li><LocaleLink href="/sport" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Sport</En><Ja>スポーツ</Ja><Zh>体育</Zh><Ko>스포츠</Ko></LocaleLink></li>
+              <li><LocaleLink href="/beyond-sydney" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Beyond Sydney</En><Ja>シドニーの外へ</Ja><Zh>悉尼之外</Zh><Ko>시드니 밖으로</Ko></LocaleLink></li>
+              <li><LocaleLink href="/aussie-english" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Aussie English</En><Ja>オーストラリア英語</Ja><Zh>澳洲英语</Zh><Ko>호주 영어</Ko></LocaleLink></li>
+              <li><LocaleLink href="/visa" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Visa Guide</En><Ja>ビザガイド</Ja><Zh>签证指南</Zh><Ko>비자 가이드</Ko></LocaleLink></li>
+              <li><LocaleLink href="/faq" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>FAQ</En><Ja>よくある質問</Ja><Zh>常见问题</Zh><Ko>자주 묻는 질문</Ko></LocaleLink></li>
             </ul>
           </div>
 
@@ -70,13 +73,13 @@ export default function Footer() {
               <Ko>더보기</Ko>
             </p>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/resources" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Resources</En><Ja>リソース</Ja><Zh>资源</Zh><Ko>자료</Ko></Link></li>
-              <li><Link href="/other-tools" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>My Projects</En><Ja>私のプロジェクト</Ja><Zh>我的项目</Zh><Ko>내 프로젝트</Ko></Link></li>
-              <li><Link href="/editorial" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Editorial standards</En><Ja>編集方針</Ja><Zh>编辑标准</Zh><Ko>편집 기준</Ko></Link></li>
-              <li><Link href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>About AussieGuides</En><Ja>AussieGuidesについて</Ja><Zh>关于AussieGuides</Zh><Ko>AussieGuides 소개</Ko></Link></li>
+              <li><LocaleLink href="/resources" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Resources</En><Ja>リソース</Ja><Zh>资源</Zh><Ko>자료</Ko></LocaleLink></li>
+              <li><LocaleLink href="/other-tools" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>My Projects</En><Ja>私のプロジェクト</Ja><Zh>我的项目</Zh><Ko>내 프로젝트</Ko></LocaleLink></li>
+              <li><LocaleLink href="/editorial" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Editorial standards</En><Ja>編集方針</Ja><Zh>编辑标准</Zh><Ko>편집 기준</Ko></LocaleLink></li>
+              <li><LocaleLink href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>About AussieGuides</En><Ja>AussieGuidesについて</Ja><Zh>关于AussieGuides</Zh><Ko>AussieGuides 소개</Ko></LocaleLink></li>
               <li><a href="https://drivewithbui.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors">Drive with Bui →</a></li>
-              <li><Link href="/privacy" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Privacy</En><Ja>プライバシー</Ja><Zh>隐私</Zh><Ko>개인정보</Ko></Link></li>
-              <li><Link href="/terms" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Terms</En><Ja>利用規約</Ja><Zh>条款</Zh><Ko>이용약관</Ko></Link></li>
+              <li><LocaleLink href="/privacy" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Privacy</En><Ja>プライバシー</Ja><Zh>隐私</Zh><Ko>개인정보</Ko></LocaleLink></li>
+              <li><LocaleLink href="/terms" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Terms</En><Ja>利用規約</Ja><Zh>条款</Zh><Ko>이용약관</Ko></LocaleLink></li>
             </ul>
           </div>
         </div>
@@ -114,12 +117,12 @@ export default function Footer() {
             <Zh>— 谢谢。</Zh>
             <Ko> — 감사합니다.</Ko>
           </p>
-          <Link href="/editorial" className="text-sunset hover:underline font-medium">
+          <LocaleLink href="/editorial" className="text-sunset hover:underline font-medium">
             <En translated>Read our editorial standards →</En>
             <Ja>編集基準を読む →</Ja>
             <Zh>阅读我们的编辑标准 →</Zh>
             <Ko>편집 기준 보기 →</Ko>
-          </Link>
+          </LocaleLink>
         </div>
 
         <div className="flex items-center justify-between flex-wrap gap-2">

@@ -6,6 +6,7 @@ import { En, Ja, Ko, Zh, useLang, type Lang } from "./LangBlocks";
 import { useTheme } from "./ThemeProvider";
 import { useSearch } from "@/components/SearchModal";
 import { ChevronDown } from "@/components/Icons";
+import { localeHref, stripLocale } from "@/lib/locale-href";
 import { destinations, type TripLength } from "@/destinations/data";
 
 type NavItem = { href: string; label: string };
@@ -149,6 +150,16 @@ export default function Nav() {
   const { theme, toggle: toggleTheme } = useTheme();
   const { openSearch } = useSearch();
 
+  // Every internal href leaves through L(), so a Japanese reader who clicks a nav item
+  // stays on /ja instead of being dropped into the English page. `lang` is seeded from
+  // the URL by the root layout, so the href in the SERVER-rendered HTML is already
+  // prefixed -- a crawler that does not run JavaScript sees the locale links too.
+  const L = (path: string) => localeHref(lang, path);
+  // The item hrefs are keyed on the unprefixed path ("/transport") while pathname is the
+  // public, possibly prefixed one ("/ja/transport"), so the two never matched on a
+  // prefixed page: no active state and no highlight. Compare the bare path.
+  const barePath = stripLocale(pathname || "/");
+
   // Switch the URL, not only the preference: a link someone copies has to carry its language, or a
   // Korean reader receiving /aussie-english is handed English. usePathname is the rewritten path, so
   // adding or removing the prefix is all this needs to do.
@@ -241,9 +252,11 @@ export default function Nav() {
       className="sticky top-0 z-50 bg-white/85 dark:bg-darkbg/85 backdrop-blur-md border-b border-stone-200/60 dark:border-dark-border/60"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-20 flex items-center gap-4 py-2">
-        {/* Logo — clicking goes home; no separate Home pill */}
+        {/* Logo — clicking goes home; no separate Home pill. L("/") is the home page
+            of the reader's own language, so the logo does not drop a /ja reader
+            into the English home. */}
         <Link
-          href="/"
+          href={L("/")}
           className="flex items-center shrink-0 group relative"
           aria-label="AussieGuides home"
         >
@@ -261,7 +274,7 @@ export default function Nav() {
         >
           {navGroups.map((group) => {
             const isOpen = openDropdown === group.label;
-            const isActive = isActiveInGroup(pathname, group);
+            const isActive = isActiveInGroup(barePath, group);
             return (
               <div
                 key={group.label}
@@ -318,11 +331,11 @@ export default function Nav() {
                             {section.heading}
                           </p>
                           {section.items.map((item) => {
-                            const itemActive = pathname === item.href;
+                            const itemActive = barePath === item.href;
                             return (
                               <Link
                                 key={item.href}
-                                href={item.href}
+                                href={L(item.href)}
                                 role="menuitem"
                                 tabIndex={isOpen ? 0 : -1}
                                 className={`group/item relative block px-4 py-1.5 text-sm transition-all duration-200 ${
@@ -345,11 +358,11 @@ export default function Nav() {
                         </div>
                       ))
                     : group.items?.map((item, i) => {
-                        const itemActive = pathname === item.href;
+                        const itemActive = barePath === item.href;
                         return (
                           <Link
                             key={item.href}
-                            href={item.href}
+                            href={L(item.href)}
                             role="menuitem"
                             tabIndex={isOpen ? 0 : -1}
                             style={{ transitionDelay: isOpen ? `${i * 25}ms` : "0ms" }}
@@ -374,7 +387,7 @@ export default function Nav() {
                     <>
                       <div className="my-1 mx-3 border-t border-stone-200/60 dark:border-dark-border/60" />
                       <Link
-                        href={group.trailing.href}
+                        href={L(group.trailing.href)}
                         role="menuitem"
                         tabIndex={isOpen ? 0 : -1}
                         onClick={() => {
@@ -552,11 +565,11 @@ export default function Nav() {
                         </p>
                         <div className="flex flex-wrap gap-1 pl-3">
                           {section.items.map((item) => {
-                            const itemActive = pathname === item.href;
+                            const itemActive = barePath === item.href;
                             return (
                               <Link
                                 key={item.href}
-                                href={item.href}
+                                href={L(item.href)}
                                 onClick={() => setMenuOpen(false)}
                                 className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
                                   itemActive
@@ -574,11 +587,11 @@ export default function Nav() {
                   : (
                     <div className="flex flex-wrap gap-1 pl-3">
                       {(group.items ?? []).map((item) => {
-                        const itemActive = pathname === item.href;
+                        const itemActive = barePath === item.href;
                         return (
                           <Link
                             key={item.href}
-                            href={item.href}
+                            href={L(item.href)}
                             onClick={() => setMenuOpen(false)}
                             className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
                               itemActive
@@ -595,7 +608,7 @@ export default function Nav() {
                 {group.trailing && (
                   <div className="pl-3 pt-1">
                     <Link
-                      href={group.trailing.href}
+                      href={L(group.trailing.href)}
                       onClick={() => setMenuOpen(false)}
                       className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-sunset hover:underline"
                     >
