@@ -1,6 +1,7 @@
 "use client";
 import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
+import { regionLabel } from "@/lib/region-i18n";
 import Image from "next/image";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { useSearch } from "@/components/SearchModal";
@@ -217,7 +218,10 @@ export default function HomePage() {
                 <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-white/80" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
                   <p className="text-[10px] font-medium uppercase tracking-widest text-white/60 mb-1.5">
-                    {d.region}
+                    <En translated>{d.region}</En>
+                    <Ja>{regionLabel("ja", d.region)}</Ja>
+                    <Zh>{regionLabel("zh", d.region)}</Zh>
+                    <Ko>{regionLabel("ko", d.region)}</Ko>
                   </p>
                   <h3 className="font-serif text-2xl mb-1 leading-tight">
                     <En translated>{d.name.en}</En>

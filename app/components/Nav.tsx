@@ -7,9 +7,15 @@ import { useTheme } from "./ThemeProvider";
 import { useSearch } from "@/components/SearchModal";
 import { ChevronDown } from "@/components/Icons";
 import { localeHref, stripLocale } from "@/lib/locale-href";
+import { pickLocale, type Localized } from "@/lib/locale";
+import { navLabel } from "./nav-i18n";
 import { destinations, type TripLength } from "@/destinations/data";
 
-type NavItem = { href: string; label: string };
+// `label` stays the English string: it is the canonical React key and the
+// open/close state. `i18n`, when present, carries the destination's own
+// localised name so the Destinations dropdown lists Japanese place names on a
+// /ja page instead of the English ones the data file holds beside them.
+type NavItem = { href: string; label: string; i18n?: Localized };
 
 type NavGroup = {
   label: string;
@@ -37,7 +43,7 @@ const destinationsGroup: NavGroup = {
     heading: TRIP_LENGTH_HEADING[tl],
     items: destinations
       .filter((d) => d.tripLength === tl)
-      .map((d) => ({ href: `/destinations/${d.slug}`, label: d.name.en })),
+      .map((d) => ({ href: `/destinations/${d.slug}`, label: d.name.en, i18n: d.name })),
   })).filter((s) => s.items.length > 0),
   trailing: { href: "/destinations", label: "View all destinations" },
 };
@@ -147,6 +153,12 @@ export default function Nav() {
   const pathname = usePathname();
   const router = useRouter();
   const { lang, setLang } = useLang();
+  // The nav config is authored in English and there is no <En>/<Ja> pair to key off,
+  // so the labels come from the shared map instead. Without this every group label,
+  // dropdown heading and item label rendered English on ja/zh/ko pages - including the
+  // Destinations dropdown, which is how a Japanese reader reaches the destinations tree.
+  const t = (s: string) => navLabel(lang, s);
+  const labelOf = (item: NavItem) => (item.i18n ? pickLocale(lang, item.i18n) : t(item.label));
   const { theme, toggle: toggleTheme } = useTheme();
   const { openSearch } = useSearch();
 
@@ -289,14 +301,14 @@ export default function Nav() {
                   onFocus={() => openGroup(group.label)}
                   aria-expanded={isOpen}
                   aria-haspopup="true"
-                  aria-label={`${group.label} menu`}
+                  aria-label={`${t(group.label)} menu`}
                   className={`group relative px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap inline-flex items-center gap-1 transition-colors duration-200 ${
                     isOpen || isActive
                       ? "text-sunset"
                       : "text-stone-600 dark:text-stone-300 hover:text-sunset"
                   }`}
                 >
-                  {group.label}
+                  {t(group.label)}
                   <ChevronDown
                     className={`w-3 h-3 transition-transform duration-300 ease-out ${
                       isOpen ? "rotate-180 text-sunset" : ""
@@ -315,7 +327,7 @@ export default function Nav() {
                 {/* Dropdown panel — always rendered so entry/exit can animate */}
                 <div
                   role="menu"
-                  aria-label={`${group.label} submenu`}
+                  aria-label={`${t(group.label)} submenu`}
                   onMouseEnter={() => openGroup(group.label)}
                   onMouseLeave={scheduleClose}
                   className={`absolute top-full left-0 mt-2 min-w-[200px] bg-white dark:bg-darkbg border border-stone-200/60 dark:border-dark-border rounded-xl shadow-lg py-1.5 z-50 origin-top transition-all duration-200 ease-out ${
@@ -328,7 +340,7 @@ export default function Nav() {
                     ? group.sections.map((section) => (
                         <div key={section.heading} className="px-1">
                           <p className="px-3 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500">
-                            {section.heading}
+                            {t(section.heading)}
                           </p>
                           {section.items.map((item) => {
                             const itemActive = barePath === item.href;
@@ -351,7 +363,7 @@ export default function Nav() {
                                       : "opacity-0 scale-0 group-hover/item:opacity-100 group-hover/item:scale-100"
                                   }`}
                                 />
-                                {item.label}
+                                {labelOf(item)}
                               </Link>
                             );
                           })}
@@ -379,7 +391,7 @@ export default function Nav() {
                                   : "opacity-0 scale-0 group-hover/item:opacity-100 group-hover/item:scale-100"
                               }`}
                             />
-                            {item.label}
+                            {labelOf(item)}
                           </Link>
                         );
                       })}
@@ -396,7 +408,7 @@ export default function Nav() {
                         }}
                         className="group/item relative block px-4 py-2 text-sm font-medium text-sunset hover:text-sunset-dark transition-all duration-200"
                       >
-                        {group.trailing.label} →
+                        {t(group.trailing.label)} →
                       </Link>
                     </>
                   )}
@@ -555,13 +567,13 @@ export default function Nav() {
                 }}
               >
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 px-3">
-                  {group.label}
+                  {t(group.label)}
                 </p>
                 {group.sections
                   ? group.sections.map((section) => (
                       <div key={section.heading} className="space-y-1 pl-3">
                         <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500 px-3">
-                          {section.heading}
+                          {t(section.heading)}
                         </p>
                         <div className="flex flex-wrap gap-1 pl-3">
                           {section.items.map((item) => {
@@ -577,7 +589,7 @@ export default function Nav() {
                                     : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
                                 }`}
                               >
-                                {item.label}
+                                {labelOf(item)}
                               </Link>
                             );
                           })}
@@ -599,7 +611,7 @@ export default function Nav() {
                                 : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
                             }`}
                           >
-                            {item.label}
+                            {labelOf(item)}
                           </Link>
                         );
                       })}
@@ -612,7 +624,7 @@ export default function Nav() {
                       onClick={() => setMenuOpen(false)}
                       className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-sunset hover:underline"
                     >
-                      {group.trailing.label} →
+                      {t(group.trailing.label)} →
                     </Link>
                   </div>
                 )}

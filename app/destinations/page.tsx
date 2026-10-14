@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import LocaleLink from "@/components/LocaleLink";
 import { pickLocale } from "@/lib/locale";
+import { regionLabel } from "@/lib/region-i18n";
 import { destinations } from "./data";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
@@ -124,7 +125,10 @@ export default function DestinationsPage() {
                     <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-white/80" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
                       <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70 mb-2">
-                        {d.region}
+                        <En translated>{d.region}</En>
+                        <Ja>{regionLabel("ja", d.region)}</Ja>
+                        <Zh>{regionLabel("zh", d.region)}</Zh>
+                        <Ko>{regionLabel("ko", d.region)}</Ko>
                       </p>
                       <h3 className="font-serif text-2xl mb-1.5 leading-tight">
                         <En translated>{d.name.en}</En>

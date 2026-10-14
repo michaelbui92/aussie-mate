@@ -1,6 +1,7 @@
 import LocaleLink from "@/components/LocaleLink";
 import { headers } from "next/headers";
 import { pickLocale, type Lang } from "@/lib/locale";
+import { regionLabel } from "@/lib/region-i18n";
 import { DEST_TEMPLATES, RELATE_TEMPLATES } from "../i18n";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
@@ -139,7 +140,10 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             ← <En translated>All destinations</En><Ja>すべての目的地</Ja><Zh>全部目的地</Zh><Ko>전체 여행지</Ko>
           </LocaleLink>
           <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
-            {d.region}
+            <En translated>{d.region}</En>
+            <Ja>{regionLabel("ja", d.region)}</Ja>
+            <Zh>{regionLabel("zh", d.region)}</Zh>
+            <Ko>{regionLabel("ko", d.region)}</Ko>
           </p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-4">
             <En translated>{d.name.en}</En>
