@@ -6,6 +6,7 @@ import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
+import LocaleLink from "@/components/LocaleLink";
 
 export async function generateMetadata(): Promise<Metadata> {
   // Per request, so the tab title and the search-result headline are in the reader's
@@ -64,7 +65,7 @@ export default function PrivacyPage() {
               information site about Australian daily life — for anyone visiting, studying,
               working, or settling in Australia, regardless of passport or background. We are
               not a business, government body, or educational institution — see our{" "}
-              <a href="/about" className="text-sunset underline">About page</a>.
+              <LocaleLink href="/about" className="text-sunset underline">About page</LocaleLink>.
             </p>
           </En>
           <Ja><p>
@@ -72,20 +73,20 @@ export default function PrivacyPage() {
               ついての無料情報サイトです — 観光、留学、就労、定住を問わず、
               パスポートや背景を問わず、オーストラリアに関わるすべての人のために。
               私たちは企業、政府機関、教育機関ではありません — 詳しくは{" "}
-              <a href="/about" className="text-sunset underline">サイトについて</a>をご覧ください。
+              <LocaleLink href="/about" className="text-sunset underline">サイトについて</LocaleLink>をご覧ください。
             </p></Ja>
           <Zh><p>
               AussieGuides（youraussieguides.com）是一个关于澳大利亚日常生活的
               免费信息网站 — 无论你是来旅游、留学、工作还是定居，无论持哪国护照、
               有什么背景，都适用。我们不是企业、政府机构或教育机构 — 详情请见{" "}
-              <a href="/about" className="text-sunset underline">关于页面</a>。
+              <LocaleLink href="/about" className="text-sunset underline">关于页面</LocaleLink>。
             </p></Zh>
           <Ko>
             <p>
               AussieGuides(youraussieguides.com)는 호주를 처음 찾아오신 분들을 위한 무료
               영한 생활 정보 사이트입니다 — 방문, 유학, 취업, 정착 무엇이든, 국적과 배경에
               상관없이. 당사는 기업·정부·교육기관이 아니며, 자세한 내용은
-              <a href="/about" className="text-sunset underline">소개 페이지</a>를
+              <LocaleLink href="/about" className="text-sunset underline">소개 페이지</LocaleLink>를
               참고하세요.
             </p>
           </Ko>
@@ -435,7 +436,7 @@ export default function PrivacyPage() {
                 github.com/michaelbui92/aussie-mate/issues
               </a>{" "}
               or use the contact form on our{" "}
-              <a href="/about" className="text-sunset underline">About page</a>.
+              <LocaleLink href="/about" className="text-sunset underline">About page</LocaleLink>.
             </p>
           </En>
           <Ja><p>
@@ -449,7 +450,7 @@ export default function PrivacyPage() {
                 github.com/michaelbui92/aussie-mate/issues
               </a>{" "}
               でイシューを作成するか、{" "}
-              <a href="/about" className="text-sunset underline">サイトについて</a>のコンタクトフォームをご利用ください。
+              <LocaleLink href="/about" className="text-sunset underline">サイトについて</LocaleLink>のコンタクトフォームをご利用ください。
             </p></Ja>
           <Zh><p>
               如有问题或请求，请在{" "}
@@ -462,7 +463,7 @@ export default function PrivacyPage() {
                 github.com/michaelbui92/aussie-mate/issues
               </a>{" "}
               上提交 issue，或使用{" "}
-              <a href="/about" className="text-sunset underline">关于页面</a>上的联系表单。
+              <LocaleLink href="/about" className="text-sunset underline">关于页面</LocaleLink>上的联系表单。
             </p></Zh>
           <Ko>
             <p>
@@ -475,7 +476,7 @@ export default function PrivacyPage() {
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
-              에 이슈를 올려주시거나, <a href="/about" className="text-sunset underline">소개 페이지</a>의
+              에 이슈를 올려주시거나, <LocaleLink href="/about" className="text-sunset underline">소개 페이지</LocaleLink>의
               문의 양식을 이용해 주세요.
             </p>
           </Ko>

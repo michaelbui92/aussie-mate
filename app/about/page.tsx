@@ -4,6 +4,7 @@ import { seoFor, withSeo } from "@/lib/seo";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { pickLocale, type Lang } from "@/lib/locale";
 import { ABOUT_SECTIONS, ABOUT_HERO, ABOUT_META } from "./data";
+import LocaleLink from "@/components/LocaleLink";
 
 const sections = [
   {
@@ -149,7 +150,7 @@ export default function AboutPage() {
             <Zh>本站的内容遵循一套成文的编辑流程 — 来源如何核实、过时信息如何复核，以及如何报告错误。</Zh>
             <Ko>이 사이트의 콘텐츠는 문서화된 편집 절차 — 출처를 어떻게 확인하고, 오래된 정보를 어떻게 검토하며, 오류를 어떻게 제보하는지 — 를 따릅니다.</Ko>
           </p>
-          <a
+          <LocaleLink
             href="/editorial"
             className="inline-flex items-center gap-1 font-medium text-sm text-sunset hover:underline"
           >
@@ -157,7 +158,7 @@ export default function AboutPage() {
             <Ja>編集方針を読む →</Ja>
             <Zh>阅读我们的编辑规范 →</Zh>
             <Ko>편집 기준 읽기 →</Ko>
-          </a>
+          </LocaleLink>
         </section>
 
         {/* Projects */}
@@ -238,9 +239,9 @@ export default function AboutPage() {
         </section>
 
         <div className="text-center pt-2">
-          <a href="/" className="text-sm text-sunset hover:underline">
+          <LocaleLink href="/" className="text-sm text-sunset hover:underline">
             ← Back to AussieGuides
-          </a>
+          </LocaleLink>
         </div>
       </div>
 
