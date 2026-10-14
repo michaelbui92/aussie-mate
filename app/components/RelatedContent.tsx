@@ -1,6 +1,11 @@
-import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
+// Every internal link goes through LocaleLink so a /ja reader stays on /ja: the hrefs below are
+// unprefixed route paths, and <Link href="/tourist"> used to hand a Japanese reader the English
+// page (and drop the crawler into the English tree). LocaleLink resolves the locale from the same
+// LangProvider context the <En>/<Ja>/<Ko>/<Zh> blocks read, which the root layout seeds from the
+// URL -- so the server-rendered href is already correct.
+import LocaleLink from "./LocaleLink";
 
 export type RelatedItem = {
   href: string;
@@ -42,7 +47,7 @@ export default function RelatedContent({ items }: { items: RelatedItem[] }) {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {items.map((item) => (
-            <Link
+            <LocaleLink
               key={item.href}
               href={item.href}
               className="group flex flex-col bg-white dark:bg-dark-surface hover:bg-sunset hover:text-white p-5 rounded-2xl border border-stone-200 dark:border-dark-border transition-all duration-300 hover:border-sunset hover:shadow-xl"
@@ -65,7 +70,7 @@ export default function RelatedContent({ items }: { items: RelatedItem[] }) {
                 <Zh>阅读指南 →</Zh>
                 <Ko>가이드 보기 →</Ko>
               </span>
-            </Link>
+            </LocaleLink>
           ))}
         </div>
       </div>
