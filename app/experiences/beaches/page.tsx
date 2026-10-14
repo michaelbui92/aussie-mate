@@ -403,7 +403,12 @@ export default function BeachesPage() {
             <Ko>경찰, 소방, 구급차 응급 상황은 000으로 전화하세요. 해변 안전 정보와 순찰 상태는 Beachsafe 앱을 다운로드하거나 beachsafe.org.au를 확인하세요. Surf Life Saving NSW는 여름 동안 300개 이상의 해변을 순찰합니다. 빨간색과 노란색 깃발을 찾으세요 — 보이지 않으면 다른 장소를 찾으세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">000 — Emergency</a>
+            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">
+              <En translated>000 — Emergency</En>
+              <Ja>{"000 \u2014 \u7dca\u6025"}</Ja>
+              <Zh>{"000 \u2014 \u7d27\u6025"}</Zh>
+              <Ko>{"000 \u2014 \uc751\uae09"}</Ko>
+            </a>
             <a href="https://beachsafe.org.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Beachsafe ↗</a>
             <a href="https://www.surflifesaving.com.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Surf Life Saving ↗</a>
           </div>

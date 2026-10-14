@@ -360,7 +360,12 @@ export default function AdventurePage() {
             <Ko>경찰, 소방, 구급차는 000으로 전화하세요. bushwalker의 경우 NSW 경찰 구조대와 SES(州 응급 서비스)가 육상 수색을 담당합니다. 가기 전에 Emergency+ 앱을 다운로드하세요 — 000 디스패처와 정확한 GPS 위치를 공유합니다. 긴급하지 않은 도움은 관련 NSW 국립공원 사무실에 연락하세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">000 — Emergency</a>
+            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">
+              <En translated>000 — Emergency</En>
+              <Ja>{"000 \u2014 \u7dca\u6025"}</Ja>
+              <Zh>{"000 \u2014 \u7d27\u6025"}</Zh>
+              <Ko>{"000 \u2014 \uc751\uae09"}</Ko>
+            </a>
             <a href="https://www.nationalparks.nsw.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">NSW National Parks ↗</a>
             <a href="https://www.ses.nsw.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">NSW SES ↗</a>
           </div>
