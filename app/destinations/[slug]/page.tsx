@@ -112,6 +112,18 @@ function itemAt<T>(
   return (list[lang] ?? list.en)[i];
 }
 
+// The planning copy marks emphasis with **...** — a bold lead-in on each paragraph plus inline
+// emphasis, written that way in all four locales (howToGetThere / bestTimeDetailed). Nothing on
+// the site converted the marker, so every one of those pages showed the asterisks to the reader.
+// Split the string on the marker and wrap the odd-numbered parts in <strong>: the data keeps the
+// emphasis the writers intended, and only the render site changes.
+function withEmphasis(text?: string) {
+  if (!text || !text.includes("**")) return text;
+  return text
+    .split("**")
+    .map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
+
 export default async function DestinationPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const d = getDestination(slug);
@@ -292,10 +304,10 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </p>
                 <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
                   <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                    <En translated>{d.howToGetThere.en}</En>
-                    <Ja>{pickLocale("ja", d.howToGetThere)}</Ja>
-                    <Zh>{pickLocale("zh", d.howToGetThere)}</Zh>
-                    <Ko>{d.howToGetThere.ko}</Ko>
+                    <En translated>{withEmphasis(d.howToGetThere.en)}</En>
+                    <Ja>{withEmphasis(pickLocale("ja", d.howToGetThere))}</Ja>
+                    <Zh>{withEmphasis(pickLocale("zh", d.howToGetThere))}</Zh>
+                    <Ko>{withEmphasis(d.howToGetThere.ko)}</Ko>
                   </p>
                 </div>
               </section>
@@ -312,10 +324,10 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </p>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
                   <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                    <En translated>{d.bestTimeDetailed.en}</En>
-                    <Ja>{pickLocale("ja", d.bestTimeDetailed)}</Ja>
-                    <Zh>{pickLocale("zh", d.bestTimeDetailed)}</Zh>
-                    <Ko>{d.bestTimeDetailed.ko}</Ko>
+                    <En translated>{withEmphasis(d.bestTimeDetailed.en)}</En>
+                    <Ja>{withEmphasis(pickLocale("ja", d.bestTimeDetailed))}</Ja>
+                    <Zh>{withEmphasis(pickLocale("zh", d.bestTimeDetailed))}</Zh>
+                    <Ko>{withEmphasis(d.bestTimeDetailed.ko)}</Ko>
                   </p>
                 </div>
               </section>
