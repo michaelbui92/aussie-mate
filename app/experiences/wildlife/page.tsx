@@ -523,7 +523,7 @@ export default function WildlifePage() {
                       <En translated>{item.label}</En>
                       <Ja>{item.jaLabel ?? item.label}</Ja>
                       <Zh>{item.zhLabel ?? item.label}</Zh>
-                      <Ko>{item.koLabel ?? item.label}</Ko>
+                      <Ko>{item.label}</Ko>
                     </p>
                     <div className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                       <En translated>
