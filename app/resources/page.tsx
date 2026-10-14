@@ -169,7 +169,7 @@ const sections: AccordionSection[] = [
       },
       {
         label: "University of Technology Sydney (UTS)",
-        jaLabel: "University of Technology Sydney (UTS)",
+        jaLabel: "UTS(\u30b7\u30c9\u30cb\u30fc\u5de5\u79d1\u5927\u5b66)",
         zhLabel: "\u6089\u5c3c\u79d1\u6280\u5927\u5b66\uff08UTS\uff09",
         en: "A young, dynamic university focused on industry-relevant education. Strong in IT, design, communication, business, and nursing. Ultimo campus is right in the city centre — walking distance to Central Station and Chinatown. Known for its distinctive 'brown paper bag' building.", ja: "産業に直結した教育に力を入れる、若く活力のある大学です。IT、デザイン、コミュニケーション、ビジネス、看護に強いです。Ultimoキャンパスは市の中心部にあり、Central駅やチャイナタウンまで徒歩圏内です。独特な「茶色い紙袋」の建物で知られています。", zh: "一所年轻而充满活力、注重行业相关教育的大学。在 IT、设计、传播、商科和护理方面实力较强。Ultimo 校区就在市中心 — 步行即可到达中央车站和唐人街。以其独特的“牛皮纸袋”式建筑而闻名。",
         ko: "산업 맞춤형 교육에 중점을 둔 젊고 역동적인 대학교입니다. IT, 디자인, 커뮤니케이션, 경영, 간호 분야에 강점이 있습니다. Ultimo 캠퍼스는 도심 한복판에 있어 Central Station과 차이나타운에서 도보 거리입니다. 독특한 '갈색 종이 가방' 건물로 유명합니다.",
