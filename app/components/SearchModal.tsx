@@ -3,6 +3,7 @@ import { createContext, useContext, useState, useEffect, useRef, useCallback, us
 import { useRouter } from "next/navigation";
 import { En, Ja, Ko, Zh, useLang } from "@/components/LangBlocks";
 import { localeHref } from "@/lib/locale-href";
+import { uiLabel } from "@/lib/ui-i18n";
 import type { SearchResult } from "@/lib/searchIndex";
 
 // --- Context ---
@@ -133,7 +134,7 @@ export function SearchModal() {
       ref={modalRef}
       role="dialog"
       aria-modal="true"
-      aria-label="Search"
+      aria-label={uiLabel(lang, "Search")}
       className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh] px-4"
       style={{ display: open ? "flex" : "none" }}
     >
@@ -158,7 +159,7 @@ export function SearchModal() {
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder='Search AussieGuides... try "visa", "bond", "medicare"'
+                placeholder={uiLabel(lang, 'Search AussieGuides... try "visa", "bond", "medicare"')}
                 className="flex-1 text-base text-eucalypt dark:text-dark-muted placeholder:text-eucalypt/30 dark:placeholder:text-dark-muted/30 bg-transparent outline-none"
               />
               <button type="button"
@@ -242,9 +243,9 @@ export function SearchModal() {
             {/* Footer hints */}
             {flat.length > 0 && (
               <div className="px-4 py-2 border-t border-sand dark:border-dark-border bg-sand/20 dark:bg-dark-surface/50 flex items-center gap-3 text-xs text-eucalypt/40 dark:text-dark-muted/40">
-                <span>↑↓ navigate</span>
-                <span>↵ open</span>
-                <span>Esc close</span>
+                <span>{uiLabel(lang, "↑↓ navigate")}</span>
+                <span>{uiLabel(lang, "↵ open")}</span>
+                <span>{uiLabel(lang, "Esc close")}</span>
               </div>
             )}
       </div>

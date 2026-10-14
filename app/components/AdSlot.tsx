@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import { useLang } from "@/components/LangBlocks";
+import { uiLabel } from "@/lib/ui-i18n";
 
 type AdSlotProps = {
   /** AdSense ad slot ID. If empty, falls back to Auto Ads (no slot needed). */
@@ -27,6 +29,7 @@ export default function AdSlot({
   format = "auto",
   className = "",
 }: AdSlotProps) {
+  const { lang } = useLang();
   useEffect(() => {
     try {
       // @ts-ignore  - adsbygoogle is injected by the AdSense script tag in <head>
@@ -41,7 +44,7 @@ export default function AdSlot({
     <div
       className={`my-8 flex justify-center overflow-hidden ${className}`}
       style={{ minHeight: "100px" }}
-      aria-label="advertisement"
+      aria-label={uiLabel(lang, "advertisement")}
     >
       <ins
         className="adsbygoogle"
