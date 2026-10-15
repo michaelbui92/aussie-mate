@@ -150,3 +150,84 @@ Shipped at 1920x1280 (Commons original 2048x1365).
 
 As a CC BY-SA 4.0 image this is covered by the attribution obligation below, and
 derivative works must carry the same licence.
+
+---
+
+## Added 2026-10-15 (UNVERIFIED — three hero images with no provenance record)
+
+A full audit of the images the site serves found three files used as heroes on
+the experience pages that had **no provenance record anywhere in the repo or on
+this machine**. Each was traced through every source available and none could be
+established, so they are recorded here as **UNVERIFIED** rather than guessed at.
+A guess would look settled and would be worse than an honest blank.
+
+Note that the blanket statement at the top of this file ("Images not listed here
+are original or Pexels/Unsplash stock") does **not** cover these three: nothing
+supports calling them stock, and nothing supports any licence for them.
+
+| File | Shows | Author | Licence |
+|---|---|---|---|
+| `adventure.jpg` | Hero on `/experiences/adventure` | unknown | **UNVERIFIED** |
+| `kangaroo.jpg` | Hero on `/experiences/wildlife` | unknown | **UNVERIFIED** |
+| `roadtrip.jpg` | Hero on `/experiences/road-trips` | unknown | **UNVERIFIED** |
+
+Path note: all three live in `public/` and are served from the site root
+(`/adventure.jpg`, `/kangaroo.jpg`, `/roadtrip.jpg`) — **not** in `public/images/`
+like every other file in this table.
+
+### What was tried, and what it showed
+
+**1. Repo and workspace search.** Grepped the whole repository (all text files,
+including untracked and gitignored material) and the wider workspace (`logs/`,
+`cache/`, skill references, delegation transcripts) for each filename. The only
+hits are the six code references that use them — `app/experiences/data.ts` and the
+three page components. No source, licence or attribution is recorded anywhere.
+
+**2. Git history.** `git log --follow` on each path returns a single commit:
+
+```
+8bbcda58ae719322bd331e877eedf82dea29d0ca
+michaelbui92, Sun Jun 21 23:42:47 2026 +1000
+"Add files via upload"
+```
+
+All three arrived together in that one commit. It is a GitHub web-interface
+"Add files via upload" commit — the message names no source, and no commit in the
+repository's history mentions any of the three filenames in a message. No
+sourcing note, README, issue or deleted file in the history records them either.
+
+**3. File metadata (EXIF / XMP).** Read directly from the files with a hand-written
+parser, since the box has no `file` command and no PIL:
+
+| File | Actual format | Dimensions | Size | Metadata |
+|---|---|---|---|---|
+| `adventure.jpg` | **AVIF** (magic `ftypavif`, brands `mif1/avif/miaf`) — a `.jpg` extension on a non-JPEG file | 5385x2991 | 1,383,924 B | No EXIF. An XMP packet is present but **empty**: `x:xmptk="Go XMP SDK 1.0"` with an empty `rdf:RDF`. |
+| `kangaroo.jpg` | JPEG | 1280x854 | 299,166 B | EXIF **absent** — no Artist, Copyright, ImageDescription or Software tags. |
+| `roadtrip.jpg` | JPEG | 1920x1280 | 438,911 B | EXIF **absent** — same. |
+
+The empty-XMP toolkit string (`Go XMP SDK 1.0`) shows `adventure.jpg` was run
+through a Go-based image tool at some point, which stripped any provenance it may
+have had. The two JPEGs carry no EXIF segment at all.
+
+This is the route that resolved `manly_beach.jpg` (EXIF author "Thomas Joannes"
+matched the Commons uploader, and the dimensions matched that file's 1920px
+render). It gives nothing here: there is no author name or title to match.
+
+**4. Reverse-match search.** Searched Wikimedia Commons and Pexels by filename and
+by dimensions (1280x854, 1920x1280, 5385x2991) for the kangaroo and outback/adventure
+subjects. No candidate matched both the subject and the dimensions, so no
+two-way match could be made and no attribution is claimed.
+
+### Recommendation
+
+The safest course is to **replace all three images** with photographs carrying a
+known licence, then record them here in the normal way:
+
+- `adventure.jpg` — hero on **`/experiences/adventure`** (also an AVIF masquerading
+  as a JPEG, which may itself cause issues)
+- `kangaroo.jpg` — hero on **`/experiences/wildlife`**
+- `roadtrip.jpg` — hero on **`/experiences/road-trips`**
+
+Until they are replaced or a licence is established, these three are the only
+images this site publishes whose terms are unknown, and unlike the CC images
+above there is no evidence they may be used at all.
