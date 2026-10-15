@@ -19,7 +19,7 @@ const REGION_TX: Record<string, Record<"ja" | "zh" | "ko", string>> = {
   "Northern NSW": { ja: "\u5317\u30cb\u30e5\u30fc\u30b5\u30a6\u30b9\u30a6\u30a7\u30fc\u30eb\u30ba", zh: "\u65b0\u5dde\u5317\u90e8", ko: "\ubd81\ubd80 NSW" },
   "South Coast, NSW": { ja: "\u30b5\u30a6\u30b9\u30fb\u30b3\u30fc\u30b9\u30c8\u3001NSW", zh: "\u65b0\u5dde\u5357\u6d77\u5cb8", ko: "\uc0ac\uc6b0\uc2a4 \ucf54\uc2a4\ud2b8, NSW" },
   "Hunter Region, NSW": { ja: "\u30cf\u30f3\u30bf\u30fc\u5730\u65b9\u3001NSW", zh: "\u730e\u4eba\u5730\u533a\uff0c\u65b0\u5dde", ko: "\ud5cc\ud130 \uc9c0\uc5ed, NSW" },
-  "Northern Beaches, Sydney": { ja: "\u30ce\u30fc\u30b6\u30f3\u30fb\u30d3\u30fc\u30c1\u30ba\u3001\u30b7\u30c9\u30cb\u30fc", zh: "\u5317\u90e8\u6d77\u6ee9\uff0c\u6089\u5c3c", ko: "\ub178\ub358 \ubc84\uce58\uc2a4, \uc2dc\ub4dc\ub2c8" },
+  "Northern Beaches, Sydney": { ja: "Northern Beaches\u3001\u30b7\u30c9\u30cb\u30fc", zh: "Northern Beaches\uff0c\u6089\u5c3c", ko: "Northern Beaches, \uc2dc\ub4dc\ub2c8" },
   "Eastern Suburbs, Sydney": { ja: "\u30b7\u30c9\u30cb\u30fc\u6771\u90e8", zh: "\u6089\u5c3c\u4e1c\u533a", ko: "\uc2dc\ub4dc\ub2c8 \ub3d9\ubd80" },
   "Royal National Park, NSW": { "ja": "\u30ed\u30a4\u30e4\u30eb\u56fd\u7acb\u516c\u5712\u3001NSW", "zh": "\u7687\u5bb6\u56fd\u5bb6\u516c\u56ed\uff0c\u65b0\u5dde", "ko": "\ub85c\uc584 \uad6d\ub9bd\uacf5\uc6d0, NSW" },
 };
