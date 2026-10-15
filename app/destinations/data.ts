@@ -59,7 +59,7 @@ export const destinations: Destination[] = [
     accentColor: "bg-emerald-500",
     region: "New South Wales",
     tripLength: "day",
-    lastUpdated: "2026-09-15",
+    lastUpdated: "2026-10-15",
     relatedDestinations: ["sydney-harbour", "hunter-valley"],
     description: {
       en: "Just 90 minutes from Sydney by train, the Blue Mountains are one of NSW's most spectacular natural wonders. Ancient eucalyptus forests, dramatic sandstone cliffs, and cascading waterfalls make this a must-visit. The Three Sisters at Echo Point are the most famous sight — best viewed at sunrise or sunset when the rock faces glow orange and pink.", ja: "シドニーから電車でわずか90分、ブルー・マウンテンズはNSWで最も壮観な自然の驚異のひとつです。太古のユーカリの森、劇的な砂岩の崖、そして流れ落ちる滝が、ここを必見の場所にしています。エコー・ポイントのスリー・シスターズが最も有名な景観で、岩肌がオレンジとピンクに輝く日の出や日の入りに眺めるのが最高です。", zh: "从悉尼乘火车仅90分钟即可抵达，蓝山是新南威尔士州最壮观的自然奇观之一。古老的桉树林、险峻的砂岩悬崖和飞泻的瀑布，让这里成为必游之地。回声角的三姐妹峰是最著名的景观 — 在日出或日落时分岩石表面泛起橙粉色的光晕时欣赏最为动人。",
@@ -198,7 +198,7 @@ export const destinations: Destination[] = [
     accentColor: "bg-rose-500",
     region: "New South Wales",
     tripLength: "weekend",
-    lastUpdated: "2026-09-10",
+    lastUpdated: "2026-10-15",
     relatedDestinations: ["blue-mountains", "sydney-harbour"],
     description: {
       en: "Australia's oldest wine region, about 2 hours north of Sydney. Hunter Valley is famous for Semillon and Shiraz, but there's so much more — gourmet restaurants, sake tastings, hot air balloons at sunrise, and boutique breweries. A popular weekend escape that's at its best during vintage (March–April).", ja: "オーストラリア最古のワイン産地で、シドニーから北へ約2時間。ハンター・バレーはセミヨンとシラーズで有名ですが、それだけではありません — グルメレストラン、日本酒の試飲、日の出の熱気球、そしてブティック・ブルワリー。人気の週末旅行先で、ヴィンテージ期（3〜4月）が最も見頃です。", zh: "澳大利亚最古老的葡萄酒产区，位于悉尼以北约2小时车程。猎人谷以赛美蓉和西拉闻名，但远不止于此 — 美食餐厅、清酒品鉴、日出热气球以及精品啤酒厂。这里是人气颇高的周末度假地，在葡萄采摘季（3–4月）最为迷人。",
@@ -323,6 +323,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/southcoast_pebbly_beach.jpg",
     accentColor: "bg-sky-500",
     region: "New South Wales",
+    lastUpdated: "2026-10-15",
     tripLength: "longer",
     description: {
       en: "From the white sands of Hyams Beach (Guinness World Record for the whitest sand on Earth) to the dramatic cliffs of Kiama, the South Coast is one of Australia's most beautiful coastal drives. Stop at charming towns like Berry, Gerroa, and Ulladulla. Dolphins are commonly spotted from shore, and whales migrate past from May to November.", ja: "ハイアムズ・ビーチの白い砂浜（地球上で最も白い砂としてギネス世界記録）から、キアマの劇的な崖まで、サウス・コーストはオーストラリアで最も美しい海岸ドライブのひとつです。ベリー、ジェロア、ウラドゥラといった魅力的な町に立ち寄りましょう。イルカは岸からよく見られ、クジラは5月から11月にかけて回遊してきます。", zh: "从海姆斯海滩的白沙（以地球上最白的沙滩载入吉尼斯世界纪录）到基亚马壮观的悬崖，南海岸是澳大利亚最美的海岸自驾路线之一。不妨在贝里、杰罗阿、乌拉杜拉等迷人小镇驻足。常能在岸边看到海豚，5月至11月还有鲸鱼洄游经过。",
@@ -451,6 +452,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/snowymountains_kosciuszko.jpg",
     accentColor: "bg-sky-600",
     region: "New South Wales",
+    lastUpdated: "2026-10-15",
     tripLength: "longer",
     description: {
       en: "The Snowy Mountains in winter are pure magic — Perisher, Thredbo, and Mount Blue offer ski runs from beginner-friendly to advanced terrain. Australia's highest peak, Mount Kosciuszko (2,228m), is accessible by chairlift from Perisher and offers stunning views in any season. In summer the same slopes become hiking trails through alpine wildflowers.", ja: "冬のスノーウィー・マウンテンズはまさに魔法のよう — ペリッシャー、スレッドボー、マウント・ブルーでは、初心者向けから上級者向けまで多彩なゲレンデが楽しめます。オーストラリア最高峰のコジオスコ山（2,228m）はペリッシャーからチェアリフトで行くことができ、どの季節でも素晴らしい眺めを提供します。夏には同じゲレンデが高山植物の咲くハイキングコースになります。", zh: "冬季的雪山宛如魔法世界 — 佩里舍、斯雷德博和布鲁山都提供从初学到高级地形的各种雪道。澳大利亚最高峰科修斯科山（2,228米）可从佩里舍乘缆车抵达，四季都能欣赏到绝美景色。夏季，同样的雪道则变身为穿越高山野花的徒步路线。",
@@ -575,6 +577,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/unsplash-1523059623039-a9ed027e7fad.jpg",
     accentColor: "bg-amber-500",
     region: "Sydney, New South Wales",
+    lastUpdated: "2026-10-15",
     tripLength: "day",
     description: {
       en: "Sydney Harbour is arguably the most beautiful city harbour in the world. The Opera House and Harbour Bridge are best experienced from the water — and the best way to do that is on a ferry. The Manly Ferry crossing at sunset is pure magic. Beyond the icons: Barangaroo foreshore, the Barangaroo Boardwalk, and the Royal Botanic Garden are all free, accessible, and spectacular.", ja: "シドニー・ハーバーは、おそらく世界で最も美しい都市の港湾です。オペラハウスとHarbour Bridgeは、水上から眺めるのが一番 — その最良の方法がフェリーです。夕暮れのManly Ferryの船旅はまさに魔法のようです。アイコン以外にも、バラガローの海岸、バラガロー・ボードウォーク、ロイヤル・ボタニック・ガーデンはいずれも無料でアクセスしやすく、見事です。", zh: "悉尼港堪称世界上最美的城市港湾。歌剧院和Harbour Bridge从水面上观赏最佳——而最好的方式就是乘坐渡轮。日落时分乘Manly Ferry横渡，简直是魔法般的体验。除了这些地标，巴兰加鲁海滨、巴兰加鲁木栈道和皇家植物园都免费开放、交通便利且景色壮观。",
@@ -703,6 +706,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/centralcoast_terrigal.jpg",
     accentColor: "bg-teal-500",
     region: "New South Wales",
+    lastUpdated: "2026-10-15",
     tripLength: "weekend",
     description: {
       en: "Less than an hour from Sydney by train, the Central Coast is where city slickers escape for beach days, bushwalks, and pub lunches by the water. Several beaches hold Ecotourism certification — protected, clean, and quietly spectacular. The Brisbane Water National Park has coastal trails with stunning views, and there are over 20 art galleries worth visiting.", ja: "シドニーから列車で1時間以内のセントラル・コーストは、都会の人々がビーチでの一日、ブッシュウォーク、水辺でのパブ・ランチを楽しみに逃げ出す場所です。いくつかのビーチはエコツーリズム認証を取得しており、保護され、清潔で、静かに素晴らしい景観です。ブリスベン・ウォーター国立公園には見事な眺めの海岸トレイルがあり、訪れる価値のあるアートギャラリーが20以上あります。", zh: "中央海岸距悉尼乘火车不到一小时，是都市人逃离喧嚣、享受海滩时光、丛林徒步和水边酒吧午餐的去处。多片海滩拥有生态旅游认证——受保护、干净且低调地壮丽。布里斯班水域国家公园拥有景色迷人的海岸步道，还有20多家值得一访的艺术画廊。",
@@ -828,6 +832,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/Wategos_Bay_and_the_Byron_Bay_Lighthouse.jpg",
     accentColor: "bg-orange-500",
     region: "Northern NSW",
+    lastUpdated: "2026-10-15",
     tripLength: "longer",
     description: {
       en: "Australia's most famous beach town sits at the easternmost point of the mainland, where the lighthouse looks out across the Pacific. Byron combines surf culture, rainforests, farm-to-table food, and a genuinely relaxed pace of life. Cape Byron walking track takes you past the lighthouse, kangaroos on the headland, and spectacular coastal views. The hinterland has waterfalls, crystal-clear swimming holes, and the famous Crystal Castle.", ja: "オーストラリアで最も有名なビーチタウンは本土最東端にあり、灯台が太平洋を見渡しています。バイロンはサーフ文化、熱帯雨林、ファーム・トゥ・テーブルの料理、そして心からゆったりした暮らしのペースを併せ持っています。ケープ・バイロン・ウォーキング・トラックでは、灯台、岬にいるカンガルー、そして素晴らしい海岸の眺めを巡ります。内陸には滝、透き通った水の泳ぎ場、そして有名なクリスタル・キャッスルがあります。", zh: "澳大利亚最著名的海滨小镇坐落于大陆最东端，灯塔远眺太平洋。拜伦融合了冲浪文化、雨林、从农场到餐桌的美食，以及真正悠闲的生活节奏。拜伦角步道带您经过灯塔、海岬上的袋鼠和壮观的海岸景色。内陆有瀑布、清澈见底的游泳水潭和著名的水晶城堡。",
@@ -953,6 +958,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/Hyams_Beach_at_Jervis_Bay_National_Park.jpg",
     accentColor: "bg-cyan-500",
     region: "South Coast, NSW",
+    lastUpdated: "2026-10-15",
     tripLength: "weekend",
     description: {
       en: "About 2.5 hours south of Sydney, Jervis Bay is famous for three things: the whitest sand in Australia (Hyams Beach, technically a separate bay), resident dolphins you can swim with, and the only place in NSW where kangaroos regularly hop along the beach at dawn and dusk. Add Booderee National Park's white-sand beaches, the white-cliff Green Patch, and stunning bushwalks, and you have one of the most unique coastal experiences in Australia.", ja: "シドニーから南へ約2.5時間、ジャービス・ベイは3つのことで有名です。オーストラリアで最も白い砂（ハイアムズ・ビーチ、厳密には別の入り江）、一緒に泳げる定住イルカ、そしてNSWで唯一、カンガルーが明け方と夕暮れに浜辺を跳ねて歩く場所。ブーデリー国立公園の白砂のビーチ、白い崖のグリーン・パッチ、見事なブッシュウォークを加えれば、オーストラリアでもっとも個性的な海岸体験のひとつになります。", zh: "杰维斯湾位于悉尼以南约 2.5 小时车程处，以三样东西闻名：澳大利亚最白的沙滩（海姆斯海滩，严格来说属于另一个海湾）、可以与之共游的常驻海豚，以及新南威尔士州唯一一处袋鼠常在黎明和黄昏沿沙滩跳跃的地方。再加上布德雷国家公园的白沙滩、白色悬崖的 Green Patch 以及绝美的丛林步道，你就拥有了澳大利亚最独特的海岸体验之一。",
@@ -1078,6 +1084,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/Sea_Cliff_Bridge_from_air.jpg",
     accentColor: "bg-indigo-500",
     region: "South Coast, NSW",
+    lastUpdated: "2026-10-15",
     tripLength: "day",
     description: {
       en: "Just an hour south of Sydney, Wollongong is NSW's third-largest city but feels more like a beach town. The famous Sea Cliff Bridge arches out over the ocean and is one of Australia's most photographed coastal roads. Beyond the bridge: the Illawarra escarpment's waterfalls, the Buddhist Nan Tien Temple (the largest in the southern hemisphere), and a string of surf beaches that locals keep quiet about.", ja: "シドニーから南へわずか1時間、ウロンゴンはNSW第3の都市ですが、その雰囲気はビーチタウンそのもの。有名なSea Cliff Bridgeは海の上にアーチを描いて架かり、オーストラリアで最も写真に撮られる海岸道路のひとつです。橋の先には、イラワラ断崖の滝、南半球最大の仏教寺院ナン・ティエン寺院、そして地元の人があまり語りたがらないサーフビーチが連なります。", zh: "卧龙岗位于悉尼以南仅一小时车程处，是新南威尔士州第三大城市，却更有海滨小镇的气息。著名的Sea Cliff Bridge呈拱形横跨大海，是澳大利亚最上镜的海岸公路之一。大桥之外：伊拉瓦拉断崖的瀑布、南半球最大的佛教寺院南天寺，以及一连串当地人秘而不宣的冲浪海滩。",
@@ -1207,6 +1214,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/Sand_dunes_at_Anna_Bay.jpg",
     accentColor: "bg-blue-500",
     region: "Hunter Region, NSW",
+    lastUpdated: "2026-10-15",
     tripLength: "weekend",
     description: {
       en: "About 2.5 hours north of Sydney, Port Stephens is famous for two things that delight visitors of all ages: reliable wild dolphin encounters (over 140 bottlenose dolphins live in the bay year-round) and the Stockton Bight Sand Dunes — the largest moving sand dunes in the southern hemisphere, where you can sandboard down 30-metre slopes. Add snorkelling at Fly Point, fishing in Nelson Bay, and a slower pace than the Hunter wineries for a perfect family-friendly weekend.", ja: "シドニーから北へ約2.5時間、ポート・スティーブンスはあらゆる年齢の旅行者を楽しませる2つの名物で知られています。確実に会える野生のイルカ（年間を通じて140頭以上のバンドウイルカが入り江に生息）と、南半球最大の移動砂丘であるストックトン・バイト砂丘 — ここでは30メートルの斜面をサンドボードで滑り降りられます。さらにフライ・ポイントのシュノーケリング、ネルソン・ベイでの釣り、ハンターのワイナリーよりものんびりした時間が加わり、家族にぴったりの週末になります。", zh: "史蒂芬港位于悉尼以北约 2.5 小时车程处，以两样让各年龄层游客都喜爱的东西闻名：可靠邂逅的野生海豚（常年有 140 多只宽吻海豚栖息于海湾），以及斯托克顿沙丘 — 南半球最大的流动沙丘，你可以在 30 米高的斜坡上滑沙。再加上 Fly Point 的浮潜、纳尔逊湾的垂钓，以及比猎人谷酒庄更悠闲的节奏，便是完美的亲子周末。",
@@ -1332,6 +1340,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/bondi_aerial.jpg",
     accentColor: "bg-amber-500",
     region: "Eastern Suburbs, Sydney",
+    lastUpdated: "2026-10-15",
     tripLength: "day",
     description: {
       en: "Bondi is Sydney's postcard beach — a golden crescent of sand 7km east of the CBD, famous worldwide for its surf lifesaving heritage, the Bondi to Coogee coastal walk, and the Icebergs ocean pool. It's touristy, yes, but even locals still swim here: catch it at 7am on a weekday and it's pure magic. Between the markets, the pavilion, and the coastal walk starting right at the sand, you can fill an entire day within sight of the water.", ja: "ボンダイはシドニーの絵はがきのようなビーチ——CBDの東7kmにある黄金の三日月形の砂浜で、サーフ・ライフセービングの伝統、Bondi to Coogee Coastal Walk、アイスバーグス・オーシャン・プールで世界的に知られています。観光地化されているのは確かですが、地元の人たちも今なおここで泳ぎます。平日の朝7時に来れば、まさに魔法のような時間です。マーケット、パビリオン、そして砂浜からすぐに始まる海岸ウォークがあれば、海を眺めながら丸一日を満喫できます。", zh: "邦迪是悉尼的明信片海滩——位于中央商务区以东7公里的一片金色新月形沙滩，以冲浪救生传统、Bondi to Coogee Coastal Walk和冰山海洋泳池闻名全球。这里确实游客众多，但就连本地人至今仍在此游泳:平日早上7点前来，简直妙不可言。集市、亭阁，以及从沙滩边便开始的步道，能让你在看得见海的地方度过充实的一整天。",
@@ -1453,6 +1462,7 @@ export const destinations: Destination[] = [
     cardImg: "/images/kiama_blowhole.jpg",
     accentColor: "bg-teal-500",
     region: "South Coast, NSW",
+    lastUpdated: "2026-10-15",
     tripLength: "day",
     description: {
       en: "A 2-hour train ride or drive southwest of Sydney, Kiama is the south coast's best day trip: the famous Blowhole — which can erupt 25 metres into the air when the swell is right — plus a lighthouse headland, a patrolled beach, a farmers market, and one of NSW's great short coastal walks to Jamberoo. The town itself is relaxed and genuinely pretty, all sandstone cottages and sea views, with fish-and-chips on the harbour jetty as the official postcard ending.", ja: "シドニーから南西へ電車または車で2時間。キアマはサウス・コースト随一の日帰り旅行先です。波が合えば25メートルまで噴き上がる有名なブローホール、灯台のあるヘッドランド、監視員付きのビーチ、ファーマーズマーケット、そしてジャンブルーへと続くNSW屈指の短い海岸ウォーク。町自体はのんびりとして本当に美しく、砂岩造りのコテージと海の眺めが並び、港の桟橋で食べるフィッシュ・アンド・チップスが公式の絵はがきのような締めくくりです。", zh: "从悉尼向西南乘火车或驾车2小时，基亚马是南海岸最棒的日间旅行地:著名的海蚀喷水洞(海浪合适时可喷至25米高)、灯塔海岬、有救生员巡逻的海滩、农夫市集，以及通往詹伯鲁的新南威尔士州顶级短途海岸步道。小镇本身悠闲而真正美丽，满是砂岩小屋与海景，在港口栈桥上吃炸鱼薯条便是官方明信片式的结尾。",
@@ -1581,7 +1591,7 @@ export const destinations: Destination[] = [
     accentColor: "bg-sky-600",
     region: "Northern Beaches, Sydney",
     tripLength: "day",
-    lastUpdated: "2026-10-14",
+    lastUpdated: "2026-10-15",
     relatedDestinations: ["sydney-harbour", "bondi-beach"],
     description: {
       en: "Manly is the one Sydney beach you reach by boat rather than by bus. The F1 ferry from Circular Quay turns into the harbour, passes the Heads and lands you at Manly Wharf 30 minutes later - and the crossing itself is the cheapest sightseeing trip in Sydney. From the wharf, The Corso runs straight to a surf beach that has been the city's beach escape since the 1850s. Behind the beach are the quieter things that make Manly worth more than a day: Shelly Beach and its snorkelling reserve, North Head with the old quarantine station on top, Little Manly's netted harbour pool, and one of the best coastal walks in Sydney.",
@@ -1778,7 +1788,7 @@ export const destinations: Destination[] = [
     accentColor: "bg-teal-700",
     region: "Royal National Park, NSW",
     tripLength: "day",
-    lastUpdated: "2026-10-14",
+    lastUpdated: "2026-10-15",
     relatedDestinations: ["wollongong", "sydney-harbour"],
     description: {
       en: "The Royal is the city's own wilderness: about 15,000 hectares of sandstone coast, rainforest gullies and heath starting 30km south of the CBD, and the second-oldest national park in the world after Yellowstone. Most visitors come for the coast - the 26km Coast Track, Figure Eight Pools, Wattamolla's lagoon and waterfall, and Garie Beach at the end of the road - but the quietest part is inland, where the Hacking River runs past the Audley boatshed and Lady Carrington Drive is closed to cars. You can reach the park by train, and the northern trailhead at Bundeena by ferry from Cronulla, which is what makes it a genuine car-free day out of the city. The one thing to settle before you go is the sea: this coast is unpatrolled, the rock shelves are lethal at the wrong tide, and parts of the park close at short notice for fire and safety reasons.",
@@ -2041,7 +2051,7 @@ export const destinations: Destination[] = [
     accentColor: "bg-blue-600",
     region: "Hunter Region, NSW",
     tripLength: "weekend",
-    lastUpdated: "2026-10-14",
+    lastUpdated: "2026-10-15",
     relatedDestinations: ["hunter-valley", "port-stephens"],
     description: {
       en: "Newcastle is one of Australia's oldest cities and the one place north of Sydney where the coastline alone justifies the train ride: a working harbour on one side of the peninsula, surf beaches down the other, and a compact centre you can cross on foot. The heavy rail line into the middle of town was cut back in 2014 and replaced by a light rail, which is why a train from Sydney now ends at Newcastle Interchange in Wickham rather than at the old city station - and why the last two kilometres into town are a tram ride, not a walk. From the beach end of that line everything is close: Newcastle Beach and the Anzac Memorial Walk at the east end, Nobbys Beach and its breakwall under the lighthouse, the convict-carved Bogey Hole, Fort Scratchley on the headland, and the clifftop path south towards Merewether and its ocean baths. It works as a long day trip and better as a weekend, with the Hunter Valley wineries and Port Stephens both about an hour away for anyone chaining a longer trip.",
@@ -2275,7 +2285,7 @@ export const destinations: Destination[] = [
     accentColor: "bg-cyan-600",
     region: "Northern Beaches, Sydney",
     tripLength: "day",
-    lastUpdated: "2026-10-14",
+    lastUpdated: "2026-10-15",
     relatedDestinations: ["manly", "newcastle"],
     description: {
       en: "Palm Beach sits at the very end of the Northern Beaches peninsula, and that geography is the whole reason to come: a narrow strip of land with the surf on one side and the sheltered water of Pittwater on the other, and Barrenjoey Head rising at the tip with its 1881 lighthouse on top. It is the northernmost point of the Sydney basin, an hour and a half or so from the city by bus, and it feels further away than that. Two villages share the strip - Palm Beach around the surf club, Whale Beach and Avalon a few minutes back down the road - and the whole peninsula runs on surf culture, weekend houses and coffee. It is also where Home and Away is filmed, which for a certain kind of visitor is the main event and for everyone else is a small, pleasant piece of trivia.",
