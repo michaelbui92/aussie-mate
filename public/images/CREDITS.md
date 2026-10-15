@@ -131,3 +131,22 @@ Commons API when the licence was checked. Shipped at 1920x1440.
 
 As a CC BY-SA 4.0 image this is covered by the attribution obligation below, and
 derivative works must carry the same licence.
+
+---
+
+## Added 2026-10-15 (Bondi to Coogee Coastal Walk destination)
+
+Hero and card image for the new `bondi-coogee-coastal-walk` destination page. Licence
+resolved from the Wikimedia Commons API (artist and licence short name as returned by
+the API when the file was fetched).
+
+| File | Shows | Author | Licence |
+|---|---|---|---|
+| `bondi_coogee_coastal_walk.jpg` | Coogee Beach at sunrise, Sydney NSW | Daniel Zador | CC BY-SA 4.0 |
+
+Own work by the author. Source is the original file page on Wikimedia Commons
+(`Coogee Beach Sunrise.jpg`, artist Daniel Zador, own work, CC BY-SA 4.0).
+Shipped at 1920x1280 (Commons original 2048x1365).
+
+As a CC BY-SA 4.0 image this is covered by the attribution obligation below, and
+derivative works must carry the same licence.
