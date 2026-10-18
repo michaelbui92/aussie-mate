@@ -11,7 +11,7 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Clipboard, Coin, Handshake, PersonSpeaking, ShieldCheck, Star } from "@/components/Icons";
-import { seoFor, withSeo } from "@/lib/seo";
+import { seoFor, withSeo, faqLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -70,6 +70,8 @@ const sections: WorkplaceSection[] = [
     jaDesc: "\u8077\u5834\u3067\u61f8\u5ff5\u3092\u4f1d\u3048\u30d5\u30a3\u30fc\u30c9\u30d0\u30c3\u30af\u3059\u308b\u65b9\u6cd5",
     zhDesc: "\u5982\u4f55\u5728\u5de5\u4f5c\u4e2d\u63d0\u51fa\u5173\u5207\u548c\u7ed9\u4e88\u53cd\u9988",
     items: [
+      // Get the locale for FAQPage JSON-LD
+      // const locale = ((await headers()).get("x-am-locale") ?? "en") as Parameters<typeof pageMeta>[1];
       { label: "Direct Feedback is Normal", jaLabel: "\u76f4\u63a5\u7684\u306a\u30d5\u30a3\u30fc\u30c9\u30d0\u30c3\u30af\u306f\u666e\u901a", zhLabel: "\u76f4\u63a5\u53cd\u9988\u662f\u5e38\u6001", koLabel: "\uc9c1\uc811\uc801\uc778 \ud53c\ub4dc\ubc31\uc740 \ub2f9\uc5f0", en: "Aussies will tell you directly if there's an issue. This is not personal — it's professional. Don't take it as an attack. And equally, you are expected to speak up if something isn't right.", ja: "問題があれば、オーストラリア人は直接的に伝えます。これは個人的なものではなく、プロフェッショナルなものです。攻撃と受け取らないでください。同じように、何かおかしいと感じたら、あなたも声を上げることが求められます。", zh: "如果有问题，澳洲人会直接告诉你。这不是针对个人——这是职业化的表现。不要把它当作攻击。同样地，如果有什么不对劲，也期望你能主动说出来。", ko: "호주인들은 문제가 있으면 바로 말해줍니다. 개인적인 게 아니라 전문적인 것입니다. 공격으로 받아들이지 마세요. 반대로, 무언가 잘못되었으면 당신도 의문을 제기해야 합니다." },
       { label: "How to Raise Issues", jaLabel: "\u554f\u984c\u306e\u63d0\u8d77\u65b9\u6cd5", zhLabel: "\u5982\u4f55\u63d0\u51fa\u95ee\u9898", koLabel: "\ubb38\uc81c \uc81c\uae30 \ubc29\ubc95", en: "Start with facts, not emotions. 'I've noticed X happens and it causes Y problem' is better than 'X always ruins everything'. Be specific, be calm, suggest a solution if you have one.", ja: "感情ではなく事実から始めましょう。『Xが起きてYの問題を引き起こしていることに気づきました』は、『Xはいつもすべてを台無しにする』よりも良いです。具体的に、冷静に、解決策があれば提案しましょう。", zh: "从事实开始，而不是从情绪开始。“我注意到X会发生，并导致Y问题”比“X总是毁掉一切”更好。要具体、冷静，如果你有解决方案就提出来。", ko: "감정보다 사실부터 말하세요. 'X가 일어나고 Y문제를 야기한다는 것을 확인했습니다'가 'X가 항상 모든 걸 망칩니다'보다 좋습니다. 구체적으로, 침착하게, 해결책이 있다면 제안하세요." },
       { label: "Know Your Rights", jaLabel: "\u81ea\u5206\u306e\u6a29\u5229\u3092\u77e5\u308b", zhLabel: "\u4e86\u89e3\u4f60\u7684\u6743\u5229", koLabel: "\uad8c\ub9ac\ub97c \uc544\uc138\uc694", en: "In Australia, it's illegal to fire someone for raising a workplace issue (this is called 'adverse action'). If you feel you've been treated unfairly after raising a concern, you have legal protections.", ja: "オーストラリアでは、職場の問題を提起したことを理由に解雇することは違法です（これは『不利益取扱い』と呼ばれます）。懸念を提起した後に不当に扱われたと感じたら、法的保護を受けられます。", zh: "在澳大利亚，因为提出职场问题而解雇某人是违法的（这被称为“不利行动”）。如果你在提出疑虑后感到受到不公平对待，你有法律保护。", ko: "호주에서는 직장 문제를 제기한 사람을 해고하는 것은 불법입니다('부당한 행위'라고 합니다). 문제 제기 후 불공정하게 대우받았다고 느끼면 법적 보호를 받을 수 있습니다." },
