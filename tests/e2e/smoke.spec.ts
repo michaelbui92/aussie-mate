@@ -47,7 +47,6 @@ test.describe("Key navigation paths", () => {
     "/workplace",
     "/study",
     "/tourist",
-    "/resources",
     "/destinations",
     "/about",
     "/faq",

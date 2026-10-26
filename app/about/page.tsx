@@ -4,39 +4,10 @@ import { seoFor, withSeo } from "@/lib/seo";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { pickLocale, type Lang } from "@/lib/locale";
 import { ABOUT_SECTIONS, ABOUT_HERO, ABOUT_META } from "./data";
+import { ABOUT_PROJECTS } from "./projects";
 import LocaleLink from "@/components/LocaleLink";
 
 const sections = [
-  {
-    id: "projects",
-    emoji: "🛠️",
-    title: "Other things I've built",
-    koTitle: "다른 만든 것들",
-    jaTitle: "\u307b\u304b\u306b\u3082\u4f5c\u3063\u305f\u3082\u306e",
-    zhTitle: "\u6211\u505a\u7684\u5176\u4ed6\u4e1c\u897f",
-    desc: "More tools to help you settle in",
-    koDesc: "호주 적응을 돕는 다른 도구들",
-    jaDesc: "\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u751f\u6d3b\u3092\u52a9\u3051\u308b\u307b\u304b\u306e\u30c4\u30fc\u30eb",
-    zhDesc: "\u5e2e\u4f60\u5b89\u987f\u4e0b\u6765\u7684\u66f4\u591a\u5de5\u5177",
-    projects: [
-      {
-        emoji: "🚗",
-        name: "Drive with Bui",
-        url: "https://drivewithbui.com",
-        accent: "bg-sunset/10 border-sunset/30",
-        en: "Sydney driving lessons for new and international drivers. Note: full NSW driving instructor licensing is in progress; lessons are currently offered on a supervised practice basis. Book online.", ja: "新規ドライバーおよび国際ドライバーの方向けのシドニー運転レッスン。ご注意：NSWの正式な運転インストラクター資格は取得手続き中で、現在は監督付き練習の形でレッスンを提供しています。オンラインで予約できます。", zh: "面向新手和国际驾驶员的悉尼驾驶课程。请注意：新南威尔士州正式驾驶教练执照正在办理中；目前课程以有监督的练习形式提供。可在线预约。",
-        ko: "시드니에서 신입 및 국제 운전자를 위한 운전 레슨. 참고: NSW 운전 강사 정식 자격증 취득 절차가 진행 중이며, 현재는 동반 실습 형태로 레슨이 제공됩니다. 온라인 예약 가능.",
-      },
-      {
-        emoji: "📚",
-        name: "Study Buddy (Boba)",
-        url: "https://stdybddy.app",
-        accent: "bg-sage/10 border-sage/30",
-        en: "AI-powered flashcard app with multiple choice questions. Study any topic, anywhere.", ja: "多肢選択式問題を備えたAI搭載のフラッシュカードアプリ。どこでもどんなトピックでも学習できます。", zh: "搭载AI的闪卡应用，配有多项选择题。随时随地学习任何主题。",
-        ko: "AI 플래시카드 앱 — 객관식 문제로 원하는 주제를 학습.",
-      },
-    ],
-  },
   {
     id: "contact",
     emoji: "✉️",
@@ -70,7 +41,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const bodySections = ABOUT_SECTIONS;
-const projectsSection = sections.find((s) => s.id === "projects")!;
 const contactSection = sections.find((s) => s.id === "contact")!;
 
 // The contact paragraph is a one-item array per language, and pickLocale is typed for
@@ -161,44 +131,96 @@ export default function AboutPage() {
           </LocaleLink>
         </section>
 
-        {/* Projects */}
-        <section className="reveal">
-          <div className="flex items-start gap-3 mb-5">
-            <span className="text-2xl shrink-0">{projectsSection.emoji}</span>
+        {/* Projects - merged in from the old My Projects page */}
+        <section id="projects" className="reveal">
+          <div className="flex items-start gap-3 mb-3">
+            <span className="text-2xl shrink-0">{ABOUT_PROJECTS.emoji}</span>
             <div>
               <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-                <En translated>{projectsSection.title}</En>
-                <Ja>{projectsSection.jaTitle ?? projectsSection.title}</Ja>
-                <Zh>{projectsSection.zhTitle ?? projectsSection.title}</Zh>
-                <Ko>{projectsSection.koTitle ?? projectsSection.title}</Ko>
+                <En translated>{ABOUT_PROJECTS.title.en}</En>
+                <Ja>{ABOUT_PROJECTS.title.ja}</Ja>
+                <Zh>{ABOUT_PROJECTS.title.zh}</Zh>
+                <Ko>{ABOUT_PROJECTS.title.ko}</Ko>
               </h2>
               <p className="text-sm text-stone-500 dark:text-stone-400 mt-0.5">
-                <En translated>{projectsSection.desc}</En>
-                <Ja>{projectsSection.jaDesc ?? projectsSection.desc}</Ja>
-                <Zh>{projectsSection.zhDesc ?? projectsSection.desc}</Zh>
-                <Ko>{projectsSection.koDesc ?? projectsSection.desc}</Ko>
+                <En translated>{ABOUT_PROJECTS.desc.en}</En>
+                <Ja>{ABOUT_PROJECTS.desc.ja}</Ja>
+                <Zh>{ABOUT_PROJECTS.desc.zh}</Zh>
+                <Ko>{ABOUT_PROJECTS.desc.ko}</Ko>
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {projectsSection.projects!.map((p, i) => (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`reveal reveal-delay-${(i % 5) + 1} block p-5 rounded-2xl border ${p.accent} hover:shadow-md hover:-translate-y-0.5 transition-all`}
+          <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-base md:text-lg mb-5">
+            <En translated>{ABOUT_PROJECTS.intro.en}</En>
+            <Ja>{ABOUT_PROJECTS.intro.ja}</Ja>
+            <Zh>{ABOUT_PROJECTS.intro.zh}</Zh>
+            <Ko>{ABOUT_PROJECTS.intro.ko}</Ko>
+          </p>
+          <div className="space-y-5">
+            {ABOUT_PROJECTS.tools.map((tool, i) => (
+              <article
+                key={tool.id}
+                className={`reveal reveal-delay-${(i % 5) + 1} ${tool.accent} border rounded-2xl p-6 md:p-7`}
               >
-                <p className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
-                  {p.emoji} {p.name}
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="text-3xl shrink-0">{tool.emoji}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
+                      <h3 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100">{tool.title}</h3>
+                      <span className="text-[10px] font-medium uppercase tracking-[0.2em] px-2.5 py-1 rounded-full border border-current/20 text-stone-600 dark:text-stone-300 bg-white/60 dark:bg-dark-surface/60">
+                        {tool.badge}
+                      </span>
+                    </div>
+                    <p className="font-serif text-base text-stone-700 dark:text-stone-300 italic mb-2">
+                      <En translated>{tool.headline.en}</En>
+                      <Ja>{tool.headline.ja}</Ja>
+                      <Zh>{tool.headline.zh}</Zh>
+                      <Ko>{tool.headline.ko}</Ko>
+                    </p>
+                    <p className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-3">
+                      <En translated>{tool.desc.en}</En>
+                      <Ja>{tool.desc.ja}</Ja>
+                      <Zh>{tool.desc.zh}</Zh>
+                      <Ko>{tool.desc.ko}</Ko>
+                    </p>
+                    <p className="text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed mb-3">
+                      <En translated>{tool.origins.en}</En>
+                      <Ja>{tool.origins.ja}</Ja>
+                      <Zh>{tool.origins.zh}</Zh>
+                      <Ko>{tool.origins.ko}</Ko>
+                    </p>
+                  </div>
+                </div>
+                <ul className="space-y-1.5 mb-4">
+                  {tool.features.en.map((f, fi) => (
+                    <li key={fi} className="flex items-start gap-2 text-sm text-stone-600 dark:text-stone-400">
+                      <span className="text-sage shrink-0 mt-0.5">✓</span>
+                      <En translated>{f}</En>
+                      <Ja>{tool.features.ja[fi] ?? f}</Ja>
+                      <Zh>{tool.features.zh[fi] ?? f}</Zh>
+                      <Ko>{tool.features.ko[fi] ?? f}</Ko>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs font-medium text-sunset mb-4">
+                  ✦ <En translated>{tool.highlight.en}</En>
+                  <Ja>{tool.highlight.ja}</Ja>
+                  <Zh>{tool.highlight.zh}</Zh>
+                  <Ko>{tool.highlight.ko}</Ko>
                 </p>
-                <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                  <En translated>{p.en}</En>
-                  <Ja>{pickLocale("ja", p)}</Ja>
-                  <Zh>{pickLocale("zh", p)}</Zh>
-                  <Ko>{pickLocale("ko", p)}</Ko>
-                </p>
-              </a>
+                <a
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full bg-sunset text-white hover:bg-sunset-light transition-colors shadow-sm"
+                >
+                  <En translated>{tool.visit.en}</En>
+                  <Ja>{tool.visit.ja}</Ja>
+                  <Zh>{tool.visit.zh}</Zh>
+                  <Ko>{tool.visit.ko}</Ko>
+                  <span>→</span>
+                </a>
+              </article>
             ))}
           </div>
         </section>

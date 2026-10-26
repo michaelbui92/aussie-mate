@@ -44,7 +44,6 @@ export const CONTENT_DATES: Record<string, string> = {
   "/journey/home": "2026-10-04",
   "/other-tools": "2026-10-04",
   "/privacy": "2026-10-04",
-  "/resources": "2026-10-05",
   "/sport": "2026-10-05",
   "/study": "2026-10-04",
   "/terms": "2026-10-05",

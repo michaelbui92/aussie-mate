@@ -11,7 +11,7 @@ import EditorialSection, {
   type EditorialSectionData,
 } from "@/components/EditorialSection";
 import { Briefcase2, Building, Building2, Clipboard, DollarSign, ReceiptAlt } from "@/components/Icons";
-import { articleLdJson, seoFor, withSeo } from "@/lib/seo";
+import { articleLdJson, seoFor, withSeo, faqLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -243,6 +243,41 @@ export default async function FinancePage() {
           ),
         }}
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqLdJson(
+              [
+                {
+                  q: { en: "How do I open an Australian bank account as a newcomer?", ko: "현지인 아닌 사람이 호주 은행 계좌를 개설하려면 어떻게 해야 하나요?", ja: "新規来訪者がオーストラリアの銀行口座を開設するにはどうすればよいですか？", zh: "作为新人如何在澳洲开户？" },
+                  a: { en: "Most Australian banks allow you to open an account with just your passport and visa. You can often start the process online before arrival, then visit a branch with your documents to complete verification. Major banks like Commonwealth Bank, Westpac, ANZ, and NAB have dedicated services for newcomers with multilingual staff available. You\\u0027ll typically need your passport, visa, and sometimes proof of Australian address (even temporary). Some banks offer special \\u0027Arrival\\u0027 or \\u0027Welcome\\u0027 packages with fee-free transactions for new customers." }
+                },
+                {
+                  q: { en: "What is a Tax File Number (TFN) and why do I need one?", ko: "TFN(Tax File Number)이란 무엇이며 왜 필요한가요?", ja: "TFN（納税者番号）とは何ですか？なぜ必要なのですか？", zh: "什么是税号(TFN)？为什么需要它？" },
+                  a: { en: "A Tax File Number (TFN) is a unique identifier issued by the Australian Taxation Office (ATO) for tax purposes. You need it to work legally in Australia, open certain bank accounts, receive government benefits, and avoid paying the highest marginal tax rate (47%) on your income. Apply online at ato.gov.au within 28 days of arrival to avoid penalties. Processing typically takes 2-4 weeks, and you can start working immediately with a TFN application receipt while waiting for the official number." }
+                },
+                {
+                  q: { en: "How does superannuation (super) work and how do I claim it?", ko: "퇴직연금(super)은 어떻게 작동하며 어떻게 받을 수 있나요?", ja: "スーパーアナンゼーション（年金）はどのように機能し、どのように請求できますか？", zh: "养老金(super)如何运作？如何申领？" },
+                  a: { en: "Superannuation is a mandatory retirement savings scheme where employers contribute 11% of your salary (as of 2023) into a fund chosen by you or selected by your employer. You can\\u0027t access it until retirement age (currently 65-67 depending on birth year) or specific conditions like permanent departure from Australia. Temporary residents can claim their super when leaving Australia permanently through the Departing Australia Superannuation Payment (DASP) system. Keep records of all employers and super funds throughout your stay." }
+                },
+                {
+                  q: { en: "What taxes do I pay as a temporary resident?", ko: "임시 거주자로 있을 때 어떤 세금을 내야 하나요?", ja: "一時的な居住者としてどのような税金を払う必要がありますか？", zh: "作为临时居民需要缴纳哪些税费？" },
+                  a: { en: "Temporary residents pay the same income tax rates as Australian residents (progressive rates from 0% to 45%, plus 2% Medicare levy). However, you may not be eligible for the tax-free threshold ($18,200) in your first year, meaning you pay tax on all income. You\\u0027ll also pay Goods and Services Tax (GST, 10%) on purchases and potentially Capital Gains Tax on investments. File an annual tax return between July 1-October 31 each year. Working Holiday Makers (417/462 visa holders) face a flat 15% tax rate on all income until they lodge their first tax return." }
+                },
+                {
+                  q: { en: "Can I get an Australian credit card or loan as a newcomer?", ko: "새로 온 사람이 호주 신용카드나 대출을 받을 수 있나요?", ja: "新参者はオーストラリアでクレジットカードやローンを受けられますか？", zh: "作为新人能申请澳洲信用卡或贷款吗？" },
+                  a: { en: "Getting credit as a newcomer is challenging but possible. Most lenders require 3-6 months of bank transaction history, proof of regular income, and sometimes a local guarantor. Start by building credit history with a secured credit card or by maintaining a healthy savings account balance. Some fintech companies like Up, 86400, and Volt offer credit products designed for newcomers. Pay all bills on time and consider prepaid phone plans or utility accounts to establish payment history. Larger loans (car, home) typically require 12+ months of residence and stable employment history." }
+                }
+              ],
+              "finance",
+              locale
+            )
+          ),
+        }}
+      />
+
 
 
       {/* Contextual next-steps — internal link graph fix */}

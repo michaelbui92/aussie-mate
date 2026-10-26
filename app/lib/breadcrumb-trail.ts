@@ -35,7 +35,6 @@ export const CRUMB_LABELS: Record<string, Localized> = {
   "/journey/home":    { en: "Settled In",       ko: "정착",          ja: "生活になじむ",       zh: "安顿下来" },
   "/tourist":         { en: "Tourist",         ko: "여행자",         ja: "観光",               zh: "游客" },
   "/beyond-sydney":   { en: "Beyond Sydney",   ko: "시드니 밖으로",  ja: "シドニー以外",       zh: "悉尼以外" },
-  "/resources":       { en: "Resources",       ko: "자료",           ja: "リソース",           zh: "资源" },
   "/other-tools":     { en: "My Projects",     ko: "내 프로젝트",    ja: "プロジェクト",       zh: "我的项目" },
   "/about":           { en: "About",           ko: "소개",           ja: "このサイトについて", zh: "关于" },
   "/experiences":     { en: "Things to Do",    ko: "즐길 거리",      ja: "楽しむ",             zh: "玩乐" },

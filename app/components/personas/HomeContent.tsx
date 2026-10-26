@@ -81,22 +81,6 @@ export default function HomeContent() {
               hrefLabelKo: "비자 옵션 보기 →",
             },
             {
-              icon: "🤝",
-              en: "Make Aussie friends", ja: "オーストラリア人の友達を作る", zh: "结交澳大利亚朋友",
-              ko: "호주인 친구 만들기",
-              blurbEn:
-                "Friendships here take longer than back home. Sports clubs, climbing gyms, language exchanges, volunteer groups — pick one and commit for six months. That's how it works.",
-              blurbJa: "\u3053\u3053\u3067\u306e\u53cb\u60c5\u306f\u6545\u90f7\u3088\u308a\u6642\u9593\u304c\u304b\u304b\u308a\u307e\u3059\u3002\u30b9\u30dd\u30fc\u30c4\u30af\u30e9\u30d6\u3001\u30af\u30e9\u30a4\u30df\u30f3\u30b0\u30b8\u30e0\u3001\u8a9e\u5b66\u4ea4\u6d41\u3001\u30dc\u30e9\u30f3\u30c6\u30a3\u30a2\u56e3\u4f53 \u2014 \u4e00\u3064\u3092\u9078\u3093\u30676\u304b\u6708\u7d9a\u3051\u307e\u3057\u3087\u3046\u3002\u305d\u3046\u3044\u3046\u3082\u306e\u3067\u3059\u3002",
-              blurbZh: "\u8fd9\u91cc\u7684\u53cb\u8c0a\u6bd4\u5728\u5bb6\u4e61\u5efa\u7acb\u5f97\u66f4\u6162\u3002\u4f53\u80b2\u4ff1\u4e50\u90e8\u3001\u6500\u5ca9\u9986\u3001\u8bed\u8a00\u4ea4\u6362\u3001\u5fd7\u613f\u8005\u56e2\u4f53\u2014\u2014\u9009\u4e00\u4e2a\uff0c\u575a\u6301\u516d\u4e2a\u6708\u3002\u5c31\u662f\u8fd9\u6837\u3002",
-              blurbKo:
-                "여기서 우정은 고국보다 오래 걸립니다. 동호회, 클라이밍 짐, 언어교환, 자원봉사 — 하나를 골라 6개월은 꾸준히. 그래야 됩니다.",
-              href: "/resources",
-              hrefLabelEn: "Find your community →",
-              hrefLabelJa: "\u30b3\u30df\u30e5\u30cb\u30c6\u30a3\u3092\u898b\u3064\u3051\u308b \u2192",
-              hrefLabelZh: "\u627e\u5230\u4f60\u7684\u793e\u533a \u2192",
-              hrefLabelKo: "커뮤니티 찾기 →",
-            },
-            {
               icon: "🗣️",
               en: "Learn Aussie English properly", ja: "オーストラリア英語をしっかり学ぶ", zh: "认真学习澳式英语",
               ko: "호주식 영어 제대로 배우기",
@@ -401,21 +385,6 @@ export default function HomeContent() {
               <Ja>スラング、慣用句、聞き逃した言葉</Ja>
               <Zh>俚语、习语，还有你没听懂的那些词</Zh>
               <Ko>슬랭, 관용구, 놓친 표현들</Ko>
-            </div>
-          </LocaleLink>
-          <LocaleLink
-            href="/resources"
-            className="reveal reveal-delay-3 group p-5 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/50 dark:from-sky-950/30 dark:to-sky-900/20 border border-sky-100/50 dark:border-sky-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
-          >
-            <div className="font-serif text-lg text-stone-900 dark:text-stone-100 mb-1">
-              🤝 <En translated>Community</En><Ja>コミュニティ</Ja><Zh>社区</Zh>
-              <Ko>커뮤니티</Ko>
-            </div>
-            <div className="text-sm text-stone-600 dark:text-stone-400">
-              <En translated>Churches, sports clubs, meetups</En>
-              <Ja>教会、スポーツクラブ、ミートアップ</Ja>
-              <Zh>教会、体育俱乐部、聚会</Zh>
-              <Ko>한인 교회, 동호회, 모임</Ko>
             </div>
           </LocaleLink>
         </div>

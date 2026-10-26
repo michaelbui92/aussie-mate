@@ -124,6 +124,42 @@ function withEmphasis(text?: string) {
     .map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
 }
 
+// The long body copy (howToGetThere, bestTimeDetailed) is stored with real paragraph breaks: a
+// blank line between paragraphs, up to six of them in one section, in all four locales. The
+// renderer put the whole string in a single <p>, and HTML collapses a run of newlines to a single
+// space, so every one of those sections arrived as one undifferentiated block of 2,700-4,900
+// characters.
+// Split the string on the blank line and let each chunk be its own paragraph. A lone newline is a
+// line break inside a paragraph rather than a new section, so those are preserved with
+// whitespace-pre-line instead of being flattened to a space.
+function bodyParagraphs(text?: string): string[] {
+  if (!text) return [];
+  return text
+    .split(/\n[ \t]*\n/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+}
+
+// Shared renderer for multi-paragraph body copy. Keeps withEmphasis applied inside each paragraph
+// so the **Label:** lead-ins still render bold — they read as inline headings once the paragraphs
+// are separated. Used by the howToGetThere and bestTimeDetailed blocks; anything else that renders
+// a long data string into a single element should use it too.
+const BODY_COPY = "text-stone-700 dark:text-stone-300 text-sm leading-relaxed";
+
+function BodyParagraphs({ text, className }: { text?: string; className: string }) {
+  const blocks = bodyParagraphs(text);
+  if (blocks.length === 0) return null;
+  return (
+    <div className="space-y-3">
+      {blocks.map((block, i) => (
+        <p key={i} className={`${className} whitespace-pre-line`}>
+          {withEmphasis(block)}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 export default async function DestinationPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const d = getDestination(slug);
@@ -303,12 +339,18 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   <Ko>가는 방법</Ko>
                 </p>
                 <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
-                  <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                    <En translated>{withEmphasis(d.howToGetThere.en)}</En>
-                    <Ja>{withEmphasis(pickLocale("ja", d.howToGetThere))}</Ja>
-                    <Zh>{withEmphasis(pickLocale("zh", d.howToGetThere))}</Zh>
-                    <Ko>{withEmphasis(d.howToGetThere.ko)}</Ko>
-                  </p>
+                  <En translated>
+                    <BodyParagraphs text={d.howToGetThere.en} className={BODY_COPY} />
+                  </En>
+                  <Ja>
+                    <BodyParagraphs text={pickLocale("ja", d.howToGetThere)} className={BODY_COPY} />
+                  </Ja>
+                  <Zh>
+                    <BodyParagraphs text={pickLocale("zh", d.howToGetThere)} className={BODY_COPY} />
+                  </Zh>
+                  <Ko>
+                    <BodyParagraphs text={d.howToGetThere.ko} className={BODY_COPY} />
+                  </Ko>
                 </div>
               </section>
             )}
@@ -323,12 +365,18 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   <Ko>방문 최적기</Ko>
                 </p>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
-                  <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
-                    <En translated>{withEmphasis(d.bestTimeDetailed.en)}</En>
-                    <Ja>{withEmphasis(pickLocale("ja", d.bestTimeDetailed))}</Ja>
-                    <Zh>{withEmphasis(pickLocale("zh", d.bestTimeDetailed))}</Zh>
-                    <Ko>{withEmphasis(d.bestTimeDetailed.ko)}</Ko>
-                  </p>
+                  <En translated>
+                    <BodyParagraphs text={d.bestTimeDetailed.en} className={BODY_COPY} />
+                  </En>
+                  <Ja>
+                    <BodyParagraphs text={pickLocale("ja", d.bestTimeDetailed)} className={BODY_COPY} />
+                  </Ja>
+                  <Zh>
+                    <BodyParagraphs text={pickLocale("zh", d.bestTimeDetailed)} className={BODY_COPY} />
+                  </Zh>
+                  <Ko>
+                    <BodyParagraphs text={d.bestTimeDetailed.ko} className={BODY_COPY} />
+                  </Ko>
                 </div>
               </section>
             )}

@@ -20,10 +20,10 @@ export default function Footer() {
               <span className="font-serif text-lg text-stone-900 dark:text-stone-100">AussieGuides</span>
             </LocaleLink>
             <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed max-w-xs">
-              <En translated>A guide to Australian daily life — for anyone new here, regardless of where you&apos;re coming from. (Available in English and 한국어)</En>
-              <Ja>オーストラリアの日常生活ガイド — どこから来た方でも、ここでの生活が初めての方のために。（英語と韓国語で利用可能）</Ja>
-              <Zh>澳大利亚日常生活指南 — 无论你来自哪里，只要初到此处都适用。（提供英语和韩语版本）</Zh>
-              <Ko>호주 일상 생활에 대한 가이드 — 어디서 오신 분이든 호주를 처음 접하시는 모든 분들을 위해. (영어와 한국어로 제공)</Ko>
+              <En translated>A guide to Australian daily life — for anyone new here, regardless of where you&apos;re coming from.</En>
+              <Ja>オーストラリアの日常生活ガイド — どこから来た方でも、ここでの生活が初めての方のために。</Ja>
+              <Zh>澳大利亚日常生活指南 — 无论你来自哪里，只要初到此处都适用。</Zh>
+              <Ko>호주 일상 생활에 대한 가이드 — 어디서 오신 분이든 호주를 처음 접하시는 모든 분들을 위해.</Ko>
             </p>
           </div>
 
@@ -73,7 +73,6 @@ export default function Footer() {
               <Ko>더보기</Ko>
             </p>
             <ul className="space-y-2 text-sm">
-              <li><LocaleLink href="/resources" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Resources</En><Ja>リソース</Ja><Zh>资源</Zh><Ko>자료</Ko></LocaleLink></li>
               <li><LocaleLink href="/other-tools" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>My Projects</En><Ja>私のプロジェクト</Ja><Zh>我的项目</Zh><Ko>내 프로젝트</Ko></LocaleLink></li>
               <li><LocaleLink href="/editorial" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>Editorial standards</En><Ja>編集方針</Ja><Zh>编辑标准</Zh><Ko>편집 기준</Ko></LocaleLink></li>
               <li><LocaleLink href="/about" className="text-stone-600 dark:text-stone-300 hover:text-sunset transition-colors"><En translated>About AussieGuides</En><Ja>AussieGuidesについて</Ja><Zh>关于AussieGuides</Zh><Ko>AussieGuides 소개</Ko></LocaleLink></li>

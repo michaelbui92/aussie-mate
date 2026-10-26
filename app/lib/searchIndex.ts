@@ -213,38 +213,4 @@ export const searchIndex: SearchResult[] = [
     sectionKo: "안전 팁",
     matches: { en: "safety, beach safety, sun protection, sunscreen, SPF, sharks, snakes, wildlife, first aid, emergency, rip current, swim between flags", ja: "安全、ビーチの安全、紫外線対策、日焼け止め、SPF、サメ、ヘビ、野生動物、応急処置、緊急、離岸流、旗の間で泳ぐ", zh: "安全、海滩安全、防晒、防晒霜、SPF、鲨鱼、蛇、野生动物、急救、紧急情况、离岸流、在旗帜之间游泳", ko: "안전, 비치 안전, 자외선, 선크림, 상어, 뱀, 야생동물, 응급" },
   },
-
-  // Resources
-  {
-    page: "Resources",
-    pageKo: "자료",
-    href: "/resources",
-    section: "Government Services",
-    sectionKo: "정부 서비스",
-    matches: { en: "Medicare, Centrelink, myGov, TFN, ATO, Service NSW, Fair Trading, tax, visa, Centrelink payments, JobSeeker, Family Tax Benefit, Youth Allowance", ja: "メディケア、センタリンク、マイガバメント、TFN、ATO、サービスNSW、フェアトレーディング、税金、ビザ、センタリンク給付、JobSeeker、Family Tax Benefit、Youth Allowance", zh: "Medicare、Centrelink、myGov、TFN、ATO、Service NSW、公平交易署、税、签证、Centrelink补助、JobSeeker、家庭税收福利、青年津贴", ko: "메디케어, 센터링크, 마이갓, TFN, ATO, 서비스 NSW, 공정거래, 세금" },
-  },
-  {
-    page: "Resources",
-    pageKo: "자료",
-    href: "/resources",
-    section: "Education",
-    sectionKo: "교육",
-    matches: { en: "university, TAFE, Study NSW, UTS, UNSW, Macquarie, University of Sydney, course, vocational, study, postgraduate, undergraduate", ja: "大学、TAFE、Study NSW、UTS、UNSW、マッコーリー、シドニー大学、コース、職業教育、学習、大学院、学部", zh: "大学、TAFE、Study NSW、UTS、UNSW、麦考瑞、悉尼大学、课程、职业教育、学习、研究生、本科生", ko: "대학, TAFE, UTS, UNSW, 매쿼리, 시드니 대학교, 학과, 직업 교육" },
-  },
-  {
-    page: "Resources",
-    pageKo: "자료",
-    href: "/resources",
-    section: "Healthcare",
-    sectionKo: "의료",
-    matches: { en: "Medicare, bulk billing, clinic, GP, doctor, hospital, emergency, ER, urgent care, mental health, Beyond Blue, Lifeline, poisons information", ja: "メディケア、バルクビリング、クリニック、GP、医師、病院、緊急、救急、アージェントケア、メンタルヘルス、Beyond Blue、Lifeline、中毒情報", zh: "Medicare、全额报销、诊所、全科医生、医生、医院、急诊、急救、紧急护理、心理健康、Beyond Blue、Lifeline、中毒信息", ko: "메디케어, 벌크 빌링, 의원, 병원, 응급실, 응급 진료, 정신 건강" },
-  },
-  {
-    page: "Resources",
-    pageKo: "자료",
-    href: "/resources",
-    section: "Emergency Contacts",
-    sectionKo: "비상 연락처",
-    matches: { en: "emergency, 000, police, ambulance, fire brigade, SES, 132500, poisons information centre, 131126, Crime Stoppers, 1800333000, crisis support, Lifeline", ja: "緊急、000、警察、救急車、消防、SES、132500、中毒情報センター、131126、Crime Stoppers、1800333000、危機サポート、Lifeline", zh: "紧急、000、警察、救护车、消防队、SES、132500、中毒信息中心、131126、Crime Stoppers、1800333000、危机支持、Lifeline", ko: "비상, 000, 경찰, 구급차, 소방, 독극물, 위기" },
-  },
 ];

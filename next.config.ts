@@ -36,6 +36,14 @@ const nextConfig: NextConfig = {
         destination: "/journey/arrived",
         permanent: true,
       },
+      // The /resources page was retired and its remaining value folded into the
+      // "My Projects" section at /other-tools. It was live and in the sitemap, so a
+      // 308 keeps every bookmark, backlink and crawl entry working instead of 404ing.
+      {
+        source: "/resources",
+        destination: "/other-tools",
+        permanent: true,
+      },
     ];
   },
 };

@@ -33,3 +33,7 @@ playwright-report/
 .playwright/
 /blob-report/
 playwright/.cache/
+
+# One-off audit output and run logs from agent jobs
+cache/
+logs/
