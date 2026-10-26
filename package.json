@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "tsc --noEmit",
     "test": "playwright test",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "audit": "npm audit --omit=dev"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",

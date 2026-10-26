@@ -1,0 +1,36 @@
+# Keeps the security posture from drifting between audits.
+#
+# Weekly, not daily: this app ships to Vercel on push, so a security PR that arrives overnight would
+# otherwise be merged before anyone read it. Grouping keeps it to roughly one PR a week per repo
+# instead of a dozen, which is the difference between a prompt that gets read and one that gets
+# ignored.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Australia/Sydney"
+    open-pull-requests-limit: 5
+    groups:
+      security:
+        applies-to: security-updates
+        patterns: ["*"]
+      minors-and-patches:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+    ignore:
+      # A framework major is a migration, not a merge: it needs the gate and the 321 tests, and the
+      # owner's decision about timing. Dependabot should report it, not open a PR that looks ready.
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
