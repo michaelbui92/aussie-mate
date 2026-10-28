@@ -84,7 +84,7 @@ export default async function FAQPage() {
           <Ja>お探しの質問が見つかりませんか？ メールはこちらへ</Ja>
           <Zh>找不到你的问题？请发邮件至</Zh>
           <Ko>원하는 답변이 없으세요? </Ko>
-          <span className="font-medium text-sunset-ink">michaelbui@outlook.com.au</span>
+          <span className="font-medium text-sunset-light">michaelbui@outlook.com.au</span>
           <En translated> and we&apos;ll add it.</En>
           <Ja>お送りいただければ、追記いたします。</Ja>
           <Zh>我们会把它加进去。</Zh>

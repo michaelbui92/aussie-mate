@@ -37,7 +37,7 @@ export default function Breadcrumbs() {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="max-w-5xl mx-auto px-4 sm:px-6 pt-3 text-xs text-eucalypt/50 dark:text-dark-muted/50"
+      className="max-w-5xl mx-auto px-4 sm:px-6 pt-3 text-xs text-eucalypt/80 dark:text-dark-muted/80"
     >
       {crumbs.map((c, i) => (
         <span key={c.path || "home"}>
