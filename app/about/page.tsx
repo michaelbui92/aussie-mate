@@ -194,7 +194,7 @@ export default function AboutPage() {
                 <ul className="space-y-1.5 mb-4">
                   {tool.features.en.map((f, fi) => (
                     <li key={fi} className="flex items-start gap-2 text-sm text-stone-600 dark:text-stone-400">
-                      <span className="text-sage shrink-0 mt-0.5">✓</span>
+                      <span className="text-sage-ink shrink-0 mt-0.5">✓</span>
                       <En translated>{f}</En>
                       <Ja>{tool.features.ja[fi] ?? f}</Ja>
                       <Zh>{tool.features.zh[fi] ?? f}</Zh>

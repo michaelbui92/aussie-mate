@@ -230,7 +230,7 @@ export default async function OtherToolsPage() {
             <ul className="space-y-1.5 mb-5">
               {tool.features.map((f, fi) => (
                 <li key={fi} className="flex items-start gap-2 text-sm text-stone-600 dark:text-stone-400">
-                  <span className="text-sage shrink-0 mt-0.5">✓</span>
+                  <span className="text-sage-ink shrink-0 mt-0.5">✓</span>
                   <En translated>{f}</En>
                   <Ja>{tool.featuresJa?.[fi] ?? f}</Ja>
                   <Zh>{tool.featuresZh?.[fi] ?? f}</Zh>

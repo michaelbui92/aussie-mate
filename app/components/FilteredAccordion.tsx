@@ -104,9 +104,9 @@ export default function FilteredAccordion({
           const Icon = icons[dest.iconKey];
           const vibePill = (() => {
             switch (dest.vibe) {
-              case "beach":   return "bg-coast/15 text-coast";
+              case "beach":   return "bg-coast/15 text-coast-ink";
               case "city":    return "bg-purple-500/15 text-purple-600 dark:text-purple-400";
-              case "nature":  return "bg-sage/15 text-sage";
+              case "nature":  return "bg-sage/15 text-sage-ink";
               case "food":    return "bg-sunset/15 text-sunset-ink";
               default:        return "bg-stone-100 dark:bg-dark-surface text-stone-500";
             }

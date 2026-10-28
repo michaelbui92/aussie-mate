@@ -344,10 +344,10 @@ export default function BeachesPage() {
         {/* Packing list */}
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className="shrink-0 w-8 h-8 rounded-xl bg-coast/10 text-coast flex items-center justify-center">
+            <span className="shrink-0 w-8 h-8 rounded-xl bg-coast/10 text-coast-ink flex items-center justify-center">
               <Umbrella className="w-4 h-4" />
             </span>
-            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-coast">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-coast-ink">
               <En translated>Packing list</En>
               <Ja>持ち物リスト</Ja>
               <Zh>行李清单</Zh><Ko>준비물 체크리스트</Ko>
@@ -371,7 +371,7 @@ export default function BeachesPage() {
                 key={item.en}
                 className={`reveal reveal-delay-${(i % 5) + 1} flex items-start gap-3 p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-coast/40 hover:shadow-md transition-all`}
               >
-                <span className="shrink-0 w-5 h-5 rounded-full bg-coast/10 text-coast flex items-center justify-center mt-0.5">
+                <span className="shrink-0 w-5 h-5 rounded-full bg-coast/10 text-coast-ink flex items-center justify-center mt-0.5">
                   <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>

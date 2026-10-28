@@ -59,7 +59,7 @@ export default function Accordion({
   for (const k of iconKeys) {
     icons[k] = (Icons as unknown as Record<string, ComponentType<{ className?: string }>>)[k];
   }
-  const accentText = theme === "wattle" ? "text-wattle" : "text-sunset-ink";
+  const accentText = theme === "wattle" ? "text-wattle-ink" : "text-sunset-ink";
   const accentBg = theme === "wattle" ? "bg-wattle/10" : "bg-sunset/10";
   return (
     <div className="space-y-3">

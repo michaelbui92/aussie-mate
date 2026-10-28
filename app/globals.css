@@ -17,6 +17,11 @@
   --color-wattle: #D4A04A;
   --color-gum: #A85A6B;
   --color-coast: #6BA5B5;
+  /* The accent palette is tuned for fills and for text ON dark. On cream, coast is 2.6:1, sage 3.8:1
+     and wattle 2.2:1 - all below AA. These are the same hues, dark enough to be read. */
+  --color-coast-ink: #2F6E7C;
+  --color-sage-ink: #3F6B3F;
+  --color-wattle-ink: #8A6118;
   --color-darkbg: #1A2A1A;
   --color-dark-surface: #2A3A2A;
   --color-dark-muted: #A8C8A0;

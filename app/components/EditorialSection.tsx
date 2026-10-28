@@ -64,17 +64,17 @@ const ACCENT_MAP: Record<NonNullable<EditorialSectionData["accent"]>, {
     banner: "from-orange-500 to-amber-600",
   },
   sage: {
-    eyebrow: "text-sage",
+    eyebrow: "text-sage-ink",
     ring: "hover:border-sage/40",
     dot: "bg-sage",
-    chip: "bg-sage/10 text-sage",
+    chip: "bg-sage/10 text-sage-ink",
     banner: "from-emerald-500 to-green-600",
   },
   coast: {
-    eyebrow: "text-coast",
+    eyebrow: "text-coast-ink",
     ring: "hover:border-coast/40",
     dot: "bg-coast",
-    chip: "bg-coast/10 text-coast",
+    chip: "bg-coast/10 text-coast-ink",
     banner: "from-cyan-500 to-sky-600",
   },
   amber: {
@@ -139,6 +139,9 @@ export default function EditorialSection({
             src={data.img}
             alt=""
             fill
+            /* The first section on a page is usually the largest thing painted on a phone, so it must
+               not be lazy - measured on /study, the lazy banner was the LCP element at 6.0s. */
+            priority={index === 0}
             sizes="(max-width: 1024px) 100vw, 900px"
             className="object-cover"
           />

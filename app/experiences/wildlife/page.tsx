@@ -448,7 +448,7 @@ export default function WildlifePage() {
 
           {/* National parks section intro */}
           <div className="text-center mt-16 mb-4 reveal">
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-coast mb-2">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-coast-ink mb-2">
               <En translated>Wild encounters</En>
               <Ja>野生との出会い</Ja>
               <Zh>邂逅野生动物</Zh>
