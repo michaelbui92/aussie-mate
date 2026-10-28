@@ -155,26 +155,12 @@ const themeInitScript = `
 })();
 `;
 
-// Google AdSense — Auto Ads. Google picks placements; we just load the script.
-// Publisher ID is hardcoded from the user's AdSense account (ca-pub-7794121496618493).
+// Google AdSense used to be loaded here, in the root layout, on every page - which is what enabled
+// Auto Ads site-wide: Google injected a unit near the top of /about, /study and everything else, and
+// those pages measured CLS 0.19 with no ad unit of their own. The script now lives in the AdSlot
+// component, so it loads only on the two pages that actually carry an ad.
 //
-// To disable AdSense, leave the env var UNSET in Vercel. Setting it to an empty
-// string does NOT disable — we previously used `|| HARDCODED`, which falls
-// through on falsy values, and `""` is falsy, so empty env vars silently kept
-// ads live. The first condition below explicitly checks for `_IS_SET` by
-// looking for the env var in process.env rather than reading its value: any
-// presence (including empty string) means "user wants to control this
-// manually," and absence means "fall back to the hardcoded AdSense ID."
-const HAS_ADSENSE_ENV = Object.prototype.hasOwnProperty.call(
-  process.env,
-  "NEXT_PUBLIC_ADSENSE_ID"
-);
-function resolveAdsenseId(): string | undefined {
-  if (!HAS_ADSENSE_ENV) return "ca-pub-7794121496618493"; // default ON
-  const env = process.env.NEXT_PUBLIC_ADSENSE_ID;
-  return env && env.length > 0 ? env : undefined; // env-present + non-empty = custom; env-present + empty = OFF
-}
-const ADSENSE_PUBLISHER_ID = resolveAdsenseId();
+// To disable ads entirely, set NEXT_PUBLIC_ADSENSE_ID to an empty string in Vercel.
 
 // Canonical and hreflang, per request.
 //
@@ -237,15 +223,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             the /_next/image variant, so the browser fetched both. next/image with `priority` emits the
             preload for the exact URL and srcset it will use. */}
         {/* AdSense Auto Ads — loads when env-on; ungated by truthy check now */}
-        {ADSENSE_PUBLISHER_ID ? (
-          <Script
-            id="adsense"
-            async
-            strategy="lazyOnload"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUBLISHER_ID}`}
-            crossOrigin="anonymous"
-          />
-        ) : null}
+
         {/* JSON-LD: Person (author) + Organization (publisher) + WebSite structured data
             for Google rich results. The Person block gives Google an explicit named
             human it can attribute this content to (E-E-A-T signal). */}

@@ -159,7 +159,7 @@ export default function HomePage() {
                   <Zh>听不懂英语俚语？</Zh>
                   <Ko>호주식 영어가 안 통하나요?</Ko>
                 </p>
-                <p className="text-sm font-semibold text-sky-600 dark:text-sky-400">
+                <p className="text-sm font-semibold text-sky-700 dark:text-sky-400">
                   <En translated>Check here →</En>
                   <Ja>こちらを確認 →</Ja>
                   <Zh>点这里查看 →</Zh>

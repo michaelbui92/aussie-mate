@@ -1,8 +1,19 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Script from "next/script";
 import { useLang } from "@/components/LangBlocks";
 import { uiLabel } from "@/lib/ui-i18n";
+
+/**
+ * The publisher ID, resolved the same way it was in the root layout: unset means the hardcoded
+ * account, set-and-empty means ads are off. It lives here so the script is only ever requested by a
+ * page that renders an ad unit - loading it globally is what switched Auto Ads on everywhere.
+ */
+const ADSENSE_CLIENT =
+  process.env.NEXT_PUBLIC_ADSENSE_ID === undefined
+    ? "ca-pub-7794121496618493"
+    : process.env.NEXT_PUBLIC_ADSENSE_ID || null;
 
 type AdSlotProps = {
   /** AdSense ad slot ID. If empty, falls back to Auto Ads (no slot needed). */
@@ -61,6 +72,8 @@ export default function AdSlot({
     };
   }, []);
 
+  if (!ADSENSE_CLIENT) return null;
+
   return (
     <div
       className={`my-8 flex justify-center ${className}`}
@@ -73,6 +86,13 @@ export default function AdSlot({
       role="complementary"
       aria-label={uiLabel(lang, "advertisement")}
     >
+      <Script
+        id="adsense"
+        async
+        strategy="lazyOnload"
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+        crossOrigin="anonymous"
+      />
       <ins
         ref={insRef}
         className="adsbygoogle"

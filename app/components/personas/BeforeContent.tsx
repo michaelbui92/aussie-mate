@@ -145,7 +145,7 @@ export default function BeforeContent() {
           practical answer, but the page opens by acknowledging that
           making the move is itself the bold part. */}
       <section className="mb-10">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sky-600 mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sky-700 mb-3">
           <En translated>Pre-arrival</En>
           <Ja>出発前</Ja>
           <Zh>抵达前</Zh>
@@ -259,7 +259,7 @@ export default function BeforeContent() {
           </p>
           <LocaleLink
             href="/journey/arrived"
-            className="inline-flex items-center gap-2 bg-white text-sky-600 hover:bg-stone-50 px-6 py-3 rounded-full text-sm font-semibold transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-sky-700 hover:bg-stone-50 px-6 py-3 rounded-full text-sm font-semibold transition-colors"
           >
             <En translated>I&apos;ve landed — what now?</En>
             <Ja>到着しました — 次はどうする？</Ja>

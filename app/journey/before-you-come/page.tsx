@@ -33,7 +33,7 @@ export default function BeforeYouComePage() {
     <div className="bg-stone-50 dark:bg-darkbg">
       <section className="bg-white dark:bg-dark-surface border-b border-stone-200 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-6 pt-8 md:pt-12">
-          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sky-600">
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sky-700">
             <En translated>The Journey · Stage 01</En>
             <Ja>ジャーニー · ステージ01</Ja>
             <Zh>旅程 · 第01阶段</Zh>

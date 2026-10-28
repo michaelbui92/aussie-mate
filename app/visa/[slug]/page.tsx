@@ -214,7 +214,7 @@ export default async function VisaPage({
                         key={c.en}
                         className="flex items-start gap-2 text-sm text-stone-700 dark:text-stone-200"
                       >
-                        <span className="text-rose-600 dark:text-rose-400">
+                        <span className="text-rose-700 dark:text-rose-400">
                           −
                         </span>
                         <span>

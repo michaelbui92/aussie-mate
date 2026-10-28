@@ -178,7 +178,7 @@ export default function WeatherPage() {
                 key={item.en}
                 className={`reveal reveal-delay-${(i % 5) + 1} flex gap-4 group`}
               >
-                <span className="shrink-0 w-8 h-8 rounded-full bg-sky-50 dark:bg-sky-950/50 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
+                <span className="shrink-0 w-8 h-8 rounded-full bg-sky-50 dark:bg-sky-950/50 flex items-center justify-center text-sky-700 group-hover:scale-110 transition-transform">
                   →
                 </span>
                 <div>

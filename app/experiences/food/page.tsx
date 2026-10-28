@@ -259,7 +259,7 @@ export default function SydneyFoodGuide() {
 
         {/* BYO Culture */}
         <section className="rounded-2xl bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-950/20 dark:to-orange-950/20 border border-rose-100/60 dark:border-rose-900/30 p-6 md:p-8 reveal">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-rose-600 dark:text-rose-400 mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-rose-700 dark:text-rose-400 mb-3">
             <En translated>Pro tip</En>
             <Ja>豆知識</Ja>
             <Zh>小贴士</Zh>

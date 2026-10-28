@@ -253,7 +253,7 @@ export default function AboutPage() {
           <p className="mt-3">
             <a
               href="mailto:michaelbui@outlook.com.au"
-              className="inline-flex items-center gap-1 font-medium text-sm text-sunset hover:underline"
+              className="inline-flex items-center gap-1 font-medium text-sm text-sunset-ink hover:underline"
             >
               michaelbui@outlook.com.au →
             </a>
@@ -261,7 +261,7 @@ export default function AboutPage() {
         </section>
 
         <div className="text-center pt-2">
-          <LocaleLink href="/" className="text-sm text-sunset hover:underline">
+          <LocaleLink href="/" className="text-sm text-sunset-ink hover:underline">
             ← Back to AussieGuides
           </LocaleLink>
         </div>
