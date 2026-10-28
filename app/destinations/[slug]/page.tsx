@@ -254,12 +254,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* Description */}
             <section className="reveal">
               <div className="flex items-center justify-between mb-3">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500">
+                <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
                   <En translated>About this place</En>
                   <Ja>この場所について</Ja>
                   <Zh>关于这个地方</Zh>
                   <Ko>이곳에 대해</Ko>
-                </p>
+                </h2>
                 {d && d.lastUpdated && (
                   <p className="text-[10px] text-stone-500 dark:text-stone-400">
                     <En translated>Last updated: {new Date(d.lastUpdated).toLocaleDateString('en-AU')}</En>
@@ -280,12 +280,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
             {/* Highlights */}
             <section className="reveal">
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
+              <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-5">
                 <En translated>Highlights</En>
                 <Ja>ハイライト</Ja>
                 <Zh>亮点</Zh>
                 <Ko>하이라이트</Ko>
-              </p>
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {d.highlights.map((h, i) => {
                   const Icon = h.icon && HIGHLIGHT_ICON_MAP[h.icon];
@@ -316,12 +316,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 so older entries without it are unaffected. */}
             {d.attractions && d.attractions.length > 0 && (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
+                <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-2">
                   <En translated>Attractions</En>
                   <Ja>見どころ</Ja>
                   <Zh>景点</Zh>
                   <Ko>주요 명소</Ko>
-                </p>
+                </h2>
                 <p className="text-sm text-stone-500 dark:text-stone-400 mb-5 max-w-2xl">
                   <En translated>What to see, how long to spend, and roughly what it costs.</En>
                   <Ja>何を見るか、どのくらい滞在するか、おおよその費用。</Ja>
@@ -372,12 +372,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* How to get there — detailed. Expands on the sidebar summary. */}
             {d.howToGetThere && (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-3">
+                <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-3">
                   <En translated>How to get there</En>
                   <Ja>行き方</Ja>
                   <Zh>如何到达</Zh>
                   <Ko>가는 방법</Ko>
-                </p>
+                </h2>
                 <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
                   <En translated>
                     <BodyParagraphs text={d.howToGetThere.en} className={BODY_COPY} lang="en" />
@@ -398,12 +398,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* Best time to visit — detailed season breakdown */}
             {d.bestTimeDetailed && (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-3">
+                <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-3">
                   <En translated>Best time to visit</En>
                   <Ja>訪れるのに最適な時期</Ja>
                   <Zh>最佳游览时间</Zh>
                   <Ko>방문 최적기</Ko>
-                </p>
+                </h2>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
                   <En translated>
                     <BodyParagraphs text={d.bestTimeDetailed.en} className={BODY_COPY} lang="en" />
@@ -426,12 +426,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               const ttd = d.topThingsToDo!;
               return (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
+                <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-5">
                   <En translated>Top things to do</En>
                   <Ja>おすすめのアクティビティ</Ja>
                   <Zh>必做之事</Zh>
                   <Ko>추천 활동</Ko>
-                </p>
+                </h2>
                 <div className="space-y-4">
                   {ttd.en.map((item, i) => (
                     <div
@@ -463,12 +463,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               const pt = d.proTips!;
               return (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
+                <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-5">
                   <En translated>Pro tips</En>
                   <Ja>プロのヒント</Ja>
                   <Zh>内行贴士</Zh>
                   <Ko>전문가 팁</Ko>
-                </p>
+                </h2>
                 <div className="space-y-4">
                   {pt.en.map((item, i) => (
                     <div
@@ -499,12 +499,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
             {/* FAQ — answers the three most-asked visitor questions */}
             <section className="reveal">
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
+              <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-5">
                 <En translated>Plan your trip</En>
                 <Ja>旅の計画</Ja>
                 <Zh>规划你的行程</Zh>
                 <Ko>여행 계획</Ko>
-              </p>
+              </h2>
               <div className="space-y-4">
                 {faqs.map((faq, i) => (
                   <div
@@ -534,12 +534,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               stay follow as day-planning details. */}
           <div className="space-y-5">
             <div className="reveal p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 mb-2">
+              <h2 className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-2">
                 <En translated>Getting there</En>
                 <Ja>アクセス</Ja>
                 <Zh>如何前往</Zh>
                 <Ko>가는 방법</Ko>
-              </p>
+              </h2>
               <p className="text-stone-200 text-sm leading-relaxed">
                 <En translated>{d.gettingThere.en}</En>
                 <Ja>{pickLocale("ja", d.gettingThere)}</Ja>
@@ -582,12 +582,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
         {/* Other destinations */}
         <section className="mt-16 pt-12 border-t border-stone-200/60 dark:border-dark-border">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-6">
+          <h2 className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-6">
             <En translated>More places to explore</En>
             <Ja>もっと探せる場所</Ja>
             <Zh>更多值得探索的地方</Zh>
             <Ko>더 많은 여행지</Ko>
-          </p>
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {(d && d.relatedDestinations 
               ? d.relatedDestinations.map(slug => destinations.find(dest => dest.slug === slug)).filter(Boolean)
@@ -602,7 +602,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 shadow-sm group-hover:shadow-xl transition-shadow">
                     <Image
                       src={other.cardImg}
-                      alt={pickLocale(locale, other.name)}
+                      alt=""
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"

@@ -455,7 +455,7 @@ export default function Nav() {
           >
             <NavPill
               onClick={() => (openDropdown === "lang" ? setOpenDropdown(null) : openGroup("lang"))}
-              ariaLabel="Choose language"
+              ariaLabel={`${LANGS.find((l) => l.code === lang)?.short ?? "EN"} - choose language`}
               ariaExpanded={openDropdown === "lang"}
             >
               <span className="text-xs font-bold tracking-wide">
