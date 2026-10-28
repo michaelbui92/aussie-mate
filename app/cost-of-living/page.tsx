@@ -23,6 +23,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
+// Derived from the tables on this page at 4.33 weeks a month (280 and 450 a week rent; 80-120 a week
+// groceries; the 50 Opal cap; a 15-30 prepaid SIM). The page listed every weekly price but never added
+// them up, which is the question someone actually asks before they move.
+const monthlyRows = [
+  { en: "Shared house (room, inner Sydney)", ja: "シェアハウス（1部屋、シドニー市内）", zh: "合租房（单间，悉尼内城）", ko: "쉐어하우스 (방 1개, 시드니 시내)", value: "$1,212–$1,948" },
+  { en: "Groceries (Woolies/Coles)", ja: "食料品（Woolies/Coles）", zh: "食品杂货（Woolies/Coles）", ko: "식료품 (Woolies/Coles)", value: "$346–$520" },
+  { en: "Opal weekly cap", ja: "Opalの週上限", zh: "Opal 每周上限", ko: "Opal 주간 상한선", value: "$216" },
+  { en: "Prepaid SIM", ja: "プリペイドSIM", zh: "预付费 SIM 卡", ko: "선불 SIM", value: "$15–$30" },
+];
+
 const categories = [
   {
     title: "Rent & Housing",
@@ -149,6 +159,46 @@ export default function CostOfLivingPage() {
           </div>
         ))}
       </div>
+
+      {/* The sum of the tables below, at 4.33 weeks a month. */}
+      <section className="mb-10 rounded-2xl border border-stone-200/80 dark:border-dark-border bg-white dark:bg-dark-surface p-5 md:p-6">
+        <h2 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 mb-1">
+          <En translated>What a shared room actually costs</En>
+          <Ja>シェアハウスの部屋の実際の月額</Ja>
+          <Zh>合租单间的实际月支出</Zh>
+          <Ko>쉐어하우스 방, 한 달에 실제로 드는 돈</Ko>
+        </h2>
+        <p className="text-sm text-stone-600 dark:text-stone-400 mb-4">
+          <En translated>Weekly prices from the tables below, converted at 4.33 weeks a month.</En>
+          <Ja>下の表の週額を、1か月＝4.33週で換算しました。</Ja>
+          <Zh>下方表格的周价按每月 4.33 周换算。</Zh>
+          <Ko>아래 표의 주간 가격을 한 달 4.33주로 환산했습니다.</Ko>
+        </p>
+        <table className="w-full text-sm">
+          <tbody className="divide-y divide-stone-200/80 dark:divide-dark-border">
+            {monthlyRows.map((row, i) => (
+              <tr key={i}>
+                <td className="py-2.5 text-stone-700 dark:text-stone-300">
+                  <En translated>{row.en}</En>
+                  <Ja>{row.ja}</Ja>
+                  <Zh>{row.zh}</Zh>
+                  <Ko>{row.ko}</Ko>
+                </td>
+                <td className="py-2.5 text-right font-medium text-stone-900 dark:text-stone-100 whitespace-nowrap">{row.value}</td>
+              </tr>
+            ))}
+            <tr>
+              <td className="py-3 font-semibold text-stone-900 dark:text-stone-100">
+                <En translated>Total per month</En>
+                <Ja>月額合計</Ja>
+                <Zh>每月合计</Zh>
+                <Ko>월 합계</Ko>
+              </td>
+              <td className="py-3 text-right font-bold text-sunset-ink whitespace-nowrap">$1,790–$2,715</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
       {/* Category tables */}
       {categories.map((cat, i) => (

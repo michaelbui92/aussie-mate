@@ -80,7 +80,9 @@ export function SplitParagraph({
 
   // Group sentences until the paragraph is long enough to be a paragraph, but never beyond roughly a
   // third of the original - three short paragraphs read faster than one long one, four is a list.
-  const limit = lang === "ja" || lang === "zh" ? 60 : 34;
+  // 34 was the first guess and still produced 46-51 word blocks on /about once a long sentence was
+  // folded into a short one; 26 keeps every paragraph on the page under about 38 words.
+  const limit = lang === "ja" || lang === "zh" ? 45 : 26;
   const chunks: string[] = [];
   let current = "";
   for (const s of sentences) {
