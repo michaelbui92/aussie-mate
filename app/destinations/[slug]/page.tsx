@@ -219,7 +219,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* Description */}
             <section className="reveal">
               <div className="flex items-center justify-between mb-3">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500">
                   <En translated>About this place</En>
                   <Ja>この場所について</Ja>
                   <Zh>关于这个地方</Zh>
@@ -244,7 +244,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
             {/* Highlights */}
             <section className="reveal">
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
                 <En translated>Highlights</En>
                 <Ja>ハイライト</Ja>
                 <Zh>亮点</Zh>
@@ -280,7 +280,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 so older entries without it are unaffected. */}
             {d.attractions && d.attractions.length > 0 && (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                   <En translated>Attractions</En>
                   <Ja>見どころ</Ja>
                   <Zh>景点</Zh>
@@ -335,7 +335,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* How to get there — detailed. Expands on the sidebar summary. */}
             {d.howToGetThere && (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-3">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-3">
                   <En translated>How to get there</En>
                   <Ja>行き方</Ja>
                   <Zh>如何到达</Zh>
@@ -361,7 +361,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             {/* Best time to visit — detailed season breakdown */}
             {d.bestTimeDetailed && (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-3">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-3">
                   <En translated>Best time to visit</En>
                   <Ja>訪れるのに最適な時期</Ja>
                   <Zh>最佳游览时间</Zh>
@@ -389,7 +389,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               const ttd = d.topThingsToDo!;
               return (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
                   <En translated>Top things to do</En>
                   <Ja>おすすめのアクティビティ</Ja>
                   <Zh>必做之事</Zh>
@@ -425,7 +425,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               const pt = d.proTips!;
               return (
               <section className="reveal">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
                   <En translated>Pro tips</En>
                   <Ja>プロのヒント</Ja>
                   <Zh>内行贴士</Zh>
@@ -458,7 +458,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
             {/* FAQ — answers the three most-asked visitor questions */}
             <section className="reveal">
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
                 <En translated>Plan your trip</En>
                 <Ja>旅の計画</Ja>
                 <Zh>规划你的行程</Zh>
@@ -493,7 +493,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               stay follow as day-planning details. */}
           <div className="space-y-5">
             <div className="reveal p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 mb-2">
                 <En translated>Getting there</En>
                 <Ja>アクセス</Ja>
                 <Zh>如何前往</Zh>
@@ -541,7 +541,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
         {/* Other destinations */}
         <section className="mt-16 pt-12 border-t border-stone-200/60 dark:border-dark-border">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-6">
             <En translated>More places to explore</En>
             <Ja>もっと探せる場所</Ja>
             <Zh>更多值得探索的地方</Zh>

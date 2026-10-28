@@ -50,7 +50,7 @@ export default function AussieSlangCulturePage() {
         {/* Introduction */}
         <section className="mb-12">
           <div className="mb-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
               <En translated>Introduction</En>
               <Ja>はじめに</Ja>
               <Zh>简介</Zh><Ko>소개</Ko>
@@ -86,7 +86,7 @@ export default function AussieSlangCulturePage() {
             {/* Section 1: Historical Origins */}
             <section>
               <div className="mb-6">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                   <En translated>History</En>
                   <Ja>歴史</Ja>
                   <Zh>历史</Zh><Ko>역사</Ko>
@@ -153,7 +153,7 @@ export default function AussieSlangCulturePage() {
             {/* Section 2: Social Meanings */}
             <section>
               <div className="mb-6">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                   <En translated>Social</En>
                   <Ja>社会</Ja>
                   <Zh>社会</Zh><Ko>사회적</Ko>
@@ -218,7 +218,7 @@ export default function AussieSlangCulturePage() {
             {/* Section 3: Modern Evolution */}
             <section>
               <div className="mb-6">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                   <En translated>Modern</En>
                   <Ja>現代</Ja>
                   <Zh>现代</Zh><Ko>현대</Ko>

@@ -552,7 +552,7 @@ export default function WildlifePage() {
                     <Heart className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </span>
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-0.5">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 mb-0.5">
                       <En translated>Emergency contact</En>
                       <Ja>緊急連絡先</Ja>
                       <Zh>紧急联系方式</Zh>

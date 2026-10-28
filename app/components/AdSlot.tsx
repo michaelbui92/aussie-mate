@@ -63,8 +63,11 @@ export default function AdSlot({
 
   return (
     <div
-      className={`my-8 flex justify-center overflow-hidden ${className}`}
-      style={{ minHeight: "100px" }}
+      className={`my-8 flex justify-center ${className}`}
+      /* Space is reserved for the unit before it arrives. Without this, moving the AdSense script to
+         lazyOnload traded a main-thread cost for a 0.22 layout shift: the ad injected after load and
+         pushed everything below it down. Reserving the box is what AdSense itself recommends. */
+      style={{ minHeight: "280px" }}
       // role="complementary" is what makes a label legal here - an aria-label on a plain div is a
       // prohibited attribute, which Lighthouse reports as an accessibility failure.
       role="complementary"

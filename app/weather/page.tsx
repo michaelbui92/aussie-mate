@@ -119,7 +119,7 @@ export default function WeatherPage() {
 
       {/* Season cards */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
           <En translated>Four seasons</En>
           <Ja>四季</Ja>
           <Zh>四季</Zh>
@@ -166,7 +166,7 @@ export default function WeatherPage() {
 
         {/* Weather quirks */}
         <section className="mb-10">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
             <En translated>Aussie weather quirks</En>
             <Ja>オーストラリアの天気の不思議</Ja>
             <Zh>澳洲天气的奇特之处</Zh>

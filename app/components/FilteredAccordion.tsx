@@ -129,7 +129,7 @@ export default function FilteredAccordion({
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
                     <h2 className="font-serif text-lg text-stone-900 dark:text-stone-100">{dest.name}</h2>
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500">{dest.state}</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500">{dest.state}</span>
                     <span className={`shrink-0 text-[10px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-full font-medium ${vibePill}`}>
                       <En translated>{vibeLabels[dest.vibe]?.en}</En>
                       <Ja>{vibeLabels[dest.vibe]?.ja ?? vibeLabels[dest.vibe]?.en}</Ja>
@@ -161,7 +161,7 @@ export default function FilteredAccordion({
                   </p>
 
                   <div>
-                    <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                       <En translated>Highlights</En>
                       <Ja>ハイライト</Ja>
                       <Zh>亮点</Zh><Ko>주요 포인트</Ko>
@@ -181,7 +181,7 @@ export default function FilteredAccordion({
 
                   <div className="grid sm:grid-cols-2 gap-3">
                     <div className="rounded-xl bg-stone-50 dark:bg-darkbg p-4">
-                      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
+                      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 mb-1">
                         <En translated>Getting there</En>
                         <Ja>アクセス</Ja>
                         <Zh>如何前往</Zh><Ko>가는 방법</Ko>
@@ -193,7 +193,7 @@ export default function FilteredAccordion({
                       </p>
                     </div>
                     <div className="rounded-xl bg-stone-50 dark:bg-darkbg p-4">
-                      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mb-1">
+                      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 mb-1">
                         <En translated>Best time to visit</En>
                         <Ja>訪れるのに最適な時期</Ja>
                         <Zh>最佳游览时间</Zh><Ko>방문 최적기</Ko>

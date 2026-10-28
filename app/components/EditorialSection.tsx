@@ -213,7 +213,7 @@ export default function EditorialSection({
                     {...(item.url.startsWith("/")
                       ? {}
                       : { target: "_blank", rel: "noopener noreferrer" })}
-                    className="ml-2 text-stone-400 hover:text-sunset text-xs font-normal"
+                    className="ml-2 text-stone-500 hover:text-sunset text-xs font-normal"
                     aria-label={item.url.startsWith("/") ? item.label : `${item.label} (opens in new tab)`}
                   >
                     ↗

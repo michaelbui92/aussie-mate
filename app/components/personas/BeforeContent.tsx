@@ -184,7 +184,7 @@ export default function BeforeContent() {
       {checklists.map((section, sIdx) => (
         <section key={section.id} className="mb-10">
           <div className="flex items-baseline gap-3 mb-2">
-            <span className="font-mono text-xs text-stone-400 dark:text-stone-500">
+            <span className="font-mono text-xs text-stone-500 dark:text-stone-500">
               0{sIdx + 1}
             </span>
             <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">

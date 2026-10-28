@@ -192,7 +192,7 @@ export default function VisaHub() {
 
       {/* Comparison table */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-6">
           <En translated>At a glance</En>
           <Ja>一目でわかる</Ja>
           <Zh>一览</Zh>
@@ -251,7 +251,7 @@ export default function VisaHub() {
                       <Zh>{pickLocale("zh", v.name)}</Zh>
                       <Ko>{v.name.ko}</Ko>
                     </LocaleLink>
-                    <p className="text-[11px] text-stone-400 dark:text-stone-500 mt-0.5">
+                    <p className="text-[11px] text-stone-500 dark:text-stone-500 mt-0.5">
                       {v.code}
                     </p>
                   </td>
@@ -288,7 +288,7 @@ export default function VisaHub() {
 
       {/* Visa cards */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-6">
           <En translated>Pick a visa</En>
           <Ja>ビザを選ぶ</Ja>
           <Zh>选择签证</Zh>

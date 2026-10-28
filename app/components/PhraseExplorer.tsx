@@ -107,7 +107,7 @@ export default function PhraseExplorer({
       <div className="min-h-screen bg-stone-50 dark:bg-darkbg">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 md:py-16">
           <div className="flex items-center justify-between mb-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500">
               <En translated>Flashcard review</En>
               <Ja>フラッシュカード復習</Ja>
               <Zh>闪卡复习</Zh>
@@ -135,7 +135,7 @@ export default function PhraseExplorer({
                 <p className="font-serif text-3xl md:text-5xl text-sunset-ink leading-tight">
                   {card.phrase}
                 </p>
-                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mt-4">
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mt-4">
                   <En translated>Tap to reveal</En>
                   <Ja>タップして表示</Ja>
                   <Zh>点击查看释义</Zh>
@@ -149,7 +149,7 @@ export default function PhraseExplorer({
                 </p>
                 <div className="space-y-2 max-w-md w-full">
                   <div className="flex items-baseline gap-2 text-left">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0 mt-0.5">{cardMeaning.code}</span>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 shrink-0 mt-0.5">{cardMeaning.code}</span>
                     <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{cardMeaning.text}</span>
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function PhraseExplorer({
           <div className="text-center mt-6">
             <button type="button"
               onClick={() => setReviewMode(false)}
-              className="text-xs text-stone-400 dark:text-stone-500 hover:text-sunset transition-colors"
+              className="text-xs text-stone-500 dark:text-stone-500 hover:text-sunset transition-colors"
             >
               <En translated>Exit review</En>
               <Ja>復習を終了</Ja>
@@ -206,7 +206,7 @@ export default function PhraseExplorer({
       <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
         <div className="relative flex-1">
           <svg
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 dark:text-stone-500 pointer-events-none"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-500 dark:text-stone-500 pointer-events-none"
             fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -222,7 +222,7 @@ export default function PhraseExplorer({
           {search && (
             <button type="button"
               onClick={() => setSearch("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-sunset p-2 min-w-[36px] min-h-[36px] flex items-center justify-center transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-500 hover:text-sunset p-2 min-w-[36px] min-h-[36px] flex items-center justify-center transition-colors"
               aria-label="Clear search"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -302,7 +302,7 @@ export default function PhraseExplorer({
               setSearch("");
               setActiveCategory("all");
             }}
-            className="text-sm text-sunset hover:text-sunset-light font-medium underline underline-offset-4"
+            className="text-sm text-sunset-ink hover:text-sunset-light font-medium underline underline-offset-4"
           >
             <En translated>Reset filters</En>
             <Ja>フィルターをリセット</Ja>
@@ -332,7 +332,7 @@ export default function PhraseExplorer({
                 </div>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 shrink-0">{pMeaning.code}</span>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 shrink-0">{pMeaning.code}</span>
                     <span className="text-sm text-stone-700 dark:text-stone-200 leading-relaxed">{pMeaning.text}</span>
                   </div>
                 </div>

@@ -338,7 +338,7 @@ export default function Nav() {
                   {group.sections
                     ? group.sections.map((section) => (
                         <div key={section.heading} className="px-1">
-                          <p className="px-3 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500">
+                          <p className="px-3 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500">
                             {t(section.heading)}
                           </p>
                           {section.items.map((item) => {
@@ -405,7 +405,7 @@ export default function Nav() {
                           cancelClose();
                           setOpenDropdown(null);
                         }}
-                        className="group/item relative block px-4 py-2 text-sm font-medium text-sunset hover:text-sunset-dark transition-all duration-200"
+                        className="group/item relative block px-4 py-2 text-sm font-medium text-sunset-ink hover:text-sunset-dark transition-all duration-200"
                       >
                         {t(group.trailing.label)} →
                       </Link>
@@ -565,13 +565,13 @@ export default function Nav() {
                   animation: `fadeSlideIn 300ms ease-out ${gi * 60}ms both`,
                 }}
               >
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 px-3">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 px-3">
                   {t(group.label)}
                 </p>
                 {group.sections
                   ? group.sections.map((section) => (
                       <div key={section.heading} className="space-y-1 pl-3">
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500 px-3">
+                        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-500 px-3">
                           {t(section.heading)}
                         </p>
                         <div className="flex flex-wrap gap-1 pl-3">

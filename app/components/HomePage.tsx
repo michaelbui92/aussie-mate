@@ -194,7 +194,7 @@ export default function HomePage() {
             </div>
             <LocaleLink
               href="/destinations"
-              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset-ink hover:text-sunset-light transition-colors"
             >
               <En translated>View all</En>
               <Ja>すべて見る</Ja>
@@ -246,7 +246,7 @@ export default function HomePage() {
           <div className="mt-8 text-center">
             <LocaleLink
               href="/destinations"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset-ink hover:text-sunset-light transition-colors"
             >
               <En translated>See more destinations</En>
               <Ja>他の目的地を見る</Ja>
@@ -278,7 +278,7 @@ export default function HomePage() {
             </div>
             <LocaleLink
               href="/experiences"
-              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset-ink hover:text-sunset-light transition-colors"
             >
               <En translated>View all</En>
               <Ja>すべて見る</Ja>
@@ -327,7 +327,7 @@ export default function HomePage() {
           <div className="mt-8 text-center">
             <LocaleLink
               href="/experiences"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset-ink hover:text-sunset-light transition-colors"
             >
               <En translated>See more experiences</En>
               <Ja>他の体験を見る</Ja>
@@ -364,7 +364,7 @@ export default function HomePage() {
             </div>
             <LocaleLink
               href="/faq"
-              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+              className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-sunset-ink hover:text-sunset-light transition-colors"
             >
               <En translated>See all questions</En>
               <Ja>すべての質問を見る</Ja>
@@ -398,7 +398,7 @@ export default function HomePage() {
           <div className="mt-8 text-center">
             <LocaleLink
               href="/faq"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset hover:text-sunset-light transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-sunset-ink hover:text-sunset-light transition-colors"
             >
               <En translated>Read more FAQs</En>
               <Ja>よくある質問をもっと見る</Ja>

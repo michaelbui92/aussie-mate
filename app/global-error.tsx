@@ -28,7 +28,7 @@ export default function GlobalError({
               Try again
             </button>
             {error.digest && (
-              <p className="mt-8 text-[10px] text-stone-400 dark:text-stone-500 font-mono">
+              <p className="mt-8 text-[10px] text-stone-500 dark:text-stone-500 font-mono">
                 Error ID: {error.digest}
               </p>
             )}

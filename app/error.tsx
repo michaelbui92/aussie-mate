@@ -37,7 +37,7 @@ export default function Error({
           </LocaleLink>
         </div>
         {error.digest && (
-          <p className="mt-8 text-[10px] text-stone-400 dark:text-stone-500 font-mono">
+          <p className="mt-8 text-[10px] text-stone-500 dark:text-stone-500 font-mono">
             Error ID: {error.digest}
           </p>
         )}

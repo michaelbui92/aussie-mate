@@ -50,7 +50,7 @@ function Section({
 }) {
   return (
     <section className="reveal">
-      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
+      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-4">
         <Ja>{eyebrowJa ?? eyebrowEn}</Ja>
         <Zh>{eyebrowZh ?? eyebrowEn}</Zh>
         <Ko>{eyebrowKo}</Ko>
@@ -234,7 +234,7 @@ export default async function VisaPage({
           {/* Sidebar */}
           <div className="space-y-4">
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                 <En translated>Duration</En>
                 <Ja>滞在期間</Ja>
                 <Zh>停留期限</Zh>
@@ -248,7 +248,7 @@ export default async function VisaPage({
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                 <En translated>Work rights</En>
                 <Ja>就労権</Ja>
                 <Zh>工作权利</Zh>
@@ -262,7 +262,7 @@ export default async function VisaPage({
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                 <En translated>Study rights</En>
                 <Ja>就学権</Ja>
                 <Zh>学习权利</Zh>
@@ -276,7 +276,7 @@ export default async function VisaPage({
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                 <En translated>Cost</En>
                 <Ja>費用</Ja>
                 <Zh>费用</Zh>
@@ -290,7 +290,7 @@ export default async function VisaPage({
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
                 <En translated>Processing time</En>
                 <Ja>処理期間</Ja>
                 <Zh>处理时间</Zh>
@@ -305,7 +305,7 @@ export default async function VisaPage({
             </div>
 
             <div className="p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 mb-3">
                 <En translated>Next steps</En>
                 <Ja>次のステップ</Ja>
                 <Zh>下一步</Zh>
@@ -340,7 +340,7 @@ export default async function VisaPage({
 
         {/* Other visas */}
         <section className="mt-16 pt-12 border-t border-stone-200/60 dark:border-dark-border">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-6">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-6">
             <En translated>Compare other visas</En>
             <Ja>他のビザを比較</Ja>
             <Zh>比较其他签证</Zh>

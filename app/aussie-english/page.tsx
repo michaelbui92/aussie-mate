@@ -214,7 +214,7 @@ export default function AussieEnglishPage() {
       {/* By situation */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-14">
         <div className="mb-8">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
             <En translated>By situation</En>
             <Ko>상황별</Ko>
             <Zh>按场景</Zh>
@@ -280,7 +280,7 @@ export default function AussieEnglishPage() {
       {/* Full library */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
         <div className="mb-6">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-2">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-2">
             <En translated>Full library</En>
             <Ko>전체 라이브러리</Ko>
             <Zh>完整词库</Zh>
@@ -295,7 +295,7 @@ export default function AussieEnglishPage() {
             </h2>
             <LocaleLink 
               href="/aussie-english/culture" 
-              className="text-sm text-sunset hover:text-sunset-light font-medium transition-colors"
+              className="text-sm text-sunset-ink hover:text-sunset-light font-medium transition-colors"
             >
               <En translated>Cultural context →</En>
               <Ko>문화적 맥락 →</Ko>

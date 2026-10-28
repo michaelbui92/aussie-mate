@@ -182,7 +182,7 @@ export default function CostOfLivingPage() {
                     <En translated>{item.en}</En>
                     <Ja>{pickLocale("ja", item)}</Ja>
                     <Zh>{pickLocale("zh", item)}</Zh>
-                    <Ko><span className="text-stone-400 dark:text-stone-500 text-xs">{item.ko}</span></Ko>
+                    <Ko><span className="text-stone-500 dark:text-stone-500 text-xs">{item.ko}</span></Ko>
                   </div>
                 </div>
                 <div className="shrink-0 text-sm font-bold px-3 py-1 rounded-lg bg-sunset/10 text-sunset-ink">

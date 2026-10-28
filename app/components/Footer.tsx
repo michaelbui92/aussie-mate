@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Living */}
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-4">
               <En translated>Living</En>
               <Ja>暮らし</Ja>
               <Zh>生活</Zh>
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Explore + Learn */}
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-4">
               <En translated>Explore</En>
               <Ja>体験する</Ja>
               <Zh>探索</Zh>
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* More */}
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-4">
               <En translated>More</En>
               <Ja>もっと見る</Ja>
               <Zh>更多</Zh>
@@ -125,8 +125,8 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center justify-between flex-wrap gap-2">
-          <p className="text-xs text-stone-400 dark:text-stone-500">© 2026 AussieGuides</p>
-          <p className="text-xs text-stone-400 dark:text-stone-500">
+          <p className="text-xs text-stone-500 dark:text-stone-500">© 2026 AussieGuides</p>
+          <p className="text-xs text-stone-500 dark:text-stone-500">
             <En translated>Made with {FLAG_EMOJI} in Australia</En>
             <Ja>オーストラリアで{FLAG_EMOJI}を込めて制作しました</Ja>
             <Zh>在澳大利亚用{FLAG_EMOJI}制作</Zh>

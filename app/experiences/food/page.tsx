@@ -279,7 +279,7 @@ export default function SydneyFoodGuide() {
 
         {/* Practical tips */}
         <section className="reveal">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mb-5">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 mb-5">
             <En translated>Essential tips</En>
             <Ja>必須のヒント</Ja>
             <Zh>必备贴士</Zh>
