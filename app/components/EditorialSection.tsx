@@ -57,10 +57,10 @@ const ACCENT_MAP: Record<NonNullable<EditorialSectionData["accent"]>, {
   banner: string;
 }> = {
   sunset: {
-    eyebrow: "text-sunset",
+    eyebrow: "text-sunset-ink",
     ring: "hover:border-sunset/40",
     dot: "bg-sunset",
-    chip: "bg-sunset/10 text-sunset",
+    chip: "bg-sunset/10 text-sunset-ink",
     banner: "from-orange-500 to-amber-600",
   },
   sage: {

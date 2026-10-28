@@ -315,7 +315,7 @@ export default function StudyPage() {
       {/* Hero — minimal text header, matches weather page style */}
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Study</En>
             <Ja>学習</Ja>
             <Zh>学习</Zh>
@@ -363,7 +363,7 @@ export default function StudyPage() {
             <Ko>학생 복지 및 학업 기술 부서에서 무료 상담, 학습 지원, 위기 지원을 제공합니다. 유학생 상담사는 비자, 등록, 정착 관련 질문에 도움을 줄 수 있습니다. 혼자 고생하지 마세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://www.studyinaustralia.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">Study in Australia ↗</a>
+            <a href="https://www.studyinaustralia.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">Study in Australia ↗</a>
             <a href="https://www.education.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Department of Education ↗</a>
           </div>
         </section>

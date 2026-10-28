@@ -303,14 +303,14 @@ export default function Nav() {
                   aria-label={`${t(group.label)} menu`}
                   className={`group relative px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap inline-flex items-center gap-1 transition-colors duration-200 ${
                     isOpen || isActive
-                      ? "text-sunset"
+                      ? "text-sunset-ink"
                       : "text-stone-600 dark:text-stone-300 hover:text-sunset"
                   }`}
                 >
                   {t(group.label)}
                   <ChevronDown
                     className={`w-3 h-3 transition-transform duration-300 ease-out ${
-                      isOpen ? "rotate-180 text-sunset" : ""
+                      isOpen ? "rotate-180 text-sunset-ink" : ""
                     }`}
                   />
                   {/* Active/hover underline */}
@@ -351,7 +351,7 @@ export default function Nav() {
                                 tabIndex={isOpen ? 0 : -1}
                                 className={`group/item relative block px-4 py-1.5 text-sm transition-all duration-200 ${
                                   itemActive
-                                    ? "text-sunset font-medium"
+                                    ? "text-sunset-ink font-medium"
                                     : "text-stone-600 dark:text-stone-300 hover:text-sunset hover:pl-5"
                                 }`}
                               >
@@ -379,7 +379,7 @@ export default function Nav() {
                             style={{ transitionDelay: isOpen ? `${i * 25}ms` : "0ms" }}
                             className={`group/item relative block px-4 py-2 text-sm transition-all duration-200 ${
                               itemActive
-                                ? "text-sunset font-medium"
+                                ? "text-sunset-ink font-medium"
                                 : "text-stone-600 dark:text-stone-300 hover:text-sunset hover:pl-5"
                             }`}
                           >
@@ -494,7 +494,7 @@ export default function Nav() {
                     onClick={() => chooseLang(l.code)}
                     className={`w-full flex items-center gap-2.5 px-4 py-1.5 text-sm text-left transition-all duration-200 ${
                       active
-                        ? "text-sunset font-medium"
+                        ? "text-sunset-ink font-medium"
                         : "text-stone-600 dark:text-stone-300 hover:text-sunset"
                     }`}
                   >
@@ -584,7 +584,7 @@ export default function Nav() {
                                 onClick={() => setMenuOpen(false)}
                                 className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
                                   itemActive
-                                    ? "text-white bg-sunset"
+                                    ? "text-white bg-sunset-ink"
                                     : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
                                 }`}
                               >
@@ -606,7 +606,7 @@ export default function Nav() {
                             onClick={() => setMenuOpen(false)}
                             className={`min-h-[44px] inline-flex items-center px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${
                               itemActive
-                                ? "text-white bg-sunset"
+                                ? "text-white bg-sunset-ink"
                                 : "text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-surface"
                             }`}
                           >
@@ -621,7 +621,7 @@ export default function Nav() {
                     <Link
                       href={L(group.trailing.href)}
                       onClick={() => setMenuOpen(false)}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-sunset hover:underline"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-sunset-ink hover:underline"
                     >
                       {t(group.trailing.label)} →
                     </Link>

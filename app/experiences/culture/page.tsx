@@ -113,7 +113,7 @@ export default function CulturePage() {
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Culture</En>
             <Ja>文化</Ja>
             <Zh>文化</Zh><Ko>문화</Ko>
@@ -159,7 +159,7 @@ export default function CulturePage() {
             <Ko>시드니의 문화적 풍요로움은 가장 큰 강점 중 하나입니다. 가보지 않은 동네로 기차를 타보세요. 먹어보지 않은 음식을 먹어보세요. 사람들과 대화하세요. 호주를 이해하는 가장 좋은 방법은 그 다문화적 영혼을 경험하는 것입니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://www.australianmuseum.net.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">Australian Museum ↗</a>
+            <a href="https://www.australianmuseum.net.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">Australian Museum ↗</a>
             <a href="https://www.sydney.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Destination NSW ↗</a>
           </div>
         </section>

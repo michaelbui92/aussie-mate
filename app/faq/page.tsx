@@ -37,7 +37,7 @@ export default async function FAQPage() {
           __html: JSON.stringify(faqLdJson(faqs, "/faq", locale)),
         }}
       />
-      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
         <En translated>Common questions</En>
         <Ja>よくある質問</Ja>
         <Zh>常见问题</Zh>
@@ -84,7 +84,7 @@ export default async function FAQPage() {
           <Ja>お探しの質問が見つかりませんか？ メールはこちらへ</Ja>
           <Zh>找不到你的问题？请发邮件至</Zh>
           <Ko>원하는 답변이 없으세요? </Ko>
-          <span className="font-medium text-sunset">michaelbui@outlook.com.au</span>
+          <span className="font-medium text-sunset-ink">michaelbui@outlook.com.au</span>
           <En translated> and we&apos;ll add it.</En>
           <Ja>お送りいただければ、追記いたします。</Ja>
           <Zh>我们会把它加进去。</Zh>

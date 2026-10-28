@@ -50,7 +50,7 @@ export default async function DestinationsPage() {
       {/* Header */}
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Destinations</En>
             <Ja>目的地</Ja>
             <Zh>目的地</Zh>

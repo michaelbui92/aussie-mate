@@ -152,7 +152,7 @@ export default async function TouristPage() {
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Tourist</En>
             <Ja>観光</Ja>
             <Zh>旅游</Zh><Ko>관광</Ko>
@@ -177,24 +177,24 @@ export default async function TouristPage() {
             <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
               <En translated>
                 For transport in depth — Opal cards, peak vs off-peak fares, how to complain — see the{" "}
-                <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">
                   Transport page
                 </LocaleLink>
                 .
               </En>
               <Ja>交通について詳しく — Opal カード、ピーク時とオフピーク時の運賃、苦情の出し方 — は{" "}
-                <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">
                   交通ページ
                 </LocaleLink>
                 をご覧ください。</Ja>
               <Zh>想深入了解交通 — Opal 卡、高峰与非高峰票价、如何投诉 — 请见{" "}
-                <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">
                   交通页面
                 </LocaleLink>
                 。</Zh>
               <Ko>
                 오팔 카드, 피크/오프피크 요금, 민원 제기 등 자세한 교통 정보는{" "}
-                <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">
                   Transport 페이지
                 </LocaleLink>
                 에서 확인하세요.
@@ -205,24 +205,24 @@ export default async function TouristPage() {
             <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
               <En translated>
                 Looking for day trips or weekend getaways beyond Sydney? See{" "}
-                <LocaleLink href="/destinations" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/destinations" className="text-sunset-ink font-medium hover:underline">
                   Destinations
                 </LocaleLink>
                 .
               </En>
               <Ja>シドニーを離れて日帰り旅行や週末の小旅行をお探しですか？{" "}
-                <LocaleLink href="/destinations" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/destinations" className="text-sunset-ink font-medium hover:underline">
                   目的地
                 </LocaleLink>
                 をご覧ください。</Ja>
               <Zh>想找悉尼以外的日游或周末短途旅行？请见{" "}
-                <LocaleLink href="/destinations" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/destinations" className="text-sunset-ink font-medium hover:underline">
                   目的地
                 </LocaleLink>
                 。</Zh>
               <Ko>
                 시드니 밖 당일 여행이나 주말 여행지는{" "}
-                <LocaleLink href="/destinations" className="text-sunset font-medium hover:underline">
+                <LocaleLink href="/destinations" className="text-sunset-ink font-medium hover:underline">
                   Destinations 페이지
                 </LocaleLink>
                 에서 확인하세요.
@@ -240,7 +240,7 @@ export default async function TouristPage() {
 
         {/* FAQ — short visitor questions, mirrored as JSON-LD below for Google rich results */}
         <section className="mt-16">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Common questions</En>
             <Ja>よくある質問</Ja>
             <Zh>常见问题</Zh><Ko>자주 묻는 질문</Ko>
@@ -259,14 +259,14 @@ export default async function TouristPage() {
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                 <En translated>Most passport holders need an ETA, eVisitor, or visitor visa before flying. Apply online before you book flights — see the{" "}
-                  <LocaleLink href="/visa" className="text-sunset font-medium hover:underline">Visa Guide</LocaleLink> for the full breakdown by trip length.
+                  <LocaleLink href="/visa" className="text-sunset-ink font-medium hover:underline">Visa Guide</LocaleLink> for the full breakdown by trip length.
                 </En>
                 <Ja>多くのパスポート保持者は、搭乗前に ETA、eVisitor、または観光ビザが必要です。航空券を予約する前にオンラインで申請してください — 旅行期間別の詳しい内訳は{" "}
-                  <LocaleLink href="/visa" className="text-sunset font-medium hover:underline">ビザガイド</LocaleLink>をご覧ください。</Ja>
+                  <LocaleLink href="/visa" className="text-sunset-ink font-medium hover:underline">ビザガイド</LocaleLink>をご覧ください。</Ja>
                 <Zh>大多数护照持有者在登机前需要 ETA、eVisitor 或访客签证。请在预订机票之前在线申请 — 按行程时长划分的完整说明请见{" "}
-                  <LocaleLink href="/visa" className="text-sunset font-medium hover:underline">签证指南</LocaleLink>。</Zh>
+                  <LocaleLink href="/visa" className="text-sunset-ink font-medium hover:underline">签证指南</LocaleLink>。</Zh>
                 <Ko>한국 여행자는 비행기 탑승 전 ETA, eVisitor 또는 방문 비자가 필요합니다. 항공권 예약 전에 온라인으로 신청하세요. 자세한 내용은{" "}
-                  <LocaleLink href="/visa" className="text-sunset font-medium hover:underline">비자 가이드</LocaleLink>에서 확인하세요.
+                  <LocaleLink href="/visa" className="text-sunset-ink font-medium hover:underline">비자 가이드</LocaleLink>에서 확인하세요.
                 </Ko>
               </p>
             </div>
@@ -277,10 +277,10 @@ export default async function TouristPage() {
                 <Zh>需要给小费吗？</Zh><Ko>팁을 줘야 하나요?</Ko>
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                <En translated>No. Australian service workers earn Award wages and tipping is not part of the culture. See <LocaleLink href="/finance" className="text-sunset font-medium hover:underline">Finance</LocaleLink> for the full tipping and money guide.</En>
-                <Ja>いいえ。オーストラリアのサービス業従事者は Award 賃金を得ており、チップは文化の一部ではありません。チップとお金についての完全ガイドは <LocaleLink href="/finance" className="text-sunset font-medium hover:underline">金融</LocaleLink> をご覧ください。</Ja>
-                <Zh>不。澳大利亚的服务业从业者领取 Award 工资，小费并不是当地文化的一部分。完整的小费与金钱指南请见 <LocaleLink href="/finance" className="text-sunset font-medium hover:underline">金融</LocaleLink>。</Zh>
-                <Ko>아니요. 호주 서비스 직원은 법정 최저 임금을 받으며 팁 문화가 없습니다. 자세한 내용은 <LocaleLink href="/finance" className="text-sunset font-medium hover:underline">금융 가이드</LocaleLink>에서 확인하세요.</Ko>
+                <En translated>No. Australian service workers earn Award wages and tipping is not part of the culture. See <LocaleLink href="/finance" className="text-sunset-ink font-medium hover:underline">Finance</LocaleLink> for the full tipping and money guide.</En>
+                <Ja>いいえ。オーストラリアのサービス業従事者は Award 賃金を得ており、チップは文化の一部ではありません。チップとお金についての完全ガイドは <LocaleLink href="/finance" className="text-sunset-ink font-medium hover:underline">金融</LocaleLink> をご覧ください。</Ja>
+                <Zh>不。澳大利亚的服务业从业者领取 Award 工资，小费并不是当地文化的一部分。完整的小费与金钱指南请见 <LocaleLink href="/finance" className="text-sunset-ink font-medium hover:underline">金融</LocaleLink>。</Zh>
+                <Ko>아니요. 호주 서비스 직원은 법정 최저 임금을 받으며 팁 문화가 없습니다. 자세한 내용은 <LocaleLink href="/finance" className="text-sunset-ink font-medium hover:underline">금융 가이드</LocaleLink>에서 확인하세요.</Ko>
               </p>
             </div>
             <div>
@@ -303,10 +303,10 @@ export default async function TouristPage() {
                 <Zh>从机场到市区怎么走？</Zh><Ko>공항에서 시내로 어떻게 가나요?</Ko>
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                <En translated>The airport train (T8) is fast but pricey ($20 AUD–25). The 400 bus from the airport terminals runs to Bondi Junction via the CBD for about $3 AUD with Opal — best value. Rideshare apps (Uber/Ola/DiDi) sit between the two in price and convenience. See <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">Transport</LocaleLink> for the full breakdown.</En>
-                <Ja>空港列車（T8）は速いですが割高です（$20 AUD–25）。空港ターミナル発の 400 番バスは CBD を経由してボンダイ・ジャンクションまで行き、Opal で約 $3 AUD — いちばんお得です。ライドシェアアプリ（Uber/Ola/DiDi）は価格と便利さの中間です。詳しい内訳は <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">交通</LocaleLink> をご覧ください。</Ja>
-                <Zh>机场火车（T8）很快但价格偏高（$20 AUD–25）。从机场航站楼出发的 400 路公交经 CBD 前往邦迪枢纽，用 Opal 约 $3 AUD — 最划算。网约车应用（Uber/Ola/DiDi）的价格和便利度介于两者之间。完整说明请见 <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">交通</LocaleLink>。</Zh>
-                <Ko>공항 기차(T8)는 빠르지만 비쌉니다($20 AUD–25). 공항 터미널에서 출발하는 400번 버스는 CBD를 경유해 본다이 정션까지 가며 오팔로 약 $3 AUD입니다 — 가성비 최고. 차량 호출 앱(Uber/Ola/DiDi)은 가격과 편의성 면에서 그 중간입니다. 자세한 내용은 <LocaleLink href="/transport" className="text-sunset font-medium hover:underline">교통 가이드</LocaleLink>에서 확인하세요.</Ko>
+                <En translated>The airport train (T8) is fast but pricey ($20 AUD–25). The 400 bus from the airport terminals runs to Bondi Junction via the CBD for about $3 AUD with Opal — best value. Rideshare apps (Uber/Ola/DiDi) sit between the two in price and convenience. See <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">Transport</LocaleLink> for the full breakdown.</En>
+                <Ja>空港列車（T8）は速いですが割高です（$20 AUD–25）。空港ターミナル発の 400 番バスは CBD を経由してボンダイ・ジャンクションまで行き、Opal で約 $3 AUD — いちばんお得です。ライドシェアアプリ（Uber/Ola/DiDi）は価格と便利さの中間です。詳しい内訳は <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">交通</LocaleLink> をご覧ください。</Ja>
+                <Zh>机场火车（T8）很快但价格偏高（$20 AUD–25）。从机场航站楼出发的 400 路公交经 CBD 前往邦迪枢纽，用 Opal 约 $3 AUD — 最划算。网约车应用（Uber/Ola/DiDi）的价格和便利度介于两者之间。完整说明请见 <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">交通</LocaleLink>。</Zh>
+                <Ko>공항 기차(T8)는 빠르지만 비쌉니다($20 AUD–25). 공항 터미널에서 출발하는 400번 버스는 CBD를 경유해 본다이 정션까지 가며 오팔로 약 $3 AUD입니다 — 가성비 최고. 차량 호출 앱(Uber/Ola/DiDi)은 가격과 편의성 면에서 그 중간입니다. 자세한 내용은 <LocaleLink href="/transport" className="text-sunset-ink font-medium hover:underline">교통 가이드</LocaleLink>에서 확인하세요.</Ko>
               </p>
             </div>
           </div>
@@ -331,7 +331,7 @@ export default async function TouristPage() {
             <Ko>000은 주요 응급 번호입니다(경찰, 소방, 구급). 비응급 경찰 사항은 131 444로 전화하세요. 영사관 도움이 필요하면 시드니 주한 한국 영사관에 평일 동안 연락하세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">000 — Emergency</a>
+            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">000 — Emergency</a>
             <a href="https://overseas.mofa.go.kr/au-ko/brd/m_22343/list.do" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Korean Consulate ↗</a>
           </div>
         </section>

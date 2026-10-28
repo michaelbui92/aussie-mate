@@ -150,7 +150,7 @@ export default function CostOfLivingPage() {
               <Zh>{pickLocale("zh", item.label)}</Zh>
               <Ko>{item.label.ko}</Ko>
             </div>
-            <div className="text-xl font-bold text-sunset">{item.total}</div>
+            <div className="text-xl font-bold text-sunset-ink">{item.total}</div>
           </div>
         ))}
       </div>
@@ -185,7 +185,7 @@ export default function CostOfLivingPage() {
                     <Ko><span className="text-stone-400 dark:text-stone-500 text-xs">{item.ko}</span></Ko>
                   </div>
                 </div>
-                <div className="shrink-0 text-sm font-bold px-3 py-1 rounded-lg bg-sunset/10 text-sunset">
+                <div className="shrink-0 text-sm font-bold px-3 py-1 rounded-lg bg-sunset/10 text-sunset-ink">
                   {item.cost}
                 </div>
               </div>

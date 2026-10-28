@@ -143,7 +143,7 @@ export default async function TransportPage() {
       {/* Hero — minimal text header, matches weather page style */}
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Transport</En>
             <Ja>交通</Ja>
             <Zh>交通</Zh>
@@ -191,7 +191,7 @@ export default async function TransportPage() {
             <Ko>Google Maps와 Trip Planner 앱 모두 실시간 기차, 버스, 페리 시간을 보여줍니다. 목적지를 탭하고 대중교통을 선택한 후 안내를 따르세요. 실시간 플랫폼 번호와 운행 알림이 내장되어 있습니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://transportnsw.info" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">Trip Planner ↗</a>
+            <a href="https://transportnsw.info" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">Trip Planner ↗</a>
             <a href="https://www.opal.com.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Opal account ↗</a>
           </div>
         </section>

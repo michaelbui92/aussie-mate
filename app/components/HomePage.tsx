@@ -70,7 +70,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-3">
             <LocaleLink
               href="/destinations"
-              className="group inline-flex items-center justify-center gap-2 bg-sunset hover:bg-sunset-light text-white px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full shadow-lg shadow-sunset/30 hover:shadow-xl hover:shadow-sunset/40"
+              className="group inline-flex items-center justify-center gap-2 bg-sunset-ink hover:bg-sunset-light text-white px-7 py-3.5 text-sm font-semibold tracking-wide transition-all rounded-full shadow-lg shadow-sunset/30 hover:shadow-xl hover:shadow-sunset/40"
             >
               <En translated>Explore Destinations</En>
               <Ja>目的地を探す</Ja>
@@ -132,7 +132,7 @@ export default function HomePage() {
                   <Zh>初来澳大利亚？</Zh>
                   <Ko>호주에 처음 오셨나요?</Ko>
                 </p>
-                <p className="text-sm font-semibold text-sunset">
+                <p className="text-sm font-semibold text-sunset-ink">
                   <En translated>Start here →</En>
                   <Ja>ここから始める →</Ja>
                   <Zh>从这里开始 →</Zh>
@@ -179,7 +179,7 @@ export default function HomePage() {
                 <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
           <div className="flex items-end justify-between mb-8 reveal">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-2">
                 <En translated>Destinations</En>
                 <Ja>目的地</Ja>
                 <Zh>目的地</Zh>
@@ -263,7 +263,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
           <div className="flex items-end justify-between mb-8 reveal">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-2">
                 <En translated>Experiences</En>
                 <Ja>体験</Ja>
                 <Zh>体验</Zh>
@@ -349,7 +349,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-20">
           <div className="flex items-end justify-between mb-8 reveal">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-2">
                 <En translated>Common questions</En>
                 <Ja>よくある質問</Ja>
                 <Zh>常见问题</Zh>
@@ -430,7 +430,7 @@ export default function HomePage() {
             <Ko>최종 검토: 2026년 9월 11일</Ko>
           </span>
           <span aria-hidden="true">·</span>
-          <LocaleLink href="/editorial" className="text-sunset hover:underline font-medium">
+          <LocaleLink href="/editorial" className="text-sunset-ink hover:underline font-medium">
             <En translated>Editorial standards</En>
             <Ja>編集方針</Ja>
             <Zh>编辑标准</Zh>

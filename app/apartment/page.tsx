@@ -278,7 +278,7 @@ export default async function ApartmentPage() {
       {/* Hero — minimal text header, matches weather page style */}
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Renting in NSW</En>
             <Ja>NSWでの賃貸</Ja>
             <Zh>新南威尔士州租房</Zh>
@@ -332,7 +332,7 @@ export default async function ApartmentPage() {
               href="https://www.nsw.gov.au/departments-and-agencies/fair-trading"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors"
             >
               NSW Fair Trading ↗
             </a>

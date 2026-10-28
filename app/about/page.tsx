@@ -53,7 +53,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>{ABOUT_HERO.eyebrow.en}</En>
           <Ja>{ABOUT_HERO.eyebrow.ja}</Ja>
           <Zh>{ABOUT_HERO.eyebrow.zh}</Zh>
@@ -122,7 +122,7 @@ export default function AboutPage() {
           </p>
           <LocaleLink
             href="/editorial"
-            className="inline-flex items-center gap-1 font-medium text-sm text-sunset hover:underline"
+            className="inline-flex items-center gap-1 font-medium text-sm text-sunset-ink hover:underline"
           >
             <En translated>Read our editorial standards →</En>
             <Ja>編集方針を読む →</Ja>
@@ -202,7 +202,7 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs font-medium text-sunset mb-4">
+                <p className="text-xs font-medium text-sunset-ink mb-4">
                   ✦ <En translated>{tool.highlight.en}</En>
                   <Ja>{tool.highlight.ja}</Ja>
                   <Zh>{tool.highlight.zh}</Zh>
@@ -212,7 +212,7 @@ export default function AboutPage() {
                   href={tool.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full bg-sunset text-white hover:bg-sunset-light transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full bg-sunset-ink text-white hover:bg-sunset-light transition-colors shadow-sm"
                 >
                   <En translated>{tool.visit.en}</En>
                   <Ja>{tool.visit.ja}</Ja>

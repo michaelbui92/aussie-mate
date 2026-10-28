@@ -135,7 +135,7 @@ export default function SportPage() {
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Sport</En>
             <Ja>スポーツ</Ja>
             <Zh>体育</Zh><Ko>스포츠</Ko>
@@ -180,7 +180,7 @@ export default function SportPage() {
             <Ko>지역 스포츠 클럽에 가입하는 것은 사람들을 만나고, 문화를 배우며, 정착하는 가장 빠른 방법입니다. 대부분의 클럽은 초보자와 국제 회원을 환영합니다. 가까운 주니어 축구 클럽, 크리켓 팀, 수영 팀을 찾아보세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://www.playfootball.com.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">Find a soccer club ↗</a>
+            <a href="https://www.playfootball.com.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">Find a soccer club ↗</a>
             <a href="https://www.playhq.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">PlayHQ — all sports ↗</a>
           </div>
         </section>

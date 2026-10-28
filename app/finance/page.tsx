@@ -175,7 +175,7 @@ export default async function FinancePage() {
       {/* Hero — minimal text header, matches weather page style */}
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Money</En>
             <Ja>お金</Ja>
             <Zh>金钱</Zh><Ko>금융</Ko>
@@ -221,7 +221,7 @@ export default async function FinancePage() {
             <Ko>ATO(호주 세무서)와 Services Australia는 두 가지 공식 자료입니다. 웹사이트에는 쉬운 영어 가이드, 다운로드 가능한 양식, 계산기가 있습니다. 대부분의 질문은 5분 정도의 사이트 검색으로 답할 수 있습니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://www.ato.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">ATO ↗</a>
+            <a href="https://www.ato.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">ATO ↗</a>
             <a href="https://www.servicesaustralia.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Services Australia ↗</a>
           </div>
         </section>

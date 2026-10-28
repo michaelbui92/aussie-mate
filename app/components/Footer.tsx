@@ -91,7 +91,7 @@ export default function Footer() {
             Email contact now lives here too (since the editorial page
             contact was rewritten to email Michael directly). */}
         <div className="bg-stone-100 dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-xl px-4 py-3 text-xs text-stone-500 dark:text-stone-400 mb-6">
-          <p className="font-semibold text-sunset mb-1">
+          <p className="font-semibold text-sunset-ink mb-1">
             <En translated>Editorial note</En>
             <Ja>編集ノート</Ja>
             <Zh>编辑说明</Zh>
@@ -108,7 +108,7 @@ export default function Footer() {
             <Ja>誤りを見つけましたか？メール</Ja>
             <Zh>发现错误？请发送邮件</Zh>
             <Ko>오류를 발견하셨나요? </Ko>
-            <a href="mailto:michaelbui@outlook.com.au" className="text-sunset hover:underline font-medium">
+            <a href="mailto:michaelbui@outlook.com.au" className="text-sunset-ink hover:underline font-medium">
               michaelbui@outlook.com.au
             </a>
             <En translated> — thank you.</En>
@@ -116,7 +116,7 @@ export default function Footer() {
             <Zh>— 谢谢。</Zh>
             <Ko> — 감사합니다.</Ko>
           </p>
-          <LocaleLink href="/editorial" className="text-sunset hover:underline font-medium">
+          <LocaleLink href="/editorial" className="text-sunset-ink hover:underline font-medium">
             <En translated>Read our editorial standards →</En>
             <Ja>編集基準を読む →</Ja>
             <Zh>阅读我们的编辑标准 →</Zh>

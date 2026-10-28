@@ -30,7 +30,7 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>Legal</En>
           <Ja>法的情報</Ja>
           <Zh>法律</Zh>
@@ -313,7 +313,7 @@ export default function TermsPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
@@ -326,7 +326,7 @@ export default function TermsPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
@@ -338,7 +338,7 @@ export default function TermsPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
@@ -351,7 +351,7 @@ export default function TermsPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>

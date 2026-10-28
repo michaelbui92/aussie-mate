@@ -214,7 +214,7 @@ export default function AdventurePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Adventure</En>
             <Ja>アドベンチャー</Ja>
             <Zh>探险</Zh><Ko>어드벤처</Ko>
@@ -245,10 +245,10 @@ export default function AdventurePage() {
         <section className="mt-16 mb-12">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-1.5">
-              <span className="shrink-0 w-8 h-8 rounded-xl bg-sunset/10 text-sunset flex items-center justify-center">
+              <span className="shrink-0 w-8 h-8 rounded-xl bg-sunset/10 text-sunset-ink flex items-center justify-center">
                 <AlertTriangle className="w-4 h-4" />
               </span>
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset">
+              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink">
                 <En translated>Adventure safety</En>
                 <Ja>アウトドアの安全</Ja>
                 <Zh>户外安全</Zh><Ko>야외 활동 안전</Ko>
@@ -274,7 +274,7 @@ export default function AdventurePage() {
                 className={`reveal reveal-delay-${(i % 5) + 1} p-6 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800 dark:border-stone-700 shadow-lg`}
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <span className="shrink-0 w-8 h-8 rounded-xl bg-sunset/20 text-sunset flex items-center justify-center">
+                  <span className="shrink-0 w-8 h-8 rounded-xl bg-sunset/20 text-sunset-ink flex items-center justify-center">
                     {tip.icon === "Sun" ? <Sun className="w-4 h-4" /> :
                      tip.icon === "AlertTriangle" ? <AlertTriangle className="w-4 h-4" /> :
                      tip.icon === "MapPin" ? <MapPin className="w-4 h-4" /> :
@@ -364,7 +364,7 @@ export default function AdventurePage() {
             <Ko>경찰, 소방, 구급차는 000으로 전화하세요. bushwalker의 경우 NSW 경찰 구조대와 SES(州 응급 서비스)가 육상 수색을 담당합니다. 가기 전에 Emergency+ 앱을 다운로드하세요 — 000 디스패처와 정확한 GPS 위치를 공유합니다. 긴급하지 않은 도움은 관련 NSW 국립공원 사무실에 연락하세요.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">
+            <a href="tel:000" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">
               <En translated>000 — Emergency</En>
               <Ja>{"000 \u2014 \u7dca\u6025"}</Ja>
               <Zh>{"000 \u2014 \u7d27\u6025"}</Zh>

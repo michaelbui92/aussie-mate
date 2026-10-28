@@ -36,7 +36,7 @@ export default function NotFound() {
       <div className="w-16 h-16 rounded-full bg-stone-100 dark:bg-dark-surface flex items-center justify-center text-3xl ring-1 ring-stone-200/60 dark:ring-dark-border shadow-md mb-6">
         {FLAG_EMOJI}
       </div>
-      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+      <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
         404
       </p>
       <h1 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
@@ -47,7 +47,7 @@ export default function NotFound() {
       </p>
       <LocaleLink
         href="/"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sunset text-white text-sm font-medium hover:bg-sunset-light transition-colors shadow-md hover:shadow-lg"
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sunset-ink text-white text-sm font-medium hover:bg-sunset-light transition-colors shadow-md hover:shadow-lg"
       >
         {pickLocale(lang, T.home)}
         <span>→</span>

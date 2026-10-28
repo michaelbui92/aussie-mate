@@ -93,19 +93,24 @@ export default function HeroCarousel({ children }: { children: React.ReactNode }
       {children}
       
       {/* Image indicators */}
-      <div className="hero-dots absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div className="hero-dots absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1 z-10">
         {HERO_IMAGES.map((_, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActive(i)}
             aria-label={pickLocale(lang, SHOW_IMAGE).replace("{n}", String(i + 1))}
-            className={`relative w-2 h-2 rounded-full transition-all duration-500 after:absolute after:content-[''] after:-inset-2.5 ${
-              i === active
-                ? "bg-white w-6"
-                : "bg-white/40 hover:bg-white/60"
-            }`}
-          />
+            /* The button is the 24px target; the span is the dot the eye sees. A pseudo-element hit
+               area is enough for a finger but not for the target-size audit, which measures the
+               element's own box. */
+            className="group grid h-6 w-6 place-items-center"
+          >
+            <span
+              className={`block h-2 rounded-full transition-all duration-500 ${
+                i === active ? "w-6 bg-white" : "w-2 bg-white/40 group-hover:bg-white/60"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

@@ -143,7 +143,7 @@ export default async function OtherToolsPage() {
   return (
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>Side projects</En>
           <Ja>サイドプロジェクト</Ja>
           <Zh>副业项目</Zh>
@@ -218,7 +218,7 @@ export default async function OtherToolsPage() {
                   <Zh>{pickLocale("zh", tool.origins)}</Zh>
                   <Ko>{tool.origins.ko}</Ko>
                 </p>
-                <p className="text-xs font-medium text-sunset">
+                <p className="text-xs font-medium text-sunset-ink">
                   ✦ <En translated>{tool.highlight}</En>
                   <Ja>{tool.jaHighlight ?? tool.highlight}</Ja>
                   <Zh>{tool.zhHighlight ?? tool.highlight}</Zh>
@@ -242,7 +242,7 @@ export default async function OtherToolsPage() {
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full bg-sunset text-white hover:bg-sunset-light transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full bg-sunset-ink text-white hover:bg-sunset-light transition-colors shadow-sm"
             >
               <En translated>Visit {tool.title}</En>
               <Ja>{tool.title} を見る</Ja>
@@ -270,7 +270,7 @@ export default async function OtherToolsPage() {
         ))}
 
         <div className="text-center pt-4">
-          <LocaleLink href="/" className="text-sm text-sunset hover:underline">
+          <LocaleLink href="/" className="text-sm text-sunset-ink hover:underline">
             <En translated>← Back to AussieGuides home</En>
             <Ja>← AussieGuides ホームへ戻る</Ja>
             <Zh>← 返回 AussieGuides 首页</Zh>

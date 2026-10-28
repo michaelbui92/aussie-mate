@@ -94,7 +94,7 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
                   type="checkbox"
                   checked={isChecked}
                   onChange={() => toggle(it.id)}
-                  className="mt-0.5 h-5 w-5 rounded border-eucalypt/30 text-sunset focus:ring-sunset shrink-0"
+                  className="mt-0.5 h-5 w-5 rounded border-eucalypt/30 text-sunset-ink focus:ring-sunset shrink-0"
                 />
                 <div className="flex-1 min-w-0">
                   <div
@@ -120,7 +120,7 @@ export default function Checklist({ storageKey, title, items }: ChecklistProps) 
                   {it.link && (
                     <LocaleLink
                       href={it.link.href}
-                      className="text-xs text-sunset font-semibold mt-1 inline-block hover:underline"
+                      className="text-xs text-sunset-ink font-semibold mt-1 inline-block hover:underline"
                     >
                       <En translated>→ {it.link.en}</En>
                       <Ja>→ {pickLocale("ja", it.link)}</Ja>

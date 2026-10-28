@@ -157,7 +157,7 @@ export default function SydneyFoodGuide() {
           >
             ← <En translated>Destinations</En><Ja>目的地</Ja><Zh>目的地</Zh><Ko>여행지</Ko>
           </LocaleLink>
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Food &amp; Drink</En>
             <Ja>フード &amp; ドリンク</Ja>
             <Zh>美食 &amp; 饮品</Zh>
@@ -183,7 +183,7 @@ export default function SydneyFoodGuide() {
 
         {/* Intro */}
         <section className="max-w-3xl reveal">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Foreword</En>
             <Ja>はじめに</Ja>
             <Zh>前言</Zh>
@@ -225,7 +225,7 @@ export default function SydneyFoodGuide() {
 
               {/* Text */}
               <div className="lg:col-span-3 order-1 lg:order-2">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-2">
                   <Ja>{hood.labelJa ?? hood.labelEn}</Ja>
                   <Zh>{hood.labelZh ?? hood.labelEn}</Zh>
                   <Ko>{hood.labelKo}</Ko>
@@ -297,7 +297,7 @@ export default function SydneyFoodGuide() {
                 key={tip.en}
                 className={`reveal reveal-delay-${(i % 5) + 1} flex gap-4 items-start group`}
               >
-                <span className="shrink-0 w-7 h-7 rounded-full bg-sunset/10 dark:bg-sunset/20 flex items-center justify-center text-sunset text-xs font-bold group-hover:scale-110 transition-transform">
+                <span className="shrink-0 w-7 h-7 rounded-full bg-sunset/10 dark:bg-sunset/20 flex items-center justify-center text-sunset-ink text-xs font-bold group-hover:scale-110 transition-transform">
                   {i + 1}
                 </span>
                 <p className="text-stone-700 dark:text-stone-300 text-sm leading-relaxed pt-0.5">

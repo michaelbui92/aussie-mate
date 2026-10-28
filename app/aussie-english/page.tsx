@@ -191,7 +191,7 @@ export default function AussieEnglishPage() {
     <div className="min-h-screen">
       {/* Header */}
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>Phrases</En>
           <Ko>표현</Ko>
           <Zh>短语</Zh>
@@ -260,7 +260,7 @@ export default function AussieEnglishPage() {
               <ul className="space-y-1.5 pt-4 border-t border-stone-200/60 dark:border-dark-border/60">
                 {s.phrases.map((p) => (
                   <li key={p.phrase} className="flex items-baseline gap-3 text-sm">
-                    <span className="font-serif font-medium text-sunset shrink-0 min-w-[110px]">
+                    <span className="font-serif font-medium text-sunset-ink shrink-0 min-w-[110px]">
                       {p.phrase}
                     </span>
                     <span className="text-stone-600 dark:text-stone-400 text-xs leading-snug">

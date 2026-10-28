@@ -171,7 +171,7 @@ export default function RoadTripsPage() {
 
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
 
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
 
             <En translated>Road Trips</En>
             <Ja>ロードトリップ</Ja>
@@ -228,7 +228,7 @@ export default function RoadTripsPage() {
             <Ko>훌륭한 호주 로드트립의 비결은 사전 계획입니다. 날씨를 확인하고, 마지막 주요 도시에서 주유하고, 간식과 물을 챙기고, 항상 누군가에게 행선지를 알리세요. 2시간마다 휴식을 취하세요 — 운전자 피로는 지역 사고의 주요 원인입니다. 로드트립은 속도에 관한 것이 아닙니다. 길을 따라 멈추는 정거장들에 관한 것입니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://www.nationalparks.nsw.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">NSW National Parks ↗</a>
+            <a href="https://www.nationalparks.nsw.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">NSW National Parks ↗</a>
             <a href="https://www.livetraffic.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Live Traffic NSW ↗</a>
           </div>
         </section>

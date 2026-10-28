@@ -86,7 +86,7 @@ export default function FilteredAccordion({
                 onClick={() => setFilter(vibe)}
                 className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] ${
                   isActive
-                    ? "bg-sunset text-white shadow-sm"
+                    ? "bg-sunset-ink text-white shadow-sm"
                     : "bg-stone-100 dark:bg-dark-surface text-stone-600 dark:text-stone-300 hover:bg-sunset/10 hover:text-sunset"
                 }`}
               >
@@ -107,7 +107,7 @@ export default function FilteredAccordion({
               case "beach":   return "bg-coast/15 text-coast";
               case "city":    return "bg-purple-500/15 text-purple-600 dark:text-purple-400";
               case "nature":  return "bg-sage/15 text-sage";
-              case "food":    return "bg-sunset/15 text-sunset";
+              case "food":    return "bg-sunset/15 text-sunset-ink";
               default:        return "bg-stone-100 dark:bg-dark-surface text-stone-500";
             }
           })();
@@ -122,7 +122,7 @@ export default function FilteredAccordion({
                 aria-expanded={isOpen}
               >
                 {Icon && (
-                  <span className="shrink-0 w-10 h-10 rounded-full bg-sunset/10 text-sunset flex items-center justify-center">
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-sunset/10 text-sunset-ink flex items-center justify-center">
                     <Icon className="w-4 h-4" />
                   </span>
                 )}
@@ -145,7 +145,7 @@ export default function FilteredAccordion({
                   </p>
                 </div>
                 <svg
-                  className={`w-4 h-4 text-sunset shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 text-sunset-ink shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />

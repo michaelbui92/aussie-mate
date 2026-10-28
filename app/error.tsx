@@ -12,7 +12,7 @@ export default function Error({
   return (
     <div className="min-h-[60vh] flex items-center justify-center px-6">
       <div className="text-center max-w-md">
-        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           Error
         </p>
         <h1 className="font-serif text-3xl md:text-4xl text-stone-900 dark:text-stone-100 mb-4">
@@ -25,7 +25,7 @@ export default function Error({
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             onClick={reset}
-            className="inline-flex items-center gap-2 bg-sunset hover:bg-sunset-light text-white px-6 py-3 text-sm font-semibold rounded-full transition-all"
+            className="inline-flex items-center gap-2 bg-sunset-ink hover:bg-sunset-light text-white px-6 py-3 text-sm font-semibold rounded-full transition-all"
           >
             Try again
           </button>

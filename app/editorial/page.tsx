@@ -31,7 +31,7 @@ export default function EditorialPage() {
   return (
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>Editorial</En>
           <Ja>編集方針</Ja>
           <Zh>编辑规范</Zh>
@@ -306,7 +306,7 @@ export default function EditorialPage() {
               The fastest route is email:{" "}
               <a
                 href="mailto:michaelbui@outlook.com.au"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 michaelbui@outlook.com.au
               </a>
@@ -316,7 +316,7 @@ export default function EditorialPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
@@ -333,7 +333,7 @@ export default function EditorialPage() {
               いちばん早い方法はメールです：{" "}
               <a
                 href="mailto:michaelbui@outlook.com.au"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 michaelbui@outlook.com.au
               </a>
@@ -342,7 +342,7 @@ export default function EditorialPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
@@ -357,7 +357,7 @@ export default function EditorialPage() {
               最快的方式是发邮件：{" "}
               <a
                 href="mailto:michaelbui@outlook.com.au"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 michaelbui@outlook.com.au
               </a>
@@ -366,7 +366,7 @@ export default function EditorialPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
@@ -382,7 +382,7 @@ export default function EditorialPage() {
               가장 빠른 경로는 이메일입니다:{" "}
               <a
                 href="mailto:michaelbui@outlook.com.au"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 michaelbui@outlook.com.au
               </a>
@@ -391,7 +391,7 @@ export default function EditorialPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>

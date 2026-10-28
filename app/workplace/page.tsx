@@ -143,7 +143,7 @@ export default function WorkplacePage() {
       {/* Hero — minimal text header, matches weather page style */}
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Workplace</En>
             <Ja>職場</Ja>
             <Zh>职场</Zh>
@@ -191,7 +191,7 @@ export default function WorkplacePage() {
             <Ko>Fair Work Commission은 직장 분쟁을 처리합니다 — 미지급 급여, 부당한 해고, 괴롭힘, Award 위반. 무료 상담 전화, 다국어 지원, 그리고 진정한 옴부즈만 프로세스를 제공합니다.</Ko>
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://www.fairwork.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors">Fair Work ↗</a>
+            <a href="https://www.fairwork.gov.au" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors">Fair Work ↗</a>
             <a href="https://www.fairwork.gov.au/contact-us" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium border border-stone-700 transition-colors">Free advice line ↗</a>
           </div>
         </section>

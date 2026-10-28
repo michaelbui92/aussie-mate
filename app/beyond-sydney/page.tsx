@@ -300,7 +300,7 @@ export default function BeyondSydneyPage() {
     <div className="min-h-screen">
       {/* Header */}
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>Beyond Sydney</En>
           <Ja>シドニーの外へ</Ja>
           <Zh>悉尼之外</Zh>
@@ -330,18 +330,18 @@ export default function BeyondSydneyPage() {
           en: (
             <><En translated>
               Always check road conditions before a long drive. In summer, bushfire season can close roads in NSW — check{" "}
-              <span className="text-sunset font-semibold">Live Traffic NSW</span> before you go.
+              <span className="text-sunset-ink font-semibold">Live Traffic NSW</span> before you go.
             </En>
             <Ja>長距離ドライブの前には必ず道路状況を確認してください。夏は、NSW では山火事シーズンに道路が通行止めになることがあります — 出発前に{" "}
-              <span className="text-sunset font-semibold">Live Traffic NSW</span>を確認してください。</Ja>
+              <span className="text-sunset-ink font-semibold">Live Traffic NSW</span>を確認してください。</Ja>
             <Zh>长途驾驶前务必检查道路状况。夏季，NSW 的山火季可能导致道路封闭 — 出发前请先查看{" "}
-              <span className="text-sunset font-semibold">Live Traffic NSW</span>。</Zh>
+              <span className="text-sunset-ink font-semibold">Live Traffic NSW</span>。</Zh>
             </>
           ),
           ko: (
             <Ko>
               장거리 드라이브 전에 반드시 도로 상태를 확인하세요. 여름에는 산불 시즌에 NSW 길이 닫힐 수 있습니다 — 가기 전에{" "}
-              <span className="text-sunset font-semibold">Live Traffic NSW</span>를 확인하세요.
+              <span className="text-sunset-ink font-semibold">Live Traffic NSW</span>를 확인하세요.
             </Ko>
           ),
         }}

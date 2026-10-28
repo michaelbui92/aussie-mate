@@ -190,7 +190,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           >
             ← <En translated>All destinations</En><Ja>すべての目的地</Ja><Zh>全部目的地</Zh><Ko>전체 여행지</Ko>
           </LocaleLink>
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>{d.region}</En>
             <Ja>{regionLabel("ja", d.region)}</Ja>
             <Zh>{regionLabel("zh", d.region)}</Zh>
@@ -259,7 +259,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                       className={`reveal reveal-delay-${(i % 5) + 1} flex items-start gap-3 p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
                     >
                       {Icon ? (
-                        <Icon className="shrink-0 w-5 h-5 text-sunset mt-0.5" strokeWidth={2} />
+                        <Icon className="shrink-0 w-5 h-5 text-sunset-ink mt-0.5" strokeWidth={2} />
                       ) : (
                         <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-sunset mt-2.5" />
                       )}
@@ -306,7 +306,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                           <Ko>{a.name.ko}</Ko>
                         </h3>
                         <div className="shrink-0 flex flex-col items-end gap-0.5 text-[11px] uppercase tracking-wider">
-                          <span className="text-sunset font-semibold">
+                          <span className="text-sunset-ink font-semibold">
                             <En translated>{a.time.en}</En>
                             <Ja>{pickLocale("ja", a.time)}</Ja>
                             <Zh>{pickLocale("zh", a.time)}</Zh>

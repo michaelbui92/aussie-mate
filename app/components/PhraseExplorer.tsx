@@ -132,7 +132,7 @@ export default function PhraseExplorer({
           >
             {!reviewFlipped ? (
               <>
-                <p className="font-serif text-3xl md:text-5xl text-sunset leading-tight">
+                <p className="font-serif text-3xl md:text-5xl text-sunset-ink leading-tight">
                   {card.phrase}
                 </p>
                 <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 dark:text-stone-500 mt-4">
@@ -144,7 +144,7 @@ export default function PhraseExplorer({
               </>
             ) : (
               <>
-                <p className="font-serif text-2xl md:text-3xl text-sunset leading-tight mb-2">
+                <p className="font-serif text-2xl md:text-3xl text-sunset-ink leading-tight mb-2">
                   {card.phrase}
                 </p>
                 <div className="space-y-2 max-w-md w-full">
@@ -173,7 +173,7 @@ export default function PhraseExplorer({
             </button>
             <button type="button"
               onClick={nextCard}
-              className="px-5 py-2.5 rounded-full text-sm font-medium bg-sunset text-white hover:bg-sunset-light transition-all shadow-sm"
+              className="px-5 py-2.5 rounded-full text-sm font-medium bg-sunset-ink text-white hover:bg-sunset-light transition-all shadow-sm"
             >
               {reviewIndex < reviewCards.length - 1 ? (
                 <><En translated>Next →</En><Ja>次へ →</Ja><Zh>下一个 →</Zh><Ko>다음 →</Ko></>
@@ -257,7 +257,7 @@ export default function PhraseExplorer({
               onClick={() => setActiveCategory(cat.value)}
               className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                 isActive
-                  ? "bg-sunset text-white shadow-sm"
+                  ? "bg-sunset-ink text-white shadow-sm"
                   : "bg-stone-100 dark:bg-dark-surface text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-dark-border hover:text-sunset dark:hover:text-sunset"
               }`}
             >
@@ -323,7 +323,7 @@ export default function PhraseExplorer({
                 style={{ animationDelay: `${(i % 8) * 0.04}s` }}
               >
                 <div className="flex items-start justify-between gap-3 mb-4">
-                  <h3 className="font-serif text-xl md:text-2xl text-sunset leading-tight min-w-0">
+                  <h3 className="font-serif text-xl md:text-2xl text-sunset-ink leading-tight min-w-0">
                     {p.phrase}
                   </h3>
                   <span className="shrink-0 text-[10px] font-medium uppercase tracking-[0.15em] text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-darkbg px-2.5 py-1 rounded-full">

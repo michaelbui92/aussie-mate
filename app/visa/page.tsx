@@ -49,7 +49,7 @@ export default function VisaHub() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-sunset/15 via-stone-50 to-amber-50 dark:from-sunset/20 dark:via-darkbg dark:to-amber-950/20 border-b border-stone-200/60 dark:border-dark-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-24">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-4">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-4">
             <En translated>Visa Guide</En>
             <Ja>ビザガイド</Ja>
             <Zh>签证指南</Zh>
@@ -89,7 +89,7 @@ export default function VisaHub() {
           </p>
 
           <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200/60 dark:border-amber-900/40 rounded-2xl p-5 text-sm text-stone-700 dark:text-stone-300">
-            <p className="font-semibold text-sunset mb-2">
+            <p className="font-semibold text-sunset-ink mb-2">
               <En translated>Important</En>
               <Ja>重要</Ja>
               <Zh>重要提示</Zh>
@@ -301,7 +301,7 @@ export default function VisaHub() {
               href={`/visa/${v.slug}`}
               className="group block p-6 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-lg transition-all"
             >
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-sunset mb-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-sunset-ink mb-2">
                 {v.code}
               </p>
               <h2 className="font-serif text-2xl text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors mb-2">
@@ -316,7 +316,7 @@ export default function VisaHub() {
                 <Zh>{pickLocale("zh", v.tagline)}</Zh>
                 <Ko>{v.tagline.ko}</Ko>
               </p>
-              <p className="text-xs text-sunset font-medium">
+              <p className="text-xs text-sunset-ink font-medium">
                 <En translated>Read more →</En>
                 <Ja>もっと読む →</Ja>
                 <Zh>阅读更多 →</Zh>

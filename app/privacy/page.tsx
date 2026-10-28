@@ -30,7 +30,7 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen">
       <header className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>Legal</En>
           <Ja>法的情報</Ja>
           <Zh>法律</Zh>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               information site about Australian daily life — for anyone visiting, studying,
               working, or settling in Australia, regardless of passport or background. We are
               not a business, government body, or educational institution — see our{" "}
-              <LocaleLink href="/about" className="text-sunset underline">About page</LocaleLink>.
+              <LocaleLink href="/about" className="text-sunset-ink underline">About page</LocaleLink>.
             </p>
           </En>
           <Ja><p>
@@ -73,20 +73,20 @@ export default function PrivacyPage() {
               ついての無料情報サイトです — 観光、留学、就労、定住を問わず、
               パスポートや背景を問わず、オーストラリアに関わるすべての人のために。
               私たちは企業、政府機関、教育機関ではありません — 詳しくは{" "}
-              <LocaleLink href="/about" className="text-sunset underline">サイトについて</LocaleLink>をご覧ください。
+              <LocaleLink href="/about" className="text-sunset-ink underline">サイトについて</LocaleLink>をご覧ください。
             </p></Ja>
           <Zh><p>
               AussieGuides（youraussieguides.com）是一个关于澳大利亚日常生活的
               免费信息网站 — 无论你是来旅游、留学、工作还是定居，无论持哪国护照、
               有什么背景，都适用。我们不是企业、政府机构或教育机构 — 详情请见{" "}
-              <LocaleLink href="/about" className="text-sunset underline">关于页面</LocaleLink>。
+              <LocaleLink href="/about" className="text-sunset-ink underline">关于页面</LocaleLink>。
             </p></Zh>
           <Ko>
             <p>
               AussieGuides(youraussieguides.com)는 호주를 처음 찾아오신 분들을 위한 무료
               영한 생활 정보 사이트입니다 — 방문, 유학, 취업, 정착 무엇이든, 국적과 배경에
               상관없이. 당사는 기업·정부·교육기관이 아니며, 자세한 내용은
-              <LocaleLink href="/about" className="text-sunset underline">소개 페이지</LocaleLink>를
+              <LocaleLink href="/about" className="text-sunset-ink underline">소개 페이지</LocaleLink>를
               참고하세요.
             </p>
           </Ko>
@@ -198,7 +198,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 adssettings.google.com
               </a>.
@@ -213,7 +213,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 adssettings.google.com
               </a>
@@ -227,7 +227,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 adssettings.google.com
               </a>
@@ -242,7 +242,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 adssettings.google.com
               </a>
@@ -273,7 +273,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 Google Ads Settings
               </a>
@@ -282,7 +282,7 @@ export default function PrivacyPage() {
                 href="https://policies.google.com/technologies/partner-sites"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 How Google uses data when you use our partners&apos; sites or apps
               </a>
@@ -303,7 +303,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 Google 広告設定
               </a>
@@ -313,7 +313,7 @@ export default function PrivacyPage() {
                 href="https://policies.google.com/technologies/partner-sites"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 Google がパートナーのサイトやアプリのデータを利用する方法
               </a>
@@ -331,7 +331,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 Google 广告设置
               </a>
@@ -340,7 +340,7 @@ export default function PrivacyPage() {
                 href="https://policies.google.com/technologies/partner-sites"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 当您使用我们合作伙伴的网站或应用时 Google 如何使用数据
               </a>
@@ -360,7 +360,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 Google 광고 설정
               </a>
@@ -370,7 +370,7 @@ export default function PrivacyPage() {
                 href="https://policies.google.com/technologies/partner-sites"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 Google의 파트너 정책
               </a>
@@ -431,12 +431,12 @@ export default function PrivacyPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>{" "}
               or use the contact form on our{" "}
-              <LocaleLink href="/about" className="text-sunset underline">About page</LocaleLink>.
+              <LocaleLink href="/about" className="text-sunset-ink underline">About page</LocaleLink>.
             </p>
           </En>
           <Ja><p>
@@ -445,12 +445,12 @@ export default function PrivacyPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>{" "}
               でイシューを作成するか、{" "}
-              <LocaleLink href="/about" className="text-sunset underline">サイトについて</LocaleLink>のコンタクトフォームをご利用ください。
+              <LocaleLink href="/about" className="text-sunset-ink underline">サイトについて</LocaleLink>のコンタクトフォームをご利用ください。
             </p></Ja>
           <Zh><p>
               如有问题或请求，请在{" "}
@@ -458,12 +458,12 @@ export default function PrivacyPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>{" "}
               上提交 issue，或使用{" "}
-              <LocaleLink href="/about" className="text-sunset underline">关于页面</LocaleLink>上的联系表单。
+              <LocaleLink href="/about" className="text-sunset-ink underline">关于页面</LocaleLink>上的联系表单。
             </p></Zh>
           <Ko>
             <p>
@@ -472,11 +472,11 @@ export default function PrivacyPage() {
                 href="https://github.com/michaelbui92/aussie-mate/issues"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sunset underline"
+                className="text-sunset-ink underline"
               >
                 github.com/michaelbui92/aussie-mate/issues
               </a>
-              에 이슈를 올려주시거나, <LocaleLink href="/about" className="text-sunset underline">소개 페이지</LocaleLink>의
+              에 이슈를 올려주시거나, <LocaleLink href="/about" className="text-sunset-ink underline">소개 페이지</LocaleLink>의
               문의 양식을 이용해 주세요.
             </p>
           </Ko>

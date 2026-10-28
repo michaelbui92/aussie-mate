@@ -150,7 +150,7 @@ export function SearchModal() {
       >
             {/* Search input */}
             <div className="flex items-center gap-3 px-4 py-3 border-b border-sand dark:border-dark-border">
-              <svg className="w-5 h-5 text-sunset shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-sunset-ink shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -215,7 +215,7 @@ export function SearchModal() {
                           isActive ? "bg-sunset/5 dark:bg-sunset/10" : "hover:bg-sand/30 dark:hover:bg-dark-surface/50"
                         }`}
                       >
-                        <svg className="w-4 h-4 text-sunset/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-sunset-ink/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                         <div className="flex-1 min-w-0">

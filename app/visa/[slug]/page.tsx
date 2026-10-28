@@ -84,7 +84,7 @@ export default async function VisaPage({
             ← <En translated>All visas</En><Ja>すべてのビザ</Ja><Zh>所有签证</Zh>
             <Ko>전체 비자</Ko>
           </LocaleLink>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-sunset-ink mb-3">
             {v.code}
           </p>
           <h1 className="font-serif text-4xl md:text-5xl text-stone-900 dark:text-stone-100 leading-[1.05] mb-4">
@@ -141,7 +141,7 @@ export default async function VisaPage({
                     key={s.en}
                     className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border"
                   >
-                    <span className="shrink-0 w-7 h-7 rounded-full bg-sunset text-white text-sm font-semibold flex items-center justify-center">
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-sunset-ink text-white text-sm font-semibold flex items-center justify-center">
                       {i + 1}
                     </span>
                     <p className="font-serif text-base text-stone-900 dark:text-stone-100 leading-snug">
@@ -324,7 +324,7 @@ export default async function VisaPage({
                       href={l.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-sunset hover:underline"
+                      className="text-xs text-sunset-ink hover:underline"
                     >
                       <En translated>{l.label.en} →</En>
                       <Ja>{pickLocale("ja", l.label)} →</Ja>
@@ -355,7 +355,7 @@ export default async function VisaPage({
                   href={`/visa/${other.slug}`}
                   className="group block p-4 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all"
                 >
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sunset mb-1.5">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sunset-ink mb-1.5">
                     {other.code}
                   </p>
                   <p className="font-serif text-sm text-stone-900 dark:text-stone-100 group-hover:text-sunset transition-colors leading-tight">

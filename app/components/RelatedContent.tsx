@@ -33,7 +33,7 @@ export default function RelatedContent({ items }: { items: RelatedItem[] }) {
   return (
     <section className="border-t border-stone-200 dark:border-dark-border bg-stone-50 dark:bg-darkbg">
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
           <En translated>Keep reading</En>
           <Ja>続きを読む</Ja>
           <Zh>继续阅读</Zh>
@@ -64,7 +64,7 @@ export default function RelatedContent({ items }: { items: RelatedItem[] }) {
                 <Zh>{pickLocale("zh", item.description)}</Zh>
                 <Ko>{item.description.ko}</Ko>
               </p>
-              <span className="mt-3 text-xs font-medium text-sunset group-hover:text-white transition-colors">
+              <span className="mt-3 text-xs font-medium text-sunset-ink group-hover:text-white transition-colors">
                 <En translated>Read guide →</En>
                 <Ja>ガイドを読む →</Ja>
                 <Zh>阅读指南 →</Zh>

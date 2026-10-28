@@ -346,7 +346,7 @@ export default function WildlifePage() {
             ← <En translated>All destinations</En><Ja>すべての目的地</Ja><Zh>全部目的地</Zh>
             <Ko>전체 여행지</Ko>
           </LocaleLink>
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
             <En translated>Practical guide</En>
             <Ja>実用ガイド</Ja>
             <Zh>实用指南</Zh>
@@ -428,7 +428,7 @@ export default function WildlifePage() {
         <div className="space-y-12">
           {/* Section intro label */}
           <div className="text-center mb-4 reveal">
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset mb-2">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-2">
               <En translated>Wildlife parks & zoos</En>
               <Ja>野生動物パーク＆動物園</Ja>
               <Zh>野生动物公园与动物园</Zh>
@@ -568,7 +568,7 @@ export default function WildlifePage() {
                 </div>
                 <a
                   href="tel:1300094737"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sunset hover:bg-sunset-light text-white text-sm font-medium transition-colors shrink-0"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sunset-ink hover:bg-sunset-light text-white text-sm font-medium transition-colors shrink-0"
                 >
                   <Phone className="w-4 h-4" />
                   1300 094 737

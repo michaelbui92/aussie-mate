@@ -69,7 +69,7 @@ export default function TripLengthFilter() {
             aria-current={isActive ? "true" : undefined}
             className={`shrink-0 inline-flex items-center gap-1.5 px-3 h-9 rounded-full text-xs font-medium transition-colors ${
               isActive
-                ? "bg-sunset text-white shadow-md"
+                ? "bg-sunset-ink text-white shadow-md"
                 : "bg-stone-100 dark:bg-darkbg text-stone-700 dark:text-stone-300 hover:bg-sunset hover:text-white"
             }`}
           >
