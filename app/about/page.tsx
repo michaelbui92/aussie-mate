@@ -253,7 +253,7 @@ export default function AboutPage() {
           <p className="mt-3">
             <a
               href="mailto:michaelbui@outlook.com.au"
-              className="inline-flex items-center gap-1 font-medium text-sm text-sunset-ink hover:underline"
+              className="inline-flex items-center gap-1 font-medium text-sm text-sunset-light hover:underline"
             >
               michaelbui@outlook.com.au →
             </a>
