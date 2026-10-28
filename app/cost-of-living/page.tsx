@@ -5,6 +5,8 @@ import Link from "next/link";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
+import { relatedFromMeta } from "@/lib/related";
 
 export async function generateMetadata(): Promise<Metadata> {
   // Per request, so the tab title and the search-result headline are in the reader's
@@ -23,7 +25,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const categories = [
   {
-    emoji: "🏠",
     title: "Rent & Housing",
     jaTitle: "\u5bb6\u8cc3\u3068\u4f4f\u307e\u3044",
     zhTitle: "\u623f\u79df\u4e0e\u4f4f\u623f",
@@ -38,7 +39,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🚇",
     title: "Transport",
     jaTitle: "\u4ea4\u901a",
     zhTitle: "\u4ea4\u901a",
@@ -53,7 +53,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🛒",
     title: "Groceries & Food",
     jaTitle: "\u98df\u6599\u54c1\u3068\u98df\u4e8b",
     zhTitle: "\u98df\u54c1\u6742\u8d27\u4e0e\u996e\u98df",
@@ -72,7 +71,6 @@ const categories = [
     ],
   },
   {
-    emoji: "📱",
     title: "Phone & Internet",
     jaTitle: "\u30b9\u30de\u30db\u3068\u30a4\u30f3\u30bf\u30fc\u30cd\u30c3\u30c8",
     zhTitle: "\u624b\u673a\u4e0e\u7f51\u7edc",
@@ -85,7 +83,6 @@ const categories = [
     ],
   },
   {
-    emoji: "💡",
     title: "Utilities & Bills",
     jaTitle: "\u516c\u5171\u6599\u91d1\u3068\u8acb\u6c42",
     zhTitle: "\u6c34\u7535\u4e0e\u8d26\u5355",
@@ -98,7 +95,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🏥",
     title: "Health Insurance",
     jaTitle: "\u533b\u7642\u4fdd\u967a",
     zhTitle: "\u5065\u5eb7\u4fdd\u9669",
@@ -134,17 +130,16 @@ export default function CostOfLivingPage() {
       {/* Quick summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
         {[
-          { emoji: "💰", label: { en: "Single person (shared)", ja: "単身（シェアハウス）", zh: "单人（合租）", ko: "1인 (쉐어하우스)" }, total: "$700–$1,200/month" },
-          { emoji: "🏠", label: { en: "Single person (own apartment)", ja: "単身（単独アパート）", zh: "单人（独立公寓）", ko: "1인 (단독 아파트)" }, total: "$1,200–$2,000/month" },
-          { emoji: "👫", label: { en: "Couple (sharing)", ja: "カップル（同居）", zh: "情侣（合住）", ko: "커플 (함께 사는 경우)" }, total: "$1,800–$2,800/month" },
+          { label: { en: "Single person (shared)", ja: "単身（シェアハウス）", zh: "单人（合租）", ko: "1인 (쉐어하우스)" }, total: "$700–$1,200/month" },
+          { label: { en: "Single person (own apartment)", ja: "単身（単独アパート）", zh: "单人（独立公寓）", ko: "1인 (단독 아파트)" }, total: "$1,200–$2,000/month" },
+          { label: { en: "Couple (sharing)", ja: "カップル（同居）", zh: "情侣（合住）", ko: "커플 (함께 사는 경우)" }, total: "$1,800–$2,800/month" },
         ].map((item, i) => (
           <div
             key={i}
-            className="rounded-2xl p-5 text-center border border-sunset/20"
+            className="rounded-2xl p-5 border border-sunset/20"
             style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.08), rgba(212,165,116,0.06))" }}
           >
-            <div className="text-3xl mb-2">{item.emoji}</div>
-            <div className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-1">
+            <div className="text-sm font-medium text-stone-600 dark:text-stone-300 mb-1.5">
               <En translated>{item.label.en}</En>
               <Ja>{pickLocale("ja", item.label)}</Ja>
               <Zh>{pickLocale("zh", item.label)}</Zh>
@@ -161,16 +156,15 @@ export default function CostOfLivingPage() {
           key={i}
           className="mb-8 rounded-2xl overflow-hidden border border-stone-200/80 dark:border-dark-border"
         >
-          <div
-            className="px-5 py-4 font-bold text-lg flex items-center gap-2 border-b border-stone-200/80 dark:border-dark-border text-stone-900 dark:text-stone-100"
+          <h2
+            className="px-5 py-4 font-serif font-bold text-lg border-b border-stone-200/80 dark:border-dark-border text-stone-900 dark:text-stone-100"
             style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.06), rgba(212,165,116,0.04))" }}
           >
-            <span>{cat.emoji}</span>
             <En translated>{cat.title}</En>
             <Ja>{cat.jaTitle ?? cat.title}</Ja>
             <Zh>{cat.zhTitle ?? cat.title}</Zh>
             <Ko>{cat.koTitle ?? cat.title}</Ko>
-          </div>
+          </h2>
           <div className="divide-y divide-stone-200/80 dark:divide-dark-border">
             {cat.items.map((item, j) => (
               <div
@@ -182,7 +176,7 @@ export default function CostOfLivingPage() {
                     <En translated>{item.en}</En>
                     <Ja>{pickLocale("ja", item)}</Ja>
                     <Zh>{pickLocale("zh", item)}</Zh>
-                    <Ko><span className="text-stone-500 dark:text-stone-500 text-xs">{item.ko}</span></Ko>
+                    <Ko>{item.ko}</Ko>
                   </div>
                 </div>
                 <div className="shrink-0 text-sm font-bold px-3 py-1 rounded-lg bg-sunset/10 text-sunset-ink">
@@ -199,19 +193,22 @@ export default function CostOfLivingPage() {
         style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.06), rgba(212,165,116,0.04))" }}
       >
         <h2 className="text-xl font-bold mb-4 text-stone-900 dark:text-stone-100">
-          <En translated>💡 Money-Saving Tips</En>
-          <Ja>💡 節約のヒント</Ja>
-          <Zh>💡 省钱小贴士</Zh>
-          <Ko>💡 절약 팁</Ko>
+          <En translated>Money-Saving Tips</En>
+          <Ja>節約のヒント</Ja>
+          <Zh>省钱小贴士</Zh>
+          <Ko>절약 팁</Ko>
         </h2>
         <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
-          <li><En translated>• Shop at Aldi for groceries — it's 20-30% cheaper than Woolies/Coles</En><Ja>• 食料品はAldiで — Woolies/Colesより20-30%安い</Ja><Zh>• 在Aldi购买食品杂货——比Woolies/Coles便宜20-30%</Zh><Ko>• 장보기는 Aldi에서 — Woolies/Coles보다 20-30% 저렴합니다</Ko></li>
-          <li><En translated>• Use the Opal card weekly cap — after $50, all travel is free for the week</En><Ja>• Opalカードの週間上限を活用 — $50を超えれば、その週の移動はすべて無料</Ja><Zh>• 善用Opal卡每周上限——超过$50后，当周所有出行免费</Zh><Ko>• Opal 카드 주간 상한선 활용 — $50 이후 무료</Ko></li>
-          <li><En translated>• Korean grocery stores (Strathfield, Eastwood, Campsie) have cheaper Asian ingredients</En><Ja>• 韓国系スーパー（Strathfield、Eastwood、Campsie）ならアジア食材が安い</Ja><Zh>• 韩国超市（Strathfield、Eastwood、Campsie）的亚洲食材更便宜</Zh><Ko>• 한인 마트 (Strathfield, Eastwood, Campsie)에서 아시안 식품이 저렴합니다</Ko></li>
-          <li><En translated>• Share housing is the biggest cost saver — save $200+/week vs living alone</En><Ja>• シェアハウスが最大の節約 — 一人暮らしより週$200以上節約</Ja><Zh>• 合租是最省钱的——比独居每周省$200以上</Zh><Ko>• 쉐어하우스가 가장 큰 절약 — 혼자 살 때보다 주당 $200+ 절약</Ko></li>
-          <li><En translated>• Buy second-hand furniture on Facebook Marketplace or Gumtree</En><Ja>• 家具はFacebook MarketplaceやGumtreeで中古を買う</Ja><Zh>• 在Facebook Marketplace或Gumtree买二手家具</Zh><Ko>• 가구는 Facebook Marketplace나 Gumtree에서 중고로 구매하세요</Ko></li>
+          <li><En translated>Shop at Aldi for groceries — it's 20-30% cheaper than Woolies/Coles</En><Ja>食料品はAldiで — Woolies/Colesより20-30%安い</Ja><Zh>在Aldi购买食品杂货——比Woolies/Coles便宜20-30%</Zh><Ko>장보기는 Aldi에서 — Woolies/Coles보다 20-30% 저렴합니다</Ko></li>
+          <li><En translated>Use the Opal card weekly cap — after $50, all travel is free for the week</En><Ja>Opalカードの週間上限を活用 — $50を超えれば、その週の移動はすべて無料</Ja><Zh>善用Opal卡每周上限——超过$50后，当周所有出行免费</Zh><Ko>Opal 카드 주간 상한선 활용 — $50 이후 무료</Ko></li>
+          <li><En translated>Korean grocery stores (Strathfield, Eastwood, Campsie) have cheaper Asian ingredients</En><Ja>韓国系スーパー（Strathfield、Eastwood、Campsie）ならアジア食材が安い</Ja><Zh>韩国超市（Strathfield、Eastwood、Campsie）的亚洲食材更便宜</Zh><Ko>한인 마트 (Strathfield, Eastwood, Campsie)에서 아시안 식품이 저렴합니다</Ko></li>
+          <li><En translated>Share housing is the biggest cost saver — save $200+/week vs living alone</En><Ja>シェアハウスが最大の節約 — 一人暮らしより週$200以上節約</Ja><Zh>合租是最省钱的——比独居每周省$200以上</Zh><Ko>쉐어하우스가 가장 큰 절약 — 혼자 살 때보다 주당 $200+ 절약</Ko></li>
+          <li><En translated>Buy second-hand furniture on Facebook Marketplace or Gumtree</En><Ja>家具はFacebook MarketplaceやGumtreeで中古を買う</Ja><Zh>在Facebook Marketplace或Gumtree买二手家具</Zh><Ko>가구는 Facebook Marketplace나 Gumtree에서 중고로 구매하세요</Ko></li>
         </ul>
       </div>
+
+      <RelatedContent items={relatedFromMeta(["apartment", "transport", "workplace"])} />
+
     </main>
   );
 }

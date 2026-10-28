@@ -11,6 +11,8 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import { phrases, type Phrase } from "@/lib/phrases";
+import RelatedContent from "@/components/RelatedContent";
+import { relatedFromMeta } from "@/lib/related";
 import { En, Ko, Zh, Ja } from "@/components/LangBlocks";
 import PhraseExplorer, { type PhraseCategory } from "@/components/PhraseExplorer";
 import { seoFor, withSeo } from "@/lib/seo";
@@ -234,14 +236,29 @@ export default function AussieEnglishPage() {
           </p>
         </div>
 
+        <nav aria-label="Situations on this page" className="mb-6 flex flex-wrap gap-2">
+          {scenarios.map((s, i) => (
+            <a
+              key={s.title}
+              href={`#situation-${i}`}
+              className="rounded-full border border-stone-300 dark:border-dark-border bg-white dark:bg-dark-surface px-3 py-1.5 text-xs text-stone-600 dark:text-stone-300 hover:border-sunset hover:text-sunset-ink transition-colors"
+            >
+              <En translated>{s.title}</En>
+              <Ko>{s.koTitle}</Ko>
+              <Zh>{s.zhTitle}</Zh>
+              <Ja>{s.jaTitle}</Ja>
+            </a>
+          ))}
+        </nav>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {scenarios.map((s, i) => (
             <article
               key={s.title}
-              className={`reveal reveal-delay-${(i % 5) + 1} p-6 md:p-7 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
+              id={`situation-${i}`}
+              className={`scroll-mt-24 reveal reveal-delay-${(i % 5) + 1} p-6 md:p-7 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border hover:border-sunset/40 hover:shadow-md transition-all`}
             >
-              <div className="flex items-start gap-3 mb-4">
-                <span className="text-3xl shrink-0 leading-none" aria-hidden="true">{s.emoji}</span>
+              <div className="mb-4">
                 <div className="min-w-0">
                   <h3 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 leading-tight">
                     <En translated>{s.title}</En>
@@ -306,6 +323,8 @@ export default function AussieEnglishPage() {
         </div>
         <PhraseExplorer phrases={phrases} categories={categories} />
       </section>
+
+      <RelatedContent items={relatedFromMeta(["aussie-english/culture", "workplace", "faq"])} />
     </div>
   );
 }

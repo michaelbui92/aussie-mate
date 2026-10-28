@@ -8,6 +8,8 @@ import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
 import { seoFor, withSeo } from "@/lib/seo";
+import RelatedContent from "@/components/RelatedContent";
+import { relatedFromMeta } from "@/lib/related";
 
 export async function generateMetadata(): Promise<Metadata> {
   // Per request, so the tab title and the search-result headline are in the reader's
@@ -489,6 +491,8 @@ export default function EditorialPage() {
         {/* JSON-LD */}
 
       </div>
+
+      <RelatedContent items={relatedFromMeta(["about", "faq", "aussie-english"])} />
     </div>
   );
 }

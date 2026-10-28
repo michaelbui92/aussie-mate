@@ -4,7 +4,8 @@ import { pageMeta } from "@/lib/page-meta";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
 import { FaqAnswer } from "@/components/Readable";
 import RelatedContent from "@/components/RelatedContent";
-import { pickLocale, type Lang } from "@/lib/locale";
+import { relatedFromMeta } from "@/lib/related";
+import { pickLocale } from "@/lib/locale";
 import { faqLdJson, seoFor, withSeo } from "@/lib/seo";
 import { faqs } from "@/lib/faqs";
 
@@ -22,49 +23,6 @@ export async function generateMetadata(): Promise<Metadata> {
   "/faq"
 );
 }
-
-/**
- * Related links, built from page metadata rather than typed out again: every title and description
- * already exists in four languages, so nothing here has to be re-translated.
- *
- * PAGE_META keys are inconsistent about the leading slash ("/faq" vs "cost-of-living"), and pageMeta
- * throws on an unknown route - which took the whole page down until this tried both spellings and
- * skipped a route it could not resolve.
- */
-function related(slugs: string[]) {
-  const at = (slug: string) => {
-    for (const route of [`/${slug}`, slug]) {
-      try {
-        pageMeta(route, "en"); // probe: pageMeta throws at call time, not at closure creation
-        return (lang: string) => pageMeta(route, lang as Parameters<typeof pageMeta>[1]);
-      } catch {
-        /* try the other spelling */
-      }
-    }
-    return null;
-  };
-
-  return slugs.flatMap((slug) => {
-    const get = at(slug);
-    if (!get) return [];
-    return [{
-      href: `/${slug}`,
-      title: {
-        en: get("en").title,
-        ko: get("ko").title,
-        ja: get("ja").title,
-        zh: get("zh").title,
-      },
-      description: {
-        en: get("en").description,
-        ko: get("ko").description,
-        ja: get("ja").description,
-        zh: get("zh").description,
-      },
-    }];
-  });
-}
-
 
 export default async function FAQPage() {
   // Per request, so the FAQPage schema carries the reader's language: without this the
@@ -171,7 +129,7 @@ export default async function FAQPage() {
         </p>
       </div>
 
-      <RelatedContent items={related(["visa", "cost-of-living", "transport"])} />
+      <RelatedContent items={relatedFromMeta(["visa", "cost-of-living", "transport"])} />
 
     </div>
   );
