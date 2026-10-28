@@ -140,37 +140,7 @@ function bodyParagraphs(text?: string): string[] {
   return text
     .split(/\n[ \t]*\n/)
     .map((block) => block.trim())
-    .filter(Boolean)
-    .flatMap(splitLongBlock);
-}
-
-// A blank line is a paragraph break, but plenty of these blocks are one 150-176 word paragraph with no
-// break in them (measured on /destinations/wollongong and /destinations/sydney-harbour). Splitting on
-// sentence boundaries fixes all four locales at once because the terminals differ by language:
-// CJK ends on 。！？ and Latin/Korean on . ! ? — and "$5.60" or "Opal 3.5" must not be cut in half.
-function splitLongBlock(block: string): string[] {
-  const words = block.split(/\s+/).filter(Boolean).length;
-  const chars = block.length;
-  // Short enough as it is, or CJK (where "words" undercounts badly and a 200-char block is normal).
-  if (words < 55 && chars < 420) return [block];
-
-  const guarded = block.replace(/(\d)\.(\d)/g, "$1\u0000$2");
-  const parts = guarded.match(/[^.!?。！？]+[.!?。！？]+["')\]]?\s*|[^.!?。！？]+$/g);
-  if (!parts || parts.length < 2) return [block];
-
-  const sentences = parts.map((x) => x.replace(/\u0000/g, ".").trim()).filter(Boolean);
-  const out: string[] = [];
-  let current = "";
-  for (const sentence of sentences) {
-    current = current ? `${current} ${sentence}` : sentence;
-    const w = current.split(/\s+/).filter(Boolean).length;
-    if (w >= 34 || current.length >= 260) {
-      out.push(current);
-      current = "";
-    }
-  }
-  if (current) out.push(current);
-  return out;
+    .filter(Boolean);
 }
 
 // Shared renderer for multi-paragraph body copy. Keeps withEmphasis applied inside each paragraph
@@ -183,7 +153,28 @@ function BodyParagraphs({ text, className, lang }: { text?: string; className: s
   // A blank line is a paragraph break the author intended; inside one of those blocks a 176-word wall
   // is still a wall, so each block is regrouped into paragraphs of about 26 words (English/Korean) at
   // sentence boundaries. No copy is touched - only where the breaks fall.
-  const blocks = bodyParagraphs(text).flatMap((block) => groupParagraphs(block, lang));
+  const blocks = bodyParagraphs(text).flatMap((block) => {
+    const chunks = groupParagraphs(block, lang);
+    // Keep authored bold spans intact when a sentence boundary cuts through one. Leave malformed
+    // source paragraphs unchanged rather than joining them to the next authored paragraph.
+    if ((block.match(/\*\*/g)?.length ?? 0) % 2 !== 0) return chunks;
+    const balanced: string[] = [];
+    let pending = "";
+    let open = false;
+    let offset = 0;
+    for (const chunk of chunks) {
+      const position = block.indexOf(chunk, offset);
+      const separator = block.slice(offset, position);
+      offset = position + chunk.length;
+      pending = pending ? pending + separator + chunk : chunk;
+      if ((chunk.match(/\*\*/g)?.length ?? 0) % 2 !== 0) open = !open;
+      if (!open) {
+        balanced.push(pending);
+        pending = "";
+      }
+    }
+    return balanced;
+  });
   if (blocks.length === 0) return null;
   return (
     <div className="space-y-3">

@@ -23,16 +23,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
-// Derived from the tables on this page at 4.33 weeks a month (280 and 450 a week rent; 80-120 a week
-// groceries; the 50 Opal cap; a 15-30 prepaid SIM). The page listed every weekly price but never added
-// them up, which is the question someone actually asks before they move.
-const monthlyRows = [
-  { en: "Shared house (room, inner Sydney)", ja: "シェアハウス（1部屋、シドニー市内）", zh: "合租房（单间，悉尼内城）", ko: "쉐어하우스 (방 1개, 시드니 시내)", value: "$1,212–$1,948" },
-  { en: "Groceries (Woolies/Coles)", ja: "食料品（Woolies/Coles）", zh: "食品杂货（Woolies/Coles）", ko: "식료품 (Woolies/Coles)", value: "$346–$520" },
-  { en: "Opal weekly cap", ja: "Opalの週上限", zh: "Opal 每周上限", ko: "Opal 주간 상한선", value: "$216" },
-  { en: "Prepaid SIM", ja: "プリペイドSIM", zh: "预付费 SIM 卡", ko: "선불 SIM", value: "$15–$30" },
-];
-
 const categories = [
   {
     title: "Rent & Housing",
@@ -45,7 +35,6 @@ const categories = [
       { en: "2-bedroom apartment (inner Sydney)", ja: "2ベッドルームのアパート（シドニー市内）", zh: "两居室公寓（悉尼内城）", ko: "2베드룸 아파트 (시드니 시내)", cost: "$700–$1,200/week" },
       { en: "2-bedroom apartment (outer suburbs)", ja: "2ベッドルームのアパート（郊外）", zh: "两居室公寓（远郊）", ko: "2베드룸 아파트 (외곽)", cost: "$450–$700/week" },
       { en: "Bond (4 weeks rent)", ja: "保証金（家賃4週間分）", zh: "押金（4周租金）", ko: "보증금 (월세의 4주)", cost: "4 weeks rent" },
-      { en: "Rental bond fee (NSW Fair Trading)", ja: "賃貸保証金の登録手数料（NSW Fair Trading）", zh: "租赁押金登记费（NSW Fair Trading）", ko: "임대 보증금 등록비", cost: "~$50" },
     ],
   },
   {
@@ -98,9 +87,7 @@ const categories = [
     zhTitle: "\u6c34\u7535\u4e0e\u8d26\u5355",
     koTitle: "\uacf5\uacfc\uae08\uacfc \uccad\uad6c\uc11c",
     items: [
-      { en: "Electricity (1 person, apartment)", ja: "電気代（1人、アパート）", zh: "电费（1人，公寓）", ko: "전기세 (1인, 아파트)", cost: "$80–$150/quarter" },
       { en: "Gas (cooking + hot water)", ja: "ガス代（調理 + 給湯）", zh: "燃气费（做饭 + 热水）", ko: "가스세 (요리 + 온수)", cost: "$50–$100/quarter" },
-      { en: "Water (apartment, billed quarterly)", ja: "水道代（アパート、四半期ごとの請求）", zh: "水费（公寓，按季度计费）", ko: "수도세 (아파트, 분기별)", cost: "$80–$180/quarter" },
       { en: "Contents insurance (renters)", ja: "家財保険（賃貸居住者）", zh: "家庭财产保险（租客）", ko: "가재도구 보험 (세입자)", cost: "$20–$40/month" },
     ],
   },
@@ -113,7 +100,6 @@ const categories = [
       { en: "OSHC (student, single, per year)", ja: "OSHC（学生、単身、年間）", zh: "OSHC（学生，单人，每年）", ko: "OSHC (유학생, 1인, 연간)", cost: "~$600/year" },
       { en: "OVHC (working holiday, per year)", ja: "OVHC（ワーホリ、年間）", zh: "OVHC（打工度假，每年）", ko: "OVHC (워홀, 연간)", cost: "~$500–$900/year" },
       { en: "GP visit (bulk billed)", ja: "GP受診（バルクビリング）", zh: "全科医生就诊（统一报销）", ko: "GP 방문 (벌크 빌)", cost: "Free" },
-      { en: "GP visit (private, no Medicare)", ja: "GP受診（自費、Medicareなし）", zh: "全科医生就诊（自费，无Medicare）", ko: "GP 방문 (개인, 메디케어 없음)", cost: "$50–$80" },
       { en: "Ambulance cover (annual)", ja: "救急車カバー（年間）", zh: "救护车保险（每年）", ko: "구급차 보험 (연간)", cost: "~$60/year" },
     ],
   },
@@ -129,76 +115,7 @@ export default function CostOfLivingPage() {
           <Zh>悉尼生活成本——2026</Zh>
           <Ko>시드니 생활비 — 2026</Ko>
         </h1>
-        <p className="text-lg text-stone-500 dark:text-stone-400 max-w-2xl mx-auto">
-          <En translated>Real prices for rent, food, transport, and bills. All figures in AUD. Updated for 2026.</En>
-          <Ja>家賃、食費、交通費、光熱費の実際の価格。金額はすべてAUD（豪ドル）表示。2026年に更新。</Ja>
-          <Zh>房租、食物、交通和账单的真实价格。所有金额均以澳元（AUD）计。已更新至2026年。</Zh>
-          <Ko>임대료, 식비, 교통비, 공과금의 실제 가격입니다. 모든 금액은 호주 달러(AUD) 기준입니다.</Ko>
-        </p>
       </div>
-
-      {/* Quick summary */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-        {[
-          { label: { en: "Single person (shared)", ja: "単身（シェアハウス）", zh: "单人（合租）", ko: "1인 (쉐어하우스)" }, total: "$700–$1,200/month" },
-          { label: { en: "Single person (own apartment)", ja: "単身（単独アパート）", zh: "单人（独立公寓）", ko: "1인 (단독 아파트)" }, total: "$1,200–$2,000/month" },
-          { label: { en: "Couple (sharing)", ja: "カップル（同居）", zh: "情侣（合住）", ko: "커플 (함께 사는 경우)" }, total: "$1,800–$2,800/month" },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className="rounded-2xl p-5 border border-sunset/20"
-            style={{ background: "linear-gradient(135deg, rgba(232,114,42,0.08), rgba(212,165,116,0.06))" }}
-          >
-            <div className="text-sm font-medium text-stone-600 dark:text-stone-300 mb-1.5">
-              <En translated>{item.label.en}</En>
-              <Ja>{pickLocale("ja", item.label)}</Ja>
-              <Zh>{pickLocale("zh", item.label)}</Zh>
-              <Ko>{item.label.ko}</Ko>
-            </div>
-            <div className="text-xl font-bold text-sunset-ink">{item.total}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* The sum of the tables below, at 4.33 weeks a month. */}
-      <section className="mb-10 rounded-2xl border border-stone-200/80 dark:border-dark-border bg-white dark:bg-dark-surface p-5 md:p-6">
-        <h2 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100 mb-1">
-          <En translated>What a shared room actually costs</En>
-          <Ja>シェアハウスの部屋の実際の月額</Ja>
-          <Zh>合租单间的实际月支出</Zh>
-          <Ko>쉐어하우스 방, 한 달에 실제로 드는 돈</Ko>
-        </h2>
-        <p className="text-sm text-stone-600 dark:text-stone-400 mb-4">
-          <En translated>Weekly prices from the tables below, converted at 4.33 weeks a month.</En>
-          <Ja>下の表の週額を、1か月＝4.33週で換算しました。</Ja>
-          <Zh>下方表格的周价按每月 4.33 周换算。</Zh>
-          <Ko>아래 표의 주간 가격을 한 달 4.33주로 환산했습니다.</Ko>
-        </p>
-        <table className="w-full text-sm">
-          <tbody className="divide-y divide-stone-200/80 dark:divide-dark-border">
-            {monthlyRows.map((row, i) => (
-              <tr key={i}>
-                <td className="py-2.5 text-stone-700 dark:text-stone-300">
-                  <En translated>{row.en}</En>
-                  <Ja>{row.ja}</Ja>
-                  <Zh>{row.zh}</Zh>
-                  <Ko>{row.ko}</Ko>
-                </td>
-                <td className="py-2.5 text-right font-medium text-stone-900 dark:text-stone-100 whitespace-nowrap">{row.value}</td>
-              </tr>
-            ))}
-            <tr>
-              <td className="py-3 font-semibold text-stone-900 dark:text-stone-100">
-                <En translated>Total per month</En>
-                <Ja>月額合計</Ja>
-                <Zh>每月合计</Zh>
-                <Ko>월 합계</Ko>
-              </td>
-              <td className="py-3 text-right font-bold text-sunset-ink whitespace-nowrap">$1,790–$2,715</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
 
       {/* Category tables */}
       {categories.map((cat, i) => (
@@ -249,8 +166,6 @@ export default function CostOfLivingPage() {
           <Ko>절약 팁</Ko>
         </h2>
         <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
-          <li><En translated>Shop at Aldi for groceries — it's 20-30% cheaper than Woolies/Coles</En><Ja>食料品はAldiで — Woolies/Colesより20-30%安い</Ja><Zh>在Aldi购买食品杂货——比Woolies/Coles便宜20-30%</Zh><Ko>장보기는 Aldi에서 — Woolies/Coles보다 20-30% 저렴합니다</Ko></li>
-          <li><En translated>Use the Opal card weekly cap — after $50, all travel is free for the week</En><Ja>Opalカードの週間上限を活用 — $50を超えれば、その週の移動はすべて無料</Ja><Zh>善用Opal卡每周上限——超过$50后，当周所有出行免费</Zh><Ko>Opal 카드 주간 상한선 활용 — $50 이후 무료</Ko></li>
           <li><En translated>Korean grocery stores (Strathfield, Eastwood, Campsie) have cheaper Asian ingredients</En><Ja>韓国系スーパー（Strathfield、Eastwood、Campsie）ならアジア食材が安い</Ja><Zh>韩国超市（Strathfield、Eastwood、Campsie）的亚洲食材更便宜</Zh><Ko>한인 마트 (Strathfield, Eastwood, Campsie)에서 아시안 식품이 저렴합니다</Ko></li>
           <li><En translated>Share housing is the biggest cost saver — save $200+/week vs living alone</En><Ja>シェアハウスが最大の節約 — 一人暮らしより週$200以上節約</Ja><Zh>合租是最省钱的——比独居每周省$200以上</Zh><Ko>쉐어하우스가 가장 큰 절약 — 혼자 살 때보다 주당 $200+ 절약</Ko></li>
           <li><En translated>Buy second-hand furniture on Facebook Marketplace or Gumtree</En><Ja>家具はFacebook MarketplaceやGumtreeで中古を買う</Ja><Zh>在Facebook Marketplace或Gumtree买二手家具</Zh><Ko>가구는 Facebook Marketplace나 Gumtree에서 중고로 구매하세요</Ko></li>

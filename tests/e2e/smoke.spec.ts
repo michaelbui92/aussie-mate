@@ -9,7 +9,9 @@ test.describe("Home page", () => {
   test("renders with the expected structure", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Aussie/i);
-    await expect(page.locator("nav")).toBeVisible();
+    await expect(page.getByRole("banner")).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("link", { name: "AussieGuides home" })).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("button", { name: "Living menu" })).toBeVisible();
     await expect(page.locator("footer")).toBeVisible();
     // Hero section should exist
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -63,7 +65,9 @@ test.describe("Key navigation paths", () => {
     test(`${path} loads without errors`, async ({ page }) => {
       const response = await page.goto(path);
       expect(response?.status()).toBeLessThan(400);
-      await expect(page.locator("nav")).toBeVisible();
+      await expect(page.getByRole("banner")).toBeVisible();
+      await expect(page.getByRole("banner").getByRole("link", { name: "AussieGuides home" })).toBeVisible();
+      await expect(page.getByRole("banner").getByRole("button", { name: "Living menu" })).toBeVisible();
       await expect(page.locator("footer")).toBeVisible();
     });
   }
@@ -73,13 +77,17 @@ test.describe("Dynamic routes", () => {
   test("destination page loads", async ({ page }) => {
     const response = await page.goto("/destinations/blue-mountains");
     expect(response?.status()).toBeLessThan(400);
-    await expect(page.locator("nav")).toBeVisible();
+    await expect(page.getByRole("banner")).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("link", { name: "AussieGuides home" })).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("button", { name: "Living menu" })).toBeVisible();
   });
 
   test("visa page loads", async ({ page }) => {
     const response = await page.goto("/visa/417");
     expect(response?.status()).toBeLessThan(400);
-    await expect(page.locator("nav")).toBeVisible();
+    await expect(page.getByRole("banner")).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("link", { name: "AussieGuides home" })).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("button", { name: "Living menu" })).toBeVisible();
   });
 });
 
@@ -131,9 +139,12 @@ test.describe("Mobile navigation", () => {
     const hamburger = page.getByRole("button", { name: /open menu/i });
     await expect(hamburger).toBeVisible();
     await hamburger.click();
-    // Mobile menu should show group labels
-    await expect(page.getByText("Living").first()).toBeVisible();
-    await expect(page.getByText("Destinations").first()).toBeVisible();
+    // Scope to the mobile navigation so hidden desktop labels cannot satisfy or block the check.
+    const menu = page.getByRole("banner").getByRole("navigation");
+    await expect(menu.getByText("Living", { exact: true })).toBeVisible();
+    await expect(menu.getByText("Destinations", { exact: true })).toBeVisible();
+    await expect(menu.getByRole("link", { name: "Apartment" })).toBeVisible();
+    await expect(menu.getByRole("link", { name: /View all destinations/i })).toBeVisible();
   });
 
   test("hamburger label updates when open", async ({ page }) => {
@@ -162,7 +173,11 @@ test.describe("SEO metadata", () => {
 test.describe("Aussie English page", () => {
   test("shows the phrase list with at least 100 phrases", async ({ page }) => {
     await page.goto("/aussie-english");
-    const phrases = await page.locator('button[aria-expanded]').count();
-    expect(phrases, "Should have at least 100 phrases").toBeGreaterThanOrEqual(100);
+    const heading = page.getByRole("heading", { name: /^All \d+ phrases$/ });
+    await expect(heading).toBeVisible();
+    const section = page.locator("section").filter({ has: heading });
+    const count = await section.locator("article").count();
+    expect(count, "Should render at least 100 phrase cards").toBeGreaterThanOrEqual(100);
+    await expect(heading).toHaveText(`All ${count} phrases`);
   });
 });
