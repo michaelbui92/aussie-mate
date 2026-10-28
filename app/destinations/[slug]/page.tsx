@@ -534,7 +534,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               stay follow as day-planning details. */}
           <div className="space-y-5">
             <div className="reveal p-5 rounded-2xl bg-stone-900 dark:bg-stone-800 text-white border border-stone-800">
-              <h2 className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400 mb-2">
+              <h2 className="text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-2">
                 <En translated>Getting there</En>
                 <Ja>アクセス</Ja>
                 <Zh>如何前往</Zh>
