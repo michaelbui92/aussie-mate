@@ -481,12 +481,15 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                         <Zh>{itemAt(pt, "zh", i)?.tip}</Zh>
                         <Ko>{itemAt(pt, "ko", i)?.tip}</Ko>
                       </h3>
-                      <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                        <En translated>{item.detail}</En>
-                        <Ja>{itemAt(pt, "ja", i)?.detail}</Ja>
-                        <Zh>{itemAt(pt, "zh", i)?.detail}</Zh>
-                        <Ko>{itemAt(pt, "ko", i)?.detail}</Ko>
-                      </p>
+                      <SplitParagraph
+                        className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed"
+                        en={item.detail}
+                      
+
+                      ja={itemAt(pt, "ja", i)?.detail ?? item.detail}
+                      zh={itemAt(pt, "zh", i)?.detail ?? item.detail}
+                      ko={itemAt(pt, "ko", i)?.detail ?? item.detail}
+                      />
                     </div>
                   ))}
                 </div>
