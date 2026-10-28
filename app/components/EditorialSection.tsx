@@ -78,10 +78,10 @@ const ACCENT_MAP: Record<NonNullable<EditorialSectionData["accent"]>, {
     banner: "from-cyan-500 to-sky-600",
   },
   amber: {
-    eyebrow: "text-amber-600 dark:text-amber-400",
+    eyebrow: "text-amber-800 dark:text-amber-400",
     ring: "hover:border-amber-400/40",
     dot: "bg-amber-500",
-    chip: "bg-amber-500/10 text-amber-700 dark:text-amber-400",
+    chip: "bg-amber-500/10 text-amber-800 dark:text-amber-400",
     banner: "from-amber-500 to-yellow-600",
   },
   rose: {

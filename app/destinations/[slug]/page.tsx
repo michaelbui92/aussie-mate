@@ -508,7 +508,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             </div>
 
             <div className="reveal p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-2">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-amber-800 dark:text-amber-400 mb-2">
                 <En translated>Best time to visit</En>
                 <Ja>訪れるのに最適な時期</Ja>
                 <Zh>最佳游览时间</Zh>

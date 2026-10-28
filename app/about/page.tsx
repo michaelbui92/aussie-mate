@@ -108,7 +108,7 @@ export default function AboutPage() {
 
         {/* Editorial standards */}
         <section className="reveal p-6 md:p-7 rounded-2xl bg-amber-50 dark:bg-amber-950/20 border border-amber-100/60 dark:border-amber-900/30">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-3">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-800 dark:text-amber-400 mb-3">
             <En translated>Editorial standards</En>
             <Ja>編集方針</Ja>
             <Zh>编辑规范</Zh>

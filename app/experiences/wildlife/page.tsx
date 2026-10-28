@@ -520,7 +520,7 @@ export default function WildlifePage() {
                   className={`reveal reveal-delay-${(i % 5) + 1} flex items-start gap-4 p-4 rounded-xl bg-white/70 dark:bg-dark-surface/70 backdrop-blur-sm border border-amber-100/40 dark:border-amber-900/20`}
                 >
                   <span className="shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 dark:bg-amber-400/10 flex items-center justify-center mt-0.5">
-                    <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                    <AlertTriangle className="w-4 h-4 text-amber-800 dark:text-amber-400" />
                   </span>
                   <div>
                     <p className="font-semibold text-sm text-stone-900 dark:text-stone-100 mb-1">

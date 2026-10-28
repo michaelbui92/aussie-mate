@@ -72,7 +72,7 @@ export default function ArrivedContent() {
             </h2>
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed">
               <li className="flex gap-3">
-                <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">01</span>
+                <span className="text-amber-800 dark:text-amber-400 font-mono shrink-0">01</span>
                 <span>
                   <En translated><strong className="text-stone-900 dark:text-stone-100">Fake job ads.</strong> Anyone asking for payment to "process" your application is a scam. Real employers never ask for money upfront.</En>
                   <Ja><strong className="text-stone-900 dark:text-stone-100">偽の求人広告。</strong>応募を「処理」するための支払いを求める人は詐欺です。本当の雇用主は前払いのお金を一切求めません。</Ja>
@@ -81,7 +81,7 @@ export default function ArrivedContent() {
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">02</span>
+                <span className="text-amber-800 dark:text-amber-400 font-mono shrink-0">02</span>
                 <span>
                   <En translated><strong className="text-stone-900 dark:text-stone-100">Rental scams.</strong> Never send a deposit on a property you haven&apos;t inspected in person. Photos and addresses can be stolen from other listings.</En>
                   <Ja><strong className="text-stone-900 dark:text-stone-100">賃貸詐欺。</strong>実際に内見していない物件の保証金は絶対に送らないでください。写真や住所は他の物件情報から盗用されることがあります。</Ja>
@@ -90,7 +90,7 @@ export default function ArrivedContent() {
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-amber-700 dark:text-amber-400 font-mono shrink-0">03</span>
+                <span className="text-amber-800 dark:text-amber-400 font-mono shrink-0">03</span>
                 <span>
                   <En translated><strong className="text-stone-900 dark:text-stone-100">ATO &amp; immigration impersonation.</strong> The ATO never asks for payment via gift cards, wire transfer, or cryptocurrency. Real calls end with "you can verify at ato.gov.au" — not urgency.</En>
                   <Ja><strong className="text-stone-900 dark:text-stone-100">ATO &amp; 移民局のなりすまし。</strong>ATO がギフトカード、電信送金、暗号資産での支払いを求めることはありません。本物の電話は「ato.gov.au で確認できます」で終わります — 緊急性を煽ることはありません。</Ja>

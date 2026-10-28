@@ -129,7 +129,7 @@ export default function WeatherPage() {
 
         {/* UV section */}
         <section className="mb-10 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30 p-6 md:p-8">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-amber-700 dark:text-amber-400 mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-amber-800 dark:text-amber-400 mb-3">
             <En translated>UV &amp; sun safety</En>
             <Ja>UV &amp; 日焼け対策</Ja>
             <Zh>紫外线 &amp; 防晒安全</Zh>
