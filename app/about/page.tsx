@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { seoFor, withSeo } from "@/lib/seo";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
+import { SplitParagraph } from "@/components/Readable";
 import { pickLocale, type Lang } from "@/lib/locale";
 import { ABOUT_SECTIONS, ABOUT_HERO, ABOUT_META } from "./data";
 import { ABOUT_PROJECTS } from "./projects";
@@ -95,12 +96,7 @@ export default function AboutPage() {
             </div>
             <div className="text-stone-600 dark:text-stone-400 leading-relaxed text-base md:text-lg space-y-3">
                 {s.body.map((p, j) => (
-                  <p key={j}>
-                    <En translated>{p.en}</En>
-                    <Ja>{p.ja}</Ja>
-                    <Zh>{p.zh}</Zh>
-                    <Ko>{p.ko}</Ko>
-                  </p>
+                  <SplitParagraph key={j} en={p.en} ja={p.ja} zh={p.zh} ko={p.ko} />
                 ))}
             </div>
           </section>
@@ -134,7 +130,6 @@ export default function AboutPage() {
         {/* Projects - merged in from the old My Projects page */}
         <section id="projects" className="reveal">
           <div className="flex items-start gap-3 mb-3">
-            <span className="text-2xl shrink-0">{ABOUT_PROJECTS.emoji}</span>
             <div>
               <h2 className="font-serif text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
                 <En translated>{ABOUT_PROJECTS.title.en}</En>
@@ -163,7 +158,6 @@ export default function AboutPage() {
                 className={`reveal reveal-delay-${(i % 5) + 1} ${tool.accent} border rounded-2xl p-6 md:p-7`}
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="text-3xl shrink-0">{tool.emoji}</div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-2 flex-wrap">
                       <h3 className="font-serif text-xl md:text-2xl text-stone-900 dark:text-stone-100">{tool.title}</h3>
@@ -177,18 +171,20 @@ export default function AboutPage() {
                       <Zh>{tool.headline.zh}</Zh>
                       <Ko>{tool.headline.ko}</Ko>
                     </p>
-                    <p className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-3">
-                      <En translated>{tool.desc.en}</En>
-                      <Ja>{tool.desc.ja}</Ja>
-                      <Zh>{tool.desc.zh}</Zh>
-                      <Ko>{tool.desc.ko}</Ko>
-                    </p>
-                    <p className="text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed mb-3">
-                      <En translated>{tool.origins.en}</En>
-                      <Ja>{tool.origins.ja}</Ja>
-                      <Zh>{tool.origins.zh}</Zh>
-                      <Ko>{tool.origins.ko}</Ko>
-                    </p>
+                    <SplitParagraph
+                      className="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-3"
+                      en={tool.desc.en}
+                      ja={tool.desc.ja}
+                      zh={tool.desc.zh}
+                      ko={tool.desc.ko}
+                    />
+                    <SplitParagraph
+                      className="text-sm md:text-base text-stone-700 dark:text-stone-300 leading-relaxed mb-3"
+                      en={tool.origins.en}
+                      ja={tool.origins.ja}
+                      zh={tool.origins.zh}
+                      ko={tool.origins.ko}
+                    />
                   </div>
                 </div>
                 <ul className="space-y-1.5 mb-4">

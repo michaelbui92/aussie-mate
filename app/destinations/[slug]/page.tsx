@@ -6,6 +6,7 @@ import { regionLabel } from "@/lib/region-i18n";
 import { DEST_TEMPLATES, RELATE_TEMPLATES } from "../i18n";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
+import { SplitParagraph } from "@/components/Readable";
 import { destinations, getDestination } from "../data";
 import { seoFor, fitTitle, fitDescription, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
@@ -234,12 +235,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   </p>
                 )}
               </div>
-              <p className="font-serif text-xl md:text-2xl text-stone-800 dark:text-stone-200 leading-relaxed">
-                <En translated>{d.description.en}</En>
-                <Ja>{pickLocale("ja", d.description)}</Ja>
-                <Zh>{pickLocale("zh", d.description)}</Zh>
-                <Ko>{d.description.ko}</Ko>
-              </p>
+              <SplitParagraph
+                className="font-serif text-xl md:text-2xl text-stone-800 dark:text-stone-200 leading-relaxed"
+                en={d.description.en}
+                ja={pickLocale("ja", d.description)}
+                zh={pickLocale("zh", d.description)}
+                ko={d.description.ko}
+              />
             </section>
 
             {/* Highlights */}
