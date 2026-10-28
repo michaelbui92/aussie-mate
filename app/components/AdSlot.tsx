@@ -47,20 +47,9 @@ export default function AdSlot({
     const el = insRef.current;
     if (!el) return;
 
-    // Loaded here rather than by next/script: on /visa the <Script> element never reached the DOM,
-    // so the unit sat at zero width with window.adsbygoogle undefined. An explicit tag is one thing
-    // to reason about and it fires on every page that actually renders an ad.
-    if (!document.querySelector("script[data-adsense]")) {
-      const script = document.createElement("script");
-      script.async = true;
-      script.crossOrigin = "anonymous";
-      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
-      script.dataset.adsense = "1";
-      document.head.appendChild(script);
-    }
-
-    // AdSense throws "No slot size for availableWidth=0" when a unit is pushed before layout gives it
-    // a width. Wait for both the script and a real width, then push once.
+    // The script itself is server-rendered by <AdsenseScript /> on the pages that carry an ad. Here we
+    // wait for it (and for a real width) before pushing: AdSense throws "No slot size for
+    // availableWidth=0" when a unit is pushed before layout has given it one.
     let frame = 0;
     let cancelled = false;
     const push = () => {

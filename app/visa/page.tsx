@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AdsenseScript from "@/components/AdsenseScript";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import LocaleLink from "@/components/LocaleLink";
@@ -44,6 +45,7 @@ const quickFacts = [
 export default function VisaHub() {
   return (
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
+      <AdsenseScript />
       {/* BreadcrumbList JSON-LD — shows the path under the page title in Google */}
 
       {/* Hero */}

@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import HomePage from "@/components/HomePage";
+import AdsenseScript from "@/components/AdsenseScript";
 import type { Metadata } from "next";
 import { withSeo } from "@/lib/seo";
 
@@ -25,5 +26,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 export default function Page() {
-  return <HomePage />;
+  return (
+    <>
+      <AdsenseScript />
+      <HomePage />
+    </>
+  );
 }
