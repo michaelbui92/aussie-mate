@@ -415,7 +415,7 @@ export default function HomePage() {
           signal that surfaces this site as human-written on first paint.
           Aligns with the AdSense + helpful-content compliance pattern. */}
       <section className="bg-white dark:bg-dark-surface border-t border-stone-200/60 dark:border-dark-border">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap items-center justify-center gap-3 text-xs text-stone-500 dark:text-stone-400">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap items-center justify-center gap-3 text-xs text-stone-600 dark:text-stone-300">
           <span>
             <En translated>Written and reviewed by Michael Bui</En>
             <Ja>執筆・監修：Michael Bui</Ja>

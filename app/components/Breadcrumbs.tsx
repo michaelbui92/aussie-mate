@@ -49,7 +49,7 @@ export default function Breadcrumbs() {
               {c.name}
             </Link>
           ) : (
-            <span className="text-eucalypt/70 dark:text-dark-muted/70">{c.name}</span>
+            <span className="text-eucalypt dark:text-dark-muted">{c.name}</span>
           )}
         </span>
       ))}
