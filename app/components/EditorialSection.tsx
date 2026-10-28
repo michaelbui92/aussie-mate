@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { pickLocale } from "@/lib/locale";
 import { En, Ja, Ko, Zh } from "./LangBlocks";
 import LocaleLink from "./LocaleLink";
@@ -134,11 +135,12 @@ export default function EditorialSection({
             className={`absolute inset-0 bg-gradient-to-br ${accent.banner}`}
             aria-hidden="true"
           />
-          <img
+          <Image
             src={data.img}
             alt=""
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            sizes="(max-width: 1024px) 100vw, 900px"
+            className="object-cover"
           />
           <div
             className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20"

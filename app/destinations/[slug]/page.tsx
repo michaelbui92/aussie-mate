@@ -559,11 +559,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   className={`reveal reveal-delay-${(i % 5) + 1} group block`}
                 >
                   <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 shadow-sm group-hover:shadow-xl transition-shadow">
-                    <img
+                    <Image
                       src={other.cardImg}
                       alt={pickLocale(locale, other.name)}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-3 text-white">

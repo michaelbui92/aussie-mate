@@ -233,8 +233,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale} suppressHydrationWarning className={`${geistSans.variable} ${fraunces.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        {/* Preload hero image for instant LCP */}
-        <link rel="preload" href="/images/unsplash-1506973035872-a4ec16b8e8d9.jpg" as="image" />
+        {/* No hand-written hero preload: it pointed at the 969 KB source JPEG while the page renders
+            the /_next/image variant, so the browser fetched both. next/image with `priority` emits the
+            preload for the exact URL and srcset it will use. */}
         {/* AdSense Auto Ads — loads when env-on; ungated by truthy check now */}
         {ADSENSE_PUBLISHER_ID ? (
           <Script

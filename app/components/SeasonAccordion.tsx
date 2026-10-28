@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
+import Image from "next/image";
 import { pickLocale } from "@/lib/locale";
 import {En, Ja, Ko, Zh} from "./LangBlocks";
 
@@ -159,11 +160,12 @@ function SeasonCard({
       <div className={`absolute inset-0 bg-gradient-to-br ${s.accent}`} aria-hidden="true" />
 
       {/* Image */}
-      <img
+      <Image
         src={s.img}
         alt={`${s.title.en} in Australia`}
-        loading="lazy"
-        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ${
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className={`object-cover transition-transform duration-700 ${
           isOpen ? "scale-105" : "hover:scale-105"
         }`}
       />

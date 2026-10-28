@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import LocaleLink from "@/components/LocaleLink";
@@ -118,11 +119,12 @@ export default async function DestinationsPage() {
                     href={`/destinations/${d.slug}`}
                     className={`reveal reveal-delay-${(i % 5) + 1} group block relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
                   >
-                    <img
+                    <Image
                       src={d.cardImg}
                       alt={pickLocale(locale, d.name)}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-white/80" />
