@@ -100,7 +100,7 @@ export default function AdSlot({
       <ins
         ref={insRef}
         className="adsbygoogle"
-        style={{ display: "block" }}
+        style={{ display: "block", width: "100%" }}
         data-ad-client="ca-pub-7794121496618493"
         data-ad-slot={slot ?? ""}
         data-ad-format={format}
