@@ -9,6 +9,7 @@ import { SearchModal } from "@/components/SearchModal";
 import AdSlot from "@/components/AdSlot";
 import { destinations } from "@/destinations/data";
 import { topHomepageFaqs } from "@/lib/faqs";
+import { FaqLead } from "@/components/Readable";
 import { topHomepageExperiences } from "@/experiences/data";
 import HeroCarousel from "@/components/HeroCarousel";
 
@@ -386,12 +387,14 @@ export default function HomePage() {
                   <Zh>{pickLocale("zh", faq.q)}</Zh>
                   <Ko>{faq.q.ko}</Ko>
                 </p>
-                <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                  <En translated>{faq.a.en}</En>
-                  <Ja>{pickLocale("ja", faq.a)}</Ja>
-                  <Zh>{pickLocale("zh", faq.a)}</Zh>
-                  <Ko>{faq.a.ko}</Ko>
-                </p>
+                <FaqLead
+                  en={faq.a.en}
+                  ja={faq.a.ja}
+                  zh={faq.a.zh}
+                  ko={faq.a.ko}
+                  className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed"
+                />
+                <span className="mt-2 inline-block text-xs font-medium text-sunset-ink">→</span>
               </LocaleLink>
             ))}
           </div>
