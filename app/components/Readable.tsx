@@ -3,6 +3,7 @@
 import { Fragment, type ReactNode } from "react";
 import { useLang } from "@/components/LangBlocks";
 import type { Lang } from "@/lib/locale";
+import { bulk, groupParagraphs, splitSentences } from "@/lib/text-shape";
 
 /**
  * Reading-shape components. Both exist for one reason: a wall of text is the single biggest thing that
@@ -18,33 +19,6 @@ import type { Lang } from "@/lib/locale";
  * If a block has fewer than three sentences there is nothing worth splitting, and it renders as a
  * plain paragraph rather than a lead with a lonely bullet under it.
  */
-
-const ABBREVIATIONS = ["e.g.", "i.e.", "etc.", "vs.", "Mr.", "Mrs.", "Dr.", "St.", "approx."];
-
-function splitSentences(text: string, lang: Lang): string[] {
-  const trimmed = text.trim();
-  if (!trimmed) return [];
-
-  // Chinese and Japanese end a sentence on full-width punctuation; a full stop is rare but legal.
-  if (lang === "ja" || lang === "zh") {
-    const parts = trimmed.match(/[^。！？!?]+[。！？!?]+|[^。！？!?]+$/g);
-    return (parts ?? [trimmed]).map((s) => s.trim()).filter(Boolean);
-  }
-
-  // Latin and Korean: split on terminal punctuation followed by a space, but not inside "$5.60" or
-  // after "e.g." - those would cut a fact in half.
-  const guarded = trimmed.replace(/(\d)\.(\d)/g, "$1\u0000$2");
-  const parts = guarded.match(/[^.!?]+[.!?]+["')\]]?\s*|[^.!?]+$/g);
-  return (parts ?? [guarded])
-    .map((s) => s.replace(/\u0000/g, ".").trim())
-    .filter(Boolean)
-    .filter((s) => !ABBREVIATIONS.includes(s.toLowerCase()));
-}
-
-/** Words for spaced languages, characters for CJK - the two need different thresholds. */
-function bulk(s: string, lang: Lang): number {
-  return lang === "ja" || lang === "zh" ? s.length : s.split(/\s+/).filter(Boolean).length;
-}
 
 function pick(lang: Lang, en: string, ja?: string, zh?: string, ko?: string): string {
   if (lang === "ko") return ko ?? en;
@@ -72,30 +46,8 @@ export function SplitParagraph({
 }) {
   const { lang } = useLang();
   const text = pick(lang, en, ja, zh, ko);
-  const sentences = splitSentences(text, lang);
-
-  if (sentences.length < 3) {
-    return <p className={className}>{text}</p>;
-  }
-
-  // Group sentences until the paragraph is long enough to be a paragraph, but never beyond roughly a
-  // third of the original - three short paragraphs read faster than one long one, four is a list.
-  // 34 was the first guess and still produced 46-51 word blocks on /about once a long sentence was
-  // folded into a short one; 26 keeps every paragraph on the page under about 38 words.
-  const limit = lang === "ja" || lang === "zh" ? 45 : 26;
-  const chunks: string[] = [];
-  let current = "";
-  for (const s of sentences) {
-    current = current ? `${current} ${s}` : s;
-    if (bulk(current, lang) >= limit) {
-      chunks.push(current);
-      current = "";
-    }
-  }
-  if (current) {
-    if (chunks.length && bulk(current, lang) < 12) chunks[chunks.length - 1] += ` ${current}`;
-    else chunks.push(current);
-  }
+  // Grouping lives in lib/text-shape so the server-rendered destination pages can use the same rules.
+  const chunks = groupParagraphs(text, lang);
 
   return (
     <>

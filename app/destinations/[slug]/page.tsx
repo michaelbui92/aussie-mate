@@ -2,11 +2,12 @@ import LocaleLink from "@/components/LocaleLink";
 import Image from "next/image";
 import { headers } from "next/headers";
 import { pickLocale, type Lang } from "@/lib/locale";
+import { groupParagraphs } from "@/lib/text-shape";
+import { SplitParagraph } from "@/components/Readable";
 import { regionLabel } from "@/lib/region-i18n";
 import { DEST_TEMPLATES, RELATE_TEMPLATES } from "../i18n";
 import { notFound } from "next/navigation";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
-import { SplitParagraph } from "@/components/Readable";
 import { destinations, getDestination } from "../data";
 import { seoFor, fitTitle, fitDescription, faqLdJson, articleLdJson } from "@/lib/seo";
 import RelatedContent from "@/components/RelatedContent";
@@ -139,7 +140,37 @@ function bodyParagraphs(text?: string): string[] {
   return text
     .split(/\n[ \t]*\n/)
     .map((block) => block.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .flatMap(splitLongBlock);
+}
+
+// A blank line is a paragraph break, but plenty of these blocks are one 150-176 word paragraph with no
+// break in them (measured on /destinations/wollongong and /destinations/sydney-harbour). Splitting on
+// sentence boundaries fixes all four locales at once because the terminals differ by language:
+// CJK ends on 。！？ and Latin/Korean on . ! ? — and "$5.60" or "Opal 3.5" must not be cut in half.
+function splitLongBlock(block: string): string[] {
+  const words = block.split(/\s+/).filter(Boolean).length;
+  const chars = block.length;
+  // Short enough as it is, or CJK (where "words" undercounts badly and a 200-char block is normal).
+  if (words < 55 && chars < 420) return [block];
+
+  const guarded = block.replace(/(\d)\.(\d)/g, "$1\u0000$2");
+  const parts = guarded.match(/[^.!?。！？]+[.!?。！？]+["')\]]?\s*|[^.!?。！？]+$/g);
+  if (!parts || parts.length < 2) return [block];
+
+  const sentences = parts.map((x) => x.replace(/\u0000/g, ".").trim()).filter(Boolean);
+  const out: string[] = [];
+  let current = "";
+  for (const sentence of sentences) {
+    current = current ? `${current} ${sentence}` : sentence;
+    const w = current.split(/\s+/).filter(Boolean).length;
+    if (w >= 34 || current.length >= 260) {
+      out.push(current);
+      current = "";
+    }
+  }
+  if (current) out.push(current);
+  return out;
 }
 
 // Shared renderer for multi-paragraph body copy. Keeps withEmphasis applied inside each paragraph
@@ -148,8 +179,11 @@ function bodyParagraphs(text?: string): string[] {
 // a long data string into a single element should use it too.
 const BODY_COPY = "text-stone-700 dark:text-stone-300 text-sm leading-relaxed";
 
-function BodyParagraphs({ text, className }: { text?: string; className: string }) {
-  const blocks = bodyParagraphs(text);
+function BodyParagraphs({ text, className, lang }: { text?: string; className: string; lang: Lang }) {
+  // A blank line is a paragraph break the author intended; inside one of those blocks a 176-word wall
+  // is still a wall, so each block is regrouped into paragraphs of about 26 words (English/Korean) at
+  // sentence boundaries. No copy is touched - only where the breaks fall.
+  const blocks = bodyParagraphs(text).flatMap((block) => groupParagraphs(block, lang));
   if (blocks.length === 0) return null;
   return (
     <div className="space-y-3">
@@ -322,12 +356,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                           </span>
                         </div>
                       </div>
-                      <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                        <En translated>{a.blurb.en}</En>
-                        <Ja>{pickLocale("ja", a.blurb)}</Ja>
-                        <Zh>{pickLocale("zh", a.blurb)}</Zh>
-                        <Ko>{a.blurb.ko}</Ko>
-                      </p>
+                      <SplitParagraph
+                        className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed"
+                        en={a.blurb.en}
+                        ja={pickLocale("ja", a.blurb)}
+                        zh={pickLocale("zh", a.blurb)}
+                        ko={a.blurb.ko}
+                      />
                     </div>
                   ))}
                 </div>
@@ -345,16 +380,16 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </p>
                 <div className="p-5 rounded-2xl bg-white dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border">
                   <En translated>
-                    <BodyParagraphs text={d.howToGetThere.en} className={BODY_COPY} />
+                    <BodyParagraphs text={d.howToGetThere.en} className={BODY_COPY} lang="en" />
                   </En>
                   <Ja>
-                    <BodyParagraphs text={pickLocale("ja", d.howToGetThere)} className={BODY_COPY} />
+                    <BodyParagraphs text={pickLocale("ja", d.howToGetThere)} className={BODY_COPY} lang="ja" />
                   </Ja>
                   <Zh>
-                    <BodyParagraphs text={pickLocale("zh", d.howToGetThere)} className={BODY_COPY} />
+                    <BodyParagraphs text={pickLocale("zh", d.howToGetThere)} className={BODY_COPY} lang="zh" />
                   </Zh>
                   <Ko>
-                    <BodyParagraphs text={d.howToGetThere.ko} className={BODY_COPY} />
+                    <BodyParagraphs text={d.howToGetThere.ko} className={BODY_COPY} lang="ko" />
                   </Ko>
                 </div>
               </section>
@@ -371,16 +406,16 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </p>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-950/30 dark:to-amber-900/20 border border-amber-100/60 dark:border-amber-900/30">
                   <En translated>
-                    <BodyParagraphs text={d.bestTimeDetailed.en} className={BODY_COPY} />
+                    <BodyParagraphs text={d.bestTimeDetailed.en} className={BODY_COPY} lang="en" />
                   </En>
                   <Ja>
-                    <BodyParagraphs text={pickLocale("ja", d.bestTimeDetailed)} className={BODY_COPY} />
+                    <BodyParagraphs text={pickLocale("ja", d.bestTimeDetailed)} className={BODY_COPY} lang="ja" />
                   </Ja>
                   <Zh>
-                    <BodyParagraphs text={pickLocale("zh", d.bestTimeDetailed)} className={BODY_COPY} />
+                    <BodyParagraphs text={pickLocale("zh", d.bestTimeDetailed)} className={BODY_COPY} lang="zh" />
                   </Zh>
                   <Ko>
-                    <BodyParagraphs text={d.bestTimeDetailed.ko} className={BODY_COPY} />
+                    <BodyParagraphs text={d.bestTimeDetailed.ko} className={BODY_COPY} lang="ko" />
                   </Ko>
                 </div>
               </section>
@@ -409,12 +444,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                         <Zh>{i + 1}. {itemAt(ttd, "zh", i)?.title}</Zh>
                         <Ko>{i + 1}. {itemAt(ttd, "ko", i)?.title}</Ko>
                       </h3>
-                      <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-                        <En translated>{item.description}</En>
-                        <Ja>{itemAt(ttd, "ja", i)?.description}</Ja>
-                        <Zh>{itemAt(ttd, "zh", i)?.description}</Zh>
-                        <Ko>{itemAt(ttd, "ko", i)?.description}</Ko>
-                      </p>
+                      <SplitParagraph
+                        className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed"
+                        en={item.description}
+                        ja={itemAt(ttd, "ja", i)?.description ?? item.description}
+                        zh={itemAt(ttd, "zh", i)?.description ?? item.description}
+                        ko={itemAt(ttd, "ko", i)?.description ?? item.description}
+                      />
                     </div>
                   ))}
                 </div>
