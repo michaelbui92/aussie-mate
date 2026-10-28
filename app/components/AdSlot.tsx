@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Script from "next/script";
 import { useLang } from "@/components/LangBlocks";
 import { uiLabel } from "@/lib/ui-i18n";
 
@@ -44,26 +43,38 @@ export default function AdSlot({
   const insRef = useRef<HTMLModElement | null>(null);
 
   useEffect(() => {
+    if (!ADSENSE_CLIENT) return;
     const el = insRef.current;
     if (!el) return;
 
-    // AdSense throws "No slot size for availableWidth=0" when the unit is pushed before layout has
-    // given it a width - which is exactly what happens now that the script loads lazily and the first
-    // effect can run against a zero-width <ins>. Wait for a real width, then push once.
+    // Loaded here rather than by next/script: on /visa the <Script> element never reached the DOM,
+    // so the unit sat at zero width with window.adsbygoogle undefined. An explicit tag is one thing
+    // to reason about and it fires on every page that actually renders an ad.
+    if (!document.querySelector("script[data-adsense]")) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
+      script.dataset.adsense = "1";
+      document.head.appendChild(script);
+    }
+
+    // AdSense throws "No slot size for availableWidth=0" when a unit is pushed before layout gives it
+    // a width. Wait for both the script and a real width, then push once.
     let frame = 0;
     let cancelled = false;
     const push = () => {
       if (cancelled) return;
-      if (el.offsetWidth === 0 && frame++ < 60) {
+      const ready = (window as unknown as { adsbygoogle?: unknown[] }).adsbygoogle;
+      if ((!ready || el.offsetWidth === 0) && frame++ < 120) {
         requestAnimationFrame(push);
         return;
       }
       try {
-        // @ts-expect-error - adsbygoogle is injected by the AdSense script tag in <head>
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        const w = window as unknown as { adsbygoogle?: unknown[] };
+        (w.adsbygoogle = w.adsbygoogle || []).push({});
       } catch {
-        // AdSense may be blocked, offline, or not yet loaded.
-        // Never break the page over ads.
+        // AdSense may be blocked, offline, or not yet loaded. Never break the page over ads.
       }
     };
     push();
@@ -86,13 +97,6 @@ export default function AdSlot({
       role="complementary"
       aria-label={uiLabel(lang, "advertisement")}
     >
-      <Script
-        id="adsense"
-        async
-        strategy="lazyOnload"
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-        crossOrigin="anonymous"
-      />
       <ins
         ref={insRef}
         className="adsbygoogle"
