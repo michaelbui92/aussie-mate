@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLang } from "@/components/LangBlocks";
 import { uiLabel } from "@/lib/ui-i18n";
 
@@ -30,23 +30,48 @@ export default function AdSlot({
   className = "",
 }: AdSlotProps) {
   const { lang } = useLang();
+  const insRef = useRef<HTMLModElement | null>(null);
+
   useEffect(() => {
-    try {
-      // @ts-ignore  - adsbygoogle is injected by the AdSense script tag in <head>
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch {
-      // AdSense may be blocked, offline, or not yet loaded.
-      // Never break the page over ads.
-    }
+    const el = insRef.current;
+    if (!el) return;
+
+    // AdSense throws "No slot size for availableWidth=0" when the unit is pushed before layout has
+    // given it a width - which is exactly what happens now that the script loads lazily and the first
+    // effect can run against a zero-width <ins>. Wait for a real width, then push once.
+    let frame = 0;
+    let cancelled = false;
+    const push = () => {
+      if (cancelled) return;
+      if (el.offsetWidth === 0 && frame++ < 60) {
+        requestAnimationFrame(push);
+        return;
+      }
+      try {
+        // @ts-expect-error - adsbygoogle is injected by the AdSense script tag in <head>
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch {
+        // AdSense may be blocked, offline, or not yet loaded.
+        // Never break the page over ads.
+      }
+    };
+    push();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (
     <div
       className={`my-8 flex justify-center overflow-hidden ${className}`}
       style={{ minHeight: "100px" }}
+      // role="complementary" is what makes a label legal here - an aria-label on a plain div is a
+      // prohibited attribute, which Lighthouse reports as an accessibility failure.
+      role="complementary"
       aria-label={uiLabel(lang, "advertisement")}
     >
       <ins
+        ref={insRef}
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-7794121496618493"

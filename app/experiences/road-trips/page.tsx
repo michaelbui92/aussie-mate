@@ -2,6 +2,7 @@
 // Editorial style with route cards and trip-planning tips.
 
 import { headers } from "next/headers";
+import Image from "next/image";
 import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { En, Ja, Ko, Zh } from "@/components/LangBlocks";
@@ -150,13 +151,19 @@ export default function RoadTripsPage() {
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
 
-        <img
+        <Image
 
           src="/roadtrip.jpg"
 
           alt="Person driving on an Australian road trip"
 
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+
+          priority
+
+          sizes="100vw"
+
+          className="object-cover"
 
         />
 

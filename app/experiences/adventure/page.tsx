@@ -4,6 +4,7 @@
 // real data per-adventure (Blue Mountains, Snowies, coastal walks etc).
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import {En, Ja, Ko, Zh} from "@/components/LangBlocks";
@@ -203,10 +204,13 @@ export default function AdventurePage() {
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
-        <img
+        <Image
           src="/adventure.jpg"
           alt="Adventure in an Australian national park"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">

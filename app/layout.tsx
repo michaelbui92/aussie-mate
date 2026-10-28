@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { headers } from "next/headers";
@@ -236,8 +237,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="preload" href="/images/unsplash-1506973035872-a4ec16b8e8d9.jpg" as="image" />
         {/* AdSense Auto Ads — loads when env-on; ungated by truthy check now */}
         {ADSENSE_PUBLISHER_ID ? (
-          <script
+          <Script
+            id="adsense"
             async
+            strategy="lazyOnload"
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUBLISHER_ID}`}
             crossOrigin="anonymous"
           />

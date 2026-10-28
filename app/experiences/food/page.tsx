@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import LocaleLink from "@/components/LocaleLink";
@@ -140,10 +141,13 @@ export default function SydneyFoodGuide() {
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
-        <img
+        <Image
           src="/images/pexels-1855214.jpg"
           alt="Sydney cafe culture"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/30" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">
@@ -208,10 +212,12 @@ export default function SydneyFoodGuide() {
               {/* Image */}
               <div className="lg:col-span-2 order-2 lg:order-1">
                 <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-auto lg:h-full min-h-[240px]">
-                  <img
+                  <Image
                     src={hood.img}
                     alt={hood.labelEn}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-900/30 to-transparent" />
                 </div>

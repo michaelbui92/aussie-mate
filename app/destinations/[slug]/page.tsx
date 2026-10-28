@@ -1,4 +1,5 @@
 import LocaleLink from "@/components/LocaleLink";
+import Image from "next/image";
 import { headers } from "next/headers";
 import { pickLocale, type Lang } from "@/lib/locale";
 import { regionLabel } from "@/lib/region-i18n";
@@ -173,11 +174,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
-        <img
+        <Image
           src={d.heroImg}
           alt={pickLocale(locale, d.name)}
-          className="absolute inset-0 w-full h-full object-cover"
-          fetchPriority="high"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">

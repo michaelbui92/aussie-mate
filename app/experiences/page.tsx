@@ -4,6 +4,7 @@
 // live at /experiences/{theme}. /destinations/{theme} 301s here for SEO.
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import LocaleLink from "@/components/LocaleLink";
@@ -67,11 +68,12 @@ export default function ExperiencesPage() {
               href={t.href}
               className={`reveal reveal-delay-${(i % 5) + 1} group relative overflow-hidden rounded-2xl aspect-[4/5] bg-stone-900 shadow-md hover:shadow-2xl transition-shadow`}
             >
-              <img
+              <Image
                 src={t.heroImg}
                 alt={t.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">

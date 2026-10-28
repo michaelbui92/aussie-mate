@@ -4,7 +4,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Allow Next/Image to optimize remote images from Unsplash.
   // Without this, <Image src="https://images.unsplash.com/..." /> errors at build.
-  images: {},
+  images: {
+    // AVIF first: the destination and experience photography is the largest payload on the site, and
+    // AVIF is ~30-50% smaller than WebP at the same quality. Next falls back down the list itself.
+    formats: ["image/avif", "image/webp"],
+  },
   async headers() {
     return [
       {

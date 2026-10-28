@@ -2,6 +2,7 @@
 // Bilingual EN/KO, editorial style.
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import { headers } from "next/headers";
 import { pageMeta } from "@/lib/page-meta";
 import LocaleLink from "@/components/LocaleLink";
@@ -328,10 +329,13 @@ export default function WildlifePage() {
     <div className="bg-stone-50 dark:bg-darkbg min-h-screen">
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
-        <img
+        <Image
           src="/kangaroo.jpg"
           alt="Kangaroo, Australian marsupial"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-stone-900/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-10">

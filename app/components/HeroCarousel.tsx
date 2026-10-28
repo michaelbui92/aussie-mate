@@ -100,7 +100,7 @@ export default function HeroCarousel({ children }: { children: React.ReactNode }
             type="button"
             onClick={() => setActive(i)}
             aria-label={pickLocale(lang, SHOW_IMAGE).replace("{n}", String(i + 1))}
-            className={`w-2 h-2 rounded-full transition-all duration-500 ${
+            className={`relative w-2 h-2 rounded-full transition-all duration-500 after:absolute after:content-[''] after:-inset-2.5 ${
               i === active
                 ? "bg-white w-6"
                 : "bg-white/40 hover:bg-white/60"
