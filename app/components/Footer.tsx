@@ -90,7 +90,7 @@ export default function Footer() {
             positive editorial note. Links to /editorial for full standards.
             Email contact now lives here too (since the editorial page
             contact was rewritten to email Michael directly). */}
-        <div className="bg-stone-100 dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-xl px-4 py-3 text-xs text-stone-500 dark:text-stone-400 mb-6">
+        <div className="bg-stone-100 dark:bg-dark-surface border border-stone-200/60 dark:border-dark-border rounded-xl px-4 py-3 text-xs text-stone-600 dark:text-stone-300 mb-6">
           <p className="font-semibold text-sunset-ink mb-1">
             <En translated>Editorial note</En>
             <Ja>編集ノート</Ja>
