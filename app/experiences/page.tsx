@@ -39,7 +39,7 @@ export default function ExperiencesPage() {
       {/* Header */}
       <header className="bg-stone-900 dark:bg-stone-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-ink mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-sunset-light mb-3">
             <En translated>Experiences</En>
             <Ja>体験</Ja>
             <Zh>体验</Zh><Ko>경험</Ko>
@@ -72,6 +72,9 @@ export default function ExperiencesPage() {
                 src={t.heroImg}
                 alt={t.title}
                 fill
+                /* The first row of cards is the largest paint on a phone - measured as the LCP
+                   element at 9.5s when it was lazy. */
+                priority={i < 2}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
