@@ -1,0 +1,730 @@
+{
+ "pages": {
+  "app/about/data.ts": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/about/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/about/projects.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/apartment/page.tsx": {
+   "claims": [
+    "$150",
+    "$20",
+    "$50",
+    "$500",
+    "~$50",
+    "~$500"
+   ],
+   "last_verified": null
+  },
+  "app/aussie-english/culture/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/aussie-english/page.tsx": {
+   "claims": [
+    "80%"
+   ],
+   "last_verified": null
+  },
+  "app/beyond-sydney/page.tsx": {
+   "claims": [
+    "$10",
+    "$100",
+    "$120",
+    "$18",
+    "$50",
+    "$60",
+    "$80",
+    "~$120",
+    "~$50",
+    "~$80"
+   ],
+   "last_verified": null
+  },
+  "app/components/Accordion.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/AdSlot.tsx": {
+   "claims": [
+    "100%"
+   ],
+   "last_verified": null
+  },
+  "app/components/AdsenseScript.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/BackToTop.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/Breadcrumbs.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/Checklist.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/EditorialSection.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/FilteredAccordion.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/Footer.tsx": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/components/HeroCarousel.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/HomePage.tsx": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/components/Icons.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/LangBlocks.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/LocaleLink.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/Nav.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/PageTransition.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/PhraseExplorer.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/Readable.tsx": {
+   "claims": [
+    "$5.60"
+   ],
+   "last_verified": null
+  },
+  "app/components/RelatedContent.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/ScrollAnimations.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/SearchModal.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/SeasonAccordion.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/ThemeProvider.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/TripLengthFilter.tsx": {
+   "claims": [
+    "60%"
+   ],
+   "last_verified": null
+  },
+  "app/components/nav-i18n.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/components/personas/ArrivedContent.tsx": {
+   "claims": [
+    "$10",
+    "$12",
+    "$2,847",
+    "$20",
+    "$200",
+    "$30",
+    "$40",
+    "$5",
+    "$500",
+    "$700",
+    "40%"
+   ],
+   "last_verified": null
+  },
+  "app/components/personas/BeforeContent.tsx": {
+   "claims": [
+    "$1,000",
+    "$14",
+    "$500"
+   ],
+   "last_verified": null
+  },
+  "app/components/personas/HomeContent.tsx": {
+   "claims": [
+    "$50"
+   ],
+   "last_verified": null
+  },
+  "app/cost-of-living/page.tsx": {
+   "claims": [
+    "$1,300",
+    "$10",
+    "$110",
+    "$12",
+    "$120",
+    "$15",
+    "$16",
+    "$18",
+    "$180",
+    "$2.40",
+    "$2.50",
+    "$20",
+    "$200",
+    "$25",
+    "$30",
+    "$300",
+    "$35",
+    "$4.34",
+    "$4.50",
+    "$4.80",
+    "$40",
+    "$45",
+    "$450",
+    "$50",
+    "$500",
+    "$6",
+    "$6.20",
+    "$6.50",
+    "$600",
+    "$65",
+    "$70",
+    "$700",
+    "$80",
+    "$90",
+    "$900",
+    "2026",
+    "51%",
+    "~$2",
+    "~$500",
+    "~$60",
+    "~$600"
+   ],
+   "last_verified": "2026-11-11"
+  },
+  "app/destinations/[slug]/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/destinations/data.ts": {
+   "claims": [
+    "$10",
+    "$10.45",
+    "$10.45,",
+    "$100",
+    "$12",
+    "$13",
+    "$130",
+    "$142",
+    "$149",
+    "$15",
+    "$150",
+    "$17",
+    "$18",
+    "$19",
+    "$19.30",
+    "$19.30,",
+    "$199",
+    "$2",
+    "$2,300",
+    "$2,300.",
+    "$20",
+    "$200",
+    "$22",
+    "$25",
+    "$29.70",
+    "$3",
+    "$3.30",
+    "$30",
+    "$32",
+    "$335",
+    "$36",
+    "$4",
+    "$40",
+    "$42",
+    "$45",
+    "$49",
+    "$5",
+    "$50",
+    "$50.",
+    "$51.30",
+    "$55",
+    "$58",
+    "$6",
+    "$60",
+    "$60,",
+    "$7",
+    "$7.13",
+    "$7.13,",
+    "$7.30",
+    "$78",
+    "$79",
+    "$8",
+    "$8.92",
+    "$80",
+    "$9",
+    "$9.20",
+    "$9.20,",
+    "$9.65",
+    "$9.65,",
+    "$9.65.",
+    "$90",
+    "$99",
+    "10%",
+    "2020",
+    "2023",
+    "2024",
+    "2025",
+    "2026",
+    "2027",
+    "30%",
+    "50%",
+    "80%",
+    "95%",
+    "99%",
+    "~$10",
+    "~$100",
+    "~$13",
+    "~$149",
+    "~$15",
+    "~$150",
+    "~$199",
+    "~$20",
+    "~$25",
+    "~$40",
+    "~$50",
+    "~$7",
+    "~$80"
+   ],
+   "last_verified": null
+  },
+  "app/destinations/i18n.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/destinations/icons.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/destinations/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/editorial/page.tsx": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/error.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/experiences/adventure/page.tsx": {
+   "claims": [
+    "$12",
+    "$12.",
+    "$25",
+    "$36",
+    "~$12"
+   ],
+   "last_verified": null
+  },
+  "app/experiences/beaches/page.tsx": {
+   "claims": [
+    "$11",
+    "$5",
+    "$9",
+    "~$5"
+   ],
+   "last_verified": null
+  },
+  "app/experiences/culture/page.tsx": {
+   "claims": [
+    "$30",
+    "$35",
+    "$50",
+    "$7",
+    "~$35"
+   ],
+   "last_verified": null
+  },
+  "app/experiences/data.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/experiences/food/page.tsx": {
+   "claims": [
+    "$10",
+    "$12",
+    "$15",
+    "$250",
+    "$3",
+    "$40"
+   ],
+   "last_verified": null
+  },
+  "app/experiences/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/experiences/road-trips/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/experiences/wildlife/page.tsx": {
+   "claims": [
+    "$12",
+    "$2",
+    "$30",
+    "$40",
+    "$5",
+    "$50",
+    "$6",
+    "$7",
+    "$70",
+    "~$12",
+    "~$30",
+    "~$40",
+    "~$5",
+    "~$50",
+    "~$6",
+    "~$70"
+   ],
+   "last_verified": null
+  },
+  "app/faq/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/finance/page.tsx": {
+   "claims": [
+    "$10",
+    "$18,200",
+    "$180",
+    "$2",
+    "$20",
+    "$300",
+    "$40",
+    "$80",
+    "0%",
+    "1%",
+    "10%",
+    "11%",
+    "11.5%",
+    "15%",
+    "2%",
+    "2023",
+    "2026",
+    "30%",
+    "45%",
+    "47%",
+    "50%"
+   ],
+   "last_verified": null
+  },
+  "app/global-error.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/icon.tsx": {
+   "claims": [
+    "100%"
+   ],
+   "last_verified": null
+  },
+  "app/journey/arrived/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/journey/before-you-come/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/journey/home/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/journey/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/layout.tsx": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/lib/breadcrumb-trail.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/content-dates.ts": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/lib/faqs.ts": {
+   "claims": [
+    "$1,200",
+    "$2,000",
+    "$20",
+    "$200",
+    "$35",
+    "$350",
+    "$450",
+    "$5",
+    "$600",
+    "$7",
+    "$900",
+    "11.5%",
+    "5%"
+   ],
+   "last_verified": null
+  },
+  "app/lib/fonts.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/locale-href.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/locale.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/page-meta.ts": {
+   "claims": [
+    "11.5%",
+    "2026",
+    "5%"
+   ],
+   "last_verified": null
+  },
+  "app/lib/phrases.ts": {
+   "claims": [
+    "$18",
+    "$20",
+    "$5",
+    "$50"
+   ],
+   "last_verified": null
+  },
+  "app/lib/region-i18n.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/related.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/searchIndex.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/seo.ts": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/lib/site.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/lib/text-shape.ts": {
+   "claims": [
+    "$5.60",
+    "9%"
+   ],
+   "last_verified": null
+  },
+  "app/lib/ui-i18n.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/loading.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/not-found.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/opengraph-image.tsx": {
+   "claims": [
+    "0%",
+    "100%"
+   ],
+   "last_verified": null
+  },
+  "app/other-tools/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/page.tsx": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/privacy/page.tsx": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/robots.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/sitemap.ts": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/sport/page.tsx": {
+   "claims": [
+    "$10",
+    "$15",
+    "$20",
+    "$25",
+    "$30",
+    "$40",
+    "$50",
+    "$60",
+    "1%",
+    "2023",
+    "~$15",
+    "~$25",
+    "~$30",
+    "~$40",
+    "~$60"
+   ],
+   "last_verified": null
+  },
+  "app/study/page.tsx": {
+   "claims": [
+    "$340",
+    "$385",
+    "10%",
+    "100%",
+    "25%",
+    "50%",
+    "64%",
+    "74%",
+    "84%",
+    "~$340",
+    "~$385"
+   ],
+   "last_verified": null
+  },
+  "app/terms/page.tsx": {
+   "claims": [
+    "2026"
+   ],
+   "last_verified": null
+  },
+  "app/tourist/page.tsx": {
+   "claims": [
+    "$10",
+    "$15",
+    "$20",
+    "$3",
+    "$5",
+    "$50",
+    "$7.20"
+   ],
+   "last_verified": null
+  },
+  "app/transport/page.tsx": {
+   "claims": [
+    "$1",
+    "$10",
+    "$18.61",
+    "$19.30",
+    "$19.30,",
+    "$2",
+    "$23",
+    "$37.75",
+    "$50",
+    "$9.20",
+    "$9.65",
+    "$9.65,",
+    "50%"
+   ],
+   "last_verified": "2026-11-11"
+  },
+  "app/twitter-image.tsx": {
+   "claims": [
+    "0%",
+    "100%",
+    "50%"
+   ],
+   "last_verified": null
+  },
+  "app/visa/[slug]/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/visa/data.ts": {
+   "claims": [
+    "2024"
+   ],
+   "last_verified": null
+  },
+  "app/visa/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/weather/page.tsx": {
+   "claims": [],
+   "last_verified": null
+  },
+  "app/workplace/page.tsx": {
+   "claims": [
+    "$23",
+    "11.5%",
+    "2024",
+    "25%",
+    "5%"
+   ],
+   "last_verified": null
+  }
+ }
+}
