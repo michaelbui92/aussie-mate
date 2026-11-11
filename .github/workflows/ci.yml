@@ -1,0 +1,46 @@
+name: CI
+
+# The repo shipped to Vercel on every push with nothing checking the push first, so a type error or a
+# broken build only ever surfaced as a failed deploy — or not at all, since a failed build leaves the
+# previous deployment live. This runs the two checks that actually gate a merge here.
+#
+# Deliberately no Playwright step: the browser download is a minute of wall time on every push for a
+# suite that only covers the smoke paths. Run `npm test` locally before a UI change.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Typecheck
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm run test:unit
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_OPTIONS: --max-old-space-size=2048
