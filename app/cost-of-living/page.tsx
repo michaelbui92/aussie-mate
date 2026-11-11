@@ -30,9 +30,9 @@ const categories = [
     zhTitle: "\u623f\u79df\u4e0e\u4f4f\u623f",
     koTitle: "\uc9d1\uc138\uc640 \uc8fc\uac70",
     items: [
-      { en: "Shared house (room, inner Sydney)", ja: "シェアハウス（1部屋、シドニー市内）", zh: "合租房（单间，悉尼内城）", ko: "쉐어하우스 (방 1개, 시드니 시내 근접)", cost: "$280–$450/week" },
-      { en: "Studio / 1-bedroom apartment (inner Sydney)", ja: "ワンルーム / 1ベッドルームのアパート（シドニー市内）", zh: "单间公寓 / 一居室公寓（悉尼内城）", ko: "원룸 / 1베드룸 아파트 (시드니 시내)", cost: "$550–$800/week" },
-      { en: "2-bedroom apartment (inner Sydney)", ja: "2ベッドルームのアパート（シドニー市内）", zh: "两居室公寓（悉尼内城）", ko: "2베드룸 아파트 (시드니 시내)", cost: "$700–$1,200/week" },
+      { en: "Shared house (room, inner Sydney)", ja: "シェアハウス（1部屋、シドニー市内）", zh: "合租房（单间，悉尼内城）", ko: "쉐어하우스 (방 1개, 시드니 시내 근접)", cost: "$300–$500/week" },
+      { en: "Studio / 1-bedroom apartment (inner Sydney)", ja: "ワンルーム / 1ベッドルームのアパート（シドニー市内）", zh: "单间公寓 / 一居室公寓（悉尼内城）", ko: "원룸 / 1베드룸 아파트 (시드니 시내)", cost: "$600–$900/week" },
+      { en: "2-bedroom apartment (inner Sydney)", ja: "2ベッドルームのアパート（シドニー市内）", zh: "两居室公寓（悉尼内城）", ko: "2베드룸 아파트 (시드니 시내)", cost: "$900–$1,300/week" },
       { en: "2-bedroom apartment (outer suburbs)", ja: "2ベッドルームのアパート（郊外）", zh: "两居室公寓（远郊）", ko: "2베드룸 아파트 (외곽)", cost: "$450–$700/week" },
       { en: "Bond (4 weeks rent)", ja: "保証金（家賃4週間分）", zh: "押金（4周租金）", ko: "보증금 (월세의 4주)", cost: "4 weeks rent" },
     ],
@@ -44,11 +44,11 @@ const categories = [
     koTitle: "\uad50\ud1b5",
     items: [
       { en: "Opal card weekly cap (adult)", ja: "Opalカードの週上限（大人）", zh: "Opal卡每周上限（成人）", ko: "Opal 카드 주간 상한선 (성인)", cost: "$50" },
-      { en: "Single train trip (CBD to Parramatta)", ja: "電車1回（CBD〜Parramatta）", zh: "单程火车（CBD到Parramatta）", ko: "기차 1회 (CBD → Parramatta)", cost: "$5.60" },
+      { en: "Single train trip (CBD to Parramatta)", ja: "電車1回（CBD〜Parramatta）", zh: "单程火车（CBD到Parramatta）", ko: "기차 1회 (CBD → Parramatta)", cost: "$6.20 peak / $4.34 off-peak" },
       { en: "Single bus trip (inner city)", ja: "バス1回（市内）", zh: "单程公交（市中心）", ko: "버스 1회 (시내)", cost: "$2.40–$4.80" },
       { en: "Light rail trip", ja: "ライトレール1回", zh: "轻轨单程", ko: "경전철 1회", cost: "$2.40–$4.80" },
       { en: "Uber (CBD to Airport)", ja: "Uber（CBD〜空港）", zh: "Uber（CBD到机场）", ko: "Uber (CBD → 공항)", cost: "$45–$65" },
-      { en: "Petrol (per litre)", ja: "ガソリン（1リットルあたり）", zh: "汽油（每升）", ko: "휘발유 (리터당)", cost: "~$1.90" },
+      { en: "Petrol (per litre)", ja: "ガソリン（1リットルあたり）", zh: "汽油（每升）", ko: "휘발유 (리터당)", cost: "~$2.30" },
     ],
   },
   {
@@ -87,7 +87,7 @@ const categories = [
     zhTitle: "\u6c34\u7535\u4e0e\u8d26\u5355",
     koTitle: "\uacf5\uacfc\uae08\uacfc \uccad\uad6c\uc11c",
     items: [
-      { en: "Gas (cooking + hot water)", ja: "ガス代（調理 + 給湯）", zh: "燃气费（做饭 + 热水）", ko: "가스세 (요리 + 온수)", cost: "$50–$100/quarter" },
+      { en: "Gas (cooking + hot water)", ja: "ガス代（調理 + 給湯）", zh: "燃气费（做饭 + 热水）", ko: "가스세 (요리 + 온수)", cost: "$180–$300/quarter" },
       { en: "Contents insurance (renters)", ja: "家財保険（賃貸居住者）", zh: "家庭财产保险（租客）", ko: "가재도구 보험 (세입자)", cost: "$20–$40/month" },
     ],
   },
@@ -99,8 +99,8 @@ const categories = [
     items: [
       { en: "OSHC (student, single, per year)", ja: "OSHC（学生、単身、年間）", zh: "OSHC（学生，单人，每年）", ko: "OSHC (유학생, 1인, 연간)", cost: "~$600/year" },
       { en: "OVHC (working holiday, per year)", ja: "OVHC（ワーホリ、年間）", zh: "OVHC（打工度假，每年）", ko: "OVHC (워홀, 연간)", cost: "~$500–$900/year" },
-      { en: "GP visit (bulk billed)", ja: "GP受診（バルクビリング）", zh: "全科医生就诊（统一报销）", ko: "GP 방문 (벌크 빌)", cost: "Free" },
-      { en: "Ambulance cover (annual)", ja: "救急車カバー（年間）", zh: "救护车保险（每年）", ko: "구급차 보험 (연간)", cost: "~$60/year" },
+      { en: "GP visit (only if bulk billed)", ja: "GP受診（バルクビリング）", zh: "全科医生就诊（统一报销）", ko: "GP 방문 (벌크 빌)", cost: "Free" },
+      { en: "Ambulance cover (NSW residents pay 51% of a call-out)", ja: "救急車カバー（年間）", zh: "救护车保险（每年）", ko: "구급차 보험 (연간)", cost: "~$60/year" },
     ],
   },
 ];
