@@ -29,8 +29,8 @@ export const faqs: FaqItem[] = [
   {
     q: { en: "Is Australia expensive?", ja: "オーストラリアは物価が高いですか？", zh: "澳大利亚物价贵吗？", ko: "호주는 비싼가요?" },
     a: {
-      en: "Yes — Sydney and Melbourne are among the world's most expensive cities. A coffee is around $5–$7 AUD. A casual restaurant meal is $20–$35 AUD per person. Rent in Sydney is the biggest cost — a room in a shared house is $200–$350 AUD/week, a one-bedroom apartment starts around $450–$600 AUD/week. Use numbeo.com or expatistan.com for real-time comparisons.", ja: "はい — シドニーとメルボルンは世界で最も物価の高い都市の一つです。コーヒーは約$5〜$7 AUD。カジュアルなレストランの食事は1人あたり$20〜$35 AUD。シドニーで最大の出費は家賃です — シェアハウスの1部屋は週$200〜$350 AUD、ワンベッドルームのアパートは週$450〜$600 AUDから。リアルタイムの比較にはnumbeo.comやexpatistan.comを使いましょう。", zh: "是的——悉尼和墨尔本是世界上生活成本最高的城市之一。一杯咖啡约$5–$7 AUD。普通餐厅一餐每人$20–$35 AUD。悉尼最大的开销是房租——合租房的一间房每周$200–$350 AUD，一居室公寓每周起价约$450–$600 AUD。实时比较可用numbeo.com或expatistan.com。",
-      ko: "네 — 시드니와 멜버른은 세계에서 가장 비싼 도시 중 하나입니다. 커피 한 잔에 약 $5–$7 AUD. 비공식 레스토랑 식사는 1인당 $20–$35 AUD. 시드니에서 가장 큰 지출은 임대 — 쉐어하우스 방은 주 $200–$350 AUD, 1Bed 아파트는 주 $450–$600 AUD부터. 실시간 비교는 numbeo.com 또는 expatistan.com에서.",
+      en: "Yes — Sydney and Melbourne are among the world's most expensive cities. A coffee is around $5–$7 AUD. A casual restaurant meal is $20–$35 AUD per person. Rent in Sydney is the biggest cost — a room in a shared house is $200–$350 AUD/week, a one-bedroom apartment starts around $600–$780 AUD/week. Use numbeo.com or expatistan.com for real-time comparisons.", ja: "はい — シドニーとメルボルンは世界で最も物価の高い都市の一つです。コーヒーは約$5〜$7 AUD。カジュアルなレストランの食事は1人あたり$20〜$35 AUD。シドニーで最大の出費は家賃です — シェアハウスの1部屋は週$200〜$350 AUD、ワンベッドルームのアパートは週$600〜$780 AUDから。リアルタイムの比較にはnumbeo.comやexpatistan.comを使いましょう。", zh: "是的——悉尼和墨尔本是世界上生活成本最高的城市之一。一杯咖啡约$5–$7 AUD。普通餐厅一餐每人$20–$35 AUD。悉尼最大的开销是房租——合租房的一间房每周$200–$350 AUD，一居室公寓每周起价约$600–$780 AUD。实时比较可用numbeo.com或expatistan.com。",
+      ko: "네 — 시드니와 멜버른은 세계에서 가장 비싼 도시 중 하나입니다. 커피 한 잔에 약 $5–$7 AUD. 비공식 레스토랑 식사는 1인당 $20–$35 AUD. 시드니에서 가장 큰 지출은 임대 — 쉐어하우스 방은 주 $200–$350 AUD, 1Bed 아파트는 주 $600–$780 AUD부터. 실시간 비교는 numbeo.com 또는 expatistan.com에서.",
     },
   },
   {
