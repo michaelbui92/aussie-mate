@@ -36,8 +36,8 @@ export const faqs: FaqItem[] = [
   {
     q: { en: "What is super and why does it matter?", ja: "superとは何で、なぜ重要なのですか？", zh: "什么是养老金（super），为什么重要？", ko: "Super란 무엇이며 왜 중요하나요?" },
     a: {
-      en: "Superannuation (super) is a retirement savings account your employer is legally required to pay into — currently 11.5% of your wages. It's yours. You can't access it until retirement (with some exceptions). When you leave Australia permanently, you can claim it as a 'super withdrawal' — but tax applies. Always check your super statement annually and consider consolidating accounts to avoid fees.", ja: "super（スーパー）は、雇用主が法律で拠出を義務付けられている退職貯蓄口座です — 現在は賃金の11.5%です。それはあなたのものです。退職するまで引き出せません（一部の例外を除く）。オーストラリアを永久に離れるときは「super の引き出し」として請求できます — ただし税金がかかります。毎年superの明細を確認し、手数料を避けるために口座の統合を検討しましょう。", zh: "养老金（super）是你的雇主依法必须缴入的退休储蓄账户——目前为你工资的11.5%。这笔钱是你的。退休前无法动用（有少数例外）。当你永久离开澳大利亚时，可以按“养老金提取”申请领取——但需要缴税。每年都检查你的养老金金账单，并考虑合并账户以避免手续费。",
-      ko: "Superannuation (super)은 고용주가 법적 의무로 납입해야 하는 퇴직 적금 계좌입니다 — 현재 월급의 11.5%. 그 돈은 당신 것입니다. (일부 예외 제외) 은퇴할 때까지 인출 불가. 호주를 영구적으로 떠날 때 'super withdrawal'으로 인출 가능 — 하지만 세금이 부과됩니다. 매년 명세서를 확인하고, 비용을 피하기 위해 계좌를 통합하는 것을 고려하세요.",
+      en: "Superannuation (super) is a retirement savings account your employer is legally required to pay into — currently 12% of your wages. It's yours. You can't access it until retirement (with some exceptions). When you leave Australia permanently, you can claim it as a 'super withdrawal' — but tax applies. Always check your super statement annually and consider consolidating accounts to avoid fees.", ja: "super（スーパー）は、雇用主が法律で拠出を義務付けられている退職貯蓄口座です — 現在は賃金の12%です。それはあなたのものです。退職するまで引き出せません（一部の例外を除く）。オーストラリアを永久に離れるときは「super の引き出し」として請求できます — ただし税金がかかります。毎年superの明細を確認し、手数料を避けるために口座の統合を検討しましょう。", zh: "养老金（super）是你的雇主依法必须缴入的退休储蓄账户——目前为你工资的12%。这笔钱是你的。退休前无法动用（有少数例外）。当你永久离开澳大利亚时，可以按“养老金提取”申请领取——但需要缴税。每年都检查你的养老金金账单，并考虑合并账户以避免手续费。",
+      ko: "Superannuation (super)은 고용주가 법적 의무로 납입해야 하는 퇴직 적금 계좌입니다 — 현재 월급의 12%. 그 돈은 당신 것입니다. (일부 예외 제외) 은퇴할 때까지 인출 불가. 호주를 영구적으로 떠날 때 'super withdrawal'으로 인출 가능 — 하지만 세금이 부과됩니다. 매년 명세서를 확인하고, 비용을 피하기 위해 계좌를 통합하는 것을 고려하세요.",
     },
   },
   {
