@@ -456,7 +456,8 @@
     "47%",
     "50%"
    ],
-   "last_verified": null
+   "last_verified": "2026-11-15",
+   "partial": true
   },
   "app/global-error.tsx": {
    "claims": [],
