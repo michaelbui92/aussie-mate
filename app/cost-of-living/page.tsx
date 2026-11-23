@@ -45,8 +45,8 @@ const categories = [
     items: [
       { en: "Opal card weekly cap (adult)", ja: "Opalカードの週上限（大人）", zh: "Opal卡每周上限（成人）", ko: "Opal 카드 주간 상한선 (성인)", cost: "$50" },
       { en: "Single train trip (CBD to Parramatta)", ja: "電車1回（CBD〜Parramatta）", zh: "单程火车（CBD到Parramatta）", ko: "기차 1회 (CBD → Parramatta)", cost: "$6.20 peak / $4.34 off-peak" },
-      { en: "Single bus trip (inner city)", ja: "バス1回（市内）", zh: "单程公交（市中心）", ko: "버스 1회 (시내)", cost: "$2.40–$4.80" },
-      { en: "Light rail trip", ja: "ライトレール1回", zh: "轻轨单程", ko: "경전철 1회", cost: "$2.40–$4.80" },
+      { en: "Single bus trip (inner city)", ja: "バス1回（市内）", zh: "单程公交（市中心）", ko: "버스 1회 (시내)", cost: "$5.77 peak / $4.03 off-peak" },
+      { en: "Light rail trip", ja: "ライトレール1回", zh: "轻轨单程", ko: "경전철 1회", cost: "$5.77 peak / $4.03 off-peak" },
       { en: "Uber (CBD to Airport)", ja: "Uber（CBD〜空港）", zh: "Uber（CBD到机场）", ko: "Uber (CBD → 공항)", cost: "$45–$65" },
       { en: "Petrol (per litre)", ja: "ガソリン（1リットルあたり）", zh: "汽油（每升）", ko: "휘발유 (리터당)", cost: "~$2.30" },
     ],
