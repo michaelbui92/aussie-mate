@@ -21,6 +21,10 @@ const BOT_BLOCKERS = [
   "realestate.com.au",
   "flatmates.com.au",
   "domain.com.au",
+  // Facebook answers 400 to scripted clients on /marketplace; the page is fine.
+  "facebook.com",
+  // mofa.go.kr 307s to itself and then stalls past the timeout from here.
+  "mofa.go.kr",
 ];
 
 const SKIP = [
