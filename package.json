@@ -10,7 +10,8 @@
     "test": "npm run test:unit && playwright test",
     "test:unit": "node --test tests/unit/*.test.* tests/destination-emphasis.test.cjs",
     "test:ui": "playwright test --ui",
-    "audit": "npm audit --omit=dev"
+    "audit": "npm audit --omit=dev",
+    "check:links": "node scripts/check-outbound-links.mjs"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",

@@ -573,7 +573,7 @@ export const visas: Visa[] = [
     links: [
       {
         label: { en: "Official partner visa page", ja: "公式パートナービザのページ", zh: "官方伴侣签证页面", ko: "공식 파트너 비자 안내" },
-        href: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/partner-onshore-820-801",
+        href: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/partner-onshore/temporary-820",
       },
     ],
   },
