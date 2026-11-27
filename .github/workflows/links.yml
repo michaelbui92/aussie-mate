@@ -1,0 +1,38 @@
+name: Outbound links
+
+# The partner-visa link rotted for weeks because nothing ever followed our outbound links, so the first
+# anyone heard of a 404 was a reader hitting it. This walks them once a week, Monday morning Sydney time.
+#
+# Deliberately not on every push: an external site is a moving target, and a transient 4xx or a
+# restructure-in-progress on someone else's server would redden an unrelated deploy. A weekly run is
+# often enough to catch rot while it is still a one-line fix, and a red run here blocks nothing.
+
+on:
+  schedule:
+    # Sunday 21:17 UTC = Monday 08:17 Sydney (07:17 once AEDT ends; cron has no timezone field).
+    - cron: "17 21 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: links
+  cancel-in-progress: false
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Check outbound links
+        run: npm run check:links

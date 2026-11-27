@@ -6,6 +6,8 @@ name: CI
 #
 # Deliberately no Playwright step: the browser download is a minute of wall time on every push for a
 # suite that only covers the smoke paths. Run `npm test` locally before a UI change.
+#
+# Outbound links are covered by links.yml on a schedule, not here — don't add them to every push.
 
 on:
   push:
