@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { unknownSlugStatus } from "./app/lib/route-slugs";
 
 // Next 16 renamed this convention: proxy.ts, exporting proxy(). Verified against the build output,
 // which warned "The middleware file convention is deprecated. Please use proxy instead."
@@ -27,6 +28,8 @@ export function proxy(request: NextRequest) {
   headers.set("x-am-path", pathname || "/");
 
   if (!PREFIXED.has(first)) {
+    const status = unknownSlugStatus(pathname);
+    if (status) return NextResponse.rewrite(request.nextUrl, { request: { headers }, status });
     return NextResponse.next({ request: { headers } });
   }
 
@@ -37,7 +40,8 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.pathname = rest;
 
-  return NextResponse.rewrite(url, { request: { headers } });
+  const status = unknownSlugStatus(rest);
+  return NextResponse.rewrite(url, status ? { request: { headers }, status } : { request: { headers } });
 }
 
 export const config = {

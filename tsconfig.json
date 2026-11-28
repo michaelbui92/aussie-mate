@@ -10,6 +10,9 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
+    // route-slugs.ts imports its generated sibling with the .ts extension so node --test can
+    // resolve it (the unit test imports that module directly). Turbopack is happy either way.
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",

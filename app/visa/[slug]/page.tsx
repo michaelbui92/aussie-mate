@@ -10,9 +10,13 @@ export async function generateStaticParams() {
   return visas.map((v) => ({ slug: v.slug }));
 }
 
-// Unknown slugs must 404 rather than render a 200 shell with no canonical: with
-// generateStaticParams present, `dynamicParams = false` makes Next return a real 404 for any
-// param it did not generate, instead of streaming a soft-404 that search engines index.
+// Unknown slugs must 404 rather than render a 200 shell with no canonical. The status is set in
+// proxy.ts, while the response does not exist yet -- `dynamicParams = false` alone does not do
+// it: these routes are request-rendered (proxy.ts sets x-am-locale, so the layout reads headers())
+// and a dynamic route ignores dynamicParams, so Next streamed the 404 body with a 200 status.
+// Measured 2026-11-28: /visa/nope-xyz answered 200 locally and on production. notFound() here --
+// in the page or in generateMetadata -- arrives after that status is sent, so keep both: the
+// proxy sets the status, this renders the body.
 export const dynamicParams = false;
 
 export async function generateMetadata({
@@ -22,7 +26,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const v = getVisa(slug);
-  if (!v) return {};
+  if (!v) notFound(); // renders the 404 body; proxy.ts sets the status
   // The page body is localised, but the tab title and the search-result headline read .en --
   // an English headline in front of a page that reads in Japanese.
   const locale = ((await headers()).get("x-am-locale") ?? "en") as Lang;
